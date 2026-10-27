@@ -1,0 +1,29 @@
+title = "Research showcase credential checks"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "mimo-token-plan-key"
+description = "MiMo Token Plan API credential, including SDK default arguments"
+regex = '''\btp-[A-Za-z0-9]{32,}\b'''
+keywords = ["tp-"]
+
+# These entries are source-file SHA256 inventories, not authentication material.
+# Both the exact file and a digest-only finding must match.
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Reviewed provenance SHA256 values"
+condition = "AND"
+paths = ['''(?:^|/)experiments/(?:data/collaboration_derivation\.json|sources/mmlu_pro_scoring/preparation_manifest\.json)$''']
+regexTarget = "secret"
+regexes = ['''^[a-fA-F0-9]{64}$''']
+
+[[rules.allowlists]]
+description = "Reviewed Binance constructor variable forwarding"
+condition = "AND"
+paths = ['''(?:^|/)experiments/sources/roma/native/src/roma_dspy/tools/crypto/binance/toolkit\.py$''']
+regexTarget = "secret"
+regexes = ['''^default_market=self\.default_market$''']

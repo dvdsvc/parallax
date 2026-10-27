@@ -73,3 +73,5 @@ uv run --offline --no-project --python python3.12 scripts/check_repository.py
 重新运行模型需要分别恢复 ROMA 与 TalkHier 环境、冻结样本和外部服务，迁移归档路径；[运行说明](docs/runtime.md)列出入口与条件。本次验证覆盖已有证据的离线复核，未重新执行完整 Agent 实验，也未附带完整的多 GB 原始轨迹。
 
 上游许可保留。研究新增部分与论文尚未指定统一开源许可；历史 ROMA 许可缺口和基准数据再分发核对项见[第三方说明](THIRD_PARTY_NOTICES.md)。此目录供本地审阅，公开发布另由作者确认。
+
+凭据配置与发布前检查：[安全说明](docs/security.md)。

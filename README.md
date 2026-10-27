@@ -73,3 +73,5 @@ The historical supplement has an older title and table numbering. Its Table 3 / 
 Fresh inference requires separate ROMA and TalkHier environments, frozen datasets, provider/search/sandbox services where applicable, and relocation of archived paths. Start with [runtime guidance](docs/runtime.md); the default offline checks do not validate a fresh end-to-end agent run. The repository does not include the full multi-gigabyte raw transcript archive.
 
 Upstream notices are retained. The owner has not yet selected a blanket license for the research additions or manuscript. Benchmark redistribution and the historical ROMA license gap are recorded in [third-party notices](THIRD_PARTY_NOTICES.md). This is a local review candidate; publication requires the owner's separate confirmation.
+
+Credential configuration and release checks: [Security guide](docs/security.md).
