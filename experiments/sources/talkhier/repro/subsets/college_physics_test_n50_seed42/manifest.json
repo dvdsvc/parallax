@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-05T15:30:39.759599+00:00",
+  "mode": "college_physics",
+  "dataset": "cais/mmlu",
+  "dataset_revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+  "dataset_manifest_sha256": "5ec33ee61cc441ab59b83384b38777ce40efe2a4bc5cb5ed4c205b28c79d50cd",
+  "split": "test",
+  "population_size": 102,
+  "sample_size": 50,
+  "seed": 42,
+  "seed_scope": "question sampling only; no model generation seed",
+  "sampling": {
+    "algorithm": "random.Random(seed).sample(range(population_size), sample_size)",
+    "replacement": false,
+    "exclusions": [],
+    "execution_order": "sorted original row indices",
+    "draw_order_saved": true,
+    "index_base": 0
+  },
+  "python_version": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "source_script": "repro/sample_mmlu.py",
+  "command": [
+    ".venv/bin/python",
+    "repro/sample_mmlu.py",
+    "--mode",
+    "college_physics",
+    "--count",
+    "50",
+    "--seed",
+    "42",
+    "--output-dir",
+    "repro/subsets/college_physics_test_n50_seed42"
+  ],
+  "cwd": "external_archive/2026-10-02/x/work/talkhier",
+  "files_sha256": {
+    "indices.json": "8146a3d4a7d9c2cdcedd76d17c90d1035a128012a49990855b6eab68f492250b",
+    "draw_order.json": "c85ecba8912c997973bfd13d89897255a98ac3bd9de2b52d60f1ca1e8e31c44a",
+    "questions.jsonl": "c0255f486ce67c262cb7f44565d8597fed03c9965069fd53ed9972911cd11457",
+    "sampling_script.py": "02da5dc3b0c73d0b74f111a4edfcde75645563ff975dbadd978eb4753970f385",
+    "command.txt": "a255201b4a83dc0207580eee94acf6ed25b4a0036ed6cea3bf00efc8b81b0694"
+  }
+}

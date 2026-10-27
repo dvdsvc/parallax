@@ -1,0 +1,48 @@
+{
+  "verified_at": "2026-10-03T14:20:36.595669+00:00",
+  "official_commit": "8d60fa17b5596b44458a52d4296061b9fc13d6f2",
+  "community_commit": "2efd80f9888419203f92e551815fe1e536a78cb6",
+  "community_repository": "https://github.com/cemde/MARBLE.git",
+  "official_repository": "https://github.com/ulab-uiuc/MARBLE.git",
+  "official_worktree_clean": true,
+  "community_worktree_clean": true,
+  "community_tracked_blob_files": 2897,
+  "all_tracked_blobs_match": true,
+  "changed_file_count": 17,
+  "identical_scoring_methods": {
+    "evaluate_planning": true,
+    "evaluate_communication": true,
+    "parse_score": true
+  },
+  "identical_native_model_and_retry_files": {
+    "marble/llms/model_prompting.py": true,
+    "marble/llms/error_handler.py": true
+  },
+  "prompt_checks": {
+    "Communication": {
+      "stored_difference_only_brace_escaping": true,
+      "rendered_rubric_and_probe_match": true,
+      "rendered_probe_sha256": "ea0ca4c0a203854c5858b5cc2cf9312705aa5a61ca8d577ce1e3f7aa0cd964eb"
+    },
+    "Planning": {
+      "stored_difference_only_brace_escaping": true,
+      "rendered_rubric_and_probe_match": true,
+      "rendered_probe_sha256": "fb66572317517792982cc55dca17a088fa4a5ebfff26132763680ae02850c3c9"
+    }
+  },
+  "other_prompt_content_identical": true,
+  "evaluator_syntax_valid": true,
+  "source_archive_sha256": "189903e446006386c3111c6e57c358583becd115799b810fb66e57757c30fe31",
+  "submodules": [
+    {
+      "path": "marble/environments/db_env_docker/anomaly_trigger/sysbench-tpcc",
+      "commit": "585e2b8af327d35866aed7e56837c2134d8835a9",
+      "initialized": false
+    }
+  ],
+  "runtime_import_checked": false,
+  "model_api_calls": 0,
+  "scoring_started": false,
+  "local_patches_to_borrowed_source": [],
+  "audit_script_sha256": "af2f18c9131f20b04110630d69d2cf2b8ef8648745e6d2397b89a5081a0d53d3"
+}

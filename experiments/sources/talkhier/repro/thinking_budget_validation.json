@@ -1,0 +1,63 @@
+{
+  "paid_model_calls": 0,
+  "real_provider_budget_enforcement_verified": false,
+  "sdk_wire_format": {
+    "cases": 6,
+    "BASE_V2_equal_except_organization_message": true,
+    "native_model_factory_used": true,
+    "enable_thinking": true,
+    "thinking_budget": 8192,
+    "max_completion_tokens": 16384,
+    "max_tokens_sent": false,
+    "report": ".local/validation/provider_payload/report.json"
+  },
+  "native_recording_fixture": {
+    "cases": 6,
+    "BASE_and_V2_mock_model_calls_each": 19,
+    "effective_configuration_and_mlflow_match_requests": true,
+    "sealed_archives_and_indexed_copies_valid": true,
+    "report": ".local/validation/run_archive/ba5e5b162f654827b33e5161cbc4bc4e/report.json"
+  },
+  "subset_queue_preflight": {
+    "paid_model_calls": 0,
+    "credentials_loaded": false,
+    "main_50_question_sample_unchanged": true,
+    "queue_and_child_configuration_checked": [
+      {
+        "archive": "external_archive/2026-10-02/x/work/talkhier/.local/validation/thinking_budget/b63ee2cbf0a14a0980aaf9e7544deb44/subset_preflight",
+        "recorded_parameters_match": true,
+        "status": "preflight_passed"
+      },
+      {
+        "archive": "external_archive/2026-10-02/x/work/talkhier/.local/validation/thinking_budget/b63ee2cbf0a14a0980aaf9e7544deb44/subset_preflight/BASE/q081",
+        "recorded_parameters_match": true,
+        "status": "preflight_passed"
+      },
+      {
+        "archive": "external_archive/2026-10-02/x/work/talkhier/.local/validation/thinking_budget/b63ee2cbf0a14a0980aaf9e7544deb44/subset_preflight/V2/q081",
+        "recorded_parameters_match": true,
+        "status": "preflight_passed"
+      }
+    ],
+    "parameters": {
+      "enable_thinking": true,
+      "thinking_budget": 8192,
+      "max_completion_tokens": 16384,
+      "max_tokens": null
+    },
+    "validation_root": "external_archive/2026-10-02/x/work/talkhier/.local/validation/thinking_budget/b63ee2cbf0a14a0980aaf9e7544deb44"
+  },
+  "invalid_budget_rejected_before_run_creation": [
+    "run_mmlu.py",
+    "smoke_pair.py",
+    "run_subset.py"
+  ],
+  "preserved": {
+    "native_changes_only_model_constructor": true,
+    "organization_artifacts_verified": 5,
+    "fixed_50_question_sample_unchanged": true,
+    "stopped_archives_valid_and_unchanged": 47,
+    "stopped_batch_still_records_original_131072": true,
+    "monitor_status": "PAUSED"
+  }
+}

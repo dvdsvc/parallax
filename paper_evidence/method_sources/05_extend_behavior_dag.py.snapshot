@@ -1,0 +1,273 @@
+#!/usr/bin/env python3
+"""Immutable baseline -> sign-unified copies and matched DAG-augmented PCA/PLS."""
+import os
+for key in ['OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','VECLIB_MAXIMUM_THREADS']:os.environ[key]='1'
+os.environ['MPLCONFIGDIR']='/private/tmp/roma-dag-pca-pls-matplotlib'
+import sys
+sys.dont_write_bytecode=True
+import argparse,json,hashlib,copy,shutil,subprocess,platform,warnings
+from pathlib import Path
+from datetime import datetime,timezone
+from collections import Counter
+import numpy as np
+import scipy,sklearn
+from scipy.stats import rankdata,pearsonr
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import analyze_behavior_pca as oldpca
+import analyze_behavior_pls as oldpls
+
+DAG_FEATURES=['dependency_density','dependency_longest_chain_edges',
+ 'child_weighted_local_parallel_share','dependency_fan_in2_task_share']
+SOURCES={}
+def sha(p):
+    h=hashlib.sha256()
+    with Path(p).open('rb') as f:
+        for b in iter(lambda:f.read(8*1024*1024),b''):h.update(b)
+    return h.hexdigest()
+def save(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+def load(p):
+    p=Path(p);SOURCES[str(p)]=sha(p);return json.loads(p.read_text())
+def verify(p,allow=()):
+    result=oldpls.verify_sums(p,allowed_mismatches=allow)
+    for line in (p/'SHA256SUMS').read_text().splitlines():
+        _,n=line.split(maxsplit=1);f=p/n.lstrip('*');SOURCES[str(f)]=sha(f)
+    SOURCES[str(p/'SHA256SUMS')]=sha(p/'SHA256SUMS');return result
+def flip_variable(v):
+    v=copy.deepcopy(v);v['coefficient_pp_per_1SD']=-v['coefficient_pp_per_1SD'];lo,hi=v['coefficient_conditional_bootstrap95_pp'];v['coefficient_conditional_bootstrap95_pp']=[-hi,-lo];return v
+def flipped_performance(perf):
+    d=copy.deepcopy(perf);d['performance_definition']='question mean matched V2_correct minus BASE_correct; same rounds as X'
+    d['mean_delta_V2_minus_BASE']=-d.pop('mean_delta_BASE_minus_V2')
+    for r in d['question_outcomes']:r['delta_V2_minus_BASE']=-r.pop('delta_BASE_minus_V2')
+    for r in d['axes']:
+        for k in ['pearson_r','spearman_r','slope_delta_pp_per_1SD_axis']:r[k]=-r[k]
+        lo,hi=r['ci95_fixed_axis_question_bootstrap'];r['ci95_fixed_axis_question_bootstrap']=[-hi,-lo]
+    return d
+def new_performance(pca,panel,oldperf):
+    outcomes={r['question_id']:r for r in oldperf['question_outcomes']};y=np.array([outcomes[r['question_id']]['V2_accuracy']-outcomes[r['question_id']]['BASE_accuracy'] for r in panel])
+    scores=np.array([q['scores'] for q in pca['question_scores']])[:,:pca['matrix_rank']];x=scores/scores.std(axis=0,ddof=1)
+    yc=y-y.mean();denom=np.sqrt(np.sum(x*x,axis=0)*np.sum(yc*yc));observed=x.T@yc/denom
+    rng=np.random.default_rng(oldpca.SEED);perms=np.array([rng.permutation(yc) for _ in range(oldpca.PERM)]);null=perms@x/denom;maxnull=abs(null).max(1)
+    idx=rng.integers(0,len(y),(oldpca.BOOT,len(y)));yy=y[idx];yy-=yy.mean(1)[:,None];axes=[]
+    # One axis at a time avoids a 10000 x n x p bootstrap tensor.
+    for j,r in enumerate(observed):
+        xx=x[idx,j];xx-=xx.mean(1)[:,None];d=np.sqrt(np.sum(xx*xx,1)*np.sum(yy*yy,1));bs=np.divide(np.sum(xx*yy,1),d,out=np.full_like(d,np.nan),where=d>0)
+        axes.append({'PC':j+1,'pearson_r':float(r),'ci95_fixed_axis_question_bootstrap':np.nanquantile(bs,[.025,.975]).tolist(),
+          'spearman_r':float(np.corrcoef(rankdata(x[:,j]),rankdata(y))[0,1]),
+          'p_permutation_unadjusted':float((1+sum(abs(null[:,j])>=abs(r)))/(oldpca.PERM+1)),
+          'p_max_abs_r_within_model_all_axes':float((1+sum(maxnull>=abs(r)))/(oldpca.PERM+1)),
+          'slope_delta_pp_per_1SD_axis':float(100*x[:,j]@yc/np.sum(x[:,j]**2)),'in_sample_single_axis_R_squared':float(r*r)})
+    k=pca['parallel_analysis']['leading_retained_axes'];r2=float(sum(r['in_sample_single_axis_R_squared'] for r in axes[:k])) if k else None
+    retained={'axes':list(range(1,k+1)),'in_sample_R_squared':r2,
+      'p_permutation_joint':float((1+sum(np.sum(null[:,:k]**2,1)>=r2))/(oldpca.PERM+1)) if k else None}
+    ordered=[outcomes[r['question_id']] for r in panel]
+    return {'performance_definition':'question mean V2_correct minus BASE_correct; joined after all PCA fits frozen; same matched rounds',
+      'BASE_accuracy':float(np.mean([r['BASE_accuracy'] for r in ordered])),'V2_accuracy':float(np.mean([r['V2_accuracy'] for r in ordered])),
+      'mean_delta_V2_minus_BASE':float(y.mean()),'axes':axes,'retained_axes_joint_fit':retained,
+      'question_outcomes':[{'question_id':r['question_id'],'BASE_accuracy':r['BASE_accuracy'],'V2_accuracy':r['V2_accuracy'],'delta_V2_minus_BASE':float(y[i])} for i,r in enumerate(ordered)]}
+def plot_pca(path,name,pca):
+    corr=np.array(pca['variable_component_correlations']);shown=min(4,pca['matrix_rank']);fig,(ax,bx)=plt.subplots(1,2,figsize=(13,max(6,len(corr)*.26)),gridspec_kw={'width_ratios':[1,1.7]},layout='constrained')
+    eig=np.array(pca['covariance_eigenvalues']);ax.plot(np.arange(1,len(eig)+1),eig,'o-',label='Observed');ax.plot(np.arange(1,len(eig)+1),pca['parallel_analysis']['eigenvalue_threshold95'],'--',label='95% parallel null');ax.legend(fontsize=8);ax.set(xlabel='PC',ylabel='Eigenvalue',title='Outcome-blind parallel analysis');ax.grid(alpha=.2)
+    im=bx.imshow(corr[:,:shown],vmin=-1,vmax=1,cmap='RdBu_r',aspect='auto');bx.set_yticks(range(len(corr)),[('* ' if f in DAG_FEATURES else '')+f for f in pca['features']],fontsize=8);bx.set_xticks(range(shown),[f'PC{i+1}\n{100*pca["explained_variance_ratio"][i]:.1f}%' for i in range(shown)])
+    for i in range(len(corr)):
+        for j in range(shown):bx.text(j,i,f'{corr[i,j]:+.2f}',ha='center',va='center',fontsize=7,color='white' if abs(corr[i,j])>.65 else 'black')
+    fig.colorbar(im,ax=bx,fraction=.04);bx.set_title('* = newly added dependency descriptor');fig.suptitle(name)
+    for ext in ['png','svg']:fig.savefig(path/f'pca.{ext}',dpi=160)
+    plt.close(fig)
+def unify_baseline_pls(name,prior,folder,panel,y,x,names):
+    folder.mkdir();cv=load(prior/name/'nested_cv.json');newcv=copy.deepcopy(cv)
+    for key in ['predictions','mean_baseline_predictions']:newcv[key]=(-np.array(cv[key])).tolist()
+    save(folder/'nested_cv.json',newcv)
+    # Native re-fit first full outer repeat; sign inversion must preserve all selections/errors.
+    check=oldpls.nested_cv(x,y,names,repeats=1,details=False);error=float(np.max(abs(np.array(check['predictions'])-np.array(newcv['predictions'])[:1])));assert error<1e-8
+    full=load(prior/name/'full_fit_descriptive.json');newfull=copy.deepcopy(full)
+    for key in ['fitted_predictions','y_loadings']:newfull[key]=(-np.array(full[key])).tolist()
+    newfull['target_mean']=-full['target_mean'];newfull['variables']=[flip_variable(v) for v in full['variables']];save(folder/'full_fit_descriptive.json',newfull)
+    bs=load(prior/name/'conditional_bootstrap_coefficients.json');bs['coefficients']=(-np.array(bs['coefficients'])).tolist();save(folder/'conditional_bootstrap_coefficients.json',bs)
+    perm=load(prior/name/'permutation.json');save(folder/'permutation.json',perm)
+    old=load(prior/name/'summary.json');summary=copy.deepcopy(old);summary['target_mean_V2_minus_BASE']=-summary.pop('target_mean_BASE_minus_V2');summary['top_variables_descriptive']=[flip_variable(v) for v in old['top_variables_descriptive']];summary['target_definition']='V2 minus BASE'
+    summary['native_sign_flip_prediction_max_error']=error;save(folder/'summary.json',summary);save(folder/'question_panel.json',panel)
+    return summary,newcv,perm
+def new_pls(name,folder,panel,x,y,names,basecv,baseperm,primary):
+    folder.mkdir();save(folder/'question_panel.json',panel);prep,z=oldpls.preprocess(x);path=oldpls.fit_path(z,y,z);errors=[]
+    for k in [1,min(3,z.shape[1]),min(10,z.shape[1],len(y)-1)]:
+        m=oldpls.PLSRegression(n_components=k,scale=False,max_iter=1000,tol=1e-8).fit(z,y);errors.append(float(np.max(abs(m.predict(z).ravel()-path[:,k-1]))))
+    assert max(errors)<1e-8
+    cv=oldpls.nested_cv(x,y,names);assert cv['outer_fold_ids']==basecv['outer_fold_ids'];save(folder/'nested_cv.json',cv)
+    k,curve=oldpls.inner_select(x,y,oldpls.SEED+9000);prep,z,model,beta,vip=oldpls.fit_final(x,y,k);fitted=model.predict(z).ravel()
+    rng=np.random.default_rng(oldpls.SEED+20000);groups=np.array([r['paired_rounds'] for r in panel]);null=[]
+    fixed=oldpls.metrics(y,np.array(cv['predictions'])[:1],np.array(cv['mean_baseline_predictions'])[:1])['Q2_vs_train_mean']
+    for i in range(199 if primary else 0):
+        yy=y.copy()
+        for group in np.unique(groups):
+            loc=np.flatnonzero(groups==group);yy[loc]=rng.permutation(y[loc])
+        if i<2:
+            oldnames=names[:-len(DAG_FEATURES)];b=oldpls.nested_cv(x[:,:-len(DAG_FEATURES)],yy,oldnames,repeats=1,details=False)
+            assert abs(b['metrics']['Q2_vs_train_mean']-baseperm['null_Q2'][i])<1e-8,'cached baseline permutation identity'
+        perm=oldpls.nested_cv(x,yy,names,repeats=1,details=False);null.append(perm['metrics']['Q2_vs_train_mean'])
+        if (i+1)%50==0:print(name,'DAG PLS permutation',i+1,flush=True)
+    permutation={'permutations':len(null),'observed_fixed_split_Q2':fixed,'null_Q2':null,
+      'p_upper_tail':float((1+sum(v>=fixed for v in null))/200) if primary else None,
+      'stratification':'question target permuted within original matched-round-count strata','component_selection_repeated':True,
+      'baseline_null_reused_after_native_identity_checks':primary}
+    save(folder/'permutation.json',permutation)
+    rng=np.random.default_rng(oldpls.SEED+30000);bb=[];vv=[]
+    for _ in range(500):
+        idx=rng.integers(0,len(y),len(y))
+        if np.std(y[idx])<1e-12:continue
+        _,_,_,b,v=oldpls.fit_final(x[idx],y[idx],k);bb.append(b);vv.append(v)
+    bb=np.array(bb);vv=np.array(vv);variables=[]
+    for j,f in enumerate(names):variables.append({'feature':f,'new_DAG_feature':f in DAG_FEATURES,'retained_full_fit':j in prep['columns'],'VIP':float(vip[j]),
+      'coefficient_pp_per_1SD':float(100*beta[j]),'coefficient_conditional_bootstrap95_pp':(100*np.quantile(bb[:,j],[.025,.975])).tolist(),
+      'VIP_conditional_bootstrap95':np.quantile(vv[:,j],[.025,.975]).tolist(),'bootstrap_sign_agreement':float(np.mean(np.sign(bb[:,j])==np.sign(beta[j])))})
+    variables.sort(key=lambda v:-v['VIP']);full={'selected_components':k,'selection_cv':curve,'preprocessing':oldpls.prep_json(prep,names),
+      'in_sample_R2':float(1-np.sum((fitted-y)**2)/np.sum((y-y.mean())**2)),'fitted_predictions':fitted.tolist(),
+      'x_weights':model.x_weights_.tolist(),'x_loadings':model.x_loadings_.tolist(),'x_scores':model.x_scores_.tolist(),'y_loadings':model.y_loadings_.tolist(),
+      'target_mean':float(y.mean()),'variables':variables,'conditional_bootstrap_fixed_components':k,'bootstrap_successful':len(bb),'prefix_vs_native_max_error':max(errors)}
+    save(folder/'full_fit_descriptive.json',full);save(folder/'conditional_bootstrap_coefficients.json',{'features':names,'components_fixed':k,'coefficients':bb.tolist(),'VIP':vv.tolist()})
+    basepred=np.array(basecv['predictions']);pred=np.array(cv['predictions']);lossbase=np.mean((basepred-y[None,:])**2,0);lossdag=np.mean((pred-y[None,:])**2,0);gain=lossbase-lossdag
+    rng=np.random.default_rng(oldpls.SEED+40000);idx=rng.integers(0,len(y),(10000,len(y)));ci=np.quantile(gain[idx].mean(1),[.025,.975]).tolist()
+    observed=fixed-baseperm['observed_fixed_split_Q2'];nullgain=np.array(null)-np.array(baseperm['null_Q2']) if primary else []
+    incremental={'MSE_gain_DAG_over_baseline':float(gain.mean()),'conditional_question_bootstrap_CI95':ci,
+      'Q2_gain_10_repeats':cv['metrics']['Q2_vs_train_mean']-basecv['metrics']['Q2_vs_train_mean'],
+      'fixed_split_Q2_gain':observed,'paired_permutation_p':float((1+sum(nullgain>=observed))/200) if primary else None,
+      'improved_question_loss_count':int(sum(gain>1e-12)),'worse_question_loss_count':int(sum(gain< -1e-12))}
+    summary={'name':name,'questions':len(y),'matched_rounds':sum(r['paired_rounds'] for r in panel),'candidate_features':len(names),
+      'full_fit_retained_features':len(prep['columns']),'BASE_accuracy':float(np.mean([r['BASE_accuracy'] for r in panel])),
+      'V2_accuracy':float(np.mean([r['V2_accuracy'] for r in panel])),'target_mean_V2_minus_BASE':float(y.mean()),
+      'cv':cv['metrics'],'full_fit_components':k,'in_sample_R2':full['in_sample_R2'],'outer_selection_counts':cv['selected_components_counts'],
+      'permutation':{k:v for k,v in permutation.items() if k!='null_Q2'},'incremental':incremental,
+      'DAG_variables_descriptive':[v for v in variables if v['new_DAG_feature']],'top_variables_descriptive':variables[:8]}
+    save(folder/'summary.json',summary);return summary
+def holm(tests):
+    last=0
+    for i,t in enumerate(sorted(tests,key=lambda t:t['p'])):last=max(last,min(1.,t['p']*(len(tests)-i)));t['p_Holm']=last
+def main():
+    ap=argparse.ArgumentParser();ap.add_argument('pca',type=Path);ap.add_argument('pls',type=Path);ap.add_argument('dag',type=Path);ap.add_argument('output',type=Path);args=ap.parse_args()
+    old=args.pca.resolve();prior=args.pls.resolve();dag=args.dag.resolve();out=args.output.resolve();repo=Path(__file__).resolve().parent
+    assert not out.exists();assert not subprocess.check_output(['git','status','--porcelain'],cwd=repo,text=True).strip();commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip();out.mkdir(parents=True)
+    save(out/'analysis_plan.json',{'created_utc':datetime.now(timezone.utc).isoformat(),'script_commit':commit,'seed':oldpls.SEED,'calls':0,
+      'X_Y_sign':'All X behavior deltas and Y accuracy deltas = V2 minus BASE; Y>0 means V2 improves',
+      'input_archives':{'PCA':str(old),'PLS':str(prior),'DAG':str(dag)},'new_features':DAG_FEATURES,
+      'pairing':'each original variant keeps exactly its questions, rounds, score coverage and missingness; no sample expansion or new calls',
+      'baseline':'sign-only copies; PCA eigenvectors/scores unchanged, outcome correlations/slopes reversed; PLS predictions/coefs reversed, errors/VIP/selections invariant; native first-repeat checks',
+      'PCA':'all9 old variants; same native prior fit function, pruning/order, standardization,1000 parallel permutations; new4 appended; freeze all outcome-blind PCA before outcome join',
+      'PLS':'same6 old variants, main3; original native sklearn helpers;10x5 outer,inner4,components1..10,minMSE; standardization/alias removal train-only; same outer seeds/splits',
+      'tests':'199 stratified question Y permutations for each3 main DAG models; baseline nulls reused after sign identity checks; incremental paired same-permutation Q2 gains; six tests Holm',
+      'uncertainty':'10000 question conditional OOF loss bootstraps;500 descriptive coefficient/VIP bootstraps at fixed full-fit components; not post-selection or causal intervals',
+      'preservation':'original traces/logs/scores/old analyses read-only; prior known PCA report hash mismatch documented without repairing old checksum'})
+    for name in ['extend_behavior_dag.py','analyze_behavior_pca.py','analyze_behavior_pls.py']:shutil.copy2(repo/name,out/(name+'.snapshot'))
+    subprocess.run(['git','bundle','create',str(out/'analysis_scripts.bundle'),'HEAD'],cwd=repo,check=True)
+    audits={'PCA':verify(old,('report.md',)),'PLS':verify(prior),'DAG':verify(dag)};save(out/'source_archive_checksum_audit.json',audits)
+    known=load(prior/'source_archive_checksum_audit.json');assert audits['PCA']==known,'prior PCA report discrepancy changed'
+    for root in [old,dag]:
+        registered=load(root/'source_sha256.json')
+        for p,h in registered.items():assert sha(p)==h;SOURCES[p]=h
+    save(out/'runtime.json',{'python':platform.python_version(),'numpy':np.__version__,'scipy':scipy.__version__,'sklearn':sklearn.__version__,'matplotlib':matplotlib.__version__})
+    lookup={}
+    for b in ['SEAL0','FRAMES']:
+        for r in load(dag/b/'task_graphs_ANALYSIS_ONLY.json'):lookup[b,r['question_id'],r['round'],r['arm']]=r['descriptors']
+    panels={};pca_results={};roundaudit=[]
+    for file in sorted(old.glob('*_behavior_inputs.json')):
+        name=file.name.removesuffix('_behavior_inputs.json');b='FRAMES' if name.startswith('FRAMES') else 'SEAL0';panel=load(file);aug=copy.deepcopy(panel)
+        for row in aug:
+            for rr in row['rounds']:
+                for arm in ['BASE','V2']:assert (b,row['question_id'],rr,arm) in lookup
+            for f in ['nodes','max_depth','weighted_depth']:
+                if f not in row['deltas_V2_minus_BASE'] or f=='weighted_depth' and 'Edepth' in name:continue
+                v=np.mean([lookup[b,row['question_id'],rr,'V2'][f]-lookup[b,row['question_id'],rr,'BASE'][f] for rr in row['rounds']]);assert abs(v-row['deltas_V2_minus_BASE'][f])<1e-10
+            for f in DAG_FEATURES:row['deltas_V2_minus_BASE'][f]=float(np.mean([lookup[b,row['question_id'],rr,'V2'][f]-lookup[b,row['question_id'],rr,'BASE'][f] for rr in row['rounds']]))
+        a=out/'PCA'/name;a.mkdir(parents=True);save(a/'baseline_behavior_inputs.json',panel);save(a/'DAG_behavior_inputs.json',aug)
+        baseline=load(old/(name+'_pca_only.json'));features=list(aug[0]['deltas_V2_minus_BASE']);new=oldpca.fit_pca(aug,features,prune=baseline['redundancy_pruning'])
+        save(a/'baseline_pca_only.json',baseline);save(a/'DAG_pca_only.json',new);panels[name]=(panel,aug);pca_results[name]=(baseline,new)
+        roundaudit.append({'variant':name,'questions':len(panel),'matched_rounds':sum(r['paired_rounds'] for r in panel),
+          'question_and_round_lists_identical':all((x['question_id'],x['rounds'])==(y['question_id'],y['rounds']) for x,y in zip(panel,aug)),
+          'original_feature_values_identical':all(all(x['deltas_V2_minus_BASE'][f]==y['deltas_V2_minus_BASE'][f] for f in x['deltas_V2_minus_BASE']) for x,y in zip(panel,aug))})
+        print('PCA frozen',name,flush=True)
+    save(out/'round_linkage_verification.json',roundaudit)
+    frozen={str(f.relative_to(out)):sha(f) for f in (out/'PCA').rglob('*.json')};save(out/'phase1_PCA_freeze.json',{'before_outcome_join':True,'files':frozen,'utc':datetime.now(timezone.utc).isoformat()})
+    perf={};pca_summaries={}
+    for name,(baseline,new) in pca_results.items():
+        folder=out/'PCA'/name;oldperf=load(old/(name+'_performance.json'));sign=flipped_performance(oldperf);augperf=new_performance(new,panels[name][1],oldperf);perf[name]=sign
+        save(folder/'baseline_sign_unified_performance.json',sign);save(folder/'DAG_performance.json',augperf);plot_pca(folder,name,new)
+        # Cross-axis similarity is descriptive; axes are not relabeled by outcome.
+        a=np.array([r['scores'][:baseline['matrix_rank']] for r in baseline['question_scores']]);v=np.array([r['scores'][:new['matrix_rank']] for r in new['question_scores']]);cross=np.corrcoef(a.T,v.T)[:a.shape[1],a.shape[1]:]
+        loadings=np.array(new['variable_component_correlations']);dagvars=[]
+        for f in DAG_FEATURES:
+            if f in new['features']:
+                i=new['features'].index(f);dagvars.append({'feature':f,'retained':True,'correlation_with_first4_PC':loadings[i,:4].tolist(),
+                  'correlation_with_parallel_retained_axes':loadings[i,:new['parallel_analysis']['leading_retained_axes']].tolist()})
+            else:dagvars.append({'feature':f,'retained':False})
+        pca_summaries[name]={'questions':new['questions'],'matched_rounds':new['paired_rounds'],'baseline_parallel_axes':baseline['parallel_analysis']['leading_retained_axes'],
+          'DAG_parallel_axes':new['parallel_analysis']['leading_retained_axes'],'baseline_variance_first3':baseline['explained_variance_ratio'][:3],
+          'DAG_variance_first3':new['explained_variance_ratio'][:3],'DAG_feature_loadings':dagvars,
+          'baseline_to_DAG_axis_correlations':cross.tolist(),'DAG_retained_axes_outcome_fit':augperf['retained_axes_joint_fit']}
+        save(folder/'comparison.json',pca_summaries[name])
+    save(out/'PCA_comparison.json',pca_summaries)
+    results={};tests=[]
+    for name in oldpls.PRIMARY+oldpls.SENSITIVITY:
+        panel,aug=panels[name];names=list(aug[0]['deltas_V2_minus_BASE']);x=np.array([[r['deltas_V2_minus_BASE'][f] for f in names] for r in aug]);outcomes={r['question_id']:r for r in perf[name]['question_outcomes']};y=np.array([outcomes[r['question_id']]['delta_V2_minus_BASE'] for r in panel])
+        qp=[{'question_id':r['question_id'],'rounds':r['rounds'],'paired_rounds':r['paired_rounds'],'features_V2_minus_BASE':r['deltas_V2_minus_BASE'],
+          'performance_V2_minus_BASE':float(y[i]),'BASE_accuracy':outcomes[r['question_id']]['BASE_accuracy'],'V2_accuracy':outcomes[r['question_id']]['V2_accuracy']} for i,r in enumerate(aug)]
+        assert all(abs(r['V2_accuracy']-r['BASE_accuracy']-r['performance_V2_minus_BASE'])<1e-12 for r in qp)
+        folder=out/'PLS'/name;folder.mkdir(parents=True)
+        basepanel=copy.deepcopy(qp)
+        for r in basepanel:r['features_V2_minus_BASE']={f:v for f,v in r['features_V2_minus_BASE'].items() if f not in DAG_FEATURES}
+        base,basecv,baseperm=unify_baseline_pls(name,prior,folder/'baseline_sign_unified',basepanel,y,x[:,:-4],names[:-4])
+        primary=name in oldpls.PRIMARY;new=new_pls(name,folder/'DAG_augmented',qp,x,y,names,basecv,baseperm,primary);results[name]={'baseline':base,'DAG':new}
+        if primary:tests.extend([{'variant':name,'test':'DAG_vs_mean','p':new['permutation']['p_upper_tail']},{'variant':name,'test':'DAG_over_baseline','p':new['incremental']['paired_permutation_p']}])
+        save(out/'results.partial.json',{'PCA':pca_summaries,'PLS':results});print('PLS complete',name,'Q2',base['cv']['Q2_vs_train_mean'],'->',new['cv']['Q2_vs_train_mean'],flush=True)
+    holm(tests)
+    for t in tests:
+        r=results[t['variant']]['DAG'];(r['permutation'] if t['test']=='DAG_vs_mean' else r['incremental'])['p_Holm_six_primary_tests']=t['p_Holm']
+    save(out/'primary_tests.json',tests);save(out/'results.json',{'PCA':pca_summaries,'PLS':results});report(out,pca_summaries,results,commit);summary_plot(out,results)
+    save(out/'source_sha256.json',SOURCES)
+    for p,h in SOURCES.items():assert sha(p)==h,('source changed',p)
+    for f,h in frozen.items():assert sha(out/f)==h,'outcome-blind PCA changed after outcome join'
+    assert verify(old,('report.md',))==audits['PCA'];assert verify(prior)==audits['PLS'];assert verify(dag)==audits['DAG']
+    subprocess.run(['git','bundle','verify',str(out/'analysis_scripts.bundle')],cwd=repo,check=True,stdout=subprocess.DEVNULL)
+    save(out/'completion_verification.json',{'utc':datetime.now(timezone.utc).isoformat(),'script_commit':commit,'PCA_variants':len(pca_results),'PLS_variants':len(results),
+      'sources_unchanged':len(SOURCES),'PCA_frozen_before_outcome':True,'all_round_lists_identical':True,'native_baseline_sign_equivalence_verified':True,'Agent_API_judge_calls':0,'bundle_verified':True})
+    files=sorted(f for f in out.rglob('*') if f.is_file() and f.name!='SHA256SUMS');(out/'SHA256SUMS').write_text(''.join(f'{sha(f)}  {f.relative_to(out)}\n' for f in files))
+    oldpls.verify_sums(out);print('COMPLETE',out,flush=True)
+def summary_plot(out,R):
+    names=oldpls.PRIMARY;fig,ax=plt.subplots(figsize=(9,4.8),layout='constrained');x=np.arange(3)
+    ax.bar(x-.17,[R[n]['baseline']['cv']['Q2_vs_train_mean'] for n in names],width=.34,label='Original features (sign unified)',color='#4878a8');ax.bar(x+.17,[R[n]['DAG']['cv']['Q2_vs_train_mean'] for n in names],width=.34,label='Original + 4 dependency descriptors',color='#e48a3a')
+    ax.axhline(0,color='#444',lw=1);ax.set_xticks(x,['SEAL0 behavior + MAB\n86 questions / 227 pairs','SEAL0 behavior\n94 questions / 272 pairs','FRAMES behavior\n47 questions / 47 pairs']);ax.set(ylabel='Outer question-held-out Q2',title='DAG-augmented PLS: same questions, rounds and CV folds');ax.legend(fontsize=9);ax.grid(axis='y',alpha=.15)
+    for ext in ['png','svg']:fig.savefig(out/f'PLS_comparison.{ext}',dpi=180)
+    plt.close(fig)
+def report(out,P,R,commit):
+    lines=['# DAG增强PCA／PLS与统一差值符号','',
+      '**所有行为差与正确率差均为V2−BASE，正值表示V2更高。** 原始轨迹、日志、评分和旧PCA/PLS/DAG归档没有覆盖；这里是独立新版，0新增Agent/API/judge调用。每个旧分析保留原来的题目、匹配轮次、协作评分覆盖与敏感性变换。','',
+      '新增4量：依赖密度、最长依赖链（边数）、局部潜在并行比例、fan-in≥2子任务比例。每个量先整次运行计算，再同题同轮V2−BASE，最后平均该分析原有匹配轮。局部潜在并行比例是Σ局部反链宽度／Σ子任务数，不是实际API并发；无分解运行记0。DAG来自已逐Planner校对的原生检查点，真实重复工具动作仍保留。','',
+      '## PCA：加入依赖关系后结构轴如何变化','',
+      '所有PCA先冻结后关联正确率；沿用旧特征排序、标准化、常数/精确别名/r≥.95冗余处理及1000次平行分析。candidate_pool保留全部非恒定候选作为敏感性；independent版才做近冗余剪除。轴符号按最大绝对系数为正，与正确率无关。旧轴与新版轴不强行视为相同，跨轴相关另存comparison.json；解释方差百分比因输入维数变化不能直接当改善。','',
+      '| 集合 | 题／匹配轮 | 旧→DAG平行分析保留轴数 | DAG前3轴解释方差 |','|---|---|---|---|']
+    for name,p in P.items():lines.append(f'| {name} | {p["questions"]}/{p["matched_rounds"]} | {p["baseline_parallel_axes"]}→{p["DAG_parallel_axes"]} | '+', '.join(f'{100*v:.1f}%' for v in p['DAG_variance_first3'])+' |')
+    lines+=['','## PLS：完整留出对照','',
+      '复用未改的[sklearn原生PLSRegression](https://scikit-learn.org/stable/modules/generated/sklearn.cross_decomposition.PLSRegression.html)与旧外部分析函数。10次重复5折按题留出，内层4折在1–10成分中选最小MSE；标准化与去常数/精确别名仅用训练折。同题重复轮先合并，训练和测试不会共享题目；与旧版折分完全相同。Q²=1−模型OOF SSE／训练均值基线OOF SSE，负值表示未胜过均值预测。','',
+      '| 集合 | 题／匹配轮 | 旧特征Q² | ＋DAG Q² | Q²增量 | 旧→DAG RMSE（pp） | 加DAG优于均值p／Holm | 加DAG额外收益p／Holm |','|---|---|---|---|---|---|---|---|']
+    for name,r in R.items():
+        a=r['baseline'];v=r['DAG'];p=v['permutation']['p_upper_tail'];inc=v['incremental'];p1='未检验' if p is None else f'{p:.3f}/{v["permutation"]["p_Holm_six_primary_tests"]:.3f}';p2='未检验' if p is None else f'{inc["paired_permutation_p"]:.3f}/{inc["p_Holm_six_primary_tests"]:.3f}'
+        lines.append(f'| {oldpls.LABELS[name]} | {v["questions"]}/{v["matched_rounds"]} | {a["cv"]["Q2_vs_train_mean"]:.3f} | {v["cv"]["Q2_vs_train_mean"]:.3f} | {inc["Q2_gain_10_repeats"]:+.3f} | {a["cv"]["RMSE_pp"]:.2f}→{v["cv"]["RMSE_pp"]:.2f} | {p1} | {p2} |')
+    lines+=['','前三组为主要对照，后三组沿用旧敏感性。199次题级标签置换按有效匹配轮数分层，每次重做成分选择；与旧版一致，置换检验采用固定第一次外层5折，主表Q²则综合10次重复。增量检验逐次相减新旧同一置换的Q²；旧版零分布经原生重算校对后复用。三集合×两检验共6项Holm校正。不能将样本内VIP/R²当留出预测证据。','',f'![PLS comparison]({out}/PLS_comparison.png)','']
+    for name in oldpls.PRIMARY:
+        r=R[name]['DAG'];ci=r['incremental']['conditional_question_bootstrap_CI95'];lines+=[f'## {oldpls.LABELS[name]}：新增依赖量','',f'加DAG的OOF MSE增益={r["incremental"]["MSE_gain_DAG_over_baseline"]:.6f}，条件题级bootstrap95% [{ci[0]:.6f}, {ci[1]:.6f}]；正值表示误差减少。','',
+          '| 新变量 | 全样本VIP | 系数pp／1SD | 条件系数95% |','|---|---|---|---|']
+        for v in r['DAG_variables_descriptive']:
+            lo,hi=v['coefficient_conditional_bootstrap95_pp'];lines.append(f'| {v["feature"]} | {v["VIP"]:.2f} | {v["coefficient_pp_per_1SD"]:+.2f} | [{lo:+.2f}, {hi:+.2f}] |')
+    lines+=['','## 符号、来源与解释边界','',
+      '旧版统一符号副本保持PCA eigenvectors/scores和PLS误差/VIP/成分选择不变；相关、回归系数与预测方向翻转，区间端点对应翻转。原生重新拟合核验符号等价，没有重新打分。','',
+      '500次系数/VIP bootstrap固定全样本成分数，描述的是条件稳定性，未计入选成分不确定性；10000次增量误差bootstrap固定已拟合OOF预测。PCA相关不等于预测，PLS仍是干预后行为与结果关联，不是因果中介或尚未运行任务的前瞻预测。FRAMES47题是预算收缩后的有效配对子集，不能推广至783题总体；SEAL0协作联合86题也不同于三轮齐全86题，完整协作三轮集为64题。','',
+      f'执行commit `{commit}`；输入清单、逐轮DAG连接校验、PCA冻结、CV/置换/bootstrap、符号核验、脚本快照、Git bundle和SHA256SUMS均留档。旧PCA已有report.md哈希差异原样记录，未修写旧文件或清单。','',f'逐题预测：[per_question.md]({out}/per_question.md)；主结果：[results.json]({out}/results.json)。']
+    (out/'report.md').write_text('\n'.join(lines)+'\n')
+    per=['# 统一为V2−BASE的逐题PLS留出预测','', '正值表示V2收益。预测是10次外层留出的平均，仅供逐题查看；主误差按全部重复预测计算。题号／匹配轮保持各原分析范围。','']
+    for name in oldpls.PRIMARY:
+        root=out/'PLS'/name;panel=json.loads((root/'DAG_augmented'/'question_panel.json').read_text());a=np.array(json.loads((root/'baseline_sign_unified'/'nested_cv.json').read_text())['predictions']).mean(0);v=np.array(json.loads((root/'DAG_augmented'/'nested_cv.json').read_text())['predictions']).mean(0)
+        per+=[f'## {oldpls.LABELS[name]}','', '| 题号 | 匹配轮 | 观测Δ正确率pp | 原特征预测pp | 加DAG预测pp |','|---|---|---|---|---|']
+        for i,q in enumerate(panel):per.append(f'| {q["question_id"]} | {",".join(q["rounds"])} | {100*q["performance_V2_minus_BASE"]:+.2f} | {100*a[i]:+.2f} | {100*v[i]:+.2f} |')
+        per+=['']
+    (out/'per_question.md').write_text('\n'.join(per)+'\n')
+
+if __name__=='__main__':main()

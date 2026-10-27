@@ -1,0 +1,1262 @@
+@nx._dispatchable(
+    graphs={"G1": 0, "G2": 1}, preserve_edge_attrs=True, preserve_node_attrs=True
+)
+def optimize_edit_paths(
+    G1,
+    G2,
+    node_match=None,
+    edge_match=None,
+    node_subst_cost=None,
+    node_del_cost=None,
+    node_ins_cost=None,
+    edge_subst_cost=None,
+    edge_del_cost=None,
+    edge_ins_cost=None,
+    upper_bound=None,
+    strictly_decreasing=True,
+    roots=None,
+    timeout=None,
+):
+    """GED (graph edit distance) calculation: advanced interface.
+
+    Graph edit path is a sequence of node and edge edit operations
+    transforming graph G1 to graph isomorphic to G2.  Edit operations
+    include substitutions, deletions, and insertions.
+
+    Graph edit distance is defined as minimum cost of edit path.
+
+    Parameters
+    ----------
+    G1, G2: graphs
+        The two graphs G1 and G2 must be of the same type.
+
+    node_match : callable
+        A function that returns True if node n1 in G1 and n2 in G2
+        should be considered equal during matching.
+
+        The function will be called like
+
+           node_match(G1.nodes[n1], G2.nodes[n2]).
+
+        That is, the function will receive the node attribute
+        dictionaries for n1 and n2 as inputs.
+
+        Ignored if node_subst_cost is specified.  If neither
+        node_match nor node_subst_cost are specified then node
+        attributes are not considered.
+
+    edge_match : callable
+        A function that returns True if the edge attribute dictionaries
+        for the pair of nodes (u1, v1) in G1 and (u2, v2) in G2 should
+        be considered equal during matching.
+
+        The function will be called like
+
+           edge_match(G1[u1][v1], G2[u2][v2]).
+
+        That is, the function will receive the edge attribute
+        dictionaries of the edges under consideration.
+
+        Ignored if edge_subst_cost is specified.  If neither
+        edge_match nor edge_subst_cost are specified then edge
+        attributes are not considered.
+
+    node_subst_cost, node_del_cost, node_ins_cost : callable
+        Functions that return the costs of node substitution, node
+        deletion, and node insertion, respectively.
+
+        The functions will be called like
+
+           node_subst_cost(G1.nodes[n1], G2.nodes[n2]),
+           node_del_cost(G1.nodes[n1]),
+           node_ins_cost(G2.nodes[n2]).
+
+        That is, the functions will receive the node attribute
+        dictionaries as inputs.  The functions are expected to return
+        positive numeric values.
+
+        Function node_subst_cost overrides node_match if specified.
+        If neither node_match nor node_subst_cost are specified then
+        default node substitution cost of 0 is used (node attributes
+        are not considered during matching).
+
+        If node_del_cost is not specified then default node deletion
+        cost of 1 is used.  If node_ins_cost is not specified then
+        default node insertion cost of 1 is used.
+
+    edge_subst_cost, edge_del_cost, edge_ins_cost : callable
+        Functions that return the costs of edge substitution, edge
+        deletion, and edge insertion, respectively.
+
+        The functions will be called like
+
+           edge_subst_cost(G1[u1][v1], G2[u2][v2]),
+           edge_del_cost(G1[u1][v1]),
+           edge_ins_cost(G2[u2][v2]).
+
+        That is, the functions will receive the edge attribute
+        dictionaries as inputs.  The functions are expected to return
+        positive numeric values.
+
+        Function edge_subst_cost overrides edge_match if specified.
+        If neither edge_match nor edge_subst_cost are specified then
+        default edge substitution cost of 0 is used (edge attributes
+        are not considered during matching).
+
+        If edge_del_cost is not specified then default edge deletion
+        cost of 1 is used.  If edge_ins_cost is not specified then
+        default edge insertion cost of 1 is used.
+
+    upper_bound : numeric
+        Maximum edit distance to consider.
+
+    strictly_decreasing : bool
+        If True, return consecutive approximations of strictly
+        decreasing cost.  Otherwise, return all edit paths of cost
+        less than or equal to the previous minimum cost.
+
+    roots : 2-tuple
+        Tuple where first element is a node in G1 and the second
+        is a node in G2.
+        These nodes are forced to be matched in the comparison to
+        allow comparison between rooted graphs.
+
+    timeout : numeric
+        Maximum number of seconds to execute.
+        After timeout is met, the current best GED is returned.
+
+    Returns
+    -------
+    Generator of tuples (node_edit_path, edge_edit_path, cost)
+        node_edit_path : list of tuples (u, v)
+        edge_edit_path : list of tuples ((u1, v1), (u2, v2))
+        cost : numeric
+
+    See Also
+    --------
+    graph_edit_distance, optimize_graph_edit_distance, optimal_edit_paths
+
+    References
+    ----------
+    .. [1] Zeina Abu-Aisheh, Romain Raveaux, Jean-Yves Ramel, Patrick
+       Martineau. An Exact Graph Edit Distance Algorithm for Solving
+       Pattern Recognition Problems. 4th International Conference on
+       Pattern Recognition Applications and Methods 2015, Jan 2015,
+       Lisbon, Portugal. 2015,
+       <10.5220/0005209202710278>. <hal-01168816>
+       https://hal.archives-ouvertes.fr/hal-01168816
+
+    """
+    # TODO: support DiGraph
+
+    import numpy as np
+    import scipy as sp
+
+    @dataclass
+    class CostMatrix:
+        C: ...
+        lsa_row_ind: ...
+        lsa_col_ind: ...
+        ls: ...
+
+    def make_CostMatrix(C, m, n):
+        # assert(C.shape == (m + n, m + n))
+        lsa_row_ind, lsa_col_ind = sp.optimize.linear_sum_assignment(C)
+
+        # Fixup dummy assignments:
+        # each substitution i<->j should have dummy assignment m+j<->n+i
+        # NOTE: fast reduce of Cv relies on it
+        # Create masks for substitution and dummy indices
+        is_subst = (lsa_row_ind < m) & (lsa_col_ind < n)
+        is_dummy = (lsa_row_ind >= m) & (lsa_col_ind >= n)
+
+        # Map dummy assignments to the correct indices
+        lsa_row_ind[is_dummy] = lsa_col_ind[is_subst] + m
+        lsa_col_ind[is_dummy] = lsa_row_ind[is_subst] + n
+
+        return CostMatrix(
+            C, lsa_row_ind, lsa_col_ind, C[lsa_row_ind, lsa_col_ind].sum()
+        )
+
+    def extract_C(C, i, j, m, n):
+        # assert(C.shape == (m + n, m + n))
+        row_ind = [k in i or k - m in j for k in range(m + n)]
+        col_ind = [k in j or k - n in i for k in range(m + n)]
+        return C[row_ind, :][:, col_ind]
+
+    def reduce_C(C, i, j, m, n):
+        # assert(C.shape == (m + n, m + n))
+        row_ind = [k not in i and k - m not in j for k in range(m + n)]
+        col_ind = [k not in j and k - n not in i for k in range(m + n)]
+        return C[row_ind, :][:, col_ind]
+
+    def reduce_ind(ind, i):
+        # assert set(ind) == set(range(len(ind)))
+        rind = ind[[k not in i for k in ind]]
+        for k in set(i):
+            rind[rind >= k] -= 1
+        return rind
+
+    def match_edges(u, v, pending_g, pending_h, Ce, matched_uv=None):
+        """
+        Parameters:
+            u, v: matched vertices, u=None or v=None for
+               deletion/insertion
+            pending_g, pending_h: lists of edges not yet mapped
+            Ce: CostMatrix of pending edge mappings
+            matched_uv: partial vertex edit path
+                list of tuples (u, v) of previously matched vertex
+                    mappings u<->v, u=None or v=None for
+                    deletion/insertion
+
+        Returns:
+            list of (i, j): indices of edge mappings g<->h
+            localCe: local CostMatrix of edge mappings
+                (basically submatrix of Ce at cross of rows i, cols j)
+        """
+        M = len(pending_g)
+        N = len(pending_h)
+        # assert Ce.C.shape == (M + N, M + N)
+
+        # only attempt to match edges after one node match has been made
+        # this will stop self-edges on the first node being automatically deleted
+        # even when a substitution is the better option
+
+        substitution_possible = M and N
+        at_least_one_node_match = matched_uv is None or len(matched_uv) == 0
+        if at_least_one_node_match and substitution_possible:
+            g_ind = []
+            h_ind = []
+        else:
+            g_ind = [
+                i
+                for i in range(M)
+                if pending_g[i][:2] == (u, u)
+                or any(
+                    pending_g[i][:2] in ((p, u), (u, p), (p, p)) for p, q in matched_uv
+                )
+            ]
+            h_ind = [
+                j
+                for j in range(N)
+                if pending_h[j][:2] == (v, v)
+                or any(
+                    pending_h[j][:2] in ((q, v), (v, q), (q, q)) for p, q in matched_uv
+                )
+            ]
+
+        m = len(g_ind)
+        n = len(h_ind)
+
+        if m or n:
+            C = extract_C(Ce.C, g_ind, h_ind, M, N)
+            # assert C.shape == (m + n, m + n)
+
+            # Forbid structurally invalid matches
+            # NOTE: inf remembered from Ce construction
+            for k, i in enumerate(g_ind):
+                g = pending_g[i][:2]
+                for l, j in enumerate(h_ind):
+                    h = pending_h[j][:2]
+                    if nx.is_directed(G1) or nx.is_directed(G2):
+                        if any(
+                            g == (p, u) and h == (q, v) or g == (u, p) and h == (v, q)
+                            for p, q in matched_uv
+                        ):
+                            continue
+                    else:
+                        if any(
+                            g in ((p, u), (u, p)) and h in ((q, v), (v, q))
+                            for p, q in matched_uv
+                        ):
+                            continue
+                    if g == (u, u) or any(g == (p, p) for p, q in matched_uv):
+                        continue
+                    if h == (v, v) or any(h == (q, q) for p, q in matched_uv):
+                        continue
+                    C[k, l] = inf
+
+            localCe = make_CostMatrix(C, m, n)
+            ij = [
+                (
+                    g_ind[k] if k < m else M + h_ind[l],
+                    h_ind[l] if l < n else N + g_ind[k],
+                )
+                for k, l in zip(localCe.lsa_row_ind, localCe.lsa_col_ind)
+                if k < m or l < n
+            ]
+
+        else:
+            ij = []
+            localCe = CostMatrix(np.empty((0, 0)), [], [], 0)
+
+        return ij, localCe
+
+    def reduce_Ce(Ce, ij, m, n):
+        if len(ij):
+            i, j = zip(*ij)
+            m_i = m - sum(1 for t in i if t < m)
+            n_j = n - sum(1 for t in j if t < n)
+            return make_CostMatrix(reduce_C(Ce.C, i, j, m, n), m_i, n_j)
+        return Ce
+
+    def get_edit_ops(
+        matched_uv, pending_u, pending_v, Cv, pending_g, pending_h, Ce, matched_cost
+    ):
+        """
+        Parameters:
+            matched_uv: partial vertex edit path
+                list of tuples (u, v) of vertex mappings u<->v,
+                u=None or v=None for deletion/insertion
+            pending_u, pending_v: lists of vertices not yet mapped
+            Cv: CostMatrix of pending vertex mappings
+            pending_g, pending_h: lists of edges not yet mapped
+            Ce: CostMatrix of pending edge mappings
+            matched_cost: cost of partial edit path
+
+        Returns:
+            sequence of
+                (i, j): indices of vertex mapping u<->v
+                Cv_ij: reduced CostMatrix of pending vertex mappings
+                    (basically Cv with row i, col j removed)
+                list of (x, y): indices of edge mappings g<->h
+                Ce_xy: reduced CostMatrix of pending edge mappings
+                    (basically Ce with rows x, cols y removed)
+                cost: total cost of edit operation
+            NOTE: most promising ops first
+        """
+        m = len(pending_u)
+        n = len(pending_v)
+        # assert Cv.C.shape == (m + n, m + n)
+
+        # 1) a vertex mapping from optimal linear sum assignment
+        i, j = min(
+            (k, l) for k, l in zip(Cv.lsa_row_ind, Cv.lsa_col_ind) if k < m or l < n
+        )
+        xy, localCe = match_edges(
+            pending_u[i] if i < m else None,
+            pending_v[j] if j < n else None,
+            pending_g,
+            pending_h,
+            Ce,
+            matched_uv,
+        )
+        Ce_xy = reduce_Ce(Ce, xy, len(pending_g), len(pending_h))
+        # assert Ce.ls <= localCe.ls + Ce_xy.ls
+        if prune(matched_cost + Cv.ls + localCe.ls + Ce_xy.ls):
+            pass
+        else:
+            # get reduced Cv efficiently
+            Cv_ij = CostMatrix(
+                reduce_C(Cv.C, (i,), (j,), m, n),
+                reduce_ind(Cv.lsa_row_ind, (i, m + j)),
+                reduce_ind(Cv.lsa_col_ind, (j, n + i)),
+                Cv.ls - Cv.C[i, j],
+            )
+            yield (i, j), Cv_ij, xy, Ce_xy, Cv.C[i, j] + localCe.ls
+
+        # 2) other candidates, sorted by lower-bound cost estimate
+        other = []
+        fixed_i, fixed_j = i, j
+        if m <= n:
+            candidates = (
+                (t, fixed_j)
+                for t in range(m + n)
+                if t != fixed_i and (t < m or t == m + fixed_j)
+            )
+        else:
+            candidates = (
+                (fixed_i, t)
+                for t in range(m + n)
+                if t != fixed_j and (t < n or t == n + fixed_i)
+            )
+        for i, j in candidates:
+            if prune(matched_cost + Cv.C[i, j] + Ce.ls):
+                continue
+            Cv_ij = make_CostMatrix(
+                reduce_C(Cv.C, (i,), (j,), m, n),
+                m - 1 if i < m else m,
+                n - 1 if j < n else n,
+            )
+            # assert Cv.ls <= Cv.C[i, j] + Cv_ij.ls
+            if prune(matched_cost + Cv.C[i, j] + Cv_ij.ls + Ce.ls):
+                continue
+            xy, localCe = match_edges(
+                pending_u[i] if i < m else None,
+                pending_v[j] if j < n else None,
+                pending_g,
+                pending_h,
+                Ce,
+                matched_uv,
+            )
+            if prune(matched_cost + Cv.C[i, j] + Cv_ij.ls + localCe.ls):
+                continue
+            Ce_xy = reduce_Ce(Ce, xy, len(pending_g), len(pending_h))
+            # assert Ce.ls <= localCe.ls + Ce_xy.ls
+            if prune(matched_cost + Cv.C[i, j] + Cv_ij.ls + localCe.ls + Ce_xy.ls):
+                continue
+            other.append(((i, j), Cv_ij, xy, Ce_xy, Cv.C[i, j] + localCe.ls))
+
+        yield from sorted(other, key=lambda t: t[4] + t[1].ls + t[3].ls)
+
+    def get_edit_paths(
+        matched_uv,
+        pending_u,
+        pending_v,
+        Cv,
+        matched_gh,
+        pending_g,
+        pending_h,
+        Ce,
+        matched_cost,
+    ):
+        """
+        Parameters:
+            matched_uv: partial vertex edit path
+                list of tuples (u, v) of vertex mappings u<->v,
+                u=None or v=None for deletion/insertion
+            pending_u, pending_v: lists of vertices not yet mapped
+            Cv: CostMatrix of pending vertex mappings
+            matched_gh: partial edge edit path
+                list of tuples (g, h) of edge mappings g<->h,
+                g=None or h=None for deletion/insertion
+            pending_g, pending_h: lists of edges not yet mapped
+            Ce: CostMatrix of pending edge mappings
+            matched_cost: cost of partial edit path
+
+        Returns:
+            sequence of (vertex_path, edge_path, cost)
+                vertex_path: complete vertex edit path
+                    list of tuples (u, v) of vertex mappings u<->v,
+                    u=None or v=None for deletion/insertion
+                edge_path: complete edge edit path
+                    list of tuples (g, h) of edge mappings g<->h,
+                    g=None or h=None for deletion/insertion
+                cost: total cost of edit path
+            NOTE: path costs are non-increasing
+        """
+        if prune(matched_cost + Cv.ls + Ce.ls):
+            return
+
+        if not max(len(pending_u), len(pending_v)):
+            # assert not len(pending_g)
+            # assert not len(pending_h)
+            # path completed!
+            # assert matched_cost <= maxcost_value
+            nonlocal maxcost_value
+            maxcost_value = min(maxcost_value, matched_cost)
+            yield matched_uv, matched_gh, matched_cost
+
+        else:
+            edit_ops = get_edit_ops(
+                matched_uv,
+                pending_u,
+                pending_v,
+                Cv,
+                pending_g,
+                pending_h,
+                Ce,
+                matched_cost,
+            )
+            for ij, Cv_ij, xy, Ce_xy, edit_cost in edit_ops:
+                i, j = ij
+                # assert Cv.C[i, j] + sum(Ce.C[t] for t in xy) == edit_cost
+                if prune(matched_cost + edit_cost + Cv_ij.ls + Ce_xy.ls):
+                    continue
+
+                # dive deeper
+                u = pending_u.pop(i) if i < len(pending_u) else None
+                v = pending_v.pop(j) if j < len(pending_v) else None
+                matched_uv.append((u, v))
+                for x, y in xy:
+                    len_g = len(pending_g)
+                    len_h = len(pending_h)
+                    matched_gh.append(
+                        (
+                            pending_g[x] if x < len_g else None,
+                            pending_h[y] if y < len_h else None,
+                        )
+                    )
+                sortedx = sorted(x for x, y in xy)
+                sortedy = sorted(y for x, y in xy)
+                G = [
+                    (pending_g.pop(x) if x < len(pending_g) else None)
+                    for x in reversed(sortedx)
+                ]
+                H = [
+                    (pending_h.pop(y) if y < len(pending_h) else None)
+                    for y in reversed(sortedy)
+                ]
+
+                yield from get_edit_paths(
+                    matched_uv,
+                    pending_u,
+                    pending_v,
+                    Cv_ij,
+                    matched_gh,
+                    pending_g,
+                    pending_h,
+                    Ce_xy,
+                    matched_cost + edit_cost,
+                )
+
+                # backtrack
+                if u is not None:
+                    pending_u.insert(i, u)
+                if v is not None:
+                    pending_v.insert(j, v)
+                matched_uv.pop()
+                for x, g in zip(sortedx, reversed(G)):
+                    if g is not None:
+                        pending_g.insert(x, g)
+                for y, h in zip(sortedy, reversed(H)):
+                    if h is not None:
+                        pending_h.insert(y, h)
+                for _ in xy:
+                    matched_gh.pop()
+
+    # Initialization
+
+    pending_u = list(G1.nodes)
+    pending_v = list(G2.nodes)
+
+    initial_cost = 0
+    if roots:
+        root_u, root_v = roots
+        if root_u not in pending_u or root_v not in pending_v:
+            raise nx.NodeNotFound("Root node not in graph.")
+
+        # remove roots from pending
+        pending_u.remove(root_u)
+        pending_v.remove(root_v)
+
+    # cost matrix of vertex mappings
+    m = len(pending_u)
+    n = len(pending_v)
+    C = np.zeros((m + n, m + n))
+    if node_subst_cost:
+        C[0:m, 0:n] = np.array(
+            [
+                node_subst_cost(G1.nodes[u], G2.nodes[v])
+                for u in pending_u
+                for v in pending_v
+            ]
+        ).reshape(m, n)
+        if roots:
+            initial_cost = node_subst_cost(G1.nodes[root_u], G2.nodes[root_v])
+    elif node_match:
+        C[0:m, 0:n] = np.array(
+            [
+                1 - int(node_match(G1.nodes[u], G2.nodes[v]))
+                for u in pending_u
+                for v in pending_v
+            ]
+        ).reshape(m, n)
+        if roots:
+            initial_cost = 1 - node_match(G1.nodes[root_u], G2.nodes[root_v])
+    else:
+        # all zeroes
+        pass
+    # assert not min(m, n) or C[0:m, 0:n].min() >= 0
+    if node_del_cost:
+        del_costs = [node_del_cost(G1.nodes[u]) for u in pending_u]
+    else:
+        del_costs = [1] * len(pending_u)
+    # assert not m or min(del_costs) >= 0
+    if node_ins_cost:
+        ins_costs = [node_ins_cost(G2.nodes[v]) for v in pending_v]
+    else:
+        ins_costs = [1] * len(pending_v)
+    # assert not n or min(ins_costs) >= 0
+    inf = C[0:m, 0:n].sum() + sum(del_costs) + sum(ins_costs) + 1
+    C[0:m, n : n + m] = np.array(
+        [del_costs[i] if i == j else inf for i in range(m) for j in range(m)]
+    ).reshape(m, m)
+    C[m : m + n, 0:n] = np.array(
+        [ins_costs[i] if i == j else inf for i in range(n) for j in range(n)]
+    ).reshape(n, n)
+    Cv = make_CostMatrix(C, m, n)
+
+    pending_g = list(G1.edges)
+    pending_h = list(G2.edges)
+
+    # cost matrix of edge mappings
+    m = len(pending_g)
+    n = len(pending_h)
+    C = np.zeros((m + n, m + n))
+    if edge_subst_cost:
+        C[0:m, 0:n] = np.array(
+            [
+                edge_subst_cost(G1.edges[g], G2.edges[h])
+                for g in pending_g
+                for h in pending_h
+            ]
+        ).reshape(m, n)
+    elif edge_match:
+        C[0:m, 0:n] = np.array(
+            [
+                1 - int(edge_match(G1.edges[g], G2.edges[h]))
+                for g in pending_g
+                for h in pending_h
+            ]
+        ).reshape(m, n)
+    else:
+        # all zeroes
+        pass
+    # assert not min(m, n) or C[0:m, 0:n].min() >= 0
+    if edge_del_cost:
+        del_costs = [edge_del_cost(G1.edges[g]) for g in pending_g]
+    else:
+        del_costs = [1] * len(pending_g)
+    # assert not m or min(del_costs) >= 0
+    if edge_ins_cost:
+        ins_costs = [edge_ins_cost(G2.edges[h]) for h in pending_h]
+    else:
+        ins_costs = [1] * len(pending_h)
+    # assert not n or min(ins_costs) >= 0
+    inf = C[0:m, 0:n].sum() + sum(del_costs) + sum(ins_costs) + 1
+    C[0:m, n : n + m] = np.array(
+        [del_costs[i] if i == j else inf for i in range(m) for j in range(m)]
+    ).reshape(m, m)
+    C[m : m + n, 0:n] = np.array(
+        [ins_costs[i] if i == j else inf for i in range(n) for j in range(n)]
+    ).reshape(n, n)
+    Ce = make_CostMatrix(C, m, n)
+
+    maxcost_value = Cv.C.sum() + Ce.C.sum() + 1
+
+    if timeout is not None:
+        if timeout <= 0:
+            raise nx.NetworkXError("Timeout value must be greater than 0")
+        start = time.perf_counter()
+
+    def prune(cost):
+        if timeout is not None:
+            if time.perf_counter() - start > timeout:
+                return True
+        if upper_bound is not None:
+            if cost > upper_bound:
+                return True
+        if cost > maxcost_value:
+            return True
+        if strictly_decreasing and cost >= maxcost_value:
+            return True
+        return False
+
+    # Now go!
+
+    done_uv = [] if roots is None else [roots]
+
+    for vertex_path, edge_path, cost in get_edit_paths(
+        done_uv, pending_u, pending_v, Cv, [], pending_g, pending_h, Ce, initial_cost
+    ):
+        # assert sorted(G1.nodes) == sorted(u for u, v in vertex_path if u is not None)
+        # assert sorted(G2.nodes) == sorted(v for u, v in vertex_path if v is not None)
+        # assert sorted(G1.edges) == sorted(g for g, h in edge_path if g is not None)
+        # assert sorted(G2.edges) == sorted(h for g, h in edge_path if h is not None)
+        # print(vertex_path, edge_path, cost, file = sys.stderr)
+        # assert cost == maxcost_value
+        yield list(vertex_path), list(edge_path), float(cost)
+
+
+@nx.utils.not_implemented_for("multigraph")
+@nx._dispatchable(edge_attrs={"edge_attr": None}, node_attrs="node_attr")
+def weisfeiler_lehman_subgraph_hashes(
+    G,
+    edge_attr=None,
+    node_attr=None,
+    iterations=3,
+    digest_size=16,
+    include_initial_labels=False,
+):
+    """
+    Return a dictionary of subgraph hashes by node.
+
+    .. Warning:: Hash values for directed graphs have changed in version
+        v3.5. In previous versions, directed graphs did not distinguish in-
+        and outgoing edges.
+        Graphs without attributes previously performed an extra iteration of
+        WL at initialisation, which was not visible in the output of this
+        function. This hash value is now included in the returned dictionary,
+        shifting the other calculated hashes one position to the right. To
+        obtain the same last subgraph hash, increase the number of iterations
+        by one.
+        For more details, see `issue #7806
+        <https://github.com/networkx/networkx/issues/7806>`_.
+
+    Dictionary keys are nodes in `G`, and values are a list of hashes.
+    Each hash corresponds to a subgraph rooted at a given node u in `G`.
+    Lists of subgraph hashes are sorted in increasing order of depth from
+    their root node, with the hash at index i corresponding to a subgraph
+    of nodes at most i-hops (i edges) distance from u. Thus, each list will contain
+    `iterations` elements - a hash for a subgraph at each depth. If
+    `include_initial_labels` is set to `True`, each list will additionally
+    have contain a hash of the initial node label (or equivalently a
+    subgraph of depth 0) prepended, totalling ``iterations + 1`` elements.
+
+    The function iteratively aggregates and hashes neighborhoods of each node.
+    This is achieved for each step by replacing for each node its label from
+    the previous iteration with its hashed 1-hop neighborhood aggregate.
+    The new node label is then appended to a list of node labels for each
+    node.
+
+    To aggregate neighborhoods for a node $u$ at each step, all labels of
+    nodes adjacent to $u$ are concatenated. If the `edge_attr` parameter is set,
+    labels for each neighboring node are prefixed with the value of this attribute
+    along the connecting edge from this neighbor to node $u$. The resulting string
+    is then hashed to compress this information into a fixed digest size.
+
+    Thus, at the i-th iteration, nodes within i hops influence any given
+    hashed node label. We can therefore say that at depth $i$ for node $u$
+    we have a hash for a subgraph induced by the i-hop neighborhood of $u$.
+
+    The output can be used to create general Weisfeiler-Lehman graph kernels,
+    or generate features for graphs or nodes - for example to generate 'words' in
+    a graph as seen in the 'graph2vec' algorithm.
+    See [1]_ & [2]_ respectively for details.
+
+    Hashes are identical for isomorphic subgraphs and there exist strong
+    guarantees that non-isomorphic graphs will get different hashes.
+    See [1]_ for details.
+
+    If no node or edge attributes are provided, the degree of each node
+    is used as its initial label.
+    Otherwise, node and/or edge labels are used to compute the hash.
+
+    Parameters
+    ----------
+    G : graph
+        The graph to be hashed.
+        Can have node and/or edge attributes. Can also have no attributes.
+    edge_attr : string, optional (default=None)
+        The key in edge attribute dictionary to be used for hashing.
+        If None, edge labels are ignored.
+    node_attr : string, optional (default=None)
+        The key in node attribute dictionary to be used for hashing.
+        If None, and no edge_attr given, use the degrees of the nodes as labels.
+        If None, and edge_attr is given, each node starts with an identical label.
+    iterations : int, optional (default=3)
+        Number of neighbor aggregations to perform.
+        Should be larger for larger graphs.
+    digest_size : int, optional (default=16)
+        Size (in bytes) of blake2b hash digest to use for hashing node labels.
+        The default size is 16 bytes.
+    include_initial_labels : bool, optional (default=False)
+        If True, include the hashed initial node label as the first subgraph
+        hash for each node.
+
+    Returns
+    -------
+    node_subgraph_hashes : dict
+        A dictionary with each key given by a node in G, and each value given
+        by the subgraph hashes in order of depth from the key node.
+        Hashes are hexadecimal strings (hence ``2 * digest_size`` long).
+
+
+    Raises
+    ------
+    ValueError
+        If `iterations` is not a positve number.
+
+    Examples
+    --------
+    Finding similar nodes in different graphs:
+
+    >>> G1 = nx.Graph()
+    >>> G1.add_edges_from([(1, 2), (2, 3), (2, 4), (3, 5), (4, 6), (5, 7), (6, 7)])
+    >>> G2 = nx.Graph()
+    >>> G2.add_edges_from([(1, 3), (2, 3), (1, 6), (1, 5), (4, 6)])
+    >>> g1_hashes = nx.weisfeiler_lehman_subgraph_hashes(
+    ...     G1, iterations=4, digest_size=8
+    ... )
+    >>> g2_hashes = nx.weisfeiler_lehman_subgraph_hashes(
+    ...     G2, iterations=4, digest_size=8
+    ... )
+
+    Even though G1 and G2 are not isomorphic (they have different numbers of edges),
+    the hash sequence of depth 3 for node 1 in G1 and node 5 in G2 are similar:
+
+    >>> g1_hashes[1]
+    ['f6fc42039fba3776', 'a93b64973cfc8897', 'db1b43ae35a1878f', '57872a7d2059c1c0']
+    >>> g2_hashes[5]
+    ['f6fc42039fba3776', 'a93b64973cfc8897', 'db1b43ae35a1878f', '1716d2a4012fa4bc']
+
+    The first 3 WL subgraph hashes match. From this we can conclude that it's very
+    likely the neighborhood of 3 hops around these nodes are isomorphic.
+
+    However the 4-hop neighborhoods of ``G1`` and ``G2`` are not isomorphic since the
+    4th hashes in the lists above are not equal.
+
+    These nodes may be candidates to be classified together since their local topology
+    is similar.
+
+    Notes
+    -----
+    To hash the full graph when subgraph hashes are not needed, use
+    `weisfeiler_lehman_graph_hash` for efficiency.
+
+    Similarity between hashes does not imply similarity between graphs.
+
+    References
+    ----------
+    .. [1] Shervashidze, Nino, Pascal Schweitzer, Erik Jan Van Leeuwen,
+       Kurt Mehlhorn, and Karsten M. Borgwardt. Weisfeiler Lehman
+       Graph Kernels. Journal of Machine Learning Research. 2011.
+       http://www.jmlr.org/papers/volume12/shervashidze11a/shervashidze11a.pdf
+    .. [2] Annamalai Narayanan, Mahinthan Chandramohan, Rajasekar Venkatesan,
+       Lihui Chen, Yang Liu and Shantanu Jaiswa. graph2vec: Learning
+       Distributed Representations of Graphs. arXiv. 2017
+       https://arxiv.org/pdf/1707.05005.pdf
+
+    See also
+    --------
+    weisfeiler_lehman_graph_hash
+    """
+
+    if G.is_directed():
+        _neighborhood_aggregate = _neighborhood_aggregate_directed
+        warnings.warn(
+            "The hashes produced for directed graphs changed in v3.5"
+            " due to a bugfix (see documentation).",
+            UserWarning,
+            stacklevel=2,
+        )
+    else:
+        _neighborhood_aggregate = _neighborhood_aggregate_undirected
+
+    def weisfeiler_lehman_step(G, labels, node_subgraph_hashes, edge_attr=None):
+        """
+        Apply neighborhood aggregation to each node
+        in the graph.
+        Computes a dictionary with labels for each node.
+        Appends the new hashed label to the dictionary of subgraph hashes
+        originating from and indexed by each node in G
+        """
+        new_labels = {}
+        for node in G.nodes():
+            label = _neighborhood_aggregate(G, node, labels, edge_attr=edge_attr)
+            hashed_label = _hash_label(label, digest_size)
+            new_labels[node] = hashed_label
+            node_subgraph_hashes[node].append(hashed_label)
+        return new_labels
+
+    if iterations <= 0:
+        raise ValueError("The WL algorithm requires that `iterations` be positive")
+
+    node_labels = _init_node_labels(G, edge_attr, node_attr)
+
+    if include_initial_labels:
+        node_subgraph_hashes = {
+            k: [_hash_label(v, digest_size)] for k, v in node_labels.items()
+        }
+    else:
+        node_subgraph_hashes = defaultdict(list)
+
+    # If the graph has no attributes, initial labels are the nodes' degrees.
+    # This is equivalent to doing the first iterations of WL.
+    if not edge_attr and not node_attr:
+        iterations -= 1
+        for node in G.nodes():
+            hashed_label = _hash_label(node_labels[node], digest_size)
+            node_subgraph_hashes[node].append(hashed_label)
+
+    for _ in range(iterations):
+        node_labels = weisfeiler_lehman_step(
+            G, node_labels, node_subgraph_hashes, edge_attr
+        )
+
+    return dict(node_subgraph_hashes)
+
+
+class KernelRidge(MultiOutputMixin, RegressorMixin, BaseEstimator):
+    """Kernel ridge regression.
+
+    Kernel ridge regression (KRR) combines ridge regression (linear least
+    squares with l2-norm regularization) with the kernel trick. It thus
+    learns a linear function in the space induced by the respective kernel and
+    the data. For non-linear kernels, this corresponds to a non-linear
+    function in the original space.
+
+    The form of the model learned by KRR is identical to support vector
+    regression (SVR). However, different loss functions are used: KRR uses
+    squared error loss while support vector regression uses epsilon-insensitive
+    loss, both combined with l2 regularization. In contrast to SVR, fitting a
+    KRR model can be done in closed-form and is typically faster for
+    medium-sized datasets. On the other hand, the learned model is non-sparse
+    and thus slower than SVR, which learns a sparse model for epsilon > 0, at
+    prediction-time.
+
+    This estimator has built-in support for multi-variate regression
+    (i.e., when y is a 2d-array of shape [n_samples, n_targets]).
+
+    Read more in the :ref:`User Guide <kernel_ridge>`.
+
+    Parameters
+    ----------
+    alpha : float or array-like of shape (n_targets,), default=1.0
+        Regularization strength; must be a positive float. Regularization
+        improves the conditioning of the problem and reduces the variance of
+        the estimates. Larger values specify stronger regularization.
+        Alpha corresponds to ``1 / (2C)`` in other linear models such as
+        :class:`~sklearn.linear_model.LogisticRegression` or
+        :class:`~sklearn.svm.LinearSVC`. If an array is passed, penalties are
+        assumed to be specific to the targets. Hence they must correspond in
+        number. See :ref:`ridge_regression` for formula.
+
+    kernel : str or callable, default="linear"
+        Kernel mapping used internally. This parameter is directly passed to
+        :class:`~sklearn.metrics.pairwise.pairwise_kernels`.
+        If `kernel` is a string, it must be one of the metrics
+        in `pairwise.PAIRWISE_KERNEL_FUNCTIONS` or "precomputed".
+        If `kernel` is "precomputed", X is assumed to be a kernel matrix.
+        Alternatively, if `kernel` is a callable function, it is called on
+        each pair of instances (rows) and the resulting value recorded. The
+        callable should take two rows from X as input and return the
+        corresponding kernel value as a single number. This means that
+        callables from :mod:`sklearn.metrics.pairwise` are not allowed, as
+        they operate on matrices, not single samples. Use the string
+        identifying the kernel instead.
+
+    gamma : float, default=None
+        Gamma parameter for the RBF, laplacian, polynomial, exponential chi2
+        and sigmoid kernels. Interpretation of the default value is left to
+        the kernel; see the documentation for sklearn.metrics.pairwise.
+        Ignored by other kernels.
+
+    degree : float, default=3
+        Degree of the polynomial kernel. Ignored by other kernels.
+
+    coef0 : float, default=1
+        Zero coefficient for polynomial and sigmoid kernels.
+        Ignored by other kernels.
+
+    kernel_params : dict, default=None
+        Additional parameters (keyword arguments) for kernel function passed
+        as callable object.
+
+    Attributes
+    ----------
+    dual_coef_ : ndarray of shape (n_samples,) or (n_samples, n_targets)
+        Representation of weight vector(s) in kernel space
+
+    X_fit_ : {ndarray, sparse matrix} of shape (n_samples, n_features)
+        Training data, which is also required for prediction. If
+        kernel == "precomputed" this is instead the precomputed
+        training matrix, of shape (n_samples, n_samples).
+
+    n_features_in_ : int
+        Number of features seen during :term:`fit`.
+
+        .. versionadded:: 0.24
+
+    feature_names_in_ : ndarray of shape (`n_features_in_`,)
+        Names of features seen during :term:`fit`. Defined only when `X`
+        has feature names that are all strings.
+
+        .. versionadded:: 1.0
+
+    See Also
+    --------
+    sklearn.gaussian_process.GaussianProcessRegressor : Gaussian
+        Process regressor providing automatic kernel hyperparameters
+        tuning and predictions uncertainty.
+    sklearn.linear_model.Ridge : Linear ridge regression.
+    sklearn.linear_model.RidgeCV : Ridge regression with built-in
+        cross-validation.
+    sklearn.svm.SVR : Support Vector Regression accepting a large variety
+        of kernels.
+
+    References
+    ----------
+    * Kevin P. Murphy
+      "Machine Learning: A Probabilistic Perspective", The MIT Press
+      chapter 14.4.3, pp. 492-493
+
+    Examples
+    --------
+    >>> from sklearn.kernel_ridge import KernelRidge
+    >>> import numpy as np
+    >>> n_samples, n_features = 10, 5
+    >>> rng = np.random.RandomState(0)
+    >>> y = rng.randn(n_samples)
+    >>> X = rng.randn(n_samples, n_features)
+    >>> krr = KernelRidge(alpha=1.0)
+    >>> krr.fit(X, y)
+    KernelRidge(alpha=1.0)
+    """
+
+    _parameter_constraints: dict = {
+        "alpha": [Interval(Real, 0, None, closed="left"), "array-like"],
+        "kernel": [
+            StrOptions(set(PAIRWISE_KERNEL_FUNCTIONS.keys()) | {"precomputed"}),
+            callable,
+        ],
+        "gamma": [Interval(Real, 0, None, closed="left"), None],
+        "degree": [Interval(Real, 0, None, closed="left")],
+        "coef0": [Interval(Real, None, None, closed="neither")],
+        "kernel_params": [dict, None],
+    }
+
+    def __init__(
+        self,
+        alpha=1,
+        *,
+        kernel="linear",
+        gamma=None,
+        degree=3,
+        coef0=1,
+        kernel_params=None,
+    ):
+        self.alpha = alpha
+        self.kernel = kernel
+        self.gamma = gamma
+        self.degree = degree
+        self.coef0 = coef0
+        self.kernel_params = kernel_params
+
+    def _get_kernel(self, X, Y=None):
+        if callable(self.kernel):
+            params = self.kernel_params or {}
+        else:
+            params = {"gamma": self.gamma, "degree": self.degree, "coef0": self.coef0}
+        return pairwise_kernels(X, Y, metric=self.kernel, filter_params=True, **params)
+
+    def __sklearn_tags__(self):
+        tags = super().__sklearn_tags__()
+        tags.input_tags.sparse = True
+        tags.input_tags.pairwise = self.kernel == "precomputed"
+        return tags
+
+    @_fit_context(prefer_skip_nested_validation=True)
+    def fit(self, X, y, sample_weight=None):
+        """Fit Kernel Ridge regression model.
+
+        Parameters
+        ----------
+        X : {array-like, sparse matrix} of shape (n_samples, n_features)
+            Training data. If kernel == "precomputed" this is instead
+            a precomputed kernel matrix, of shape (n_samples, n_samples).
+
+        y : array-like of shape (n_samples,) or (n_samples, n_targets)
+            Target values.
+
+        sample_weight : float or array-like of shape (n_samples,), default=None
+            Individual weights for each sample, ignored if None is passed.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
+        # Convert data
+        X, y = validate_data(
+            self, X, y, accept_sparse=("csr", "csc"), multi_output=True, y_numeric=True
+        )
+        if sample_weight is not None and not isinstance(sample_weight, float):
+            sample_weight = _check_sample_weight(sample_weight, X)
+
+        K = self._get_kernel(X)
+        alpha = np.atleast_1d(self.alpha)
+
+        ravel = False
+        if len(y.shape) == 1:
+            y = y.reshape(-1, 1)
+            ravel = True
+
+        copy = self.kernel == "precomputed"
+        self.dual_coef_ = _solve_cholesky_kernel(K, y, alpha, sample_weight, copy)
+        if ravel:
+            self.dual_coef_ = self.dual_coef_.ravel()
+
+        self.X_fit_ = X
+
+        return self
+
+    def predict(self, X):
+        """Predict using the kernel ridge model.
+
+        Parameters
+        ----------
+        X : {array-like, sparse matrix} of shape (n_samples, n_features)
+            Samples. If kernel == "precomputed" this is instead a
+            precomputed kernel matrix, shape = [n_samples,
+            n_samples_fitted], where n_samples_fitted is the number of
+            samples used in the fitting for this estimator.
+
+        Returns
+        -------
+        C : ndarray of shape (n_samples,) or (n_samples, n_targets)
+            Returns predicted values.
+        """
+        check_is_fitted(self)
+        X = validate_data(self, X, accept_sparse=("csr", "csc"), reset=False)
+        K = self._get_kernel(X, self.X_fit_)
+        return np.dot(K, self.dual_coef_)
+
+
+class KernelCenterer(ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEstimator):
+    r"""Center an arbitrary kernel matrix :math:`K`.
+
+    Let define a kernel :math:`K` such that:
+
+    .. math::
+        K(X, Y) = \phi(X) . \phi(Y)^{T}
+
+    :math:`\phi(X)` is a function mapping of rows of :math:`X` to a
+    Hilbert space and :math:`K` is of shape `(n_samples, n_samples)`.
+
+    This class allows to compute :math:`\tilde{K}(X, Y)` such that:
+
+    .. math::
+        \tilde{K(X, Y)} = \tilde{\phi}(X) . \tilde{\phi}(Y)^{T}
+
+    :math:`\tilde{\phi}(X)` is the centered mapped data in the Hilbert
+    space.
+
+    `KernelCenterer` centers the features without explicitly computing the
+    mapping :math:`\phi(\cdot)`. Working with centered kernels is sometime
+    expected when dealing with algebra computation such as eigendecomposition
+    for :class:`~sklearn.decomposition.KernelPCA` for instance.
+
+    Read more in the :ref:`User Guide <kernel_centering>`.
+
+    Attributes
+    ----------
+    K_fit_rows_ : ndarray of shape (n_samples,)
+        Average of each column of kernel matrix.
+
+    K_fit_all_ : float
+        Average of kernel matrix.
+
+    n_features_in_ : int
+        Number of features seen during :term:`fit`.
+
+        .. versionadded:: 0.24
+
+    feature_names_in_ : ndarray of shape (`n_features_in_`,)
+        Names of features seen during :term:`fit`. Defined only when `X`
+        has feature names that are all strings.
+
+        .. versionadded:: 1.0
+
+    See Also
+    --------
+    sklearn.kernel_approximation.Nystroem : Approximate a kernel map
+        using a subset of the training data.
+
+    References
+    ----------
+    .. [1] `Schölkopf, Bernhard, Alexander Smola, and Klaus-Robert Müller.
+       "Nonlinear component analysis as a kernel eigenvalue problem."
+       Neural computation 10.5 (1998): 1299-1319.
+       <https://www.mlpack.org/papers/kpca.pdf>`_
+
+    Examples
+    --------
+    >>> from sklearn.preprocessing import KernelCenterer
+    >>> from sklearn.metrics.pairwise import pairwise_kernels
+    >>> X = [[ 1., -2.,  2.],
+    ...      [ -2.,  1.,  3.],
+    ...      [ 4.,  1., -2.]]
+    >>> K = pairwise_kernels(X, metric='linear')
+    >>> K
+    array([[  9.,   2.,  -2.],
+           [  2.,  14., -13.],
+           [ -2., -13.,  21.]])
+    >>> transformer = KernelCenterer().fit(K)
+    >>> transformer
+    KernelCenterer()
+    >>> transformer.transform(K)
+    array([[  5.,   0.,  -5.],
+           [  0.,  14., -14.],
+           [ -5., -14.,  19.]])
+    """
+
+    # X is called K in these methods.
+    __metadata_request__transform = {"K": metadata_routing.UNUSED}
+    __metadata_request__fit = {"K": metadata_routing.UNUSED}
+
+    def fit(self, K, y=None):
+        """Fit KernelCenterer.
+
+        Parameters
+        ----------
+        K : ndarray of shape (n_samples, n_samples)
+            Kernel matrix.
+
+        y : None
+            Ignored.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
+        xp, _ = get_namespace(K)
+
+        K = validate_data(
+            self, K, dtype=_array_api.supported_float_dtypes(xp, device=device(K))
+        )
+
+        if K.shape[0] != K.shape[1]:
+            raise ValueError(
+                "Kernel matrix must be a square matrix."
+                " Input is a {}x{} matrix.".format(K.shape[0], K.shape[1])
+            )
+
+        n_samples = K.shape[0]
+        self.K_fit_rows_ = xp.sum(K, axis=0) / n_samples
+        self.K_fit_all_ = xp.sum(self.K_fit_rows_) / n_samples
+        return self
+
+    def transform(self, K, copy=True):
+        """Center kernel matrix.
+
+        Parameters
+        ----------
+        K : ndarray of shape (n_samples1, n_samples2)
+            Kernel matrix.
+
+        copy : bool, default=True
+            Set to False to perform inplace computation.
+
+        Returns
+        -------
+        K_new : ndarray of shape (n_samples1, n_samples2)
+            Returns the instance itself.
+        """
+        check_is_fitted(self)
+
+        xp, _ = get_namespace(K)
+
+        K = validate_data(
+            self,
+            K,
+            copy=copy,
+            force_writeable=True,
+            dtype=_array_api.supported_float_dtypes(xp, device=device(K)),
+            reset=False,
+        )
+
+        K_pred_cols = (xp.sum(K, axis=1) / self.K_fit_rows_.shape[0])[:, None]
+
+        K -= self.K_fit_rows_
+        K -= K_pred_cols
+        K += self.K_fit_all_
+
+        return K
+
+    @property
+    def _n_features_out(self):
+        """Number of transformed output features."""
+        # Used by ClassNamePrefixFeaturesOutMixin. This model preserves the
+        # number of input features but this is not a one-to-one mapping in the
+        # usual sense. Hence the choice not to use OneToOneFeatureMixin to
+        # implement get_feature_names_out for this class.
+        return self.n_features_in_
+
+    def __sklearn_tags__(self):
+        tags = super().__sklearn_tags__()
+        tags.input_tags.pairwise = True
+        tags.array_api_support = True
+        return tags

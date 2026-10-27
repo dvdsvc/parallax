@@ -1,0 +1,322 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{16}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Alzu'bi et~al\mbox{.}(2026)]%
+        {roma}
+\bibfield{author}{\bibinfo{person}{Salaheddin Alzu'bi}, \bibinfo{person}{Baran
+  Nama}, \bibinfo{person}{Arda Kaz}, \bibinfo{person}{Anushri Eswaran},
+  \bibinfo{person}{Weiyuan Chen}, \bibinfo{person}{Sarvesh Khetan},
+  \bibinfo{person}{Rishab Bala}, \bibinfo{person}{Tu Vu}, {and}
+  \bibinfo{person}{Sewoong Oh}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{ROMA: Recursive Open Meta-Agent Framework for
+  Long-Horizon Multi-Agent Systems}}.
+\newblock \bibinfo{howpublished}{arXiv:2602.01848}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.01848}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Anderson(2001)]%
+        {anderson}
+\bibfield{author}{\bibinfo{person}{Marti~J. Anderson}.}
+  \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{{A new method for non-parametric multivariate
+  analysis of variance}}.
+\newblock \bibinfo{journal}{\emph{Austral Ecology}} \bibinfo{volume}{26},
+  \bibinfo{number}{1} (\bibinfo{year}{2001}), \bibinfo{pages}{32--46}.
+\newblock
+\href{https://doi.org/10.1111/j.1442-9993.2001.01070.pp.x}{doi:\nolinkurl{10.1111/j.1442-9993.2001.01070.pp.x}}
+
+
+\bibitem[Chen et~al\mbox{.}(2021)]%
+        {humaneval}
+\bibfield{author}{\bibinfo{person}{Mark Chen}, \bibinfo{person}{Jerry Tworek},
+  \bibinfo{person}{Heewoo Jun}, \bibinfo{person}{Qiming Yuan},
+  \bibinfo{person}{Henrique~Ponde de Oliveira~Pinto}, \bibinfo{person}{Jared
+  Kaplan}, \bibinfo{person}{Harri Edwards}, \bibinfo{person}{Yuri Burda},
+  \bibinfo{person}{Nicholas Joseph}, \bibinfo{person}{Greg Brockman},
+  \bibinfo{person}{Alex Ray}, \bibinfo{person}{Raul Puri},
+  \bibinfo{person}{Gretchen Krueger}, \bibinfo{person}{Michael Petrov},
+  \bibinfo{person}{Heidy Khlaaf}, \bibinfo{person}{Girish Sastry},
+  \bibinfo{person}{Pamela Mishkin}, \bibinfo{person}{Brooke Chan},
+  \bibinfo{person}{Scott Gray}, \bibinfo{person}{Nick Ryder},
+  \bibinfo{person}{Mikhail Pavlov}, \bibinfo{person}{Alethea Power},
+  \bibinfo{person}{Lukasz Kaiser}, \bibinfo{person}{Mohammad Bavarian},
+  \bibinfo{person}{Clemens Winter}, \bibinfo{person}{Philippe Tillet},
+  \bibinfo{person}{Felipe~Petroski Such}, \bibinfo{person}{Dave Cummings},
+  \bibinfo{person}{Matthias Plappert}, \bibinfo{person}{Fotios Chantzis},
+  \bibinfo{person}{Elizabeth Barnes}, \bibinfo{person}{Ariel Herbert-Voss},
+  \bibinfo{person}{William~Hebgen Guss}, \bibinfo{person}{Alex Nichol},
+  \bibinfo{person}{Alex Paino}, \bibinfo{person}{Nikolas Tezak},
+  \bibinfo{person}{Jie Tang}, \bibinfo{person}{Igor Babuschkin},
+  \bibinfo{person}{Suchir Balaji}, \bibinfo{person}{Shantanu Jain},
+  \bibinfo{person}{William Saunders}, \bibinfo{person}{Christopher Hesse},
+  \bibinfo{person}{Andrew~N. Carr}, \bibinfo{person}{Jan Leike},
+  \bibinfo{person}{Josh Achiam}, \bibinfo{person}{Vedant Misra},
+  \bibinfo{person}{Evan Morikawa}, \bibinfo{person}{Alec Radford},
+  \bibinfo{person}{Matthew Knight}, \bibinfo{person}{Miles Brundage},
+  \bibinfo{person}{Mira Murati}, \bibinfo{person}{Katie Mayer},
+  \bibinfo{person}{Peter Welinder}, \bibinfo{person}{Bob McGrew},
+  \bibinfo{person}{Dario Amodei}, \bibinfo{person}{Sam McCandlish},
+  \bibinfo{person}{Ilya Sutskever}, {and} \bibinfo{person}{Wojciech Zaremba}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{{Evaluating Large Language Models Trained on Code}}.
+\newblock \bibinfo{howpublished}{arXiv:2107.03374v2}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2107.03374v2}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Fei et~al\mbox{.}(2026)]%
+        {institutions}
+\bibfield{author}{\bibinfo{person}{Chao Fei}, \bibinfo{person}{Hongcheng Guo},
+  {and} \bibinfo{person}{Yanghua Xiao}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{When Agents Evolve, Institutions Follow}}.
+\newblock \bibinfo{howpublished}{arXiv:2604.27691}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2604.27691}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Guo et~al\mbox{.}(2026)]%
+        {guoorganized}
+\bibfield{author}{\bibinfo{person}{Xudong Guo}, \bibinfo{person}{Kaixuan
+  Huang}, \bibinfo{person}{Jiale Liu}, \bibinfo{person}{Wenhui Fan},
+  \bibinfo{person}{Natalia Vélez}, \bibinfo{person}{Qingyun Wu},
+  \bibinfo{person}{Huazheng Wang}, \bibinfo{person}{Thomas~L. Griffiths}, {and}
+  \bibinfo{person}{Mengdi Wang}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{{Embodied LLM Agents Learn to Cooperate in
+  Organized Teams}}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Computational Social
+  Systems}} \bibinfo{volume}{13}, \bibinfo{number}{2} (\bibinfo{year}{2026}),
+  \bibinfo{pages}{2514--2530}.
+\newblock
+\shownote{Preprint: arXiv:2403.12482v2}.
+\newblock
+\href{https://doi.org/10.1109/TCSS.2025.3637527}{doi:\nolinkurl{10.1109/TCSS.2025.3637527}}
+
+
+\bibitem[Krishna et~al\mbox{.}(2025)]%
+        {frames}
+\bibfield{author}{\bibinfo{person}{Satyapriya Krishna},
+  \bibinfo{person}{Kalpesh Krishna}, \bibinfo{person}{Anhad Mohananey},
+  \bibinfo{person}{Steven Schwarcz}, \bibinfo{person}{Adam Stambler},
+  \bibinfo{person}{Shyam Upadhyay}, {and} \bibinfo{person}{Manaal Faruqui}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{Fact, Fetch, and Reason: A Unified Evaluation of
+  Retrieval-Augmented Generation}}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 2025 Conference of the North American Chapter of the Association for
+  Computational Linguistics}}.
+\newblock
+\shownote{arXiv:2409.12941}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2409.12941}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Li et~al\mbox{.}(2024)]%
+        {massurvey}
+\bibfield{author}{\bibinfo{person}{Xinyi Li}, \bibinfo{person}{Sai Wang},
+  \bibinfo{person}{Siqi Zeng}, \bibinfo{person}{Yu Wu}, {and}
+  \bibinfo{person}{Yi Yang}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{A survey on LLM-based multi-agent systems:
+  workflow, infrastructure, and challenges}}.
+\newblock \bibinfo{journal}{\emph{Vicinagearth}}  \bibinfo{volume}{1}, Article
+  \bibinfo{articleno}{9} (\bibinfo{year}{2024}).
+\newblock
+\href{https://doi.org/10.1007/s44336-024-00009-2}{doi:\nolinkurl{10.1007/s44336-024-00009-2}}
+
+
+\bibitem[Pawlik and Augsten(2016)]%
+        {apted}
+\bibfield{author}{\bibinfo{person}{Mateusz Pawlik} {and}
+  \bibinfo{person}{Nikolaus Augsten}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{{Tree edit distance: Robust and memory-efficient}}.
+\newblock \bibinfo{journal}{\emph{Information Systems}}  \bibinfo{volume}{56}
+  (\bibinfo{year}{2016}), \bibinfo{pages}{157--173}.
+\newblock
+\href{https://doi.org/10.1016/j.is.2015.08.004}{doi:\nolinkurl{10.1016/j.is.2015.08.004}}
+
+
+\bibitem[Pedregosa et~al\mbox{.}(2011)]%
+        {sklearn}
+\bibfield{author}{\bibinfo{person}{Fabian Pedregosa}, \bibinfo{person}{Gaël
+  Varoquaux}, \bibinfo{person}{Alexandre Gramfort}, \bibinfo{person}{Vincent
+  Michel}, \bibinfo{person}{Bertrand Thirion}, \bibinfo{person}{Olivier
+  Grisel}, \bibinfo{person}{Mathieu Blondel}, \bibinfo{person}{Peter
+  Prettenhofer}, \bibinfo{person}{Ron Weiss}, \bibinfo{person}{Vincent
+  Dubourg}, \bibinfo{person}{Jake Vanderplas}, \bibinfo{person}{Alexandre
+  Passos}, \bibinfo{person}{David Cournapeau}, \bibinfo{person}{Matthieu
+  Brucher}, \bibinfo{person}{Matthieu Perrot}, {and} \bibinfo{person}{Édouard
+  Duchesnay}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{{Scikit-learn: Machine Learning in Python}}.
+\newblock \bibinfo{journal}{\emph{Journal of Machine Learning Research}}
+  \bibinfo{volume}{12}, \bibinfo{number}{85} (\bibinfo{year}{2011}),
+  \bibinfo{pages}{2825--2830}.
+\newblock
+\urldef\tempurl%
+\url{https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Pham et~al\mbox{.}(2026)]%
+        {sealqa}
+\bibfield{author}{\bibinfo{person}{Thinh Pham}, \bibinfo{person}{Nguyen
+  Nguyen}, \bibinfo{person}{Pratibha Zunjare}, \bibinfo{person}{Weiyuan Chen},
+  \bibinfo{person}{Yu-Min Tseng}, {and} \bibinfo{person}{Tu Vu}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{{SealQA: Raising the Bar for Reasoning in
+  Search-Augmented Language Models}}. In
+  \bibinfo{booktitle}{\emph{International Conference on Learning
+  Representations}}.
+\newblock
+\shownote{arXiv:2506.01062}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2506.01062}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Stone(1974)]%
+        {stone}
+\bibfield{author}{\bibinfo{person}{M. Stone}.} \bibinfo{year}{1974}\natexlab{}.
+\newblock \showarticletitle{{Cross-Validatory Choice and Assessment of
+  Statistical Predictions}}.
+\newblock \bibinfo{journal}{\emph{Journal of the Royal Statistical Society,
+  Series B (Methodological)}} \bibinfo{volume}{36}, \bibinfo{number}{2}
+  (\bibinfo{year}{1974}), \bibinfo{pages}{111--133}.
+\newblock
+\href{https://doi.org/10.1111/j.2517-6161.1974.tb00994.x}{doi:\nolinkurl{10.1111/j.2517-6161.1974.tb00994.x}}
+
+
+\bibitem[Wang et~al\mbox{.}(2024)]%
+        {mmlupro}
+\bibfield{author}{\bibinfo{person}{Yubo Wang}, \bibinfo{person}{Xueguang Ma},
+  \bibinfo{person}{Ge Zhang}, \bibinfo{person}{Yuansheng Ni},
+  \bibinfo{person}{Abhranil Chandra}, \bibinfo{person}{Shiguang Guo},
+  \bibinfo{person}{Weiming Ren}, \bibinfo{person}{Aaran Arulraj},
+  \bibinfo{person}{Xuan He}, \bibinfo{person}{Ziyan Jiang},
+  \bibinfo{person}{Tianle Li}, \bibinfo{person}{Max Ku}, \bibinfo{person}{Kai
+  Wang}, \bibinfo{person}{Alex Zhuang}, \bibinfo{person}{Rongqi Fan},
+  \bibinfo{person}{Xiang Yue}, {and} \bibinfo{person}{Wenhu Chen}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{MMLU-Pro: A More Robust and Challenging Multi-Task
+  Language Understanding Benchmark}}. In \bibinfo{booktitle}{\emph{Advances in
+  Neural Information Processing Systems, Datasets and Benchmarks Track}}.
+\newblock
+\shownote{arXiv:2406.01574}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2406.01574}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Wang et~al\mbox{.}(2026)]%
+        {orgagent}
+\bibfield{author}{\bibinfo{person}{Yiru Wang}, \bibinfo{person}{Xinyue Shen},
+  \bibinfo{person}{Yaohui Han}, \bibinfo{person}{Michael Backes},
+  \bibinfo{person}{Pin-Yu Chen}, {and} \bibinfo{person}{Tsung-Yi Ho}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{OrgAgent: Organize Your Multi-Agent System like a
+  Company}}.
+\newblock \bibinfo{howpublished}{arXiv:2604.01020}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2604.01020}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Wang et~al\mbox{.}(2025)]%
+        {talkhier}
+\bibfield{author}{\bibinfo{person}{Zhao Wang}, \bibinfo{person}{Sota Moriyama},
+  \bibinfo{person}{Wei-Yao Wang}, \bibinfo{person}{Briti Gangopadhyay}, {and}
+  \bibinfo{person}{Shingo Takamatsu}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{Talk Structurally, Act Hierarchically: A
+  Collaborative Framework for LLM Multi-Agent Systems}}.
+\newblock \bibinfo{howpublished}{arXiv:2502.11098}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.11098}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Yao et~al\mbox{.}(2024)]%
+        {taubench}
+\bibfield{author}{\bibinfo{person}{Shunyu Yao}, \bibinfo{person}{Noah Shinn},
+  \bibinfo{person}{Pedram Razavi}, {and} \bibinfo{person}{Karthik Narasimhan}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{{$\tau$-bench: A Benchmark for Tool-Agent-User
+  Interaction in Real-World Domains}}.
+\newblock \bibinfo{howpublished}{arXiv:2406.12045v1}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2406.12045v1}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Zhu et~al\mbox{.}(2025)]%
+        {mab}
+\bibfield{author}{\bibinfo{person}{Kunlun Zhu}, \bibinfo{person}{Hongyi Du},
+  \bibinfo{person}{Zhaochen Hong}, \bibinfo{person}{Xiaocheng Yang},
+  \bibinfo{person}{Shuyi Guo}, \bibinfo{person}{Zhe Wang},
+  \bibinfo{person}{Zhenhailong Wang}, \bibinfo{person}{Cheng Qian},
+  \bibinfo{person}{Xiangru Tang}, \bibinfo{person}{Heng Ji}, {and}
+  \bibinfo{person}{Jiaxuan You}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{MultiAgentBench: Evaluating the Collaboration and
+  Competition of LLM Agents}}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  63rd Annual Meeting of the Association for Computational Linguistics (Volume
+  1: Long Papers)}}. \bibinfo{pages}{8580--8622}.
+\newblock
+\href{https://doi.org/10.18653/v1/2025.acl-long.421}{doi:\nolinkurl{10.18653/v1/2025.acl-long.421}}
+
+
+\end{thebibliography}

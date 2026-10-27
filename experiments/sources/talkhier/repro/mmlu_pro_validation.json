@@ -1,0 +1,32 @@
+{
+  "verified_at_utc": "2026-10-06T07:35:58.687565+00:00",
+  "dataset": "TIGER-Lab/MMLU-Pro",
+  "dataset_revision": "b189ec765aa7ed75c8acfea42df31fdae71f97be",
+  "population_size": 1299,
+  "sample_size": 100,
+  "seed": 42,
+  "split": "test",
+  "category": "physics",
+  "exclusions": [],
+  "sample_manifest_sha256": "3a74f4669898b1e7521dae29e6cbc154857ed2ea447acf4d800da522ce0984c6",
+  "independent_full_parquet_record_gold_id_comparison": true,
+  "saved_script_replay_core_files_byte_identical": {
+    "questions.jsonl": true,
+    "indices.json": true,
+    "physics_indices.json": true,
+    "question_ids.json": true,
+    "draw_order.json": true,
+    "indices.csv": true
+  },
+  "subset_checksums_valid": true,
+  "sampler_snapshot_matches_current": true,
+  "initial_draw_unchanged": true,
+  "option_counts": {
+    "10": 97,
+    "9": 2,
+    "7": 1
+  },
+  "independent_reader_pyarrow_version": "25.0.1",
+  "agent_calls": 0,
+  "grader_calls": 0
+}

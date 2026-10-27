@@ -1,0 +1,532 @@
+{
+  "created_at": "2026-10-04T13:20:44.790253+00:00",
+  "old_study": "external_archive/2026-10-02/frames/outputs/frames80_BASE_V2_paper_20261004T120825Z",
+  "size": 50,
+  "forced_started_count": 36,
+  "hash_seed": "frames50_budget_20261004_v1",
+  "hash_rule": "sha256(seed|stratum|official_task_id), ascending; after mandatory already-started anchors",
+  "source_index_sha256": "d11d3aab2b97fd7c2eedac17790b42866260b0a5760db56bf4283eb90e955223",
+  "started_snapshot": {
+    "274": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0032",
+        "recorder": "planned"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0032",
+        "recorder": "planned"
+      }
+    },
+    "38": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0035",
+        "recorder": "planned"
+      }
+    },
+    "535": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0003",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0003",
+        "recorder": "complete"
+      }
+    },
+    "252": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0004",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0004",
+        "recorder": "partial"
+      }
+    },
+    "337": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0005",
+        "recorder": "partial"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0005",
+        "recorder": "partial"
+      }
+    },
+    "477": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0002",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0002",
+        "recorder": "complete"
+      }
+    },
+    "14": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0034",
+        "recorder": "planned"
+      }
+    },
+    "815": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0033",
+        "recorder": "planned"
+      }
+    },
+    "63": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0011",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0011",
+        "recorder": "complete"
+      }
+    },
+    "126": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0029",
+        "recorder": "planned"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0029",
+        "recorder": "planned"
+      }
+    },
+    "547": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0016",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0016",
+        "recorder": "complete"
+      }
+    },
+    "507": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0020",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0020",
+        "recorder": "complete"
+      }
+    },
+    "689": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0018",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0018",
+        "recorder": "complete"
+      }
+    },
+    "629": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0027",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0027",
+        "recorder": "planned"
+      }
+    },
+    "159": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0019",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0019",
+        "recorder": "complete"
+      }
+    },
+    "83": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0026",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0026",
+        "recorder": "planned"
+      }
+    },
+    "35": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0021",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0021",
+        "recorder": "complete"
+      }
+    },
+    "276": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0028",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0028",
+        "recorder": "complete"
+      }
+    },
+    "627": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0017",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0017",
+        "recorder": "planned"
+      }
+    },
+    "794": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0010",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0010",
+        "recorder": "complete"
+      }
+    },
+    "473": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0009",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0009",
+        "recorder": "complete"
+      }
+    },
+    "744": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0031",
+        "recorder": "planned"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0031",
+        "recorder": "planned"
+      }
+    },
+    "88": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0007",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0007",
+        "recorder": "planned"
+      }
+    },
+    "597": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0000",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0000",
+        "recorder": "complete"
+      }
+    },
+    "486": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0001",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0001",
+        "recorder": "complete"
+      }
+    },
+    "711": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0006",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0006",
+        "recorder": "complete"
+      }
+    },
+    "586": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0030",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0030",
+        "recorder": "complete"
+      }
+    },
+    "705": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0008",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0008",
+        "recorder": "complete"
+      }
+    },
+    "112": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0015",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0015",
+        "recorder": "complete"
+      }
+    },
+    "442": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0012",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0012",
+        "recorder": "complete"
+      }
+    },
+    "229": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0024",
+        "recorder": "planned"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0024",
+        "recorder": "planned"
+      }
+    },
+    "765": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0023",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0023",
+        "recorder": "complete"
+      }
+    },
+    "816": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0022",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0022",
+        "recorder": "complete"
+      }
+    },
+    "61": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0025",
+        "recorder": "planned"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0025",
+        "recorder": "complete"
+      }
+    },
+    "314": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0013",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0013",
+        "recorder": "complete"
+      }
+    },
+    "33": {
+      "BASE": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-aefa071975ea416ca0ff045f7d877379.workers/q-0014",
+        "recorder": "complete"
+      },
+      "V2": {
+        "worker": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-8476fca6d4074892a5f5d19ef6ba520c.workers/q-0014",
+        "recorder": "complete"
+      }
+    }
+  },
+  "selection_used_correctness_or_judge_scores": false,
+  "selection_used_started_status": true,
+  "quotas": [
+    {
+      "stratum": "E2_L1",
+      "original_population_count": 181,
+      "original80_count": 18,
+      "ideal50": 11.558109833971903,
+      "already_started": 8,
+      "chosen50": 12
+    },
+    {
+      "stratum": "E2_L2+",
+      "original_population_count": 115,
+      "original80_count": 12,
+      "ideal50": 7.343550446998723,
+      "already_started": 2,
+      "chosen50": 7
+    },
+    {
+      "stratum": "E3_L1",
+      "original_population_count": 133,
+      "original80_count": 14,
+      "ideal50": 8.492975734355044,
+      "already_started": 7,
+      "chosen50": 8
+    },
+    {
+      "stratum": "E3_L2+",
+      "original_population_count": 136,
+      "original80_count": 14,
+      "ideal50": 8.684546615581098,
+      "already_started": 6,
+      "chosen50": 9
+    },
+    {
+      "stratum": "E4_L1",
+      "original_population_count": 51,
+      "original80_count": 5,
+      "ideal50": 3.256704980842912,
+      "already_started": 3,
+      "chosen50": 3
+    },
+    {
+      "stratum": "E4_L2+",
+      "original_population_count": 79,
+      "original80_count": 8,
+      "ideal50": 5.044699872286079,
+      "already_started": 4,
+      "chosen50": 5
+    },
+    {
+      "stratum": "E5+_L1",
+      "original_population_count": 36,
+      "original80_count": 4,
+      "ideal50": 2.2988505747126435,
+      "already_started": 3,
+      "chosen50": 3
+    },
+    {
+      "stratum": "E5+_L2+",
+      "original_population_count": 52,
+      "original80_count": 5,
+      "ideal50": 3.3205619412515963,
+      "already_started": 3,
+      "chosen50": 3
+    }
+  ],
+  "selected_official_ids": [
+    "14",
+    "33",
+    "35",
+    "38",
+    "52",
+    "61",
+    "63",
+    "83",
+    "88",
+    "112",
+    "126",
+    "137",
+    "159",
+    "189",
+    "229",
+    "252",
+    "274",
+    "276",
+    "304",
+    "314",
+    "337",
+    "442",
+    "456",
+    "470",
+    "473",
+    "477",
+    "486",
+    "494",
+    "506",
+    "507",
+    "527",
+    "535",
+    "541",
+    "547",
+    "586",
+    "597",
+    "622",
+    "627",
+    "629",
+    "646",
+    "689",
+    "705",
+    "711",
+    "737",
+    "744",
+    "762",
+    "765",
+    "794",
+    "815",
+    "816"
+  ],
+  "selected_loader_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    38,
+    42,
+    44,
+    53,
+    59,
+    60,
+    62,
+    67,
+    70,
+    71,
+    72,
+    73,
+    77,
+    79
+  ],
+  "scope_warning": "Post-launch cost-constrained subset with started-task anchors; not a fresh unconditional SSRS draw. 50 planned tasks, not a guarantee of 50 successful matched pairs; errors remain missing."
+}

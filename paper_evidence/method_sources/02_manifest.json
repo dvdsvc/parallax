@@ -1,0 +1,11 @@
+{
+  "script_commit": "b590af4ae10c76461465a4c41fd699ece685dcea",
+  "script_sha256": "5c2038013fdc82cc3bcd6e56d62c67ece8718393988aa1fe11395796c44e84b4",
+  "source_checksum_files": 50,
+  "runtime": {
+    "python": "3.12.11",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1"
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "scope": "Entire primary SEAL-0 H/R1/R2, selected FRAMES50, and TalkHier Pro Physics100. No new inference or inferential testing.",
+  "SEAL0": {
+    "questions": 94,
+    "paired_rounds": 272,
+    "native_grade_records_checked": 544,
+    "integrated_grade_records_without_direct_link": [],
+    "mean_scores": {
+      "BASE": 0.35638297872340424,
+      "V2": 0.3546099290780142
+    },
+    "mean_trees": {
+      "BASE": {
+        "nodes": 5.086879432624113,
+        "expanded": 1.4929078014184396,
+        "leaves": 3.5939716312056738,
+        "max_depth": 0.8067375886524822,
+        "hit_depth3": 0.23936170212765956,
+        "mean_depth": 0.5452645012491563,
+        "total_tokens": 894741.1294326241
+      },
+      "V2": {
+        "nodes": 4.75886524822695,
+        "expanded": 1.2570921985815604,
+        "leaves": 3.50177304964539,
+        "max_depth": 0.7375886524822695,
+        "hit_depth3": 0.18439716312056736,
+        "mean_depth": 0.5037303762396118,
+        "total_tokens": 882762.2393617021
+      }
+    },
+    "repeat_complete86": {
+      "BASE": {
+        "at_least_one": 48,
+        "all_three": 18
+      },
+      "V2": {
+        "at_least_one": 46,
+        "all_three": 18
+      }
+    }
+  },
+  "FRAMES": {
+    "planned": 50,
+    "paired": 47,
+    "statuses": {
+      "BASE": {
+        "COMPLETED": 49,
+        "SKIPPED_PROVIDER_BLOCKED": 1
+      },
+      "V2": {
+        "COMPLETED": 47,
+        "SKIPPED_PROVIDER_BLOCKED": 3
+      }
+    },
+    "correct": {
+      "BASE": 34,
+      "V2": 38
+    },
+    "mean_trees": {
+      "BASE": {
+        "nodes": 17.5531914893617,
+        "expanded": 5.446808510638298,
+        "leaves": 12.106382978723405,
+        "max_depth": 2.6382978723404253,
+        "hit_depth3": 0.851063829787234,
+        "mean_depth": 1.860062034862397,
+        "total_tokens": 2441301.638297872,
+        "search_calls": 21.06382978723404
+      },
+      "V2": {
+        "nodes": 14.574468085106384,
+        "expanded": 4.425531914893617,
+        "leaves": 10.148936170212766,
+        "max_depth": 2.4468085106382977,
+        "hit_depth3": 0.7659574468085106,
+        "mean_depth": 1.6649126138016694,
+        "total_tokens": 2530584.1914893617,
+        "search_calls": 18.319148936170212
+      }
+    }
+  },
+  "TalkHier": {
+    "planned_per_arm": 100,
+    "paired": 94,
+    "statuses": {
+      "BASE": {
+        "completed": 97,
+        "timed_out": 1,
+        "error": 2
+      },
+      "V2": {
+        "completed": 97,
+        "timed_out": 2,
+        "error": 1
+      }
+    },
+    "mean_metrics": {
+      "BASE": {
+        "correct": 0.9361702127659575,
+        "normal_calls": 22.095744680851062,
+        "output_tool": 3.117021276595745,
+        "input_tokens": 94708.25531914894,
+        "output_tokens": 76980.4255319149,
+        "total_tokens": 171688.68085106384,
+        "reasoning_output_tokens": 57254.925531914894
+      },
+      "V2": {
+        "correct": 0.9574468085106383,
+        "normal_calls": 29.73404255319149,
+        "output_tool": 9.372340425531915,
+        "input_tokens": 156427.59574468085,
+        "output_tokens": 126784.26595744681,
+        "total_tokens": 283211.8617021277,
+        "reasoning_output_tokens": 101378.9574468085
+      }
+    },
+    "non_treatment_configuration_hash_count": 1,
+    "native_source_hash_count": 1,
+    "token_increase_questions": 75,
+    "roles": [
+      {
+        "role": "Default Supervisor",
+        "BASE_visits": 476,
+        "BASE_normal_calls": 477,
+        "BASE_output_tool": 0,
+        "BASE_total_tokens": 4188047,
+        "BASE_questions_visited": 94,
+        "BASE_normal_calls_per_visit": 1.0021008403361344,
+        "V2_visits": 525,
+        "V2_normal_calls": 525,
+        "V2_output_tool": 0,
+        "V2_total_tokens": 5335304,
+        "V2_questions_visited": 94,
+        "V2_normal_calls_per_visit": 1.0
+      },
+      {
+        "role": "Answer Generator",
+        "BASE_visits": 119,
+        "BASE_normal_calls": 246,
+        "BASE_output_tool": 12,
+        "BASE_total_tokens": 1052350,
+        "BASE_questions_visited": 94,
+        "BASE_normal_calls_per_visit": 2.0672268907563027,
+        "V2_visits": 125,
+        "V2_normal_calls": 251,
+        "V2_output_tool": 2,
+        "V2_total_tokens": 1377132,
+        "V2_questions_visited": 94,
+        "V2_normal_calls_per_visit": 2.008
+      },
+      {
+        "role": "Evaluator Supervisor",
+        "BASE_visits": 439,
+        "BASE_normal_calls": 325,
+        "BASE_output_tool": 0,
+        "BASE_total_tokens": 3263160,
+        "BASE_questions_visited": 93,
+        "BASE_normal_calls_per_visit": 0.7403189066059226,
+        "V2_visits": 463,
+        "V2_normal_calls": 336,
+        "V2_output_tool": 0,
+        "V2_total_tokens": 3237946,
+        "V2_questions_visited": 94,
+        "V2_normal_calls_per_visit": 0.7257019438444925
+      },
+      {
+        "role": "Physics",
+        "BASE_visits": 135,
+        "BASE_normal_calls": 390,
+        "BASE_output_tool": 124,
+        "BASE_total_tokens": 3043757,
+        "BASE_questions_visited": 82,
+        "BASE_normal_calls_per_visit": 2.888888888888889,
+        "V2_visits": 120,
+        "V2_normal_calls": 653,
+        "V2_output_tool": 421,
+        "V2_total_tokens": 6748094,
+        "V2_questions_visited": 87,
+        "V2_normal_calls_per_visit": 5.441666666666666
+      },
+      {
+        "role": "Mathematics",
+        "BASE_visits": 93,
+        "BASE_normal_calls": 310,
+        "BASE_output_tool": 128,
+        "BASE_total_tokens": 2112608,
+        "BASE_questions_visited": 74,
+        "BASE_normal_calls_per_visit": 3.3333333333333335,
+        "V2_visits": 114,
+        "V2_normal_calls": 627,
+        "V2_output_tool": 411,
+        "V2_total_tokens": 6036178,
+        "V2_questions_visited": 94,
+        "V2_normal_calls_per_visit": 5.5
+      },
+      {
+        "role": "Revisor",
+        "BASE_visits": 149,
+        "BASE_normal_calls": 329,
+        "BASE_output_tool": 29,
+        "BASE_total_tokens": 2478814,
+        "BASE_questions_visited": 89,
+        "BASE_normal_calls_per_visit": 2.208053691275168,
+        "V2_visits": 179,
+        "V2_normal_calls": 403,
+        "V2_output_tool": 47,
+        "V2_total_tokens": 3887261,
+        "V2_questions_visited": 94,
+        "V2_normal_calls_per_visit": 2.2513966480446927
+      }
+    ]
+  },
+  "files_read": 3183,
+  "new_model_calls": 0,
+  "new_grader_calls": 0,
+  "new_robustness_or_sensitivity_tests": 0
+}

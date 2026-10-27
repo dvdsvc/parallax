@@ -1,0 +1,49 @@
+#!/usr/bin/env Rscript
+# Post-primary diagnostic: native adonis2 on raw trajectory TED, no PCoA correction.
+args<-commandArgs(trailingOnly=TRUE)
+.libPaths(c(args[2],.libPaths()))
+suppressPackageStartupMessages(library(vegan))
+suppressPackageStartupMessages(library(jsonlite))
+root<-args[1]
+spec<-fromJSON(file.path(root,"structure_distance_inputs.json"),simplifyVector=FALSE)
+out<-file.path(root,"raw_distance_audit");dir.create(out)
+for(dataset in names(spec)) {
+  data<-spec[[dataset]];meta<-data$observations;input<-data$distances$shape_raw
+  unique_D<-do.call(rbind,lapply(input$unique_distances,unlist))
+  ix<-unlist(input$observation_shape_indices)+1L
+  D<-as.dist(unique_D[ix,ix])
+  q<-sapply(meta,function(x)x$question_id)
+  rnd<-sapply(meta,function(x)x$round)
+  arms<-sapply(meta,function(x)x$arm)
+  dat<-data.frame(pair=factor(paste(q,rnd,sep="/")),arm=factor(arms,levels=c("BASE","V2")))
+  qids<-sort(unique(q))
+  priorP<-readRDS(file.path(root,paste0(dataset,"_paired_permutations.rds")))
+  # Diagnostic only: 999 question-cluster swaps, every matched repetition swaps together.
+  P<-matrix(rep(seq_along(q),999),nrow=999,byrow=TRUE)
+  for(b in seq_len(nrow(P))) {
+    for(j in seq_along(qids)) {
+      if(priorP[b,2*j-1] != 2*j-1) {
+        for(r in unique(rnd[q==qids[j]])) {
+          a<-which(q==qids[j] & rnd==r & arms=="BASE")
+          v<-which(q==qids[j] & rnd==r & arms=="V2")
+          stopifnot(length(a)==1,length(v)==1)
+          P[b,c(a,v)]<-c(v,a)
+        }
+      }
+    }
+  }
+  message("RAW AUDIT START ",dataset)
+  ad<-vegan::adonis2(D ~ pair + arm,data=dat,by="terms",permutations=P)
+  tab<-as.data.frame(ad);tab$term<-rownames(tab)
+  result<-list(dataset=dataset,trajectories=length(q),questions=length(qids),
+    paired_runs=nlevels(dat$pair),distance="raw rooted canonical shape TED, no Lingoes",
+    repeat_weighting="each matched trajectory pair equal; question cluster permutations, run-weighted sensitivity",
+    treatment_global_R2=ad["arm","R2"],treatment_F=ad["arm","F"],
+    treatment_partial_R2=ad["arm","SumOfSqs"]/(ad["arm","SumOfSqs"]+ad["Residual","SumOfSqs"]),
+    treatment_p=ad["arm","Pr(>F)"],permutations=nrow(P),table=tab)
+  write_json(result,file.path(out,paste0(dataset,"_results.json")),auto_unbox=TRUE,pretty=TRUE,
+             dataframe="rows",digits=16,na="null")
+  saveRDS(list(adonis2=ad,permutations=P),file.path(out,paste0(dataset,"_native.rds")))
+  capture.output(ad,file=file.path(out,paste0(dataset,"_native.txt")))
+  message("RAW AUDIT DONE ",dataset," p=",result$treatment_p)
+}

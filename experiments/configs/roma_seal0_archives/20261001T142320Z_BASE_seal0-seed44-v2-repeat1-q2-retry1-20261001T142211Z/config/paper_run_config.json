@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "condition": "BASE",
+  "task_indices": [
+    2
+  ],
+  "workers": 4,
+  "max_depth": 3,
+  "model": "openai/qwen3.7-flash",
+  "temperature": 0,
+  "provider_label": "dashscope-compatible-via-litellm-proxy",
+  "interventions": {
+    "organization_awareness_v2": true,
+    "second_order": {
+      "enabled": false,
+      "layers": {}
+    }
+  },
+  "study_id": "seal0_paired94_remaining69_sample10_seed44_20261001T135508Z",
+  "subset_file": "external_archive/2026-09-12/hira/work/paper_studies/seal0_seed44_paired10_repeats2_parallel4x4_20261001T135508Z/q2_v2_repeat1_supplement_retry1_20261001T142211Z/source_snapshot/seal0_paired94_remaining69_sample10_seed44.json",
+  "subset_file_sha256": "0287bafd46e8c5084c2e3533cc338281271923a1f4961f3789b04f470f1aa963",
+  "sampling_seed": 44,
+  "population_size": 69,
+  "sampling_method": "uniform_without_replacement",
+  "repeat_batch_id": "q2_v2_repeat1_supplement_retry1_20261001T142211Z",
+  "additional_repeat_number": 1,
+  "parent_population_size": 94,
+  "supplemental_attempt": true,
+  "retry_number": 1,
+  "retry_of_paper_run_id": "seal0-seed44-v2-repeat1-20261001T135508Z",
+  "retry_of_mlflow_run_id": "199196a84e8d4628b40de3cb1e23a8ba"
+}

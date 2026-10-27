@@ -1,0 +1,46 @@
+{
+  "validated_at_utc": "2026-10-06T11:18:38.899206+00:00",
+  "batch_status": "running",
+  "official_equivalence": true,
+  "option_count_fixtures": [
+    7,
+    9,
+    10
+  ],
+  "model_calls": 0,
+  "grader_calls": 0,
+  "final_scoring_started": false,
+  "current_counts_for_validation_only": {
+    "BASE": {
+      "planned": 100,
+      "status_counts": {
+        "completed": 97,
+        "timed_out": 1,
+        "error": 2
+      },
+      "scored": 97,
+      "correct": 91,
+      "wrong": 6,
+      "missing_or_noncompleted": 3,
+      "accuracy_on_scored": 0.9381443298969072,
+      "correct_answer_yield_on_fixed_100": 0.91,
+      "yield_definition": "correct / all 100 planned questions; missing states retained, not relabeled as wrong answers"
+    },
+    "V2": {
+      "planned": 100,
+      "status_counts": {
+        "completed": 94,
+        "timed_out": 2,
+        "error": 1,
+        "running": 3
+      },
+      "scored": 94,
+      "correct": 90,
+      "wrong": 4,
+      "missing_or_noncompleted": 6,
+      "accuracy_on_scored": 0.9574468085106383,
+      "correct_answer_yield_on_fixed_100": 0.9,
+      "yield_definition": "correct / all 100 planned questions; missing states retained, not relabeled as wrong answers"
+    }
+  }
+}

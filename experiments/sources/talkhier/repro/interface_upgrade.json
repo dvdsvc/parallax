@@ -1,0 +1,96 @@
+{
+  "requested_upgrade": [
+    "langchain-openai",
+    "langchain-core",
+    "langchain"
+  ],
+  "interface_versions": {
+    "langchain-openai": "0.3.35",
+    "langchain-core": "0.3.86",
+    "langchain": "0.3.30"
+  },
+  "fixed_graph_packages": {
+    "langgraph": "0.2.71",
+    "langgraph-checkpoint": "2.0.12",
+    "langgraph-sdk": "0.1.51"
+  },
+  "original_requirements_txt_modified": false,
+  "provider_thinking": "default, no enable_thinking override",
+  "pip_check_passed": true,
+  "changed_packages": {
+    "websockets": {
+      "before": null,
+      "after": "17.2"
+    },
+    "langchain-openai": {
+      "before": "0.2.2",
+      "after": "0.3.35"
+    },
+    "jiter": {
+      "before": "0.8.2",
+      "after": "0.17.0"
+    },
+    "openai": {
+      "before": "1.62.0",
+      "after": "2.54.0"
+    },
+    "langchain-core": {
+      "before": "0.3.35",
+      "after": "0.3.86"
+    },
+    "httpcore": {
+      "before": "1.0.7",
+      "after": "1.0.9"
+    },
+    "uuid_utils": {
+      "before": null,
+      "after": "0.17.1"
+    },
+    "h11": {
+      "before": "0.14.0",
+      "after": "0.16.0"
+    },
+    "langchain-text-splitters": {
+      "before": "0.3.6",
+      "after": "0.3.11"
+    },
+    "langsmith": {
+      "before": "0.3.8",
+      "after": "0.3.45"
+    },
+    "typing_extensions": {
+      "before": "4.12.2",
+      "after": "4.16.0"
+    },
+    "httpx2": {
+      "before": null,
+      "after": "2.13.1"
+    },
+    "langchain": {
+      "before": "0.3.18",
+      "after": "0.3.30"
+    },
+    "truststore": {
+      "before": null,
+      "after": "0.10.4"
+    },
+    "httpcore2": {
+      "before": null,
+      "after": "2.13.1"
+    },
+    "anyio": {
+      "before": "4.8.0",
+      "after": "4.15.1"
+    },
+    "idna": {
+      "before": "3.10",
+      "after": "3.20"
+    }
+  },
+  "before_snapshot": ".local/dependency_upgrades/20261005T141759953199Z/before.json",
+  "after_snapshot": ".local/dependency_upgrades/20261005T141759953199Z/after.json",
+  "langgraph_compatibility_constraint": "langchain-core >=0.2.43,<0.4.0 with native exclusions",
+  "community_compatibility_constraint": "langsmith>=0.1.125,<0.4",
+  "default_max_completion_tokens": 32768,
+  "output_limit_scope": "thinking_plus_final_response"
+}

@@ -1,0 +1,5330 @@
+[
+  {
+    "question_id": 1,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      0,
+      2,
+      4
+    ],
+    "V2_graph_indices": [
+      1,
+      3,
+      5
+    ],
+    "BASE_descriptors": {
+      "nodes": 5.666666666666667,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6666666666666666,
+      "dependency_edges": 2.6666666666666665,
+      "dependency_density": 0.24242424242424243,
+      "dependency_connected_task_share": 0.30952380952380953,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.14285714285714285,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 11.333333333333334,
+      "max_depth": 2.0,
+      "weighted_depth": 1.4296296296296298,
+      "dependency_edges": 7.0,
+      "dependency_density": 0.4807692307692308,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 5.0,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.0434173669467787,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.2605042016806723,
+      "child_weighted_local_chain_share": 0.6428571428571429
+    },
+    "mean_TED": 6.333333333333333,
+    "mean_GED_lower": 15.666666666666666,
+    "mean_GED_upper": 17.666666666666668,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 2,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      6,
+      8,
+      10
+    ],
+    "V2_graph_indices": [
+      7,
+      9,
+      11
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 8.0,
+      "max_depth": 1.0,
+      "weighted_depth": 0.7727272727272728,
+      "dependency_edges": 4.666666666666667,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 3.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 7.0,
+    "mean_GED_lower": 18.666666666666668,
+    "mean_GED_upper": 18.666666666666668,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 3,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      12,
+      14,
+      16
+    ],
+    "V2_graph_indices": [
+      13,
+      15,
+      17
+    ],
+    "BASE_descriptors": {
+      "nodes": 22.666666666666668,
+      "max_depth": 3.0,
+      "weighted_depth": 2.247619047619047,
+      "dependency_edges": 14.666666666666666,
+      "dependency_density": 0.5939950980392158,
+      "dependency_connected_task_share": 0.9740129935032483,
+      "dependency_longest_chain_edges": 3.3333333333333335,
+      "full_graph_longest_path_edges": 10.333333333333334,
+      "dependency_max_fan_in": 2.3333333333333335,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.05162803213777726,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.3709299196555569,
+      "child_weighted_local_chain_share": 0.9625187406296852
+    },
+    "V2_descriptors": {
+      "nodes": 21.333333333333332,
+      "max_depth": 3.0,
+      "weighted_depth": 2.1253420908593323,
+      "dependency_edges": 14.0,
+      "dependency_density": 0.5394123606889565,
+      "dependency_connected_task_share": 0.938095238095238,
+      "dependency_longest_chain_edges": 3.3333333333333335,
+      "full_graph_longest_path_edges": 10.0,
+      "dependency_max_fan_in": 2.6666666666666665,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.03571428571428571,
+      "max_local_antichain": 2.6666666666666665,
+      "child_weighted_local_parallel_share": 0.40256410256410263,
+      "child_weighted_local_chain_share": 0.9285714285714285
+    },
+    "mean_TED": 10.0,
+    "mean_GED_lower": 14.0,
+    "mean_GED_upper": 50.0,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 4,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      18,
+      20,
+      22
+    ],
+    "V2_graph_indices": [
+      19,
+      21,
+      23
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 5,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": 0.6666666666666666,
+    "BASE_graph_indices": [
+      24,
+      26,
+      28
+    ],
+    "V2_graph_indices": [
+      25,
+      27,
+      29
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 6,
+    "rounds": [
+      "H"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      30
+    ],
+    "V2_graph_indices": [
+      31
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 7,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      32,
+      34,
+      36
+    ],
+    "V2_graph_indices": [
+      33,
+      35,
+      37
+    ],
+    "BASE_descriptors": {
+      "nodes": 12.333333333333334,
+      "max_depth": 3.0,
+      "weighted_depth": 1.893560606060606,
+      "dependency_edges": 6.333333333333333,
+      "dependency_density": 0.7269841269841271,
+      "dependency_connected_task_share": 0.9074074074074074,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 7.333333333333333,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.43703703703703706,
+      "child_weighted_local_chain_share": 1.0
+    },
+    "V2_descriptors": {
+      "nodes": 3.0,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.5,
+      "dependency_edges": 1.3333333333333333,
+      "dependency_density": 0.4444444444444444,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.2222222222222222,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "mean_TED": 9.333333333333334,
+    "mean_GED_lower": 23.666666666666668,
+    "mean_GED_upper": 23.666666666666668,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 9,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      38,
+      40,
+      42
+    ],
+    "V2_graph_indices": [
+      39,
+      41,
+      43
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 10,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      44,
+      46,
+      48
+    ],
+    "V2_graph_indices": [
+      45,
+      47,
+      49
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 11,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      50,
+      52,
+      54
+    ],
+    "V2_graph_indices": [
+      51,
+      53,
+      55
+    ],
+    "BASE_descriptors": {
+      "nodes": 25.333333333333332,
+      "max_depth": 3.0,
+      "weighted_depth": 2.242063492063492,
+      "dependency_edges": 15.666666666666666,
+      "dependency_density": 0.6199602780536246,
+      "dependency_connected_task_share": 0.9149139264671998,
+      "dependency_longest_chain_edges": 3.0,
+      "full_graph_longest_path_edges": 10.666666666666666,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.3823442283005826,
+      "child_weighted_local_chain_share": 1.0
+    },
+    "V2_descriptors": {
+      "nodes": 21.666666666666668,
+      "max_depth": 3.0,
+      "weighted_depth": 2.1508838383838387,
+      "dependency_edges": 14.333333333333334,
+      "dependency_density": 0.5715488215488216,
+      "dependency_connected_task_share": 0.9619047619047619,
+      "dependency_longest_chain_edges": 3.3333333333333335,
+      "full_graph_longest_path_edges": 11.0,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.012820512820512822,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.32478632478632474,
+      "child_weighted_local_chain_share": 1.0
+    },
+    "mean_TED": 10.333333333333334,
+    "mean_GED_lower": 24.0,
+    "mean_GED_upper": 58.0,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 12,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      56,
+      58,
+      60
+    ],
+    "V2_graph_indices": [
+      57,
+      59,
+      61
+    ],
+    "BASE_descriptors": {
+      "nodes": 9.666666666666666,
+      "max_depth": 2.0,
+      "weighted_depth": 1.3888888888888886,
+      "dependency_edges": 5.666666666666667,
+      "dependency_density": 0.4204545454545454,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 5.333333333333333,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.23232323232323235,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 8.0,
+      "max_depth": 1.6666666666666667,
+      "weighted_depth": 1.0196078431372548,
+      "dependency_edges": 4.666666666666667,
+      "dependency_density": 0.35964912280701755,
+      "dependency_connected_task_share": 0.6,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 4.333333333333333,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.020833333333333332,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.25833333333333336,
+      "child_weighted_local_chain_share": 0.6458333333333334
+    },
+    "mean_TED": 7.666666666666667,
+    "mean_GED_lower": 15.0,
+    "mean_GED_upper": 22.666666666666668,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 13,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.6666666666666666,
+    "BASE_graph_indices": [
+      62,
+      64,
+      66
+    ],
+    "V2_graph_indices": [
+      63,
+      65,
+      67
+    ],
+    "BASE_descriptors": {
+      "nodes": 6.0,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6875,
+      "dependency_edges": 3.3333333333333335,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 3.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 5.333333333333333,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6428571428571429,
+      "dependency_edges": 2.6666666666666665,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3076923076923077,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.12820512820512822,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 9.333333333333334,
+    "mean_GED_lower": 24.666666666666668,
+    "mean_GED_upper": 24.666666666666668,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 14,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      68,
+      70,
+      72
+    ],
+    "V2_graph_indices": [
+      69,
+      71,
+      73
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 15,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      74,
+      76,
+      78
+    ],
+    "V2_graph_indices": [
+      75,
+      77,
+      79
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 16,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      80,
+      82,
+      84
+    ],
+    "V2_graph_indices": [
+      81,
+      83,
+      85
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 17,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      86,
+      88,
+      90
+    ],
+    "V2_graph_indices": [
+      87,
+      89,
+      91
+    ],
+    "BASE_descriptors": {
+      "nodes": 3.0,
+      "max_depth": 1.0,
+      "weighted_depth": 0.5714285714285714,
+      "dependency_edges": 1.0,
+      "dependency_density": 0.3333333333333333,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.3333333333333333,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.16666666666666666,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 6.666666666666667,
+      "max_depth": 2.3333333333333335,
+      "weighted_depth": 1.3981481481481481,
+      "dependency_edges": 3.3333333333333335,
+      "dependency_density": 0.8380952380952381,
+      "dependency_connected_task_share": 1.0,
+      "dependency_longest_chain_edges": 1.6666666666666667,
+      "full_graph_longest_path_edges": 5.0,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.43452380952380953,
+      "child_weighted_local_chain_share": 1.0
+    },
+    "mean_TED": 3.6666666666666665,
+    "mean_GED_lower": 9.666666666666666,
+    "mean_GED_upper": 9.666666666666666,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 18,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      92,
+      94,
+      96
+    ],
+    "V2_graph_indices": [
+      93,
+      95,
+      97
+    ],
+    "BASE_descriptors": {
+      "nodes": 4.333333333333333,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6060606060606061,
+      "dependency_edges": 2.0,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.6666666666666665,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.13333333333333333,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 3.3333333333333335,
+    "mean_GED_lower": 8.666666666666666,
+    "mean_GED_upper": 8.666666666666666,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 19,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      98,
+      100,
+      102
+    ],
+    "V2_graph_indices": [
+      99,
+      101,
+      103
+    ],
+    "BASE_descriptors": {
+      "nodes": 7.666666666666667,
+      "max_depth": 1.0,
+      "weighted_depth": 0.7619047619047619,
+      "dependency_edges": 4.666666666666667,
+      "dependency_density": 0.1728395061728395,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.6666666666666665,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.06666666666666667,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.18333333333333335,
+      "child_weighted_local_chain_share": 0.25
+    },
+    "V2_descriptors": {
+      "nodes": 12.333333333333334,
+      "max_depth": 1.0,
+      "weighted_depth": 0.8095238095238094,
+      "dependency_edges": 8.666666666666666,
+      "dependency_density": 0.15204678362573099,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 1.0,
+      "full_graph_longest_path_edges": 2.6666666666666665,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.06862745098039215,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.17647058823529413,
+      "child_weighted_local_chain_share": 0.23529411764705885
+    },
+    "mean_TED": 18.0,
+    "mean_GED_lower": 49.333333333333336,
+    "mean_GED_upper": 49.333333333333336,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 20,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      104,
+      106,
+      108
+    ],
+    "V2_graph_indices": [
+      105,
+      107,
+      109
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 21,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      110,
+      112,
+      114
+    ],
+    "V2_graph_indices": [
+      111,
+      113,
+      115
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 22,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      116,
+      118,
+      120
+    ],
+    "V2_graph_indices": [
+      117,
+      119,
+      121
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 23,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      122,
+      124,
+      126
+    ],
+    "V2_graph_indices": [
+      123,
+      125,
+      127
+    ],
+    "BASE_descriptors": {
+      "nodes": 23.0,
+      "max_depth": 3.0,
+      "weighted_depth": 2.2083333333333335,
+      "dependency_edges": 14.0,
+      "dependency_density": 0.5970473970473971,
+      "dependency_connected_task_share": 0.9408866995073891,
+      "dependency_longest_chain_edges": 3.0,
+      "full_graph_longest_path_edges": 10.333333333333334,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.011494252873563218,
+      "max_local_antichain": 1.3333333333333333,
+      "child_weighted_local_parallel_share": 0.38523595345184547,
+      "child_weighted_local_chain_share": 0.9885057471264368
+    },
+    "V2_descriptors": {
+      "nodes": 29.0,
+      "max_depth": 3.0,
+      "weighted_depth": 2.343237837140276,
+      "dependency_edges": 17.666666666666668,
+      "dependency_density": 0.4063793636082793,
+      "dependency_connected_task_share": 0.8816267247639796,
+      "dependency_longest_chain_edges": 2.3333333333333335,
+      "full_graph_longest_path_edges": 7.666666666666667,
+      "dependency_max_fan_in": 4.333333333333333,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.07763253449527958,
+      "max_local_antichain": 5.666666666666667,
+      "child_weighted_local_parallel_share": 0.5790849673202615,
+      "child_weighted_local_chain_share": 0.7330065359477124
+    },
+    "mean_TED": 16.666666666666668,
+    "mean_GED_lower": 38.0,
+    "mean_GED_upper": 75.33333333333333,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 24,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      128,
+      130,
+      132
+    ],
+    "V2_graph_indices": [
+      129,
+      131,
+      133
+    ],
+    "BASE_descriptors": {
+      "nodes": 3.3333333333333335,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.4583333333333333,
+      "dependency_edges": 1.3333333333333333,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.2857142857142857,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.14285714285714285,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 5.666666666666667,
+      "max_depth": 1.0,
+      "weighted_depth": 0.7333333333333334,
+      "dependency_edges": 4.0,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 1.0,
+      "full_graph_longest_path_edges": 3.0,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.047619047619047616,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.11904761904761905,
+      "child_weighted_local_chain_share": 0.30952380952380953
+    },
+    "mean_TED": 2.3333333333333335,
+    "mean_GED_lower": 7.333333333333333,
+    "mean_GED_upper": 8.333333333333334,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 25,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      134,
+      136,
+      138
+    ],
+    "V2_graph_indices": [
+      135,
+      137,
+      139
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 26,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.6666666666666666,
+    "BASE_graph_indices": [
+      140,
+      142,
+      144
+    ],
+    "V2_graph_indices": [
+      141,
+      143,
+      145
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 27,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      146,
+      148,
+      150
+    ],
+    "V2_graph_indices": [
+      147,
+      149,
+      151
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 28,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      152,
+      154,
+      156
+    ],
+    "V2_graph_indices": [
+      153,
+      155,
+      157
+    ],
+    "BASE_descriptors": {
+      "nodes": 3.6666666666666665,
+      "max_depth": 1.3333333333333333,
+      "weighted_depth": 0.6984126984126985,
+      "dependency_edges": 1.3333333333333333,
+      "dependency_density": 0.5833333333333334,
+      "dependency_connected_task_share": 0.6111111111111112,
+      "dependency_longest_chain_edges": 1.0,
+      "full_graph_longest_path_edges": 2.3333333333333335,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.3333333333333333,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 4.333333333333333,
+      "max_depth": 1.3333333333333333,
+      "weighted_depth": 0.7916666666666666,
+      "dependency_edges": 2.0,
+      "dependency_density": 0.48888888888888893,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 2.6666666666666665,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.25396825396825395,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "mean_TED": 2.6666666666666665,
+    "mean_GED_lower": 6.666666666666667,
+    "mean_GED_upper": 6.666666666666667,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 30,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      158,
+      160,
+      162
+    ],
+    "V2_graph_indices": [
+      159,
+      161,
+      163
+    ],
+    "BASE_descriptors": {
+      "nodes": 13.333333333333334,
+      "max_depth": 2.0,
+      "weighted_depth": 1.4609523809523808,
+      "dependency_edges": 8.333333333333334,
+      "dependency_density": 0.4051282051282052,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 5.666666666666667,
+      "dependency_max_fan_in": 2.0,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.053418803418803416,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.32051282051282054,
+      "child_weighted_local_chain_share": 0.5598290598290598
+    },
+    "V2_descriptors": {
+      "nodes": 6.0,
+      "max_depth": 1.6666666666666667,
+      "weighted_depth": 1.0761904761904761,
+      "dependency_edges": 3.3333333333333335,
+      "dependency_density": 0.41269841269841273,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.0,
+      "full_graph_longest_path_edges": 4.0,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.05555555555555555,
+      "max_local_antichain": 1.3333333333333333,
+      "child_weighted_local_parallel_share": 0.3333333333333333,
+      "child_weighted_local_chain_share": 0.5555555555555555
+    },
+    "mean_TED": 7.333333333333333,
+    "mean_GED_lower": 19.666666666666668,
+    "mean_GED_upper": 23.666666666666668,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 31,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      164,
+      166,
+      168
+    ],
+    "V2_graph_indices": [
+      165,
+      167,
+      169
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 3.0,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.4285714285714286,
+      "dependency_edges": 1.3333333333333333,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.3333333333333333,
+      "full_graph_longest_path_edges": 1.3333333333333333,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.05555555555555555,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.2222222222222222,
+      "child_weighted_local_chain_share": 0.2222222222222222
+    },
+    "mean_TED": 2.0,
+    "mean_GED_lower": 5.333333333333333,
+    "mean_GED_upper": 5.333333333333333,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 32,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      170,
+      172,
+      174
+    ],
+    "V2_graph_indices": [
+      171,
+      173,
+      175
+    ],
+    "BASE_descriptors": {
+      "nodes": 4.666666666666667,
+      "max_depth": 1.0,
+      "weighted_depth": 0.611111111111111,
+      "dependency_edges": 2.6666666666666665,
+      "dependency_density": 0.16666666666666666,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.3333333333333333,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.06060606060606061,
+      "max_local_antichain": 1.3333333333333333,
+      "child_weighted_local_parallel_share": 0.21212121212121213,
+      "child_weighted_local_chain_share": 0.21212121212121213
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 3.6666666666666665,
+    "mean_GED_lower": 10.0,
+    "mean_GED_upper": 10.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 33,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.6666666666666666,
+    "BASE_graph_indices": [
+      176,
+      178,
+      180
+    ],
+    "V2_graph_indices": [
+      177,
+      179,
+      181
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 3.6666666666666665,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.48148148148148145,
+      "dependency_edges": 1.6666666666666667,
+      "dependency_density": 0.2380952380952381,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.6666666666666667,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.125,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 2.6666666666666665,
+    "mean_GED_lower": 7.0,
+    "mean_GED_upper": 7.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 34,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      182,
+      184,
+      186
+    ],
+    "V2_graph_indices": [
+      183,
+      185,
+      187
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 35,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      188,
+      190,
+      192
+    ],
+    "V2_graph_indices": [
+      189,
+      191,
+      193
+    ],
+    "BASE_descriptors": {
+      "nodes": 7.666666666666667,
+      "max_depth": 2.0,
+      "weighted_depth": 1.273809523809524,
+      "dependency_edges": 3.3333333333333335,
+      "dependency_density": 0.5079365079365079,
+      "dependency_connected_task_share": 0.5677655677655677,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 4.333333333333333,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.3223443223443223,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 13.0,
+      "max_depth": 3.0,
+      "weighted_depth": 1.947089947089947,
+      "dependency_edges": 8.0,
+      "dependency_density": 0.679089026915114,
+      "dependency_connected_task_share": 0.9833333333333334,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 6.666666666666667,
+      "dependency_max_fan_in": 1.6666666666666667,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.049999999999999996,
+      "max_local_antichain": 1.6666666666666667,
+      "child_weighted_local_parallel_share": 0.43333333333333335,
+      "child_weighted_local_chain_share": 0.9333333333333332
+    },
+    "mean_TED": 6.666666666666667,
+    "mean_GED_lower": 15.333333333333334,
+    "mean_GED_upper": 22.333333333333332,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 37,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      194,
+      196,
+      198
+    ],
+    "V2_graph_indices": [
+      195,
+      197,
+      199
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 38,
+    "rounds": [
+      "H",
+      "R1"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      200,
+      202
+    ],
+    "V2_graph_indices": [
+      201,
+      203
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 39,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      204,
+      206,
+      208
+    ],
+    "V2_graph_indices": [
+      205,
+      207,
+      209
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 41,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      210,
+      212,
+      214
+    ],
+    "V2_graph_indices": [
+      211,
+      213,
+      215
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 42,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      216,
+      218,
+      220
+    ],
+    "V2_graph_indices": [
+      217,
+      219,
+      221
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 43,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      222,
+      224,
+      226
+    ],
+    "V2_graph_indices": [
+      223,
+      225,
+      227
+    ],
+    "BASE_descriptors": {
+      "nodes": 4.666666666666667,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6666666666666666,
+      "dependency_edges": 2.3333333333333335,
+      "dependency_density": 0.2333333333333333,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.6666666666666665,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.12121212121212122,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 3.6666666666666665,
+    "mean_GED_lower": 9.666666666666666,
+    "mean_GED_upper": 9.666666666666666,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 44,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      228,
+      230,
+      232
+    ],
+    "V2_graph_indices": [
+      229,
+      231,
+      233
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 2.0,
+      "max_depth": 0.3333333333333333,
+      "weighted_depth": 0.25,
+      "dependency_edges": 0.6666666666666666,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 1.0,
+    "mean_GED_lower": 2.6666666666666665,
+    "mean_GED_upper": 2.6666666666666665,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 47,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      234,
+      236,
+      238
+    ],
+    "V2_graph_indices": [
+      235,
+      237,
+      239
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 48,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      240,
+      242,
+      244
+    ],
+    "V2_graph_indices": [
+      241,
+      243,
+      245
+    ],
+    "BASE_descriptors": {
+      "nodes": 10.666666666666666,
+      "max_depth": 2.0,
+      "weighted_depth": 1.3921568627450978,
+      "dependency_edges": 7.0,
+      "dependency_density": 0.5164835164835164,
+      "dependency_connected_task_share": 0.6410256410256411,
+      "dependency_longest_chain_edges": 1.6666666666666667,
+      "full_graph_longest_path_edges": 4.666666666666667,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0673076923076923,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.2532051282051282,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 12.0,
+      "max_depth": 2.0,
+      "weighted_depth": 1.3780193236714977,
+      "dependency_edges": 8.333333333333334,
+      "dependency_density": 0.43188405797101453,
+      "dependency_connected_task_share": 0.6515151515151515,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 6.0,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.06060606060606061,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.21212121212121213,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "mean_TED": 14.0,
+    "mean_GED_lower": 36.0,
+    "mean_GED_upper": 44.0,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 49,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      246,
+      248,
+      250
+    ],
+    "V2_graph_indices": [
+      247,
+      249,
+      251
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 51,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      252,
+      254,
+      256
+    ],
+    "V2_graph_indices": [
+      253,
+      255,
+      257
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 52,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      258,
+      260,
+      262
+    ],
+    "V2_graph_indices": [
+      259,
+      261,
+      263
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 3.0,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.4285714285714286,
+      "dependency_edges": 1.3333333333333333,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 2.0,
+    "mean_GED_lower": 5.333333333333333,
+    "mean_GED_upper": 5.333333333333333,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 53,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      264,
+      266,
+      268
+    ],
+    "V2_graph_indices": [
+      265,
+      267,
+      269
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 54,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 0.0,
+    "delta_success": -1.0,
+    "BASE_graph_indices": [
+      270,
+      272,
+      274
+    ],
+    "V2_graph_indices": [
+      271,
+      273,
+      275
+    ],
+    "BASE_descriptors": {
+      "nodes": 4.666666666666667,
+      "max_depth": 1.0,
+      "weighted_depth": 0.611111111111111,
+      "dependency_edges": 2.3333333333333335,
+      "dependency_density": 0.2333333333333333,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 3.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.12121212121212122,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 2.0,
+      "max_depth": 0.3333333333333333,
+      "weighted_depth": 0.25,
+      "dependency_edges": 0.6666666666666666,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 4.666666666666667,
+    "mean_GED_lower": 12.333333333333334,
+    "mean_GED_upper": 12.333333333333334,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 55,
+    "rounds": [
+      "H",
+      "R1"
+    ],
+    "BASE_accuracy": 0.5,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.5,
+    "BASE_graph_indices": [
+      276,
+      278
+    ],
+    "V2_graph_indices": [
+      277,
+      279
+    ],
+    "BASE_descriptors": {
+      "nodes": 3.5,
+      "max_depth": 1.5,
+      "weighted_depth": 0.6666666666666666,
+      "dependency_edges": 1.0,
+      "dependency_density": 0.3333333333333333,
+      "dependency_connected_task_share": 0.3,
+      "dependency_longest_chain_edges": 0.5,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 0.5,
+      "dependency_fan_in2_task_share": 0.1,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.4,
+      "child_weighted_local_chain_share": 0.4
+    },
+    "V2_descriptors": {
+      "nodes": 4.0,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6428571428571429,
+      "dependency_edges": 2.0,
+      "dependency_density": 0.3333333333333333,
+      "dependency_connected_task_share": 0.5,
+      "dependency_longest_chain_edges": 1.0,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 0.5,
+      "dependency_fan_in2_task_share": 0.08333333333333333,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.25,
+      "child_weighted_local_chain_share": 0.4166666666666667
+    },
+    "mean_TED": 1.5,
+    "mean_GED_lower": 3.5,
+    "mean_GED_upper": 3.5,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 56,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      280,
+      282,
+      284
+    ],
+    "V2_graph_indices": [
+      281,
+      283,
+      285
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 3.0,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.5,
+      "dependency_edges": 1.3333333333333333,
+      "dependency_density": 0.4444444444444444,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.2222222222222222,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "mean_TED": 2.0,
+    "mean_GED_lower": 5.333333333333333,
+    "mean_GED_upper": 5.333333333333333,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 57,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      286,
+      288,
+      290
+    ],
+    "V2_graph_indices": [
+      287,
+      289,
+      291
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 59,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      292,
+      294,
+      296
+    ],
+    "V2_graph_indices": [
+      293,
+      295,
+      297
+    ],
+    "BASE_descriptors": {
+      "nodes": 10.0,
+      "max_depth": 2.6666666666666665,
+      "weighted_depth": 1.7249999999999999,
+      "dependency_edges": 5.666666666666667,
+      "dependency_density": 0.7857142857142857,
+      "dependency_connected_task_share": 0.9629629629629629,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 6.0,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.037037037037037035,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.4122174122174122,
+      "child_weighted_local_chain_share": 1.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 9.0,
+    "mean_GED_lower": 23.666666666666668,
+    "mean_GED_upper": 23.666666666666668,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 60,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      298,
+      300,
+      302
+    ],
+    "V2_graph_indices": [
+      299,
+      301,
+      303
+    ],
+    "BASE_descriptors": {
+      "nodes": 16.0,
+      "max_depth": 3.0,
+      "weighted_depth": 2.0037037037037035,
+      "dependency_edges": 10.333333333333334,
+      "dependency_density": 0.5694444444444443,
+      "dependency_connected_task_share": 0.9628482972136223,
+      "dependency_longest_chain_edges": 1.6666666666666667,
+      "full_graph_longest_path_edges": 7.666666666666667,
+      "dependency_max_fan_in": 2.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.27726178190574474,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.5916752665978672,
+      "child_weighted_local_chain_share": 0.7227382180942552
+    },
+    "V2_descriptors": {
+      "nodes": 16.333333333333332,
+      "max_depth": 2.3333333333333335,
+      "weighted_depth": 1.6845238095238095,
+      "dependency_edges": 11.333333333333334,
+      "dependency_density": 0.5606060606060606,
+      "dependency_connected_task_share": 1.0,
+      "dependency_longest_chain_edges": 1.6666666666666667,
+      "full_graph_longest_path_edges": 6.0,
+      "dependency_max_fan_in": 2.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.28140096618357485,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.5628019323671497,
+      "child_weighted_local_chain_share": 0.7185990338164251
+    },
+    "mean_TED": 11.666666666666666,
+    "mean_GED_lower": 27.0,
+    "mean_GED_upper": 34.0,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 61,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      304,
+      306,
+      308
+    ],
+    "V2_graph_indices": [
+      305,
+      307,
+      309
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 62,
+    "rounds": [
+      "H",
+      "R1"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 1.0,
+    "BASE_graph_indices": [
+      310,
+      312
+    ],
+    "V2_graph_indices": [
+      311,
+      313
+    ],
+    "BASE_descriptors": {
+      "nodes": 3.5,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6666666666666666,
+      "dependency_edges": 1.5,
+      "dependency_density": 0.375,
+      "dependency_connected_task_share": 0.5,
+      "dependency_longest_chain_edges": 1.0,
+      "full_graph_longest_path_edges": 2.5,
+      "dependency_max_fan_in": 0.5,
+      "dependency_max_fan_out": 0.5,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.5,
+      "child_weighted_local_parallel_share": 0.2,
+      "child_weighted_local_chain_share": 0.5
+    },
+    "V2_descriptors": {
+      "nodes": 3.5,
+      "max_depth": 1.0,
+      "weighted_depth": 0.5833333333333334,
+      "dependency_edges": 1.5,
+      "dependency_density": 0.375,
+      "dependency_connected_task_share": 0.5,
+      "dependency_longest_chain_edges": 1.0,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 0.5,
+      "dependency_max_fan_out": 0.5,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.5,
+      "child_weighted_local_parallel_share": 0.2,
+      "child_weighted_local_chain_share": 0.5
+    },
+    "mean_TED": 5.0,
+    "mean_GED_lower": 13.0,
+    "mean_GED_upper": 13.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 63,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      314,
+      316,
+      318
+    ],
+    "V2_graph_indices": [
+      315,
+      317,
+      319
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 65,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      320,
+      322,
+      324
+    ],
+    "V2_graph_indices": [
+      321,
+      323,
+      325
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 66,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      326,
+      328,
+      330
+    ],
+    "V2_graph_indices": [
+      327,
+      329,
+      331
+    ],
+    "BASE_descriptors": {
+      "nodes": 7.333333333333333,
+      "max_depth": 2.0,
+      "weighted_depth": 1.1666666666666667,
+      "dependency_edges": 4.0,
+      "dependency_density": 0.45021645021645024,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.6666666666666667,
+      "full_graph_longest_path_edges": 4.666666666666667,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.24621212121212122,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 8.333333333333334,
+      "max_depth": 2.0,
+      "weighted_depth": 1.3333333333333333,
+      "dependency_edges": 5.0,
+      "dependency_density": 0.5,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 5.333333333333333,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.030303030303030304,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.24242424242424243,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "mean_TED": 8.333333333333334,
+    "mean_GED_lower": 22.333333333333332,
+    "mean_GED_upper": 23.0,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 68,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      332,
+      334,
+      336
+    ],
+    "V2_graph_indices": [
+      333,
+      335,
+      337
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 69,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      338,
+      340,
+      342
+    ],
+    "V2_graph_indices": [
+      339,
+      341,
+      343
+    ],
+    "BASE_descriptors": {
+      "nodes": 8.333333333333334,
+      "max_depth": 2.0,
+      "weighted_depth": 1.2214452214452214,
+      "dependency_edges": 4.666666666666667,
+      "dependency_density": 0.42777777777777776,
+      "dependency_connected_task_share": 0.5833333333333334,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 5.666666666666667,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.027777777777777776,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.26666666666666666,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 4.0,
+      "max_depth": 1.0,
+      "weighted_depth": 0.7388888888888889,
+      "dependency_edges": 2.0,
+      "dependency_density": 0.7222222222222222,
+      "dependency_connected_task_share": 1.0,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 3.0,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.3611111111111111,
+      "child_weighted_local_chain_share": 1.0
+    },
+    "mean_TED": 6.333333333333333,
+    "mean_GED_lower": 16.666666666666668,
+    "mean_GED_upper": 16.666666666666668,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 70,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      344,
+      346,
+      348
+    ],
+    "V2_graph_indices": [
+      345,
+      347,
+      349
+    ],
+    "BASE_descriptors": {
+      "nodes": 5.333333333333333,
+      "max_depth": 1.3333333333333333,
+      "weighted_depth": 0.8560606060606061,
+      "dependency_edges": 2.6666666666666665,
+      "dependency_density": 0.47222222222222215,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 3.3333333333333335,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.24444444444444446,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 3.6666666666666665,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6507936507936508,
+      "dependency_edges": 1.6666666666666667,
+      "dependency_density": 0.5555555555555555,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.0,
+      "full_graph_longest_path_edges": 1.6666666666666667,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.05555555555555555,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.3333333333333333,
+      "child_weighted_local_chain_share": 0.6111111111111112
+    },
+    "mean_TED": 3.0,
+    "mean_GED_lower": 7.666666666666667,
+    "mean_GED_upper": 9.666666666666666,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 71,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      350,
+      352,
+      354
+    ],
+    "V2_graph_indices": [
+      351,
+      353,
+      355
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 72,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      356,
+      358,
+      360
+    ],
+    "V2_graph_indices": [
+      357,
+      359,
+      361
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 3.0,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.4285714285714286,
+      "dependency_edges": 1.3333333333333333,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.3333333333333333,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 2.0,
+    "mean_GED_lower": 5.333333333333333,
+    "mean_GED_upper": 5.333333333333333,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 73,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      362,
+      364,
+      366
+    ],
+    "V2_graph_indices": [
+      363,
+      365,
+      367
+    ],
+    "BASE_descriptors": {
+      "nodes": 9.0,
+      "max_depth": 2.0,
+      "weighted_depth": 1.2541666666666667,
+      "dependency_edges": 5.333333333333333,
+      "dependency_density": 0.4222222222222222,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.6666666666666667,
+      "full_graph_longest_path_edges": 5.333333333333333,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.022222222222222223,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.24444444444444446,
+      "child_weighted_local_chain_share": 0.6444444444444445
+    },
+    "V2_descriptors": {
+      "nodes": 5.333333333333333,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6190476190476191,
+      "dependency_edges": 2.6666666666666665,
+      "dependency_density": 0.20512820512820515,
+      "dependency_connected_task_share": 0.3076923076923077,
+      "dependency_longest_chain_edges": 1.0,
+      "full_graph_longest_path_edges": 2.6666666666666665,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.12820512820512822,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 7.0,
+    "mean_GED_lower": 16.666666666666668,
+    "mean_GED_upper": 18.666666666666668,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 74,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      368,
+      370,
+      372
+    ],
+    "V2_graph_indices": [
+      369,
+      371,
+      373
+    ],
+    "BASE_descriptors": {
+      "nodes": 2.0,
+      "max_depth": 0.3333333333333333,
+      "weighted_depth": 0.25,
+      "dependency_edges": 0.6666666666666666,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 1.0,
+    "mean_GED_lower": 2.6666666666666665,
+    "mean_GED_upper": 2.6666666666666665,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 75,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      374,
+      376,
+      378
+    ],
+    "V2_graph_indices": [
+      375,
+      377,
+      379
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 76,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      380,
+      382,
+      384
+    ],
+    "V2_graph_indices": [
+      381,
+      383,
+      385
+    ],
+    "BASE_descriptors": {
+      "nodes": 3.6666666666666665,
+      "max_depth": 1.6666666666666667,
+      "weighted_depth": 1.0,
+      "dependency_edges": 1.0,
+      "dependency_density": 0.6666666666666666,
+      "dependency_connected_task_share": 0.5,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.6666666666666665,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.4166666666666667,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 2.3333333333333335,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.3333333333333333,
+      "dependency_edges": 0.6666666666666666,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.25,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.16666666666666666,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 4.0,
+    "mean_GED_lower": 9.666666666666666,
+    "mean_GED_upper": 9.666666666666666,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 78,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      386,
+      388,
+      390
+    ],
+    "V2_graph_indices": [
+      387,
+      389,
+      391
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.6666666666666667,
+      "max_depth": 0.3333333333333333,
+      "weighted_depth": 0.2222222222222222,
+      "dependency_edges": 0.3333333333333333,
+      "dependency_density": 0.3333333333333333,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.3333333333333333,
+      "full_graph_longest_path_edges": 0.6666666666666666,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.16666666666666666,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 0.6666666666666666,
+    "mean_GED_lower": 1.6666666666666667,
+    "mean_GED_upper": 1.6666666666666667,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 79,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      392,
+      394,
+      396
+    ],
+    "V2_graph_indices": [
+      393,
+      395,
+      397
+    ],
+    "BASE_descriptors": {
+      "nodes": 2.6666666666666665,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.3888888888888889,
+      "dependency_edges": 1.0,
+      "dependency_density": 0.25,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.3333333333333333,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.13333333333333333,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 1.6666666666666667,
+    "mean_GED_lower": 4.333333333333333,
+    "mean_GED_upper": 4.333333333333333,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 80,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      398,
+      400,
+      402
+    ],
+    "V2_graph_indices": [
+      399,
+      401,
+      403
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 81,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      404,
+      406,
+      408
+    ],
+    "V2_graph_indices": [
+      405,
+      407,
+      409
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 82,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      410,
+      412,
+      414
+    ],
+    "V2_graph_indices": [
+      411,
+      413,
+      415
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 83,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      416,
+      418,
+      420
+    ],
+    "V2_graph_indices": [
+      417,
+      419,
+      421
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 84,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      422,
+      424,
+      426
+    ],
+    "V2_graph_indices": [
+      423,
+      425,
+      427
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 85,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.0,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      428,
+      430,
+      432
+    ],
+    "V2_graph_indices": [
+      429,
+      431,
+      433
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 86,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      434,
+      436,
+      438
+    ],
+    "V2_graph_indices": [
+      435,
+      437,
+      439
+    ],
+    "BASE_descriptors": {
+      "nodes": 16.666666666666668,
+      "max_depth": 2.0,
+      "weighted_depth": 1.519047619047619,
+      "dependency_edges": 10.666666666666666,
+      "dependency_density": 0.4024242424242424,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 5.333333333333333,
+      "dependency_max_fan_in": 2.0,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0196078431372549,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.30467571644042235,
+      "child_weighted_local_chain_share": 0.5882352941176471
+    },
+    "V2_descriptors": {
+      "nodes": 15.333333333333334,
+      "max_depth": 2.6666666666666665,
+      "weighted_depth": 1.8174603174603172,
+      "dependency_edges": 11.333333333333334,
+      "dependency_density": 0.6611111111111111,
+      "dependency_connected_task_share": 1.0,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 6.666666666666667,
+      "dependency_max_fan_in": 2.3333333333333335,
+      "dependency_max_fan_out": 2.3333333333333335,
+      "dependency_fan_in2_task_share": 0.04938271604938271,
+      "max_local_antichain": 2.3333333333333335,
+      "child_weighted_local_parallel_share": 0.42738496071829407,
+      "child_weighted_local_chain_share": 0.9135802469135802
+    },
+    "mean_TED": 10.666666666666666,
+    "mean_GED_lower": 22.333333333333332,
+    "mean_GED_upper": 47.666666666666664,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 87,
+    "rounds": [
+      "H",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.5,
+    "delta_success": 0.5,
+    "BASE_graph_indices": [
+      440,
+      442
+    ],
+    "V2_graph_indices": [
+      441,
+      443
+    ],
+    "BASE_descriptors": {
+      "nodes": 31.5,
+      "max_depth": 3.0,
+      "weighted_depth": 2.397089397089397,
+      "dependency_edges": 20.0,
+      "dependency_density": 0.6534090909090908,
+      "dependency_connected_task_share": 0.98,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 8.0,
+      "dependency_max_fan_in": 2.5,
+      "dependency_max_fan_out": 1.5,
+      "dependency_fan_in2_task_share": 0.04777777777777778,
+      "max_local_antichain": 2.5,
+      "child_weighted_local_parallel_share": 0.4344444444444444,
+      "child_weighted_local_chain_share": 0.9183333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 28.5,
+      "max_depth": 3.0,
+      "weighted_depth": 2.294375,
+      "dependency_edges": 18.5,
+      "dependency_density": 0.5376254180602007,
+      "dependency_connected_task_share": 0.9469086021505376,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 6.5,
+      "dependency_max_fan_in": 4.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.12701612903225806,
+      "max_local_antichain": 4.0,
+      "child_weighted_local_parallel_share": 0.5934139784946236,
+      "child_weighted_local_chain_share": 0.739247311827957
+    },
+    "mean_TED": 16.0,
+    "mean_GED_lower": 26.5,
+    "mean_GED_upper": 80.0,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 88,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      444,
+      446,
+      448
+    ],
+    "V2_graph_indices": [
+      445,
+      447,
+      449
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 89,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      450,
+      452,
+      454
+    ],
+    "V2_graph_indices": [
+      451,
+      453,
+      455
+    ],
+    "BASE_descriptors": {
+      "nodes": 17.666666666666668,
+      "max_depth": 3.0,
+      "weighted_depth": 2.0545808966861596,
+      "dependency_edges": 10.666666666666666,
+      "dependency_density": 0.665266106442577,
+      "dependency_connected_task_share": 0.9592592592592593,
+      "dependency_longest_chain_edges": 2.6666666666666665,
+      "full_graph_longest_path_edges": 8.333333333333334,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0196078431372549,
+      "max_local_antichain": 1.3333333333333333,
+      "child_weighted_local_parallel_share": 0.40021786492374734,
+      "child_weighted_local_chain_share": 0.9803921568627452
+    },
+    "V2_descriptors": {
+      "nodes": 10.666666666666666,
+      "max_depth": 2.6666666666666665,
+      "weighted_depth": 1.7666666666666666,
+      "dependency_edges": 6.333333333333333,
+      "dependency_density": 0.6777777777777777,
+      "dependency_connected_task_share": 1.0,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 7.666666666666667,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.3434343434343434,
+      "child_weighted_local_chain_share": 1.0
+    },
+    "mean_TED": 7.0,
+    "mean_GED_lower": 18.333333333333332,
+    "mean_GED_upper": 33.0,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 90,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      456,
+      458,
+      460
+    ],
+    "V2_graph_indices": [
+      457,
+      459,
+      461
+    ],
+    "BASE_descriptors": {
+      "nodes": 3.0,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.5,
+      "dependency_edges": 1.3333333333333333,
+      "dependency_density": 0.4444444444444444,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 2.0,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.2222222222222222,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 2.0,
+      "max_depth": 0.3333333333333333,
+      "weighted_depth": 0.25,
+      "dependency_edges": 0.6666666666666666,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 1.0,
+    "mean_GED_lower": 2.6666666666666665,
+    "mean_GED_upper": 2.6666666666666665,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 91,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      462,
+      464,
+      466
+    ],
+    "V2_graph_indices": [
+      463,
+      465,
+      467
+    ],
+    "BASE_descriptors": {
+      "nodes": 27.333333333333332,
+      "max_depth": 2.3333333333333335,
+      "weighted_depth": 1.8503202928391673,
+      "dependency_edges": 19.333333333333332,
+      "dependency_density": 0.5881790881790881,
+      "dependency_connected_task_share": 0.9705314009661836,
+      "dependency_longest_chain_edges": 2.6666666666666665,
+      "full_graph_longest_path_edges": 6.666666666666667,
+      "dependency_max_fan_in": 2.3333333333333335,
+      "dependency_max_fan_out": 1.6666666666666667,
+      "dependency_fan_in2_task_share": 0.24299516908212562,
+      "max_local_antichain": 2.3333333333333335,
+      "child_weighted_local_parallel_share": 0.5410628019323672,
+      "child_weighted_local_chain_share": 0.7753623188405797
+    },
+    "V2_descriptors": {
+      "nodes": 17.333333333333332,
+      "max_depth": 2.3333333333333335,
+      "weighted_depth": 1.640144927536232,
+      "dependency_edges": 12.0,
+      "dependency_density": 0.5817460317460318,
+      "dependency_connected_task_share": 0.9848484848484849,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 6.666666666666667,
+      "dependency_max_fan_in": 2.3333333333333335,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.09974747474747475,
+      "max_local_antichain": 2.3333333333333335,
+      "child_weighted_local_parallel_share": 0.4292929292929293,
+      "child_weighted_local_chain_share": 0.8712121212121212
+    },
+    "mean_TED": 10.666666666666666,
+    "mean_GED_lower": 28.0,
+    "mean_GED_upper": 65.33333333333333,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 92,
+    "rounds": [
+      "H",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      468,
+      470
+    ],
+    "V2_graph_indices": [
+      469,
+      471
+    ],
+    "BASE_descriptors": {
+      "nodes": 16.5,
+      "max_depth": 3.0,
+      "weighted_depth": 2.1315789473684212,
+      "dependency_edges": 10.0,
+      "dependency_density": 0.6794258373205742,
+      "dependency_connected_task_share": 1.0,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 6.0,
+      "dependency_max_fan_in": 2.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.17735042735042736,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.5363247863247864,
+      "child_weighted_local_chain_share": 0.8226495726495726
+    },
+    "V2_descriptors": {
+      "nodes": 19.0,
+      "max_depth": 3.0,
+      "weighted_depth": 2.197101449275362,
+      "dependency_edges": 11.5,
+      "dependency_density": 0.6643356643356644,
+      "dependency_connected_task_share": 0.9772727272727273,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 7.0,
+      "dependency_max_fan_in": 2.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.17532467532467533,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.5357142857142857,
+      "child_weighted_local_chain_share": 0.8246753246753247
+    },
+    "mean_TED": 6.5,
+    "mean_GED_lower": 17.5,
+    "mean_GED_upper": 45.0,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 93,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      472,
+      474,
+      476
+    ],
+    "V2_graph_indices": [
+      473,
+      475,
+      477
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 94,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      478,
+      480,
+      482
+    ],
+    "V2_graph_indices": [
+      479,
+      481,
+      483
+    ],
+    "BASE_descriptors": {
+      "nodes": 4.0,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6785714285714285,
+      "dependency_edges": 2.0,
+      "dependency_density": 0.4444444444444444,
+      "dependency_connected_task_share": 0.6666666666666666,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 3.0,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.2222222222222222,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 9.0,
+      "max_depth": 1.6666666666666667,
+      "weighted_depth": 1.1777777777777778,
+      "dependency_edges": 4.0,
+      "dependency_density": 0.36999999999999994,
+      "dependency_connected_task_share": 0.5614035087719298,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 4.333333333333333,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.017543859649122806,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.3263157894736842,
+      "child_weighted_local_chain_share": 0.5789473684210527
+    },
+    "mean_TED": 9.0,
+    "mean_GED_lower": 22.666666666666668,
+    "mean_GED_upper": 22.666666666666668,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 95,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      484,
+      486,
+      488
+    ],
+    "V2_graph_indices": [
+      485,
+      487,
+      489
+    ],
+    "BASE_descriptors": {
+      "nodes": 12.666666666666666,
+      "max_depth": 2.0,
+      "weighted_depth": 1.419607843137255,
+      "dependency_edges": 7.333333333333333,
+      "dependency_density": 0.45751633986928103,
+      "dependency_connected_task_share": 0.6315789473684211,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 6.0,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.03837719298245614,
+      "max_local_antichain": 1.3333333333333333,
+      "child_weighted_local_parallel_share": 0.30372807017543857,
+      "child_weighted_local_chain_share": 0.6282894736842105
+    },
+    "V2_descriptors": {
+      "nodes": 10.333333333333334,
+      "max_depth": 2.0,
+      "weighted_depth": 1.3227513227513228,
+      "dependency_edges": 7.0,
+      "dependency_density": 0.47727272727272724,
+      "dependency_connected_task_share": 0.65,
+      "dependency_longest_chain_edges": 1.3333333333333333,
+      "full_graph_longest_path_edges": 4.333333333333333,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.09166666666666667,
+      "max_local_antichain": 1.3333333333333333,
+      "child_weighted_local_parallel_share": 0.3333333333333333,
+      "child_weighted_local_chain_share": 0.5750000000000001
+    },
+    "mean_TED": 5.0,
+    "mean_GED_lower": 13.666666666666666,
+    "mean_GED_upper": 22.666666666666668,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 96,
+    "rounds": [
+      "H"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      490
+    ],
+    "V2_graph_indices": [
+      491
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 98,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      492,
+      494,
+      496
+    ],
+    "V2_graph_indices": [
+      493,
+      495,
+      497
+    ],
+    "BASE_descriptors": {
+      "nodes": 9.0,
+      "max_depth": 2.3333333333333335,
+      "weighted_depth": 1.4361111111111111,
+      "dependency_edges": 5.0,
+      "dependency_density": 0.7979797979797979,
+      "dependency_connected_task_share": 0.9761904761904763,
+      "dependency_longest_chain_edges": 2.0,
+      "full_graph_longest_path_edges": 4.666666666666667,
+      "dependency_max_fan_in": 1.3333333333333333,
+      "dependency_max_fan_out": 1.3333333333333333,
+      "dependency_fan_in2_task_share": 0.047619047619047616,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.3968253968253968,
+      "child_weighted_local_chain_share": 1.0
+    },
+    "V2_descriptors": {
+      "nodes": 3.6666666666666665,
+      "max_depth": 1.0,
+      "weighted_depth": 0.5555555555555556,
+      "dependency_edges": 1.6666666666666667,
+      "dependency_density": 0.2380952380952381,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.3333333333333335,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.125,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 8.666666666666666,
+    "mean_GED_lower": 22.666666666666668,
+    "mean_GED_upper": 22.666666666666668,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 100,
+    "rounds": [
+      "H",
+      "R1"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.5,
+    "delta_success": 0.5,
+    "BASE_graph_indices": [
+      498,
+      500
+    ],
+    "V2_graph_indices": [
+      499,
+      501
+    ],
+    "BASE_descriptors": {
+      "nodes": 17.5,
+      "max_depth": 3.0,
+      "weighted_depth": 2.0,
+      "dependency_edges": 12.5,
+      "dependency_density": 0.5683229813664596,
+      "dependency_connected_task_share": 0.96875,
+      "dependency_longest_chain_edges": 2.5,
+      "full_graph_longest_path_edges": 7.5,
+      "dependency_max_fan_in": 2.5,
+      "dependency_max_fan_out": 1.5,
+      "dependency_fan_in2_task_share": 0.2720588235294118,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.5441176470588236,
+      "child_weighted_local_chain_share": 0.7591911764705883
+    },
+    "V2_descriptors": {
+      "nodes": 7.0,
+      "max_depth": 2.0,
+      "weighted_depth": 1.1666666666666665,
+      "dependency_edges": 4.0,
+      "dependency_density": 0.5833333333333333,
+      "dependency_connected_task_share": 0.875,
+      "dependency_longest_chain_edges": 1.5,
+      "full_graph_longest_path_edges": 4.0,
+      "dependency_max_fan_in": 2.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.25,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.625,
+      "child_weighted_local_chain_share": 0.75
+    },
+    "mean_TED": 10.5,
+    "mean_GED_lower": 29.5,
+    "mean_GED_upper": 31.5,
+    "all_paired_GED_exact": false
+  },
+  {
+    "question_id": 102,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": -0.6666666666666666,
+    "BASE_graph_indices": [
+      502,
+      504,
+      506
+    ],
+    "V2_graph_indices": [
+      503,
+      505,
+      507
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 5.0,
+      "max_depth": 1.0,
+      "weighted_depth": 0.6923076923076924,
+      "dependency_edges": 2.3333333333333335,
+      "dependency_density": 0.2333333333333333,
+      "dependency_connected_task_share": 0.3055555555555555,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 2.3333333333333335,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1388888888888889,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 4.0,
+    "mean_GED_lower": 10.333333333333334,
+    "mean_GED_upper": 10.333333333333334,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 103,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.6666666666666666,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      508,
+      510,
+      512
+    ],
+    "V2_graph_indices": [
+      509,
+      511,
+      513
+    ],
+    "BASE_descriptors": {
+      "nodes": 2.0,
+      "max_depth": 0.3333333333333333,
+      "weighted_depth": 0.25,
+      "dependency_edges": 0.6666666666666666,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 2.0,
+      "max_depth": 0.3333333333333333,
+      "weighted_depth": 0.25,
+      "dependency_edges": 0.6666666666666666,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.0,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "mean_TED": 2.0,
+    "mean_GED_lower": 5.333333333333333,
+    "mean_GED_upper": 5.333333333333333,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 106,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.0,
+    "V2_accuracy": 0.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      514,
+      516,
+      518
+    ],
+    "V2_graph_indices": [
+      515,
+      517,
+      519
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 107,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.3333333333333333,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      520,
+      522,
+      524
+    ],
+    "V2_graph_indices": [
+      521,
+      523,
+      525
+    ],
+    "BASE_descriptors": {
+      "nodes": 3.0,
+      "max_depth": 0.6666666666666666,
+      "weighted_depth": 0.4285714285714286,
+      "dependency_edges": 1.3333333333333333,
+      "dependency_density": 0.2222222222222222,
+      "dependency_connected_task_share": 0.3333333333333333,
+      "dependency_longest_chain_edges": 0.6666666666666666,
+      "full_graph_longest_path_edges": 1.6666666666666667,
+      "dependency_max_fan_in": 0.3333333333333333,
+      "dependency_max_fan_out": 0.3333333333333333,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.3333333333333333,
+      "child_weighted_local_parallel_share": 0.1111111111111111,
+      "child_weighted_local_chain_share": 0.3333333333333333
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 2.0,
+    "mean_GED_lower": 5.333333333333333,
+    "mean_GED_upper": 5.333333333333333,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 108,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 1.0,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.0,
+    "BASE_graph_indices": [
+      526,
+      528,
+      530
+    ],
+    "V2_graph_indices": [
+      527,
+      529,
+      531
+    ],
+    "BASE_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "V2_descriptors": {
+      "nodes": 1.0,
+      "max_depth": 0.0,
+      "weighted_depth": 0.0,
+      "dependency_edges": 0.0,
+      "dependency_density": 0.0,
+      "dependency_connected_task_share": 0.0,
+      "dependency_longest_chain_edges": 0.0,
+      "full_graph_longest_path_edges": 0.0,
+      "dependency_max_fan_in": 0.0,
+      "dependency_max_fan_out": 0.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.0,
+      "child_weighted_local_parallel_share": 0.0,
+      "child_weighted_local_chain_share": 0.0
+    },
+    "mean_TED": 0.0,
+    "mean_GED_lower": 0.0,
+    "mean_GED_upper": 0.0,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 109,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 1.0,
+    "delta_success": 0.3333333333333333,
+    "BASE_graph_indices": [
+      532,
+      534,
+      536
+    ],
+    "V2_graph_indices": [
+      533,
+      535,
+      537
+    ],
+    "BASE_descriptors": {
+      "nodes": 4.666666666666667,
+      "max_depth": 1.3333333333333333,
+      "weighted_depth": 0.7685185185185185,
+      "dependency_edges": 2.3333333333333335,
+      "dependency_density": 0.40740740740740744,
+      "dependency_connected_task_share": 0.625,
+      "dependency_longest_chain_edges": 1.6666666666666667,
+      "full_graph_longest_path_edges": 3.0,
+      "dependency_max_fan_in": 0.6666666666666666,
+      "dependency_max_fan_out": 0.6666666666666666,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 0.6666666666666666,
+      "child_weighted_local_parallel_share": 0.23611111111111108,
+      "child_weighted_local_chain_share": 0.6666666666666666
+    },
+    "V2_descriptors": {
+      "nodes": 8.0,
+      "max_depth": 2.3333333333333335,
+      "weighted_depth": 1.388888888888889,
+      "dependency_edges": 4.333333333333333,
+      "dependency_density": 0.8047619047619047,
+      "dependency_connected_task_share": 1.0,
+      "dependency_longest_chain_edges": 1.6666666666666667,
+      "full_graph_longest_path_edges": 5.0,
+      "dependency_max_fan_in": 1.0,
+      "dependency_max_fan_out": 1.0,
+      "dependency_fan_in2_task_share": 0.0,
+      "max_local_antichain": 1.0,
+      "child_weighted_local_parallel_share": 0.4128787878787879,
+      "child_weighted_local_chain_share": 1.0
+    },
+    "mean_TED": 7.333333333333333,
+    "mean_GED_lower": 19.333333333333332,
+    "mean_GED_upper": 19.333333333333332,
+    "all_paired_GED_exact": true
+  },
+  {
+    "question_id": 110,
+    "rounds": [
+      "H",
+      "R1",
+      "R2"
+    ],
+    "BASE_accuracy": 0.6666666666666666,
+    "V2_accuracy": 0.3333333333333333,
+    "delta_success": -0.3333333333333333,
+    "BASE_graph_indices": [
+      538,
+      540,
+      542
+    ],
+    "V2_graph_indices": [
+      539,
+      541,
+      543
+    ],
+    "BASE_descriptors": {
+      "nodes": 18.0,
+      "max_depth": 3.0,
+      "weighted_depth": 2.1750208855472013,
+      "dependency_edges": 11.666666666666666,
+      "dependency_density": 0.7470899470899471,
+      "dependency_connected_task_share": 0.8431623931623932,
+      "dependency_longest_chain_edges": 2.6666666666666665,
+      "full_graph_longest_path_edges": 9.333333333333334,
+      "dependency_max_fan_in": 2.0,
+      "dependency_max_fan_out": 2.0,
+      "dependency_fan_in2_task_share": 0.1586894586894587,
+      "max_local_antichain": 1.3333333333333333,
+      "child_weighted_local_parallel_share": 0.47051282051282045,
+      "child_weighted_local_chain_share": 0.9629629629629629
+    },
+    "V2_descriptors": {
+      "nodes": 24.0,
+      "max_depth": 3.0,
+      "weighted_depth": 2.137172641749301,
+      "dependency_edges": 15.333333333333334,
+      "dependency_density": 0.5767195767195767,
+      "dependency_connected_task_share": 0.9015441774062464,
+      "dependency_longest_chain_edges": 3.0,
+      "full_graph_longest_path_edges": 8.0,
+      "dependency_max_fan_in": 2.0,
+      "dependency_max_fan_out": 1.6666666666666667,
+      "dependency_fan_in2_task_share": 0.1469871125043539,
+      "max_local_antichain": 2.0,
+      "child_weighted_local_parallel_share": 0.4942528735632184,
+      "child_weighted_local_chain_share": 0.8715314060141646
+    },
+    "mean_TED": 9.333333333333334,
+    "mean_GED_lower": 16.333333333333332,
+    "mean_GED_upper": 50.333333333333336,
+    "all_paired_GED_exact": false
+  }
+]

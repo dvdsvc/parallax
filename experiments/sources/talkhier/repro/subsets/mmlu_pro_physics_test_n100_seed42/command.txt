@@ -1,0 +1,1 @@
+.venv/bin/python repro/sample_mmlu_pro.py --count 100 --seed 42 --output-dir repro/subsets/mmlu_pro_physics_test_n100_seed42

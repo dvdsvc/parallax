@@ -1,0 +1,69 @@
+[ROMA GLOBAL ORGANIZATIONAL ARCHITECTURE]
+
+The following describes the global architecture of ROMA. It is a static description of how ROMA processes tasks in general. It does not determine which path will be taken for the current task.
+
+ORGANIZATIONAL FLOW
+```sql
+                     Current Task
+                          |
+                          v
+                      Atomizer
+                     /        \
+            atomic /          \ planning needed
+                   v            v
+               Executor       Planner
+                   |            |
+                   |         Subtasks
+                   |            |
+                   |            v
+                   |      each subtask enters
+                   |       the same recursive
+                   |        ROMA mechanism
+                   |            |
+                   |      child task results
+                   |            |
+                   |            v
+                   |        Aggregator
+                   |            |
+                   \------------+------------>
+                                |
+                          Task Result
+                                |
+                       [optional Verifier]
+                                |
+                           Final Output
+```
+
+ROLE RESPONSIBILITIES
+
+Atomizer\
+Determines whether the current task is atomic and can be executed directly, or whether it requires decomposition and planning.
+
+Planner\
+When planning is required, decomposes the current task into smaller subtasks. Subtasks may have dependencies on one another. Every generated subtask is processed recursively through the same ROMA mechanism.
+
+Executor\
+Handles tasks that have been classified for direct execution. Execution may use reasoning, tools, functions, APIs, retrieval, code, or other capabilities available to the Executor.
+
+Aggregator\
+Collects and integrates completed subtask results. Its purpose is to produce a coherent result for the parent task rather than merely returning the raw outputs of its children.
+
+Verifier\
+When enabled, validates a candidate result against the original goal before final delivery. Verification is optional and is not part of the recursive decomposition itself.
+
+GLOBAL INFORMATION FLOW
+
+Top-down:\
+Tasks may be recursively decomposed into smaller subtasks.
+
+Bottom-up:\
+Results from subtasks are aggregated upward into solutions for their parent tasks.
+
+Dependency-aware:\
+When a subtask depends on the result of another subtask, the dependent work waits for the required result before proceeding.
+
+INTERPRETATION
+
+ROMA is recursive rather than a mandatory linear pipeline. A task classified as atomic may proceed directly from Atomizer to Executor. A task requiring decomposition proceeds from Atomizer to Planner, and each generated subtask recursively enters the same mechanism. Completed child results are integrated by Aggregator and returned upward until the root task result is produced.
+
+This architecture description provides knowledge of the organization as a whole. It does not imply that any particular branch, number of subtasks, recursion depth, dependency structure, or execution path will occur for the current task.

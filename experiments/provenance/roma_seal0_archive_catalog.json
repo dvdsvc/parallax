@@ -1,0 +1,162 @@
+[
+  {
+    "archive": "20260929T025511Z_BASE_seal0-base-native-e2b-1-110-20260929",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20260929T025511Z_BASE_seal0-base-native-e2b-1-110-20260929/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20260929T041539Z_BASE_seal0-v2-e2b-rerun-q1-11-29-32-39-40-48-50-87-109-20260929T0415Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20260929T041539Z_BASE_seal0-v2-e2b-rerun-q1-11-29-32-39-40-48-50-87-109-20260929T0415Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261002T080800Z_BASE_seal0-remaining59-base-repeat1-20261002T080159Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261002T080800Z_BASE_seal0-remaining59-base-repeat1-20261002T080159Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261002T080800Z_BASE_seal0-remaining59-v2-repeat1-20261002T080159Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261002T080800Z_BASE_seal0-remaining59-v2-repeat1-20261002T080159Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261002T080800Z_BASE_seal0-remaining59-base-repeat2-20261002T080159Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261002T080800Z_BASE_seal0-remaining59-base-repeat2-20261002T080159Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261002T080800Z_BASE_seal0-remaining59-v2-repeat2-20261002T080159Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261002T080800Z_BASE_seal0-remaining59-v2-repeat2-20261002T080159Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20260928T150512Z_BASE_seal0-base-0381d83a2b6a",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20260928T150512Z_BASE_seal0-base-0381d83a2b6a/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261001T135821Z_BASE_seal0-seed44-base-repeat1-20261001T135508Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261001T135821Z_BASE_seal0-seed44-base-repeat1-20261001T135508Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261001T142320Z_BASE_seal0-seed44-v2-repeat1-q2-retry1-20261001T142211Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261001T142320Z_BASE_seal0-seed44-v2-repeat1-q2-retry1-20261001T142211Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261001T135821Z_BASE_seal0-seed44-base-repeat2-20261001T135508Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261001T135821Z_BASE_seal0-seed44-base-repeat2-20261001T135508Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261001T135821Z_BASE_seal0-seed44-v2-repeat2-20261001T135508Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261001T135821Z_BASE_seal0-seed44-v2-repeat2-20261001T135508Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261001T115919Z_BASE_seal0-seed43-base-repeat1-20261001T115351Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261001T115919Z_BASE_seal0-seed43-base-repeat1-20261001T115351Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261001T115919Z_BASE_seal0-seed43-v2-repeat1-20261001T115351Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261001T115919Z_BASE_seal0-seed43-v2-repeat1-20261001T115351Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261001T115919Z_BASE_seal0-seed43-base-repeat2-20261001T115351Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261001T115919Z_BASE_seal0-seed43-base-repeat2-20261001T115351Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261001T115919Z_BASE_seal0-seed43-v2-repeat2-20261001T115351Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261001T115919Z_BASE_seal0-seed43-v2-repeat2-20261001T115351Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20260930T141921Z_BASE_seal0-paired15-base-repeat1-20260930T141651Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20260930T141921Z_BASE_seal0-paired15-base-repeat1-20260930T141651Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20260930T141922Z_BASE_seal0-paired15-v2-repeat1-20260930T141651Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20260930T141922Z_BASE_seal0-paired15-v2-repeat1-20260930T141651Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20260930T141921Z_BASE_seal0-paired15-base-repeat2-20260930T141651Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20260930T141921Z_BASE_seal0-paired15-base-repeat2-20260930T141651Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20260930T141921Z_BASE_seal0-paired15-v2-repeat2-20260930T141651Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20260930T141921Z_BASE_seal0-paired15-v2-repeat2-20260930T141651Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  },
+  {
+    "archive": "20261001T135821Z_BASE_seal0-seed44-v2-repeat1-20261001T135508Z",
+    "condition_label": "BASE",
+    "interventions": null,
+    "agent_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "config": "configs/roma_seal0_archives/20261001T135821Z_BASE_seal0-seed44-v2-repeat1-20261001T135508Z/config/paper_run_config.json",
+    "scope": "Referenced primary-record archives; labels alone do not identify the treatment. Use the archived organization_awareness_v2 switch."
+  }
+]

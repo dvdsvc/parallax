@@ -1,0 +1,412 @@
+{
+  "preferred": [
+    {
+      "path": "2026-10-02/x/outputs/01a0fbb3-df0e-7863-8526-ce0074debb4f/roma_talkhier_visibility_comparison_20261007/report.md",
+      "purpose": "组织知情权：ROMA vs TalkHier，分角色与 benchmark",
+      "status": "已完成的上下文审计",
+      "coverage": "原生代码、固定来源与代表输入；WikiQA/Camera 仅论文级证据",
+      "section": "跨系统与条件审计",
+      "benchmarks": [
+        "跨 benchmark"
+      ],
+      "agents": [
+        "ROMA",
+        "TalkHier"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "687dd66f49920a0b9fb0b348712f280603e5ba0f27529a55a5b0ef7394815980"
+    },
+    {
+      "path": "2026-10-02/x/outputs/01a0fbb3-df0e-7863-8526-ce0074debb4f/talkhier_analysis_20261006/report.md",
+      "purpose": "TalkHier：完整评分、工具行为、token、异常口径",
+      "status": "已完成的综合分析",
+      "coverage": "MMLU-Pro Physics 固定100题，94个有效配对；大学物理50题作补充",
+      "section": "TalkHier 实验与评分",
+      "benchmarks": [
+        "MMLU-Pro Physics",
+        "MMLU College Physics"
+      ],
+      "agents": [
+        "TalkHier"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "d4067f548a3a8b2e7059e7726da4671569e2d3dd2f6134cf369891556bb97892"
+    },
+    {
+      "path": "2026-10-02/x/work/talkhier/.local/evaluations/20261006T090617775637Z_mmlu_pro_exact_match/score_summary.json",
+      "title": "TalkHier MMLU-Pro Physics 最终官方精确匹配评分",
+      "purpose": "最终分数的原始汇总入口",
+      "status": "最终评分已封存",
+      "coverage": "BASE 91/97，V2 93/97；有效配对94题。固定100题样本，失败状态另留",
+      "section": "TalkHier 实验与评分",
+      "benchmarks": [
+        "MMLU-Pro Physics"
+      ],
+      "agents": [
+        "TalkHier"
+      ],
+      "kind": "最终评分",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "92c08b75ca613fc85327e04dda06b76a4f21d1f0cfe8a9422f71cdcc40e06af3"
+    },
+    {
+      "path": "2026-10-02/x/work/talkhier/.local/scoring/20261006T045520595135Z/20261006T065810680638Z/score_summary.json",
+      "title": "TalkHier College Physics 50题最终原生整数匹配评分",
+      "purpose": "大学物理50题的最终评分入口",
+      "status": "最终时点评分；provisional=false",
+      "coverage": "BASE49题、V250题有效答案均正确；49配对，另有1个BASE超时。不同于Pro Physics100题",
+      "section": "TalkHier 实验与评分",
+      "benchmarks": [
+        "MMLU College Physics"
+      ],
+      "agents": [
+        "TalkHier"
+      ],
+      "kind": "最终评分",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "67df002681d39fb89ee98a55c64f06266ff32b25bd6fd7944d91cccb0121499e"
+    },
+    {
+      "path": "2026-10-02/frames/outputs/seal0_all94_three_round_behavior_20261002.md",
+      "purpose": "ROMA SEAL-0 全94题三轮：性能、token与重复波动",
+      "status": "指定 H/R1/R2 的综合分析",
+      "coverage": "94题等权；272个有效配对题目轮次；额外N轮不混入主汇总",
+      "section": "ROMA SEAL-0 V2",
+      "benchmarks": [
+        "SEAL-0"
+      ],
+      "agents": [
+        "ROMA"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "8e988a5f228efb393183b7b9a17379aabc38b01042bd58b90fc45c34f8c582a3"
+    },
+    {
+      "path": "2026-09-12/hira/work/analysis_outputs/roma-v2-vs-base-native-e2b-20260929T062249Z/summary.json",
+      "title": "ROMA SEAL-0 历史首轮94题原生评分汇总",
+      "purpose": "历史首轮的原始汇总入口",
+      "status": "历史单轮结果，不是三轮合并",
+      "coverage": "BASE34/94、V235/94；后续三轮合并另有报告，不能混用",
+      "section": "ROMA SEAL-0 V2",
+      "benchmarks": [
+        "SEAL-0"
+      ],
+      "agents": [
+        "ROMA"
+      ],
+      "kind": "历史评分汇总",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "aba1acca51f6f64dba93935bb40da4a4fb69befdf618d2174276808b0a50b8da"
+    },
+    {
+      "path": "2026-09-30/soi/outputs/seal0_question_equal_recursion_20261003/comparison.md",
+      "purpose": "ROMA 全94题按题等权的递归与深度",
+      "status": "主递归统计入口",
+      "coverage": "先合并每题有效匹配轮次，再对题目等权；不要与运行池加权混淆",
+      "section": "ROMA SEAL-0 V2",
+      "benchmarks": [
+        "SEAL-0"
+      ],
+      "agents": [
+        "ROMA"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "6259cd24527e2355bee8fcde4968743aed9f0e8bcb204486591259f5eb8d1713"
+    },
+    {
+      "path": "2026-10-02/frames/outputs/frames50_budget_BASE_V2_20261004T132044Z/analysis_report/report.md",
+      "purpose": "ROMA FRAMES50：完整配对评分、行为、资源",
+      "status": "已完成的综合分析",
+      "coverage": "预算收缩后的50题，47个有效配对；不能当原80题或总体完整结果",
+      "section": "ROMA FRAMES",
+      "benchmarks": [
+        "FRAMES"
+      ],
+      "agents": [
+        "ROMA"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "edb82fc205093c8f1ba86d4ca0933f26b6f257223fe7c8aa1e6eb72f89607365"
+    },
+    {
+      "path": "2026-10-02/frames/outputs/seal0_remaining59_final_report_20261002.md",
+      "purpose": "ROMA 剩余59题追加实验：最终留档与评分核查",
+      "status": "最终收尾报告",
+      "coverage": "236次计划执行；226完成、9供应商阻断、1运行错误。不是新抽59题的单轮结果",
+      "section": "ROMA SEAL-0 V2",
+      "benchmarks": [
+        "SEAL-0"
+      ],
+      "agents": [
+        "ROMA"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "28e568140df2e6ec98fab46f1a077530b0b5bcc4118e1a73033fcad04429393b"
+    },
+    {
+      "path": "2026-09-30/soi/outputs/paired15_eight_runs/stability_assessment/research_direction.md",
+      "purpose": "固定15题重复实验：稳定性与论文方向",
+      "status": "机制与稳定性分析",
+      "coverage": "各条件四遍；部分题失败，13题完整面板与15题口径分别报告",
+      "section": "ROMA SEAL-0 V2",
+      "benchmarks": [
+        "SEAL-0"
+      ],
+      "agents": [
+        "ROMA"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "7fcaa2bddf790023e79e167919407ae4a8e4ed35449f7796af86d6a9c6f28967"
+    },
+    {
+      "path": "2026-10-02/wo-2/outputs/dag_organization_20261005_trial1/report.md",
+      "purpose": "ROMA 分解树、组织DAG与 outcome",
+      "status": "探索性结构分析",
+      "coverage": "树和DAG是不同对象；关联结果不等于因果机制",
+      "section": "ROMA 协作评分与结构探索",
+      "agents": [
+        "ROMA"
+      ],
+      "benchmarks": [
+        "SEAL-0",
+        "FRAMES"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "23f20f40cd4870366cd491935a3110aec97721b2669de7ce334baaa5ad8bed99"
+    },
+    {
+      "path": "2026-10-02/wo-2/outputs/tree_regimes_20261005_trial1/report_reviewed.md",
+      "purpose": "树形状态分组：审阅版入口",
+      "status": "审阅版，探索性分析",
+      "coverage": "Outcome-blind 树类别；SEAL-0题目等权、FRAMES47配对，不直接称协作状态",
+      "section": "ROMA 协作评分与结构探索",
+      "agents": [
+        "ROMA"
+      ],
+      "benchmarks": [
+        "SEAL-0",
+        "FRAMES"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "869099206deacbf0cacfea8832dc90ce185e1bbbf0bf8357093689918c98e87a"
+    },
+    {
+      "path": "2026-10-02/wo-2/outputs/mab_native_posthoc_analysis_20261004_trial2/report.md",
+      "purpose": "MultiAgentBench 原生协作评分事后分析",
+      "status": "探索性协作评分分析",
+      "coverage": "planning/communication等评分，不是原生任务正确率；保留覆盖与评分器限制",
+      "section": "ROMA 协作评分与结构探索",
+      "agents": [
+        "ROMA"
+      ],
+      "benchmarks": [
+        "SEAL-0",
+        "FRAMES"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "e18694d3dfef39efa18bfe27e87ceef054899c9a060e3b22cdf31d94e869c4c5"
+    },
+    {
+      "path": "2026-09-30/soi/outputs/process_audit_20261001/findings.md",
+      "purpose": "ROMA 工具去重与根Atomizer过程审计",
+      "status": "工具统计更正后的推荐入口",
+      "coverage": "配合 unique_tool_counts_276.csv；不要直接用旧 observer 事件行数当调用数",
+      "section": "ROMA SEAL-0 V2",
+      "agents": [
+        "ROMA"
+      ],
+      "benchmarks": [
+        "SEAL-0"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "971e74d485e7cb28df4ceb9ca6a34403c5c5f01e6f353ccaad97aa7248011976"
+    },
+    {
+      "path": "2026-09-30/soi/outputs/old111_vs_v2_switch_audit/report.md",
+      "purpose": "辨别早期111和当前V2的开关与注入",
+      "status": "条件实现审计",
+      "coverage": "目录名与 condition=BASE 不能单独确定干预；以实际开关和请求为准",
+      "section": "跨系统与条件审计",
+      "agents": [
+        "ROMA"
+      ],
+      "benchmarks": [
+        "SEAL-0",
+        "FRAMES"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "c8365020e7cfb50444a46f8c535f4a618afd07a30e27549e9699b91c173871f7"
+    },
+    {
+      "path": "2026-10-02/x/work/talkhier/repro/org_v2/FLOW_AUDIT.md",
+      "purpose": "TalkHier：必经/可选路径、串行与反馈关系",
+      "status": "已准备并验证的协议审计",
+      "coverage": "五个原生MMLU领域；区分图门禁、schema约束、提示词要求",
+      "section": "跨系统与条件审计",
+      "agents": [
+        "TalkHier"
+      ],
+      "benchmarks": [
+        "MMLU 多领域"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "c8b341e82c4f67b6db2a3757e1f5619b20df690ebd05986ebbd19cccdb16dfbf"
+    },
+    {
+      "path": "2026-10-02/frames/outputs/01a0fab2-cbaa-76a2-85e2-9f7af4712cf1/frames150_full824_20261006/README.md",
+      "purpose": "FRAMES150固定抽样与前5题索引",
+      "status": "数据与顺序已冻结；不是150题实验结果",
+      "coverage": "官方完整824题抽150；sampling seed=20261006，order seed=20261007；Pilot另有中断留档",
+      "section": "抽样、准备与运行入口",
+      "agents": [
+        "ROMA"
+      ],
+      "benchmarks": [
+        "FRAMES"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "70297425a570a721ba39b0a05eb83f64da832b9c1be6b80d840ecc7b4f388e32"
+    },
+    {
+      "path": "2026-10-02/frames/outputs/01a0fab2-cbaa-76a2-85e2-9f7af4712cf1/roma_pilot5_tb4096_mc8192_20261006T132647Z/analysis/final_report.md",
+      "purpose": "ROMA五题预算Pilot：主动中断收尾",
+      "status": "用户主动中断，非完整五题结果",
+      "coverage": "BASE/V2各完成2/5、各中断3；无grader；tb4096/max_completion8192",
+      "section": "ROMA FRAMES",
+      "agents": [
+        "ROMA"
+      ],
+      "benchmarks": [
+        "FRAMES"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "887556e23c4867cb61179a399477da5d41a3db02db692d5fd7f5523f9aab4036"
+    },
+    {
+      "path": "2026-10-05/new-chat/outputs/ROMA_benchmark_workspace_index_20261005.md",
+      "purpose": "ROMA原有目录、Paper Run和MLflow说明",
+      "status": "2026-10-05历史位置索引",
+      "coverage": "保留原文件；之后TalkHier和Pilot补充以本索引为入口",
+      "section": "抽样、准备与运行入口",
+      "agents": [
+        "ROMA"
+      ],
+      "benchmarks": [
+        "SEAL-0",
+        "FRAMES"
+      ],
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "1dce940bd80e048c2b91480d5d0ce416746d789e7aed8a44c9a15b95784cc534"
+    }
+  ],
+  "overrides": [
+    {
+      "path": "2026-09-30/soi/outputs/execution94_repeat_noise/findings.md",
+      "status": "历史分析：工具计数须结合更正",
+      "warning": "原工具统计使用observer记录行数；独立调用口径见 tool_count_correction_20261001.md 和 process_audit_20261001/findings.md",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "2c2f4ba964fb6c012d7cd4649d42bcbe70bc79a655735aa6ed77ba285cef95a4"
+    },
+    {
+      "path": "2026-09-30/soi/outputs/execution94_repeat_noise/tool_count_correction_20261001.md",
+      "status": "明确更正说明",
+      "kind": "更正",
+      "section": "跨系统与条件审计",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "cb7470d66907e59c73aa7a36fe898d5034f5912ca7d935e7dda95a8ce021f457"
+    },
+    {
+      "path": "2026-10-02/x/work/talkhier/.local/evaluations/20261006T090617775637Z_mmlu_pro_exact_match_interim_20261006T113715670482Z/scoring_report.md",
+      "status": "暂定评分：保留作过程快照",
+      "coverage": "当时193个有效答案、93配对；最终评分另有独立目录",
+      "warning": "不能把本版V2 92/96当最终分数；最终为93/97",
+      "kind": "暂定评分",
+      "section": "TalkHier 实验与评分",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "aeadca313a9085a137509ac97414840e750bf798034951cbc1beac103b214ea0"
+    },
+    {
+      "path": "2026-10-02/x/outputs/talkhier_org_reconstruction_20261005/v2_aligned/README.md",
+      "status": "候选说明阶段",
+      "warning": "这是正式冻结/执行前的候选说明；当前注入与流程审计先读正式 FLOW_AUDIT 和真实批次审计",
+      "section": "跨系统与条件审计",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "4687317b5b93cbb80ad86812fc42fd086ec335e80d449099862e09844e197d1b"
+    },
+    {
+      "path": "2026-10-02/frames/outputs/frames80_BASE_V2_paper_20261004T120825Z/README.md",
+      "status": "原80题计划与启动阶段",
+      "warning": "后续预算收缩到50题；不能当作80题完整结果。先读frames50完整报告",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "5ab687336441bce75e0c13d157825b353526688bd669ce9823ef919a127b8945"
+    },
+    {
+      "path": "2026-09-12/hira/work/roma_model_preparation/20261006T125810Z_tb4096_mc8192/report.md",
+      "status": "模型边界准备与离线验证，非答题结果",
+      "kind": "准备与配置",
+      "coverage": "tb4096/max_completion8192；后续真实Pilot已主动停止",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "96f5faa74ba8ace3f87e3248c4edc8cc81b29e86eeb34ebce65d50e831dc44a9"
+    },
+    {
+      "path": "2026-09-30/soi/outputs/frames_BASE_111_paired35_20261001T160113Z/comparison.md",
+      "status": "早期BASE/111历史结果",
+      "coverage": "35个有效配对；111与V2不能直接互换",
+      "intervention_family": "早期111组织知情条件",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "74fc809b4add72fa0674c47aeea379d6c41be92c86d04e00da5f58f2a28674e1"
+    },
+    {
+      "path": "2026-10-02/wo-2/outputs/seal0_frames_associations_20261004T153831Z/report.md",
+      "status": "同题目标题的较早分析版本；版本关系待核验",
+      "warning": "与154431Z版本的相关系数存在内容差异；不能按同名标题去重或混引",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "003bbb0503033e1c474823ffc0896817c5932eeb972a63b44804f60c4fa9da7c"
+    },
+    {
+      "path": "2026-10-02/wo-2/outputs/seal0_frames_associations_20261004T154431Z/report.md",
+      "status": "同题目标题的较晚分析版本；版本关系待核验",
+      "warning": "不是凭时间戳自动认定覆盖早版；引用时保留精确目录及SHA",
+      "reviewed_at": "2026-10-07",
+      "reviewed_sha256": "49e0c3115342ae2108373281b39973a1de44ac7892bb4d0a9a0a3850e1f8410e"
+    }
+  ],
+  "relations": [
+    {
+      "type": "最终评分补全暂定快照",
+      "from": "2026-10-02/x/work/talkhier/.local/evaluations/20261006T090617775637Z_mmlu_pro_exact_match_interim_20261006T113715670482Z/scoring_report.md",
+      "to": "2026-10-02/x/work/talkhier/.local/evaluations/20261006T090617775637Z_mmlu_pro_exact_match/score_summary.json",
+      "evidence": "两版score_summary：93→94有效配对；最后一题补齐；正式目录manifest completed"
+    },
+    {
+      "type": "工具计数明确更正",
+      "from": "2026-09-30/soi/outputs/execution94_repeat_noise/findings.md",
+      "to": "2026-09-30/soi/outputs/process_audit_20261001/findings.md",
+      "evidence": "execution94_repeat_noise/tool_count_correction_20261001.md 明确指定新的独立调用统计入口"
+    },
+    {
+      "type": "计划收缩后的完整结果入口",
+      "from": "2026-10-02/frames/outputs/frames80_BASE_V2_paper_20261004T120825Z/README.md",
+      "to": "2026-10-02/frames/outputs/frames50_budget_BASE_V2_20261004T132044Z/analysis_report/report.md",
+      "evidence": "完整报告声明运行后预算收缩子集，计划50题、有效配对47题"
+    },
+    {
+      "type": "候选到正式协议审计",
+      "from": "2026-10-02/x/outputs/talkhier_org_reconstruction_20261005/v2_aligned/README.md",
+      "to": "2026-10-02/x/work/talkhier/repro/org_v2/FLOW_AUDIT.md",
+      "evidence": "候选文本与正式协议核验属于不同准备阶段，不能凭候选说明替代已执行文本"
+    },
+    {
+      "type": "大学物理最终评分补全时点快照",
+      "from": "2026-10-02/x/work/talkhier/.local/scoring/20261006T045520595135Z/20261006T065124071262Z/score_summary.json",
+      "to": "2026-10-02/x/work/talkhier/.local/scoring/20261006T045520595135Z/20261006T065810680638Z/score_summary.json",
+      "evidence": "前两份JSON provisional=true；065810最终版为false，父批次已终态。"
+    },
+    {
+      "type": "大学物理最终评分补全时点快照",
+      "from": "2026-10-02/x/work/talkhier/.local/scoring/20261006T045520595135Z/20261006T065150787806Z/score_summary.json",
+      "to": "2026-10-02/x/work/talkhier/.local/scoring/20261006T045520595135Z/20261006T065810680638Z/score_summary.json",
+      "evidence": "前两份JSON provisional=true；065810最终版为false，父批次已终态。"
+    }
+  ]
+}

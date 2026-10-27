@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/TIGER-AI-Lab/MMLU-Pro",
+  "commit": "f418b116db00b065c2aea046518d8fcf74d39872",
+  "commit_time": "2026-03-18T03:57:33Z",
+  "files": {
+    "evaluate_from_api.py": {
+      "url": "https://raw.githubusercontent.com/TIGER-AI-Lab/MMLU-Pro/f418b116db00b065c2aea046518d8fcf74d39872/evaluate_from_api.py",
+      "sha256": "6e00c0d57ed307b9e707b712ea796fbd2286c6d21889cd63bb58090fa72c5a99"
+    },
+    "LICENSE": {
+      "url": "https://raw.githubusercontent.com/TIGER-AI-Lab/MMLU-Pro/f418b116db00b065c2aea046518d8fcf74d39872/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    }
+  },
+  "selected_functions": [
+    "update_result",
+    "save_summary"
+  ],
+  "prediction_policy": "Use native structured final option index, map by original option order to official A-J labels; score only present valid predictions with official exact equality; missing records stay unscored, no random fallback."
+}

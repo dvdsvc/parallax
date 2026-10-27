@@ -1,0 +1,35 @@
+{
+  "launch_id": "6d9aba89be5d46948dcaa3e87aec2ba6",
+  "run_kind": "offline_scoring",
+  "workspace_commit": "0cddfdc3581bafb969b9d71e68dbeca1c4e6bdde",
+  "workspace_dirty": false,
+  "native_upstream_commit": "842a62160bcd326c5f8bb11c6cd1f3da7ced00f6",
+  "agent_source_sha256": "dbe2b6e511a9565e2368c819b36d0dfb13f8e1bbc8d3d9b1a328de02f2f26b7b",
+  "external_source_sha256": "b8f29a0d888a5c147b6a106ed18f1fe6e31ea1915f69b02141a8f779098a551f",
+  "source_file_count": 101,
+  "started_at_utc": "2026-10-06T11:42:47.871295+00:00",
+  "local_archive": "archives/talkhier_scoring",
+  "parent_mlflow_run_id": "d5b8915214f54a6b95a9ee20b326a7e1",
+  "mlflow": {
+    "run_id": "dae5cd8e11954c9190163bfb3407f46a",
+    "experiment_id": "1",
+    "tracking_uri": "sqlite:///external_archive/2026-10-02/x/work/talkhier/.local/mlflow/tracking.db",
+    "mlflow_version": "3.16.1",
+    "index_python": "sources/roma/controls/.venv/bin/python",
+    "artifact_uri": "file://external_archive/2026-10-02/x/work/talkhier/.local/mlflow/artifacts/dae5cd8e11954c9190163bfb3407f46a/artifacts",
+    "telemetry_enabled": false
+  },
+  "status": "completed",
+  "parameters": {
+    "benchmark": "MMLU-Pro Physics fixed test n100 seed42",
+    "scoring": "official valid-prediction exact match",
+    "parent_batch": "archives/talkhier_physics100",
+    "parent_archive_sha256": "015bd4459398577484ba57f3c3a83b6120c1624aa5485343476b41929ee1a4b2",
+    "subset_manifest_sha256": "3a74f4669898b1e7521dae29e6cbc154857ed2ea447acf4d800da522ce0984c6",
+    "official_scoring_commit": "f418b116db00b065c2aea046518d8fcf74d39872",
+    "scoring_script_sha256": "bf19ec920c0654437a28a5f85e8549de8fdcc827b88194744729a7e4d9c73265",
+    "model_calls": 0,
+    "grader_calls": 0,
+    "missing_prediction_policy": "unscored; no random fallback; fixed-sample correct-answer yield reported separately"
+  }
+}

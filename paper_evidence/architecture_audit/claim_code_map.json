@@ -1,0 +1,74 @@
+[
+  {
+    "claim": "ROMA: depth cap and state machine",
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/engine/solve.py",
+    "line": 944,
+    "anchor": "async def _async_execute_state_machine"
+  },
+  {
+    "claim": "ROMA: module-specific native contexts",
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/engine/runtime.py",
+    "line": 400,
+    "anchor": "async def _execute_agent_with_tracing"
+  },
+  {
+    "claim": "ROMA: child depth and dependencies",
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/engine/runtime.py",
+    "line": 917,
+    "anchor": "def _create_subtask_graph"
+  },
+  {
+    "claim": "ROMA: direct child results and dependency readiness",
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/engine/runtime.py",
+    "line": 1000,
+    "anchor": "def _collect_subtask_results"
+  },
+  {
+    "claim": "ROMA: objective and recursion fields",
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/context/manager.py",
+    "line": 99,
+    "anchor": "def _build_fundamental"
+  },
+  {
+    "claim": "ROMA: conditional dependency results",
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/context/manager.py",
+    "line": 171,
+    "anchor": "async def _build_executor_specific"
+  },
+  {
+    "claim": "TalkHier: local roster, job list and routing choices",
+    "snapshot": "architecture_audit/sources/talkhier/frozen/src/multiagent/agent_team.py",
+    "line": 48,
+    "anchor": "def loadSuperviser"
+  },
+  {
+    "claim": "TalkHier: fixed team edges and supervisor returns",
+    "snapshot": "architecture_audit/sources/talkhier/frozen/src/multiagent/agent_team.py",
+    "line": 175,
+    "anchor": "def createStateGraph"
+  },
+  {
+    "claim": "TalkHier: leaf instructions, background and selected history",
+    "snapshot": "architecture_audit/sources/talkhier/frozen/src/multiagent/agent_team.py",
+    "line": 280,
+    "anchor": "def loadMember"
+  },
+  {
+    "claim": "TalkHier: nested team construction",
+    "snapshot": "architecture_audit/sources/talkhier/frozen/src/multiagent/agent_team.py",
+    "line": 385,
+    "anchor": "def buildTeam"
+  },
+  {
+    "claim": "TalkHier Physics: two-expert roster",
+    "snapshot": "architecture_audit/sources/talkhier/frozen/src/prompts/mmlu.py",
+    "line": 26,
+    "anchor": "elif domain == \"college_physics\""
+  },
+  {
+    "claim": "ORG-DESC: same native interfaces, inserted system description",
+    "snapshot": "architecture_audit/sources/talkhier/adapter.py",
+    "line": 49,
+    "anchor": "def prepare"
+  }
+]

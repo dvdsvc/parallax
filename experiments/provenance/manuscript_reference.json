@@ -1,0 +1,12 @@
+{
+  "title": "Functionally Sufficient, Informationally Incomplete: The Marginal Value of Organizational Visibility in Hierarchical LLM Agents",
+  "reference_version": "Local v5 snapshot, observed on 2026-10-09",
+  "manuscript_markdown_sha256": "e6e485841fed2d064235f30c48f7febd8169ffa4fa153110df24089ce6300cec",
+  "manuscript_latex_sha256": "b29586249d068a5c30c608f17b257af82e21672f3ec06fc797cfd220257047c9",
+  "main_paper_included": false,
+  "condition_alias": {
+    "BASE": "BASE",
+    "V2": "ORG-DESC"
+  },
+  "supplement_policy": "Supporting material only; no extended/corrected paper."
+}

@@ -1,0 +1,10 @@
+{
+  "cwd": "external_archive/2026-10-02/x/work/talkhier",
+  "argv": [
+    ".venv/bin/python",
+    ".local/evaluation_preparations/20261006T090617775637Z_mmlu_pro_exact_match/score.py",
+    "--final"
+  ],
+  "model_calls": 0,
+  "grader_calls": 0
+}

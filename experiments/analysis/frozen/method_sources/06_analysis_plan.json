@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-10-05T08:45:10.991277+00:00",
+  "script_commit": "45d203465204cc25251ffe093fa3ca25206b5864",
+  "seed": 20261005,
+  "calls": 0,
+  "X_Y_sign": "All X behavior deltas and Y accuracy deltas = V2 minus BASE; Y>0 means V2 improves",
+  "input_archives": {
+    "PCA": "external_archive/2026-10-02/wo-2/outputs/behavior_pca_20261004T191056Z",
+    "PLS": "external_archive/2026-10-02/wo-2/outputs/behavior_pls_20261004T193700Z",
+    "DAG": "external_archive/2026-10-02/wo-2/outputs/dag_organization_20261005_trial1"
+  },
+  "new_features": [
+    "dependency_density",
+    "dependency_longest_chain_edges",
+    "child_weighted_local_parallel_share",
+    "dependency_fan_in2_task_share"
+  ],
+  "pairing": "each original variant keeps exactly its questions, rounds, score coverage and missingness; no sample expansion or new calls",
+  "baseline": "sign-only copies; PCA eigenvectors/scores unchanged, outcome correlations/slopes reversed; PLS predictions/coefs reversed, errors/VIP/selections invariant; native first-repeat checks",
+  "PCA": "all9 old variants; same native prior fit function, pruning/order, standardization,1000 parallel permutations; new4 appended; freeze all outcome-blind PCA before outcome join",
+  "PLS": "same6 old variants, main3; original native sklearn helpers;10x5 outer,inner4,components1..10,minMSE; standardization/alias removal train-only; same outer seeds/splits",
+  "tests": "199 stratified question Y permutations for each3 main DAG models; baseline nulls reused after sign identity checks; incremental paired same-permutation Q2 gains; six tests Holm",
+  "uncertainty": "10000 question conditional OOF loss bootstraps;500 descriptive coefficient/VIP bootstraps at fixed full-fit components; not post-selection or causal intervals",
+  "preservation": "original traces/logs/scores/old analyses read-only; prior known PCA report hash mismatch documented without repairing old checksum"
+}

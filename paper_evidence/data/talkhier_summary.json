@@ -1,0 +1,6124 @@
+{
+  "primary": {
+    "groups": {
+      "BASE": {
+        "planned": 100,
+        "statuses": {
+          "completed": 97,
+          "timed_out": 1,
+          "error": 2
+        },
+        "scored": 97,
+        "correct": 91,
+        "normal_usage": {
+          "input_tokens": 9733397,
+          "output_tokens": 7846660,
+          "total_tokens": 17580057,
+          "reasoning_output_tokens": 5845850,
+          "cached_input_tokens": 1074816
+        },
+        "normal_calls": 2221,
+        "model_calls_finished": 2308,
+        "normal_missing_usage": 0,
+        "model_errors": {
+          "LengthFinishReasonError": 28,
+          "BadRequestError": 50,
+          "NativeTimeout": 1
+        },
+        "ordinary_length": 0,
+        "empty_returns": 8,
+        "missing_usage_calls": 79,
+        "root_attempts": 128,
+        "root_failed_attempts": 29,
+        "root_failure_types": {
+          "GraphRecursionError": 4,
+          "AttributeError": 24,
+          "NativeTimeout": 1
+        },
+        "normal_tokens_in_failed_root_attempts": 5162149,
+        "tool_names": {
+          "output_tool": 315
+        },
+        "model_requested_tools": {
+          "output_tool": 318
+        },
+        "gateway_events": {
+          "http_return": 2307
+        },
+        "http_status": {
+          "200": 2257,
+          "400": 50
+        },
+        "gateway_wait_seconds": 0.0,
+        "injection_audit": {
+          "model_starts": 2308
+        },
+        "reasoning_above_budget": 0,
+        "normal_call_duration_seconds": {
+          "n": 2221,
+          "mean": 32.42960353263685,
+          "median": 28.89539916702779,
+          "p90": 58.313101375009865,
+          "p95": 73.44524174998514,
+          "min": 1.652347291004844,
+          "max": 173.01317329099402
+        },
+        "normal_long_calls_over_300_seconds": 0,
+        "clean_questions": 72,
+        "revision_change": {
+          "1->1": 79,
+          "0->0": 5
+        },
+        "pre_revision_missing": 13
+      },
+      "V2": {
+        "planned": 100,
+        "statuses": {
+          "completed": 97,
+          "timed_out": 2,
+          "error": 1
+        },
+        "scored": 97,
+        "correct": 93,
+        "normal_usage": {
+          "input_tokens": 15983257,
+          "output_tokens": 12944799,
+          "total_tokens": 28928056,
+          "reasoning_output_tokens": 10331945,
+          "cached_input_tokens": 1973120
+        },
+        "normal_calls": 3041,
+        "model_calls_finished": 3093,
+        "normal_missing_usage": 0,
+        "model_errors": {
+          "LengthFinishReasonError": 13,
+          "NativeTimeout": 2,
+          "BadRequestError": 30
+        },
+        "ordinary_length": 2,
+        "empty_returns": 5,
+        "missing_usage_calls": 45,
+        "root_attempts": 133,
+        "root_failed_attempts": 35,
+        "root_failure_types": {
+          "GraphRecursionError": 19,
+          "AttributeError": 14,
+          "NativeTimeout": 2
+        },
+        "normal_tokens_in_failed_root_attempts": 9012074,
+        "tool_names": {
+          "output_tool": 952
+        },
+        "model_requested_tools": {
+          "output_tool": 975,
+          "math_tool": 1
+        },
+        "gateway_events": {
+          "http_return": 3091
+        },
+        "http_status": {
+          "200": 3061,
+          "400": 30
+        },
+        "gateway_wait_seconds": 0.0,
+        "injection_audit": {
+          "model_starts": 3093,
+          "with_global_org": 3093,
+          "first_system_global_org": 3093
+        },
+        "reasoning_above_budget": 0,
+        "normal_call_duration_seconds": {
+          "n": 3041,
+          "mean": 39.26366335942335,
+          "median": 33.0243676250102,
+          "p90": 74.37957908399403,
+          "p95": 85.87901612499263,
+          "min": 1.0398435840033926,
+          "max": 146.1138809999684
+        },
+        "normal_long_calls_over_300_seconds": 0,
+        "clean_questions": 74,
+        "revision_change": {
+          "1->1": 90,
+          "0->0": 4
+        },
+        "pre_revision_missing": 3
+      }
+    },
+    "paired_count": 94,
+    "clean_pair_count": 50,
+    "transitions": {
+      "1->1": 88,
+      "0->0": 4,
+      "0->1": 2
+    },
+    "exact_McNemar_p": 0.5,
+    "paired_metrics": {
+      "correct": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 0.9361702127659575,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 0.9574468085106383,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 0.02127659574468085,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "ratio_of_means": 1.0227272727272727,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.05319148936170215
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.0595238095238095
+        ],
+        "increased": 2,
+        "decreased": 0,
+        "tied": 92
+      },
+      "normal_total_tokens": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 171688.68085106384,
+          "median": 121379.5,
+          "p90": 278190.2,
+          "p95": 628676.95,
+          "min": 35340.0,
+          "max": 1000099.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 283211.8617021277,
+          "median": 206809.5,
+          "p90": 564536.3,
+          "p95": 658051.8999999999,
+          "min": 82035.0,
+          "max": 1134853.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 111523.18085106384,
+          "median": 79420.0,
+          "p90": 408486.0000000001,
+          "p95": 539585.3999999999,
+          "min": -601595.0,
+          "max": 849685.0
+        },
+        "ratio_of_means": 1.649566298128924,
+        "median_question_ratio": 1.8100763086061307,
+        "delta_mean_95ci": [
+          61256.350797872336,
+          161954.76941489358
+        ],
+        "ratio_of_means_95ci": [
+          1.3063703315793764,
+          2.095533098949792
+        ],
+        "increased": 75,
+        "decreased": 19,
+        "tied": 0
+      },
+      "normal_input_tokens": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 94708.25531914894,
+          "median": 53656.5,
+          "p90": 135134.30000000002,
+          "p95": 446465.14999999985,
+          "min": 15375.0,
+          "max": 763207.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 156427.59574468085,
+          "median": 100448.0,
+          "p90": 336151.3,
+          "p95": 410462.8999999995,
+          "min": 51090.0,
+          "max": 758817.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 61719.34042553192,
+          "median": 42976.0,
+          "p90": 261264.80000000002,
+          "p95": 375246.3499999996,
+          "min": -539327.0,
+          "max": 627973.0
+        },
+        "ratio_of_means": 1.6516785703373944,
+        "median_question_ratio": 1.9222236945902766,
+        "delta_mean_95ci": [
+          24601.76861702129,
+          98132.85771276592
+        ],
+        "ratio_of_means_95ci": [
+          1.2094185764891723,
+          2.3101528977234036
+        ],
+        "increased": 78,
+        "decreased": 16,
+        "tied": 0
+      },
+      "normal_output_tokens": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 76980.4255319149,
+          "median": 66532.0,
+          "p90": 138823.30000000002,
+          "p95": 174685.09999999986,
+          "min": 19563.0,
+          "max": 259379.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 126784.26595744681,
+          "median": 102709.0,
+          "p90": 231815.20000000007,
+          "p95": 263961.89999999985,
+          "min": 30945.0,
+          "max": 376036.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 49803.84042553192,
+          "median": 33259.5,
+          "p90": 153647.50000000006,
+          "p95": 201772.8499999999,
+          "min": -126116.0,
+          "max": 291694.0
+        },
+        "ratio_of_means": 1.6469675905452617,
+        "median_question_ratio": 1.634541712399495,
+        "delta_mean_95ci": [
+          34853.05877659574,
+          65171.824734042566
+        ],
+        "ratio_of_means_95ci": [
+          1.422197818895426,
+          1.9053728801384313
+        ],
+        "increased": 74,
+        "decreased": 20,
+        "tied": 0
+      },
+      "normal_reasoning_output_tokens": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 57254.925531914894,
+          "median": 49321.5,
+          "p90": 96860.90000000001,
+          "p95": 128226.09999999989,
+          "min": 13653.0,
+          "max": 183644.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 101378.9574468085,
+          "median": 81586.0,
+          "p90": 178360.80000000002,
+          "p95": 215157.39999999997,
+          "min": 19838.0,
+          "max": 297383.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 44124.03191489362,
+          "median": 32375.0,
+          "p90": 128567.80000000003,
+          "p95": 156038.9499999999,
+          "min": -84386.0,
+          "max": 232855.0
+        },
+        "ratio_of_means": 1.7706591442564728,
+        "median_question_ratio": 1.793186894521299,
+        "delta_mean_95ci": [
+          32339.629255319152,
+          56275.524999999994
+        ],
+        "ratio_of_means_95ci": [
+          1.5316243381549388,
+          2.0433195933833397
+        ],
+        "increased": 76,
+        "decreased": 18,
+        "tied": 0
+      },
+      "normal_cached_input_tokens": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 9721.191489361701,
+          "median": 1920.0,
+          "p90": 24640.000000000007,
+          "p95": 49932.79999999998,
+          "min": 0.0,
+          "max": 124800.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 19676.59574468085,
+          "median": 5248.0,
+          "p90": 63564.8,
+          "p95": 77670.4,
+          "min": 0.0,
+          "max": 231552.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 9955.404255319148,
+          "median": 0.0,
+          "p90": 45824.0,
+          "p95": 69407.99999999999,
+          "min": -50688.0,
+          "max": 223360.0
+        },
+        "ratio_of_means": 2.024093010225522,
+        "median_question_ratio": 0.7257259528130672,
+        "delta_mean_95ci": [
+          3494.0595744680845,
+          17436.629787234036
+        ],
+        "ratio_of_means_95ci": [
+          1.2869493665185234,
+          3.4282072291084007
+        ],
+        "increased": 45,
+        "decreased": 36,
+        "tied": 13
+      },
+      "normal_calls": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 22.095744680851062,
+          "median": 18.0,
+          "p90": 35.7,
+          "p95": 52.04999999999998,
+          "min": 6.0,
+          "max": 69.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 29.73404255319149,
+          "median": 23.5,
+          "p90": 52.400000000000006,
+          "p95": 66.04999999999998,
+          "min": 13.0,
+          "max": 83.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 7.638297872340425,
+          "median": 5.0,
+          "p90": 33.80000000000001,
+          "p95": 45.04999999999998,
+          "min": -51.0,
+          "max": 69.0
+        },
+        "ratio_of_means": 1.3456909003370245,
+        "median_question_ratio": 1.2955182072829132,
+        "delta_mean_95ci": [
+          3.6063829787234063,
+          11.72340425531915
+        ],
+        "ratio_of_means_95ci": [
+          1.1496951163962135,
+          1.573797873445696
+        ],
+        "increased": 65,
+        "decreased": 28,
+        "tied": 1
+      },
+      "output_tool_calls": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 3.117021276595745,
+          "median": 2.0,
+          "p90": 6.0,
+          "p95": 8.0,
+          "min": 0.0,
+          "max": 22.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 9.372340425531915,
+          "median": 6.5,
+          "p90": 21.700000000000003,
+          "p95": 27.0,
+          "min": 1.0,
+          "max": 41.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 6.25531914893617,
+          "median": 4.0,
+          "p90": 18.700000000000003,
+          "p95": 25.0,
+          "min": -19.0,
+          "max": 40.0
+        },
+        "ratio_of_means": 3.006825938566553,
+        "median_question_ratio": 2.8,
+        "delta_mean_95ci": [
+          4.5,
+          8.127659574468085
+        ],
+        "ratio_of_means_95ci": [
+          2.2912790386825996,
+          3.9239555133079844
+        ],
+        "increased": 74,
+        "decreased": 16,
+        "tied": 4
+      },
+      "elapsed_seconds": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 735.5652509122323,
+          "median": 605.9044805415033,
+          "p90": 1385.7915048957977,
+          "p95": 1679.2631350210245,
+          "min": 187.84469525003806,
+          "max": 2366.9548409589916
+        },
+        "V2": {
+          "n": 94,
+          "mean": 1187.063213401634,
+          "median": 943.8695225414704,
+          "p90": 2113.0491097252,
+          "p95": 2598.4949341296033,
+          "min": 283.1401696249959,
+          "max": 3487.292655874975
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 451.4979624894015,
+          "median": 327.7895596874587,
+          "p90": 1518.632730154269,
+          "p95": 1804.381156791911,
+          "min": -1032.4485877499683,
+          "max": 2515.036435457936
+        },
+        "ratio_of_means": 1.6138108915959033,
+        "median_question_ratio": 1.658352611033504,
+        "delta_mean_95ci": [
+          311.48486198247286,
+          595.137875053947
+        ],
+        "ratio_of_means_95ci": [
+          1.3962776095178384,
+          1.8653014743803964
+        ],
+        "increased": 72,
+        "decreased": 22,
+        "tied": 0
+      },
+      "root_attempts": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 1.2659574468085106,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 1.3085106382978724,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 3.0,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 0.0425531914893617,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.3499999999999943,
+          "min": -2.0,
+          "max": 2.0
+        },
+        "ratio_of_means": 1.0336134453781514,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.1063829787234043,
+          0.19148936170212782
+        ],
+        "ratio_of_means_95ci": [
+          0.9180327868852459,
+          1.1607142857142858
+        ],
+        "increased": 16,
+        "decreased": 14,
+        "tied": 64
+      },
+      "successful_root_normal_tokens": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 126286.3085106383,
+          "median": 102902.0,
+          "p90": 169481.90000000002,
+          "p95": 235678.94999999963,
+          "min": 35340.0,
+          "max": 759125.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 204129.01063829788,
+          "median": 170830.5,
+          "p90": 365402.6000000001,
+          "p95": 414099.1,
+          "min": 82035.0,
+          "max": 655366.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 77842.70212765958,
+          "median": 65682.5,
+          "p90": 252386.90000000002,
+          "p95": 317398.29999999993,
+          "min": -510753.0,
+          "max": 552965.0
+        },
+        "ratio_of_means": 1.6163985870337019,
+        "median_question_ratio": 1.6759683962771246,
+        "delta_mean_95ci": [
+          49275.35930851063,
+          105677.61675531906
+        ],
+        "ratio_of_means_95ci": [
+          1.341092160877409,
+          1.9376412222632906
+        ],
+        "increased": 80,
+        "decreased": 14,
+        "tied": 0
+      },
+      "successful_root_normal_calls": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 17.77659574468085,
+          "median": 17.0,
+          "p90": 21.700000000000003,
+          "p95": 27.44999999999996,
+          "min": 6.0,
+          "max": 54.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 22.5531914893617,
+          "median": 21.0,
+          "p90": 31.10000000000001,
+          "p95": 37.69999999999999,
+          "min": 12.0,
+          "max": 51.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 4.776595744680851,
+          "median": 4.0,
+          "p90": 16.0,
+          "p95": 24.0,
+          "min": -30.0,
+          "max": 35.0
+        },
+        "ratio_of_means": 1.2687013764213046,
+        "median_question_ratio": 1.1904761904761905,
+        "delta_mean_95ci": [
+          2.7021276595744688,
+          6.851063829787233
+        ],
+        "ratio_of_means_95ci": [
+          1.142697226412099,
+          1.4078904383770745
+        ],
+        "increased": 68,
+        "decreased": 24,
+        "tied": 2
+      },
+      "visits_Default_Supervisor": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 5.0638297872340425,
+          "median": 4.0,
+          "p90": 7.0,
+          "p95": 8.349999999999994,
+          "min": 3.0,
+          "max": 19.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 5.585106382978723,
+          "median": 4.0,
+          "p90": 9.400000000000006,
+          "p95": 13.0,
+          "min": 4.0,
+          "max": 21.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 0.5212765957446809,
+          "median": 0.0,
+          "p90": 4.0,
+          "p95": 9.0,
+          "min": -15.0,
+          "max": 17.0
+        },
+        "ratio_of_means": 1.102941176470588,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.3936170212765955,
+          1.4468085106382977
+        ],
+        "ratio_of_means_95ci": [
+          0.9285714285714286,
+          1.3038814465289381
+        ],
+        "increased": 30,
+        "decreased": 18,
+        "tied": 46
+      },
+      "visits_Answer_Generator": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 1.2659574468085106,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 1.3297872340425532,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 3.0,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 0.06382978723404255,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.3499999999999943,
+          "min": -2.0,
+          "max": 2.0
+        },
+        "ratio_of_means": 1.050420168067227,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.0957446808510638,
+          0.2127659574468086
+        ],
+        "ratio_of_means_95ci": [
+          0.9307692307692307,
+          1.1818181818181819
+        ],
+        "increased": 18,
+        "decreased": 14,
+        "tied": 62
+      },
+      "visits_Evaluator_Supervisor": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 4.670212765957447,
+          "median": 4.0,
+          "p90": 7.0,
+          "p95": 9.0,
+          "min": 0.0,
+          "max": 20.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 4.925531914893617,
+          "median": 4.0,
+          "p90": 8.0,
+          "p95": 9.0,
+          "min": 3.0,
+          "max": 12.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 0.2553191489361702,
+          "median": 0.0,
+          "p90": 4.0,
+          "p95": 4.349999999999994,
+          "min": -16.0,
+          "max": 10.0
+        },
+        "ratio_of_means": 1.0546697038724373,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.4255319148936172,
+          0.8936170212765964
+        ],
+        "ratio_of_means_95ci": [
+          0.9164968387126949,
+          1.2085427135678393
+        ],
+        "increased": 37,
+        "decreased": 25,
+        "tied": 32
+      },
+      "visits_Physics": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 1.4361702127659575,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 3.0,
+          "min": 0.0,
+          "max": 16.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 1.2765957446808511,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 3.0,
+          "min": 0.0,
+          "max": 4.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": -0.1595744680851064,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "min": -15.0,
+          "max": 3.0
+        },
+        "ratio_of_means": 0.888888888888889,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.6170212765957446,
+          0.21276595744680837
+        ],
+        "ratio_of_means_95ci": [
+          0.6647390343420605,
+          1.1779661016949154
+        ],
+        "increased": 28,
+        "decreased": 28,
+        "tied": 38
+      },
+      "visits_Mathematics": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 0.9893617021276596,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": 0.0,
+          "max": 8.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 1.2127659574468086,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 0.22340425531914893,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.3499999999999943,
+          "min": -7.0,
+          "max": 2.0
+        },
+        "ratio_of_means": 1.2258064516129032,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.4148936170212766
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.4938271604938271
+        ],
+        "increased": 32,
+        "decreased": 10,
+        "tied": 52
+      },
+      "visits_Revisor": {
+        "n": 94,
+        "BASE": {
+          "n": 94,
+          "mean": 1.5851063829787233,
+          "median": 1.0,
+          "p90": 1.7000000000000028,
+          "p95": 4.699999999999989,
+          "min": 0.0,
+          "max": 15.0
+        },
+        "V2": {
+          "n": 94,
+          "mean": 1.9042553191489362,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 8.0,
+          "min": 1.0,
+          "max": 14.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 94,
+          "mean": 0.3191489361702128,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 7.0,
+          "min": -14.0,
+          "max": 13.0
+        },
+        "ratio_of_means": 1.2013422818791948,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.478723404255319,
+          1.106382978723404
+        ],
+        "ratio_of_means_95ci": [
+          0.7614627241920819,
+          1.875
+        ],
+        "increased": 17,
+        "decreased": 9,
+        "tied": 68
+      }
+    },
+    "clean_pair_metrics": {
+      "correct": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 0.96,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 0.98,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 0.02,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "ratio_of_means": 1.0208333333333333,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.06000000000000005
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.0666666666666667
+        ],
+        "increased": 1,
+        "decreased": 0,
+        "tied": 49
+      },
+      "normal_total_tokens": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 103987.48,
+          "median": 97266.0,
+          "p90": 143880.7,
+          "p95": 164094.4,
+          "min": 35340.0,
+          "max": 278876.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 199852.72,
+          "median": 163799.0,
+          "p90": 312556.3,
+          "p95": 435535.69999999984,
+          "min": 82035.0,
+          "max": 655366.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 95865.24,
+          "median": 67995.0,
+          "p90": 187284.50000000012,
+          "p95": 344395.69999999984,
+          "min": -127383.0,
+          "max": 552965.0
+        },
+        "ratio_of_means": 1.9218921354763094,
+        "median_question_ratio": 1.7173046171811803,
+        "delta_mean_95ci": [
+          66092.03249999999,
+          129278.09599999996
+        ],
+        "ratio_of_means_95ci": [
+          1.5994887438290397,
+          2.306885138346242
+        ],
+        "increased": 44,
+        "decreased": 6,
+        "tied": 0
+      },
+      "normal_input_tokens": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 48921.0,
+          "median": 43939.5,
+          "p90": 73719.90000000001,
+          "p95": 88926.09999999996,
+          "min": 15375.0,
+          "max": 157325.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 106959.56,
+          "median": 81941.5,
+          "p90": 177649.50000000003,
+          "p95": 248748.0999999998,
+          "min": 51090.0,
+          "max": 468803.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 58038.56,
+          "median": 34417.5,
+          "p90": 118124.30000000008,
+          "p95": 208782.19999999984,
+          "min": -95819.0,
+          "max": 417367.0
+        },
+        "ratio_of_means": 2.1863731321927187,
+        "median_question_ratio": 1.8114631416131535,
+        "delta_mean_95ci": [
+          37335.199,
+          82286.84700000001
+        ],
+        "ratio_of_means_95ci": [
+          1.7047482954794633,
+          2.783273589665291
+        ],
+        "increased": 47,
+        "decreased": 3,
+        "tied": 0
+      },
+      "normal_output_tokens": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 55066.48,
+          "median": 52607.5,
+          "p90": 76493.8,
+          "p95": 82116.45,
+          "min": 19563.0,
+          "max": 121551.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 92893.16,
+          "median": 83876.0,
+          "p90": 137526.9,
+          "p95": 182857.3,
+          "min": 30945.0,
+          "max": 187595.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 37826.68,
+          "median": 31782.5,
+          "p90": 79305.90000000001,
+          "p95": 116175.7999999999,
+          "min": -31564.0,
+          "max": 137859.0
+        },
+        "ratio_of_means": 1.686927510165894,
+        "median_question_ratio": 1.623199343531312,
+        "delta_mean_95ci": [
+          27954.382500000003,
+          48407.451499999974
+        ],
+        "ratio_of_means_95ci": [
+          1.4835120871704193,
+          1.9178780650498688
+        ],
+        "increased": 43,
+        "decreased": 7,
+        "tied": 0
+      },
+      "normal_reasoning_output_tokens": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 42098.76,
+          "median": 40825.5,
+          "p90": 58384.50000000001,
+          "p95": 65193.34999999999,
+          "min": 13653.0,
+          "max": 97130.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 74485.44,
+          "median": 66953.5,
+          "p90": 108356.50000000001,
+          "p95": 136446.24999999997,
+          "min": 19838.0,
+          "max": 162974.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 32386.68,
+          "median": 29278.0,
+          "p90": 62026.00000000001,
+          "p95": 90083.34999999992,
+          "min": -19355.0,
+          "max": 119404.0
+        },
+        "ratio_of_means": 1.7693024687663008,
+        "median_question_ratio": 1.783754064470938,
+        "delta_mean_95ci": [
+          24241.3135,
+          40992.22549999999
+        ],
+        "ratio_of_means_95ci": [
+          1.5490769841991034,
+          2.0192423829230766
+        ],
+        "increased": 42,
+        "decreased": 8,
+        "tied": 0
+      },
+      "normal_cached_input_tokens": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 3586.56,
+          "median": 1280.0,
+          "p90": 8396.800000000001,
+          "p95": 12543.999999999985,
+          "min": 0.0,
+          "max": 52864.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 10032.64,
+          "median": 1088.0,
+          "p90": 33497.600000000006,
+          "p95": 41580.79999999998,
+          "min": 0.0,
+          "max": 53632.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 6446.08,
+          "median": 0.0,
+          "p90": 32089.600000000006,
+          "p95": 40831.99999999998,
+          "min": -50688.0,
+          "max": 48896.0
+        },
+        "ratio_of_means": 2.7972876516773733,
+        "median_question_ratio": 0.04116222760290557,
+        "delta_mean_95ci": [
+          1597.3759999999997,
+          11376.64
+        ],
+        "ratio_of_means_95ci": [
+          1.2964604994660212,
+          6.441073471340729
+        ],
+        "increased": 21,
+        "decreased": 19,
+        "tied": 10
+      },
+      "normal_calls": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 17.02,
+          "median": 17.0,
+          "p90": 21.0,
+          "p95": 22.0,
+          "min": 6.0,
+          "max": 35.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 22.9,
+          "median": 21.0,
+          "p90": 29.0,
+          "p95": 38.29999999999998,
+          "min": 13.0,
+          "max": 51.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 5.88,
+          "median": 5.0,
+          "p90": 16.200000000000003,
+          "p95": 21.749999999999986,
+          "min": -17.0,
+          "max": 35.0
+        },
+        "ratio_of_means": 1.3454759106933019,
+        "median_question_ratio": 1.2380952380952381,
+        "delta_mean_95ci": [
+          3.379999999999999,
+          8.5
+        ],
+        "ratio_of_means_95ci": [
+          1.187849800731922,
+          1.5239824047050892
+        ],
+        "increased": 39,
+        "decreased": 11,
+        "tied": 0
+      },
+      "output_tool_calls": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 2.88,
+          "median": 2.0,
+          "p90": 6.0,
+          "p95": 6.549999999999997,
+          "min": 0.0,
+          "max": 22.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 6.68,
+          "median": 5.0,
+          "p90": 12.100000000000001,
+          "p95": 14.0,
+          "min": 1.0,
+          "max": 27.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 3.8,
+          "median": 3.0,
+          "p90": 10.100000000000001,
+          "p95": 12.0,
+          "min": -19.0,
+          "max": 25.0
+        },
+        "ratio_of_means": 2.3194444444444446,
+        "median_question_ratio": 2.0,
+        "delta_mean_95ci": [
+          2.0599999999999996,
+          5.5
+        ],
+        "ratio_of_means_95ci": [
+          1.554945054945055,
+          3.45001126126126
+        ],
+        "increased": 39,
+        "decreased": 9,
+        "tied": 2
+      },
+      "elapsed_seconds": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 516.9857630908606,
+          "median": 495.27143512500334,
+          "p90": 716.6670128078258,
+          "p95": 772.0788094356074,
+          "min": 187.84469525003806,
+          "max": 1201.2210619589896
+        },
+        "V2": {
+          "n": 50,
+          "mean": 870.5727028591942,
+          "median": 760.0374112709833,
+          "p90": 1253.8554920958995,
+          "p95": 1634.4267805458364,
+          "min": 283.1401696249959,
+          "max": 1771.958786541014
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 353.5869397683337,
+          "median": 312.83212750047096,
+          "p90": 738.6653024045228,
+          "p95": 1039.2031997955016,
+          "min": -278.7206176670152,
+          "max": 1332.0240633329959
+        },
+        "ratio_of_means": 1.6839394138329309,
+        "median_question_ratio": 1.6212100774471965,
+        "delta_mean_95ci": [
+          263.0233171178433,
+          450.4816854494357
+        ],
+        "ratio_of_means_95ci": [
+          1.4843837810508018,
+          1.9101119242307751
+        ],
+        "increased": 44,
+        "decreased": 6,
+        "tied": 0
+      },
+      "root_attempts": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "ratio_of_means": 1.0,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.0
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.0
+        ],
+        "increased": 0,
+        "decreased": 0,
+        "tied": 50
+      },
+      "successful_root_normal_tokens": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 103987.48,
+          "median": 97266.0,
+          "p90": 143880.7,
+          "p95": 164094.4,
+          "min": 35340.0,
+          "max": 278876.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 199852.72,
+          "median": 163799.0,
+          "p90": 312556.3,
+          "p95": 435535.69999999984,
+          "min": 82035.0,
+          "max": 655366.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 95865.24,
+          "median": 67995.0,
+          "p90": 187284.50000000012,
+          "p95": 344395.69999999984,
+          "min": -127383.0,
+          "max": 552965.0
+        },
+        "ratio_of_means": 1.9218921354763094,
+        "median_question_ratio": 1.7173046171811803,
+        "delta_mean_95ci": [
+          66092.03249999999,
+          129278.09599999996
+        ],
+        "ratio_of_means_95ci": [
+          1.5994887438290397,
+          2.306885138346242
+        ],
+        "increased": 44,
+        "decreased": 6,
+        "tied": 0
+      },
+      "successful_root_normal_calls": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 17.02,
+          "median": 17.0,
+          "p90": 21.0,
+          "p95": 22.0,
+          "min": 6.0,
+          "max": 35.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 22.9,
+          "median": 21.0,
+          "p90": 29.0,
+          "p95": 38.29999999999998,
+          "min": 13.0,
+          "max": 51.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 5.88,
+          "median": 5.0,
+          "p90": 16.200000000000003,
+          "p95": 21.749999999999986,
+          "min": -17.0,
+          "max": 35.0
+        },
+        "ratio_of_means": 1.3454759106933019,
+        "median_question_ratio": 1.2380952380952381,
+        "delta_mean_95ci": [
+          3.379999999999999,
+          8.5
+        ],
+        "ratio_of_means_95ci": [
+          1.187849800731922,
+          1.5239824047050892
+        ],
+        "increased": 39,
+        "decreased": 11,
+        "tied": 0
+      },
+      "visits_Default_Supervisor": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 4.0,
+          "median": 4.0,
+          "p90": 4.0,
+          "p95": 4.0,
+          "min": 3.0,
+          "max": 7.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 4.5,
+          "median": 4.0,
+          "p90": 4.100000000000001,
+          "p95": 7.749999999999986,
+          "min": 4.0,
+          "max": 15.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 0.5,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 3.749999999999986,
+          "min": -3.0,
+          "max": 11.0
+        },
+        "ratio_of_means": 1.125,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.03999999999999959,
+          1.12
+        ],
+        "ratio_of_means_95ci": [
+          1.009478672985782,
+          1.2828282828282829
+        ],
+        "increased": 8,
+        "decreased": 1,
+        "tied": 41
+      },
+      "visits_Answer_Generator": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "ratio_of_means": 1.0,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.0
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.0
+        ],
+        "increased": 0,
+        "decreased": 0,
+        "tied": 50
+      },
+      "visits_Evaluator_Supervisor": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 3.7,
+          "median": 4.0,
+          "p90": 5.0,
+          "p95": 5.0,
+          "min": 0.0,
+          "max": 5.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 3.98,
+          "median": 4.0,
+          "p90": 4.0,
+          "p95": 4.0,
+          "min": 3.0,
+          "max": 6.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 0.28,
+          "median": 0.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": -1.0,
+          "max": 4.0
+        },
+        "ratio_of_means": 1.0756756756756756,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.5800000000000001
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.1676300578034682
+        ],
+        "increased": 13,
+        "decreased": 9,
+        "tied": 28
+      },
+      "visits_Physics": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 0.94,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": 0.0,
+          "max": 2.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 0.94,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 2.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 0.0,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": -1.0,
+          "max": 2.0
+        },
+        "ratio_of_means": 1.0,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.18000000000000005,
+          0.18000000000000005
+        ],
+        "ratio_of_means_95ci": [
+          0.830188679245283,
+          1.2307692307692306
+        ],
+        "increased": 9,
+        "decreased": 10,
+        "tied": 31
+      },
+      "visits_Mathematics": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 0.8,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 2.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 0.2,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": -1.0,
+          "max": 1.0
+        },
+        "ratio_of_means": 1.25,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.07999999999999996,
+          0.31999999999999995
+        ],
+        "ratio_of_means_95ci": [
+          1.0869565217391304,
+          1.4705882352941175
+        ],
+        "increased": 11,
+        "decreased": 1,
+        "tied": 38
+      },
+      "visits_Revisor": {
+        "n": 50,
+        "BASE": {
+          "n": 50,
+          "mean": 1.02,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 4.0
+        },
+        "V2": {
+          "n": 50,
+          "mean": 1.48,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 4.749999999999986,
+          "min": 1.0,
+          "max": 12.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 50,
+          "mean": 0.46,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 3.1999999999999886,
+          "min": -3.0,
+          "max": 11.0
+        },
+        "ratio_of_means": 1.4509803921568627,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          1.08
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          2.0784313725490198
+        ],
+        "increased": 7,
+        "decreased": 1,
+        "tied": 42
+      }
+    },
+    "tail": [
+      {
+        "problem_id": 9418,
+        "official_question_id": 9607,
+        "BASE_normal_tokens": 285168,
+        "V2_normal_tokens": 1134853,
+        "delta": 849685,
+        "BASE_calls": 39,
+        "V2_calls": 83,
+        "BASE_root_failed": 2,
+        "V2_root_failed": 2,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9714,
+        "official_question_id": 9906,
+        "BASE_normal_tokens": 47657,
+        "V2_normal_tokens": 854670,
+        "delta": 807013,
+        "BASE_calls": 10,
+        "V2_calls": 79,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 2,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10091,
+        "official_question_id": 10292,
+        "BASE_normal_tokens": 146930,
+        "V2_normal_tokens": 863695,
+        "delta": 716765,
+        "BASE_calls": 17,
+        "V2_calls": 69,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9033,
+        "official_question_id": 9222,
+        "BASE_normal_tokens": 162678,
+        "V2_normal_tokens": 845775,
+        "delta": 683097,
+        "BASE_calls": 19,
+        "V2_calls": 68,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 2,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9306,
+        "official_question_id": 9495,
+        "BASE_normal_tokens": 102401,
+        "V2_normal_tokens": 655366,
+        "delta": 552965,
+        "BASE_calls": 20,
+        "V2_calls": 51,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9290,
+        "official_question_id": 9479,
+        "BASE_normal_tokens": 62546,
+        "V2_normal_tokens": 594927,
+        "delta": 532381,
+        "BASE_calls": 13,
+        "V2_calls": 73,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 2,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9262,
+        "official_question_id": 9451,
+        "BASE_normal_tokens": 131119,
+        "V2_normal_tokens": 663040,
+        "delta": 531921,
+        "BASE_calls": 18,
+        "V2_calls": 65,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 2,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9958,
+        "official_question_id": 10156,
+        "BASE_normal_tokens": 89862,
+        "V2_normal_tokens": 581676,
+        "delta": 491814,
+        "BASE_calls": 17,
+        "V2_calls": 58,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 2,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9324,
+        "official_question_id": 9513,
+        "BASE_normal_tokens": 88846,
+        "V2_normal_tokens": 510520,
+        "delta": 421674,
+        "BASE_calls": 16,
+        "V2_calls": 57,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9582,
+        "official_question_id": 9772,
+        "BASE_normal_tokens": 152951,
+        "V2_normal_tokens": 574463,
+        "delta": 421512,
+        "BASE_calls": 16,
+        "V2_calls": 53,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9188,
+        "official_question_id": 9377,
+        "BASE_normal_tokens": 136312,
+        "V2_normal_tokens": 514404,
+        "delta": 378092,
+        "BASE_calls": 17,
+        "V2_calls": 35,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9304,
+        "official_question_id": 9493,
+        "BASE_normal_tokens": 149630,
+        "V2_normal_tokens": 527148,
+        "delta": 377518,
+        "BASE_calls": 18,
+        "V2_calls": 47,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9393,
+        "official_question_id": 9582,
+        "BASE_normal_tokens": 89043,
+        "V2_normal_tokens": 463685,
+        "delta": 374642,
+        "BASE_calls": 11,
+        "V2_calls": 46,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9720,
+        "official_question_id": 9912,
+        "BASE_normal_tokens": 163557,
+        "V2_normal_tokens": 518927,
+        "delta": 355370,
+        "BASE_calls": 33,
+        "V2_calls": 63,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 2,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9501,
+        "official_question_id": 9691,
+        "BASE_normal_tokens": 257125,
+        "V2_normal_tokens": 604648,
+        "delta": 347523,
+        "BASE_calls": 20,
+        "V2_calls": 42,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9499,
+        "official_question_id": 9689,
+        "BASE_normal_tokens": 100135,
+        "V2_normal_tokens": 432444,
+        "delta": 332309,
+        "BASE_calls": 18,
+        "V2_calls": 46,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9719,
+        "official_question_id": 9911,
+        "BASE_normal_tokens": 93703,
+        "V2_normal_tokens": 401131,
+        "delta": 307428,
+        "BASE_calls": 17,
+        "V2_calls": 41,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 8916,
+        "official_question_id": 9105,
+        "BASE_normal_tokens": 147266,
+        "V2_normal_tokens": 409354,
+        "delta": 262088,
+        "BASE_calls": 22,
+        "V2_calls": 48,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 0,
+        "V2_correct": 0
+      },
+      {
+        "problem_id": 9205,
+        "official_question_id": 9394,
+        "BASE_normal_tokens": 58661,
+        "V2_normal_tokens": 312163,
+        "delta": 253502,
+        "BASE_calls": 9,
+        "V2_calls": 28,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 8948,
+        "official_question_id": 9137,
+        "BASE_normal_tokens": 167048,
+        "V2_normal_tokens": 416833,
+        "delta": 249785,
+        "BASE_calls": 17,
+        "V2_calls": 33,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 0,
+        "V2_correct": 0
+      },
+      {
+        "problem_id": 9181,
+        "official_question_id": 9370,
+        "BASE_normal_tokens": 86250,
+        "V2_normal_tokens": 316358,
+        "delta": 230108,
+        "BASE_calls": 16,
+        "V2_calls": 44,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9665,
+        "official_question_id": 9856,
+        "BASE_normal_tokens": 137862,
+        "V2_normal_tokens": 338055,
+        "delta": 200193,
+        "BASE_calls": 13,
+        "V2_calls": 23,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9551,
+        "official_question_id": 9741,
+        "BASE_normal_tokens": 184347,
+        "V2_normal_tokens": 377123,
+        "delta": 192776,
+        "BASE_calls": 29,
+        "V2_calls": 33,
+        "BASE_root_failed": 2,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9783,
+        "official_question_id": 9977,
+        "BASE_normal_tokens": 192453,
+        "V2_normal_tokens": 379658,
+        "delta": 187205,
+        "BASE_calls": 36,
+        "V2_calls": 39,
+        "BASE_root_failed": 2,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10061,
+        "official_question_id": 10262,
+        "BASE_normal_tokens": 136169,
+        "V2_normal_tokens": 316096,
+        "delta": 179927,
+        "BASE_calls": 18,
+        "V2_calls": 29,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9877,
+        "official_question_id": 10072,
+        "BASE_normal_tokens": 90772,
+        "V2_normal_tokens": 261308,
+        "delta": 170536,
+        "BASE_calls": 13,
+        "V2_calls": 24,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9595,
+        "official_question_id": 9785,
+        "BASE_normal_tokens": 69732,
+        "V2_normal_tokens": 236457,
+        "delta": 166725,
+        "BASE_calls": 13,
+        "V2_calls": 29,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9140,
+        "official_question_id": 9329,
+        "BASE_normal_tokens": 69807,
+        "V2_normal_tokens": 234610,
+        "delta": 164803,
+        "BASE_calls": 13,
+        "V2_calls": 26,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9356,
+        "official_question_id": 9545,
+        "BASE_normal_tokens": 90800,
+        "V2_normal_tokens": 254542,
+        "delta": 163742,
+        "BASE_calls": 17,
+        "V2_calls": 37,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9948,
+        "official_question_id": 10146,
+        "BASE_normal_tokens": 67127,
+        "V2_normal_tokens": 227231,
+        "delta": 160104,
+        "BASE_calls": 12,
+        "V2_calls": 32,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9321,
+        "official_question_id": 9510,
+        "BASE_normal_tokens": 197574,
+        "V2_normal_tokens": 355430,
+        "delta": 157856,
+        "BASE_calls": 20,
+        "V2_calls": 34,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9795,
+        "official_question_id": 9989,
+        "BASE_normal_tokens": 69333,
+        "V2_normal_tokens": 219070,
+        "delta": 149737,
+        "BASE_calls": 14,
+        "V2_calls": 25,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9018,
+        "official_question_id": 9207,
+        "BASE_normal_tokens": 71369,
+        "V2_normal_tokens": 211751,
+        "delta": 140382,
+        "BASE_calls": 15,
+        "V2_calls": 27,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9287,
+        "official_question_id": 9476,
+        "BASE_normal_tokens": 43264,
+        "V2_normal_tokens": 169635,
+        "delta": 126371,
+        "BASE_calls": 10,
+        "V2_calls": 28,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9544,
+        "official_question_id": 9734,
+        "BASE_normal_tokens": 97151,
+        "V2_normal_tokens": 222695,
+        "delta": 125544,
+        "BASE_calls": 20,
+        "V2_calls": 29,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9016,
+        "official_question_id": 9205,
+        "BASE_normal_tokens": 151285,
+        "V2_normal_tokens": 271165,
+        "delta": 119880,
+        "BASE_calls": 21,
+        "V2_calls": 25,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 0,
+        "V2_correct": 0
+      },
+      {
+        "problem_id": 9397,
+        "official_question_id": 9586,
+        "BASE_normal_tokens": 47124,
+        "V2_normal_tokens": 165728,
+        "delta": 118604,
+        "BASE_calls": 9,
+        "V2_calls": 24,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 8997,
+        "official_question_id": 9186,
+        "BASE_normal_tokens": 108067,
+        "V2_normal_tokens": 220522,
+        "delta": 112455,
+        "BASE_calls": 17,
+        "V2_calls": 23,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9401,
+        "official_question_id": 9590,
+        "BASE_normal_tokens": 35340,
+        "V2_normal_tokens": 147015,
+        "delta": 111675,
+        "BASE_calls": 6,
+        "V2_calls": 17,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9953,
+        "official_question_id": 10151,
+        "BASE_normal_tokens": 46564,
+        "V2_normal_tokens": 146060,
+        "delta": 99496,
+        "BASE_calls": 9,
+        "V2_calls": 20,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9302,
+        "official_question_id": 9491,
+        "BASE_normal_tokens": 139704,
+        "V2_normal_tokens": 238734,
+        "delta": 99030,
+        "BASE_calls": 16,
+        "V2_calls": 22,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9061,
+        "official_question_id": 9250,
+        "BASE_normal_tokens": 94587,
+        "V2_normal_tokens": 188581,
+        "delta": 93994,
+        "BASE_calls": 16,
+        "V2_calls": 23,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9173,
+        "official_question_id": 9362,
+        "BASE_normal_tokens": 52408,
+        "V2_normal_tokens": 140732,
+        "delta": 88324,
+        "BASE_calls": 13,
+        "V2_calls": 21,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10037,
+        "official_question_id": 10237,
+        "BASE_normal_tokens": 43007,
+        "V2_normal_tokens": 130688,
+        "delta": 87681,
+        "BASE_calls": 9,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 8909,
+        "official_question_id": 9098,
+        "BASE_normal_tokens": 138959,
+        "V2_normal_tokens": 223943,
+        "delta": 84984,
+        "BASE_calls": 21,
+        "V2_calls": 26,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9602,
+        "official_question_id": 9792,
+        "BASE_normal_tokens": 91203,
+        "V2_normal_tokens": 175408,
+        "delta": 84205,
+        "BASE_calls": 16,
+        "V2_calls": 22,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9312,
+        "official_question_id": 9501,
+        "BASE_normal_tokens": 83875,
+        "V2_normal_tokens": 164790,
+        "delta": 80915,
+        "BASE_calls": 17,
+        "V2_calls": 23,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9633,
+        "official_question_id": 9824,
+        "BASE_normal_tokens": 121780,
+        "V2_normal_tokens": 199705,
+        "delta": 77925,
+        "BASE_calls": 21,
+        "V2_calls": 26,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9676,
+        "official_question_id": 9867,
+        "BASE_normal_tokens": 55884,
+        "V2_normal_tokens": 128165,
+        "delta": 72281,
+        "BASE_calls": 12,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 8920,
+        "official_question_id": 9109,
+        "BASE_normal_tokens": 119127,
+        "V2_normal_tokens": 188932,
+        "delta": 69805,
+        "BASE_calls": 21,
+        "V2_calls": 22,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 0,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10050,
+        "official_question_id": 10251,
+        "BASE_normal_tokens": 65664,
+        "V2_normal_tokens": 131849,
+        "delta": 66185,
+        "BASE_calls": 13,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9632,
+        "official_question_id": 9823,
+        "BASE_normal_tokens": 97628,
+        "V2_normal_tokens": 162808,
+        "delta": 65180,
+        "BASE_calls": 18,
+        "V2_calls": 20,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9447,
+        "official_question_id": 9636,
+        "BASE_normal_tokens": 38573,
+        "V2_normal_tokens": 98424,
+        "delta": 59851,
+        "BASE_calls": 10,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9360,
+        "official_question_id": 9549,
+        "BASE_normal_tokens": 87200,
+        "V2_normal_tokens": 146871,
+        "delta": 59671,
+        "BASE_calls": 21,
+        "V2_calls": 25,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 8868,
+        "official_question_id": 9057,
+        "BASE_normal_tokens": 81733,
+        "V2_normal_tokens": 141051,
+        "delta": 59318,
+        "BASE_calls": 17,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9295,
+        "official_question_id": 9484,
+        "BASE_normal_tokens": 115613,
+        "V2_normal_tokens": 173772,
+        "delta": 58159,
+        "BASE_calls": 17,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9672,
+        "official_question_id": 9863,
+        "BASE_normal_tokens": 171629,
+        "V2_normal_tokens": 225058,
+        "delta": 53429,
+        "BASE_calls": 33,
+        "V2_calls": 27,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9110,
+        "official_question_id": 9299,
+        "BASE_normal_tokens": 64652,
+        "V2_normal_tokens": 117743,
+        "delta": 53091,
+        "BASE_calls": 12,
+        "V2_calls": 17,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9590,
+        "official_question_id": 9780,
+        "BASE_normal_tokens": 121251,
+        "V2_normal_tokens": 174244,
+        "delta": 52993,
+        "BASE_calls": 17,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10064,
+        "official_question_id": 10265,
+        "BASE_normal_tokens": 97381,
+        "V2_normal_tokens": 148810,
+        "delta": 51429,
+        "BASE_calls": 17,
+        "V2_calls": 20,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9284,
+        "official_question_id": 9473,
+        "BASE_normal_tokens": 108471,
+        "V2_normal_tokens": 158996,
+        "delta": 50525,
+        "BASE_calls": 19,
+        "V2_calls": 21,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9559,
+        "official_question_id": 9749,
+        "BASE_normal_tokens": 212419,
+        "V2_normal_tokens": 251203,
+        "delta": 38784,
+        "BASE_calls": 22,
+        "V2_calls": 23,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9001,
+        "official_question_id": 9190,
+        "BASE_normal_tokens": 125954,
+        "V2_normal_tokens": 164538,
+        "delta": 38584,
+        "BASE_calls": 22,
+        "V2_calls": 22,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9889,
+        "official_question_id": 10084,
+        "BASE_normal_tokens": 163375,
+        "V2_normal_tokens": 201868,
+        "delta": 38493,
+        "BASE_calls": 21,
+        "V2_calls": 23,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9630,
+        "official_question_id": 9821,
+        "BASE_normal_tokens": 91922,
+        "V2_normal_tokens": 129321,
+        "delta": 37399,
+        "BASE_calls": 17,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9455,
+        "official_question_id": 9645,
+        "BASE_normal_tokens": 110747,
+        "V2_normal_tokens": 146285,
+        "delta": 35538,
+        "BASE_calls": 21,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9044,
+        "official_question_id": 9233,
+        "BASE_normal_tokens": 121508,
+        "V2_normal_tokens": 155415,
+        "delta": 33907,
+        "BASE_calls": 22,
+        "V2_calls": 20,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9396,
+        "official_question_id": 9585,
+        "BASE_normal_tokens": 85736,
+        "V2_normal_tokens": 119498,
+        "delta": 33762,
+        "BASE_calls": 21,
+        "V2_calls": 20,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10102,
+        "official_question_id": 10304,
+        "BASE_normal_tokens": 136994,
+        "V2_normal_tokens": 162753,
+        "delta": 25759,
+        "BASE_calls": 17,
+        "V2_calls": 14,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9613,
+        "official_question_id": 9803,
+        "BASE_normal_tokens": 107985,
+        "V2_normal_tokens": 125314,
+        "delta": 17329,
+        "BASE_calls": 20,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9774,
+        "official_question_id": 9968,
+        "BASE_normal_tokens": 121629,
+        "V2_normal_tokens": 134468,
+        "delta": 12839,
+        "BASE_calls": 16,
+        "V2_calls": 17,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10016,
+        "official_question_id": 10216,
+        "BASE_normal_tokens": 103403,
+        "V2_normal_tokens": 114459,
+        "delta": 11056,
+        "BASE_calls": 21,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9596,
+        "official_question_id": 9786,
+        "BASE_normal_tokens": 116518,
+        "V2_normal_tokens": 124419,
+        "delta": 7901,
+        "BASE_calls": 17,
+        "V2_calls": 14,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9083,
+        "official_question_id": 9272,
+        "BASE_normal_tokens": 220610,
+        "V2_normal_tokens": 228017,
+        "delta": 7407,
+        "BASE_calls": 35,
+        "V2_calls": 25,
+        "BASE_root_failed": 2,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9147,
+        "official_question_id": 9336,
+        "BASE_normal_tokens": 149290,
+        "V2_normal_tokens": 152037,
+        "delta": 2747,
+        "BASE_calls": 25,
+        "V2_calls": 19,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9732,
+        "official_question_id": 9924,
+        "BASE_normal_tokens": 87253,
+        "V2_normal_tokens": 82035,
+        "delta": -5218,
+        "BASE_calls": 15,
+        "V2_calls": 13,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9519,
+        "official_question_id": 9709,
+        "BASE_normal_tokens": 195051,
+        "V2_normal_tokens": 189422,
+        "delta": -5629,
+        "BASE_calls": 26,
+        "V2_calls": 18,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 0,
+        "V2_correct": 0
+      },
+      {
+        "problem_id": 9985,
+        "official_question_id": 10185,
+        "BASE_normal_tokens": 143058,
+        "V2_normal_tokens": 136854,
+        "delta": -6204,
+        "BASE_calls": 22,
+        "V2_calls": 17,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9403,
+        "official_question_id": 9592,
+        "BASE_normal_tokens": 133422,
+        "V2_normal_tokens": 121318,
+        "delta": -12104,
+        "BASE_calls": 18,
+        "V2_calls": 14,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9064,
+        "official_question_id": 9253,
+        "BASE_normal_tokens": 137889,
+        "V2_normal_tokens": 124608,
+        "delta": -13281,
+        "BASE_calls": 21,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9794,
+        "official_question_id": 9988,
+        "BASE_normal_tokens": 164683,
+        "V2_normal_tokens": 147231,
+        "delta": -17452,
+        "BASE_calls": 25,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10052,
+        "official_question_id": 10253,
+        "BASE_normal_tokens": 196603,
+        "V2_normal_tokens": 131720,
+        "delta": -64883,
+        "BASE_calls": 32,
+        "V2_calls": 21,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10142,
+        "official_question_id": 10344,
+        "BASE_normal_tokens": 265261,
+        "V2_normal_tokens": 171329,
+        "delta": -93932,
+        "BASE_calls": 30,
+        "V2_calls": 18,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10087,
+        "official_question_id": 10288,
+        "BASE_normal_tokens": 267278,
+        "V2_normal_tokens": 170332,
+        "delta": -96946,
+        "BASE_calls": 35,
+        "V2_calls": 19,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9189,
+        "official_question_id": 9378,
+        "BASE_normal_tokens": 421523,
+        "V2_normal_tokens": 301016,
+        "delta": -120507,
+        "BASE_calls": 22,
+        "V2_calls": 24,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 8906,
+        "official_question_id": 9095,
+        "BASE_normal_tokens": 278876,
+        "V2_normal_tokens": 151493,
+        "delta": -127383,
+        "BASE_calls": 35,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9801,
+        "official_question_id": 9995,
+        "BASE_normal_tokens": 349732,
+        "V2_normal_tokens": 212749,
+        "delta": -136983,
+        "BASE_calls": 40,
+        "V2_calls": 24,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9995,
+        "official_question_id": 10195,
+        "BASE_normal_tokens": 276590,
+        "V2_normal_tokens": 129756,
+        "delta": -146834,
+        "BASE_calls": 38,
+        "V2_calls": 15,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9331,
+        "official_question_id": 9520,
+        "BASE_normal_tokens": 629936,
+        "V2_normal_tokens": 476249,
+        "delta": -153687,
+        "BASE_calls": 51,
+        "V2_calls": 47,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 8990,
+        "official_question_id": 9179,
+        "BASE_normal_tokens": 1000099,
+        "V2_normal_tokens": 541374,
+        "delta": -458725,
+        "BASE_calls": 68,
+        "V2_calls": 49,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 1,
+        "BASE_correct": 0,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10121,
+        "official_question_id": 10323,
+        "BASE_normal_tokens": 627999,
+        "V2_normal_tokens": 119582,
+        "delta": -508417,
+        "BASE_calls": 67,
+        "V2_calls": 18,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9046,
+        "official_question_id": 9235,
+        "BASE_normal_tokens": 759125,
+        "V2_normal_tokens": 248372,
+        "delta": -510753,
+        "BASE_calls": 54,
+        "V2_calls": 24,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 9053,
+        "official_question_id": 9242,
+        "BASE_normal_tokens": 727382,
+        "V2_normal_tokens": 155411,
+        "delta": -571971,
+        "BASE_calls": 69,
+        "V2_calls": 18,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 10004,
+        "official_question_id": 10204,
+        "BASE_normal_tokens": 993529,
+        "V2_normal_tokens": 391934,
+        "delta": -601595,
+        "BASE_calls": 68,
+        "V2_calls": 32,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      }
+    ],
+    "top5_share_net_delta": 0.3443158797536511,
+    "top5_share_positive_delta": 0.2553484681284944,
+    "failures": [
+      {
+        "benchmark": "MMLU-Pro Physics",
+        "condition": "BASE",
+        "problem_id": 9407,
+        "official_question_id": 9596,
+        "status": "timed_out",
+        "gold_index": null,
+        "pred_index": null,
+        "correct": null,
+        "pre_revision_index": null,
+        "pre_revision_correct": null,
+        "elapsed_seconds": 3602.2051637920085,
+        "directory": "archive-ref-bbf58410ccb95ed7",
+        "terminal_error_type": "NativeTimeout",
+        "terminal_error_message": "External time limit reached; native source is unchanged",
+        "normal_calls": 55,
+        "model_calls_finished": 70,
+        "model_errors": 14,
+        "missing_usage_calls": 14,
+        "ordinary_length": 0,
+        "empty_returns": 1,
+        "root_attempts": 4,
+        "root_failed_attempts": 4,
+        "graph_recursion_failures": 0,
+        "unfinished_roots": 0,
+        "normal_tokens_in_failed_root_attempts": 894326,
+        "output_tool_calls": 2,
+        "other_tool_attempts": 0,
+        "tool_errors": 0,
+        "gateway_wait_seconds": 0.0,
+        "gateway_429": 0,
+        "reasoning_above_budget": 0,
+        "unassigned_model_roots": 0,
+        "normal_input_tokens": 561703,
+        "normal_output_tokens": 332623,
+        "normal_total_tokens": 894326,
+        "normal_reasoning_output_tokens": 261337,
+        "normal_cached_input_tokens": 125440,
+        "visits_Default_Supervisor": 16,
+        "visits_Answer_Generator": 13,
+        "visits_Evaluator_Supervisor": 8,
+        "visits_Physics": 4,
+        "visits_Mathematics": 1,
+        "visits_Revisor": 0,
+        "clean": 0,
+        "successful_root_normal_tokens": 0,
+        "successful_root_normal_calls": 0
+      },
+      {
+        "benchmark": "MMLU-Pro Physics",
+        "condition": "BASE",
+        "problem_id": 9424,
+        "official_question_id": 9613,
+        "status": "error",
+        "gold_index": null,
+        "pred_index": null,
+        "correct": null,
+        "pre_revision_index": null,
+        "pre_revision_correct": null,
+        "elapsed_seconds": 432.0911320830346,
+        "directory": "archive-ref-b353818a47aa58bc",
+        "terminal_error_type": "TypeError",
+        "terminal_error_message": "argument of type 'NoneType' is not iterable",
+        "normal_calls": 17,
+        "model_calls_finished": 17,
+        "model_errors": 0,
+        "missing_usage_calls": 0,
+        "ordinary_length": 0,
+        "empty_returns": 0,
+        "root_attempts": 1,
+        "root_failed_attempts": 0,
+        "graph_recursion_failures": 0,
+        "unfinished_roots": 0,
+        "normal_tokens_in_failed_root_attempts": 0,
+        "output_tool_calls": 2,
+        "other_tool_attempts": 0,
+        "tool_errors": 0,
+        "gateway_wait_seconds": 0.0,
+        "gateway_429": 0,
+        "reasoning_above_budget": 0,
+        "unassigned_model_roots": 0,
+        "normal_input_tokens": 42879,
+        "normal_output_tokens": 47266,
+        "normal_total_tokens": 90145,
+        "normal_reasoning_output_tokens": 33569,
+        "normal_cached_input_tokens": 0,
+        "visits_Default_Supervisor": 4,
+        "visits_Answer_Generator": 1,
+        "visits_Evaluator_Supervisor": 4,
+        "visits_Physics": 1,
+        "visits_Mathematics": 1,
+        "visits_Revisor": 1,
+        "clean": 1,
+        "successful_root_normal_tokens": 90145,
+        "successful_root_normal_calls": 17
+      },
+      {
+        "benchmark": "MMLU-Pro Physics",
+        "condition": "BASE",
+        "problem_id": 9971,
+        "official_question_id": 10169,
+        "status": "error",
+        "gold_index": null,
+        "pred_index": null,
+        "correct": null,
+        "pre_revision_index": null,
+        "pre_revision_correct": null,
+        "elapsed_seconds": 495.31410662503913,
+        "directory": "archive-ref-4c5ee45cefeebe74",
+        "terminal_error_type": "TypeError",
+        "terminal_error_message": "argument of type 'NoneType' is not iterable",
+        "normal_calls": 21,
+        "model_calls_finished": 21,
+        "model_errors": 0,
+        "missing_usage_calls": 0,
+        "ordinary_length": 0,
+        "empty_returns": 0,
+        "root_attempts": 1,
+        "root_failed_attempts": 0,
+        "graph_recursion_failures": 0,
+        "unfinished_roots": 0,
+        "normal_tokens_in_failed_root_attempts": 0,
+        "output_tool_calls": 6,
+        "other_tool_attempts": 0,
+        "tool_errors": 0,
+        "gateway_wait_seconds": 0.0,
+        "gateway_429": 0,
+        "reasoning_above_budget": 0,
+        "unassigned_model_roots": 0,
+        "normal_input_tokens": 51013,
+        "normal_output_tokens": 52373,
+        "normal_total_tokens": 103386,
+        "normal_reasoning_output_tokens": 39150,
+        "normal_cached_input_tokens": 4736,
+        "visits_Default_Supervisor": 4,
+        "visits_Answer_Generator": 1,
+        "visits_Evaluator_Supervisor": 4,
+        "visits_Physics": 1,
+        "visits_Mathematics": 1,
+        "visits_Revisor": 1,
+        "clean": 1,
+        "successful_root_normal_tokens": 103386,
+        "successful_root_normal_calls": 21
+      },
+      {
+        "benchmark": "MMLU-Pro Physics",
+        "condition": "V2",
+        "problem_id": 8943,
+        "official_question_id": 9132,
+        "status": "timed_out",
+        "gold_index": null,
+        "pred_index": null,
+        "correct": null,
+        "pre_revision_index": null,
+        "pre_revision_correct": null,
+        "elapsed_seconds": 3618.994012167037,
+        "directory": "archive-ref-d10edc7439c4e1df",
+        "terminal_error_type": "NativeTimeout",
+        "terminal_error_message": "External time limit reached; native source is unchanged",
+        "normal_calls": 60,
+        "model_calls_finished": 67,
+        "model_errors": 7,
+        "missing_usage_calls": 7,
+        "ordinary_length": 0,
+        "empty_returns": 0,
+        "root_attempts": 3,
+        "root_failed_attempts": 3,
+        "graph_recursion_failures": 0,
+        "unfinished_roots": 0,
+        "normal_tokens_in_failed_root_attempts": 656627,
+        "output_tool_calls": 12,
+        "other_tool_attempts": 0,
+        "tool_errors": 0,
+        "gateway_wait_seconds": 0.0,
+        "gateway_429": 0,
+        "reasoning_above_budget": 0,
+        "unassigned_model_roots": 0,
+        "normal_input_tokens": 342953,
+        "normal_output_tokens": 313674,
+        "normal_total_tokens": 656627,
+        "normal_reasoning_output_tokens": 239971,
+        "normal_cached_input_tokens": 28928,
+        "visits_Default_Supervisor": 13,
+        "visits_Answer_Generator": 6,
+        "visits_Evaluator_Supervisor": 14,
+        "visits_Physics": 3,
+        "visits_Mathematics": 3,
+        "visits_Revisor": 2,
+        "clean": 0,
+        "successful_root_normal_tokens": 0,
+        "successful_root_normal_calls": 0
+      },
+      {
+        "benchmark": "MMLU-Pro Physics",
+        "condition": "V2",
+        "problem_id": 8969,
+        "official_question_id": 9158,
+        "status": "timed_out",
+        "gold_index": null,
+        "pred_index": null,
+        "correct": null,
+        "pre_revision_index": null,
+        "pre_revision_correct": null,
+        "elapsed_seconds": 3619.702143125003,
+        "directory": "archive-ref-c517e05f67949444",
+        "terminal_error_type": "NativeTimeout",
+        "terminal_error_message": "External time limit reached; native source is unchanged",
+        "normal_calls": 101,
+        "model_calls_finished": 102,
+        "model_errors": 1,
+        "missing_usage_calls": 1,
+        "ordinary_length": 0,
+        "empty_returns": 0,
+        "root_attempts": 3,
+        "root_failed_attempts": 3,
+        "graph_recursion_failures": 2,
+        "unfinished_roots": 0,
+        "normal_tokens_in_failed_root_attempts": 921659,
+        "output_tool_calls": 33,
+        "other_tool_attempts": 0,
+        "tool_errors": 0,
+        "gateway_wait_seconds": 0.0,
+        "gateway_429": 0,
+        "reasoning_above_budget": 0,
+        "unassigned_model_roots": 0,
+        "normal_input_tokens": 541111,
+        "normal_output_tokens": 380548,
+        "normal_total_tokens": 921659,
+        "normal_reasoning_output_tokens": 311962,
+        "normal_cached_input_tokens": 82176,
+        "visits_Default_Supervisor": 20,
+        "visits_Answer_Generator": 3,
+        "visits_Evaluator_Supervisor": 10,
+        "visits_Physics": 3,
+        "visits_Mathematics": 2,
+        "visits_Revisor": 14,
+        "clean": 0,
+        "successful_root_normal_tokens": 0,
+        "successful_root_normal_calls": 0
+      },
+      {
+        "benchmark": "MMLU-Pro Physics",
+        "condition": "V2",
+        "problem_id": 9248,
+        "official_question_id": 9437,
+        "status": "error",
+        "gold_index": null,
+        "pred_index": null,
+        "correct": null,
+        "pre_revision_index": null,
+        "pre_revision_correct": null,
+        "elapsed_seconds": 891.4737123330124,
+        "directory": "archive-ref-9436acb2e5fa3644",
+        "terminal_error_type": "TypeError",
+        "terminal_error_message": "argument of type 'NoneType' is not iterable",
+        "normal_calls": 28,
+        "model_calls_finished": 28,
+        "model_errors": 0,
+        "missing_usage_calls": 0,
+        "ordinary_length": 0,
+        "empty_returns": 0,
+        "root_attempts": 1,
+        "root_failed_attempts": 0,
+        "graph_recursion_failures": 0,
+        "unfinished_roots": 0,
+        "normal_tokens_in_failed_root_attempts": 0,
+        "output_tool_calls": 14,
+        "other_tool_attempts": 0,
+        "tool_errors": 0,
+        "gateway_wait_seconds": 0.0,
+        "gateway_429": 0,
+        "reasoning_above_budget": 0,
+        "unassigned_model_roots": 0,
+        "normal_input_tokens": 121768,
+        "normal_output_tokens": 90671,
+        "normal_total_tokens": 212439,
+        "normal_reasoning_output_tokens": 73073,
+        "normal_cached_input_tokens": 8960,
+        "visits_Default_Supervisor": 4,
+        "visits_Answer_Generator": 1,
+        "visits_Evaluator_Supervisor": 4,
+        "visits_Physics": 1,
+        "visits_Mathematics": 1,
+        "visits_Revisor": 1,
+        "clean": 1,
+        "successful_root_normal_tokens": 212439,
+        "successful_root_normal_calls": 28
+      }
+    ],
+    "configuration_differences": {
+      "condition": [
+        "\"BASE\"",
+        "\"V2\""
+      ],
+      "organization_awareness_v2": [
+        "false",
+        "true"
+      ]
+    },
+    "configuration_unexpected_differences": {},
+    "source_commit": "0cddfdc3581bafb969b9d71e68dbeca1c4e6bdde",
+    "batch": "archive-ref-9d43a1dbaa5f8e3d"
+  },
+  "secondary": {
+    "groups": {
+      "BASE": {
+        "planned": 50,
+        "statuses": {
+          "completed": 49,
+          "timed_out": 1
+        },
+        "scored": 49,
+        "correct": 49,
+        "normal_usage": {
+          "input_tokens": 4257847,
+          "output_tokens": 3418524,
+          "total_tokens": 7676371,
+          "reasoning_output_tokens": 2550366,
+          "cached_input_tokens": 419584
+        },
+        "normal_calls": 1173,
+        "model_calls_finished": 1202,
+        "normal_missing_usage": 0,
+        "model_errors": {
+          "BadRequestError": 20,
+          "LengthFinishReasonError": 6,
+          "NativeTimeout": 1
+        },
+        "ordinary_length": 0,
+        "empty_returns": 2,
+        "missing_usage_calls": 27,
+        "root_attempts": 61,
+        "root_failed_attempts": 12,
+        "root_failure_types": {
+          "AttributeError": 7,
+          "GraphRecursionError": 4,
+          "NativeTimeout": 1
+        },
+        "normal_tokens_in_failed_root_attempts": 2859379,
+        "tool_names": {
+          "output_tool": 164
+        },
+        "model_requested_tools": {
+          "output_tool": 169
+        },
+        "gateway_events": {},
+        "http_status": {},
+        "gateway_wait_seconds": 0.0,
+        "injection_audit": {
+          "model_starts": 1202
+        },
+        "reasoning_above_budget": 0,
+        "normal_call_duration_seconds": {
+          "n": 1173,
+          "mean": 25.876209279661143,
+          "median": 23.44077908300096,
+          "p90": 42.6790150414221,
+          "p95": 60.76411832477879,
+          "min": 1.6265628749970347,
+          "max": 93.64079579198733
+        },
+        "normal_long_calls_over_300_seconds": 0,
+        "clean_questions": 43,
+        "revision_change": {
+          "1->1": 42
+        },
+        "pre_revision_missing": 7
+      },
+      "V2": {
+        "planned": 50,
+        "statuses": {
+          "completed": 50
+        },
+        "scored": 50,
+        "correct": 50,
+        "normal_usage": {
+          "input_tokens": 5337585,
+          "output_tokens": 4802450,
+          "total_tokens": 10140035,
+          "reasoning_output_tokens": 3824261,
+          "cached_input_tokens": 1044992
+        },
+        "normal_calls": 1260,
+        "model_calls_finished": 1276,
+        "normal_missing_usage": 0,
+        "model_errors": {
+          "LengthFinishReasonError": 4,
+          "BadRequestError": 10
+        },
+        "ordinary_length": 0,
+        "empty_returns": 2,
+        "missing_usage_calls": 14,
+        "root_attempts": 64,
+        "root_failed_attempts": 14,
+        "root_failure_types": {
+          "GraphRecursionError": 6,
+          "AttributeError": 8
+        },
+        "normal_tokens_in_failed_root_attempts": 2464025,
+        "tool_names": {
+          "output_tool": 435
+        },
+        "model_requested_tools": {
+          "output_tool": 446
+        },
+        "gateway_events": {},
+        "http_status": {},
+        "gateway_wait_seconds": 0.0,
+        "injection_audit": {
+          "model_starts": 1276,
+          "with_global_org": 1276,
+          "first_system_global_org": 1276
+        },
+        "reasoning_above_budget": 0,
+        "normal_call_duration_seconds": {
+          "n": 1260,
+          "mean": 34.347818760386026,
+          "median": 27.029435603966704,
+          "p90": 71.1678676920128,
+          "p95": 80.34502677705893,
+          "min": 4.0933025410049595,
+          "max": 102.37810829200316
+        },
+        "normal_long_calls_over_300_seconds": 0,
+        "clean_questions": 39,
+        "revision_change": {
+          "1->1": 49
+        },
+        "pre_revision_missing": 1
+      }
+    },
+    "paired_count": 49,
+    "clean_pair_count": 34,
+    "transitions": {
+      "1->1": 49
+    },
+    "exact_McNemar_p": 1.0,
+    "paired_metrics": {
+      "correct": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "ratio_of_means": 1.0,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.0
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.0
+        ],
+        "increased": 0,
+        "decreased": 0,
+        "tied": 49
+      },
+      "normal_total_tokens": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 137630.18367346938,
+          "median": 90670.0,
+          "p90": 193008.20000000007,
+          "p95": 411321.39999999857,
+          "min": 37188.0,
+          "max": 1130141.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 204120.61224489796,
+          "median": 148514.0,
+          "p90": 417016.40000000014,
+          "p95": 476515.99999999994,
+          "min": 52050.0,
+          "max": 657401.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 66490.42857142857,
+          "median": 66072.0,
+          "p90": 282050.00000000006,
+          "p95": 356235.1999999999,
+          "min": -981627.0,
+          "max": 573043.0
+        },
+        "ratio_of_means": 1.4831093499749923,
+        "median_question_ratio": 1.8225276366895728,
+        "delta_mean_95ci": [
+          4066.2642857142696,
+          119783.18877551019
+        ],
+        "ratio_of_means_95ci": [
+          1.0233490836441053,
+          2.165299637763588
+        ],
+        "increased": 39,
+        "decreased": 10,
+        "tied": 0
+      },
+      "normal_input_tokens": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 75323.77551020408,
+          "median": 41413.0,
+          "p90": 82570.6,
+          "p95": 263701.99999999895,
+          "min": 14407.0,
+          "max": 793605.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 107755.22448979592,
+          "median": 69064.0,
+          "p90": 224530.8000000001,
+          "p95": 256296.0,
+          "min": 24600.0,
+          "max": 397442.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 32431.448979591838,
+          "median": 30642.0,
+          "p90": 167140.80000000005,
+          "p95": 196578.79999999996,
+          "min": -724541.0,
+          "max": 359390.0
+        },
+        "ratio_of_means": 1.4305605867459255,
+        "median_question_ratio": 1.9910722419604627,
+        "delta_mean_95ci": [
+          -11349.556632653055,
+          69011.99642857142
+        ],
+        "ratio_of_means_95ci": [
+          0.8985002978657964,
+          2.4200647874531955
+        ],
+        "increased": 39,
+        "decreased": 10,
+        "tied": 0
+      },
+      "normal_output_tokens": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 62306.4081632653,
+          "median": 48892.0,
+          "p90": 105612.40000000001,
+          "p95": 157269.79999999976,
+          "min": 22781.0,
+          "max": 336536.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 96365.38775510204,
+          "median": 78269.0,
+          "p90": 164446.40000000008,
+          "p95": 224494.1999999999,
+          "min": 27450.0,
+          "max": 259959.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 34058.97959183674,
+          "median": 30965.0,
+          "p90": 103228.00000000004,
+          "p95": 144789.59999999986,
+          "min": -257086.0,
+          "max": 213653.0
+        },
+        "ratio_of_means": 1.546636864423157,
+        "median_question_ratio": 1.8138404121110177,
+        "delta_mean_95ci": [
+          14282.331122448975,
+          52783.66224489794
+        ],
+        "ratio_of_means_95ci": [
+          1.1930604203231339,
+          1.9780875836777412
+        ],
+        "increased": 37,
+        "decreased": 12,
+        "tied": 0
+      },
+      "normal_reasoning_output_tokens": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 46374.857142857145,
+          "median": 36986.0,
+          "p90": 81808.0,
+          "p95": 116830.59999999982,
+          "min": 17336.0,
+          "max": 263684.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 76699.44897959183,
+          "median": 64680.0,
+          "p90": 124725.60000000008,
+          "p95": 177838.59999999983,
+          "min": 21492.0,
+          "max": 202974.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 30324.591836734693,
+          "median": 29078.0,
+          "p90": 85170.00000000004,
+          "p95": 113436.59999999989,
+          "min": -198345.0,
+          "max": 168474.0
+        },
+        "ratio_of_means": 1.6539015687599894,
+        "median_question_ratio": 1.9011986792994544,
+        "delta_mean_95ci": [
+          14557.853061224489,
+          45408.9025510204
+        ],
+        "ratio_of_means_95ci": [
+          1.2607166442034445,
+          2.1395585235158894
+        ],
+        "increased": 37,
+        "decreased": 12,
+        "tied": 0
+      },
+      "normal_cached_input_tokens": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 7463.183673469388,
+          "median": 1280.0,
+          "p90": 12160.000000000002,
+          "p95": 53427.19999999978,
+          "min": 0.0,
+          "max": 89472.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 21326.367346938776,
+          "median": 1920.0,
+          "p90": 70220.8,
+          "p95": 98175.99999999994,
+          "min": 0.0,
+          "max": 135040.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 13863.183673469388,
+          "median": 0.0,
+          "p90": 60160.00000000003,
+          "p95": 83199.99999999988,
+          "min": -89472.0,
+          "max": 133760.0
+        },
+        "ratio_of_means": 2.857542877143857,
+        "median_question_ratio": 0.7303030303030302,
+        "delta_mean_95ci": [
+          4067.1346938775505,
+          24589.387755102012
+        ],
+        "ratio_of_means_95ci": [
+          1.3789774522162606,
+          7.876059409075741
+        ],
+        "increased": 22,
+        "decreased": 19,
+        "tied": 8
+      },
+      "normal_calls": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 21.755102040816325,
+          "median": 17.0,
+          "p90": 35.2,
+          "p95": 48.59999999999991,
+          "min": 10.0,
+          "max": 125.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 25.306122448979593,
+          "median": 20.0,
+          "p90": 45.000000000000014,
+          "p95": 49.599999999999994,
+          "min": 9.0,
+          "max": 75.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 3.5510204081632653,
+          "median": 3.0,
+          "p90": 25.400000000000006,
+          "p95": 31.599999999999994,
+          "min": -104.0,
+          "max": 58.0
+        },
+        "ratio_of_means": 1.1632270168855536,
+        "median_question_ratio": 1.2142857142857142,
+        "delta_mean_95ci": [
+          -2.8775510204081627,
+          9.040816326530614
+        ],
+        "ratio_of_means_95ci": [
+          0.8919135005661369,
+          1.4858884572697
+        ],
+        "increased": 32,
+        "decreased": 15,
+        "tied": 2
+      },
+      "output_tool_calls": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 3.122448979591837,
+          "median": 2.0,
+          "p90": 6.200000000000003,
+          "p95": 7.0,
+          "min": 1.0,
+          "max": 22.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 8.816326530612244,
+          "median": 6.0,
+          "p90": 21.200000000000003,
+          "p95": 25.19999999999999,
+          "min": 0.0,
+          "max": 38.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 5.6938775510204085,
+          "median": 3.0,
+          "p90": 18.400000000000006,
+          "p95": 22.599999999999994,
+          "min": -9.0,
+          "max": 36.0
+        },
+        "ratio_of_means": 2.8235294117647056,
+        "median_question_ratio": 3.0,
+        "delta_mean_95ci": [
+          3.3265306122448983,
+          8.285714285714285
+        ],
+        "ratio_of_means_95ci": [
+          1.8970588235294117,
+          4.228082706766917
+        ],
+        "increased": 33,
+        "decreased": 11,
+        "tied": 5
+      },
+      "elapsed_seconds": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 562.1762071513899,
+          "median": 442.51754445797997,
+          "p90": 966.6695807505869,
+          "p95": 1443.7637770087792,
+          "min": 222.9968021250097,
+          "max": 3067.46666533401
+        },
+        "V2": {
+          "n": 49,
+          "mean": 880.9141110774029,
+          "median": 713.163638708007,
+          "p90": 1442.8733557412058,
+          "p95": 2122.445725141791,
+          "min": 253.93397758400533,
+          "max": 2352.4654677079525
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 318.73790392601313,
+          "median": 303.10268099897075,
+          "p90": 943.649942416803,
+          "p95": 1381.3088595911834,
+          "min": -2329.021139791992,
+          "max": 1919.696875124937
+        },
+        "ratio_of_means": 1.5669715293379167,
+        "median_question_ratio": 1.845336263882561,
+        "delta_mean_95ci": [
+          137.5905381959236,
+          490.40728618356985
+        ],
+        "ratio_of_means_95ci": [
+          1.206665363894972,
+          2.008313396933428
+        ],
+        "increased": 38,
+        "decreased": 11,
+        "tied": 0
+      },
+      "root_attempts": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 1.1428571428571428,
+          "median": 1.0,
+          "p90": 1.2000000000000028,
+          "p95": 2.0,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 1.2653061224489797,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": 1.0,
+          "max": 4.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 0.12244897959183673,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": -2.0,
+          "max": 3.0
+        },
+        "ratio_of_means": 1.1071428571428572,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.08163265306122458,
+          0.346938775510204
+        ],
+        "ratio_of_means_95ci": [
+          0.9333333333333332,
+          1.3137254901960784
+        ],
+        "increased": 10,
+        "decreased": 4,
+        "tied": 35
+      },
+      "successful_root_normal_tokens": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 98305.95918367348,
+          "median": 84358.0,
+          "p90": 126411.8,
+          "p95": 136977.79999999996,
+          "min": 37188.0,
+          "max": 510579.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 154440.91836734695,
+          "median": 143972.0,
+          "p90": 243768.6,
+          "p95": 265521.1999999999,
+          "min": 52050.0,
+          "max": 338606.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 56134.95918367347,
+          "median": 66072.0,
+          "p90": 147044.80000000002,
+          "p95": 162153.39999999994,
+          "min": -174244.0,
+          "max": 247936.0
+        },
+        "ratio_of_means": 1.5710229537437472,
+        "median_question_ratio": 1.720975865000981,
+        "delta_mean_95ci": [
+          36023.2392857143,
+          75808.54438775512
+        ],
+        "ratio_of_means_95ci": [
+          1.3140265461672143,
+          1.8681930840261378
+        ],
+        "increased": 42,
+        "decreased": 7,
+        "tied": 0
+      },
+      "successful_root_normal_calls": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 17.510204081632654,
+          "median": 17.0,
+          "p90": 21.0,
+          "p95": 23.19999999999999,
+          "min": 10.0,
+          "max": 55.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 20.020408163265305,
+          "median": 19.0,
+          "p90": 27.200000000000003,
+          "p95": 29.19999999999999,
+          "min": 9.0,
+          "max": 34.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 2.510204081632653,
+          "median": 3.0,
+          "p90": 10.200000000000003,
+          "p95": 12.599999999999994,
+          "min": -21.0,
+          "max": 14.0
+        },
+        "ratio_of_means": 1.143356643356643,
+        "median_question_ratio": 1.2,
+        "delta_mean_95ci": [
+          0.44897959183673564,
+          4.408163265306122
+        ],
+        "ratio_of_means_95ci": [
+          1.0232786346963947,
+          1.2712092705655527
+        ],
+        "increased": 33,
+        "decreased": 13,
+        "tied": 3
+      },
+      "visits_Default_Supervisor": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 4.938775510204081,
+          "median": 4.0,
+          "p90": 6.200000000000003,
+          "p95": 8.599999999999994,
+          "min": 3.0,
+          "max": 21.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 4.612244897959184,
+          "median": 4.0,
+          "p90": 6.0,
+          "p95": 6.599999999999994,
+          "min": 4.0,
+          "max": 11.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": -0.32653061224489793,
+          "median": 0.0,
+          "p90": 2.0,
+          "p95": 2.5999999999999943,
+          "min": -17.0,
+          "max": 7.0
+        },
+        "ratio_of_means": 0.9338842975206613,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -1.367346938775511,
+          0.5306122448979593
+        ],
+        "ratio_of_means_95ci": [
+          0.7676056338028169,
+          1.1243781094527363
+        ],
+        "increased": 12,
+        "decreased": 7,
+        "tied": 30
+      },
+      "visits_Answer_Generator": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 1.1428571428571428,
+          "median": 1.0,
+          "p90": 1.2000000000000028,
+          "p95": 2.0,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 1.2653061224489797,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": 1.0,
+          "max": 4.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 0.12244897959183673,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": -2.0,
+          "max": 3.0
+        },
+        "ratio_of_means": 1.1071428571428572,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.08163265306122458,
+          0.346938775510204
+        ],
+        "ratio_of_means_95ci": [
+          0.9333333333333332,
+          1.3137254901960784
+        ],
+        "increased": 10,
+        "decreased": 4,
+        "tied": 35
+      },
+      "visits_Evaluator_Supervisor": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 4.612244897959184,
+          "median": 4.0,
+          "p90": 6.400000000000006,
+          "p95": 9.0,
+          "min": 2.0,
+          "max": 23.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 4.510204081632653,
+          "median": 4.0,
+          "p90": 7.0,
+          "p95": 7.599999999999994,
+          "min": 2.0,
+          "max": 11.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": -0.10204081632653061,
+          "median": 0.0,
+          "p90": 3.0,
+          "p95": 3.5999999999999943,
+          "min": -19.0,
+          "max": 7.0
+        },
+        "ratio_of_means": 0.9778761061946903,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -1.183673469387755,
+          0.7551020408163267
+        ],
+        "ratio_of_means_95ci": [
+          0.7857142857142857,
+          1.1875
+        ],
+        "increased": 19,
+        "decreased": 13,
+        "tied": 17
+      },
+      "visits_Physics": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 1.3061224489795917,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.5999999999999943,
+          "min": 0.0,
+          "max": 16.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 1.0612244897959184,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": -0.24489795918367346,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": -15.0,
+          "max": 2.0
+        },
+        "ratio_of_means": 0.8125000000000001,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -1.0,
+          0.26530612244897955
+        ],
+        "ratio_of_means_95ci": [
+          0.5,
+          1.2888888888888888
+        ],
+        "increased": 15,
+        "decreased": 11,
+        "tied": 23
+      },
+      "visits_Mathematics": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 1.0612244897959184,
+          "median": 1.0,
+          "p90": 1.2000000000000028,
+          "p95": 2.0,
+          "min": 0.0,
+          "max": 7.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 1.0612244897959184,
+          "median": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "min": 0.0,
+          "max": 2.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": 0.0,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": -6.0,
+          "max": 2.0
+        },
+        "ratio_of_means": 1.0,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.34693877551020413,
+          0.26530612244897966
+        ],
+        "ratio_of_means_95ci": [
+          0.7391304347826088,
+          1.3170731707317072
+        ],
+        "increased": 12,
+        "decreased": 7,
+        "tied": 30
+      },
+      "visits_Revisor": {
+        "n": 49,
+        "BASE": {
+          "n": 49,
+          "mean": 1.6326530612244898,
+          "median": 1.0,
+          "p90": 1.2000000000000028,
+          "p95": 4.399999999999977,
+          "min": 0.0,
+          "max": 14.0
+        },
+        "V2": {
+          "n": 49,
+          "mean": 1.0408163265306123,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 2.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 49,
+          "mean": -0.5918367346938775,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 1.0,
+          "min": -13.0,
+          "max": 1.0
+        },
+        "ratio_of_means": 0.6375000000000001,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -1.4285714285714286,
+          0.04081632653061229
+        ],
+        "ratio_of_means_95ci": [
+          0.419341053212021,
+          1.04
+        ],
+        "increased": 4,
+        "decreased": 5,
+        "tied": 40
+      }
+    },
+    "clean_pair_metrics": {
+      "correct": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "ratio_of_means": 1.0,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.0
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.0
+        ],
+        "increased": 0,
+        "decreased": 0,
+        "tied": 34
+      },
+      "normal_total_tokens": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 102695.14705882352,
+          "median": 83720.5,
+          "p90": 127765.0,
+          "p95": 183318.29999999976,
+          "min": 37188.0,
+          "max": 510579.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 151215.0,
+          "median": 136543.5,
+          "p90": 226375.4,
+          "p95": 278596.7999999998,
+          "min": 52050.0,
+          "max": 338606.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 48519.85294117647,
+          "median": 47871.5,
+          "p90": 142987.49999999997,
+          "p95": 159757.39999999997,
+          "min": -174244.0,
+          "max": 247936.0
+        },
+        "ratio_of_means": 1.4724649054096435,
+        "median_question_ratio": 1.5295120633822752,
+        "delta_mean_95ci": [
+          22813.836029411777,
+          73628.0544117647
+        ],
+        "ratio_of_means_95ci": [
+          1.179778607304803,
+          1.8553378718052902
+        ],
+        "increased": 28,
+        "decreased": 6,
+        "tied": 0
+      },
+      "normal_input_tokens": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 51297.382352941175,
+          "median": 40623.0,
+          "p90": 58281.5,
+          "p95": 102450.49999999983,
+          "min": 14407.0,
+          "max": 336948.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 76238.4705882353,
+          "median": 65391.0,
+          "p90": 114899.59999999999,
+          "p95": 155512.84999999986,
+          "min": 24600.0,
+          "max": 202642.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 24941.08823529412,
+          "median": 26106.0,
+          "p90": 73697.1,
+          "p95": 86309.64999999994,
+          "min": -135759.0,
+          "max": 162687.0
+        },
+        "ratio_of_means": 1.4862058664844155,
+        "median_question_ratio": 1.798605049863582,
+        "delta_mean_95ci": [
+          8218.775000000007,
+          40972.20147058823
+        ],
+        "ratio_of_means_95ci": [
+          1.1190513534394775,
+          2.0263549098775235
+        ],
+        "increased": 28,
+        "decreased": 6,
+        "tied": 0
+      },
+      "normal_output_tokens": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 51397.76470588235,
+          "median": 46867.0,
+          "p90": 69051.8,
+          "p95": 84819.14999999992,
+          "min": 22781.0,
+          "max": 173631.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 74976.5294117647,
+          "median": 71457.0,
+          "p90": 120845.79999999999,
+          "p95": 133045.85,
+          "min": 27450.0,
+          "max": 135964.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 23578.764705882353,
+          "median": 24953.0,
+          "p90": 50351.1,
+          "p95": 83601.9,
+          "min": -38485.0,
+          "max": 92286.0
+        },
+        "ratio_of_means": 1.458750781105152,
+        "median_question_ratio": 1.4341164931077324,
+        "delta_mean_95ci": [
+          13540.14191176471,
+          33786.43529411765
+        ],
+        "ratio_of_means_95ci": [
+          1.2332631029307952,
+          1.7376904245676401
+        ],
+        "increased": 26,
+        "decreased": 8,
+        "tied": 0
+      },
+      "normal_reasoning_output_tokens": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 38155.17647058824,
+          "median": 33765.5,
+          "p90": 51163.99999999999,
+          "p95": 66836.74999999996,
+          "min": 17336.0,
+          "max": 130059.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 60217.0,
+          "median": 57384.5,
+          "p90": 98509.49999999999,
+          "p95": 109818.59999999999,
+          "min": 21853.0,
+          "max": 114612.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 22061.823529411766,
+          "median": 22997.5,
+          "p90": 48148.3,
+          "p95": 76826.15,
+          "min": -21786.0,
+          "max": 81734.0
+        },
+        "ratio_of_means": 1.5782131173320095,
+        "median_question_ratio": 1.5877976765474024,
+        "delta_mean_95ci": [
+          13287.483823529412,
+          31185.47058823529
+        ],
+        "ratio_of_means_95ci": [
+          1.3115719545155486,
+          1.9178464615632878
+        ],
+        "increased": 26,
+        "decreased": 8,
+        "tied": 0
+      },
+      "normal_cached_input_tokens": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 5312.0,
+          "median": 896.0,
+          "p90": 11071.999999999998,
+          "p95": 18764.799999999963,
+          "min": 0.0,
+          "max": 86272.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 9792.0,
+          "median": 0.0,
+          "p90": 33382.399999999994,
+          "p95": 46815.99999999994,
+          "min": 0.0,
+          "max": 91648.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 4480.0,
+          "median": 0.0,
+          "p90": 24921.599999999995,
+          "p95": 36153.6,
+          "min": -30080.0,
+          "max": 91648.0
+        },
+        "ratio_of_means": 1.8433734939759037,
+        "median_question_ratio": 0.0,
+        "delta_mean_95ci": [
+          -1396.894117647059,
+          11817.411764705881
+        ],
+        "ratio_of_means_95ci": [
+          0.8137735339058373,
+          6.405023512757083
+        ],
+        "increased": 11,
+        "decreased": 15,
+        "tied": 8
+      },
+      "normal_calls": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 17.970588235294116,
+          "median": 17.0,
+          "p90": 21.0,
+          "p95": 26.89999999999997,
+          "min": 10.0,
+          "max": 55.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 19.61764705882353,
+          "median": 19.0,
+          "p90": 25.7,
+          "p95": 28.049999999999994,
+          "min": 9.0,
+          "max": 34.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 1.6470588235294117,
+          "median": 3.0,
+          "p90": 9.0,
+          "p95": 12.049999999999994,
+          "min": -21.0,
+          "max": 14.0
+        },
+        "ratio_of_means": 1.0916530278232406,
+        "median_question_ratio": 1.1819852941176472,
+        "delta_mean_95ci": [
+          -1.0,
+          4.088235294117647
+        ],
+        "ratio_of_means_95ci": [
+          0.9509116409537168,
+          1.250457207978754
+        ],
+        "increased": 22,
+        "decreased": 10,
+        "tied": 2
+      },
+      "output_tool_calls": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 2.823529411764706,
+          "median": 2.0,
+          "p90": 5.699999999999999,
+          "p95": 7.0,
+          "min": 1.0,
+          "max": 22.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 5.470588235294118,
+          "median": 4.0,
+          "p90": 11.7,
+          "p95": 13.699999999999996,
+          "min": 0.0,
+          "max": 18.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 2.6470588235294117,
+          "median": 2.0,
+          "p90": 8.7,
+          "p95": 10.349999999999998,
+          "min": -4.0,
+          "max": 14.0
+        },
+        "ratio_of_means": 1.9375,
+        "median_question_ratio": 2.5,
+        "delta_mean_95ci": [
+          1.2352941176470589,
+          4.147058823529411
+        ],
+        "ratio_of_means_95ci": [
+          1.34375,
+          3.0000000000000004
+        ],
+        "increased": 21,
+        "decreased": 8,
+        "tied": 5
+      },
+      "elapsed_seconds": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 456.38525061891244,
+          "median": 416.6390049585025,
+          "p90": 580.1213514668983,
+          "p95": 721.9674020754544,
+          "min": 222.9968021250097,
+          "max": 1548.3751515419572
+        },
+        "V2": {
+          "n": 34,
+          "mean": 682.0239684926705,
+          "median": 659.3047504579881,
+          "p90": 1077.5175119586754,
+          "p95": 1155.7559193357417,
+          "min": 253.93397758400533,
+          "max": 1213.5755782080232
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 225.6387178737581,
+          "median": 237.55712397952448,
+          "p90": 506.5185308579937,
+          "p95": 710.0788762505312,
+          "min": -334.79957333393395,
+          "max": 802.9643559589749
+        },
+        "ratio_of_means": 1.4944040535222496,
+        "median_question_ratio": 1.4655164489540615,
+        "delta_mean_95ci": [
+          139.06136225735509,
+          313.50393603649206
+        ],
+        "ratio_of_means_95ci": [
+          1.2702576950687854,
+          1.7663802765888166
+        ],
+        "increased": 27,
+        "decreased": 7,
+        "tied": 0
+      },
+      "root_attempts": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "ratio_of_means": 1.0,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.0
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.0
+        ],
+        "increased": 0,
+        "decreased": 0,
+        "tied": 34
+      },
+      "successful_root_normal_tokens": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 102695.14705882352,
+          "median": 83720.5,
+          "p90": 127765.0,
+          "p95": 183318.29999999976,
+          "min": 37188.0,
+          "max": 510579.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 151215.0,
+          "median": 136543.5,
+          "p90": 226375.4,
+          "p95": 278596.7999999998,
+          "min": 52050.0,
+          "max": 338606.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 48519.85294117647,
+          "median": 47871.5,
+          "p90": 142987.49999999997,
+          "p95": 159757.39999999997,
+          "min": -174244.0,
+          "max": 247936.0
+        },
+        "ratio_of_means": 1.4724649054096435,
+        "median_question_ratio": 1.5295120633822752,
+        "delta_mean_95ci": [
+          22813.836029411777,
+          73628.0544117647
+        ],
+        "ratio_of_means_95ci": [
+          1.179778607304803,
+          1.8553378718052902
+        ],
+        "increased": 28,
+        "decreased": 6,
+        "tied": 0
+      },
+      "successful_root_normal_calls": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 17.970588235294116,
+          "median": 17.0,
+          "p90": 21.0,
+          "p95": 26.89999999999997,
+          "min": 10.0,
+          "max": 55.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 19.61764705882353,
+          "median": 19.0,
+          "p90": 25.7,
+          "p95": 28.049999999999994,
+          "min": 9.0,
+          "max": 34.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 1.6470588235294117,
+          "median": 3.0,
+          "p90": 9.0,
+          "p95": 12.049999999999994,
+          "min": -21.0,
+          "max": 14.0
+        },
+        "ratio_of_means": 1.0916530278232406,
+        "median_question_ratio": 1.1819852941176472,
+        "delta_mean_95ci": [
+          -1.0,
+          4.088235294117647
+        ],
+        "ratio_of_means_95ci": [
+          0.9509116409537168,
+          1.250457207978754
+        ],
+        "increased": 22,
+        "decreased": 10,
+        "tied": 2
+      },
+      "visits_Default_Supervisor": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 4.147058823529412,
+          "median": 4.0,
+          "p90": 4.0,
+          "p95": 4.349999999999998,
+          "min": 3.0,
+          "max": 9.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 4.0588235294117645,
+          "median": 4.0,
+          "p90": 4.0,
+          "p95": 4.349999999999998,
+          "min": 4.0,
+          "max": 5.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": -0.08823529411764706,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 1.0,
+          "min": -5.0,
+          "max": 1.0
+        },
+        "ratio_of_means": 0.978723404255319,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.4411764705882355,
+          0.1470588235294117
+        ],
+        "ratio_of_means_95ci": [
+          0.9013157894736842,
+          1.0373134328358207
+        ],
+        "increased": 3,
+        "decreased": 2,
+        "tied": 29
+      },
+      "visits_Answer_Generator": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": 0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "ratio_of_means": 1.0,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          0.0,
+          0.0
+        ],
+        "ratio_of_means_95ci": [
+          1.0,
+          1.0
+        ],
+        "increased": 0,
+        "decreased": 0,
+        "tied": 34
+      },
+      "visits_Evaluator_Supervisor": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 3.911764705882353,
+          "median": 4.0,
+          "p90": 4.699999999999999,
+          "p95": 5.0,
+          "min": 2.0,
+          "max": 10.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 3.823529411764706,
+          "median": 4.0,
+          "p90": 4.0,
+          "p95": 4.699999999999996,
+          "min": 2.0,
+          "max": 6.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": -0.08823529411764706,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": -4.0,
+          "max": 2.0
+        },
+        "ratio_of_means": 0.9774436090225564,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.49999999999999956,
+          0.2647058823529411
+        ],
+        "ratio_of_means_95ci": [
+          0.8865248226950353,
+          1.0737704918032787
+        ],
+        "increased": 10,
+        "decreased": 9,
+        "tied": 15
+      },
+      "visits_Physics": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 0.8823529411764706,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 2.0,
+          "min": 0.0,
+          "max": 2.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 0.7647058823529411,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": -0.11764705882352941,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": -2.0,
+          "max": 1.0
+        },
+        "ratio_of_means": 0.8666666666666666,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.3529411764705882,
+          0.11764705882352933
+        ],
+        "ratio_of_means_95ci": [
+          0.6486486486486488,
+          1.1481481481481481
+        ],
+        "increased": 5,
+        "decreased": 8,
+        "tied": 21
+      },
+      "visits_Mathematics": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 1.0294117647058822,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 7.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 0.9411764705882353,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": -0.08823529411764706,
+          "median": 0.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": -6.0,
+          "max": 1.0
+        },
+        "ratio_of_means": 0.9142857142857144,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.5294117647058824,
+          0.20588235294117652
+        ],
+        "ratio_of_means_95ci": [
+          0.6382978723404256,
+          1.2692307692307694
+        ],
+        "increased": 5,
+        "decreased": 3,
+        "tied": 26
+      },
+      "visits_Revisor": {
+        "n": 34,
+        "BASE": {
+          "n": 34,
+          "mean": 1.1470588235294117,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.3499999999999979,
+          "min": 0.0,
+          "max": 6.0
+        },
+        "V2": {
+          "n": 34,
+          "mean": 1.0,
+          "median": 1.0,
+          "p90": 1.0,
+          "p95": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "difference_V2_minus_BASE": {
+          "n": 34,
+          "mean": -0.14705882352941177,
+          "median": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "min": -5.0,
+          "max": 1.0
+        },
+        "ratio_of_means": 0.8717948717948718,
+        "median_question_ratio": 1.0,
+        "delta_mean_95ci": [
+          -0.47058823529411775,
+          0.05882352941176472
+        ],
+        "ratio_of_means_95ci": [
+          0.6799999999999999,
+          1.0625
+        ],
+        "increased": 1,
+        "decreased": 2,
+        "tied": 31
+      }
+    },
+    "tail": [
+      {
+        "problem_id": 22,
+        "official_question_id": null,
+        "BASE_normal_tokens": 84358,
+        "V2_normal_tokens": 657401,
+        "delta": 573043,
+        "BASE_calls": 17,
+        "V2_calls": 75,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 3,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 85,
+        "official_question_id": null,
+        "BASE_normal_tokens": 103913,
+        "V2_normal_tokens": 480122,
+        "delta": 376209,
+        "BASE_calls": 17,
+        "V2_calls": 44,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 71,
+        "official_question_id": null,
+        "BASE_normal_tokens": 85816,
+        "V2_normal_tokens": 449346,
+        "delta": 363530,
+        "BASE_calls": 15,
+        "V2_calls": 50,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 28,
+        "official_question_id": null,
+        "BASE_normal_tokens": 125814,
+        "V2_normal_tokens": 471107,
+        "delta": 345293,
+        "BASE_calls": 18,
+        "V2_calls": 49,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 43,
+        "official_question_id": null,
+        "BASE_normal_tokens": 108592,
+        "V2_normal_tokens": 408934,
+        "delta": 300342,
+        "BASE_calls": 17,
+        "V2_calls": 49,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 77,
+        "official_question_id": null,
+        "BASE_normal_tokens": 60526,
+        "V2_normal_tokens": 338003,
+        "delta": 277477,
+        "BASE_calls": 15,
+        "V2_calls": 39,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 35,
+        "official_question_id": null,
+        "BASE_normal_tokens": 90670,
+        "V2_normal_tokens": 338606,
+        "delta": 247936,
+        "BASE_calls": 16,
+        "V2_calls": 30,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 20,
+        "official_question_id": null,
+        "BASE_normal_tokens": 77793,
+        "V2_normal_tokens": 320822,
+        "delta": 243029,
+        "BASE_calls": 17,
+        "V2_calls": 42,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 19,
+        "official_question_id": null,
+        "BASE_normal_tokens": 84343,
+        "V2_normal_tokens": 255560,
+        "delta": 171217,
+        "BASE_calls": 17,
+        "V2_calls": 30,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 46,
+        "official_question_id": null,
+        "BASE_normal_tokens": 68096,
+        "V2_normal_tokens": 234083,
+        "delta": 165987,
+        "BASE_calls": 14,
+        "V2_calls": 25,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 91,
+        "official_question_id": null,
+        "BASE_normal_tokens": 91104,
+        "V2_normal_tokens": 247507,
+        "delta": 156403,
+        "BASE_calls": 17,
+        "V2_calls": 26,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 64,
+        "official_question_id": null,
+        "BASE_normal_tokens": 91734,
+        "V2_normal_tokens": 246508,
+        "delta": 154774,
+        "BASE_calls": 21,
+        "V2_calls": 35,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 86,
+        "official_question_id": null,
+        "BASE_normal_tokens": 57508,
+        "V2_normal_tokens": 207340,
+        "delta": 149832,
+        "BASE_calls": 13,
+        "V2_calls": 27,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 27,
+        "official_question_id": null,
+        "BASE_normal_tokens": 70504,
+        "V2_normal_tokens": 211246,
+        "delta": 140742,
+        "BASE_calls": 13,
+        "V2_calls": 30,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 1,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 38,
+        "official_question_id": null,
+        "BASE_normal_tokens": 78505,
+        "V2_normal_tokens": 205522,
+        "delta": 127017,
+        "BASE_calls": 18,
+        "V2_calls": 24,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 93,
+        "official_question_id": null,
+        "BASE_normal_tokens": 107151,
+        "V2_normal_tokens": 208391,
+        "delta": 101240,
+        "BASE_calls": 17,
+        "V2_calls": 24,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 70,
+        "official_question_id": null,
+        "BASE_normal_tokens": 67080,
+        "V2_normal_tokens": 155554,
+        "delta": 88474,
+        "BASE_calls": 13,
+        "V2_calls": 22,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 90,
+        "official_question_id": null,
+        "BASE_normal_tokens": 55249,
+        "V2_normal_tokens": 136258,
+        "delta": 81009,
+        "BASE_calls": 13,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 4,
+        "official_question_id": null,
+        "BASE_normal_tokens": 79461,
+        "V2_normal_tokens": 158561,
+        "delta": 79100,
+        "BASE_calls": 17,
+        "V2_calls": 23,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 14,
+        "official_question_id": null,
+        "BASE_normal_tokens": 57822,
+        "V2_normal_tokens": 132422,
+        "delta": 74600,
+        "BASE_calls": 13,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 25,
+        "official_question_id": null,
+        "BASE_normal_tokens": 37188,
+        "V2_normal_tokens": 111332,
+        "delta": 74144,
+        "BASE_calls": 10,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 53,
+        "official_question_id": null,
+        "BASE_normal_tokens": 70109,
+        "V2_normal_tokens": 143804,
+        "delta": 73695,
+        "BASE_calls": 16,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 16,
+        "official_question_id": null,
+        "BASE_normal_tokens": 48783,
+        "V2_normal_tokens": 118106,
+        "delta": 69323,
+        "BASE_calls": 13,
+        "V2_calls": 16,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 2,
+        "official_question_id": null,
+        "BASE_normal_tokens": 69925,
+        "V2_normal_tokens": 136829,
+        "delta": 66904,
+        "BASE_calls": 17,
+        "V2_calls": 20,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 3,
+        "official_question_id": null,
+        "BASE_normal_tokens": 80328,
+        "V2_normal_tokens": 146400,
+        "delta": 66072,
+        "BASE_calls": 17,
+        "V2_calls": 23,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 73,
+        "official_question_id": null,
+        "BASE_normal_tokens": 113515,
+        "V2_normal_tokens": 164925,
+        "delta": 51410,
+        "BASE_calls": 17,
+        "V2_calls": 20,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 95,
+        "official_question_id": null,
+        "BASE_normal_tokens": 74651,
+        "V2_normal_tokens": 123574,
+        "delta": 48923,
+        "BASE_calls": 14,
+        "V2_calls": 17,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 99,
+        "official_question_id": null,
+        "BASE_normal_tokens": 97152,
+        "V2_normal_tokens": 143972,
+        "delta": 46820,
+        "BASE_calls": 17,
+        "V2_calls": 20,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 60,
+        "official_question_id": null,
+        "BASE_normal_tokens": 140717,
+        "V2_normal_tokens": 181319,
+        "delta": 40602,
+        "BASE_calls": 22,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 13,
+        "official_question_id": null,
+        "BASE_normal_tokens": 53814,
+        "V2_normal_tokens": 84870,
+        "delta": 31056,
+        "BASE_calls": 13,
+        "V2_calls": 16,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 24,
+        "official_question_id": null,
+        "BASE_normal_tokens": 73479,
+        "V2_normal_tokens": 103373,
+        "delta": 29894,
+        "BASE_calls": 17,
+        "V2_calls": 16,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 92,
+        "official_question_id": null,
+        "BASE_normal_tokens": 93548,
+        "V2_normal_tokens": 122158,
+        "delta": 28610,
+        "BASE_calls": 18,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 94,
+        "official_question_id": null,
+        "BASE_normal_tokens": 82757,
+        "V2_normal_tokens": 110501,
+        "delta": 27744,
+        "BASE_calls": 14,
+        "V2_calls": 17,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 6,
+        "official_question_id": null,
+        "BASE_normal_tokens": 215453,
+        "V2_normal_tokens": 242834,
+        "delta": 27381,
+        "BASE_calls": 35,
+        "V2_calls": 28,
+        "BASE_root_failed": 2,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 97,
+        "official_question_id": null,
+        "BASE_normal_tokens": 107746,
+        "V2_normal_tokens": 133132,
+        "delta": 25386,
+        "BASE_calls": 16,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 0,
+        "official_question_id": null,
+        "BASE_normal_tokens": 108134,
+        "V2_normal_tokens": 131164,
+        "delta": 23030,
+        "BASE_calls": 21,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 83,
+        "official_question_id": null,
+        "BASE_normal_tokens": 128803,
+        "V2_normal_tokens": 147505,
+        "delta": 18702,
+        "BASE_calls": 20,
+        "V2_calls": 18,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 69,
+        "official_question_id": null,
+        "BASE_normal_tokens": 84684,
+        "V2_normal_tokens": 103059,
+        "delta": 18375,
+        "BASE_calls": 19,
+        "V2_calls": 19,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 29,
+        "official_question_id": null,
+        "BASE_normal_tokens": 97330,
+        "V2_normal_tokens": 107222,
+        "delta": 9892,
+        "BASE_calls": 17,
+        "V2_calls": 17,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 75,
+        "official_question_id": null,
+        "BASE_normal_tokens": 55700,
+        "V2_normal_tokens": 52050,
+        "delta": -3650,
+        "BASE_calls": 14,
+        "V2_calls": 9,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 81,
+        "official_question_id": null,
+        "BASE_normal_tokens": 125343,
+        "V2_normal_tokens": 108374,
+        "delta": -16969,
+        "BASE_calls": 21,
+        "V2_calls": 15,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 84,
+        "official_question_id": null,
+        "BASE_normal_tokens": 116035,
+        "V2_normal_tokens": 96501,
+        "delta": -19534,
+        "BASE_calls": 19,
+        "V2_calls": 14,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 51,
+        "official_question_id": null,
+        "BASE_normal_tokens": 110631,
+        "V2_normal_tokens": 64544,
+        "delta": -46087,
+        "BASE_calls": 25,
+        "V2_calls": 13,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 17,
+        "official_question_id": null,
+        "BASE_normal_tokens": 106234,
+        "V2_normal_tokens": 56592,
+        "delta": -49642,
+        "BASE_calls": 17,
+        "V2_calls": 9,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 11,
+        "official_question_id": null,
+        "BASE_normal_tokens": 262435,
+        "V2_normal_tokens": 153969,
+        "delta": -108466,
+        "BASE_calls": 36,
+        "V2_calls": 17,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 54,
+        "official_question_id": null,
+        "BASE_normal_tokens": 187397,
+        "V2_normal_tokens": 74270,
+        "delta": -113127,
+        "BASE_calls": 39,
+        "V2_calls": 13,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 31,
+        "official_question_id": null,
+        "BASE_normal_tokens": 510579,
+        "V2_normal_tokens": 336335,
+        "delta": -174244,
+        "BASE_calls": 55,
+        "V2_calls": 34,
+        "BASE_root_failed": 0,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 101,
+        "official_question_id": null,
+        "BASE_normal_tokens": 715229,
+        "V2_normal_tokens": 491389,
+        "delta": -223840,
+        "BASE_calls": 64,
+        "V2_calls": 55,
+        "BASE_root_failed": 1,
+        "V2_root_failed": 2,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      },
+      {
+        "problem_id": 57,
+        "official_question_id": null,
+        "BASE_normal_tokens": 1130141,
+        "V2_normal_tokens": 148514,
+        "delta": -981627,
+        "BASE_calls": 125,
+        "V2_calls": 21,
+        "BASE_root_failed": 2,
+        "V2_root_failed": 0,
+        "BASE_correct": 1,
+        "V2_correct": 1
+      }
+    ],
+    "top5_share_net_delta": 0.6011044707677735,
+    "top5_share_positive_delta": 0.39205844310667587,
+    "failures": [
+      {
+        "benchmark": "MMLU college_physics",
+        "condition": "BASE",
+        "problem_id": 88,
+        "official_question_id": null,
+        "status": "timed_out",
+        "gold_index": null,
+        "pred_index": null,
+        "correct": null,
+        "pre_revision_index": null,
+        "pre_revision_correct": null,
+        "elapsed_seconds": 3602.3445480840164,
+        "directory": "archive-ref-024ffbe93e8af8ee",
+        "terminal_error_type": "NativeTimeout",
+        "terminal_error_message": "External time limit reached; native source is unchanged",
+        "normal_calls": 107,
+        "model_calls_finished": 122,
+        "model_errors": 14,
+        "missing_usage_calls": 14,
+        "ordinary_length": 0,
+        "empty_returns": 1,
+        "root_attempts": 5,
+        "root_failed_attempts": 5,
+        "graph_recursion_failures": 1,
+        "unfinished_roots": 0,
+        "normal_tokens_in_failed_root_attempts": 932492,
+        "output_tool_calls": 11,
+        "other_tool_attempts": 0,
+        "tool_errors": 0,
+        "gateway_wait_seconds": 0.0,
+        "gateway_429": 0,
+        "reasoning_above_budget": 0,
+        "unassigned_model_roots": 0,
+        "normal_input_tokens": 566982,
+        "normal_output_tokens": 365510,
+        "normal_total_tokens": 932492,
+        "normal_reasoning_output_tokens": 277998,
+        "normal_cached_input_tokens": 53888,
+        "visits_Default_Supervisor": 24,
+        "visits_Answer_Generator": 5,
+        "visits_Evaluator_Supervisor": 19,
+        "visits_Physics": 8,
+        "visits_Mathematics": 4,
+        "visits_Revisor": 14,
+        "clean": 0,
+        "successful_root_normal_tokens": 0,
+        "successful_root_normal_calls": 0
+      }
+    ],
+    "configuration_differences": {
+      "condition": [
+        "\"BASE\"",
+        "\"V2\""
+      ],
+      "organization_awareness_v2": [
+        "false",
+        "true"
+      ]
+    },
+    "configuration_unexpected_differences": {},
+    "source_commit": "e87bc6c0fe93ef0389f89c7292672b9ab523f299",
+    "batch": "archive-ref-653b9e82e243b2f2"
+  },
+  "protocol": {
+    "main": "Normal valid model returns on mutually completed question pairs; status=success, no finish_reason=length, content or tool_calls present.",
+    "token_fields": "Only usage of normal valid returns; no recovery from exception text; unknown is not imputed.",
+    "clean_sensitivity": "Post-hoc diagnostic: both arms completed, no model error, no ordinary length/empty return, no failed or unfinished root graph attempt.",
+    "native_graph": "Root LangGraph chain event with metadata lacking langgraph_node; callbacks propagated to leaf/parent are not extra root attempts.",
+    "role": "talkhier_role when present; otherwise last native role in full langgraph_checkpoint_ns.",
+    "tool": "output_tool writes model text and returns empty string; no external resource tool is enabled by Physics prompt [4].",
+    "inference": "No inference/grader/API/cost accounting. Fixed100 is not full benchmark or official few-shot inference.",
+    "bootstrap": {
+      "seed": 20261006,
+      "resamples": 20000,
+      "unit": "question pair",
+      "interval": "percentile 95%; one run per arm; not provider-randomness replication"
+    },
+    "latency": "Whole child elapsed time; V2 scheduler capacity changed16→32 late in run; no causal concurrency/latency inference."
+  },
+  "official_scoring": {
+    "scored_at_utc": "2026-10-06T11:42:49.978277+00:00",
+    "scope": "fixed 100 Physics questions; not full MMLU-Pro or official few-shot inference protocol",
+    "parameters": {
+      "benchmark": "MMLU-Pro Physics fixed test n100 seed42",
+      "scoring": "official valid-prediction exact match",
+      "parent_batch": "archive-ref-9d43a1dbaa5f8e3d",
+      "parent_archive_sha256": "015bd4459398577484ba57f3c3a83b6120c1624aa5485343476b41929ee1a4b2",
+      "subset_manifest_sha256": "3a74f4669898b1e7521dae29e6cbc154857ed2ea447acf4d800da522ce0984c6",
+      "official_scoring_commit": "f418b116db00b065c2aea046518d8fcf74d39872",
+      "scoring_script_sha256": "bf19ec920c0654437a28a5f85e8549de8fdcc827b88194744729a7e4d9c73265",
+      "model_calls": 0,
+      "grader_calls": 0,
+      "missing_prediction_policy": "unscored; no random fallback; fixed-sample correct-answer yield reported separately"
+    },
+    "conditions": {
+      "BASE": {
+        "planned": 100,
+        "status_counts": {
+          "completed": 97,
+          "timed_out": 1,
+          "error": 2
+        },
+        "scored": 97,
+        "correct": 91,
+        "wrong": 6,
+        "missing_or_noncompleted": 3,
+        "accuracy_on_scored": 0.9381443298969072,
+        "correct_answer_yield_on_fixed_100": 0.91,
+        "yield_definition": "correct / all 100 planned questions; missing states retained, not relabeled as wrong answers"
+      },
+      "V2": {
+        "planned": 100,
+        "status_counts": {
+          "completed": 97,
+          "timed_out": 2,
+          "error": 1
+        },
+        "scored": 97,
+        "correct": 93,
+        "wrong": 4,
+        "missing_or_noncompleted": 3,
+        "accuracy_on_scored": 0.9587628865979382,
+        "correct_answer_yield_on_fixed_100": 0.93,
+        "yield_definition": "correct / all 100 planned questions; missing states retained, not relabeled as wrong answers"
+      }
+    },
+    "official_summaries": {
+      "BASE": {
+        "corr": 91.0,
+        "wrong": 6.0,
+        "acc": 0.9381443298969072
+      },
+      "V2": {
+        "corr": 93.0,
+        "wrong": 4.0,
+        "acc": 0.9587628865979382
+      }
+    },
+    "paired": {
+      "both_scored": 94,
+      "transitions_BASE_to_V2": {
+        "1->1": 88,
+        "0->0": 4,
+        "0->1": 2
+      },
+      "BASE_correct": 88,
+      "V2_correct": 90,
+      "V2_minus_BASE_percentage_points": 2.127659574468085
+    },
+    "runtime_concurrency_note": "BASE16/V216 initially; user authorized V2 capacity32 at 2026-10-06T10:53:25Z; realized peak29",
+    "no_new_inference": true,
+    "missing_predictions_randomly_filled": false
+  },
+  "secondary_scoring": {
+    "observed_at_utc": "2026-10-06T06:58:10.680638+00:00",
+    "batch": "archive-ref-653b9e82e243b2f2",
+    "batch_status": "completed_with_errors",
+    "provisional": false,
+    "source_commit": "e87bc6c0fe93ef0389f89c7292672b9ab523f299",
+    "method": "native integer final-choice equality to official MMLU gold",
+    "judge_api_required": false,
+    "scoring_workers_per_condition": 10,
+    "scoring_conditions_concurrent": true,
+    "missing_policy": "timeout/error/running remain unscored; pre-revision -1 means unavailable",
+    "groups": {
+      "BASE": {
+        "planned": 50,
+        "status_counts": {
+          "completed": 49,
+          "timed_out": 1
+        },
+        "scored_completed": 49,
+        "correct": 49,
+        "native_accuracy_on_completed": 1.0,
+        "pre_revision_scored": 42,
+        "pre_revision_correct": 42
+      },
+      "V2": {
+        "planned": 50,
+        "status_counts": {
+          "completed": 50
+        },
+        "scored_completed": 50,
+        "correct": 50,
+        "native_accuracy_on_completed": 1.0,
+        "pre_revision_scored": 49,
+        "pre_revision_correct": 49
+      }
+    },
+    "matched_scored_questions": 49,
+    "matched_question_ids": [
+      0,
+      2,
+      3,
+      4,
+      6,
+      11,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22,
+      24,
+      25,
+      27,
+      28,
+      29,
+      31,
+      35,
+      38,
+      43,
+      46,
+      51,
+      53,
+      54,
+      57,
+      60,
+      64,
+      69,
+      70,
+      71,
+      73,
+      75,
+      77,
+      81,
+      83,
+      84,
+      85,
+      86,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      97,
+      99,
+      101
+    ],
+    "paired_correctness_counts_BASE_to_V2": {
+      "1->1": 49
+    },
+    "input_sha256": {
+      "archive-ref-1ee5c145924c8fd6": "31697d7af4f032d26283f224b7a2b20295eb8a48cac6d0ae9bb55c2d42afb30e",
+      "archive-ref-bb40492fb3aa0c4b": "faa80906f789121e39d080b426f29d1ca692f2c240b6325fef923979a96208d2",
+      "archive-ref-acbefb9a729e4efc": "8146a3d4a7d9c2cdcedd76d17c90d1035a128012a49990855b6eab68f492250b",
+      "archive-ref-46f4310478b8e8c8": "c85ecba8912c997973bfd13d89897255a98ac3bd9de2b52d60f1ca1e8e31c44a",
+      "archive-ref-21cd61dccc911df7": "c0255f486ce67c262cb7f44565d8597fed03c9965069fd53ed9972911cd11457",
+      "archive-ref-a2d91498669dda1d": "02da5dc3b0c73d0b74f111a4edfcde75645563ff975dbadd978eb4753970f385",
+      "archive-ref-1a3213031635815f": "a255201b4a83dc0207580eee94acf6ed25b4a0036ed6cea3bf00efc8b81b0694",
+      "archive-ref-96d10073326bcc09": "29e67127f408231ee93f9e6d8031d5973d66ff92fde132e33a0ab8860b62f75d",
+      "archive-ref-8b5f0b332de1feb7": "6fbd7eef7fa7e5d95b1e90e2ee0e93f75ff5a5d9850c36317a3dfc742b99e973",
+      "archive-ref-5c2063cfa0159253": "b09fcec7c5f71734f1ad201795b834a006196093b6174b199706c16d63b072bf",
+      "archive-ref-e076543cf1081fa0": "72de01094af99b8ad70a9585a94de8f5ff71b74b88f16a2480fde1b5e97a9de6",
+      "archive-ref-a797696dab5fc364": "d46e4171fd74cb5e3de0ae6fbac7d9b9e314c3d42c67deac8ac3b045a5f2d63b",
+      "archive-ref-1e28930736e72e79": "36bcf88f6030e8401af68cb5f44ffa4cba9ab09457e2d3baaef48f0a84ee36d8",
+      "archive-ref-b0d1274dfba40fa5": "f14293635a43c8a822543e40024e2c89dbfb7980ce89e614faa298ae8995dc13",
+      "archive-ref-8c4ce52afcabe2cc": "b44b803894235a9ffe5ac772f20109a62d48886fb44d84c60f1accc054962e44",
+      "archive-ref-070aeffd70b638a8": "c0ad7660a7a26a95ae233fad9204ccf54c2a5907140612ddaee3528a02bb6821",
+      "archive-ref-a3e7e6a5a21aa1b9": "db836eeaf0c71051d7d10570ee39dafe42f160e96f0cb7ff8a10278dcbb9cce2",
+      "archive-ref-fb6f2374ecc8c720": "b5428e1f6de52eae7add3f7f4ba185ee30eb39c0c14a06c79c2b250fce19f0ec",
+      "archive-ref-c319c104ad227e73": "ad9bfc2eead0d9f10fbf71ac9b65ca62a9d20378b92113b69a7dde87a9f5f9ce",
+      "archive-ref-488d551d64be88b9": "18ea9754b2021a6e6661d52c048c5a6ebced0c49f9e2243fdee7d596db3a5fe6",
+      "archive-ref-f182efc342069579": "4ac73808c7b8cd6c3ea7b4bb0cd428957b6fe492aecbcd092b59561b58d4b64d",
+      "archive-ref-9ecfe108a6488c54": "ea85d17a3806b712648553175aad281224ade26e253d2d1e84adc072d59c0a34",
+      "archive-ref-85ce1a007883e911": "9fb82633b10e044b27364dc5c953fdaccde64bad2f3191fc0f1263e745946f77",
+      "archive-ref-58456c3952902081": "3e3ed9cf91a75536d875c6f2395ffcffcce5be2077d347f69239de0a47f390e3",
+      "archive-ref-25e5f6294eb2c9cd": "8fdf5ff843c6fc786da9a0d49f473084df4d799cb8554938fc4ab71ced20fa14",
+      "archive-ref-f6d63f503557d3cf": "35bc4a2399b18702472e74b549457ff1591e72e0cf1f26a10ea7eb810c024bb2",
+      "archive-ref-5bc89f382623207b": "c218e8bc857bdfecaf70c4233935e1d291f06bb98c60d99ba948475edeb82d4a",
+      "archive-ref-92656591ae029266": "53ca990e77218dbb52e1d37869ab8eb2da765d51ef8f4564a88e776c72b67a9c",
+      "archive-ref-10f1d9da533f62bd": "bf40d756af92cd2ba24d6f340e2b64aa6730b504909769567e0b0abc231ed237",
+      "archive-ref-b03c146f21c9525c": "3bfaad9dcbcc4931775c40239202ea5f5860010a42dc54f3c52a91768fac3b59",
+      "archive-ref-166cb3d37a437264": "ee71a0a325d5311044deb6b42d9482c247e5333c0d47d2cf80b3e33abf2a6c70",
+      "archive-ref-07c668fbcc7bbe04": "300883ad97ea1056e88576817dbfb62b93a4a4e9d03e635382047408aa0a5099",
+      "archive-ref-994206a195c320ac": "9d50302a7d6f8dc925ce8b6a3e25ad8d6d5a3a3780874cb5ed44d45037bfd088",
+      "archive-ref-434934856c178e07": "60c1e07af2c086faf75ea1da71903edf9296878417255108db0b5967367fde5b",
+      "archive-ref-5e4ccb4ba945f985": "3ec843fc9132af971426c974ef39ab2b8facf020487dc8b4a3ff088384398023",
+      "archive-ref-5ba5c9344647b584": "6ebd57cd1eb6f67bf23ed3a574bfe55ba2dcf22bcc0c4b4f15091bae38cd699b",
+      "archive-ref-094ce5b75a0a7f18": "9710cffd37a76d8ac7da326695bcd14190256812da2d3ba89add5be0b735a9c2",
+      "archive-ref-7bd92b20f7cad1a7": "c2c1d9d83376a7c5d28b6160cfbaea77366d4d836889850add71a0e58ca448f8",
+      "archive-ref-a882b3fcef666fe4": "18ea9754b2021a6e6661d52c048c5a6ebced0c49f9e2243fdee7d596db3a5fe6",
+      "archive-ref-f7785d1a567c23b2": "9fb82633b10e044b27364dc5c953fdaccde64bad2f3191fc0f1263e745946f77",
+      "archive-ref-44aad6dc706afe36": "16570605ae83b09b19c9839ff9de0a5abc9c84241eeea5b3cfba2169bbad2c53",
+      "archive-ref-52b3ec3d128d4289": "755e4031b64406d0d540cb8f53889f8c1e8721997a2bb6d2ece3a33e68ef76d2",
+      "archive-ref-e93a94cd66be8bd8": "18e8217f36988a642db995f88e89b013629eccf52ab81fb92d81358ece7ae33c",
+      "archive-ref-3c13847330054651": "0fe6890522499de776aac881e3bf685bf3e402990b0ab92967a13c256cd85dbc",
+      "archive-ref-bbe4e53fc919c65c": "555899bfd6f5075a74e44c32f95bf6f0d82e2ed12422a90436b36245e022bd88",
+      "archive-ref-4b74a5e738baa859": "63b00d85a16bc7dd8b568f747ee7f132099adebd60b39a1e9994432ab9ae0c48",
+      "archive-ref-8376b1e740059ebc": "1da35e33e84c0486f5f867b82c6cb2aea4743c86ba51a7ec9745c8e45e16aefc",
+      "archive-ref-0ed6b7a9c5ea21ed": "b3114ce8832c6ba8a2c74ba08d2ef8bcc586f9d591559002101a4087a1cf877a",
+      "archive-ref-afdb7f3e9ac098ec": "39f5fcec147a345b2a8969a92416f6074b5e3bf099fe298c103210047dde7095",
+      "archive-ref-8f8af835d7d9b279": "fc6d3a00b735fc3fd46ab6dacbffa053fd6ff42c4186311b392671e33aa44ca4",
+      "archive-ref-75764b562716fac4": "0065447cf62fb078db7855ada698d15d408404d5e39125942ed87b45aa43adb0",
+      "archive-ref-db1a9190872035a5": "cb8e555b75a419e4ded4645c71b8ab55cce8516d0e5295fc5b37a871696bf0ab",
+      "archive-ref-9f066a8fab85e7e5": "f2cde3d10a7804d599f8de8c6c049fc7c32bf096b507da6b52005a37b0a17736",
+      "archive-ref-d859ea88788a2501": "ea85d17a3806b712648553175aad281224ade26e253d2d1e84adc072d59c0a34",
+      "archive-ref-d91baf84752bf943": "27f59da9e351793d7916b421c4529d7802b4fbc3b14a9f52544bc554c2147219",
+      "archive-ref-df19a0b7e39a19df": "f76ece2fadd986fb12ccd2017257388c0db26a81b45fbd8850cb8152d431fd7b",
+      "archive-ref-74b2f91b64d82c91": "b5428e1f6de52eae7add3f7f4ba185ee30eb39c0c14a06c79c2b250fce19f0ec",
+      "archive-ref-2b6964cf93e54dea": "7efda9e18325bc437bf34f83f849f86c09327a6241e14ce7fafaaddd92b70998",
+      "archive-ref-d85d6e4a88f38a73": "29d53e23cf18113257512c442b43a542e46b8b8d4c4d575c53485b3212aa84d4",
+      "archive-ref-e3900c95c62b4ea5": "4c1e9bc463fcdaf9edad87518151816df72bb120d3e313265d81cdb443d7b50d",
+      "archive-ref-33860c96a6387499": "315872d91f9db18bc22f19ad6c2bee09d59b6d29d4ca88e8e50d4d7625100bdd",
+      "archive-ref-ef71f4b0a4cfd22f": "8fd5efd366d45fab427ddce72219538fe834e383ad0a804c3bdfe3bc1903cf17",
+      "archive-ref-ba69725c7c58ec57": "3ec843fc9132af971426c974ef39ab2b8facf020487dc8b4a3ff088384398023",
+      "archive-ref-80fbe5d5abdc9a81": "8651f38f2856c74d4a8966f691573817a7efc4fa129d7d4f6f804ea67f774b94",
+      "archive-ref-b46f97df39b5baca": "1c2212f2a99551ae01c0947b4e6aa4188ad0f8af1dae2e38f047fc6645553a14",
+      "archive-ref-58eed913e443ae0f": "d2c0dce39cd1c81bb36276c0bf345ccc3b8a050b8fe4e559d9a1e7011d489502",
+      "archive-ref-ebd172e99d24a278": "5a62c59954e9b664071d9746a03d207fe342d88a582d5e4d49c2733b530d2251",
+      "archive-ref-666dd9bfcce8ca36": "f76ece2fadd986fb12ccd2017257388c0db26a81b45fbd8850cb8152d431fd7b",
+      "archive-ref-394c87e8d4687226": "3e3ed9cf91a75536d875c6f2395ffcffcce5be2077d347f69239de0a47f390e3",
+      "archive-ref-ef000c668349a927": "b3114ce8832c6ba8a2c74ba08d2ef8bcc586f9d591559002101a4087a1cf877a",
+      "archive-ref-61e7304d7452583d": "db836eeaf0c71051d7d10570ee39dafe42f160e96f0cb7ff8a10278dcbb9cce2",
+      "archive-ref-e9de521f95ed7750": "38e7731a1f8a15dda749c778169c9673ef7df9877a18a7ac812e324202d84b66",
+      "archive-ref-9753250acbbd77f0": "8fdf5ff843c6fc786da9a0d49f473084df4d799cb8554938fc4ab71ced20fa14",
+      "archive-ref-fc54cc59edd980eb": "bccc51cf9591f051c832484a516275fe608d03b31f2deb1c5e6b332e68ac0ed1",
+      "archive-ref-a3db4a8ae62f8302": "18e8217f36988a642db995f88e89b013629eccf52ab81fb92d81358ece7ae33c",
+      "archive-ref-a3e3356f9944491b": "76422c4f031aa0cea092f84442bb1a2006fcfc58d50b9c6013ca38cda6afb5af",
+      "archive-ref-17ab4f6a9ff5887a": "1da35e33e84c0486f5f867b82c6cb2aea4743c86ba51a7ec9745c8e45e16aefc",
+      "archive-ref-4fca2cb03163d2db": "300883ad97ea1056e88576817dbfb62b93a4a4e9d03e635382047408aa0a5099",
+      "archive-ref-76d26b4656154524": "27f59da9e351793d7916b421c4529d7802b4fbc3b14a9f52544bc554c2147219",
+      "archive-ref-6021ee67ba4ef3d7": "35bc4a2399b18702472e74b549457ff1591e72e0cf1f26a10ea7eb810c024bb2",
+      "archive-ref-e3996ab7ad599c8e": "7c8f25aecab30ae780a671718c7866ef8744b251ad9391308cfd785917d28f8c",
+      "archive-ref-be6bef15161e9a76": "39f5fcec147a345b2a8969a92416f6074b5e3bf099fe298c103210047dde7095",
+      "archive-ref-c28b936928faf611": "c218e8bc857bdfecaf70c4233935e1d291f06bb98c60d99ba948475edeb82d4a",
+      "archive-ref-c9d7f48f151c0475": "196cd70279d769431c9cbd695cc32f087fdf7fa2833a4060dc168fc4185d3a82",
+      "archive-ref-8a8380cfa014753b": "afaf5c9d5a6e9857aaa3d66befd698ff80e2b91065522e3c90895fe640f850e5",
+      "archive-ref-540d3514ec74e128": "7220ab3385edfa6637b6aa47b02f4a1599aff632f0547c5a1383bbb02bca1b45",
+      "archive-ref-9b9354de0ef2c8c1": "444750c34e3dbc63f2c533782ab8f6335d7fe15f4d8c8b6ed5fb24a07c372894",
+      "archive-ref-bd05fbded76f013a": "ee71a0a325d5311044deb6b42d9482c247e5333c0d47d2cf80b3e33abf2a6c70",
+      "archive-ref-033423063b323cc5": "1207514893347fcddf515add3ef72f9d69abf23b0b0b3558a27e82323fd36a9d",
+      "archive-ref-b4a7bad817da93a9": "c0947e6c9207706e36b97ed9bde2a7e31da04b4c0d9b76ad354c14f591fd85aa",
+      "archive-ref-e8eb3c2a21447d56": "c9948410f00ef766f93c12a696657d02140f3fb014dbc3f1ec6e24a4e3678ef9",
+      "archive-ref-1acc2154b81c17cd": "d8472f768c50e61fd1bfe198114d6fa8f8047a6f116bb4aabdfb0ade157f939f",
+      "archive-ref-c4c11e65f5f941a0": "65df3dcf2d155165048cbd98d7fb0ff4c4e2966e2538ac0469260a1ed782dfcf",
+      "archive-ref-392b01b4426cf24c": "141c3c665e76a9364a53b6e90245d46a877400a70f19b835f363d357dcad6019",
+      "archive-ref-18127ee20f6ceff1": "812cbecc588e59f826bcd7fb3fc83497c367a4c0cdc9da8fe1cbcf8ab78d0bc7",
+      "archive-ref-59af1baf284dc576": "6c42d27b78ef2afbd57a3a6876508eb594b501947b4e93ab2324e06f85dde052",
+      "archive-ref-0c5f852e2329d807": "21b872aeff1da178a376fd8a019bf03f418d76e24421e4f366c75c6d554511c4",
+      "archive-ref-6d8277f065cb8b0a": "f23d953d94b6f3bc1789fb59d47309b825280a1754a52635fa9dd0a27a354925",
+      "archive-ref-14a8481909066bfd": "2b167e405bd3fa69dc3844ce938fbe07ec83c5755c62567b03cd242b81b0d0b9",
+      "archive-ref-9799eeec5813f1c0": "17b7746283a26cfdf44757faba6ddfabe1df9cdc9d81f7953f1311eb8d5def7f",
+      "archive-ref-17c70a89a762f49a": "94153504ae034f9f16a5219d88a7bdf4b2ed23f4da5ed76ab7c34ce98fef76f5",
+      "archive-ref-9da848cff5406baf": "bf7a0a14453b8c806f5842d3561805a80f7d0d8defa6ba3023f2d65e6e903c31",
+      "archive-ref-37d3a96da788ddf6": "ddecdd5811f86d4cd813c76074b389a992acdded12889de8c83994f182eab84c",
+      "archive-ref-54c6710fe18a6aea": "af219f9ebed17705540c96b4a626200ee6159b25048ce0d5a24bfd6c5729db38",
+      "archive-ref-7a42157b4f992c82": "17b7746283a26cfdf44757faba6ddfabe1df9cdc9d81f7953f1311eb8d5def7f",
+      "archive-ref-9c38c83a4b38638c": "d67d3ef110edcdb85f81e08fd7e9cfcfd5a7c19a7db80297cc3e2ddfb97f1ef2",
+      "archive-ref-f1c5f0578163a193": "315872d91f9db18bc22f19ad6c2bee09d59b6d29d4ca88e8e50d4d7625100bdd",
+      "archive-ref-ebe4a89d999e88c5": "c5de1a28b6fb094328cd21baae81dcd2a21f60d44e68f20dfc874d49e01ebcf1",
+      "archive-ref-05a52b5f2db85bbf": "00fef636405992366e1c9227036d847152ec120a742600cb2f0bab49579bc446",
+      "archive-ref-06312b7214245ae9": "c420d008bfe94e6cb166b0298b410cc0f22c7d612dc693c8a8a62c62f1b6449a",
+      "archive-ref-b0b937f538b72075": "71cec164748e246ccc194a75a1caf581032d8532d3f7195172885b0ebec64d60",
+      "archive-ref-ef8761a62e928254": "00fef636405992366e1c9227036d847152ec120a742600cb2f0bab49579bc446",
+      "archive-ref-56fe1884c476afc9": "f23d953d94b6f3bc1789fb59d47309b825280a1754a52635fa9dd0a27a354925",
+      "archive-ref-efd65145c14cfe39": "e5b230665ceb2ad718eaa6d885e1fe1bf2b1643e73912dfa1b88b4550aed7e6b",
+      "archive-ref-476c3419a6f4e547": "4c1e9bc463fcdaf9edad87518151816df72bb120d3e313265d81cdb443d7b50d",
+      "archive-ref-db5510d82b8f6884": "9d0bd0a8e0d0442dfe86166259af6f6b41b8583e85f8b908daf2787eb5a2e78c",
+      "archive-ref-844833f7f55d5dce": "16063730562d9892ceb8515181827b059a777fc3f69e57f6f983e979365c9834",
+      "archive-ref-57cf04bf0b821ed7": "e5b230665ceb2ad718eaa6d885e1fe1bf2b1643e73912dfa1b88b4550aed7e6b",
+      "archive-ref-b98a93fbcc706dd9": "0fa4070dff787ac1734bb8736dfe7d6304b7070f217362037ae37e4e585ef8dd",
+      "archive-ref-7e37aaf127ed6e28": "1f8baafd38f1de09053c73d2c95f332b338b93384289e350dfac33e67faca01f",
+      "archive-ref-a51d12dc41203ddc": "fc6d3a00b735fc3fd46ab6dacbffa053fd6ff42c4186311b392671e33aa44ca4",
+      "archive-ref-16b2ba2d237a1420": "26b2bc467361e328615be1eaf68ef8a50570c86e20358fe3005868bd7dfc588f",
+      "archive-ref-a73f660d6b844f1c": "366905baef49eb48fcebbf5566b0652fd0d8610bfbdc5da1504e5682af3f813a",
+      "archive-ref-0ec6d279c42cf11c": "27131f1dc02a52b354cb3015876f6c9875a330f5a5da2b8bc087ed7bc0661b31",
+      "archive-ref-2a968587b97675ff": "79e8abb4a175d51c95ae64eede220fc7dcbe303d5dcabd71a19147d4559e6022",
+      "archive-ref-8c1b76676f8343e6": "1c2212f2a99551ae01c0947b4e6aa4188ad0f8af1dae2e38f047fc6645553a14",
+      "archive-ref-ed98c604ef76815a": "ba6cfd815176a5753107778ea3671f8cc8b11c8ac8464034a308de8a76878222",
+      "archive-ref-aaf125635941537e": "7c8f25aecab30ae780a671718c7866ef8744b251ad9391308cfd785917d28f8c",
+      "archive-ref-6b38cc12c2b3ae8c": "ab680ef075c44b27dac0576d51f6428316d448b9390bbd532090bacdd5a09ec3",
+      "archive-ref-a07fc8ac1e59ebbe": "7220ab3385edfa6637b6aa47b02f4a1599aff632f0547c5a1383bbb02bca1b45",
+      "archive-ref-cb7faa0fcd55b10e": "6c4cc1f2c5f3dc7af3f3edbc7452344430f7961a5b01b05614cb246ef07cdb28",
+      "archive-ref-caea3da1576ca64f": "bccc51cf9591f051c832484a516275fe608d03b31f2deb1c5e6b332e68ac0ed1",
+      "archive-ref-55757f577405361d": "72f7b247a11c5464c507f9cfaf22d09762e885d7904be0d1c9adcd6e45268d9b",
+      "archive-ref-6ef0f7818b1989cb": "668cf7658fcd743410d676bd8c91764f025d21d621b000a10f4c48bff34bca7c",
+      "archive-ref-defb855b76a3253e": "afaf5c9d5a6e9857aaa3d66befd698ff80e2b91065522e3c90895fe640f850e5",
+      "archive-ref-a304a633c059d448": "bc9f5d0f5cea161d3bdfef4e12e39deaceb0774ada1a016b07a30c6297643d45",
+      "archive-ref-7cd658a745aaf2f4": "377be68863d61eff3d87d912042c17039b6f41b5cd1bbf749e992ce5144fcc9c",
+      "archive-ref-2996bcc82f46dffc": "db17cd00f6caa60d68eed42f126970951928ac219995173ec5d8837b4979f880",
+      "archive-ref-10c2aca0c963d7c2": "b6a934d86998b592f7024f011c95761647fa99feaee78edb2f6f2776f7dd6611",
+      "archive-ref-02e99f9ab959aefd": "7bdbc694a55ebedc234a42db3a553e9b2b06d2b5c77e21a169b4873530fff5c9",
+      "archive-ref-3170decc2d743e97": "13b6a22e606f1f64862a5c8c25a340dae6656dbcb0ff2571bf4a2130a05652c3",
+      "archive-ref-fc64c611856de894": "9f6301c466efe6b92723a837d7ba2f43e2c70fe9ac6805273e29d2b3233e0330",
+      "archive-ref-e08dd226e1a80e5a": "43a924d42e23bf3c0fbb60c8e4de536ead06f747b647625e3dc066f613face2c",
+      "archive-ref-5fc5f98ed5fd4b3f": "f0d2ce3d2ac53dd9a45ce3ae0ce1d1bbdcee974e3762ec5fb607969ab62ac69b",
+      "archive-ref-80d7a5cdce31aa8a": "7efda9e18325bc437bf34f83f849f86c09327a6241e14ce7fafaaddd92b70998",
+      "archive-ref-8a4ce094625b3a72": "76422c4f031aa0cea092f84442bb1a2006fcfc58d50b9c6013ca38cda6afb5af",
+      "archive-ref-f4001c88ec54c20b": "d825829eeb5617467828ba86d4f9d5ebde11fe33b23aaaaa746c7d4352d144e6",
+      "archive-ref-e10badc3df1bd943": "79e8abb4a175d51c95ae64eede220fc7dcbe303d5dcabd71a19147d4559e6022",
+      "archive-ref-c5b37a444e27d1c7": "14b292239d620837ad17cfc0e1d143c487bac216254e9a95b9a623033914b5cf",
+      "archive-ref-03a8b3024fd5a92d": "e2623982fc16fbe8c4bcd99b8a61cb41bda0584dad60d149d208fde28c8a7264",
+      "archive-ref-5a2dfb7d87c31ac7": "cd3dc9bee2e4b0a03bd5a52c54859814ae3c66d92ff67b210d3f3655ea8f7b28",
+      "archive-ref-df50d22f756c3052": "e8a45eb4090094680c36f6d8e2be73d2f86dd19d8b053c4a5caae87dbd5c2d79",
+      "archive-ref-8a2be6ecb074b7ec": "89b7ae954d043cf7ecdc5b5572d72609de37a6a28267cd658cfd4bcc741eaa80",
+      "archive-ref-3d30c004b995e915": "72f7b247a11c5464c507f9cfaf22d09762e885d7904be0d1c9adcd6e45268d9b",
+      "archive-ref-dec9f3b1e498c48a": "89f598ce9b202cee4f2c3a2fdadbb22e0c74184d04c1b8104c7857fbbd1407c6",
+      "archive-ref-f2fa16be453733ed": "a4abd45d6c209574b77aadc40161c519650b979a135c5dd256d73daa1e18b40e",
+      "archive-ref-a219ea41d3d16b11": "0fa4070dff787ac1734bb8736dfe7d6304b7070f217362037ae37e4e585ef8dd",
+      "archive-ref-de7d9ea0988f8009": "54ac992b9f5283433b67fd186f8a1419bad128858d5a89bc63d2718792835595",
+      "archive-ref-80bcad8db4432916": "9d0bd0a8e0d0442dfe86166259af6f6b41b8583e85f8b908daf2787eb5a2e78c",
+      "archive-ref-5527a175bd75c9bc": "3a53c1014b131b8d5ffd2058cbb03f109503b1cd544ee3238a65e2ab59c815e7",
+      "archive-ref-2e570f86797fb2b9": "13b6a22e606f1f64862a5c8c25a340dae6656dbcb0ff2571bf4a2130a05652c3",
+      "archive-ref-ab62f91204e3b48d": "db17cd00f6caa60d68eed42f126970951928ac219995173ec5d8837b4979f880",
+      "archive-ref-d6b3845f06b1b064": "dbb38760017ebf4a236636e67ff30aee9e98d53de9ca012e3372b5b6e708e0b2",
+      "archive-ref-ddfc8ec22ad9abb9": "2c44e476d55a47b64b6c0c7c34d809c1ec082d9aebc0c0d457628a201a98231e",
+      "archive-ref-bf83efbddc9db7e3": "74209d61235ac2a8be8636b2120fc6ac963b987152adb490b148f060ecf3dce3",
+      "archive-ref-08e04ea2b220c2fe": "26b2bc467361e328615be1eaf68ef8a50570c86e20358fe3005868bd7dfc588f",
+      "archive-ref-701dea9f941de168": "ad444a2d39708be8ce28af91f2952f3aabf0c429c70ca024a42550bd2e3fda60",
+      "archive-ref-0ce557ac00757dbd": "a408eee43d5fc49dbc77777c51fba6bf97f9f69c814bb9a2b27a43f8acbb9d05",
+      "archive-ref-ed34e204ee16feb2": "43a924d42e23bf3c0fbb60c8e4de536ead06f747b647625e3dc066f613face2c",
+      "archive-ref-14924a53bfc24b8c": "bf7f0bc6921970fd5eb8425c34fa981a48c0d223636681296931b75ecb06739a",
+      "archive-ref-2d2e4d3553e25f38": "c589e430d221e3d5012943d01894b36816aff4c14c0bf496b9a1fda3899dc463",
+      "archive-ref-3737b676d4d3fdf1": "f1ed0b90285d737fb4af418c78ed8230ab92db45ff00eccbe8334efa4aee423c",
+      "archive-ref-8b20da495d1d4673": "1f8baafd38f1de09053c73d2c95f332b338b93384289e350dfac33e67faca01f",
+      "archive-ref-335a5c04780783fe": "84e437b1d7429e26d0e4afb1379fe7b1b2f0cc82228998bf36138d544a8ff18f",
+      "archive-ref-d7384b7c353a36ec": "444750c34e3dbc63f2c533782ab8f6335d7fe15f4d8c8b6ed5fb24a07c372894",
+      "archive-ref-f55ccb0f812a09a7": "ddecdd5811f86d4cd813c76074b389a992acdded12889de8c83994f182eab84c",
+      "archive-ref-b3ef8dc1de46e170": "d825829eeb5617467828ba86d4f9d5ebde11fe33b23aaaaa746c7d4352d144e6",
+      "archive-ref-184a00c09289bacf": "609225e487c527fa27ed2997244842faedf1dbafd002471b82241778602994c6",
+      "archive-ref-9f6eee1b9d7313c8": "f35e898c18d3cb8d3c607c2c68570880d96d606092477f748ac60d41dccd51af",
+      "archive-ref-8fbcac9bcd8c8e1d": "ed92a3dc8d10b77b2c7e83737e46db3d0742ea2654d557e08d13c687381df6f4",
+      "archive-ref-a2a3262f88840f28": "42955a79b14e4c77e9e4e2a5b574a9a043df52bf2f36f51b1b9043bdbd2a6b60",
+      "archive-ref-6c14aff4536b031f": "a2b86b59874e42489c4979184401668c5968a293f5c754c80b0ae4238b46b05d",
+      "archive-ref-befe93714e3f1997": "a81f2ecae87c8fe615eff131a8455a96c2f0ca1c28411cf09ef6eba6a72445ed",
+      "archive-ref-ee31a9c8acaf7c53": "25184210e8e14982f4c15b12e54a29501bcae45d68dc1b4f006a4e269c2fcb33",
+      "archive-ref-47f14bd951b3f352": "a408eee43d5fc49dbc77777c51fba6bf97f9f69c814bb9a2b27a43f8acbb9d05",
+      "archive-ref-c539dd6a9d79e096": "89b7ae954d043cf7ecdc5b5572d72609de37a6a28267cd658cfd4bcc741eaa80",
+      "archive-ref-bf449cc5942d16fc": "c5bd480ff1896f881467c6fcc27257c07508a5a67ba58d1dc7a02d8e2ec6867e",
+      "archive-ref-559f16e50e66f551": "30809694cf4489502a803f40bf2635373ef52dc93ae125922ee2bbdb1b2451c0",
+      "archive-ref-b8123b3731a88312": "386480f2d5d2cc49c698e469164f03ccefda74774ab7b2e726557c0a81e71634",
+      "archive-ref-5dd0ea419e01c685": "dd5c61bead631f25777f7bc758468ce5d8a91459ec1b8e6a43f6fcbc9508558c",
+      "archive-ref-9f181d6063a523e4": "914be88993b348d4fe84fb23c41c25d5bf3dea0bddeab5e2039f0ec826ef8267",
+      "archive-ref-ecb467409bbf4f02": "ad444a2d39708be8ce28af91f2952f3aabf0c429c70ca024a42550bd2e3fda60",
+      "archive-ref-d28a7e7cb3063eae": "e299e396b6b60b9e4d60ace90db63719b5137ec8896e95a58871ece51ea53101",
+      "archive-ref-f62bf46a2abee6c2": "668cf7658fcd743410d676bd8c91764f025d21d621b000a10f4c48bff34bca7c",
+      "archive-ref-0bf4e847c3caabd1": "8e99c9c758428d7b3f24e89ef64a5d7a5654b686b82d1861fdb74db819cddef4",
+      "archive-ref-09fc8072929153c7": "f837fed06fd5ff5cf0ec866b30977503f9756ce45e954ae9fc39e4c495603d4c",
+      "archive-ref-af6148d9e189fb50": "f0d2ce3d2ac53dd9a45ce3ae0ce1d1bbdcee974e3762ec5fb607969ab62ac69b",
+      "archive-ref-dd169e58b683e9de": "80dca126ea65cd2990ebc56c4c4edf4b1e7dbc650939dadddea38ae43f677a92",
+      "archive-ref-6c28e95818e6ca3c": "a34cb8b24cbdd78e3c0919d97ef8e757396d7ca6fa30a4c5963b799cb38ee0c8",
+      "archive-ref-b1c1f91f98d7415e": "7bdbc694a55ebedc234a42db3a553e9b2b06d2b5c77e21a169b4873530fff5c9",
+      "archive-ref-7b51cff50e114e63": "321beddd686990e5c2897cb29a988eb1663e09fdb36ef136cd95624fe2ff482d",
+      "archive-ref-97a76be44ce8da60": "42955a79b14e4c77e9e4e2a5b574a9a043df52bf2f36f51b1b9043bdbd2a6b60",
+      "archive-ref-79cde76e9ea8f91a": "b0dd742be28c7104aaa9dfbcdeb5d94c016ef7789e8df8e88745c5a73b90c934",
+      "archive-ref-2643ce621226a88c": "381d1e01d8c848c8b9746adf5876afde6e74f55e7b3564652060eeb1871f3ace",
+      "archive-ref-4d2a253cb2a73165": "f7bc8cd98c9d9562a0b325fe5f1809383199ca59c09d5a926433096132449a27",
+      "archive-ref-13a42cf411542774": "8ee59930442d8ae30429f743f57bfc2258ec956c381480e42871990ce63e3e0a",
+      "archive-ref-d038171191168c9c": "bc9f5d0f5cea161d3bdfef4e12e39deaceb0774ada1a016b07a30c6297643d45",
+      "archive-ref-25346820736655a9": "f35e898c18d3cb8d3c607c2c68570880d96d606092477f748ac60d41dccd51af",
+      "archive-ref-cc0a0ae53853d11f": "6909fe6177a2e277655df7b66c072f695c8c84d01ae78185c935a3a561300bad",
+      "archive-ref-e672a430d22d33b5": "15f4229a30648a88e5d3fa045ce7ebedbfbbfff6f9aa7202218c6e5cb2e33ab5",
+      "archive-ref-fb046dc54ade9661": "54ac992b9f5283433b67fd186f8a1419bad128858d5a89bc63d2718792835595",
+      "archive-ref-3eb5e330cf99c128": "2734a169fb11700912dddff0d6884d78d684a13ada1a5849634d37ba23bf5a8d",
+      "archive-ref-f3eede32a8bbd1e0": "9f39d547613f944797cb251aa0a5b46e3cf4bd87dac894a8d94cf8b3ef112425",
+      "archive-ref-dbb2e45d77f9d9d1": "366905baef49eb48fcebbf5566b0652fd0d8610bfbdc5da1504e5682af3f813a",
+      "archive-ref-1d0ca1b7adf75e2d": "f7bc8cd98c9d9562a0b325fe5f1809383199ca59c09d5a926433096132449a27",
+      "archive-ref-c124ed54e7c26e21": "f05a48d1f6375e75ae0b970e44afddcbf775f143e77625fae6fa49fd938242d1",
+      "archive-ref-859f1b2849d5c355": "5de4956b1afb754f11a2d0127ca6cad0df6b4f26a8c471a4a13178bf396465fa",
+      "archive-ref-28848b421922d9f2": "74209d61235ac2a8be8636b2120fc6ac963b987152adb490b148f060ecf3dce3",
+      "archive-ref-89cd10dfcad3f372": "386480f2d5d2cc49c698e469164f03ccefda74774ab7b2e726557c0a81e71634",
+      "archive-ref-718f2d09160ca23c": "89f598ce9b202cee4f2c3a2fdadbb22e0c74184d04c1b8104c7857fbbd1407c6",
+      "archive-ref-ac746b5fcaee31cd": "2f3a64e7d8de87a9fe0660ca2b4e5b78a23bf86aa782b1f5a14d65529540392d",
+      "archive-ref-7c00494987ab267c": "14e51844396243cc2c6bf9869751057dd16e9cb7ea6f6623d960fa67196ef963",
+      "archive-ref-fc7269e84371807e": "6d418a6ceab1bf615c9e8ec7479ee8602a5398d3f1319848a49f18a5d3c97ea3",
+      "archive-ref-b7c6d4cf1ba72a7f": "1dc03c90913efc79f2c570a2c0cff4c9ef6138011683346e47e0b341d1ad5f00",
+      "archive-ref-8fee36596e6581ac": "67b947d65a1a1b19ebb5df5ec14b66df0cb428032c34b1371dff24adf725b9b8",
+      "archive-ref-fc2c4ab64d730f67": "a8301f2a108ef2025f7cce7a2676a7ffb6b8a1c13c99edeb07a39c9c63d13114",
+      "archive-ref-4d0565a7555798d4": "a81f2ecae87c8fe615eff131a8455a96c2f0ca1c28411cf09ef6eba6a72445ed",
+      "archive-ref-9dfcb04ba7b13c34": "6d418a6ceab1bf615c9e8ec7479ee8602a5398d3f1319848a49f18a5d3c97ea3",
+      "archive-ref-6546cb40264ff3c8": "b02da0d789816fcbb279af444446f7b9939198e60e65fc7507381f7f301f260a",
+      "archive-ref-b4f6b644510c897c": "c5bd480ff1896f881467c6fcc27257c07508a5a67ba58d1dc7a02d8e2ec6867e",
+      "archive-ref-a38962bac7eebf56": "335ed8b475837a13133701ffb081dac41526808d6e1fc3bb098dcb9bee3a3424",
+      "archive-ref-e712aeefb53b98b0": "694e94f3c0324da80ca2009c4309233f4bfe3ce4ca1b0154a0d5746d40a9c396",
+      "archive-ref-ab8535562c779dda": "2f9c9c11a967afae88c48bb3a8cc3e9468944fde17852799212c6c78be18aa68",
+      "archive-ref-4d3f859faa9c226a": "efbb49be1be1a556929d98096043d7d3bf90ae8e685d9c85c45f211850039f17",
+      "archive-ref-c86d8920e49c2647": "9ec94e18a679a1194cb7ac564584495b80a87322e6236a9119074aed2a38f20d",
+      "archive-ref-a4affd732a4418e1": "c23d038ebbfb482c08aaca132a4082012416adc96a1032889e6d880ea1c1e85b",
+      "archive-ref-237a3d51f6b7de3c": "f05a48d1f6375e75ae0b970e44afddcbf775f143e77625fae6fa49fd938242d1",
+      "archive-ref-e0994ad2973d21dc": "e299e396b6b60b9e4d60ace90db63719b5137ec8896e95a58871ece51ea53101",
+      "archive-ref-5e1a1fecd82c724b": "b20918e6545faa4b2c449f0e6ec494d50a459433c18e5d117caf538a91c298b2",
+      "archive-ref-74c0bc47daf6aa56": "b7d6b37320bb2049d459b0441303be8117a470f2a711ed5af04c6cb5711776a4",
+      "archive-ref-5d2c681b1e83c665": "321beddd686990e5c2897cb29a988eb1663e09fdb36ef136cd95624fe2ff482d",
+      "archive-ref-77271e206be09540": "4427d814fe15793b04eb194492034ee6732b0cedec6ce769b29f9caa507709f6",
+      "archive-ref-477c8e0a168545e8": "4bcedf087a6b3f4060a65363d9fad8015c250f310d522b2d72004aadbbb0bffd",
+      "archive-ref-cfb275c62896b40c": "14e51844396243cc2c6bf9869751057dd16e9cb7ea6f6623d960fa67196ef963",
+      "archive-ref-03a8ba33033ecdc2": "7456d176e2be4b753bb9bf2b0d939edaaf8716c08a925880f657f24aedb3f0f6",
+      "archive-ref-69ee618cdb5dc7f9": "38bc0d9f3aff76b722b93a1e62c216d62f583609a1a19bb1471fe8266310e727",
+      "archive-ref-2454bb0b1692542a": "238d6d3b960d24860224bdc3489e471e34d27431369f02a1aa7267435583e8ca",
+      "archive-ref-14d9943e756f54b7": "3ce4b3113babfdc33dfadb1052d24943ac936639f9c7c62c710797fd890b7e00",
+      "archive-ref-742a01d91ab21bcd": "efbb49be1be1a556929d98096043d7d3bf90ae8e685d9c85c45f211850039f17",
+      "archive-ref-36a313aea0fe5d23": "aad46b5d86102541e520050c417d0505f90b3cf68d4fb0fe1b25cf643f4d0ba4",
+      "archive-ref-837bfa2cccab7280": "c8aa49bffa9299eb6e954495dcb2ed7db7ec232a046f879568d9ce7ac5d3a2d7",
+      "archive-ref-cfafcfac4c11cc47": "54206be6bfc6cdb72120e1506ad31ca64e50f61b15f65b0454118596179ceeb7",
+      "archive-ref-04d413870af94a65": "9ec94e18a679a1194cb7ac564584495b80a87322e6236a9119074aed2a38f20d",
+      "archive-ref-cd10d65c09a2fd44": "15f4229a30648a88e5d3fa045ce7ebedbfbbfff6f9aa7202218c6e5cb2e33ab5",
+      "archive-ref-0d72639b747db8fc": "2f9c9c11a967afae88c48bb3a8cc3e9468944fde17852799212c6c78be18aa68",
+      "archive-ref-aafdb5873bb0196f": "71415397770a355b76b40d5bb473715d13d0bb1213793728f9c68eace20e930c",
+      "archive-ref-4abfc4014d21d4f1": "95e095cf2e4ec901a17f0c88eeb4ae139bf982d9c2d051824c8e5fd547015100",
+      "archive-ref-6046053d29f99da9": "6dbaeba97bdb4c287e411daa37375cab020dd89030616c9a14dd76ce7e60e574",
+      "archive-ref-c1d263f79d179881": "c3f22880f7b2cf48db854a2896c12d7a2f33f18d6a11fbe6cb24f6fe8ba9ed6a",
+      "archive-ref-ece0621b4a560516": "de55796827da02b37b46d38df48a2ccddcb45dd189ae0cd45707760a00889fc2",
+      "archive-ref-85252bee3d5c28c3": "e751ec85e9653a23caf3342c210340dfab6b250e4eadc48e33f638d45d076766",
+      "archive-ref-729b3024458052d1": "21003f9f81f52a58bc73fb18b8c80bb5e7b7ef4ec629056485c1a6e25cc0e840",
+      "archive-ref-f0520043b3aa742a": "ff137c9a7f9a9ba44074997468a9170114dac4357bbed2ccfde0720c89650766",
+      "archive-ref-6da0f3780d7e02dc": "34e1f5e712e58aef9d86f62070db47f806a6cb7e8f42c6cb07a4ba8ef249e345",
+      "archive-ref-2dede98da681cd2c": "7229385bc1b680736834d9d3f4189a42d53d9cdc09da69141d42fdf8e043e321",
+      "archive-ref-1ddc9118169bd6bf": "763e7f4887e257a49f6a93cc4f7bb83c961425f7a8d97c7d0466d3e21bea465e",
+      "archive-ref-85cdfcc2a137c83a": "694e94f3c0324da80ca2009c4309233f4bfe3ce4ca1b0154a0d5746d40a9c396",
+      "archive-ref-e0e560408f7e4dfc": "0afe76947a0702b0a5fab8d5f596209ae1d9b627c152cd606742b3a3eaee168f",
+      "archive-ref-02671e9a9fcf39e3": "5e8ff6989be3c51ef43ced9c13f636dcf9d0cbd6009b547c06fb106a21862f7b",
+      "archive-ref-1a836a6a937fecc5": "4bb8b93da66c0e8ad1d4c08618851c48f85f0d68b635eaa55a5ffb84b88209bc",
+      "archive-ref-6249e0aa0d47af0a": "b67ff45b69ebfd21d91954c1796b88621a5d1aee046dd061e81270fc08421499",
+      "archive-ref-b701d909f16567f4": "238d6d3b960d24860224bdc3489e471e34d27431369f02a1aa7267435583e8ca",
+      "archive-ref-ee9e57d2bae015cd": "e751ec85e9653a23caf3342c210340dfab6b250e4eadc48e33f638d45d076766",
+      "archive-ref-641613262011eec6": "ed639a420ca70c652fb4a5bb26ea02f30366ea400fe5f2ef99649e0be3dd6917",
+      "archive-ref-3cdfe87da043eecf": "84e6be4b67152b3a77c503cc447bf4f7f2714abf6e9312807517594da12077c8",
+      "archive-ref-7e6c0bc45aab098e": "acf8edf4c42ffba33035bff056f4b6b087cedf8c5ddf1ab72806e64aca35bed1",
+      "archive-ref-210f9a1a49417bbf": "dd5c61bead631f25777f7bc758468ce5d8a91459ec1b8e6a43f6fcbc9508558c",
+      "archive-ref-6717657e90cbdfd7": "c3f22880f7b2cf48db854a2896c12d7a2f33f18d6a11fbe6cb24f6fe8ba9ed6a",
+      "archive-ref-2f6487ec2c828a14": "1e100a26f88fc33eb35335546eaacd7a204cfac0bffeef9bb5f8708bf96edcf2",
+      "archive-ref-389cbe9ec0f4c68c": "763e7f4887e257a49f6a93cc4f7bb83c961425f7a8d97c7d0466d3e21bea465e",
+      "archive-ref-d02551ab9d7c995b": "a71aef374d5d8ad2e5db21160b76c93e572ace26bb45d6943b833fde534c2663",
+      "archive-ref-529b6d955b00cbf6": "aedfa6c9cb99b9623f38640670ae61598152acf5aba5f3b4aa6c3cdc37e0f936",
+      "archive-ref-75168d5ed4d2bf65": "bd914d8765d8b1b041a866fcb8b5dc2e5b539b2db26f3f2cb401a3292b0d0fba",
+      "archive-ref-779eeb1e40ec6d46": "54206be6bfc6cdb72120e1506ad31ca64e50f61b15f65b0454118596179ceeb7",
+      "archive-ref-c144af9e47da662a": "71415397770a355b76b40d5bb473715d13d0bb1213793728f9c68eace20e930c",
+      "archive-ref-b8a2ae0b45a6df2a": "9e896f2041daba9ce71d5e68d92d74ea7f98d6fffb90da54fbe4b30742bbc29f",
+      "archive-ref-5caf25a1914d0568": "f837fed06fd5ff5cf0ec866b30977503f9756ce45e954ae9fc39e4c495603d4c",
+      "archive-ref-997046a0695f9df1": "10afeab7417fde666fd876dc45c5d98d331047e6b450d755099258b4fd406879",
+      "archive-ref-1ec94e16214944b9": "5aa035506ec3560bb63445be322fbb93d8a5538ff35a3c2baeea0c3e5d0c0ee5",
+      "archive-ref-4ddaac6c131afb05": "0bef30f0e0601820f81fac194ebda4e038e7c962bcfb1cbd220ae12860a056ce",
+      "archive-ref-b7ce45c365c25adb": "9e896f2041daba9ce71d5e68d92d74ea7f98d6fffb90da54fbe4b30742bbc29f",
+      "archive-ref-9c3b2edba9fb4b7e": "473ffa7ea0065158cd4a44afa345171b3a2767238002b2a3fb8556e15b934aec",
+      "archive-ref-bc06cc66ec85a75a": "0f6ba86012f96bfe05561bfc22ae0ed1058a24f73be435f0c4e66cc7593c4e03",
+      "archive-ref-6a27b50bdfb203ca": "34e1f5e712e58aef9d86f62070db47f806a6cb7e8f42c6cb07a4ba8ef249e345",
+      "archive-ref-4a5dfe0ddc369455": "64187adc6cca3080eced915776b16d8df480ca6b567eb1924442526ef02b4a93",
+      "archive-ref-9ae5b6e8f5ba00c4": "6e2f87a7d1e99ce4a7a884efee6916647520811afff98898faf5d5d73d70a395",
+      "archive-ref-a6c9b6be001c04ac": "bd914d8765d8b1b041a866fcb8b5dc2e5b539b2db26f3f2cb401a3292b0d0fba",
+      "archive-ref-cd7f3cae2a378b11": "21003f9f81f52a58bc73fb18b8c80bb5e7b7ef4ec629056485c1a6e25cc0e840",
+      "archive-ref-cad22d505d312753": "0cb4e39531f97ade72dfddfa25ab9c4706c156ed7db5988b5f48ac1e5190c90e",
+      "archive-ref-551732cf44505dee": "64187adc6cca3080eced915776b16d8df480ca6b567eb1924442526ef02b4a93",
+      "archive-ref-f6ef26bd518c1218": "5e8ff6989be3c51ef43ced9c13f636dcf9d0cbd6009b547c06fb106a21862f7b",
+      "archive-ref-1a624314a8792d60": "84e6be4b67152b3a77c503cc447bf4f7f2714abf6e9312807517594da12077c8",
+      "archive-ref-4b429ec54297f379": "1e100a26f88fc33eb35335546eaacd7a204cfac0bffeef9bb5f8708bf96edcf2",
+      "archive-ref-afc4f2fa9aed0411": "78d9ba582f0187bc070a9cc2bf02603ffe57a332e6753578dec58c58439b05ff",
+      "archive-ref-71e2e88c93d10e56": "c8aa49bffa9299eb6e954495dcb2ed7db7ec232a046f879568d9ce7ac5d3a2d7",
+      "archive-ref-9e9fec5c6d76f163": "ed639a420ca70c652fb4a5bb26ea02f30366ea400fe5f2ef99649e0be3dd6917",
+      "archive-ref-6e627bf08815bf8a": "0bef30f0e0601820f81fac194ebda4e038e7c962bcfb1cbd220ae12860a056ce",
+      "archive-ref-92f1eea1a0999b1b": "b67ff45b69ebfd21d91954c1796b88621a5d1aee046dd061e81270fc08421499",
+      "archive-ref-a5d10605c1bbb949": "473ffa7ea0065158cd4a44afa345171b3a2767238002b2a3fb8556e15b934aec",
+      "archive-ref-18569ab677c894b8": "78d9ba582f0187bc070a9cc2bf02603ffe57a332e6753578dec58c58439b05ff"
+    },
+    "scoring_script_sha256": "1b7dad29504453b65e4b8dcfc32dcf2ef6c5769e7af2e9a3832e93398edef239"
+  }
+}

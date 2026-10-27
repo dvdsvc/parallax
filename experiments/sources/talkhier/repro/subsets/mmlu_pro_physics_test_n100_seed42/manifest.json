@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-06T07:35:09.210111+00:00",
+  "dataset": "TIGER-Lab/MMLU-Pro",
+  "dataset_revision": "b189ec765aa7ed75c8acfea42df31fdae71f97be",
+  "source": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/tree/b189ec765aa7ed75c8acfea42df31fdae71f97be",
+  "source_manifest_sha256": "b343a83b1d148d36f43e1cd7073f1784d268bf1334fc812b6cf57070ddf18be5",
+  "category": "physics",
+  "split": "test",
+  "population_size": 1299,
+  "sample_size": 100,
+  "seed": 42,
+  "seed_scope": "question sampling only; no model generation seed",
+  "sampling": {
+    "algorithm": "random.Random(seed).sample(range(number_of_Physics_test_rows), count)",
+    "replacement": false,
+    "exclusions": [],
+    "population_order": "official test split order filtered by category == physics",
+    "execution_order": "sorted original test split row indices",
+    "draw_order_saved": true
+  },
+  "index_conventions": {
+    "indices.json": "original full test split row index, zero based",
+    "physics_indices.json": "ordinal within filtered Physics test population, zero based",
+    "question_ids.json": "official question_id; preserve independently of row indices",
+    "draw_order.json": "Physics population ordinals in RNG draw order"
+  },
+  "record_policy": "All official fields unchanged including options, gold and cot_content; no N/A removal; labels are archival, not model input",
+  "raw_option_count_distribution": {
+    "10": 97,
+    "9": 2,
+    "7": 1
+  },
+  "rows_with_NA_option": 0,
+  "python_version": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "command": [
+    ".venv/bin/python",
+    "repro/sample_mmlu_pro.py",
+    "--count",
+    "100",
+    "--seed",
+    "42",
+    "--output-dir",
+    "repro/subsets/mmlu_pro_physics_test_n100_seed42"
+  ],
+  "cwd": "external_archive/2026-10-02/x/work/talkhier",
+  "agent_calls": 0,
+  "grader_calls": 0,
+  "files_sha256": {
+    "command.txt": "4714662864d736e122921491f6719545ee62341db92bc89f08af32a1a5010a8a",
+    "draw_order.json": "8437ce6408eae7882b9f03a2e1d0d8b802e6d766340cbcde3a9cf84e587016ba",
+    "indices.csv": "7389d92feed328e766830bf41a0fa7da1960c5a79ffbbbc8ef5e7297cda367ed",
+    "indices.json": "89cf4e97a41d7fc30f4c4a07857d1076e0fd491aca63e25af8d292b5ecec0d56",
+    "physics_indices.json": "00aeebdcdcf5bf8fe6b188d37594adcf51790097a1a86a6fba78ccb9c736e18a",
+    "question_ids.json": "a2f34c3b46b63341ce7c9ffcac9c6ceba6393656745fb29c640bfa26b2f0fc5b",
+    "questions.jsonl": "a9f30debee28b5c83dcea43deda10188f84a458926b33722e9823eaa586997a0",
+    "sampling_script.py": "fd927d17f80142a7f0624c1c7ae8652c6ddb007ac76e78e7e46ff18a712bf235"
+  }
+}

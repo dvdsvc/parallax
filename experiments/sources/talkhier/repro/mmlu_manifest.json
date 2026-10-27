@@ -1,0 +1,445 @@
+{
+  "dataset": "cais/mmlu",
+  "dataset_revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+  "source": "https://huggingface.co/datasets/cais/mmlu/tree/c30699e8356da336a370243923dbaf21066bb9fe",
+  "upstream_agent_commit": "842a62160bcd326c5f8bb11c6cd1f3da7ced00f6",
+  "prepared_at_utc": "2026-10-04T20:22:26.718658+00:00",
+  "selection": "All rows, in original order, for all splits of the five native MMLU domains; no sampling",
+  "domains": {
+    "moral_scenarios": {
+      "arrow_path": "data/mmlu/moral_scenarios/hf_dataset",
+      "splits": {
+        "test": {
+          "rows": 895,
+          "jsonl_path": "data/mmlu/moral_scenarios/test.jsonl",
+          "sha256": "1e37e3f530d0072aeaaf8b39e5e4daa75597882dac43494aec28044ffdc0c7ed"
+        },
+        "validation": {
+          "rows": 100,
+          "jsonl_path": "data/mmlu/moral_scenarios/validation.jsonl",
+          "sha256": "8d38ec15bcca7635c45d28cf582b38a5b050c7d7e3dbdcd32b50739129c994c0"
+        },
+        "dev": {
+          "rows": 5,
+          "jsonl_path": "data/mmlu/moral_scenarios/dev.jsonl",
+          "sha256": "19e2e530c1f0e4d5f8e7847e2d1bec8711fd69669144bd15505843182c72e88d"
+        }
+      },
+      "files": [
+        {
+          "path": "data/mmlu/moral_scenarios/dev.jsonl",
+          "bytes": 2281,
+          "sha256": "19e2e530c1f0e4d5f8e7847e2d1bec8711fd69669144bd15505843182c72e88d"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/dataset_dict.json",
+          "bytes": 41,
+          "sha256": "ef9a97110a4054fe4ec9dfbe8c6d0e0f499fe90e5b94ba015209159b8ae77955"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/dev/data-00000-of-00001.arrow",
+          "bytes": 3208,
+          "sha256": "d995a66607cabbe1b2996f4854d387a1d0afd3cfe54bd4636fc33cbd242f1850"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/dev/dataset_info.json",
+          "bytes": 1722,
+          "sha256": "9f2f2ea07c529dfb72b0435e1f8e157298bb4ec2eab2911c556c2b300e1fdee7"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/dev/state.json",
+          "bytes": 248,
+          "sha256": "d270fdc1adffe1f05f8f1448931782168caf5d1aa4b287b31861de8f88545962"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/test/data-00000-of-00001.arrow",
+          "bytes": 392088,
+          "sha256": "43c33aea8bb6c0a60327754e18337da4dd912a24738fa16cc600655ccfc08de4"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/test/dataset_info.json",
+          "bytes": 1722,
+          "sha256": "9f2f2ea07c529dfb72b0435e1f8e157298bb4ec2eab2911c556c2b300e1fdee7"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/test/state.json",
+          "bytes": 249,
+          "sha256": "b77e2492e0ad7d484b6922718f81f4f68f90a9cd7a730e4fb48f16251ffc879f"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/validation/data-00000-of-00001.arrow",
+          "bytes": 45304,
+          "sha256": "68fbda55099a49c301e51662d252c07a5226d91f38317ab43b9cc43d1230d85c"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/validation/dataset_info.json",
+          "bytes": 1722,
+          "sha256": "9f2f2ea07c529dfb72b0435e1f8e157298bb4ec2eab2911c556c2b300e1fdee7"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/hf_dataset/validation/state.json",
+          "bytes": 255,
+          "sha256": "0bab4fe7df74380c89cf55fd35c01b1217e0cbd84a557cc9e7293650354a4d10"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/test.jsonl",
+          "bytes": 416081,
+          "sha256": "1e37e3f530d0072aeaaf8b39e5e4daa75597882dac43494aec28044ffdc0c7ed"
+        },
+        {
+          "path": "data/mmlu/moral_scenarios/validation.jsonl",
+          "bytes": 47026,
+          "sha256": "8d38ec15bcca7635c45d28cf582b38a5b050c7d7e3dbdcd32b50739129c994c0"
+        }
+      ]
+    },
+    "college_physics": {
+      "arrow_path": "data/mmlu/college_physics/hf_dataset",
+      "splits": {
+        "test": {
+          "rows": 102,
+          "jsonl_path": "data/mmlu/college_physics/test.jsonl",
+          "sha256": "ebe139965ff95d3bc16a5492fc82b90788f69867fbe8d5d1bc56861cc522adde"
+        },
+        "validation": {
+          "rows": 11,
+          "jsonl_path": "data/mmlu/college_physics/validation.jsonl",
+          "sha256": "6a8202a21370e5ab13f1df6f10bdc7bb17e35434c409e0d1fa08be691fdf54fe"
+        },
+        "dev": {
+          "rows": 5,
+          "jsonl_path": "data/mmlu/college_physics/dev.jsonl",
+          "sha256": "211fe30cae93bf634c04d1223e3f7b91a5fce0f59dff83f181977c9d4915c2f5"
+        }
+      },
+      "files": [
+        {
+          "path": "data/mmlu/college_physics/dev.jsonl",
+          "bytes": 1635,
+          "sha256": "211fe30cae93bf634c04d1223e3f7b91a5fce0f59dff83f181977c9d4915c2f5"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/dataset_dict.json",
+          "bytes": 41,
+          "sha256": "ef9a97110a4054fe4ec9dfbe8c6d0e0f499fe90e5b94ba015209159b8ae77955"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/dev/data-00000-of-00001.arrow",
+          "bytes": 2568,
+          "sha256": "b62c82b1de928cb75e513eb628c221ed49ade11cb03d56e0a1ece83175aa98d4"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/dev/dataset_info.json",
+          "bytes": 1715,
+          "sha256": "7d683d1366f5a39d4e70fb479492f2924c6c96973839aa479278e950514d8a93"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/dev/state.json",
+          "bytes": 248,
+          "sha256": "d7e9044996eed1ab933d11165b0e01e993d8a10734418854f3cde0bb4f2de332"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/test/data-00000-of-00001.arrow",
+          "bytes": 33192,
+          "sha256": "c68e3545cadebfe90d1e3eb9e132ae92c0278be5c4aeb0e4da77217d3513135b"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/test/dataset_info.json",
+          "bytes": 1715,
+          "sha256": "7d683d1366f5a39d4e70fb479492f2924c6c96973839aa479278e950514d8a93"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/test/state.json",
+          "bytes": 249,
+          "sha256": "69373e4d6267ae8aeadab8fcc3edf72ae1917edf3bcde44a0602a929774177a4"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/validation/data-00000-of-00001.arrow",
+          "bytes": 4760,
+          "sha256": "d99b9654d2c907b73c3574fb5ed80e61bce78b70d1585fcd37d3eb75a58dd349"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/validation/dataset_info.json",
+          "bytes": 1715,
+          "sha256": "7d683d1366f5a39d4e70fb479492f2924c6c96973839aa479278e950514d8a93"
+        },
+        {
+          "path": "data/mmlu/college_physics/hf_dataset/validation/state.json",
+          "bytes": 255,
+          "sha256": "5b142e6441e3e6c9a54e850477d7da14032db04bb0f8d3257a18428c2ac8bcfa"
+        },
+        {
+          "path": "data/mmlu/college_physics/test.jsonl",
+          "bytes": 34963,
+          "sha256": "ebe139965ff95d3bc16a5492fc82b90788f69867fbe8d5d1bc56861cc522adde"
+        },
+        {
+          "path": "data/mmlu/college_physics/validation.jsonl",
+          "bytes": 4007,
+          "sha256": "6a8202a21370e5ab13f1df6f10bdc7bb17e35434c409e0d1fa08be691fdf54fe"
+        }
+      ]
+    },
+    "machine_learning": {
+      "arrow_path": "data/mmlu/machine_learning/hf_dataset",
+      "splits": {
+        "test": {
+          "rows": 112,
+          "jsonl_path": "data/mmlu/machine_learning/test.jsonl",
+          "sha256": "9b09d1faf9d534fd3b4fe9bd2d53fb99b436d7ced90d891e2b84ec872952406d"
+        },
+        "validation": {
+          "rows": 11,
+          "jsonl_path": "data/mmlu/machine_learning/validation.jsonl",
+          "sha256": "dc54c6e1b61c53895108b6f59c354e763240eec8465fbd2a05910c85cf28a066"
+        },
+        "dev": {
+          "rows": 5,
+          "jsonl_path": "data/mmlu/machine_learning/dev.jsonl",
+          "sha256": "c420785a6fd7826b985a4be74e343b8b175a25b9010f6342e101b5ef4e3efa2e"
+        }
+      },
+      "files": [
+        {
+          "path": "data/mmlu/machine_learning/dev.jsonl",
+          "bytes": 2551,
+          "sha256": "c420785a6fd7826b985a4be74e343b8b175a25b9010f6342e101b5ef4e3efa2e"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/dataset_dict.json",
+          "bytes": 41,
+          "sha256": "ef9a97110a4054fe4ec9dfbe8c6d0e0f499fe90e5b94ba015209159b8ae77955"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/dev/data-00000-of-00001.arrow",
+          "bytes": 3472,
+          "sha256": "e227e0eabf6d5514e84bc8c8618634ccff36c6d677ca4e40039305e21129da31"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/dev/dataset_info.json",
+          "bytes": 1719,
+          "sha256": "b1c2dc164a08a6c2aa91b3112d3b0271aaed91cf4d53ac3c94aa94e41c2d909a"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/dev/state.json",
+          "bytes": 248,
+          "sha256": "f53d26be13a538ff8ffb6551ab778a5fe7fd8d9562a771b6cd024fc2604a92cf"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/test/data-00000-of-00001.arrow",
+          "bytes": 37192,
+          "sha256": "f0bfa95005ba4456ce44037767e854f94245d74db58bbea6102f4a5d6e4c6406"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/test/dataset_info.json",
+          "bytes": 1719,
+          "sha256": "b1c2dc164a08a6c2aa91b3112d3b0271aaed91cf4d53ac3c94aa94e41c2d909a"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/test/state.json",
+          "bytes": 249,
+          "sha256": "7f8ef77ecbbc28bdc024e3b3c8bf74f83d87bd1c3216d7733eb243c46d7a351f"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/validation/data-00000-of-00001.arrow",
+          "bytes": 4512,
+          "sha256": "f97a07d7454b992406d779c8712c8c9a2dbe392c746b504177875fb61245b3ce"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/validation/dataset_info.json",
+          "bytes": 1719,
+          "sha256": "b1c2dc164a08a6c2aa91b3112d3b0271aaed91cf4d53ac3c94aa94e41c2d909a"
+        },
+        {
+          "path": "data/mmlu/machine_learning/hf_dataset/validation/state.json",
+          "bytes": 255,
+          "sha256": "2695a2f66798bc6e1ae6aff43042c0b5887fe83d3474573be5832c20309e283f"
+        },
+        {
+          "path": "data/mmlu/machine_learning/test.jsonl",
+          "bytes": 39332,
+          "sha256": "9b09d1faf9d534fd3b4fe9bd2d53fb99b436d7ced90d891e2b84ec872952406d"
+        },
+        {
+          "path": "data/mmlu/machine_learning/validation.jsonl",
+          "bytes": 3749,
+          "sha256": "dc54c6e1b61c53895108b6f59c354e763240eec8465fbd2a05910c85cf28a066"
+        }
+      ]
+    },
+    "formal_logic": {
+      "arrow_path": "data/mmlu/formal_logic/hf_dataset",
+      "splits": {
+        "test": {
+          "rows": 126,
+          "jsonl_path": "data/mmlu/formal_logic/test.jsonl",
+          "sha256": "7f4f50c02afb6217ae41b66849f65c7f2809ec9bfe98be6298e51a89b95bfa87"
+        },
+        "validation": {
+          "rows": 14,
+          "jsonl_path": "data/mmlu/formal_logic/validation.jsonl",
+          "sha256": "491134be497d154a47d1db0e9ad15ced6070c92bc501a33f938a354ba0ef42ee"
+        },
+        "dev": {
+          "rows": 5,
+          "jsonl_path": "data/mmlu/formal_logic/dev.jsonl",
+          "sha256": "b99a039bd7189130f55f57153fad3abd177e0a8c37095cc2029216cba14cd2b2"
+        }
+      },
+      "files": [
+        {
+          "path": "data/mmlu/formal_logic/dev.jsonl",
+          "bytes": 1971,
+          "sha256": "b99a039bd7189130f55f57153fad3abd177e0a8c37095cc2029216cba14cd2b2"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/dataset_dict.json",
+          "bytes": 41,
+          "sha256": "ef9a97110a4054fe4ec9dfbe8c6d0e0f499fe90e5b94ba015209159b8ae77955"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/dev/data-00000-of-00001.arrow",
+          "bytes": 2896,
+          "sha256": "2d90b5c01d29912b4478a1970bbf4b74ab244e0134f3a4f0c0e808662ee7fdb9"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/dev/dataset_info.json",
+          "bytes": 1703,
+          "sha256": "cd33243f2122a4779b426e1657279c0521179789e28a91321463038ce1c88f1b"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/dev/state.json",
+          "bytes": 248,
+          "sha256": "5953359a4663f679362b6b57a1d2d9d8a082f72a8b3058de2f182d574c9d51f2"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/test/data-00000-of-00001.arrow",
+          "bytes": 52864,
+          "sha256": "2e606e23f700c015d26f59faf0f24b2f9399953cb3d38d732d6a9e3b2fecb779"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/test/dataset_info.json",
+          "bytes": 1703,
+          "sha256": "cd33243f2122a4779b426e1657279c0521179789e28a91321463038ce1c88f1b"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/test/state.json",
+          "bytes": 249,
+          "sha256": "2761427e62d36f4750d121f5ae2b5b2efa9324c737c5bfcfb3e4672098d07968"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/validation/data-00000-of-00001.arrow",
+          "bytes": 7536,
+          "sha256": "7b1c8975d972c09c15c722effcb6d79ffbab3031e7e258908c67ed645e8d36a4"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/validation/dataset_info.json",
+          "bytes": 1703,
+          "sha256": "cd33243f2122a4779b426e1657279c0521179789e28a91321463038ce1c88f1b"
+        },
+        {
+          "path": "data/mmlu/formal_logic/hf_dataset/validation/state.json",
+          "bytes": 255,
+          "sha256": "93f01fa49ac257d8ab739a2b69aabd9f740f7d5f12a5cbf2ea614cb27deec11b"
+        },
+        {
+          "path": "data/mmlu/formal_logic/test.jsonl",
+          "bytes": 55477,
+          "sha256": "7f4f50c02afb6217ae41b66849f65c7f2809ec9bfe98be6298e51a89b95bfa87"
+        },
+        {
+          "path": "data/mmlu/formal_logic/validation.jsonl",
+          "bytes": 6882,
+          "sha256": "491134be497d154a47d1db0e9ad15ced6070c92bc501a33f938a354ba0ef42ee"
+        }
+      ]
+    },
+    "us_foreign_policy": {
+      "arrow_path": "data/mmlu/us_foreign_policy/hf_dataset",
+      "splits": {
+        "test": {
+          "rows": 100,
+          "jsonl_path": "data/mmlu/us_foreign_policy/test.jsonl",
+          "sha256": "90d2d1bc0df7c2be5a47b124b909dea827d08f158ad46ce8de29945c4b67ff0b"
+        },
+        "validation": {
+          "rows": 11,
+          "jsonl_path": "data/mmlu/us_foreign_policy/validation.jsonl",
+          "sha256": "5af2b78b65a8e6c66d31f8dc6b4bd1a59ab1604e5208131ede015f7d39fed4d4"
+        },
+        "dev": {
+          "rows": 5,
+          "jsonl_path": "data/mmlu/us_foreign_policy/dev.jsonl",
+          "sha256": "9b019ac4bc208395c97ae6f657182f3f3ef4c9368d556367715456ccb951f7cc"
+        }
+      },
+      "files": [
+        {
+          "path": "data/mmlu/us_foreign_policy/dev.jsonl",
+          "bytes": 1844,
+          "sha256": "9b019ac4bc208395c97ae6f657182f3f3ef4c9368d556367715456ccb951f7cc"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/dataset_dict.json",
+          "bytes": 41,
+          "sha256": "ef9a97110a4054fe4ec9dfbe8c6d0e0f499fe90e5b94ba015209159b8ae77955"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/dev/data-00000-of-00001.arrow",
+          "bytes": 2776,
+          "sha256": "7f30e647c424f583a2fa1ecda83007bd22b89711956b3a6c82069b6647a4e05b"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/dev/dataset_info.json",
+          "bytes": 1723,
+          "sha256": "534760a40696d887c6e71aec78ceaf5d6d48c5ad9b9494401acdb757e8f7dd40"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/dev/state.json",
+          "bytes": 248,
+          "sha256": "a7c55cb207a59030f3d2e23f3b3204c238c04c5ac81822a264a7a36e980f2df4"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/test/data-00000-of-00001.arrow",
+          "bytes": 31616,
+          "sha256": "0151d76d64d4fced3be92e0c908814df3ab9e1d549326455600eb2e6fa8a7eee"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/test/dataset_info.json",
+          "bytes": 1723,
+          "sha256": "534760a40696d887c6e71aec78ceaf5d6d48c5ad9b9494401acdb757e8f7dd40"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/test/state.json",
+          "bytes": 249,
+          "sha256": "95b09048f731e0f439347cf67b5b300934ed59716c446eddb30616fc19b35311"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/validation/data-00000-of-00001.arrow",
+          "bytes": 4560,
+          "sha256": "758d17bf0bd8437208677c23167a9ce6fbe688229b973b9cbcd564db4c160080"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/validation/dataset_info.json",
+          "bytes": 1723,
+          "sha256": "534760a40696d887c6e71aec78ceaf5d6d48c5ad9b9494401acdb757e8f7dd40"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/hf_dataset/validation/state.json",
+          "bytes": 255,
+          "sha256": "0ee0422963eb9447a4b86281fd34b4360c2330698805a28e45e1c3749b8ff239"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/test.jsonl",
+          "bytes": 33349,
+          "sha256": "90d2d1bc0df7c2be5a47b124b909dea827d08f158ad46ce8de29945c4b67ff0b"
+        },
+        {
+          "path": "data/mmlu/us_foreign_policy/validation.jsonl",
+          "bytes": 3791,
+          "sha256": "5af2b78b65a8e6c66d31f8dc6b4bd1a59ab1604e5208131ede015f7d39fed4d4"
+        }
+      ]
+    }
+  }
+}

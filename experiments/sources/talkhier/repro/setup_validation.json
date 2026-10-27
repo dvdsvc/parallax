@@ -1,0 +1,124 @@
+{
+  "validated_at_utc": "2026-10-04T20:31:18.143556+00:00",
+  "upstream_agent_commit": "842a62160bcd326c5f8bb11c6cd1f3da7ced00f6",
+  "dataset_manifest_sha256": "5ec33ee61cc441ab59b83384b38777ce40efe2a4bc5cb5ed4c205b28c79d50cd",
+  "python": "3.12.13",
+  "system": "Darwin",
+  "machine": "arm64",
+  "native_source_unchanged": true,
+  "native_cli_help": true,
+  "network_disabled_for_validation": true,
+  "paid_model_calls": 0,
+  "domains": {
+    "moral_scenarios": {
+      "splits": {
+        "test": 895,
+        "validation": 100,
+        "dev": 5
+      },
+      "all_exported_rows_equal": true,
+      "native_single_question_pipeline": true,
+      "native_gold_label_preserved": true,
+      "all_members_routed": true,
+      "native_failure_retries": 0,
+      "evaluation_members": [
+        "Intent",
+        "Normality",
+        "Responsibility",
+        "Well-being"
+      ],
+      "local_supervisor_interface_visible": true,
+      "fixture_model_method_calls": 21
+    },
+    "college_physics": {
+      "splits": {
+        "test": 102,
+        "validation": 11,
+        "dev": 5
+      },
+      "all_exported_rows_equal": true,
+      "native_single_question_pipeline": true,
+      "native_gold_label_preserved": true,
+      "all_members_routed": true,
+      "native_failure_retries": 0,
+      "evaluation_members": [
+        "Physics",
+        "Mathematics"
+      ],
+      "local_supervisor_interface_visible": true,
+      "fixture_model_method_calls": 15
+    },
+    "machine_learning": {
+      "splits": {
+        "test": 112,
+        "validation": 11,
+        "dev": 5
+      },
+      "all_exported_rows_equal": true,
+      "native_single_question_pipeline": true,
+      "native_gold_label_preserved": true,
+      "all_members_routed": true,
+      "native_failure_retries": 0,
+      "evaluation_members": [
+        "Answer Consistency",
+        "Machine Learning",
+        "Statistical Soundness"
+      ],
+      "local_supervisor_interface_visible": true,
+      "fixture_model_method_calls": 18
+    },
+    "formal_logic": {
+      "splits": {
+        "test": 126,
+        "validation": 14,
+        "dev": 5
+      },
+      "all_exported_rows_equal": true,
+      "native_single_question_pipeline": true,
+      "native_gold_label_preserved": true,
+      "all_members_routed": true,
+      "native_failure_retries": 0,
+      "evaluation_members": [
+        "Truth Table",
+        "Counterexample",
+        "Predicate Logic",
+        "Logical Argument",
+        "Formal Logic"
+      ],
+      "local_supervisor_interface_visible": true,
+      "fixture_model_method_calls": 24
+    },
+    "us_foreign_policy": {
+      "splits": {
+        "test": 100,
+        "validation": 11,
+        "dev": 5
+      },
+      "all_exported_rows_equal": true,
+      "native_single_question_pipeline": true,
+      "native_gold_label_preserved": true,
+      "all_members_routed": true,
+      "native_failure_retries": 0,
+      "evaluation_members": [
+        "Factual Accuracy",
+        "Policy Alignment",
+        "Conceptual Clarity"
+      ],
+      "local_supervisor_interface_visible": true,
+      "fixture_model_method_calls": 18
+    }
+  },
+  "native_tools": {
+    "output_tool": true,
+    "truthtable_generator": true,
+    "counterexample_verifier": true
+  },
+  "no_local_model_stack_imported": true,
+  "limitations": [
+    "Deterministic local fixture; no model-quality or token-cost estimate",
+    "Provider credentials and real API calls have not been tested",
+    "Apple Silicon tested; Intel Mac has not been tested",
+    "Original prompt inconsistencies and retry behavior are retained unchanged"
+  ],
+  "one_native_domain_per_process": true
+}

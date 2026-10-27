@@ -1,0 +1,51 @@
+{
+  "paid_model_calls": 0,
+  "network_disabled": true,
+  "cases": {
+    "BASE": {
+      "model_calls": 19,
+      "roles": [
+        "Answer Generator",
+        "Default Supervisor",
+        "Evaluator Supervisor",
+        "Mathematics",
+        "Physics",
+        "Revisor"
+      ],
+      "native_node_callbacks_cover_all_roles": true,
+      "native_tool_events": 4,
+      "returned_usage_and_cache_reasoning_subsets_exact": true,
+      "native_result": {
+        "Problem ID": "0",
+        "Answer": "0",
+        "Correct Answer": "1",
+        "Pre-Revision": "0"
+      }
+    },
+    "V2": {
+      "model_calls": 19,
+      "roles": [
+        "Answer Generator",
+        "Default Supervisor",
+        "Evaluator Supervisor",
+        "Mathematics",
+        "Physics",
+        "Revisor"
+      ],
+      "native_node_callbacks_cover_all_roles": true,
+      "native_tool_events": 4,
+      "returned_usage_and_cache_reasoning_subsets_exact": true,
+      "native_result": {
+        "Problem ID": "0",
+        "Answer": "0",
+        "Correct Answer": "1",
+        "Pre-Revision": "0"
+      }
+    }
+  },
+  "base_v2_provider_bodies_only_global_prefix_differs": true,
+  "plain_json_native_parser_behavior_preserved": true,
+  "missing_and_error_usage_remains_unknown": true,
+  "langsmith_enabled": false,
+  "meaning": "Offline fixtures and local mock usage; not real benchmark accuracy, provider authentication or cost."
+}

@@ -1,0 +1,78 @@
+[TALKHIER GLOBAL ORGANIZATIONAL ARCHITECTURE]
+
+The following describes the global architecture of TalkHier for this configured domain. It is a static description of how the organization processes tasks in general. It does not determine which path will be taken for the current task.
+
+ORGANIZATIONAL FLOW
+```text
+                     Current Task
+                          |
+                          v
+                  Default Supervisor ------------> FINISH
+                          |
+                          +<--> Answer Generator
+                          |
+                          +<--> Revisor
+                          |
+                          +<--> Evaluator Supervisor
+                                       |
+                                       +<--> Intent
+                                       |
+                                       +<--> Normality
+                                       |
+                                       +<--> Responsibility
+                                       |
+                                       +<--> Well-being
+```
+
+Each two-way connection represents a supervisor's dispatch route to a direct member and that member's return route to the supervisor. FINISH is the completion route of the main team.
+
+A team invocation enters its supervisor first. After a direct member completes, the graph returns to that team's supervisor before another direct member is selected. Returning from the evaluation team passes through Evaluator Supervisor to Default Supervisor.
+
+ROLE RESPONSIBILITIES
+
+Default Supervisor
+The root supervisor coordinates Answer Generator, Revisor, and Evaluator Supervisor. It selects among its direct members, receives their returned outputs, and can finish the main-team execution through FINISH.
+
+Answer Generator
+A direct member of Default Supervisor that produces a candidate answer for the supplied task and returns it to Default Supervisor.
+
+Revisor
+A direct member of Default Supervisor that receives an answer and evaluation feedback, revises the answer when needed, and returns the revision and any request for re-evaluation to Default Supervisor.
+
+Evaluator Supervisor
+A subordinate supervisor under Default Supervisor that coordinates its direct evaluation members, collects their evaluation results, and reports the results and a summary to Default Supervisor.
+
+Intent
+An evaluation member under Evaluator Supervisor. Evaluates the purpose and intent behind the action. Returns its evaluation to Evaluator Supervisor.
+
+Normality
+An evaluation member under Evaluator Supervisor. Evaluates how normal the action is in ordinary daily behavior. Returns its evaluation to Evaluator Supervisor.
+
+Responsibility
+An evaluation member under Evaluator Supervisor. Evaluates whether the action fulfills the relevant responsibilities. Returns its evaluation to Evaluator Supervisor.
+
+Well-being
+An evaluation member under Evaluator Supervisor. Evaluates the action's effects on the well-being of those involved. Returns its evaluation to Evaluator Supervisor.
+
+GLOBAL INFORMATION FLOW
+
+Dispatch and return:
+Supervisors route work to their direct members. Answer Generator and Revisor return their outputs to Default Supervisor. Evaluation members return their results to Evaluator Supervisor, which reports the evaluation results and their summary to Default Supervisor.
+
+Evaluation and revision:
+Default Supervisor can send a candidate answer to Evaluator Supervisor for evaluation and can pass the answer and evaluation feedback to Revisor. Revisor returns its revised answer and any request for re-evaluation to Default Supervisor.
+
+Feedback:
+Default Supervisor can route a revised answer back through Evaluator Supervisor and its members for another evaluation. This feedback passes through Default Supervisor rather than a direct connection between Revisor and the evaluation members.
+
+Scheduling:
+Each supervisor selects one next member at a time. Direct-member invocations are serial within their team, and the main team waits for a selected evaluation-team invocation to return. Evaluation members do not have a fixed sibling order or direct sibling dispatch routes. This implementation has no separate subtask dependency DAG.
+
+Declared workflow requirements:
+The native main-team prompt requires contacting Answer Generator first and contacting Revisor before FINISH. A modified answer leads to a request for re-evaluation; when Default Supervisor requests re-evaluation, the evaluation-supervisor prompt requires re-evaluating with all its members. These are native prompt requirements. The graph itself does not check that these members have been visited before permitting its return or completion routes.
+
+INTERPRETATION
+
+TalkHier has a main team with a nested evaluation branch. Default Supervisor can select Answer Generator, Revisor, Evaluator Supervisor, or FINISH. Evaluator Supervisor can select one of its direct evaluation members or return to Default Supervisor. Leaf members return through their assigned supervisor. These relations describe the available organization and information flow.
+
+This architecture description provides knowledge of the organization as a whole. It does not specify the current task's concrete execution trace, selected evaluator order, number of evaluation or revision rounds, answer content, or future execution state. The native prompt-level workflow requirements described above remain applicable.

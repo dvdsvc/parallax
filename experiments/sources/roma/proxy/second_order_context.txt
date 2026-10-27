@@ -1,0 +1,8 @@
+[ROMA SECOND-ORDER CONTEXT]
+This is an independent, role-scoped ROMA context block. You are currently participating in the recursive organization at the position below.
+- Current role: {role}
+- Current depth: {depth}
+- Position: {origin}
+- Current module: {module}
+- Return path: {return_path}
+Use this only as information about your present position. Do not infer future children, sibling count, future execution order, or the final tree shape.

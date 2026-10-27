@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-10-05T08:18:06.122961+00:00",
+  "script_commit": "59884ba370fe78b5d85135270f7ad41b3d77e3dc",
+  "calls": 0,
+  "seed": 20261005,
+  "panel": "previous immutable matched panel: SEAL0 94 questions/272 pairs; FRAMES47 matched official questions; failures and missing outside panel retain original status",
+  "graphs": "original task nodes; parent->child and upstream->dependent typed directed edges; no task wording/outcome/cost node labels; root preserved; UUID/order irrelevant",
+  "Planner_reconciliation": "raw exact subtasks goals + checkpoint task insertion order identify child UUIDs; apply unchanged runtime string-index admission rule and compare actual edge set",
+  "GED": "NetworkX optimize_edit_paths; directed, root constrained; node insertion/deletion1, substitution0 for task, edge insertion/deletion/type-substitution1; 1 second per paired search; exact isomorphism and count lower bounds; unfinished search reported as bounds, never exact",
+  "TED": "reuse frozen root-preserving canonical ordered APTED distances as decomposition comparator; distinct edge/node edit conventions, not numerically interchangeable with GED",
+  "kernel": "standard WL subtree histogram kernel via native NetworkX directed hashes and sklearn DictVectorizer inner products; each typed edge encoded internally as a labeled edge-node on source->edge-node->target; no edge_attr so native predecessor/successor labels remain distinct; h4+initial, digest32; graph diagonal normalization",
+  "outcome": "question-equal average matched-round V2_correct-BASE_correct; outcome absent during graph extraction/kernel definition",
+  "predictors": "normalized WL full graph and tree control; question mean change embedding plus BASE mean embedding additive; full change-only sensitivity; no tokens/scores/id as predictors",
+  "prediction": "5 repeats x5 outer question KFold; inner3 folds pick lambda .01,.1,1,10; native sklearn KernelRidge; kernel centered/scaled only using training folds; training outcome mean intercept; all repeats/arms of a question averaged before CV",
+  "permutation": "199 question outcome permutations, recompute nested lambda choices; four primary tests: full graph vs mean and extra gain vs tree across2 benchmarks, Holm; delta-only sensitivity separate",
+  "descriptors": "local sibling dependency antichain via transitive closure+bipartite maximum matching; potential partial-order concurrency, not observed simultaneous execution; full graph path not wallclock critical path",
+  "inference": "10000 question-bootstrap conditional loss intervals; topology mean change kernel sign-flips4999 at question level; descriptor associations exploratory Holm within benchmark; post-run association not mechanism or causal mediation; FRAMES budget subset not783 population"
+}

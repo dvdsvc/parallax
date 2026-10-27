@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "archive_type": "roma_seal0_paper_run",
+  "run_id": "seal0-remaining59-v2-repeat2-20261002T080159Z",
+  "condition": "BASE",
+  "status": "partial_or_error",
+  "started_at": "2026-10-02T08:08:00.656329+00:00",
+  "finished_at": "2026-10-02T09:44:35.152120+00:00",
+  "agent": {
+    "checkout": "sources/roma/native",
+    "git": {
+      "path": "sources/roma/native",
+      "git": true,
+      "root": "sources/roma/native",
+      "commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+      "dirty": true,
+      "status": [
+        "M .gitignore",
+        "?? benchmark_subsets/frames_subset_100_seed42.json",
+        "?? benchmark_subsets/seal0_clean_paired_15_seed42.json",
+        "?? scripts/evaluate_frames_subset.py",
+        "?? scripts/frames_subset_utils.py",
+        "?? scripts/sample_frames_subset.py"
+      ]
+    },
+    "runner": "sources/roma/external/run_isolated_seal0.py",
+    "runner_sha256": "c6ae92e7cdbe12df6fce51a4c08da5a5e3b9ca95cff79820ccd68e51a9d233b0",
+    "proxy_hook": "sources/roma/proxy/custom_hook.py",
+    "proxy_hook_sha256": "6733a17c23c71de77b14a71c8be46fbf8daa1b6d5afad6225b9396f632ac22b7",
+    "control_layer": {
+      "path": "sources/roma/controls",
+      "git": true,
+      "root": "sources/roma/controls",
+      "commit": "99696f1e2cd338e3f7ee0cdd690b4f4e76d5268b",
+      "dirty": true,
+      "status": [
+        "M README.md",
+        " M prompts/global_organizational_architecture_v2.txt",
+        " M test_org_awareness_v2.py",
+        "?? benchmark_subsets/seal0_paired94_remaining69_sample10_seed44.json",
+        "?? benchmark_subsets/seal0_remaining95_sample15_seed43.json"
+      ]
+    },
+    "adapter_repository": {
+      "path": "sources/roma/external",
+      "git": true,
+      "root": "sources/roma/external",
+      "commit": "05e07285695a1905647672b76d2a1c6c9c84b11e",
+      "dirty": true,
+      "status": [
+        "M paper_run_archive.py",
+        " M run_isolated_seal0.py",
+        " M test_paper_run_config.py"
+      ]
+    },
+    "proxy_repository": {
+      "path": "sources/roma/proxy",
+      "git": true,
+      "root": "sources/roma/proxy",
+      "commit": "5b6957290b6a282471a4dd6eebe331312c907de4",
+      "dirty": false,
+      "status": []
+    },
+    "proxy_stack": "sources/roma/proxy/start_proxy_stack.py",
+    "proxy_stack_sha256": "cb70b72501b5734e60b7b6e9d77d60b9707de690e8066313ba11a618d37b59a9",
+    "cache_adapter": "sources/roma/proxy/qwen_cache_adapter.py",
+    "cache_adapter_sha256": "832ee4bdaffa32f9675c8e3fc48dff11cfe4e337ee65b6c0293e949e781e40c2",
+    "snapshot": {
+      "json": "config/agent_snapshot.json",
+      "profile": "config/agent_snapshot/general.yaml",
+      "profile_sha256": "e04dc4af4058b215d45947e0e31332be6624f4b017289e49dd45b1a17a6e52f7"
+    }
+  },
+  "benchmark": {
+    "name": "SEAL-0",
+    "loader": "prompt_optimization.dataset_loaders.load_seal0_dataset",
+    "seed": 0,
+    "split": "test",
+    "no_split": true,
+    "file": "external_archive/2026-09-12/hira/work/paper_studies/seal0_remaining59_repeats2_parallel4x4_20261002T080159Z/source_snapshot/seal-0.parquet",
+    "file_sha256": "01f60b2b278411b2dd9aa98916c3422f1c7dfc08c214cf4ad3a3596993433fde",
+    "dataset_count": 111,
+    "selected_indices": [
+      54,
+      106,
+      38,
+      95,
+      55,
+      59,
+      35,
+      76,
+      69,
+      89,
+      28,
+      11,
+      27,
+      66,
+      86,
+      103,
+      9,
+      92,
+      52,
+      24,
+      72,
+      57,
+      56,
+      49,
+      37,
+      12,
+      73,
+      82,
+      78,
+      44,
+      23,
+      85,
+      68,
+      102,
+      96,
+      32,
+      83,
+      62,
+      21,
+      20,
+      88,
+      60,
+      80,
+      110,
+      10,
+      43,
+      94,
+      53,
+      107,
+      17,
+      65,
+      42,
+      61,
+      98,
+      22,
+      48,
+      1,
+      74,
+      6
+    ],
+    "tasks": [
+      {
+        "index": 54,
+        "task_id": "54",
+        "goal_sha256": "644ca5e960ff8a9b08e67eeab358dff1ce9d5de1d93d542cd994d97ba27d224f"
+      },
+      {
+        "index": 106,
+        "task_id": "106",
+        "goal_sha256": "da3317f9956a0bc90dbbabad6c5d2573998963943e4a6bc1126928b2ae61255c"
+      },
+      {
+        "index": 38,
+        "task_id": "38",
+        "goal_sha256": "2ccdb7c85090d4b7d93282b91b1b854bac9c03d9fa0743a25e9b160b50a9832a"
+      },
+      {
+        "index": 95,
+        "task_id": "95",
+        "goal_sha256": "eece1bc06d6fc45de167c46910e8408e0efaf8bf788f6f4ac81d64ee97408957"
+      },
+      {
+        "index": 55,
+        "task_id": "55",
+        "goal_sha256": "0f6b005bde834eb034dbd0ca233d162c08d04ea74246587cbb34614830950480"
+      },
+      {
+        "index": 59,
+        "task_id": "59",
+        "goal_sha256": "370de35828d1f3a1623429d4e412e7193088e2daed09af488f5159b6a67abf35"
+      },
+      {
+        "index": 35,
+        "task_id": "35",
+        "goal_sha256": "a6445266948f0db37a543d2302faf56201b46129555001fc6af62a634e3ad747"
+      },
+      {
+        "index": 76,
+        "task_id": "76",
+        "goal_sha256": "83027d490eb7cac3ae4f334df73b7d2c7fa3116d9a9acc7331ce96849e34b6af"
+      },
+      {
+        "index": 69,
+        "task_id": "69",
+        "goal_sha256": "ffaf28de903d86fdffcab36d1c9b2c58ed0651341131262a9d332a4dacb1a267"
+      },
+      {
+        "index": 89,
+        "task_id": "89",
+        "goal_sha256": "3cd1c9bd1a7877b9893eb871e31e05f82699b7811ad97f3359ed6f8a27bd401b"
+      },
+      {
+        "index": 28,
+        "task_id": "28",
+        "goal_sha256": "5685bd22ca4dcd37ea9495a7fc42d95475d85d09abbe82d7562da381c23ffd6c"
+      },
+      {
+        "index": 11,
+        "task_id": "11",
+        "goal_sha256": "f10df60e2683959e2ff154e7790539bdccd1e89afe8d5f8027ac5aec8c4fea97"
+      },
+      {
+        "index": 27,
+        "task_id": "27",
+        "goal_sha256": "f597811afd4d6e89aee31ab8a6426b6065bcce0d436e13b248644036da190f24"
+      },
+      {
+        "index": 66,
+        "task_id": "66",
+        "goal_sha256": "91a94a221f0cdf7994c757ed022e66e2c68091f6e68882c9e1bd479ee88469e7"
+      },
+      {
+        "index": 86,
+        "task_id": "86",
+        "goal_sha256": "e6842a7ea77863967eca05325db4c4644311a106bb4a5c7fe0fb3562632b9ce3"
+      },
+      {
+        "index": 103,
+        "task_id": "103",
+        "goal_sha256": "fb76b1d418d200aae654efeb4df524fb8d11e9a4e40f0a8981442c20db11eadf"
+      },
+      {
+        "index": 9,
+        "task_id": "9",
+        "goal_sha256": "e11f6cd13099f945c8dd369ca42cb01f364c5fe9ee6be387801368a8bbd76154"
+      },
+      {
+        "index": 92,
+        "task_id": "92",
+        "goal_sha256": "d3cfe61ba14015c1a35a312b79bd95d143ca691674c49d287a5ad8b2f206b855"
+      },
+      {
+        "index": 52,
+        "task_id": "52",
+        "goal_sha256": "21420e375cbbf2aa7498ea239b4fd69e6c710c30da29df183531868dcf0d516e"
+      },
+      {
+        "index": 24,
+        "task_id": "24",
+        "goal_sha256": "862314ca835357aae20c31e7a2baa17b1c74c4e9e77c897e4f77d8063e1dd737"
+      },
+      {
+        "index": 72,
+        "task_id": "72",
+        "goal_sha256": "e5ddddb8907ef9ed7a878f8bdb3319cd44b7cbd1519300b03070cbc8672fbcb5"
+      },
+      {
+        "index": 57,
+        "task_id": "57",
+        "goal_sha256": "665fb0ba0f72aa5ec5d884d855bf557ec074c28344fa8be37c8052e4490eaf54"
+      },
+      {
+        "index": 56,
+        "task_id": "56",
+        "goal_sha256": "a9fb0e24757bf568226c27dab1c7f472e98999f3b57d2dcde3cf887170a19d1c"
+      },
+      {
+        "index": 49,
+        "task_id": "49",
+        "goal_sha256": "1682a06da27acb314771c68a87f928d173d7afec23416a05ce4e44b4b3c58a1f"
+      },
+      {
+        "index": 37,
+        "task_id": "37",
+        "goal_sha256": "a1f0398b5950db226fd1f974924ef685d3b60841d02fda80a8499866278e56c0"
+      },
+      {
+        "index": 12,
+        "task_id": "12",
+        "goal_sha256": "7e06b26c28c5480fab8796bc7b41a77c11d900c43ce6dbd2930486b72ed69e11"
+      },
+      {
+        "index": 73,
+        "task_id": "73",
+        "goal_sha256": "4766404964a268df768642e1cb1a36826fcc6970f76365591f81393e9fb22723"
+      },
+      {
+        "index": 82,
+        "task_id": "82",
+        "goal_sha256": "814e4975507b37d2929d91b2196c4f408dbfc469df06f4c249f3d212172a3b7b"
+      },
+      {
+        "index": 78,
+        "task_id": "78",
+        "goal_sha256": "92742491b67e97b969ca1daff7f4b684b5460ff6749810e8a7dbf08036826430"
+      },
+      {
+        "index": 44,
+        "task_id": "44",
+        "goal_sha256": "5e17b3c38fb1e10730d641806a59b88e1108759d4191e828450c326c8c3e2b61"
+      },
+      {
+        "index": 23,
+        "task_id": "23",
+        "goal_sha256": "470fed8377ce96432536b59d604c56c79525cc2785ea0437620bf6fb2361a440"
+      },
+      {
+        "index": 85,
+        "task_id": "85",
+        "goal_sha256": "253f0e22b3e2de8b9b4f05df9f57d6bfe9583198bad1d2b193ff925fafaf6f6e"
+      },
+      {
+        "index": 68,
+        "task_id": "68",
+        "goal_sha256": "d674b610909ca35634fee0b4a35cfa3b4502274f944b3b5b2d45eb02c0f8a4a6"
+      },
+      {
+        "index": 102,
+        "task_id": "102",
+        "goal_sha256": "362f9fb4486769bf8e09c57f2ae3c44cc8fe2722fde9722b9a9d9ba13943f048"
+      },
+      {
+        "index": 96,
+        "task_id": "96",
+        "goal_sha256": "9c2333ca67b443a5fe2c4bd9a4877474058bd974b6622f7cd098239e75e1ed00"
+      },
+      {
+        "index": 32,
+        "task_id": "32",
+        "goal_sha256": "6188c60f22bb7acc5d76775d75b258304b749eb8c8c50002079bddf2f83cd0b0"
+      },
+      {
+        "index": 83,
+        "task_id": "83",
+        "goal_sha256": "31dbbad40a92eefc6b4cff8add743541d9f522974e4b8b2f382e54e8032aac46"
+      },
+      {
+        "index": 62,
+        "task_id": "62",
+        "goal_sha256": "9ecc8564231060532947b0c24fbfc6570380c98dcf9d14d21432026f0e315d44"
+      },
+      {
+        "index": 21,
+        "task_id": "21",
+        "goal_sha256": "8ae4fffc65789d95b1869322f2e19a634265ba4830370ef07b6d1b03f7f1855a"
+      },
+      {
+        "index": 20,
+        "task_id": "20",
+        "goal_sha256": "771c4b4ae7fdb7ce8e9c32a9c41e2bc2de269b2be88604bc42bf4a31aa63dc57"
+      },
+      {
+        "index": 88,
+        "task_id": "88",
+        "goal_sha256": "293ce6a0206c9bd73e313660ed5ba20a862a4ea82d07f308eb65c815ecd10e95"
+      },
+      {
+        "index": 60,
+        "task_id": "60",
+        "goal_sha256": "da9cbc6aca903bdba8336a52d7ffbbf1754f6fea5afbd4e5b0bd28ececd25d70"
+      },
+      {
+        "index": 80,
+        "task_id": "80",
+        "goal_sha256": "60fac65dbacd95299349684a2ccc8f5eb83e62388c222f9327e6efb49cfc8541"
+      },
+      {
+        "index": 110,
+        "task_id": "110",
+        "goal_sha256": "9f03fc9724f8b206409c79d7a9fc551bff12259f1194e2051fe474fedf6f3f9b"
+      },
+      {
+        "index": 10,
+        "task_id": "10",
+        "goal_sha256": "468bd5efbfe8a5f0235d52310c605a337bfb846a80e3c7209c5f4165eadac01f"
+      },
+      {
+        "index": 43,
+        "task_id": "43",
+        "goal_sha256": "509fa8d560e86923d7bfe9207e0718345a0c2bfbb9939bcdfd8857b9d4f4741f"
+      },
+      {
+        "index": 94,
+        "task_id": "94",
+        "goal_sha256": "5c2ab1904238985b76e57c7bca0f5036ec7c85a88770f59050436915161d4600"
+      },
+      {
+        "index": 53,
+        "task_id": "53",
+        "goal_sha256": "b95d990d560f936a6b21b8a4ecddaa7d1964e8186d236b6b9280aa64ac5349c5"
+      },
+      {
+        "index": 107,
+        "task_id": "107",
+        "goal_sha256": "9a592f7fdc7f8714131804e82f097c65c4a9eefb43d459c7fb43f13b7f76768b"
+      },
+      {
+        "index": 17,
+        "task_id": "17",
+        "goal_sha256": "eaa4ac25b7c8891559a8ef64c25ed4c115262516ca6bf8b2ce58421deaa3f79e"
+      },
+      {
+        "index": 65,
+        "task_id": "65",
+        "goal_sha256": "2eecac65f5f5927472180e88a48dca1853b8afebc0f9dcfed5dbc4590291fae9"
+      },
+      {
+        "index": 42,
+        "task_id": "42",
+        "goal_sha256": "77156a372cf9e954620c09f23f74c07e0d10cf010618934fc2731b8a3b819821"
+      },
+      {
+        "index": 61,
+        "task_id": "61",
+        "goal_sha256": "efefd0c39dc3d30479da6033846712764395ebc7733dea351913eeab42841f2d"
+      },
+      {
+        "index": 98,
+        "task_id": "98",
+        "goal_sha256": "8fcbdd4e47b4701ac951ed705e8202217df18cbe7ad63e1a0c8a9b226a8a2c09"
+      },
+      {
+        "index": 22,
+        "task_id": "22",
+        "goal_sha256": "63b7f9d74c1ce2ecae89a859f7ea4790dba634695dd9e3f2dfaeaf3523934a91"
+      },
+      {
+        "index": 48,
+        "task_id": "48",
+        "goal_sha256": "b9d6a330384523bb56f035fba72290c6a004714fe69e6a8eae35ce001cad8fab"
+      },
+      {
+        "index": 1,
+        "task_id": "1",
+        "goal_sha256": "9d5b346b1ad221275018449b9d8bfc4535fe84266b230b1c406eaceb510cf72a"
+      },
+      {
+        "index": 74,
+        "task_id": "74",
+        "goal_sha256": "84102ea3f5b84044f4198967062119706294976ec5ca1b49aaeceb6bade6243b"
+      },
+      {
+        "index": 6,
+        "task_id": "6",
+        "goal_sha256": "fb9cb8c1d039bb52747063a98b48446c5a9c3168226ca8cf176e2a78e2f495bb"
+      }
+    ]
+  },
+  "execution": {
+    "workers": 4,
+    "max_depth": 3,
+    "condition": "BASE",
+    "paper_run": true,
+    "worker_root": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/run-1c25870d612b4a1b9438e7d926d1f97b.workers",
+    "results_csv": "runner_results.csv",
+    "model_visible_path_policy": "opaque_run_id_v1",
+    "worker_python_hash_seed": "0",
+    "tool_order_policy": "fixed_python_hash_seed_v1"
+  },
+  "context_interventions": {
+    "organization_awareness_v2": true,
+    "organization_awareness_v2_prompt_sha256": "e17ebbbef2e0286a6496a86a42a4f22b23e5d43ba0b171690737fedeea46d7a7",
+    "condition_bit_order": [
+      "intent",
+      "plan"
+    ],
+    "organization_awareness_mode": "static_global_architecture_v2",
+    "injection_boundary": "worker_before_litellm",
+    "role_dependent": false
+  },
+  "paper_run_config": {
+    "source": "external_archive/2026-09-12/hira/work/paper_studies/seal0_remaining59_repeats2_parallel4x4_20261002T080159Z/config/v2_repeat2.json",
+    "sha256": "d481bfd988c1a2ace6ad1b423da8f9da508261a3bc310eaccac0f478f3202481",
+    "archive": "config/paper_run_config.json"
+  },
+  "model": {
+    "model": "openai/qwen3.7-flash",
+    "provider": "dashscope-compatible-via-litellm-proxy",
+    "base_url": null,
+    "temperature": "0.0",
+    "max_tokens": null,
+    "seed": null,
+    "note": "Per-request effective decoding fields are also stored in traces/raw_requests.jsonl.",
+    "effective_model": "qwen3.7-flash",
+    "effective_temperature": 0.0,
+    "effective_max_tokens": 8000,
+    "effective_seed": null,
+    "raw_request_count": 1146
+  },
+  "python": {
+    "version": "3.12.11",
+    "implementation": "CPython",
+    "executable": "sources/roma/native/.venv/bin/python",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "litellm": "1.78.2",
+      "dspy": "3.0.4b1",
+      "openai": "2.4.0",
+      "pyarrow": "21.0.0",
+      "pandas": "2.3.3",
+      "agentops": null
+    }
+  },
+  "artifacts": {
+    "outputs": "outputs.jsonl",
+    "metrics": "metrics.csv",
+    "raw_traces": "traces",
+    "worker_count": 59,
+    "source_result_csv": "external_archive/2026-09-12/hira/work/paper_runs/20261002T080800Z_BASE_seal0-remaining59-v2-repeat2-20261002T080159Z/runner_results.csv"
+  },
+  "mlflow": {
+    "run_id": "c082928dcd8146d3974aac865e4b8080",
+    "tracking_uri": "sqlite:///sources/roma/controls/mlflow.db",
+    "experiment": "ROMA-Formal-Runs",
+    "status_at_start": "RUNNING"
+  },
+  "controller_state": {
+    "condition": "BASE",
+    "max_depth": 3,
+    "workers": 4,
+    "started_at": "2026-10-02T08:08:02.533681+00:00",
+    "total": 59,
+    "completed": 55,
+    "skipped_provider_blocked": 3,
+    "errors": 1,
+    "active_indices": [],
+    "finished_at": "2026-10-02T09:44:32.662248+00:00"
+  }
+}

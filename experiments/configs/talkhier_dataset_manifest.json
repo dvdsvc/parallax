@@ -1,0 +1,50 @@
+{
+  "dataset": "TIGER-Lab/MMLU-Pro",
+  "dataset_revision": "b189ec765aa7ed75c8acfea42df31fdae71f97be",
+  "source": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/tree/b189ec765aa7ed75c8acfea42df31fdae71f97be",
+  "split_counts": {
+    "test": 12032,
+    "validation": 70
+  },
+  "physics": {
+    "test": {
+      "rows": 1299,
+      "path": "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/physics/test.jsonl",
+      "official_parquet": "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/official/data/test-00000-of-00001.parquet",
+      "raw_option_count_distribution": {
+        "9": 28,
+        "10": 1242,
+        "7": 4,
+        "8": 14,
+        "6": 4,
+        "4": 6,
+        "5": 1
+      },
+      "rows_with_NA_option": 0
+    },
+    "validation": {
+      "rows": 5,
+      "path": "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/physics/validation.jsonl",
+      "official_parquet": "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/official/data/validation-00000-of-00001.parquet",
+      "raw_option_count_distribution": {
+        "10": 5
+      },
+      "rows_with_NA_option": 2
+    }
+  },
+  "selection": "category == physics; original split order; all rows; no exclusions",
+  "record_policy": "Preserve all official fields, options, answer letter/index, cot_content and src unchanged; no N/A removal",
+  "files_sha256": {
+    "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/official/README.md": "4bd710f67da3fa359a33edce1b4b5816b3de416c823c2624ba5e89c2557d2a47",
+    "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/official/data/test-00000-of-00001.parquet": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8",
+    "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/official/data/validation-00000-of-00001.parquet": "139423c23722e480c807ac4a191409a710cfce4eba744c1d641cf88e730e2078",
+    "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/physics/test.jsonl": "8aec35840ee049eee9201b553edc8250f60bd357b0f7ed13f965631aa6b1b4b8",
+    "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/physics/validation.jsonl": "f356cd8c9fe4ffa2253dd48e22cccd905d56c83b4784ed9374938d670333098a",
+    "data/mmlu_pro/b189ec765aa7ed75c8acfea42df31fdae71f97be/download_receipt.json": "97140cdac6790025efe5c5c0d052060f10da80d7b500285ff5329e67f2bda370"
+  },
+  "parquet_reader": {
+    "python": "sources/roma/controls/.venv/bin/python",
+    "pyarrow_version": "25.0.1"
+  },
+  "preparation_script_sha256": "761434a5e91c2a05796272df085dcb04097ba484491e64fc9ce918c046a33ef5"
+}

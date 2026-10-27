@@ -1,0 +1,2881 @@
+{
+  "upstream_commit": "842a62160bcd326c5f8bb11c6cd1f3da7ced00f6",
+  "domains": {
+    "moral_scenarios": {
+      "domain": "moral_scenarios",
+      "evaluation_members": [
+        "Intent",
+        "Normality",
+        "Responsibility",
+        "Well-being"
+      ],
+      "scenarios": {
+        "normal": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 21
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 21
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 21
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Intent"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Normality"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Responsibility"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Well-being"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Intent",
+            "Normality",
+            "Responsibility",
+            "Revisor",
+            "Well-being"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Intent": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "b8b449f470b88a4ff5a67dacffddb15d787d2ce155fca788564dd0cde68fe0d9",
+          "native_failure_retries": 0
+        },
+        "feedback": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 35
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 35
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 35
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Intent"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Normality"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Responsibility"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Well-being"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Intent"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Normality"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Responsibility"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Well-being"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Intent",
+            "Normality",
+            "Responsibility",
+            "Revisor",
+            "Well-being"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Intent": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "bd505f7c2c70e27db7b3785ca98f452582d14e5f8a7c6673eea909409ad5cd4c",
+          "native_failure_retries": 0
+        },
+        "direct_finish": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Default Supervisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Intent": true
+          },
+          "native_inputs_sha256": "7f50cb7786293d803c15ee1a3ecd4a62587f24e3503bdb003aee3dc448601a5b",
+          "native_failure_retries": 0
+        },
+        "skip_generator": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Intent"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Normality"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Responsibility"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Well-being"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Intent",
+            "Normality",
+            "Responsibility",
+            "Revisor",
+            "Well-being"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Intent": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "2c2ff8c1bc7e9b06537d7cf3ea269f0f35d37e29feb1e93ba721152fe67b4ffe",
+          "native_failure_retries": 0
+        },
+        "skip_revisor": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Intent"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Normality"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Responsibility"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Well-being"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Intent",
+            "Normality",
+            "Responsibility",
+            "Well-being"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Intent": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "400beda8ed02bd9b651589e21be48254342a8c5b9c8b712fd9494446230f96df",
+          "native_failure_retries": 0
+        },
+        "skip_evaluation": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Intent": true
+          },
+          "native_inputs_sha256": "538aef1142d138dc6be1205d8a14602e91b2ef06b4f36b298e0b4e6714c19c41",
+          "native_failure_retries": 0
+        },
+        "evaluation_early_return": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Intent": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "e05144b5b60947d2b905a62183d9c7fae219fe5868e028d2ce0b9db7decbe5b9",
+          "native_failure_retries": 0
+        },
+        "evaluation_subset": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Intent"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Intent",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Intent": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "44f44e083bb74761c2b438951dfe19260c592a4952c495c8bddf1116bc1029cb",
+          "native_failure_retries": 0
+        },
+        "tool_roundtrip": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 22
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 22
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 22
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Intent"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Normality"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Responsibility"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Well-being"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Intent",
+            "Normality",
+            "Responsibility",
+            "Revisor",
+            "Well-being"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Intent": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "11dc9e47b9d1d285ce057263dcb973359619c3da3eeb9e22e5ab4199bab26f0b",
+          "native_failure_retries": 0
+        }
+      },
+      "paid_model_calls": 0
+    },
+    "college_physics": {
+      "domain": "college_physics",
+      "evaluation_members": [
+        "Physics",
+        "Mathematics"
+      ],
+      "scenarios": {
+        "normal": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Physics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Mathematics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Mathematics",
+            "Physics",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Physics": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "5bb60e2747975592b681ca29156cef4f45d9e125039ad0487402c09449da3e3a",
+          "native_failure_retries": 0
+        },
+        "feedback": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 23
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 23
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 23
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Physics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Mathematics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Physics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Mathematics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Mathematics",
+            "Physics",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Physics": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "ca390f57e1cb97eaa61cb784c105cf012e67f73fe08f6596b8a012e72ab8d3e5",
+          "native_failure_retries": 0
+        },
+        "direct_finish": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Default Supervisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Physics": true
+          },
+          "native_inputs_sha256": "e490a2f64b412fc54920ad06065f84b10c246ed2f36e5e8903684fc0ad0a9cd7",
+          "native_failure_retries": 0
+        },
+        "skip_generator": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Physics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Mathematics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Mathematics",
+            "Physics",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Physics": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "514bfb9b8f26e3894c4b9cae10b654078fc34d3b5d2cba705d3b796f29e9a070",
+          "native_failure_retries": 0
+        },
+        "skip_revisor": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Physics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Mathematics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Mathematics",
+            "Physics"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Physics": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "8e1e54b65442add26f5e49ab79786e42744d8ac77ef97a78e63dc17403648fa0",
+          "native_failure_retries": 0
+        },
+        "skip_evaluation": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Physics": true
+          },
+          "native_inputs_sha256": "5c7b0bcaf4f801a3fd0adc914c269830dc62b182a54faa8dcf10eb3a9095b021",
+          "native_failure_retries": 0
+        },
+        "evaluation_early_return": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Physics": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "40166b866eb2a077743665095d3e28e1fa0541092de0d788f273c3c8c8f455c5",
+          "native_failure_retries": 0
+        },
+        "evaluation_subset": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Physics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Physics",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Physics": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "b0a39e81140f196bd288f627316a84fcb9c8c789c83abfa8e80eaccd3ccd2133",
+          "native_failure_retries": 0
+        },
+        "tool_roundtrip": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 16
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 16
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 16
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Physics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Mathematics"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Mathematics",
+            "Physics",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Physics": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "3e0512f5650f87de46ec6ffa83e634b866129f247f29a438a3ef6fe4c955f20b",
+          "native_failure_retries": 0
+        }
+      },
+      "paid_model_calls": 0
+    },
+    "machine_learning": {
+      "domain": "machine_learning",
+      "evaluation_members": [
+        "Answer Consistency",
+        "Machine Learning",
+        "Statistical Soundness"
+      ],
+      "scenarios": {
+        "normal": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Answer Consistency"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Machine Learning"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Statistical Soundness"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Consistency",
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Machine Learning",
+            "Revisor",
+            "Statistical Soundness"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Answer Consistency": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "f66da66c6e219c6d046c8ddc97945a1b91429c5c11201a2eb2ec4ca62a68d2b9",
+          "native_failure_retries": 0
+        },
+        "feedback": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 29
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 29
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 29
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Answer Consistency"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Machine Learning"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Statistical Soundness"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Answer Consistency"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Machine Learning"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Statistical Soundness"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Consistency",
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Machine Learning",
+            "Revisor",
+            "Statistical Soundness"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Answer Consistency": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "d1bf1e81c5093049b5b6d104c1641c30423113807a4077b464cc95ba7abb4d02",
+          "native_failure_retries": 0
+        },
+        "direct_finish": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Default Supervisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Answer Consistency": true
+          },
+          "native_inputs_sha256": "89a2b564dc8758194d7c7b161d9fa418eaad2a07c3492d62a451c09f9cacbb12",
+          "native_failure_retries": 0
+        },
+        "skip_generator": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Answer Consistency"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Machine Learning"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Statistical Soundness"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Consistency",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Machine Learning",
+            "Revisor",
+            "Statistical Soundness"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Answer Consistency": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "7003aab53f064c972e806f529aed477b5482bb95afb2b0123863f8df77f716a3",
+          "native_failure_retries": 0
+        },
+        "skip_revisor": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Answer Consistency"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Machine Learning"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Statistical Soundness"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Consistency",
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Machine Learning",
+            "Statistical Soundness"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Answer Consistency": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "7fd877cbb1d0b27f7ddb1301b84be0bcaa99c979e364cf4e13bed990e3b3b0f1",
+          "native_failure_retries": 0
+        },
+        "skip_evaluation": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Answer Consistency": true
+          },
+          "native_inputs_sha256": "7760d1a87a37c5339dfe54caeaf6049bd70289c76ea2d50879e33f6bd69017c1",
+          "native_failure_retries": 0
+        },
+        "evaluation_early_return": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Answer Consistency": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "390980193b93261edb3db87b05965419ae838f8e7abe255ff9cbf262d156983e",
+          "native_failure_retries": 0
+        },
+        "evaluation_subset": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Answer Consistency"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Consistency",
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Answer Consistency": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "0b08942254858f954199e8af806c9df5ebd3c894315c77390a760bdacd7d4dbc",
+          "native_failure_retries": 0
+        },
+        "tool_roundtrip": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 19
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 19
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 19
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Answer Consistency"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Machine Learning"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Statistical Soundness"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Consistency",
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Machine Learning",
+            "Revisor",
+            "Statistical Soundness"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Answer Consistency": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "81c59a3036e672385d5c4d13d2a6fd625ebb8149a5b1da25ac921316fc5edf6c",
+          "native_failure_retries": 0
+        }
+      },
+      "paid_model_calls": 0
+    },
+    "formal_logic": {
+      "domain": "formal_logic",
+      "evaluation_members": [
+        "Truth Table",
+        "Counterexample",
+        "Predicate Logic",
+        "Logical Argument",
+        "Formal Logic"
+      ],
+      "scenarios": {
+        "normal": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 24
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 24
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 24
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Truth Table"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Counterexample"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Predicate Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Logical Argument"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Formal Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Counterexample",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Formal Logic",
+            "Logical Argument",
+            "Predicate Logic",
+            "Revisor",
+            "Truth Table"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Truth Table": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "1609700ec4e988d346e33a5fc913c6a4ad09d1f0fbc002fba43cfcdde4ccd4b1",
+          "native_failure_retries": 0
+        },
+        "feedback": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 41
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 41
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 41
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Truth Table"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Counterexample"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Predicate Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Logical Argument"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Formal Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Truth Table"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Counterexample"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Predicate Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Logical Argument"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Formal Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Counterexample",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Formal Logic",
+            "Logical Argument",
+            "Predicate Logic",
+            "Revisor",
+            "Truth Table"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Truth Table": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "724e1f4b6472d5363b6af6367905b4f820564122af5767cdfe118f5407a8d179",
+          "native_failure_retries": 0
+        },
+        "direct_finish": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Default Supervisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Truth Table": true
+          },
+          "native_inputs_sha256": "e6d297ef05185df897076c55585d06447133b4399417ec633fc74c1187b27956",
+          "native_failure_retries": 0
+        },
+        "skip_generator": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 21
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 21
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 21
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Truth Table"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Counterexample"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Predicate Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Logical Argument"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Formal Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Counterexample",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Formal Logic",
+            "Logical Argument",
+            "Predicate Logic",
+            "Revisor",
+            "Truth Table"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Truth Table": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "92aac6c3252aec443ab65dc5ea1f607bf835c8642b83fec4eca8a1e975c63f53",
+          "native_failure_retries": 0
+        },
+        "skip_revisor": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 21
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 21
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 21
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Truth Table"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Counterexample"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Predicate Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Logical Argument"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Formal Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Counterexample",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Formal Logic",
+            "Logical Argument",
+            "Predicate Logic",
+            "Truth Table"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Truth Table": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "8987f82717cd16d059526cfc172c08ad39d43afbbcebe9beb280913c37bd9a9f",
+          "native_failure_retries": 0
+        },
+        "skip_evaluation": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Truth Table": true
+          },
+          "native_inputs_sha256": "e5a5a5b68690711c807b64ae05c10e6640aaa2558991b9a07d8c4e3ae59fbba5",
+          "native_failure_retries": 0
+        },
+        "evaluation_early_return": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Truth Table": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "adb2ab7132139c265931b2c2c97a58ca0a6db3f83a903fd8864a3a4a153ecccd",
+          "native_failure_retries": 0
+        },
+        "evaluation_subset": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Truth Table"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Revisor",
+            "Truth Table"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Truth Table": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "b273c4462eebd21901482c457e2a9cef3aea58c266af7a2f16a20ee9d2d6983d",
+          "native_failure_retries": 0
+        },
+        "tool_roundtrip": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 25
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 25
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 25
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Truth Table"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Counterexample"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Predicate Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Logical Argument"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Formal Logic"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Counterexample",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Formal Logic",
+            "Logical Argument",
+            "Predicate Logic",
+            "Revisor",
+            "Truth Table"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Truth Table": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "47c95963e438e23c002d7ab6fb39d9c168272a5db92507b75eb8c5118530254d",
+          "native_failure_retries": 0
+        }
+      },
+      "paid_model_calls": 0
+    },
+    "us_foreign_policy": {
+      "domain": "us_foreign_policy",
+      "evaluation_members": [
+        "Factual Accuracy",
+        "Policy Alignment",
+        "Conceptual Clarity"
+      ],
+      "scenarios": {
+        "normal": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 18
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Factual Accuracy"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Policy Alignment"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Conceptual Clarity"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Conceptual Clarity",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Factual Accuracy",
+            "Policy Alignment",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Factual Accuracy": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "01845f2346f990179ac6414614e92dc16420f9bd09a853d1ebac5e18057b408d",
+          "native_failure_retries": 0
+        },
+        "feedback": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 29
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 29
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 29
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Factual Accuracy"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Policy Alignment"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Conceptual Clarity"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Factual Accuracy"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Policy Alignment"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Conceptual Clarity"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Conceptual Clarity",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Factual Accuracy",
+            "Policy Alignment",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Factual Accuracy": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "c8a32d25b8c0da82a2109542c8926d88f5b751996ccf9f0fbfa56be5fdc70723",
+          "native_failure_retries": 0
+        },
+        "direct_finish": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 1
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Default Supervisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Factual Accuracy": true
+          },
+          "native_inputs_sha256": "503b97f920b846a307c6bab28b7242f36a37b155fa1720e7c8a36b9b2af3deef",
+          "native_failure_retries": 0
+        },
+        "skip_generator": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Factual Accuracy"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Policy Alignment"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Conceptual Clarity"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Conceptual Clarity",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Factual Accuracy",
+            "Policy Alignment",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Factual Accuracy": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "518fd0044b9c08ecf6573a7375723c2105cc7bb2fe274a73e0e32dcd19015be2",
+          "native_failure_retries": 0
+        },
+        "skip_revisor": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 15
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Factual Accuracy"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Policy Alignment"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Conceptual Clarity"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Conceptual Clarity",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Factual Accuracy",
+            "Policy Alignment"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Factual Accuracy": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "a50b40ea7e48851108bf91bf1aa402e535b7b84f394187139c9b8bd8d9dd8c7d",
+          "native_failure_retries": 0
+        },
+        "skip_evaluation": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 7
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Factual Accuracy": true
+          },
+          "native_inputs_sha256": "35d88fc0a8b4728a11a9b4c13a730f74be31dd6edacb0673d4d49eb8e3709c97",
+          "native_failure_retries": 0
+        },
+        "evaluation_early_return": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 9
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Factual Accuracy": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "27aca95230166d82e406a42b246f595a40b91ffb67dca4396b3c7c33364ccbf5",
+          "native_failure_retries": 0
+        },
+        "evaluation_subset": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 12
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Factual Accuracy"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Factual Accuracy",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Factual Accuracy": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "fbf0fc0c194e15ff8b53514b3ae42c6a1c9ea2b19c9fa8eec6254e8a01035f87",
+          "native_failure_retries": 0
+        },
+        "tool_roundtrip": {
+          "comparisons": {
+            "BASE:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 19
+            },
+            "V2:all_roles": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 19
+            },
+            "V2:evaluation_supervisor": {
+              "only_selected_system_prefix_changed": true,
+              "native_schema_tools_routes_and_result_equal": true,
+              "request_count": 19
+            }
+          },
+          "routes": [
+            [
+              "Default Supervisor",
+              "Answer Generator"
+            ],
+            [
+              "Default Supervisor",
+              "Evaluator Supervisor"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Factual Accuracy"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Policy Alignment"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Conceptual Clarity"
+            ],
+            [
+              "Evaluator Supervisor",
+              "Default Supervisor"
+            ],
+            [
+              "Default Supervisor",
+              "Revisor"
+            ],
+            [
+              "Default Supervisor",
+              "FINISH"
+            ]
+          ],
+          "visited_model_roles": [
+            "Answer Generator",
+            "Conceptual Clarity",
+            "Default Supervisor",
+            "Evaluator Supervisor",
+            "Factual Accuracy",
+            "Policy Alignment",
+            "Revisor"
+          ],
+          "blocked_cross_team_routes": {
+            "Default Supervisor->Factual Accuracy": true,
+            "Evaluator Supervisor->Revisor": true,
+            "Evaluator Supervisor->Answer Generator": true,
+            "Evaluator Supervisor->FINISH": true
+          },
+          "native_inputs_sha256": "e36ba065efd3e90d4d7d95f3f01388183bee7dc8c622253f70018e9cc3585593",
+          "native_failure_retries": 0
+        }
+      },
+      "paid_model_calls": 0
+    }
+  },
+  "paid_model_calls": 0,
+  "native_source_unchanged": true,
+  "main_v2_scope": "all_roles",
+  "scenario_count": 9,
+  "native_fixture_runs": 180,
+  "meaning": "Offline route and intervention validation; not benchmark accuracy, cost, or natural LLM routing"
+}

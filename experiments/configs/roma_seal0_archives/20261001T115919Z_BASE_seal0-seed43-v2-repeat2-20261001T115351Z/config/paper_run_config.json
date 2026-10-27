@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "condition": "BASE",
+  "task_indices": [
+    3,
+    7,
+    18,
+    25,
+    47,
+    58,
+    67,
+    70,
+    71,
+    75,
+    77,
+    90,
+    91,
+    101,
+    105
+  ],
+  "workers": 4,
+  "max_depth": 3,
+  "model": "openai/qwen3.7-flash",
+  "temperature": 0,
+  "provider_label": "dashscope-compatible-via-litellm-proxy",
+  "interventions": {
+    "organization_awareness_v2": true,
+    "second_order": {
+      "enabled": false,
+      "layers": {}
+    }
+  },
+  "study_id": "seal0_remaining95_sample15_seed43_20261001T112502Z",
+  "subset_file": "external_archive/2026-09-12/hira/work/paper_studies/seal0_seed43_paired15_repeats2_parallel4x4_20261001T115351Z/source_snapshot/seal0_remaining95_sample15_seed43.json",
+  "subset_file_sha256": "97ebcfa76a7e69b92d1f31a4168c8d85a6cb7c308d9aa6c2f95e8855170fa9af",
+  "sampling_seed": 43,
+  "population_size": 95,
+  "sampling_method": "uniform_without_replacement",
+  "repeat_batch_id": "seal0_seed43_paired15_repeats2_parallel4x4_20261001T115351Z",
+  "additional_repeat_number": 2,
+  "parent_population_size": 110
+}

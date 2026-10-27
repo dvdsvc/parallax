@@ -1,0 +1,87 @@
+{
+  "paid_model_calls": 0,
+  "model_responses": "deterministic local HTTP fixtures only",
+  "validation_root": "external_archive/2026-10-02/x/work/talkhier/.local/validation/run_archive/14d7995bd02c40e3983748e27597ac30",
+  "cases": {
+    "BASE": {
+      "mlflow_status": "FINISHED",
+      "archive_valid_after_process_exit": true,
+      "artifact_copy_matches": true,
+      "http_mock_requests": 19,
+      "mlflow_running_before_first_model": true,
+      "expected_error": null,
+      "network_disabled": true,
+      "mlflow_run_id": "8e9f3071517845c9a56d74478f66fc81",
+      "archive_manifest_sha256": "162b9b7776ca0d2493ca3b88038e8cb9198f59fe8950237b651fba3a661fb9f0"
+    },
+    "V2": {
+      "mlflow_status": "FINISHED",
+      "archive_valid_after_process_exit": true,
+      "artifact_copy_matches": true,
+      "http_mock_requests": 19,
+      "mlflow_running_before_first_model": true,
+      "expected_error": null,
+      "network_disabled": true,
+      "mlflow_run_id": "a9cb418f206e41cea31ceda681483fb6",
+      "archive_manifest_sha256": "40eb1fee384da15a83cba2e456d822655b819cd86f38bcd2cf0f6da74f211ead"
+    },
+    "interrupted": {
+      "mlflow_status": "KILLED",
+      "archive_valid_after_process_exit": true,
+      "artifact_copy_matches": true,
+      "http_mock_requests": 1,
+      "mlflow_running_before_first_model": true,
+      "expected_error": "KeyboardInterrupt",
+      "network_disabled": true,
+      "mlflow_run_id": "5e49eaaa5afd48129ea55e069363af55",
+      "archive_manifest_sha256": "aedd20de4c66e9625757a88d29cb0a394d6ad0cd1e4f59953752bd9db4bae174"
+    },
+    "invalid-question": {
+      "mlflow_status": "FAILED",
+      "archive_valid_after_process_exit": true,
+      "artifact_copy_matches": true,
+      "http_mock_requests": 0,
+      "mlflow_running_before_first_model": false,
+      "expected_error": "ValueError",
+      "network_disabled": true,
+      "mlflow_run_id": "b944df6b14e4471d86bac55bf7f758a0",
+      "archive_manifest_sha256": "a26844ba6a458d8eb2b614366913b0bc5419d8aa7b5d06789804e8a8eb259b19"
+    },
+    "missing-mlflow": {
+      "sealed_local_failure": true,
+      "model_work_started": false,
+      "mlflow_run_id": null,
+      "archive_manifest_sha256": "8a98ae4123e79744b8c9252b829d60f3443f0a6e3af979fe45145b2c0827e21c"
+    },
+    "index-failure": {
+      "mlflow_status": "FAILED",
+      "archive_valid_after_process_exit": true,
+      "artifact_copy_matches": true,
+      "http_mock_requests": 0,
+      "mlflow_running_before_first_model": false,
+      "expected_error": "RuntimeError",
+      "network_disabled": true,
+      "mlflow_run_id": "b52b884aea354bf0905cd3a38a16481c",
+      "archive_manifest_sha256": "3dd20925da92a5eba1e584bbc2e71c4a2eaa835fa5728593f37b1fa318cae717"
+    }
+  },
+  "base_v2_same_agent_and_questions": true,
+  "startup_snapshots_and_mlflow_run_precede_model_work": true,
+  "sealing_survives_native_atexit_cleanup": true,
+  "tampering_detected": true,
+  "reindex_preserves_archive_and_run_id": true,
+  "credential_redaction_checked": true,
+  "native_source_unchanged": true,
+  "langsmith_enabled": false,
+  "validation_experiment": "TalkHier-RecordValidation",
+  "validation_fixture": true,
+  "agent_source_sha256": "b42662cb0c86acc75206ac7850ae3ffa841b6e1c696e2b6ab94de266a57fdaf8",
+  "mlflow_version": "3.16.1",
+  "verified_code_sha256": {
+    "repro/run_mmlu.py": "3706f4726e0394f42dbe18897b778c86bf95c6bd39d619e73d935dc505a57628",
+    "repro/smoke_pair.py": "4c9cbc935c9a37320886c0b127ce896f33942d6d366b90ca0653e6b6dc8d71a8",
+    "repro/run_archive.py": "c5bfb023cb23a5563ab5631696c95d1d837f79577b41ea58861bf40c67af09bc",
+    "repro/mlflow_index.py": "08a789c95867ea3863f76aff428b734b68c0e22621403fdfa5d81a21fca8f848",
+    "repro/validate_run_archive.py": "bb722545466f40e5116294762a89263e067c14abfb1bef45bfb9f141854ee38f"
+  }
+}

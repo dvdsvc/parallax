@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "condition": "BASE",
+  "task_indices": [
+    4,
+    5,
+    13,
+    15,
+    16,
+    19,
+    30,
+    31,
+    34,
+    39,
+    63,
+    81,
+    87,
+    93,
+    100
+  ],
+  "workers": 4,
+  "max_depth": 3,
+  "model": "openai/qwen3.7-flash",
+  "temperature": 0,
+  "provider_label": "dashscope-compatible-via-litellm-proxy",
+  "interventions": {
+    "organization_awareness_v2": false,
+    "second_order": {
+      "enabled": false,
+      "layers": {}
+    }
+  },
+  "study_id": "seal0-clean-paired-15-seed42-20260930",
+  "subset_file": "sources/roma/native/benchmark_subsets/seal0_clean_paired_15_seed42.json",
+  "subset_file_sha256": "b3f79d847540915f3f59b95d8d2dcd6ab95844db543e17d8864ade1c78e2e6da",
+  "sampling_seed": 42,
+  "population_size": 94,
+  "sampling_method": "uniform_without_replacement",
+  "repeat_batch_id": "seal0_clean_paired15_repeats2_parallel4x4_20260930T141651Z",
+  "additional_repeat_number": 1
+}

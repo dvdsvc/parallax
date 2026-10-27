@@ -1,0 +1,463 @@
+#!/usr/bin/env python3
+"""Read-only native trace -> canonical task trees -> APTED -> native R tests.
+
+All writes go to a newly created analysis archive. No agent/judge/API requests.
+"""
+import os
+os.environ.setdefault('OPENBLAS_NUM_THREADS','1')
+os.environ.setdefault('OMP_NUM_THREADS','1')
+os.environ.setdefault('MPLCONFIGDIR','external_temp')
+os.environ.setdefault('XDG_CACHE_HOME','external_temp')
+import sys
+sys.dont_write_bytecode=True
+import argparse
+import hashlib
+import json
+import shutil
+import subprocess
+from collections import defaultdict,Counter
+from datetime import datetime,timezone
+from pathlib import Path
+import numpy as np
+from scipy.stats import pearsonr,spearmanr,rankdata
+from scipy.spatial.distance import pdist,squareform
+
+ROOT=Path('external_archive/2026-10-02/wo-2')
+FRAMES=Path('archives/roma_frames50')
+PCA=ROOT/'outputs/behavior_pca_20261004T191056Z'
+ASSOC=ROOT/'outputs/seal0_frames_associations_20261004T154431Z'
+NATIVE=Path('external_archive/2026-10-02/frames/outputs/seal0_tokens_tools_flips_20261002.json')
+DEPS=ROOT/'work/tree-analysis-python-library'
+RLIB=ROOT/'work/tree-analysis-r-library'
+WHEEL=ROOT/'work/tree-analysis-wheels/apted-1.0.3-py3-none-any.whl'
+sys.path.insert(0,str(DEPS))
+from apted import APTED,Config
+
+SEED=20261005
+SOURCES={}
+TREE_FEATURES=['nodes','weighted_depth','max_depth','max_width','mean_branching',
+               'max_branching','expanded','leaves','leaf_share','depth3_node_share']
+
+def sha(path):
+    h=hashlib.sha256()
+    with Path(path).open('rb') as f:
+        for b in iter(lambda:f.read(1048576),b''):h.update(b)
+    return h.hexdigest()
+
+def save(path,obj):
+    Path(path).write_text(json.dumps(obj,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+
+def read(path,expected):
+    path=Path(path);digest=sha(path)
+    assert str(path) in expected and digest==expected[str(path)],('Prior hash mismatch',str(path))
+    SOURCES[str(path)]=digest
+    return json.loads(path.read_text())
+
+def ledger(path,expected):
+    path=Path(path);digest=sha(path)
+    assert str(path) in expected and digest==expected[str(path)],('Prior ledger hash mismatch',str(path))
+    SOURCES[str(path)]=digest
+    return [json.loads(line) for line in path.open() if line.strip()]
+
+class Node:
+    def __init__(self,name,children=(),root=False,uid=None):
+        self.name=name;self.children=list(children);self.root=root;self.uid=uid
+
+class RootedUnitCost(Config):
+    # APTED documented extension API; original package is never changed.
+    def __init__(self,protection):self.protection=protection
+    def insert(self,node):return self.protection if node.root else 1
+    def delete(self,node):return self.protection if node.root else 1
+    def rename(self,a,b):
+        if a.root!=b.root:return self.protection
+        return int(a.name!=b.name)
+
+def canonical(nodes,root,labelled=False,first_order=False):
+    def visit(uid):
+        info=nodes[uid]
+        children=[visit(c) for c in info['children']]
+        if not first_order:children.sort(key=lambda c:(c[2],c[1]))
+        label='+'.join(info['roles']) if labelled else 'n'
+        signature='{'+label+''.join(c[1]for c in children)+'}'
+        return Node(label,[c[0]for c in children],uid==root,uid),signature,1+sum(c[2]for c in children)
+    return visit(root)
+
+def tree_record(trace,expected,archived,metadata):
+    trace=Path(trace)
+    events=ledger(trace/'tree_events.jsonl',expected)
+    nodes={}; count=0
+    for position,e in enumerate(events):
+        if e.get('event')!='node_start':continue
+        count+=1;uid=e['task_id'];parent=e.get('parent_id');depth=int(e['depth'])
+        if uid not in nodes:
+            nodes[uid]={'task_id':uid,'parent_id':parent,'depth':depth,'roles':[],
+                        'event_positions':[],'children':[]}
+        rec=nodes[uid]
+        assert rec['depth']==depth and rec['parent_id']==parent,(trace,uid,'inconsistent logical node')
+        rec['event_positions'].append(position)
+        if e['agent_type'] not in rec['roles']:rec['roles'].append(e['agent_type'])
+    roots=[u for u,r in nodes.items() if r['parent_id'] is None]
+    assert len(roots)==1 and nodes[roots[0]]['depth']==0,(trace,'root mismatch')
+    for uid,r in nodes.items():
+        r['roles'].sort()
+        if r['parent_id'] is not None:
+            assert r['parent_id'] in nodes,(trace,'missing parent',uid)
+            p=nodes[r['parent_id']];assert r['depth']==p['depth']+1,(trace,'depth-edge mismatch',uid)
+            p['children'].append(uid)
+    root=roots[0]
+    n,shape,size=canonical(nodes,root)
+    nr,role,rs=canonical(nodes,root,True)
+    nt,temporal,ts=canonical(nodes,root,first_order=True)
+    assert size==rs==ts==len(nodes)==archived['agent_nodes'],(trace,'size mismatch')
+    assert max(r['depth']for r in nodes.values())==archived['actual_max_depth']
+    kids=[len(r['children'])for r in nodes.values() if r['children']]
+    leaves=sum(not r['children']for r in nodes.values())
+    structure={'nodes':size,'weighted_depth':sum(r['depth']for r in nodes.values())/size,
+               'max_depth':max(r['depth']for r in nodes.values()),
+               'max_width':max(Counter(r['depth']for r in nodes.values()).values()),
+               'mean_branching':float(np.mean(kids))if kids else 0.,'max_branching':max(kids,default=0),
+               'expanded':size-leaves,'leaves':leaves,'leaf_share':leaves/size,
+               'depth3_node_share':sum(r['depth']>=3 for r in nodes.values())/size}
+    llm=ledger(trace/'llm_events.jsonl',expected)
+    if (trace/'tool_events.jsonl').exists():tools=ledger(trace/'tool_events.jsonl',expected)
+    else:
+        assert archived['tool_calls']==0 and str(trace/'tool_events.jsonl')not in expected
+        tools=[]
+    usage=sum(int(e.get('total_tokens')or 0)for e in llm)
+    rec={**metadata,'trace_directory':str(trace),'root_task_id':root,
+         'source_node_start_event_count':count,'logical_task_node_count':size,
+         'shape_signature':shape,'role_signature':role,'temporal_signature':temporal,
+         'logical_nodes':list(nodes.values()),'structure':structure,
+         'external':{'tokens':usage,'unknown_usage_events':sum(e.get('total_tokens')is None for e in llm),
+                     'tool_calls':len(tools),'LLM_attempts':len(llm)}}
+    return rec,{'shape':n,'role':nr,'temporal':nt}
+
+def get_data():
+    expected=json.loads((PCA/'source_sha256.json').read_text())
+    SOURCES[str(PCA/'source_sha256.json')]=sha(PCA/'source_sha256.json')
+    native=read(NATIVE,expected)
+    joined=read(ASSOC/'joined_pairs.json',expected)
+    frame=read(FRAMES/'analysis_report/report.json',expected)
+    lookup={(r['index'],r['cohort'],r['round'],r['arm']):r for r in native['attempts']}
+    records={'SEAL0':[],'FRAMES':[]};trees={'SEAL0':[],'FRAMES':[]};outcomes={}
+    core=[r for r in joined if r['round']in ['H','R1','R2']]
+    for r in core:
+        key=r['question_index'],r['cohort'],r['round']
+        outcomes['SEAL0',key[0],key[2]]={}
+        for arm in ['BASE','V2']:
+            a=lookup[(*key,arm)]
+            metadata={'question_id':key[0],'round':key[2],'cohort':key[1],'arm':arm}
+            rec,t=tree_record(a['trace_directory'],expected,a,metadata)
+            records['SEAL0'].append(rec);trees['SEAL0'].append(t)
+            assert a['score']in [0,1]
+            outcomes['SEAL0',key[0],key[2]][arm]=a['score']
+    for q in frame['per_question']:
+        if not q['primary_valid_pair']:continue
+        outcomes['FRAMES',q['official_task_id'],'single']={}
+        for arm in ['BASE','V2']:
+            trace=FRAMES/f"accounting_inputs/{arm}/traces/q-{q['loader_index_seed0']:04d}/trace"
+            metadata={'question_id':q['official_task_id'],'round':'single','arm':arm,'stratum':q['stratum']}
+            rec,t=tree_record(trace,expected,q['behavior'][arm],metadata)
+            records['FRAMES'].append(rec);trees['FRAMES'].append(t)
+            assert q['arms'][arm]['score']in [0,1]
+            outcomes['FRAMES',q['official_task_id'],'single'][arm]=q['arms'][arm]['score']
+    assert len(records['SEAL0'])==544 and len(records['FRAMES'])==94
+    return records,trees,outcomes
+
+def distances(records,trees,mode,config,out,dataset):
+    signature=mode+'_signature'
+    mapping={};unique=[];uni_nodes=[];sizes=[];indices=[]
+    for rec,tree in zip(records,trees):
+        s=rec[signature]
+        if s not in mapping:
+            mapping[s]=len(unique);unique.append(s);uni_nodes.append(tree[mode]);sizes.append(rec['logical_task_node_count'])
+        indices.append(mapping[s])
+    m=len(unique);D=np.zeros((m,m));done=0
+    print('DISTANCE',dataset,mode,'unique',m,'pairs',m*(m-1)//2,flush=True)
+    for i in range(m):
+        for j in range(i):
+            d=APTED(uni_nodes[i],uni_nodes[j],config).compute_edit_distance()
+            assert abs(sizes[i]-sizes[j])<=d<=sizes[i]+sizes[j]-2+(mode=='role')
+            D[i,j]=D[j,i]=d;done+=1
+            if done%500==0:print('DISTANCE PROGRESS',dataset,mode,done,flush=True)
+    rng=np.random.default_rng(SEED)
+    symmetry=[]
+    for _ in range(12):
+        i,j=rng.integers(0,m,2)
+        reverse=APTED(uni_nodes[j],uni_nodes[i],config).compute_edit_distance()
+        assert reverse==D[i,j]
+        symmetry.append([int(i),int(j),int(reverse)])
+    triples=rng.integers(0,m,(10000,3))
+    triangle=int(np.sum(D[triples[:,0],triples[:,2]]>D[triples[:,0],triples[:,1]]+D[triples[:,1],triples[:,2]]+1e-9))
+    assert triangle==0,'Raw ordered canonical distance must satisfy triangle inequality'
+    artifact={'mode':mode,'unique_signatures':unique,'unique_sizes':sizes,'unique_distances':D.tolist(),
+              'observation_shape_indices':indices,'verification':{'reverse_checks':symmetry,
+                   'sampled_triangle_violations':triangle,'sampled_triangles':10000}}
+    save(out/f'{dataset}_{mode}_distance_matrix.json',artifact)
+    return artifact
+
+def pure_pca(records):
+    by=defaultdict(dict)
+    for rec in records:by[rec['question_id'],rec['round']][rec['arm']]=rec
+    qgroups=defaultdict(list)
+    for (q,r),a in by.items():
+        assert set(a)=={'BASE','V2'}
+        qgroups[q].append([a['V2']['structure'][k]-a['BASE']['structure'][k]for k in TREE_FEATURES])
+    qids=sorted(qgroups);X=np.array([np.mean(qgroups[q],axis=0)for q in qids])
+    mean=X.mean(0);sd=X.std(0,ddof=1);active=np.flatnonzero(sd>1e-12)
+    Z=(X[:,active]-mean[active])/sd[active];keep=[]
+    for j in range(Z.shape[1]):
+        if np.linalg.matrix_rank(Z[:,keep+[j]],tol=1e-9)>len(keep):keep.append(j)
+    keys=[TREE_FEATURES[active[j]]for j in keep];Z=Z[:,keep]
+    _,s,V=np.linalg.svd(Z,full_matrices=False)
+    for row in V:
+        if row[np.argmax(abs(row))]<0:row*= -1
+    scores=Z@V.T;eigen=s*s/(len(X)-1)
+    cor=np.corrcoef(np.column_stack([Z,scores]),rowvar=False)[:len(keys),len(keys):]
+    rng=np.random.default_rng(SEED);null=[]
+    for _ in range(1000):
+        zz=np.column_stack([rng.permutation(Z[:,j])for j in range(Z.shape[1])])
+        null.append(np.linalg.svd(zz,compute_uv=False)**2/(len(X)-1))
+    threshold=np.quantile(null,.95,axis=0);leading=0
+    for e,t in zip(eigen,threshold):
+        if e>t:leading+=1
+        else:break
+    return {'question_ids':qids,'candidate_features':TREE_FEATURES,'retained_features':keys,
+            'candidate_deltas_V2_minus_BASE':X.tolist(),'train_not_applicable_descriptive_mean':mean.tolist(),
+            'sample_SD':sd.tolist(),'weights':V.T.tolist(),'scores':scores.tolist(),
+            'variable_PC_correlations':cor.tolist(),'explained_variance':(eigen/eigen.sum()).tolist(),
+            'parallel_analysis95':threshold.tolist(),'parallel_analysis_leading_axes':leading,
+            'no_external_signals_in_PCA':True}
+
+def holm(values):
+    p=np.asarray(values);order=np.argsort(p);result=np.empty(len(p));prev=0
+    for pos,j in enumerate(order):prev=max(prev,min(1.,(len(p)-pos)*p[j]));result[j]=prev
+    return result.tolist()
+
+def corr_test(x,y,groups):
+    x=np.array(x);y=np.array(y)
+    if np.std(x)<1e-12 or np.std(y)<1e-12:return {'pearson_r':None,'spearman_r':None,'p':None,'bootstrap95':None}
+    xc=x-x.mean();yc=y-y.mean();denom=np.linalg.norm(xc)*np.linalg.norm(yc)
+    r=float(xc@yc/denom);rng=np.random.default_rng(SEED+400)
+    hits=0
+    for _ in range(9999):
+        yp=yc.copy()
+        for g in set(groups):
+            loc=np.flatnonzero(np.array(groups)==g);yp[loc]=rng.permutation(yc[loc])
+        hits+=abs(xc@yp/denom)>=abs(r)-1e-12
+    rng=np.random.default_rng(SEED+500);draw=rng.integers(0,len(x),(10000,len(x)))
+    xx=x[draw];yy=y[draw];xx-=xx.mean(1,keepdims=True);yy-=yy.mean(1,keepdims=True)
+    dd=np.linalg.norm(xx,axis=1)*np.linalg.norm(yy,axis=1);valid=dd>1e-12
+    rb=np.sum(xx[valid]*yy[valid],axis=1)/dd[valid]
+    return {'pearson_r':r,'spearman_r':float(spearmanr(x,y).statistic),
+            'p':float((hits+1)/10000),'bootstrap95':np.quantile(rb,[.025,.975]).tolist()}
+
+def external_analysis(dataset,mode,records,dist,native,outcomes):
+    by=defaultdict(list)
+    for i,r in enumerate(records):by[r['question_id']].append((i,r))
+    D=np.array(dist['unique_distances']);ix=dist['observation_shape_indices']
+    C=np.array(native['question_pcoa_coordinates']);meta=native['question_arm_metadata']
+    lookup={(int(m['question']),m['arm']):i for i,m in enumerate(meta)}
+    panel=[]
+    for q,items in sorted(by.items()):
+        rounds=defaultdict(dict)
+        for i,r in items:rounds[r['round']][r['arm']]=(i,r)
+        d=[];dt=[];log=[];ds=[];base=[];v2=[];bn=[];vn=[]
+        for rnd,a in rounds.items():
+            ib,b=a['BASE'];iv,v=a['V2']
+            d.append(D[ix[ib],ix[iv]])
+            tb=b['external']['tokens'];tv=v['external']['tokens']
+            dt.append(tv-tb);log.append(np.log1p(tv)-np.log1p(tb))
+            o=outcomes[dataset,q,rnd];ds.append(o['V2']-o['BASE']);base.append(o['BASE']);v2.append(o['V2'])
+            bn.append(b['structure']['nodes']);vn.append(v['structure']['nodes'])
+        delta_axis=C[lookup[q,'V2']]-C[lookup[q,'BASE']]
+        panel.append({'question_id':q,'rounds':list(rounds),'paired_rounds':len(rounds),
+                      'mean_paired_TED':float(np.mean(d)),
+                      'delta_PCoA1':float(delta_axis[0]),'delta_PCoA2':float(delta_axis[1])if len(delta_axis)>1 else 0,
+                      'delta_success_V2_minus_BASE':float(np.mean(ds)),
+                      'absolute_delta_success':abs(float(np.mean(ds))),
+                      'BASE_accuracy':float(np.mean(base)),'V2_accuracy':float(np.mean(v2)),
+                      'delta_recorded_tokens':float(np.mean(dt)),
+                      'delta_log1p_tokens':float(np.mean(log)),
+                      'absolute_delta_log1p_tokens':abs(float(np.mean(log))),
+                      'BASE_nodes':float(np.mean(bn)),'V2_nodes':float(np.mean(vn)),
+                      'each_round_distance':d})
+    tests=[]
+    groups=[r['paired_rounds']for r in panel]
+    if mode=='shape_raw':
+        for feature in ['mean_paired_TED','delta_PCoA1','delta_PCoA2']:
+            for target in ['delta_success_V2_minus_BASE','delta_log1p_tokens','absolute_delta_success','absolute_delta_log1p_tokens']:
+                test=corr_test([r[feature]for r in panel],[r[target]for r in panel],groups)
+                tests.append({'feature':feature,'external_target':target,**test})
+    artifact={'question_panel':panel,'external_tests':tests,
+              'signed_outcome_definition':'V2 minus BASE; positive success delta favors V2',
+              'test_note':'9999 outcome permutations within paired-round-count strata; question bootstrap10000; structural axes frozen before outcomes joined'}
+    return artifact
+
+def figures(out,results,external,pcas):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    for dataset in ['SEAL0','FRAMES']:
+        r=results[dataset,'shape_raw'];C=np.array(r['question_pcoa_coordinates']);meta=r['question_arm_metadata']
+        fig,axes=plt.subplots(1,2,figsize=(11,4.7),layout='constrained')
+        for i in range(0,len(C),2):axes[0].plot(C[i:i+2,0],C[i:i+2,1],color='gray',alpha=.2,linewidth=.6)
+        for arm,col,marker in [('BASE','#1f77b4','o'),('V2','#d95f02','^')]:
+            idx=[i for i,m in enumerate(meta)if m['arm']==arm]
+            axes[0].scatter(C[idx,0],C[idx,1],color=col,s=28,alpha=.65,marker=marker,label=arm)
+            axes[0].scatter(C[idx,0].mean(),C[idx,1].mean(),s=150,color=col,marker='X',edgecolor='black')
+        ev=r['question_pcoa_eigenvalues']['Relative_eig']
+        axes[0].set(xlabel=f'PCoA1 ({100*ev[0]:.1f}%)',ylabel=f'PCoA2 ({100*ev[1]:.1f}%)',
+                    title=f'Question means; paired PERMANOVA p={r["treatment_p"]:.4f}')
+        axes[0].legend()
+        pca=pcas[dataset];corr=np.array(pca['variable_PC_correlations']);shown=min(3,corr.shape[1])
+        axes[1].imshow(corr[:,:shown],cmap='RdBu_r',vmin=-1,vmax=1,aspect='auto')
+        axes[1].set_yticks(range(len(pca['retained_features'])),pca['retained_features'])
+        axes[1].set_xticks(range(shown),[f'PC{j+1}\n{100*pca["explained_variance"][j]:.1f}%'for j in range(shown)])
+        for i in range(corr.shape[0]):
+            for j in range(shown):axes[1].text(j,i,f'{corr[i,j]:+.2f}',ha='center',va='center',fontsize=9)
+        axes[1].set_title('Structure-only PCA of V2 - BASE changes')
+        fig.suptitle(dataset+' execution-tree morphology')
+        fig.savefig(out/f'{dataset}_tree_analysis.png',dpi=180);fig.savefig(out/f'{dataset}_tree_analysis.svg');plt.close(fig)
+        panel=external[dataset,'shape_raw']['question_panel']
+        fig,ax=plt.subplots(1,2,figsize=(10,4.3),layout='constrained')
+        x=np.array([r['mean_paired_TED']for r in panel])
+        for a,key,label in zip(ax,['delta_success_V2_minus_BASE','delta_log1p_tokens'],['V2 - BASE accuracy (pp)','V2 - BASE log(1 + tokens)']):
+            y=np.array([r[key]for r in panel]);y=y*100 if 'success'in key else y
+            a.scatter(x,y,alpha=.65,s=28);a.axhline(0,color='gray',ls='--',lw=1)
+            a.set(xlabel='Mean within-question paired raw TED',ylabel=label)
+        fig.suptitle(dataset+': tree change vs external signals')
+        fig.savefig(out/f'{dataset}_external_signals.png',dpi=180);fig.savefig(out/f'{dataset}_external_signals.svg');plt.close(fig)
+
+def build_report(out,results,external,pcas,manifest):
+    lines=['# 执行树形态：结构优先，外部结果随后关联','',
+      '原始轨迹、日志、原生评分和以前分析归档只读；所有派生产物在此独立目录。零Agent/模型/judge调用。主体是逻辑task树；token、工具调用与正确率均为外部信号，不进入树距离、纯结构PCA或PCoA。','',
+      '## 冻结方法','',
+      'SEAL0为94题272组H/R1/R2有效配对（544棵树）；FRAMES为47题47组有效配对（94棵树）。从原生node_start按task_id重建逻辑任务节点，校验唯一根、父子关系、深度、连通性和节点总数。一次任务的Atomizer/Planner/Executor/Aggregator多个阶段保存在派生节点的roles及event_positions里，不是删日志或删除真实工具动作。UUID、题干和时间戳不作为节点标签。','',
+      '并发日志顺序不是兄弟节点语义顺序。主分析先按子树大小与递归括号签名确定性排序，再调用未改的APTED 1.0.3计算有序树编辑距离。非根节点增删成本1，形态节点统一标签；根受保护。明确称“规范排序后的有序TED”，不是最优无序TED。原始TED保留树规模影响；TED/(两树节点数之和)是大小缩放敏感性，未宣称一定满足三角不等式。另用实际阶段集合标签作role敏感性，成本1；不使用LLM语义距离。','',
+      '先对唯一树形的距离矩阵调用ape::pcoa；若有负特征值，采用原生Lingoes校正，报告负谱与加性常数。相同树形始终共享同一坐标，避免因重复实例的校正把相同树形分开。每题每侧平均该题所有有效轮次的完整坐标，再在这些题级均值之间计算距离并作PCoA。均值不是一棵实体树，表示该题该侧重复执行的平均树形位置。图仅展示前两轴，正式检验使用全部维度。','',
+      '直接调用vegan::adonis2(distance ~ question + arm, by="terms")，先控制题目，再检验BASE/V2。permute::shuffleSet生成9999次仅在同题两侧交换的置换；同题重复在计算均值前已合并，没有当作独立题目。全局R²分母是所有题级形态差异，配对内partial R²分母是控制题目后的剩余形态差异，两者不同。分散度用未改的vegan::betadisper(type="median",bias.adjust=TRUE)及permutest，使用同一配对置换。','',
+      '## 树原生主分析与敏感性','',
+      '| 数据集/距离 | 唯一树形 | 负谱占比 | treatment全局R² | 配对内partial R² | pseudo-F | 原始p | 分散度p |',
+      '|---|---:|---:|---:|---:|---:|---:|---:|']
+    for key,r in results.items():
+        dp=r['dispersion_table'][0]['Pr(>F)']
+        lines.append(f'| {key[0]}/{key[1]} | {r["unique_shapes"]} | {100*r["raw_negative_eigenvalue_abs_share"]:.2f}% | {100*r["treatment_global_R2"]:.2f}% | {100*r["treatment_within_pair_partial_R2"]:.2f}% | {r["treatment_pseudo_F"]:.3f} | {r["treatment_p"]:.4f} | {dp:.4f} |')
+    lines += ['', '主分析为shape_raw的两个benchmark，两个p做Holm校正；另外四个为预先固定敏感性，六项整体Holm另列results.json。分散度是解释诊断，不能单凭其不显著证明等方差。所有树形比较结果在关联外部信号前冻结于structure_phase_freeze.json。','']
+    for dataset in ['SEAL0','FRAMES']:
+        r=results[dataset,'shape_raw'];pca=pcas[dataset];artifact=external[dataset,'shape_raw'];panel=artifact['question_panel']
+        lines += [f'## {dataset}','',f'![树形分析]({out}/{dataset}_tree_analysis.png)','',
+          f'纯结构PCA包含10项候选结构差值，去除常数/精确线性别名后{len(pca["retained_features"])}项；未删除近共线变量。前两轴方差{100*pca["explained_variance"][0]:.2f}%、{100*pca["explained_variance"][1]:.2f}%；独立列置换1000次并行分析保留前{pca["parallel_analysis_leading_axes"]}轴。','',
+          f'同题配对平均原生正确率：{100*np.mean([x["BASE_accuracy"]for x in panel]):.2f}%→{100*np.mean([x["V2_accuracy"]for x in panel]):.2f}%。题级平均配对TED={np.mean([x["mean_paired_TED"]for x in panel]):.3f}；距离为无方向的变化量，不能解释成V2更深或更好。','',
+          '| 树变量 | 外部结果（均为V2−BASE） | Pearson r | 题bootstrap95% | Spearman | 置换p | 24项主关联Holm p |',
+          '|---|---|---:|---:|---:|---:|---:|']
+        for t in artifact['external_tests']:
+            if t['pearson_r']is None:continue
+            lo,hi=t['bootstrap95']
+            lines.append(f'| {t["feature"]} | {t["external_target"]} | {t["pearson_r"]:+.3f} | [{lo:+.3f}, {hi:+.3f}] | {t["spearman_r"]:+.3f} | {t["p"]:.4f} | {t["p_Holm_24_main_external"]:.4f} |')
+        lines += ['',f'![外部信号]({out}/{dataset}_external_signals.png)','']
+    lines += ['## 解释边界与来源','',
+      'PERMANOVA检验形态位置是否存在系统性条件差异，不是分类准确率、不是“协作更多”，也不证明形态变化导致正确率变化。规范排序、单位编辑成本、节点定义、距离缩放及Lingoes校正仍是方法选择，不能称为完全无假设。若两侧没有分开，仍可存在更少深层递归等局部结构变化；若分开而success不相关，也不能直接称为性能机制。','',
+      'token由原生完整LLM事件已记录usage求和，含晚到事件，不是轨迹文本长度或账单；未知usage事件另存，不能认为其费用为零。真实工具动作按事件保留，不做行为去重。正确率沿用原生已有分数，未重判。FRAMES预算收缩和缺失样本限制、SEAL0重复轮数差异继续适用，不能推广为整个抽样总体。','',
+      f'执行commit `{manifest["script_commit"]}`；APTED原wheel与其哈希已保存，R包代码哈希、版本、调用函数快照与原生R对象也留档。source_sha256.json记录全部所读来源，结束后逐一复核。借用代码未改。','',
+      '方法来源：[APTED论文与实现](https://github.com/JoaoFelipe/apted)、[ape PCoA](https://search.r-project.org/CRAN/refmans/ape/html/pcoa.html)、[vegan adonis2](https://vegandevs.github.io/vegan/reference/adonis.html)、[vegan betadisper](https://vegandevs.github.io/vegan/reference/betadisper.html)。']
+    (out/'report.md').write_text('\n'.join(lines)+'\n')
+    detail=['# 按官方题号对齐：树距离与外部信号','',
+            '结构距离是无方向量；其余差值为V2−BASE。SEAL0先在同题有效H/R1/R2轮次内平均。token为记录usage；正确率为已有原生评分。','']
+    for dataset in ['SEAL0','FRAMES']:
+        detail += [f'## {dataset}','', '| 题号 | 配对轮数 | BASE/V2平均节点 | 平均TED | BASE→V2正确率 | Δtoken | Δlog-token |','|---|---:|---:|---:|---:|---:|---:|']
+        for r in external[dataset,'shape_raw']['question_panel']:
+            detail.append(f'| {r["question_id"]} | {r["paired_rounds"]} | {r["BASE_nodes"]:.2f}/{r["V2_nodes"]:.2f} | {r["mean_paired_TED"]:.2f} | {100*r["BASE_accuracy"]:.1f}%→{100*r["V2_accuracy"]:.1f}% | {r["delta_recorded_tokens"]:+,.0f} | {r["delta_log1p_tokens"]:+.3f} |')
+        detail += ['']
+    (out/'per_question.md').write_text('\n'.join(detail)+'\n')
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path);args=parser.parse_args()
+    out=args.output or ROOT/'outputs'/('tree_morphology_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'))
+    out=out.resolve();assert not out.exists(),'Never overwrite an analysis archive';out.mkdir(parents=True)
+    repo=Path(__file__).resolve().parent
+    assert not subprocess.check_output(['git','status','--porcelain'],cwd=repo,text=True).strip(),'Commit analysis scripts before running'
+    commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip()
+    plan={'created_utc':datetime.now(timezone.utc).isoformat(),'seed':SEED,
+          'primary':'canonical shape raw rooted unit-cost ordered TED, SEAL0 and FRAMES separately',
+          'sensitivity':['same TED / sum of node counts','actual stage-set node labels'],
+          'canonical_child_order':'subtree size then recursive bracket signature; NOT optimal unordered TED',
+          'replicates':'full-coordinate mean within question/arm; question-equal paired tests',
+          'PCoA':'ape::pcoa unique shapes with Lingoes if needed, all axes retained before question averaging',
+          'PERMANOVA':'vegan::adonis2 ~ question + arm, terms; permute9999 swaps within question',
+          'dispersion':'vegan betadisper median/bias-adjust; permutest same pairing',
+          'external':'after structure freeze; TED and first2 PCoA deltas vs signed/absolute success and log-token deltas; family24 Holm',
+          'original_records_read_only':True,'agent_api_judge_calls':0}
+    save(out/'analysis_plan.json',plan)
+    for script in ['analyze_tree_morphology.py','tree_morphology_native.R']:
+        shutil.copy2(repo/script,out/(script+'.snapshot'))
+    subprocess.run(['git','bundle','create',str(out/'analysis_scripts.bundle'),'HEAD'],cwd=repo,check=True)
+    shutil.copy2(WHEEL,out/WHEEL.name)
+    dep_hash={str(p):sha(p)for base in [DEPS,RLIB]for p in sorted(base.rglob('*'))if p.is_file()and '__pycache__'not in p.parts}
+    save(out/'dependency_sha256.json',dep_hash)
+    records,trees,outcomes=get_data()
+    print('REBUILT', {k:len(v)for k,v in records.items()},str(out),flush=True)
+    protection=2*max(r['logical_task_node_count']for rs in records.values()for r in rs)+1
+    config=RootedUnitCost(protection)
+    # Nontrivial verifier: same-size chain and star must differ, sibling reorder must not.
+    chain=Node('n',[Node('n',[Node('n')])],True);star=Node('n',[Node('n'),Node('n')],True)
+    assert APTED(chain,star,config).compute_edit_distance()==2
+    assert APTED(Node('n',root=True),star,config).compute_edit_distance()==2
+    structure_inputs={};pcas={};matrix_by={}
+    for dataset in ['SEAL0','FRAMES']:
+        save(out/f'{dataset}_derived_trees_ANALYSIS_ONLY.json',records[dataset])
+        shape=distances(records[dataset],trees[dataset],'shape',config,out,dataset)
+        role=distances(records[dataset],trees[dataset],'role',config,out,dataset)
+        normalized={**shape,'mode':'shape_normalized',
+                    'verification':{'raw_distance_checks':shape['verification'],'triangle_inequality_not_assumed':True},
+                    'unique_distances':(np.array(shape['unique_distances'])/
+                     (np.array(shape['unique_sizes'])[:,None]+np.array(shape['unique_sizes'])[None,:])).tolist()}
+        matrices={'shape_raw':shape,'shape_normalized':normalized,'role_raw':role}
+        structure_inputs[dataset]={'observations':[{k:r[k]for k in ['question_id','round','arm']}for r in records[dataset]],
+                                   'distances':matrices}
+        for mode,value in matrices.items():matrix_by[dataset,mode]=value
+        pcas[dataset]=pure_pca(records[dataset]);save(out/f'{dataset}_pure_structure_PCA.json',pcas[dataset])
+    save(out/'structure_distance_inputs.json',structure_inputs)
+    rlog=(out/'native_R.console.log').open('w')
+    print('NATIVE R',str(out),flush=True)
+    completed=subprocess.run(['Rscript',str(repo/'tree_morphology_native.R'),str(out),str(RLIB)],
+                             stdout=rlog,stderr=subprocess.STDOUT)
+    rlog.close();assert completed.returncode==0,'Native R failed; preserve partial output, do not overwrite'
+    results={}
+    for dataset in ['SEAL0','FRAMES']:
+        for mode in ['shape_raw','shape_normalized','role_raw']:
+            path=out/f'{dataset}_{mode}/native_structure_results.json'
+            results[dataset,mode]=json.loads(path.read_text())
+    freeze_files={str(p.relative_to(out)):sha(p)for p in sorted(out.rglob('*'))if p.is_file()and p.name not in ['source_sha256.json']}
+    save(out/'structure_phase_freeze.json',{'created_utc':datetime.now(timezone.utc).isoformat(),
+         'no_outcome_or_cost_used_in_structural_models':True,'files':freeze_files})
+    primary=[results[d,'shape_raw']['treatment_p']for d in ['SEAL0','FRAMES']]
+    for d,p in zip(['SEAL0','FRAMES'],holm(primary)):results[d,'shape_raw']['p_Holm_two_primary']=p
+    for key,p in zip(results,holm([r['treatment_p']for r in results.values()])):results[key]['p_Holm_all_six']=p
+    external={key:external_analysis(*key,records[key[0]],matrix_by[key],results[key],outcomes)for key in results}
+    alltests=[t for key,a in external.items()for t in a['external_tests']if t['p']is not None]
+    for t,p in zip(alltests,holm([t['p']for t in alltests])):t['p_Holm_24_main_external']=p
+    for key,value in external.items():save(out/f'{key[0]}_{key[1]}/external_signals.json',value)
+    save(out/'results.json',{f'{d}_{m}':r for (d,m),r in results.items()})
+    save(out/'source_sha256.json',SOURCES)
+    manifest={'script_commit':commit,'native_dependencies_unmodified':True,'root_protection_cost':protection,
+              'source_files':len(SOURCES),'APTED_version':'1.0.3','APTED_wheel_sha256':sha(WHEEL),
+              'original_traces_logs_scores_modified':False,'agent_api_judge_calls':0,
+              'question_coverage':{d:len(set(r['question_id']for r in rs))for d,rs in records.items()}}
+    save(out/'manifest.json',manifest)
+    figures(out,results,external,pcas);build_report(out,results,external,pcas,manifest)
+    for path,digest in SOURCES.items():assert sha(path)==digest,('Source modified',path)
+    for path,digest in dep_hash.items():assert sha(path)==digest,('Dependency modified',path)
+    for path,digest in freeze_files.items():assert sha(out/path)==digest,('Frozen structure modified',path)
+    subprocess.run(['git','bundle','verify',str(out/'analysis_scripts.bundle')],cwd=repo,check=True,stdout=subprocess.DEVNULL)
+    save(out/'completion_verification.json',{'completed_utc':datetime.now(timezone.utc).isoformat(),
+         'sources_before_after_SHA256_identical':len(SOURCES),'dependencies_unchanged':len(dep_hash),
+         'structure_freeze_verified':True,'original_traces_logs_scores_modified':False,
+         'agent_api_judge_calls':0,'script_commit':commit})
+    files=sorted(p for p in out.rglob('*')if p.is_file()and p.name!='SHA256SUMS')
+    (out/'SHA256SUMS').write_text(''.join(f'{sha(p)}  {p.relative_to(out)}\n'for p in files))
+    for p in files:assert sha(p)==next(line.split()[0]for line in (out/'SHA256SUMS').read_text().splitlines()if line.split(maxsplit=1)[1]==str(p.relative_to(out)))
+    print('COMPLETE',str(out),flush=True)
+    for key,r in results.items():print(key,'R2',r['treatment_global_R2'],'partial',r['treatment_within_pair_partial_R2'],'p',r['treatment_p'],flush=True)
+
+if __name__=='__main__':main()

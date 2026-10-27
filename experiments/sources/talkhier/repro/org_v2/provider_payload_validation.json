@@ -1,0 +1,38 @@
+{
+  "transport": "httpx.MockTransport; no network/provider access",
+  "paid_model_calls": 0,
+  "real_credentials_used": false,
+  "real_authentication_verified": false,
+  "cases": [
+    {
+      "case": "plain",
+      "only_first_system_message_changed": true,
+      "provider_body_tools_schema_and_parameters_equal": true
+    },
+    {
+      "case": "tools",
+      "only_first_system_message_changed": true,
+      "provider_body_tools_schema_and_parameters_equal": true
+    },
+    {
+      "case": "structured",
+      "only_first_system_message_changed": true,
+      "provider_body_tools_schema_and_parameters_equal": true
+    },
+    {
+      "case": "tools_then_structured",
+      "only_first_system_message_changed": true,
+      "provider_body_tools_schema_and_parameters_equal": true
+    },
+    {
+      "case": "main_router",
+      "only_first_system_message_changed": true,
+      "provider_body_tools_schema_and_parameters_equal": true
+    },
+    {
+      "case": "evaluation_router",
+      "only_first_system_message_changed": true,
+      "provider_body_tools_schema_and_parameters_equal": true
+    }
+  ]
+}

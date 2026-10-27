@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "description": "Canonical ROMA study conditions. The two-bit code is intent/plan; static organizational architecture is an independent V2 switch.",
+  "factor_order": [
+    "global_intent_visible",
+    "static_global_architecture_visible"
+  ],
+  "fixed_across_all_conditions": {
+    "plan_visible": true,
+    "second_order_enabled": false,
+    "organization_awareness_mode": "static_global_architecture_v2_only",
+    "architecture_prompt": "global_organizational_architecture_v2.txt"
+  },
+  "condition_code_bit_order": ["intent", "plan"],
+  "conditions": {
+    "intent_off__architecture_off": {
+      "global_intent_visible": false,
+      "static_global_architecture_visible": false,
+      "condition_code": "01"
+    },
+    "intent_off__architecture_on": {
+      "global_intent_visible": false,
+      "static_global_architecture_visible": true,
+      "condition_code": "01"
+    },
+    "intent_on__architecture_off": {
+      "global_intent_visible": true,
+      "static_global_architecture_visible": false,
+      "condition_code": "11"
+    },
+    "intent_on__architecture_on": {
+      "global_intent_visible": true,
+      "static_global_architecture_visible": true,
+      "condition_code": "11"
+    }
+  },
+  "baseline_policy": {
+    "native_base_is_not_a_factorial_cell": true,
+    "reason": "Native BASE makes no message rewrite. Coded conditions explicitly control intent and plan visibility; architecture V2 is the only organization-awareness intervention."
+  }
+}

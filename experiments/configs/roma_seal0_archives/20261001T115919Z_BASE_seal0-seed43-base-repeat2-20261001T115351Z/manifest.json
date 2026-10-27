@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "archive_type": "roma_seal0_paper_run",
+  "run_id": "seal0-seed43-base-repeat2-20261001T115351Z",
+  "condition": "BASE",
+  "status": "partial_or_error",
+  "started_at": "2026-10-01T11:59:19.516974+00:00",
+  "finished_at": "2026-10-01T12:49:00.260095+00:00",
+  "agent": {
+    "checkout": "sources/roma/native",
+    "git": {
+      "path": "sources/roma/native",
+      "git": true,
+      "root": "sources/roma/native",
+      "commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+      "dirty": true,
+      "status": [
+        "M .gitignore",
+        "?? benchmark_subsets/frames_subset_100_seed42.json",
+        "?? benchmark_subsets/seal0_clean_paired_15_seed42.json",
+        "?? scripts/evaluate_frames_subset.py",
+        "?? scripts/frames_subset_utils.py",
+        "?? scripts/sample_frames_subset.py"
+      ]
+    },
+    "runner": "sources/roma/external/run_isolated_seal0.py",
+    "runner_sha256": "7070181f2700493378c235429b01ea759b602903bd04c943d6f776927585810f",
+    "proxy_hook": "sources/roma/proxy/custom_hook.py",
+    "proxy_hook_sha256": "6733a17c23c71de77b14a71c8be46fbf8daa1b6d5afad6225b9396f632ac22b7",
+    "control_layer": {
+      "path": "sources/roma/controls",
+      "git": true,
+      "root": "sources/roma/controls",
+      "commit": "28097a576978939869184e4e743c23a172cf0858",
+      "dirty": true,
+      "status": [
+        "M README.md",
+        " M prompts/global_organizational_architecture_v2.txt",
+        " M test_org_awareness_v2.py",
+        "?? benchmark_subsets/seal0_remaining95_sample15_seed43.json"
+      ]
+    },
+    "adapter_repository": {
+      "path": "sources/roma/external",
+      "git": true,
+      "root": "sources/roma/external",
+      "commit": "05e07285695a1905647672b76d2a1c6c9c84b11e",
+      "dirty": true,
+      "status": [
+        "M paper_run_archive.py",
+        " M run_isolated_seal0.py",
+        " M test_paper_run_config.py"
+      ]
+    },
+    "proxy_repository": {
+      "path": "sources/roma/proxy",
+      "git": true,
+      "root": "sources/roma/proxy",
+      "commit": "5b6957290b6a282471a4dd6eebe331312c907de4",
+      "dirty": false,
+      "status": []
+    },
+    "proxy_stack": "sources/roma/proxy/start_proxy_stack.py",
+    "proxy_stack_sha256": "cb70b72501b5734e60b7b6e9d77d60b9707de690e8066313ba11a618d37b59a9",
+    "cache_adapter": "sources/roma/proxy/qwen_cache_adapter.py",
+    "cache_adapter_sha256": "832ee4bdaffa32f9675c8e3fc48dff11cfe4e337ee65b6c0293e949e781e40c2",
+    "snapshot": {
+      "json": "config/agent_snapshot.json",
+      "profile": "config/agent_snapshot/general.yaml",
+      "profile_sha256": "e04dc4af4058b215d45947e0e31332be6624f4b017289e49dd45b1a17a6e52f7"
+    }
+  },
+  "benchmark": {
+    "name": "SEAL-0",
+    "loader": "prompt_optimization.dataset_loaders.load_seal0_dataset",
+    "seed": 0,
+    "split": "test",
+    "no_split": true,
+    "file": "external_archive/2026-09-12/hira/work/paper_studies/seal0_seed43_paired15_repeats2_parallel4x4_20261001T115351Z/source_snapshot/seal-0.parquet",
+    "file_sha256": "01f60b2b278411b2dd9aa98916c3422f1c7dfc08c214cf4ad3a3596993433fde",
+    "dataset_count": 111,
+    "selected_indices": [
+      3,
+      7,
+      18,
+      25,
+      47,
+      58,
+      67,
+      70,
+      71,
+      75,
+      77,
+      90,
+      91,
+      101,
+      105
+    ],
+    "tasks": [
+      {
+        "index": 3,
+        "task_id": "3",
+        "goal_sha256": "8f435eba10404ed3deda0417acc03c4182859fba9b54ef57b5f2176322626f9c"
+      },
+      {
+        "index": 7,
+        "task_id": "7",
+        "goal_sha256": "2251eb6a222656aeade7f853ec9168207cd9c2736590ce318af97faf9887fdad"
+      },
+      {
+        "index": 18,
+        "task_id": "18",
+        "goal_sha256": "8999039cdd564501d7d41a1e0c89f11db7eac98f9b2e0ac4a4146d82b0eeebbe"
+      },
+      {
+        "index": 25,
+        "task_id": "25",
+        "goal_sha256": "be1af4fe82b72401c006e30d009a9a7e7f552f1cf1168b191c207c636cdacea0"
+      },
+      {
+        "index": 47,
+        "task_id": "47",
+        "goal_sha256": "6ba0284b07ae7eed16ce129fea263efcb1a14d38549f9ed6171a7b3d60e0c385"
+      },
+      {
+        "index": 58,
+        "task_id": "58",
+        "goal_sha256": "26f0dfb5b0e5a024aad2b0123b1f0670d68b19aa9e835b0af9feb852c49ce323"
+      },
+      {
+        "index": 67,
+        "task_id": "67",
+        "goal_sha256": "3002147915d24fdfb6eaf0cce28c617242e48df1c468ea6bab2febf221e7c4e2"
+      },
+      {
+        "index": 70,
+        "task_id": "70",
+        "goal_sha256": "e0bad036abbaa5ea92a9da5e1196a29bb20546412535760005a9be05f60e5465"
+      },
+      {
+        "index": 71,
+        "task_id": "71",
+        "goal_sha256": "80be8d1ef7d153757bbfd7591f18a5facc0a3a9a09a873934e066fd126e80310"
+      },
+      {
+        "index": 75,
+        "task_id": "75",
+        "goal_sha256": "0a765e1ba48896f10a8aa9ecfe40ba691d18df1f6712db833b145ddd7e2dbdfe"
+      },
+      {
+        "index": 77,
+        "task_id": "77",
+        "goal_sha256": "3bd73cbb8c0d6a6db218c27462453b255c992e1fbf1faa10e2b4e4f98fc80807"
+      },
+      {
+        "index": 90,
+        "task_id": "90",
+        "goal_sha256": "77baebc3908c4844fcf98c1b9d5649b180179ae808a8e607174a021df1145fd9"
+      },
+      {
+        "index": 91,
+        "task_id": "91",
+        "goal_sha256": "f3d0240d194b2a8d3a08ab61156f9a7d585b661443a75a81350be2b4b54e90f6"
+      },
+      {
+        "index": 101,
+        "task_id": "101",
+        "goal_sha256": "7ae4d477234ccc4dbe33149f46b4fe04b1c8152306716c8cfe2ba277add63e80"
+      },
+      {
+        "index": 105,
+        "task_id": "105",
+        "goal_sha256": "3e1f064c13054084cc8b11b5807c093fd4823834a59ed7a9f48ae168ca78d28e"
+      }
+    ]
+  },
+  "execution": {
+    "workers": 4,
+    "max_depth": 3,
+    "condition": "BASE",
+    "paper_run": true,
+    "worker_root": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/20261001T115919Z_BASE_seal0-seed43-base-repeat2-20261001T115351Z.workers",
+    "results_csv": "runner_results.csv"
+  },
+  "context_interventions": {
+    "organization_awareness_v2": false,
+    "organization_awareness_v2_prompt_sha256": "e17ebbbef2e0286a6496a86a42a4f22b23e5d43ba0b171690737fedeea46d7a7",
+    "condition_bit_order": [
+      "intent",
+      "plan"
+    ],
+    "organization_awareness_mode": "off",
+    "injection_boundary": "worker_before_litellm",
+    "role_dependent": false
+  },
+  "paper_run_config": {
+    "source": "external_archive/2026-09-12/hira/work/paper_studies/seal0_seed43_paired15_repeats2_parallel4x4_20261001T115351Z/config/base_repeat2.json",
+    "sha256": "3825fb4bfb872f1c2efabf9f9a8aead50f7562b1beb054d80f219dd047021b68",
+    "archive": "config/paper_run_config.json"
+  },
+  "model": {
+    "model": "openai/qwen3.7-flash",
+    "provider": "dashscope-compatible-via-litellm-proxy",
+    "base_url": null,
+    "temperature": "0.0",
+    "max_tokens": null,
+    "seed": null,
+    "note": "Per-request effective decoding fields are also stored in traces/raw_requests.jsonl.",
+    "effective_model": "qwen3.7-flash",
+    "effective_temperature": 0.0,
+    "effective_max_tokens": 8000,
+    "effective_seed": null,
+    "raw_request_count": 307
+  },
+  "python": {
+    "version": "3.12.11",
+    "implementation": "CPython",
+    "executable": "sources/roma/native/.venv/bin/python",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "litellm": "1.78.2",
+      "dspy": "3.0.4b1",
+      "openai": "2.4.0",
+      "pyarrow": "21.0.0",
+      "pandas": "2.3.3",
+      "agentops": null
+    }
+  },
+  "artifacts": {
+    "outputs": "outputs.jsonl",
+    "metrics": "metrics.csv",
+    "raw_traces": "traces",
+    "worker_count": 15,
+    "source_result_csv": "external_archive/2026-09-12/hira/work/paper_runs/20261001T115919Z_BASE_seal0-seed43-base-repeat2-20261001T115351Z/runner_results.csv"
+  },
+  "mlflow": {
+    "run_id": "d20a89079d6b474dae7a14d06ed2133d",
+    "tracking_uri": "sqlite:///sources/roma/controls/mlflow.db",
+    "experiment": "ROMA-Formal-Runs",
+    "status_at_start": "RUNNING"
+  },
+  "controller_state": {
+    "condition": "BASE",
+    "max_depth": 3,
+    "workers": 4,
+    "started_at": "2026-10-01T11:59:21.408867+00:00",
+    "total": 15,
+    "completed": 13,
+    "skipped_provider_blocked": 2,
+    "errors": 0,
+    "active_indices": [],
+    "finished_at": "2026-10-01T12:48:59.697102+00:00"
+  }
+}

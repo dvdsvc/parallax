@@ -1,0 +1,57 @@
+{
+  "client": {
+    "validated_at_utc": "2026-10-06T08:25:04.347941+00:00",
+    "output": "external_archive/2026-10-02/x/work/talkhier/.local/gateway/validation/20261006T082504069224Z_client",
+    "logical_calls": 100,
+    "http_attempts": 200,
+    "transient_429_in_gateway_log": 100,
+    "transient_429_in_model_errors": 0,
+    "logical_id_correlation": true,
+    "request_bytes_identical_on_retry": true,
+    "native_factory_budget_preserved": true,
+    "native_JSON_Schema_dict_preserved": true,
+    "Retry_After_seconds_and_date_supported": true,
+    "exhaustion_stops_native_Exception_retry": true,
+    "exhaustion_failure_domain": "infrastructure",
+    "real_provider_calls": 0
+  },
+  "proxy": {
+    "validated_at_utc": "2026-10-06T09:05:04.779142+00:00",
+    "output": "external_archive/2026-10-02/x/work/talkhier/.local/gateway/validation/20261006T090501413773Z_proxy",
+    "native_LiteLLM_TPM_reservation_blocks_second_inflight_call": true,
+    "native_inflight_stress_concurrency": 100,
+    "native_locally_rejected_concurrent_requests": 99,
+    "rejected_local_429_never_reaches_provider": true,
+    "native_usage_reconciliation_frees_reservation": true,
+    "native_RPM_limit_verified": true,
+    "local_429_origin": "litellm_local",
+    "upstream_429_origin": "qwen_upstream",
+    "upstream_Retry_After_preserved": true,
+    "thinking_and_max_completion_tokens_preserved": true,
+    "mock_upstream_requests": 4,
+    "real_provider_calls": 0
+  },
+  "priority_compatibility": {
+    "validated_at_utc": "2026-10-06T08:57:15.592223+00:00",
+    "output": "external_archive/2026-10-02/x/work/talkhier/.local/gateway/validation/20261006T085712083568Z_proxy",
+    "native_LiteLLM_TPM_reservation_blocks_second_inflight_call": true,
+    "native_inflight_stress_concurrency": 100,
+    "native_locally_rejected_concurrent_requests": 99,
+    "rejected_local_429_never_reaches_provider": true,
+    "native_usage_reconciliation_frees_reservation": true,
+    "native_RPM_limit_verified": true,
+    "local_429_origin": "litellm_local",
+    "upstream_429_origin": "qwen_upstream",
+    "upstream_Retry_After_preserved": true,
+    "thinking_and_max_completion_tokens_preserved": true,
+    "mock_upstream_requests": 4,
+    "real_provider_calls": 0,
+    "native_priority_enabled": true,
+    "shared_key_TPM_rejections_still_return_429_before_router_queue": true
+  },
+  "limitations": [
+    "Shared combined TPM uses native character estimate, not exact Qwen tokenizer.",
+    "Priority scheduler does not queue shared-key TPM rejections.",
+    "Offline tests do not establish real provider performance."
+  ]
+}

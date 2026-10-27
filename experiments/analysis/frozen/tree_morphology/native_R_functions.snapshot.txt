@@ -1,0 +1,469 @@
+function (D, correction = "none", rn = NULL) 
+{
+    centre <- function(D, n) {
+        One <- matrix(1, n, n)
+        mat <- diag(n) - One/n
+        mat.cen <- mat %*% D %*% mat
+        lowtri <- lower.tri(mat.cen)
+        mat.cen[lowtri] <- t(mat.cen)[lowtri]
+        mat.cen
+    }
+    bstick.def <- function(n, tot.var = 1, ...) {
+        res <- rev(cumsum(tot.var/n:1)/n)
+        names(res) <- paste("Stick", seq(len = n), sep = "")
+        return(res)
+    }
+    D <- as.matrix(D)
+    n <- nrow(D)
+    epsilon <- sqrt(.Machine$double.eps)
+    if (length(rn) != 0) {
+        names <- rn
+    }
+    else {
+        names <- rownames(D)
+    }
+    CORRECTIONS <- c("none", "lingoes", "cailliez")
+    correct <- pmatch(correction, CORRECTIONS)
+    if (is.na(correct)) 
+        stop("Invalid correction method")
+    delta1 <- centre((-0.5 * D^2), n)
+    trace <- sum(diag(delta1))
+    D.eig <- eigen(delta1)
+    min.eig <- min(D.eig$values)
+    zero.eig <- which(abs(D.eig$values) < epsilon)
+    D.eig$values[zero.eig] <- 0
+    if (min.eig > -epsilon) {
+        correct <- 1
+        eig <- D.eig$values
+        k <- length(which(eig > epsilon))
+        rel.eig <- eig[1:k]/trace
+        cum.eig <- cumsum(rel.eig)
+        vectors <- sweep(D.eig$vectors[, 1:k, drop = FALSE], 
+            2, sqrt(eig[1:k]), FUN = "*")
+        bs <- bstick.def(k)
+        cum.bs <- cumsum(bs)
+        res <- data.frame(eig[1:k], rel.eig, bs, cum.eig, cum.bs)
+        colnames(res) <- c("Eigenvalues", "Relative_eig", "Broken_stick", 
+            "Cumul_eig", "Cumul_br_stick")
+        rownames(res) <- 1:nrow(res)
+        rownames(vectors) <- names
+        colnames(vectors) <- colnames(vectors, do.NULL = FALSE, 
+            prefix = "Axis.")
+        note <- paste("There were no negative eigenvalues. No correction was applied")
+        out <- (list(correction = c(correction, correct), note = note, 
+            values = res, vectors = vectors, trace = trace))
+    }
+    else {
+        k <- n
+        eig <- D.eig$values
+        rel.eig <- eig/trace
+        rel.eig.cor <- (eig - min.eig)/(trace - (n - 1) * min.eig)
+        if (length(zero.eig)) 
+            rel.eig.cor <- c(rel.eig.cor[-zero.eig[1]], 0)
+        cum.eig.cor <- cumsum(rel.eig.cor)
+        k2 <- length(which(eig > epsilon))
+        k3 <- length(which(rel.eig.cor > epsilon))
+        vectors <- sweep(D.eig$vectors[, 1:k2, drop = FALSE], 
+            2, sqrt(eig[1:k2]), FUN = "*")
+        if ((correct == 2) | (correct == 3)) {
+            if (correct == 2) {
+                c1 <- -min.eig
+                note <- paste("Lingoes correction applied to negative eigenvalues: D' = -0.5*D^2 -", 
+                  c1, ", except diagonal elements")
+                D <- -0.5 * (D^2 + 2 * c1)
+            }
+            else if (correct == 3) {
+                delta2 <- centre((-0.5 * D), n)
+                upper <- cbind(matrix(0, n, n), 2 * delta1)
+                lower <- cbind(-diag(n), -4 * delta2)
+                sp.matrix <- rbind(upper, lower)
+                c2 <- max(Re(eigen(sp.matrix, symmetric = FALSE, 
+                  only.values = TRUE)$values))
+                note <- paste("Cailliez correction applied to negative eigenvalues: D' = -0.5*(D +", 
+                  c2, ")^2, except diagonal elements")
+                D <- -0.5 * (D + c2)^2
+            }
+            diag(D) <- 0
+            mat.cor <- centre(D, n)
+            toto.cor <- eigen(mat.cor)
+            trace.cor <- sum(diag(mat.cor))
+            min.eig.cor <- min(toto.cor$values)
+            zero.eig.cor <- which((toto.cor$values < epsilon) & 
+                (toto.cor$values > -epsilon))
+            toto.cor$values[zero.eig.cor] <- 0
+            if (min.eig.cor > -epsilon) {
+                eig.cor <- toto.cor$values
+                rel.eig.cor <- eig.cor[1:k]/trace.cor
+                cum.eig.cor <- cumsum(rel.eig.cor)
+                k2 <- length(which(eig.cor > epsilon))
+                vectors.cor <- sweep(toto.cor$vectors[, 1:k2, 
+                  drop = FALSE], 2, sqrt(eig.cor[1:k2]), FUN = "*")
+                rownames(vectors.cor) <- names
+                colnames(vectors.cor) <- colnames(vectors.cor, 
+                  do.NULL = FALSE, prefix = "Axis.")
+                bs <- bstick.def(k2)
+                bs <- c(bs, rep(0, (k - k2)))
+                cum.bs <- cumsum(bs)
+            }
+            else {
+                if (correct == 2) 
+                  cat("Problem! Negative eigenvalues are still present after Lingoes", 
+                    "\n")
+                if (correct == 3) 
+                  cat("Problem! Negative eigenvalues are still present after Cailliez", 
+                    "\n")
+                rel.eig.cor <- cum.eig.cor <- bs <- cum.bs <- rep(NA, 
+                  n)
+                vectors.cor <- matrix(NA, n, 2)
+                rownames(vectors.cor) <- names
+                colnames(vectors.cor) <- colnames(vectors.cor, 
+                  do.NULL = FALSE, prefix = "Axis.")
+            }
+            res <- data.frame(eig[1:k], eig.cor[1:k], rel.eig.cor, 
+                bs, cum.eig.cor, cum.bs)
+            colnames(res) <- c("Eigenvalues", "Corr_eig", "Rel_corr_eig", 
+                "Broken_stick", "Cum_corr_eig", "Cum_br_stick")
+            rownames(res) <- 1:nrow(res)
+            rownames(vectors) <- names
+            colnames(vectors) <- colnames(vectors, do.NULL = FALSE, 
+                prefix = "Axis.")
+            out <- (list(correction = c(correction, correct), 
+                note = note, values = res, vectors = vectors, 
+                trace = trace, vectors.cor = vectors.cor, trace.cor = trace.cor))
+        }
+        else {
+            note <- "No correction was applied to the negative eigenvalues"
+            bs <- bstick.def(k3)
+            bs <- c(bs, rep(0, (k - k3)))
+            cum.bs <- cumsum(bs)
+            res <- data.frame(eig[1:k], rel.eig, rel.eig.cor, 
+                bs, cum.eig.cor, cum.bs)
+            colnames(res) <- c("Eigenvalues", "Relative_eig", 
+                "Rel_corr_eig", "Broken_stick", "Cum_corr_eig", 
+                "Cumul_br_stick")
+            rownames(res) <- 1:nrow(res)
+            rownames(vectors) <- names
+            colnames(vectors) <- colnames(vectors, do.NULL = FALSE, 
+                prefix = "Axis.")
+            out <- (list(correction = c(correction, correct), 
+                note = note, values = res, vectors = vectors, 
+                trace = trace))
+        }
+    }
+    class(out) <- "pcoa"
+    out
+}
+<bytecode: 0xb3840c0e8>
+<environment: namespace:ape>
+function (formula, data, permutations = 999, method = "bray", 
+    sqrt.dist = FALSE, add = FALSE, by = NULL, parallel = getOption("mc.cores"), 
+    na.action = na.fail, strata = NULL, ...) 
+{
+    if (missing(data)) 
+        data <- model.frame(delete.response(terms(formula)), 
+            na.action = na.action)
+    if (!is.null(by)) 
+        by <- match.arg(by, c("terms", "margin", "onedf"))
+    YVAR <- formula[[2]]
+    lhs <- eval(YVAR, parent.frame(), environment(formula))
+    environment(formula) <- environment()
+    if ((is.matrix(lhs) || is.data.frame(lhs)) && isSymmetric(unname(as.matrix(lhs)))) 
+        lhs <- as.dist(lhs)
+    if (!inherits(lhs, "dist")) 
+        lhs <- vegdist(as.matrix(lhs), method = method, ...)
+    if (sqrt.dist) 
+        lhs <- sqrt(lhs)
+    if (is.logical(add) && add) 
+        add <- "lingoes"
+    if (is.character(add)) {
+        add <- match.arg(add, c("lingoes", "cailliez"))
+        if (add == "lingoes") {
+            ac <- addLingoes(as.matrix(lhs))
+            lhs <- sqrt(lhs^2 + 2 * ac)
+        }
+        else if (add == "cailliez") {
+            ac <- addCailliez(as.matrix(lhs))
+            lhs <- lhs + ac
+        }
+    }
+    if (!missing(data)) 
+        formula <- terms(formula, data = data)
+    if (is.null(attr(data, "terms"))) 
+        data <- model.frame(delete.response(terms(formula)), 
+            data, na.action = na.action)
+    formula <- update(formula, lhs ~ .)
+    sol <- adonis0(formula, data = data, method = method)
+    perm <- getPermuteMatrix(permutations, NROW(data), strata = strata)
+    out <- anova(sol, permutations = perm, by = by, parallel = parallel)
+    att <- attributes(out)
+    out <- rbind(out, Total = c(nobs(sol) - 1, sol$tot.chi, NA, 
+        NA))
+    out <- cbind(out[, 1:2], R2 = out[, 2]/sol$tot.chi, out[, 
+        3:4])
+    att$heading[2] <- deparse(match.call(), width.cutoff = 500L)
+    att$names <- names(out)
+    att$row.names <- rownames(out)
+    attributes(out) <- att
+    out
+}
+<bytecode: 0xb38467a10>
+<environment: namespace:vegan>
+function (d, group, type = c("median", "centroid"), bias.adjust = FALSE, 
+    sqrt.dist = FALSE, add = FALSE) 
+{
+    dblcen <- function(x, na.rm = TRUE) {
+        cnt <- colMeans(x, na.rm = na.rm)
+        x <- sweep(x, 2L, cnt, check.margin = FALSE)
+        cnt <- rowMeans(x, na.rm = na.rm)
+        sweep(x, 1L, cnt, check.margin = FALSE)
+    }
+    spatialMed <- function(vectors, group, pos) {
+        axes <- seq_len(NCOL(vectors))
+        spMedPos <- ordimedian(vectors, group, choices = axes[pos])
+        spMedNeg <- ordimedian(vectors, group, choices = axes[!pos])
+        cbind(spMedPos, spMedNeg)
+    }
+    centroidFUN <- function(vec, group) {
+        cent <- apply(vec, 2, function(x, group) tapply(x, INDEX = group, 
+            FUN = mean), group = group)
+        if (!is.matrix(cent)) {
+            cent <- matrix(cent, nrow = 1, dimnames = list(as.character(levels(group)), 
+                paste0("Dim", seq_len(NCOL(vec)))))
+        }
+        cent
+    }
+    Resids <- function(x, c) {
+        if (is.matrix(c)) 
+            d <- x - c
+        else d <- sweep(x, 2, c)
+        rowSums(d^2)
+    }
+    TOL <- sqrt(.Machine$double.eps)
+    if (!inherits(d, "dist")) 
+        stop("distances 'd' must be a 'dist' object")
+    if (any(d < -TOL, na.rm = TRUE)) 
+        stop("dissimilarities 'd' must be non-negative")
+    if (sqrt.dist) 
+        d <- sqrt(d)
+    if (is.logical(add) && add) 
+        add <- "lingoes"
+    if (is.character(add)) {
+        add <- match.arg(add, c("lingoes", "cailliez"))
+        if (add == "lingoes") {
+            ac <- addLingoes(as.matrix(d))
+            d <- sqrt(d^2 + 2 * ac)
+        }
+        else if (add == "cailliez") {
+            ac <- addCailliez(as.matrix(d))
+            d <- d + ac
+        }
+    }
+    if (missing(type)) 
+        type <- "median"
+    type <- match.arg(type)
+    group <- if (!is.factor(group)) {
+        as.factor(group)
+    }
+    else {
+        droplevels(group, exclude = NA)
+    }
+    n <- attr(d, "Size")
+    x <- matrix(0, ncol = n, nrow = n)
+    x[row(x) > col(x)] <- d^2
+    labs <- attr(d, "Labels")
+    if (any(gr.na <- is.na(group))) {
+        group <- group[!gr.na]
+        x <- x[!gr.na, !gr.na]
+        n <- n - sum(gr.na)
+        labs <- labs[!gr.na]
+        message("missing observations due to 'group' removed")
+    }
+    if (any(x.na <- apply(x, 1, function(x) any(is.na(x))))) {
+        x <- x[!x.na, !x.na]
+        group <- group[!x.na]
+        n <- n - sum(x.na)
+        labs <- labs[!x.na]
+        message("missing observations due to 'd' removed")
+    }
+    x <- x + t(x)
+    x <- dblcen(x)
+    e <- eigen(-x/2, symmetric = TRUE)
+    vectors <- e$vectors
+    eig <- e$values
+    eig <- eig[(want <- abs(eig) > max(TOL, TOL * eig[1L]))]
+    vectors <- vectors[, want, drop = FALSE] %*% diag(sqrt(abs(eig)), 
+        nrow = length(eig))
+    pos <- eig > 0
+    centroids <- switch(type, centroid = centroidFUN(vectors, 
+        group), median = spatialMed(vectors, group, pos))
+    dist.pos <- Resids(vectors[, pos, drop = FALSE], centroids[group, 
+        pos, drop = FALSE])
+    dist.neg <- 0
+    if (any(!pos)) 
+        dist.neg <- Resids(vectors[, !pos, drop = FALSE], centroids[group, 
+            !pos, drop = FALSE])
+    if (any(dist.neg > dist.pos)) {
+        warning("some squared distances are negative and changed to zero")
+        zij <- Re(sqrt(as.complex(dist.pos - dist.neg)))
+    }
+    else {
+        zij <- sqrt(dist.pos - dist.neg)
+    }
+    if (bias.adjust) {
+        n.group <- as.vector(table(group))
+        zij <- zij * sqrt(n.group[group]/(n.group[group] - 1))
+    }
+    grp.zij <- tapply(zij, group, "mean")
+    if (any(want)) 
+        colnames(vectors) <- names(eig) <- paste("PCoA", seq_along(eig), 
+            sep = "")
+    if (is.matrix(centroids)) 
+        colnames(centroids) <- names(eig)
+    else names(centroids) <- names(eig)
+    rownames(vectors) <- names(zij) <- labs
+    retval <- list(eig = eig, vectors = vectors, distances = zij, 
+        group = group, centroids = centroids, group.distances = grp.zij, 
+        call = match.call())
+    class(retval) <- "betadisper"
+    attr(retval, "method") <- attr(d, "method")
+    attr(retval, "type") <- type
+    attr(retval, "bias.adjust") <- bias.adjust
+    retval
+}
+<bytecode: 0xb3847d070>
+<environment: namespace:vegan>
+function (x, pairwise = FALSE, permutations = 999, parallel = getOption("mc.cores"), 
+    ...) 
+{
+    EPS <- sqrt(.Machine$double.eps)
+    t.statistic <- function(x, y) {
+        m <- length(x)
+        n <- length(y)
+        xbar <- mean(x)
+        ybar <- mean(y)
+        xvar <- var(x)
+        yvar <- var(y)
+        pooled <- sqrt(((m - 1) * xvar + (n - 1) * yvar)/(m + 
+            n - 2))
+        (xbar - ybar)/(pooled * sqrt(1/m + 1/n))
+    }
+    permFun <- function(idx) {
+        if (!is.matrix(idx)) {
+            dim(idx) <- c(1, length(idx))
+        }
+        R <- nrow(idx)
+        Fperm <- matrix(nrow = R, ncol = 1)
+        if (pairwise) {
+            Tperm <- matrix(ncol = n.pairs, nrow = R)
+            Jseq <- seq_len(n.pairs)
+        }
+        rdf <- nobs - p
+        for (i in seq_len(R)) {
+            take <- idx[i, ]
+            p.resid <- resids[take]
+            f <- qr.fitted(mod.Q, p.resid)
+            mss <- sum((f - mean(f))^2)
+            r <- qr.resid(mod.Q, p.resid)
+            rss <- sum(r^2)
+            resvar <- rss/rdf
+            Fperm[i, ] <- (mss/(p - 1))/resvar
+            if (pairwise) {
+                for (j in Jseq) {
+                  grp1 <- x$distance[take][group == combin[1, 
+                    j]]
+                  grp2 <- x$distance[take][group == combin[2, 
+                    j]]
+                  Tperm[i, j] <- t.statistic(grp1, grp2)
+                }
+            }
+        }
+        if (pairwise) {
+            Fperm <- cbind(Fperm, Tperm)
+        }
+        Fperm
+    }
+    if (!inherits(x, "betadisper")) 
+        stop("only for class \"betadisper\"")
+    mod.aov <- anova(x)
+    nobs <- length(x$distances)
+    mod <- lm(x$distances ~ x$group)
+    mod.Q <- mod$qr
+    p <- mod.Q$rank
+    resids <- qr.resid(mod.Q, x$distances)
+    group <- x$group
+    permutations <- getPermuteMatrix(permutations, nobs)
+    nperm <- nrow(permutations)
+    if (pairwise) {
+        combin <- combn(levels(x$group), 2)
+        n.pairs <- ncol(combin)
+    }
+    if (is.null(parallel)) {
+        parallel <- 1
+    }
+    hasClus <- inherits(parallel, "cluster")
+    if (hasClus || parallel > 1L) {
+        if (.Platform$OS.type == "unix" && !hasClus) {
+            Pstats <- do.call("rbind", mclapply(seq_len(nperm), 
+                function(x) permFun(permutations[x, , drop = FALSE]), 
+                mc.cores = parallel))
+        }
+        else {
+            if (!hasClus) {
+                parallel <- makeCluster(parallel)
+                on.exit(stopCluster(parallel))
+            }
+            Pstats <- parApply(parallel, permutations, 1, function(x) permFun(x))
+            if (is.null(dim(Pstats))) {
+                Pstats <- matrix(Pstats)
+            }
+            else {
+                Pstats <- t(Pstats)
+            }
+        }
+    }
+    else {
+        Pstats <- permFun(permutations)
+    }
+    F0 <- summary(mod)$fstatistic[1]
+    Fstats <- Pstats[, 1, drop = TRUE]
+    statistic <- F0
+    names(statistic) <- "Overall (F)"
+    if (pairwise) {
+        T0 <- apply(combn(levels(group), 2), 2, function(z) {
+            t.statistic(x$distances[group == z[1]], x$distances[group == 
+                z[2]])
+        })
+        Tstats <- Pstats[, -1, drop = FALSE]
+        statistic <- c(statistic, T0)
+    }
+    pval <- (sum(Fstats >= F0 - EPS) + 1)/(length(Fstats) + 1)
+    if (pairwise) {
+        df <- apply(combin, 2, function(z) {
+            length(x$distances[group == z[1]]) + length(x$distance[group == 
+                z[2]]) - 2
+        })
+        pairp <- (colSums(sweep(abs(Tstats), 2, abs(T0), ">=")) + 
+            1)/(NROW(Tstats) + 1)
+        pairp <- list(observed = 2 * pt(-abs(T0), df), permuted = pairp)
+        tnames <- apply(combin, 2, paste, collapse = "-")
+        names(pairp$observed) <- names(pairp$permuted) <- tnames
+        names(statistic)[-1] <- paste(tnames, "(t)")
+    }
+    else {
+        pairp <- NULL
+    }
+    retval <- cbind(mod.aov[, 1:4], c(nperm, NA), c(pval, NA))
+    dimnames(retval) <- list(c("Groups", "Residuals"), c("Df", 
+        "Sum Sq", "Mean Sq", "F", "N.Perm", "Pr(>F)"))
+    retval <- list(tab = retval, pairwise = pairp, groups = levels(group), 
+        statistic = statistic, perm = if (pairwise) {
+            structure(cbind(Fstats, Tstats), dimnames = list(NULL, 
+                names(statistic)))
+        } else {
+            structure(Fstats, names = names(statistic))
+        }, control = attr(permutations, "control"))
+    class(retval) <- "permutest.betadisper"
+    retval
+}
+<bytecode: 0xb384f0318>
+<environment: namespace:vegan>

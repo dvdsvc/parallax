@@ -1,0 +1,25 @@
+model_list:
+  - model_name: qwen3.7-flash
+    litellm_params:
+      model: openai/qwen3.7-flash
+      api_base: os.environ/QWEN_BASE_URL
+      api_key: os.environ/QWEN_API_KEY
+      max_retries: 0
+      max_parallel_requests: 256
+
+router_settings:
+  num_retries: 0
+  disable_cooldowns: true
+
+litellm_settings:
+  drop_params: false
+  callbacks:
+    - repro.gateway.hooks.audit
+
+general_settings:
+  custom_auth: repro.gateway.hooks.authenticate
+  token_rate_limit_type: total
+
+# Native token reservation is enabled by LITELLM_TPM_TOKEN_RESERVATION_ENABLED=true.
+# Shared per-key RPM/TPM are supplied by custom_auth from quota.json, not per-condition keys.
+# One proxy process is required for the shared in-memory native limiter.

@@ -1,0 +1,18 @@
+[
+  {
+    "source": "archive://2026-10-02/x/outputs/01a0fbb3-df0e-7863-8526-ce0074debb4f/roma_talkhier_experiment_index_20261007/catalog.json",
+    "sha256": "adf0864028f4852bc0ee312e4742d2caa4b7e76709dfafb7b500fbc096b3e395"
+  },
+  {
+    "source": "archive://2026-10-02/x/outputs/01a0fbb3-df0e-7863-8526-ce0074debb4f/roma_talkhier_experiment_index_20261007/run_archive_index.json",
+    "sha256": "d18155b8848eeca056d4ab125e8f9497d095003469aef8ce618ceb78517d7fea"
+  },
+  {
+    "source": "archive://2026-10-02/x/outputs/01a0fbb3-df0e-7863-8526-ce0074debb4f/roma_talkhier_experiment_index_20261007/curation.json",
+    "sha256": "29559575ecca39a111c88520c517b68c6d4a337751ba45910c1e88e447adf6c2"
+  },
+  {
+    "source": "archive://2026-10-02/x/outputs/01a0fbb3-df0e-7863-8526-ce0074debb4f/roma_talkhier_experiment_index_20261007/version_relations.md",
+    "sha256": "f14ff981d87a206b59d73d7e93edd378657d1f58bc62ee5f83f32e22c98ff6ab"
+  }
+]

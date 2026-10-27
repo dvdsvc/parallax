@@ -1,0 +1,933 @@
+{
+  "summary": {
+    "planned_questions": 50,
+    "valid_pairs": 47,
+    "missing_or_failed_pairs": 3,
+    "BASE_accuracy_paired": 0.723404255319149,
+    "V2_accuracy_paired": 0.8085106382978723,
+    "improved_ids": [
+      63,
+      112,
+      137,
+      304,
+      507,
+      527,
+      762,
+      765
+    ],
+    "regressed_ids": [
+      88,
+      494,
+      705,
+      737
+    ],
+    "both_correct": 30,
+    "both_incorrect": 5,
+    "native_grading_success": 96,
+    "native_grading_errors": 0,
+    "native_grading_excluded": 4
+  },
+  "rows": [
+    {
+      "official_task_id": 14,
+      "loader_index_seed0": 34,
+      "stratum": "E4_L2+",
+      "question": "Which football player got 15 or more assists in La Liga during the 2010-2011 season and also played for Arsenal at one point in his career?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 33,
+      "loader_index_seed0": 14,
+      "stratum": "E4_L2+",
+      "question": "How old would the founder of the publishing company of the magazine that serialized the manga series Raw Hero have been the year the magazine ended publication?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 35,
+      "loader_index_seed0": 21,
+      "stratum": "E5+_L2+",
+      "question": "Of the four main characters on Seinfeld, which actor is the oldest?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 38,
+      "loader_index_seed0": 35,
+      "stratum": "E5+_L1",
+      "question": "Which species from the genus mulona are both found in the same country?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "SKIPPED_PROVIDER_BLOCKED",
+          "grading_status": "ungraded_execution",
+          "score": null
+        }
+      }
+    },
+    {
+      "official_task_id": 52,
+      "loader_index_seed0": 77,
+      "stratum": "E2_L1",
+      "question": "Was the person who served as president of the Scottish National Party from 1987 to 2005 alive when the party was founded?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 61,
+      "loader_index_seed0": 25,
+      "stratum": "E3_L1",
+      "question": "The manga 'Sailor Moon' was authored by a woman. What manga did her husband win the Shogakukan Manga Award for authoring?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 63,
+      "loader_index_seed0": 11,
+      "stratum": "E4_L1",
+      "question": "In the style of wrestling performed by former Greek wrestler Mikhail Theodoropoulos, who won the inaugural olympic medal?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 83,
+      "loader_index_seed0": 26,
+      "stratum": "E2_L1",
+      "question": "As of August 1, 2024, are there any cities in England that are more populated than Philadelphia, and which cities are they?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 88,
+      "loader_index_seed0": 7,
+      "stratum": "E4_L1",
+      "question": "If you were to combine two words, the first of which has a species called Polytrichum piliferum, and the second which has a breed type called Fleckvieh, you'd get the name of what countries capital city?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        }
+      }
+    },
+    {
+      "official_task_id": 112,
+      "loader_index_seed0": 15,
+      "stratum": "E2_L1",
+      "question": "As of the financial year ending July 31st 2023, what was the size of the endowment at the university attended by rugby player Fred McLeod?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 126,
+      "loader_index_seed0": 29,
+      "stratum": "E4_L1",
+      "question": "In the Belgian capital, there is a street named after King Leopold II's oldest daughter which is lined with chestnut trees and is the home to many embassies. What is the capital of the country whose embassy is found at number 425?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 137,
+      "loader_index_seed0": 67,
+      "stratum": "E2_L2+",
+      "question": "If we consider their inception being the date of declared independence, how many years older is the US than Mexico?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 159,
+      "loader_index_seed0": 19,
+      "stratum": "E2_L1",
+      "question": "What is the difference between the fastest recorded swimming speed of a fish, and the fastest record for swimming the 50m freestyle in the 2020 Tokyo Olympics in meters per second?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        }
+      }
+    },
+    {
+      "official_task_id": 189,
+      "loader_index_seed0": 44,
+      "stratum": "E2_L2+",
+      "question": "What was the first elected position of the official that was in the office before Steven C. Johnson became the 42nd Kansas State Treasurer?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 229,
+      "loader_index_seed0": 24,
+      "stratum": "E4_L2+",
+      "question": "As of the 2023 Major League Baseball season, who is the only player in the top 15 lists of career home runs, career runs batted in, and career hits, who was also named (in 2007) the all-time Gold Glove team?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 252,
+      "loader_index_seed0": 4,
+      "stratum": "E3_L2+",
+      "question": "What is the name of the town or city of birth of the player who won the men's singles at the US Open on the year after Venus & Serena Williams played each other for the 8th time as pros?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "SKIPPED_PROVIDER_BLOCKED",
+          "grading_status": "ungraded_execution",
+          "score": null
+        }
+      }
+    },
+    {
+      "official_task_id": 274,
+      "loader_index_seed0": 32,
+      "stratum": "E3_L1",
+      "question": "How many more letters does the name of the city that the director of \"Whiplash\" (2014) was born in have compared the name of the city in which the film first premiered?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 276,
+      "loader_index_seed0": 28,
+      "stratum": "E5+_L1",
+      "question": "Of the 'Big Four' of Thrash Metal, whose debut full-length was released first?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 304,
+      "loader_index_seed0": 38,
+      "stratum": "E3_L2+",
+      "question": "What year was the person born who was Prime Minister of The United Kingdom during the year that the first African American ran for president of the United States?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 314,
+      "loader_index_seed0": 13,
+      "stratum": "E3_L2+",
+      "question": "Using data from the year 2020, if you were to combine the permanent human populations of Aukland Island, Rose Island, and Budelli Island, how many total people would you have?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 337,
+      "loader_index_seed0": 5,
+      "stratum": "E3_L1",
+      "question": "What geographical commonality do the person who first described Apriona brunneomarginata and painter Wolfgang Hutter share?",
+      "arms": {
+        "BASE": {
+          "execution_status": "SKIPPED_PROVIDER_BLOCKED",
+          "grading_status": "ungraded_execution",
+          "score": null
+        },
+        "V2": {
+          "execution_status": "SKIPPED_PROVIDER_BLOCKED",
+          "grading_status": "ungraded_execution",
+          "score": null
+        }
+      }
+    },
+    {
+      "official_task_id": 442,
+      "loader_index_seed0": 12,
+      "stratum": "E5+_L2+",
+      "question": "What is the age difference between the youngest and oldest person, in the 20th Century, to win two Nobel Prizes?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 456,
+      "loader_index_seed0": 72,
+      "stratum": "E3_L2+",
+      "question": "If the person who played the joker in \"The Dark Knight\" (2008) had children, how old will they be on the films 50th anniversary? ",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 470,
+      "loader_index_seed0": 42,
+      "stratum": "E2_L1",
+      "question": "Which country did tennis' first Golden Slam winner represent when they achieved it?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 473,
+      "loader_index_seed0": 9,
+      "stratum": "E3_L1",
+      "question": "In January of 2024, how many colleges were in the district in which the William C. Davis Science building can be found?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 477,
+      "loader_index_seed0": 2,
+      "stratum": "E3_L2+",
+      "question": "Do zebra, giraffe or hippos wean the earliest?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        }
+      }
+    },
+    {
+      "official_task_id": 486,
+      "loader_index_seed0": 1,
+      "stratum": "E3_L2+",
+      "question": "Give me the difference in time, measured in hours not days, between the first solo woman to thru-hike the Appalachian Trail and the fastest recorded solo woman to walk the Appalachian Trail before 2012.",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        }
+      }
+    },
+    {
+      "official_task_id": 494,
+      "loader_index_seed0": 70,
+      "stratum": "E2_L1",
+      "question": "How many years did it take after the FIFA ban was lifted for someone to wear a hijab in the World Cup?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        }
+      }
+    },
+    {
+      "official_task_id": 506,
+      "loader_index_seed0": 53,
+      "stratum": "E3_L1",
+      "question": "What is the full name of the district where the Memory of Mankind project is located?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 507,
+      "loader_index_seed0": 20,
+      "stratum": "E2_L1",
+      "question": "How old was the journalist who reviewed the first iPad for the Wall St Journal when the first iPad came out?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 527,
+      "loader_index_seed0": 79,
+      "stratum": "E2_L2+",
+      "question": "What is the percentage increase of total deaths of Japanese during World War One versus World War Two? Use the largest number count found to calculate as these numbers are often ranges.",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 535,
+      "loader_index_seed0": 3,
+      "stratum": "E5+_L1",
+      "question": "I was one of Bad Religion's drummers between 1990 and 2023. I am from California, but not Los Angeles. Who am I?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 541,
+      "loader_index_seed0": 73,
+      "stratum": "E4_L2+",
+      "question": "Which Kiwi author died the same year as the first British Prime Minister to be elected after the end of World War 1?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        }
+      }
+    },
+    {
+      "official_task_id": 547,
+      "loader_index_seed0": 16,
+      "stratum": "E3_L1",
+      "question": "Sworn in for his second term, who was US President during the only year in history to feature Triple Crown winners in both horse racing AND baseball (War Admiral and St. Louis Cardinals' left fielder Joe Medwick, respectively), as of August 3, 2024?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 586,
+      "loader_index_seed0": 30,
+      "stratum": "E2_L2+",
+      "question": "How long after Archduke Franz Ferdinand received Artstetten Castle did he have his first child?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 597,
+      "loader_index_seed0": 0,
+      "stratum": "E2_L1",
+      "question": "As of August 3rd 2024, what's the name of the university in the city right off exit 183 on I-94 in Michigan?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 622,
+      "loader_index_seed0": 62,
+      "stratum": "E2_L1",
+      "question": "If Alice turned 36 on the day John F. Kennedy was assassinated, how old would she be on the day the Berlin Wall fell?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 627,
+      "loader_index_seed0": 17,
+      "stratum": "E3_L2+",
+      "question": "One episode title from classic Doctor Who series 12 features the name of a Pentateuch book. Can you tell me which part of this episode had the lowest viewing figures in roman numerals?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 629,
+      "loader_index_seed0": 27,
+      "stratum": "E2_L1",
+      "question": "Twin brothers and former linebackers Ricardo and Devon McDonald were drafted into the NFL in 1992 and 1993, respectively. How many more games did one twin play than the other during their NFL career?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 646,
+      "loader_index_seed0": 71,
+      "stratum": "E2_L2+",
+      "question": "How much money would be left of Elon Musk's net worth in January of 2021, if you subtracted the 2022 average yearly gross salary of 10,000 people, working in the Philippines, written in words?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        }
+      }
+    },
+    {
+      "official_task_id": 689,
+      "loader_index_seed0": 18,
+      "stratum": "E4_L2+",
+      "question": "Emma Stone was the highest paid actress in 2017. How much did breakthrough movie for the highest paid actress 6 years after Emma Stone make in its theatrical run?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 705,
+      "loader_index_seed0": 8,
+      "stratum": "E2_L2+",
+      "question": "How many years had the then-Prime Minister of France been in office as PM when the first Shelby GT500 was built?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        }
+      }
+    },
+    {
+      "official_task_id": 711,
+      "loader_index_seed0": 6,
+      "stratum": "E2_L1",
+      "question": "What made-for-TV movie did Dolly Parton have a role in the same year that Dolly the sheep was cloned?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 737,
+      "loader_index_seed0": 60,
+      "stratum": "E3_L2+",
+      "question": "During World War I, the French designed a new military decoration to recognize French and allied soldiers for their service. The sculptor who designed the medal also worked on two war monuments one year after WWI ended. What is the name of the monument that he began work on, but was completed by someone else?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        }
+      }
+    },
+    {
+      "official_task_id": 744,
+      "loader_index_seed0": 31,
+      "stratum": "E5+_L2+",
+      "question": "What is the famous novel by the wife of the 19th-century poet who wrote about an Egyptian pharaoh who reigned sometime between 1290 and 1200 B.C.?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 762,
+      "loader_index_seed0": 59,
+      "stratum": "E2_L2+",
+      "question": "In the season before Jamal Murray won the NBA Championship, who was the fourth overall draft pick?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 765,
+      "loader_index_seed0": 23,
+      "stratum": "E2_L1",
+      "question": "In what year did a great fire destroy over 100 buildings in the North American city which hosted the 2010 G20 summit?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 0
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 794,
+      "loader_index_seed0": 10,
+      "stratum": "E3_L1",
+      "question": "There is a statue, Avukana Buddha, that overlooks a reservoir in Sri Lanka. The reservoir was built by a king in 460 A.D. What is the name of the king's uncle who raised him?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 815,
+      "loader_index_seed0": 33,
+      "stratum": "E3_L2+",
+      "question": "A 2002 science fiction novel by an American author references La Llorona and themes of personal identity. What is the name of the trilogy that this author wrote under the same publisher?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    },
+    {
+      "official_task_id": 816,
+      "loader_index_seed0": 22,
+      "stratum": "E3_L1",
+      "question": "Mary Gaulden Jagger worked in the Biology Division of the Oak Ridge National Laboratory; what type of supercomputer, ranked by the TOP500 as the world's most powerful in June 2022, is present on the campus, and in what year did this supercomputer become operational?",
+      "arms": {
+        "BASE": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        },
+        "V2": {
+          "execution_status": "COMPLETED",
+          "grading_status": "success",
+          "score": 1
+        }
+      }
+    }
+  ],
+  "scope": "Post-launch budget-constrained subset retaining all started tasks. Available matched pairs only; not an unconditional SSRS50 or population estimate. Failures remain null."
+}

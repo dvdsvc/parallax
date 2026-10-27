@@ -1,0 +1,2101 @@
+﻿benchmark,condition,problem_id,role,native_node_visits,output_tool_calls,normal_calls,input_tokens,output_tokens,total_tokens,reasoning_output_tokens,cached_input_tokens
+MMLU-Pro Physics,BASE,8868,Default Supervisor,4,0,4,9195,15025,24220,12506,0
+MMLU-Pro Physics,BASE,8868,Answer Generator,1,0,2,1621,1789,3410,1556,0
+MMLU-Pro Physics,BASE,8868,Evaluator Supervisor,4,0,3,9355,12001,21356,9399,0
+MMLU-Pro Physics,BASE,8868,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,8868,Mathematics,2,2,6,15922,11770,27692,6720,0
+MMLU-Pro Physics,BASE,8868,Revisor,1,0,2,2458,2597,5055,2063,0
+MMLU-Pro Physics,BASE,8868,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,8906,Default Supervisor,4,0,4,10125,11569,21694,8862,0
+MMLU-Pro Physics,BASE,8906,Answer Generator,1,0,2,1522,1502,3024,1059,0
+MMLU-Pro Physics,BASE,8906,Evaluator Supervisor,4,0,3,12312,7398,19710,4659,0
+MMLU-Pro Physics,BASE,8906,Physics,1,14,15,81387,68758,150145,59457,46848
+MMLU-Pro Physics,BASE,8906,Mathematics,1,8,9,49689,28384,78073,19393,6016
+MMLU-Pro Physics,BASE,8906,Revisor,1,0,2,2290,3940,6230,3700,0
+MMLU-Pro Physics,BASE,8906,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,8909,Default Supervisor,4,0,4,15309,12329,27638,7790,0
+MMLU-Pro Physics,BASE,8909,Answer Generator,1,0,2,1788,7443,9231,6396,0
+MMLU-Pro Physics,BASE,8909,Evaluator Supervisor,4,0,3,12751,12391,25142,7674,0
+MMLU-Pro Physics,BASE,8909,Physics,1,1,3,6359,8816,15175,6947,1536
+MMLU-Pro Physics,BASE,8909,Mathematics,1,6,7,31375,24236,55611,18654,13312
+MMLU-Pro Physics,BASE,8909,Revisor,1,0,2,3067,3095,6162,2063,0
+MMLU-Pro Physics,BASE,8909,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,8916,Default Supervisor,4,0,4,15094,13256,28350,9010,0
+MMLU-Pro Physics,BASE,8916,Answer Generator,1,0,2,1860,3938,5798,3016,0
+MMLU-Pro Physics,BASE,8916,Evaluator Supervisor,4,0,3,12313,11747,24060,8010,0
+MMLU-Pro Physics,BASE,8916,Physics,1,1,3,6678,8025,14703,6508,0
+MMLU-Pro Physics,BASE,8916,Mathematics,1,6,8,29868,37076,66944,32756,18048
+MMLU-Pro Physics,BASE,8916,Revisor,1,0,2,3201,4210,7411,3201,0
+MMLU-Pro Physics,BASE,8916,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,8920,Default Supervisor,4,0,4,13156,10565,23721,7418,0
+MMLU-Pro Physics,BASE,8920,Answer Generator,1,1,3,3922,8578,12500,7675,0
+MMLU-Pro Physics,BASE,8920,Evaluator Supervisor,4,0,3,12586,10036,22622,6083,0
+MMLU-Pro Physics,BASE,8920,Physics,1,3,5,14172,17120,31292,14146,6016
+MMLU-Pro Physics,BASE,8920,Mathematics,1,2,4,10683,10143,20826,8183,3712
+MMLU-Pro Physics,BASE,8920,Revisor,1,0,2,3730,4436,8166,3962,0
+MMLU-Pro Physics,BASE,8920,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,8943,Default Supervisor,4,0,4,27554,17869,45423,10640,7936
+MMLU-Pro Physics,BASE,8943,Answer Generator,1,0,2,6650,10128,16778,8708,0
+MMLU-Pro Physics,BASE,8943,Evaluator Supervisor,4,0,3,17349,13846,31195,8831,0
+MMLU-Pro Physics,BASE,8943,Physics,1,2,4,15963,10505,26468,6124,3456
+MMLU-Pro Physics,BASE,8943,Mathematics,1,1,3,8700,12330,21030,8521,0
+MMLU-Pro Physics,BASE,8943,Revisor,1,0,2,3627,14508,18135,12354,0
+MMLU-Pro Physics,BASE,8943,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,8948,Default Supervisor,4,0,4,18294,14603,32897,10724,0
+MMLU-Pro Physics,BASE,8948,Answer Generator,1,1,3,14271,16050,30321,8968,0
+MMLU-Pro Physics,BASE,8948,Evaluator Supervisor,4,0,3,22822,11142,33964,7113,2560
+MMLU-Pro Physics,BASE,8948,Physics,1,0,2,4210,18353,22563,15048,0
+MMLU-Pro Physics,BASE,8948,Mathematics,1,1,3,12864,19673,32537,12194,0
+MMLU-Pro Physics,BASE,8948,Revisor,1,0,2,3526,11240,14766,10382,0
+MMLU-Pro Physics,BASE,8948,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,8969,Default Supervisor,3,0,3,7992,10537,18529,7744,0
+MMLU-Pro Physics,BASE,8969,Answer Generator,1,0,2,2187,10963,13150,10173,0
+MMLU-Pro Physics,BASE,8969,Evaluator Supervisor,4,0,3,15771,13945,29716,9608,0
+MMLU-Pro Physics,BASE,8969,Physics,1,0,2,3883,8395,12278,6415,0
+MMLU-Pro Physics,BASE,8969,Mathematics,1,1,3,7456,7021,14477,5280,1536
+MMLU-Pro Physics,BASE,8969,Revisor,0,0,,,,,,
+MMLU-Pro Physics,BASE,8969,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,8990,Default Supervisor,19,0,19,259853,85567,345420,55329,0
+MMLU-Pro Physics,BASE,8990,Answer Generator,2,2,6,10826,21236,32062,15767,896
+MMLU-Pro Physics,BASE,8990,Evaluator Supervisor,5,0,4,30661,19397,50058,11124,0
+MMLU-Pro Physics,BASE,8990,Physics,2,1,5,19466,14318,33784,8918,0
+MMLU-Pro Physics,BASE,8990,Mathematics,1,1,3,11425,9561,20986,5629,1920
+MMLU-Pro Physics,BASE,8990,Revisor,15,1,31,408489,109300,517789,86877,49280
+MMLU-Pro Physics,BASE,8990,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,8997,Default Supervisor,4,0,4,18408,15837,34245,9617,0
+MMLU-Pro Physics,BASE,8997,Answer Generator,1,0,2,1704,6109,7813,4828,0
+MMLU-Pro Physics,BASE,8997,Evaluator Supervisor,4,0,3,13304,10171,23475,5566,0
+MMLU-Pro Physics,BASE,8997,Physics,1,1,3,7134,9663,16797,7033,0
+MMLU-Pro Physics,BASE,8997,Mathematics,1,1,3,7412,6937,14349,3665,1280
+MMLU-Pro Physics,BASE,8997,Revisor,1,0,2,4885,6503,11388,5775,0
+MMLU-Pro Physics,BASE,8997,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9001,Default Supervisor,6,0,6,16893,24091,40984,18861,1280
+MMLU-Pro Physics,BASE,9001,Answer Generator,2,1,5,5034,15002,20036,12686,640
+MMLU-Pro Physics,BASE,9001,Evaluator Supervisor,5,0,3,7620,10985,18605,7362,0
+MMLU-Pro Physics,BASE,9001,Physics,2,2,6,16172,18287,34459,12448,1920
+MMLU-Pro Physics,BASE,9001,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9001,Revisor,1,0,2,3819,8051,11870,7207,0
+MMLU-Pro Physics,BASE,9001,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9016,Default Supervisor,4,0,4,18588,14533,33121,9532,0
+MMLU-Pro Physics,BASE,9016,Answer Generator,1,0,2,1899,7115,9014,6036,0
+MMLU-Pro Physics,BASE,9016,Evaluator Supervisor,5,0,4,25183,15829,41012,10134,0
+MMLU-Pro Physics,BASE,9016,Physics,2,1,5,16576,16079,32655,11473,0
+MMLU-Pro Physics,BASE,9016,Mathematics,1,1,3,6457,13908,20365,12283,0
+MMLU-Pro Physics,BASE,9016,Revisor,1,1,3,6510,8608,15118,6951,1536
+MMLU-Pro Physics,BASE,9016,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9018,Default Supervisor,4,0,4,11394,9937,21331,7046,0
+MMLU-Pro Physics,BASE,9018,Answer Generator,1,0,2,1280,4264,5544,3612,0
+MMLU-Pro Physics,BASE,9018,Evaluator Supervisor,4,0,3,11442,10715,22157,7548,0
+MMLU-Pro Physics,BASE,9018,Physics,1,0,2,3530,6768,10298,5535,0
+MMLU-Pro Physics,BASE,9018,Mathematics,1,0,2,3339,2155,5494,1083,0
+MMLU-Pro Physics,BASE,9018,Revisor,1,0,2,2656,3889,6545,2896,0
+MMLU-Pro Physics,BASE,9018,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9033,Default Supervisor,4,0,4,17468,18531,35999,12606,0
+MMLU-Pro Physics,BASE,9033,Answer Generator,1,0,2,2167,9642,11809,8074,0
+MMLU-Pro Physics,BASE,9033,Evaluator Supervisor,4,0,3,17334,14907,32241,9736,0
+MMLU-Pro Physics,BASE,9033,Physics,1,3,5,17012,26464,43476,22770,8192
+MMLU-Pro Physics,BASE,9033,Mathematics,1,1,3,8487,14830,23317,11289,0
+MMLU-Pro Physics,BASE,9033,Revisor,1,0,2,4316,11520,15836,9929,0
+MMLU-Pro Physics,BASE,9033,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9044,Default Supervisor,6,0,6,18612,22644,41256,17424,1280
+MMLU-Pro Physics,BASE,9044,Answer Generator,2,0,4,3609,8002,11611,6312,0
+MMLU-Pro Physics,BASE,9044,Evaluator Supervisor,5,0,3,9553,9757,19310,6336,0
+MMLU-Pro Physics,BASE,9044,Physics,2,3,7,16219,26295,42514,21329,0
+MMLU-Pro Physics,BASE,9044,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9044,Revisor,1,0,2,2961,3856,6817,2634,0
+MMLU-Pro Physics,BASE,9044,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9046,Default Supervisor,4,0,4,20991,18476,39467,11638,7680
+MMLU-Pro Physics,BASE,9046,Answer Generator,1,0,2,2337,8122,10459,7060,0
+MMLU-Pro Physics,BASE,9046,Evaluator Supervisor,13,0,12,188879,50533,239412,31570,0
+MMLU-Pro Physics,BASE,9046,Physics,3,3,9,52944,31923,84867,21388,4096
+MMLU-Pro Physics,BASE,9046,Mathematics,8,8,24,262323,105372,367695,80251,32896
+MMLU-Pro Physics,BASE,9046,Revisor,1,1,3,7007,10218,17225,8887,1920
+MMLU-Pro Physics,BASE,9046,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9053,Default Supervisor,19,0,19,180609,78030,258639,52300,0
+MMLU-Pro Physics,BASE,9053,Answer Generator,2,1,5,6464,6349,12813,4317,0
+MMLU-Pro Physics,BASE,9053,Evaluator Supervisor,8,0,6,32946,24207,57153,15134,0
+MMLU-Pro Physics,BASE,9053,Physics,2,0,4,9368,14243,23611,9941,0
+MMLU-Pro Physics,BASE,9053,Mathematics,2,3,7,18582,37197,55779,32581,4480
+MMLU-Pro Physics,BASE,9053,Revisor,14,0,28,272006,47381,319387,35897,32768
+MMLU-Pro Physics,BASE,9053,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9061,Default Supervisor,4,0,4,13999,13262,27261,8415,0
+MMLU-Pro Physics,BASE,9061,Answer Generator,1,0,2,2266,4134,6400,3324,0
+MMLU-Pro Physics,BASE,9061,Evaluator Supervisor,4,0,3,11363,12861,24224,8940,0
+MMLU-Pro Physics,BASE,9061,Physics,1,1,3,5027,8408,13435,6973,1280
+MMLU-Pro Physics,BASE,9061,Mathematics,1,0,2,3649,4565,8214,2865,0
+MMLU-Pro Physics,BASE,9061,Revisor,1,0,2,2791,12262,15053,11729,0
+MMLU-Pro Physics,BASE,9061,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9064,Default Supervisor,4,0,4,10143,17056,27199,14207,0
+MMLU-Pro Physics,BASE,9064,Answer Generator,1,0,2,1640,1881,3521,1549,0
+MMLU-Pro Physics,BASE,9064,Evaluator Supervisor,4,0,3,11275,9530,20805,6745,0
+MMLU-Pro Physics,BASE,9064,Physics,1,1,3,6384,14246,20630,11987,0
+MMLU-Pro Physics,BASE,9064,Mathematics,1,5,7,26123,32997,59120,27791,8320
+MMLU-Pro Physics,BASE,9064,Revisor,1,0,2,2034,4580,6614,4218,0
+MMLU-Pro Physics,BASE,9064,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9083,Default Supervisor,7,0,7,20144,31995,52139,23720,3072
+MMLU-Pro Physics,BASE,9083,Answer Generator,3,0,6,6709,17589,24298,14043,0
+MMLU-Pro Physics,BASE,9083,Evaluator Supervisor,9,0,6,23334,25753,49087,16264,0
+MMLU-Pro Physics,BASE,9083,Physics,3,3,9,23023,29015,52038,21401,2176
+MMLU-Pro Physics,BASE,9083,Mathematics,2,3,7,20192,22856,43048,17641,2816
+MMLU-Pro Physics,BASE,9083,Revisor,0,0,,,,,,
+MMLU-Pro Physics,BASE,9083,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9110,Default Supervisor,4,0,4,11973,14214,26187,10804,0
+MMLU-Pro Physics,BASE,9110,Answer Generator,1,0,2,1618,4648,6266,4055,0
+MMLU-Pro Physics,BASE,9110,Evaluator Supervisor,3,0,2,7256,7582,14838,5980,0
+MMLU-Pro Physics,BASE,9110,Physics,1,0,2,3770,4693,8463,1183,0
+MMLU-Pro Physics,BASE,9110,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9110,Revisor,1,0,2,3185,5713,8898,4425,0
+MMLU-Pro Physics,BASE,9110,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9140,Default Supervisor,4,0,4,13977,15406,29383,10898,0
+MMLU-Pro Physics,BASE,9140,Answer Generator,1,0,2,1817,3108,4925,2268,0
+MMLU-Pro Physics,BASE,9140,Evaluator Supervisor,3,0,2,5532,9486,15018,7124,0
+MMLU-Pro Physics,BASE,9140,Physics,1,1,3,5892,7883,13775,5358,0
+MMLU-Pro Physics,BASE,9140,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9140,Revisor,1,0,2,2948,3758,6706,2912,0
+MMLU-Pro Physics,BASE,9140,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9147,Default Supervisor,6,0,6,20079,21987,42066,16048,1280
+MMLU-Pro Physics,BASE,9147,Answer Generator,2,0,4,4443,9550,13993,7662,0
+MMLU-Pro Physics,BASE,9147,Evaluator Supervisor,6,0,4,14880,18125,33005,12489,0
+MMLU-Pro Physics,BASE,9147,Physics,2,1,5,9711,16000,25711,12357,0
+MMLU-Pro Physics,BASE,9147,Mathematics,1,2,4,10661,10265,20926,7721,2176
+MMLU-Pro Physics,BASE,9147,Revisor,1,0,2,4557,9032,13589,8112,0
+MMLU-Pro Physics,BASE,9147,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9173,Default Supervisor,4,0,4,8176,11832,20008,9828,0
+MMLU-Pro Physics,BASE,9173,Answer Generator,1,0,2,1242,840,2082,681,0
+MMLU-Pro Physics,BASE,9173,Evaluator Supervisor,3,0,2,4534,5240,9774,3960,0
+MMLU-Pro Physics,BASE,9173,Physics,1,1,3,5035,10407,15442,7505,896
+MMLU-Pro Physics,BASE,9173,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9173,Revisor,1,0,2,2133,2969,5102,2293,0
+MMLU-Pro Physics,BASE,9173,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9181,Default Supervisor,4,0,4,12292,12763,25055,9632,0
+MMLU-Pro Physics,BASE,9181,Answer Generator,1,0,2,1885,2417,4302,1944,0
+MMLU-Pro Physics,BASE,9181,Evaluator Supervisor,4,0,3,10864,11504,22368,8513,0
+MMLU-Pro Physics,BASE,9181,Physics,1,0,2,2882,7687,10569,6804,0
+MMLU-Pro Physics,BASE,9181,Mathematics,1,1,3,6856,4621,11477,3024,0
+MMLU-Pro Physics,BASE,9181,Revisor,1,0,2,3084,9395,12479,8919,0
+MMLU-Pro Physics,BASE,9181,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9188,Default Supervisor,4,0,4,16957,18671,35628,14653,0
+MMLU-Pro Physics,BASE,9188,Answer Generator,1,0,2,2759,9998,12757,8478,0
+MMLU-Pro Physics,BASE,9188,Evaluator Supervisor,4,0,3,16156,14545,30701,10856,0
+MMLU-Pro Physics,BASE,9188,Physics,1,1,3,7285,15825,23110,13377,1536
+MMLU-Pro Physics,BASE,9188,Mathematics,1,1,3,6829,16190,23019,13552,1536
+MMLU-Pro Physics,BASE,9188,Revisor,1,0,2,3238,7859,11097,7172,0
+MMLU-Pro Physics,BASE,9188,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9189,Default Supervisor,7,0,7,122560,37815,160375,22459,48768
+MMLU-Pro Physics,BASE,9189,Answer Generator,2,0,2,10002,21296,31298,11741,0
+MMLU-Pro Physics,BASE,9189,Evaluator Supervisor,6,0,4,56974,23746,80720,12655,0
+MMLU-Pro Physics,BASE,9189,Physics,2,1,5,48033,33477,81510,19793,0
+MMLU-Pro Physics,BASE,9189,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9189,Revisor,2,0,4,31432,36188,67620,29359,0
+MMLU-Pro Physics,BASE,9189,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9205,Default Supervisor,4,0,4,15934,14367,30301,9494,0
+MMLU-Pro Physics,BASE,9205,Answer Generator,1,0,2,2620,11543,14163,10373,0
+MMLU-Pro Physics,BASE,9205,Evaluator Supervisor,2,0,1,1912,4324,6236,2545,0
+MMLU-Pro Physics,BASE,9205,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9205,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9205,Revisor,1,0,2,2836,5125,7961,4627,0
+MMLU-Pro Physics,BASE,9205,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9248,Default Supervisor,4,0,4,11886,9832,21718,6632,0
+MMLU-Pro Physics,BASE,9248,Answer Generator,1,0,2,1231,2489,3720,1960,0
+MMLU-Pro Physics,BASE,9248,Evaluator Supervisor,3,0,2,5305,5420,10725,3891,0
+MMLU-Pro Physics,BASE,9248,Physics,1,2,4,10253,6517,16770,3476,2176
+MMLU-Pro Physics,BASE,9248,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9248,Revisor,1,6,8,29419,23933,53352,19474,15744
+MMLU-Pro Physics,BASE,9248,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9262,Default Supervisor,4,0,4,19185,17118,36303,11611,0
+MMLU-Pro Physics,BASE,9262,Answer Generator,1,0,2,2892,9990,12882,8501,0
+MMLU-Pro Physics,BASE,9262,Evaluator Supervisor,4,0,3,14700,13452,28152,9042,0
+MMLU-Pro Physics,BASE,9262,Physics,1,1,3,7860,9308,17168,7389,1920
+MMLU-Pro Physics,BASE,9262,Mathematics,1,2,4,12884,12635,25519,9874,4736
+MMLU-Pro Physics,BASE,9262,Revisor,1,0,2,4868,6227,11095,5569,0
+MMLU-Pro Physics,BASE,9262,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9284,Default Supervisor,4,0,4,13545,16295,29840,12849,0
+MMLU-Pro Physics,BASE,9284,Answer Generator,1,0,2,1697,4013,5710,2972,0
+MMLU-Pro Physics,BASE,9284,Evaluator Supervisor,4,0,3,12039,11063,23102,7881,0
+MMLU-Pro Physics,BASE,9284,Physics,1,1,3,6605,10603,17208,8713,0
+MMLU-Pro Physics,BASE,9284,Mathematics,1,3,5,14449,9857,24306,6738,2816
+MMLU-Pro Physics,BASE,9284,Revisor,1,0,2,2658,5647,8305,4817,0
+MMLU-Pro Physics,BASE,9284,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9287,Default Supervisor,4,0,4,10684,11943,22627,9334,0
+MMLU-Pro Physics,BASE,9287,Answer Generator,1,0,2,1223,3080,4303,2460,0
+MMLU-Pro Physics,BASE,9287,Evaluator Supervisor,2,0,1,1990,2877,4867,2220,0
+MMLU-Pro Physics,BASE,9287,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9287,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9287,Revisor,1,1,3,4627,6840,11467,6131,1280
+MMLU-Pro Physics,BASE,9287,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9290,Default Supervisor,4,0,4,10443,19587,30030,16994,0
+MMLU-Pro Physics,BASE,9290,Answer Generator,1,0,2,1579,2299,3878,2024,0
+MMLU-Pro Physics,BASE,9290,Evaluator Supervisor,3,0,2,6154,6928,13082,5351,0
+MMLU-Pro Physics,BASE,9290,Physics,1,0,2,2988,4808,7796,3493,0
+MMLU-Pro Physics,BASE,9290,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9290,Revisor,1,1,3,3932,3828,7760,3281,896
+MMLU-Pro Physics,BASE,9290,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9295,Default Supervisor,4,0,4,18009,13307,31316,9341,0
+MMLU-Pro Physics,BASE,9295,Answer Generator,1,0,2,3347,10159,13506,7875,0
+MMLU-Pro Physics,BASE,9295,Evaluator Supervisor,4,0,3,13554,10728,24282,6778,0
+MMLU-Pro Physics,BASE,9295,Physics,1,1,3,7756,10696,18452,8748,0
+MMLU-Pro Physics,BASE,9295,Mathematics,1,1,3,9060,11079,20139,6758,0
+MMLU-Pro Physics,BASE,9295,Revisor,1,0,2,4140,3778,7918,3337,0
+MMLU-Pro Physics,BASE,9295,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9302,Default Supervisor,4,0,4,23474,22037,45511,15692,0
+MMLU-Pro Physics,BASE,9302,Answer Generator,1,0,2,3455,9826,13281,7875,0
+MMLU-Pro Physics,BASE,9302,Evaluator Supervisor,4,0,3,19357,19255,38612,12569,0
+MMLU-Pro Physics,BASE,9302,Physics,1,1,3,8587,10447,19034,7591,1920
+MMLU-Pro Physics,BASE,9302,Mathematics,1,0,2,6025,5427,11452,3549,0
+MMLU-Pro Physics,BASE,9302,Revisor,1,0,2,6241,5573,11814,4672,0
+MMLU-Pro Physics,BASE,9302,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9304,Default Supervisor,4,0,4,17877,16131,34008,10675,0
+MMLU-Pro Physics,BASE,9304,Answer Generator,1,0,2,2381,13343,15724,12361,0
+MMLU-Pro Physics,BASE,9304,Evaluator Supervisor,4,0,3,15289,10380,25669,6438,0
+MMLU-Pro Physics,BASE,9304,Physics,1,1,3,7966,19497,27463,16892,0
+MMLU-Pro Physics,BASE,9304,Mathematics,1,1,3,9313,14967,24280,12215,0
+MMLU-Pro Physics,BASE,9304,Revisor,1,1,3,8034,14452,22486,13384,0
+MMLU-Pro Physics,BASE,9304,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9306,Default Supervisor,4,0,4,13617,12385,26002,9061,0
+MMLU-Pro Physics,BASE,9306,Answer Generator,1,0,2,2961,2467,5428,1390,0
+MMLU-Pro Physics,BASE,9306,Evaluator Supervisor,4,0,3,10611,11414,22025,8258,0
+MMLU-Pro Physics,BASE,9306,Physics,1,1,3,6126,5851,11977,4273,0
+MMLU-Pro Physics,BASE,9306,Mathematics,1,3,5,13933,12804,26737,9742,0
+MMLU-Pro Physics,BASE,9306,Revisor,1,1,3,4188,6044,10232,5250,896
+MMLU-Pro Physics,BASE,9306,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9312,Default Supervisor,4,0,4,11208,14664,25872,11537,0
+MMLU-Pro Physics,BASE,9312,Answer Generator,1,0,2,1466,2592,4058,2112,0
+MMLU-Pro Physics,BASE,9312,Evaluator Supervisor,4,0,3,11294,10795,22089,7400,0
+MMLU-Pro Physics,BASE,9312,Physics,1,0,2,3409,5934,9343,4549,0
+MMLU-Pro Physics,BASE,9312,Mathematics,1,2,4,7160,9135,16295,7845,1280
+MMLU-Pro Physics,BASE,9312,Revisor,1,0,2,2711,3507,6218,2942,0
+MMLU-Pro Physics,BASE,9312,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9321,Default Supervisor,6,0,6,51861,20187,72048,12975,17792
+MMLU-Pro Physics,BASE,9321,Answer Generator,2,0,2,6649,16697,23346,11585,0
+MMLU-Pro Physics,BASE,9321,Evaluator Supervisor,4,0,3,20117,14142,34259,9468,0
+MMLU-Pro Physics,BASE,9321,Physics,1,1,3,8477,14308,22785,11542,1920
+MMLU-Pro Physics,BASE,9321,Mathematics,1,0,2,6380,8728,15108,5294,0
+MMLU-Pro Physics,BASE,9321,Revisor,2,0,4,11952,18076,30028,15664,0
+MMLU-Pro Physics,BASE,9321,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9324,Default Supervisor,4,0,4,14955,12776,27731,9045,0
+MMLU-Pro Physics,BASE,9324,Answer Generator,1,0,2,1868,3828,5696,3200,0
+MMLU-Pro Physics,BASE,9324,Evaluator Supervisor,4,0,3,12291,13207,25498,10106,0
+MMLU-Pro Physics,BASE,9324,Physics,1,1,3,6164,8252,14416,6684,0
+MMLU-Pro Physics,BASE,9324,Mathematics,1,0,2,4359,4607,8966,2361,0
+MMLU-Pro Physics,BASE,9324,Revisor,1,0,2,3873,2666,6539,1950,0
+MMLU-Pro Physics,BASE,9324,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9331,Default Supervisor,5,0,5,23843,18093,41936,12043,2176
+MMLU-Pro Physics,BASE,9331,Answer Generator,2,0,4,4878,19487,24365,17669,0
+MMLU-Pro Physics,BASE,9331,Evaluator Supervisor,14,0,13,177891,55733,233624,37819,15872
+MMLU-Pro Physics,BASE,9331,Physics,9,2,20,193338,62794,256132,47979,99456
+MMLU-Pro Physics,BASE,9331,Mathematics,3,1,7,31245,24914,56159,15857,4096
+MMLU-Pro Physics,BASE,9331,Revisor,1,0,2,6489,11231,17720,9408,0
+MMLU-Pro Physics,BASE,9331,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9356,Default Supervisor,4,0,4,13377,18355,31732,15452,0
+MMLU-Pro Physics,BASE,9356,Answer Generator,1,0,2,1399,1647,3046,920,0
+MMLU-Pro Physics,BASE,9356,Evaluator Supervisor,4,0,3,10484,10823,21307,7483,0
+MMLU-Pro Physics,BASE,9356,Physics,1,1,3,5613,4978,10591,3427,0
+MMLU-Pro Physics,BASE,9356,Mathematics,1,0,2,3078,2939,6017,2019,0
+MMLU-Pro Physics,BASE,9356,Revisor,1,1,3,6055,12052,18107,11341,0
+MMLU-Pro Physics,BASE,9356,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9360,Default Supervisor,4,0,4,8864,7651,16515,5251,0
+MMLU-Pro Physics,BASE,9360,Answer Generator,1,0,2,1212,1928,3140,1529,0
+MMLU-Pro Physics,BASE,9360,Evaluator Supervisor,4,0,3,8659,9237,17896,6763,0
+MMLU-Pro Physics,BASE,9360,Physics,1,2,4,7793,6039,13832,4252,896
+MMLU-Pro Physics,BASE,9360,Mathematics,1,4,6,17205,14092,31297,10451,0
+MMLU-Pro Physics,BASE,9360,Revisor,1,0,2,2178,2342,4520,2083,0
+MMLU-Pro Physics,BASE,9360,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9393,Default Supervisor,4,0,4,20376,21799,42175,16907,0
+MMLU-Pro Physics,BASE,9393,Answer Generator,1,0,2,2327,6004,8331,4377,0
+MMLU-Pro Physics,BASE,9393,Evaluator Supervisor,0,0,,,,,,
+MMLU-Pro Physics,BASE,9393,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9393,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9393,Revisor,2,1,5,18072,20465,38537,17064,0
+MMLU-Pro Physics,BASE,9393,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9396,Default Supervisor,4,0,4,8282,8767,17049,6642,0
+MMLU-Pro Physics,BASE,9396,Answer Generator,1,0,2,1218,1317,2535,1086,0
+MMLU-Pro Physics,BASE,9396,Evaluator Supervisor,5,0,4,13165,10353,23518,7550,0
+MMLU-Pro Physics,BASE,9396,Physics,2,1,5,9431,13644,23075,11647,1792
+MMLU-Pro Physics,BASE,9396,Mathematics,1,1,3,4678,4379,9057,3498,896
+MMLU-Pro Physics,BASE,9396,Revisor,1,1,3,3351,7151,10502,6692,896
+MMLU-Pro Physics,BASE,9396,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9397,Default Supervisor,4,0,4,11301,10732,22033,7388,0
+MMLU-Pro Physics,BASE,9397,Answer Generator,1,0,2,1443,9418,10861,8692,0
+MMLU-Pro Physics,BASE,9397,Evaluator Supervisor,2,0,1,2061,3459,5520,2499,0
+MMLU-Pro Physics,BASE,9397,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9397,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9397,Revisor,1,0,2,3188,5522,8710,4831,0
+MMLU-Pro Physics,BASE,9397,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9401,Default Supervisor,3,0,3,11313,8323,19636,5668,0
+MMLU-Pro Physics,BASE,9401,Answer Generator,1,0,2,2394,7251,9645,5568,0
+MMLU-Pro Physics,BASE,9401,Evaluator Supervisor,2,0,1,2070,3989,6059,2417,0
+MMLU-Pro Physics,BASE,9401,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9401,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9401,Revisor,0,0,,,,,,
+MMLU-Pro Physics,BASE,9401,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9403,Default Supervisor,4,0,4,18564,17203,35767,11652,0
+MMLU-Pro Physics,BASE,9403,Answer Generator,1,1,3,5136,12644,17780,10426,0
+MMLU-Pro Physics,BASE,9403,Evaluator Supervisor,4,0,3,15340,12327,27667,7740,0
+MMLU-Pro Physics,BASE,9403,Physics,1,1,3,9308,10342,19650,7171,0
+MMLU-Pro Physics,BASE,9403,Mathematics,1,1,3,8403,11473,19876,8934,1920
+MMLU-Pro Physics,BASE,9403,Revisor,1,0,2,4087,8595,12682,6796,0
+MMLU-Pro Physics,BASE,9403,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9407,Default Supervisor,16,0,16,205078,72448,277526,53446,42624
+MMLU-Pro Physics,BASE,9407,Answer Generator,13,1,25,281776,185521,467297,157418,82816
+MMLU-Pro Physics,BASE,9407,Evaluator Supervisor,8,0,5,30649,27075,57724,19166,0
+MMLU-Pro Physics,BASE,9407,Physics,4,1,9,44200,47579,91779,31307,0
+MMLU-Pro Physics,BASE,9407,Mathematics,1,0,,,,,,
+MMLU-Pro Physics,BASE,9407,Revisor,0,0,,,,,,
+MMLU-Pro Physics,BASE,9407,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9418,Default Supervisor,8,0,8,36181,39701,75882,25753,3072
+MMLU-Pro Physics,BASE,9418,Answer Generator,3,0,6,6654,29773,36427,25820,0
+MMLU-Pro Physics,BASE,9418,Evaluator Supervisor,9,0,6,27731,22852,50583,13150,0
+MMLU-Pro Physics,BASE,9418,Physics,3,2,8,20953,27529,48482,18993,1536
+MMLU-Pro Physics,BASE,9418,Mathematics,2,4,9,34909,30316,65225,21190,1536
+MMLU-Pro Physics,BASE,9418,Revisor,1,0,2,4416,4153,8569,2613,0
+MMLU-Pro Physics,BASE,9418,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9424,Default Supervisor,4,0,4,13740,12184,25924,8367,0
+MMLU-Pro Physics,BASE,9424,Answer Generator,1,0,2,1456,4547,6003,3760,0
+MMLU-Pro Physics,BASE,9424,Evaluator Supervisor,4,0,3,11869,10888,22757,6702,0
+MMLU-Pro Physics,BASE,9424,Physics,1,1,3,6404,8779,15183,6801,0
+MMLU-Pro Physics,BASE,9424,Mathematics,1,1,3,6669,4623,11292,2585,0
+MMLU-Pro Physics,BASE,9424,Revisor,1,0,2,2741,6245,8986,5354,0
+MMLU-Pro Physics,BASE,9424,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9447,Default Supervisor,4,0,4,9543,12128,21671,9715,0
+MMLU-Pro Physics,BASE,9447,Answer Generator,1,0,2,1211,2674,3885,2284,0
+MMLU-Pro Physics,BASE,9447,Evaluator Supervisor,2,0,1,1453,3529,4982,2793,0
+MMLU-Pro Physics,BASE,9447,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9447,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9447,Revisor,1,1,3,3168,4867,8035,4218,0
+MMLU-Pro Physics,BASE,9447,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9455,Default Supervisor,4,0,4,13917,12925,26842,9038,0
+MMLU-Pro Physics,BASE,9455,Answer Generator,1,0,2,2078,3348,5426,2635,0
+MMLU-Pro Physics,BASE,9455,Evaluator Supervisor,4,0,3,10283,11178,21461,7793,0
+MMLU-Pro Physics,BASE,9455,Physics,1,3,5,16873,11328,28201,7006,0
+MMLU-Pro Physics,BASE,9455,Mathematics,1,2,4,9973,7628,17601,4759,1280
+MMLU-Pro Physics,BASE,9455,Revisor,1,1,3,5449,5767,11216,4328,1280
+MMLU-Pro Physics,BASE,9455,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9499,Default Supervisor,4,0,4,15762,16390,32152,12299,0
+MMLU-Pro Physics,BASE,9499,Answer Generator,1,1,3,3447,10734,14181,9579,640
+MMLU-Pro Physics,BASE,9499,Evaluator Supervisor,4,0,3,13049,11047,24096,7809,0
+MMLU-Pro Physics,BASE,9499,Physics,1,1,3,6493,5117,11610,2916,0
+MMLU-Pro Physics,BASE,9499,Mathematics,1,1,3,7256,5647,12903,3435,1280
+MMLU-Pro Physics,BASE,9499,Revisor,1,0,2,3905,1288,5193,539,0
+MMLU-Pro Physics,BASE,9499,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9501,Default Supervisor,6,0,6,60439,28024,88463,15333,17408
+MMLU-Pro Physics,BASE,9501,Answer Generator,2,0,4,19512,42933,62445,26123,0
+MMLU-Pro Physics,BASE,9501,Evaluator Supervisor,5,0,3,15859,23016,38875,12931,0
+MMLU-Pro Physics,BASE,9501,Physics,2,1,5,22018,30447,52465,23499,3456
+MMLU-Pro Physics,BASE,9501,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9501,Revisor,1,0,2,5324,9553,14877,7428,0
+MMLU-Pro Physics,BASE,9501,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9519,Default Supervisor,6,0,6,22234,29853,52087,21389,0
+MMLU-Pro Physics,BASE,9519,Answer Generator,2,1,5,6495,21416,27911,18045,0
+MMLU-Pro Physics,BASE,9519,Evaluator Supervisor,6,0,4,17368,19422,36790,11431,0
+MMLU-Pro Physics,BASE,9519,Physics,2,2,6,21958,22248,44206,16984,4992
+MMLU-Pro Physics,BASE,9519,Mathematics,1,1,3,7836,15097,22933,12730,0
+MMLU-Pro Physics,BASE,9519,Revisor,1,0,2,3347,7777,11124,6269,0
+MMLU-Pro Physics,BASE,9519,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9544,Default Supervisor,4,0,4,8134,15690,23824,13801,0
+MMLU-Pro Physics,BASE,9544,Answer Generator,1,0,2,1057,775,1832,645,0
+MMLU-Pro Physics,BASE,9544,Evaluator Supervisor,4,0,3,8325,8574,16899,5794,0
+MMLU-Pro Physics,BASE,9544,Physics,1,1,3,5048,5634,10682,4711,0
+MMLU-Pro Physics,BASE,9544,Mathematics,1,4,6,19663,17206,36869,13501,4736
+MMLU-Pro Physics,BASE,9544,Revisor,1,0,2,1883,5162,7045,4984,0
+MMLU-Pro Physics,BASE,9544,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9551,Default Supervisor,7,0,7,19995,33030,53025,22442,2560
+MMLU-Pro Physics,BASE,9551,Answer Generator,3,0,6,7393,22777,30170,18772,0
+MMLU-Pro Physics,BASE,9551,Evaluator Supervisor,6,0,4,13511,17457,30968,11144,0
+MMLU-Pro Physics,BASE,9551,Physics,2,2,6,14613,21085,35698,15356,1536
+MMLU-Pro Physics,BASE,9551,Mathematics,2,1,3,8537,6950,15487,4386,3456
+MMLU-Pro Physics,BASE,9551,Revisor,1,1,3,6419,12580,18999,11361,1536
+MMLU-Pro Physics,BASE,9551,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9559,Default Supervisor,4,0,4,25499,14519,40018,7748,0
+MMLU-Pro Physics,BASE,9559,Answer Generator,1,1,3,8286,13284,21570,9389,896
+MMLU-Pro Physics,BASE,9559,Evaluator Supervisor,5,0,4,34634,19031,53665,10851,0
+MMLU-Pro Physics,BASE,9559,Physics,2,2,6,32358,21986,54344,15533,8192
+MMLU-Pro Physics,BASE,9559,Mathematics,1,0,2,6117,8375,14492,6275,0
+MMLU-Pro Physics,BASE,9559,Revisor,1,1,3,11037,17293,28330,13804,0
+MMLU-Pro Physics,BASE,9559,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9582,Default Supervisor,4,0,4,26530,18428,44958,9874,0
+MMLU-Pro Physics,BASE,9582,Answer Generator,1,0,2,3340,11936,15276,9375,0
+MMLU-Pro Physics,BASE,9582,Evaluator Supervisor,4,0,3,21817,19611,41428,11437,0
+MMLU-Pro Physics,BASE,9582,Physics,1,1,3,10297,9093,19390,5312,2176
+MMLU-Pro Physics,BASE,9582,Mathematics,1,0,2,5705,10656,16361,7335,0
+MMLU-Pro Physics,BASE,9582,Revisor,1,0,2,5498,10040,15538,7502,0
+MMLU-Pro Physics,BASE,9582,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9590,Default Supervisor,4,0,4,20537,15314,35851,11920,0
+MMLU-Pro Physics,BASE,9590,Answer Generator,1,0,2,2014,4665,6679,3330,0
+MMLU-Pro Physics,BASE,9590,Evaluator Supervisor,4,0,3,17742,11322,29064,7089,0
+MMLU-Pro Physics,BASE,9590,Physics,1,1,3,8045,12401,20446,9831,0
+MMLU-Pro Physics,BASE,9590,Mathematics,1,1,3,7663,6822,14485,5004,0
+MMLU-Pro Physics,BASE,9590,Revisor,1,0,2,4614,10112,14726,8791,0
+MMLU-Pro Physics,BASE,9590,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9595,Default Supervisor,4,0,4,12751,16435,29186,13125,0
+MMLU-Pro Physics,BASE,9595,Answer Generator,1,0,2,1408,6767,8175,6029,0
+MMLU-Pro Physics,BASE,9595,Evaluator Supervisor,3,0,2,5031,6198,11229,4691,0
+MMLU-Pro Physics,BASE,9595,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9595,Mathematics,1,1,3,5859,10483,16342,8849,0
+MMLU-Pro Physics,BASE,9595,Revisor,1,0,2,2726,2074,4800,1608,0
+MMLU-Pro Physics,BASE,9595,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9596,Default Supervisor,4,0,4,16038,12385,28423,8545,0
+MMLU-Pro Physics,BASE,9596,Answer Generator,1,0,2,2191,9590,11781,8851,0
+MMLU-Pro Physics,BASE,9596,Evaluator Supervisor,4,0,3,15328,11312,26640,7883,0
+MMLU-Pro Physics,BASE,9596,Physics,1,1,3,6969,11696,18665,9025,0
+MMLU-Pro Physics,BASE,9596,Mathematics,1,0,2,3710,12629,16339,10959,0
+MMLU-Pro Physics,BASE,9596,Revisor,1,1,3,6909,7761,14670,6678,1920
+MMLU-Pro Physics,BASE,9596,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9602,Default Supervisor,4,0,4,13711,11862,25573,8302,0
+MMLU-Pro Physics,BASE,9602,Answer Generator,1,0,2,1477,4404,5881,3871,0
+MMLU-Pro Physics,BASE,9602,Evaluator Supervisor,4,0,3,12466,9149,21615,6403,0
+MMLU-Pro Physics,BASE,9602,Physics,1,1,3,6144,10717,16861,8213,1280
+MMLU-Pro Physics,BASE,9602,Mathematics,1,0,2,3315,7241,10556,5414,0
+MMLU-Pro Physics,BASE,9602,Revisor,1,0,2,2953,7764,10717,7202,0
+MMLU-Pro Physics,BASE,9602,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9613,Default Supervisor,4,0,4,12367,18404,30771,15176,0
+MMLU-Pro Physics,BASE,9613,Answer Generator,1,0,2,1721,3003,4724,2490,0
+MMLU-Pro Physics,BASE,9613,Evaluator Supervisor,4,0,3,10634,9197,19831,6263,0
+MMLU-Pro Physics,BASE,9613,Physics,1,0,2,2926,3058,5984,2096,0
+MMLU-Pro Physics,BASE,9613,Mathematics,1,5,6,13011,22382,35393,20116,1920
+MMLU-Pro Physics,BASE,9613,Revisor,1,1,3,4662,6620,11282,5720,0
+MMLU-Pro Physics,BASE,9613,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9630,Default Supervisor,4,0,4,13266,13178,26444,9260,0
+MMLU-Pro Physics,BASE,9630,Answer Generator,1,0,2,1662,2429,4091,1763,0
+MMLU-Pro Physics,BASE,9630,Evaluator Supervisor,4,0,3,10999,11851,22850,8324,0
+MMLU-Pro Physics,BASE,9630,Physics,1,1,3,6473,8481,14954,7065,0
+MMLU-Pro Physics,BASE,9630,Mathematics,1,1,3,7307,10944,18251,9085,0
+MMLU-Pro Physics,BASE,9630,Revisor,1,0,2,2732,2600,5332,2129,0
+MMLU-Pro Physics,BASE,9630,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9632,Default Supervisor,4,0,4,12249,15311,27560,11737,0
+MMLU-Pro Physics,BASE,9632,Answer Generator,1,1,3,3213,6392,9605,5450,0
+MMLU-Pro Physics,BASE,9632,Evaluator Supervisor,4,0,3,9967,13484,23451,10296,0
+MMLU-Pro Physics,BASE,9632,Physics,1,1,3,6449,15317,21766,13389,0
+MMLU-Pro Physics,BASE,9632,Mathematics,1,1,3,5405,4047,9452,2796,1280
+MMLU-Pro Physics,BASE,9632,Revisor,1,0,2,2973,2821,5794,2217,0
+MMLU-Pro Physics,BASE,9632,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9633,Default Supervisor,4,0,4,10694,10319,21013,7327,0
+MMLU-Pro Physics,BASE,9633,Answer Generator,1,0,2,1454,9274,10728,8705,0
+MMLU-Pro Physics,BASE,9633,Evaluator Supervisor,5,0,4,19409,12249,31658,8394,0
+MMLU-Pro Physics,BASE,9633,Physics,2,0,4,10927,11660,22587,8604,1920
+MMLU-Pro Physics,BASE,9633,Mathematics,1,3,5,9198,20240,29438,18182,0
+MMLU-Pro Physics,BASE,9633,Revisor,1,0,2,2407,3949,6356,3398,0
+MMLU-Pro Physics,BASE,9633,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9665,Default Supervisor,3,0,3,21633,18793,40426,10411,2560
+MMLU-Pro Physics,BASE,9665,Answer Generator,1,0,2,4391,9276,13667,7699,0
+MMLU-Pro Physics,BASE,9665,Evaluator Supervisor,4,0,3,22320,18052,40372,11290,0
+MMLU-Pro Physics,BASE,9665,Physics,1,0,2,6210,10232,16442,7340,0
+MMLU-Pro Physics,BASE,9665,Mathematics,1,1,3,13403,13552,26955,9783,0
+MMLU-Pro Physics,BASE,9665,Revisor,0,0,,,,,,
+MMLU-Pro Physics,BASE,9665,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9672,Default Supervisor,6,0,6,15825,17506,33331,12736,0
+MMLU-Pro Physics,BASE,9672,Answer Generator,2,0,4,3749,6889,10638,6003,0
+MMLU-Pro Physics,BASE,9672,Evaluator Supervisor,7,0,5,14734,18951,33685,14366,0
+MMLU-Pro Physics,BASE,9672,Physics,2,6,10,30241,33106,63347,27524,12928
+MMLU-Pro Physics,BASE,9672,Mathematics,2,2,6,12898,12552,25450,9185,0
+MMLU-Pro Physics,BASE,9672,Revisor,1,0,2,3105,2073,5178,1710,0
+MMLU-Pro Physics,BASE,9672,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9676,Default Supervisor,4,0,4,12386,12558,24944,9529,0
+MMLU-Pro Physics,BASE,9676,Answer Generator,1,0,2,1564,2982,4546,2438,0
+MMLU-Pro Physics,BASE,9676,Evaluator Supervisor,3,0,2,5544,6716,12260,5069,0
+MMLU-Pro Physics,BASE,9676,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9676,Mathematics,1,0,2,3489,5304,8793,3625,0
+MMLU-Pro Physics,BASE,9676,Revisor,1,0,2,3147,2194,5341,1710,0
+MMLU-Pro Physics,BASE,9676,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9714,Default Supervisor,4,0,4,12231,13391,25622,9902,0
+MMLU-Pro Physics,BASE,9714,Answer Generator,1,0,2,1631,3973,5604,3251,0
+MMLU-Pro Physics,BASE,9714,Evaluator Supervisor,2,0,1,1924,4030,5954,2519,0
+MMLU-Pro Physics,BASE,9714,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9714,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9714,Revisor,1,1,3,4806,5671,10477,4867,0
+MMLU-Pro Physics,BASE,9714,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9719,Default Supervisor,4,0,4,12421,13471,25892,10658,0
+MMLU-Pro Physics,BASE,9719,Answer Generator,1,0,2,1669,2917,4586,2141,0
+MMLU-Pro Physics,BASE,9719,Evaluator Supervisor,4,0,3,10411,10737,21148,7774,0
+MMLU-Pro Physics,BASE,9719,Physics,1,1,3,5246,8490,13736,7306,0
+MMLU-Pro Physics,BASE,9719,Mathematics,1,1,3,6695,12896,19591,10224,0
+MMLU-Pro Physics,BASE,9719,Revisor,1,0,2,2535,6215,8750,5467,0
+MMLU-Pro Physics,BASE,9719,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9720,Default Supervisor,6,0,6,15014,21019,36033,16666,1280
+MMLU-Pro Physics,BASE,9720,Answer Generator,2,0,4,3027,3820,6847,2756,0
+MMLU-Pro Physics,BASE,9720,Evaluator Supervisor,7,0,5,14796,16391,31187,11245,0
+MMLU-Pro Physics,BASE,9720,Physics,2,3,7,13155,14625,27780,11673,0
+MMLU-Pro Physics,BASE,9720,Mathematics,2,5,9,18794,34942,53736,31452,4480
+MMLU-Pro Physics,BASE,9720,Revisor,1,0,2,2749,5225,7974,4690,0
+MMLU-Pro Physics,BASE,9720,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9732,Default Supervisor,4,0,4,16385,12694,29079,8777,0
+MMLU-Pro Physics,BASE,9732,Answer Generator,1,0,2,2109,1913,4022,1236,0
+MMLU-Pro Physics,BASE,9732,Evaluator Supervisor,3,0,2,6708,6875,13583,4641,0
+MMLU-Pro Physics,BASE,9732,Physics,1,1,3,6766,4525,11291,3120,0
+MMLU-Pro Physics,BASE,9732,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9732,Revisor,1,2,4,8682,20596,29278,19255,3840
+MMLU-Pro Physics,BASE,9732,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9774,Default Supervisor,4,0,4,18057,18363,36420,14192,0
+MMLU-Pro Physics,BASE,9774,Answer Generator,1,0,2,1802,5234,7036,3929,0
+MMLU-Pro Physics,BASE,9774,Evaluator Supervisor,4,0,3,13941,13838,27779,9848,0
+MMLU-Pro Physics,BASE,9774,Physics,1,1,3,7472,12337,19809,10409,0
+MMLU-Pro Physics,BASE,9774,Mathematics,1,0,2,3570,10355,13925,9142,0
+MMLU-Pro Physics,BASE,9774,Revisor,1,0,2,4767,11893,16660,10426,0
+MMLU-Pro Physics,BASE,9774,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9783,Default Supervisor,8,0,8,18544,35180,53724,28628,2560
+MMLU-Pro Physics,BASE,9783,Answer Generator,3,0,6,4570,6477,11047,4473,0
+MMLU-Pro Physics,BASE,9783,Evaluator Supervisor,9,0,6,20183,19923,40106,13667,0
+MMLU-Pro Physics,BASE,9783,Physics,2,1,5,8429,12374,20803,9645,1280
+MMLU-Pro Physics,BASE,9783,Mathematics,2,3,7,13553,26924,40477,21220,2816
+MMLU-Pro Physics,BASE,9783,Revisor,1,1,4,6881,19415,26296,14845,1280
+MMLU-Pro Physics,BASE,9783,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9794,Default Supervisor,7,0,7,39293,25459,64752,18076,7936
+MMLU-Pro Physics,BASE,9794,Answer Generator,1,0,2,2520,3071,5591,2245,0
+MMLU-Pro Physics,BASE,9794,Evaluator Supervisor,4,0,3,13929,10616,24545,6726,0
+MMLU-Pro Physics,BASE,9794,Physics,1,1,3,7469,4586,12055,2082,0
+MMLU-Pro Physics,BASE,9794,Mathematics,1,0,2,5193,6989,12182,3816,0
+MMLU-Pro Physics,BASE,9794,Revisor,4,0,8,25824,19734,45558,16174,14464
+MMLU-Pro Physics,BASE,9794,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9795,Default Supervisor,4,0,4,11465,11618,23083,7954,0
+MMLU-Pro Physics,BASE,9795,Answer Generator,1,0,2,1954,4263,6217,3691,0
+MMLU-Pro Physics,BASE,9795,Evaluator Supervisor,3,0,2,5841,7362,13203,5139,0
+MMLU-Pro Physics,BASE,9795,Physics,1,1,3,6378,10586,16964,8852,0
+MMLU-Pro Physics,BASE,9795,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9795,Revisor,1,1,3,4797,5069,9866,4188,1280
+MMLU-Pro Physics,BASE,9795,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9801,Default Supervisor,12,0,12,101871,41285,143156,26780,9472
+MMLU-Pro Physics,BASE,9801,Answer Generator,1,0,2,1861,2382,4243,1637,0
+MMLU-Pro Physics,BASE,9801,Evaluator Supervisor,4,0,3,14437,10400,24837,6719,0
+MMLU-Pro Physics,BASE,9801,Physics,1,0,2,3769,8771,12540,6310,0
+MMLU-Pro Physics,BASE,9801,Mathematics,1,1,3,6512,5040,11552,2801,1280
+MMLU-Pro Physics,BASE,9801,Revisor,9,0,18,119793,33611,153404,26234,42496
+MMLU-Pro Physics,BASE,9801,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9877,Default Supervisor,3,0,3,11932,11882,23814,7569,0
+MMLU-Pro Physics,BASE,9877,Answer Generator,1,0,2,2337,6487,8824,5540,0
+MMLU-Pro Physics,BASE,9877,Evaluator Supervisor,4,0,3,15702,11960,27662,8151,0
+MMLU-Pro Physics,BASE,9877,Physics,1,0,2,3591,6564,10155,4733,0
+MMLU-Pro Physics,BASE,9877,Mathematics,1,1,3,7644,12673,20317,9461,0
+MMLU-Pro Physics,BASE,9877,Revisor,0,0,,,,,,
+MMLU-Pro Physics,BASE,9877,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9889,Default Supervisor,4,0,4,18195,16918,35113,13052,0
+MMLU-Pro Physics,BASE,9889,Answer Generator,1,0,2,2147,6930,9077,5838,0
+MMLU-Pro Physics,BASE,9889,Evaluator Supervisor,5,0,4,26999,16873,43872,11788,0
+MMLU-Pro Physics,BASE,9889,Physics,2,1,5,18799,20073,38872,16161,4480
+MMLU-Pro Physics,BASE,9889,Mathematics,1,1,3,9352,7970,17322,5126,1536
+MMLU-Pro Physics,BASE,9889,Revisor,1,1,3,6954,12165,19119,10366,0
+MMLU-Pro Physics,BASE,9889,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9948,Default Supervisor,4,0,4,12383,11892,24275,8452,0
+MMLU-Pro Physics,BASE,9948,Answer Generator,1,0,2,1793,2222,4015,1717,0
+MMLU-Pro Physics,BASE,9948,Evaluator Supervisor,3,0,2,7733,8329,16062,6395,0
+MMLU-Pro Physics,BASE,9948,Physics,1,0,2,4318,10518,14836,7824,0
+MMLU-Pro Physics,BASE,9948,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9948,Revisor,1,0,2,2529,5410,7939,5102,0
+MMLU-Pro Physics,BASE,9948,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9953,Default Supervisor,4,0,4,13926,16224,30150,12549,0
+MMLU-Pro Physics,BASE,9953,Answer Generator,1,0,2,1998,3876,5874,3223,0
+MMLU-Pro Physics,BASE,9953,Evaluator Supervisor,2,0,1,1953,3561,5514,1831,0
+MMLU-Pro Physics,BASE,9953,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9953,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,9953,Revisor,1,0,2,2494,2532,5026,2220,0
+MMLU-Pro Physics,BASE,9953,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9958,Default Supervisor,4,0,4,18132,12460,30592,7285,0
+MMLU-Pro Physics,BASE,9958,Answer Generator,1,0,2,1786,3319,5105,2206,0
+MMLU-Pro Physics,BASE,9958,Evaluator Supervisor,4,0,3,11357,12353,23710,8856,0
+MMLU-Pro Physics,BASE,9958,Physics,1,1,3,6072,5637,11709,4145,1536
+MMLU-Pro Physics,BASE,9958,Mathematics,1,1,3,5768,5012,10780,3834,0
+MMLU-Pro Physics,BASE,9958,Revisor,1,0,2,2918,5048,7966,4187,0
+MMLU-Pro Physics,BASE,9958,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9971,Default Supervisor,4,0,4,10716,12968,23684,10235,0
+MMLU-Pro Physics,BASE,9971,Answer Generator,1,0,2,1383,2429,3812,1968,0
+MMLU-Pro Physics,BASE,9971,Evaluator Supervisor,4,0,3,12936,12726,25662,8933,0
+MMLU-Pro Physics,BASE,9971,Physics,1,4,6,16099,11161,27260,7737,4736
+MMLU-Pro Physics,BASE,9971,Mathematics,1,1,3,6289,5981,12270,3752,0
+MMLU-Pro Physics,BASE,9971,Revisor,1,1,3,3590,7108,10698,6525,0
+MMLU-Pro Physics,BASE,9971,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9985,Default Supervisor,4,0,4,17193,14369,31562,10366,0
+MMLU-Pro Physics,BASE,9985,Answer Generator,1,0,2,2015,3919,5934,2832,0
+MMLU-Pro Physics,BASE,9985,Evaluator Supervisor,5,0,4,20231,18819,39050,13986,0
+MMLU-Pro Physics,BASE,9985,Physics,2,3,7,23854,24480,48334,20824,7296
+MMLU-Pro Physics,BASE,9985,Mathematics,1,1,3,6713,5994,12707,4675,0
+MMLU-Pro Physics,BASE,9985,Revisor,1,0,2,3548,1923,5471,1545,0
+MMLU-Pro Physics,BASE,9985,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,9995,Default Supervisor,7,0,7,25677,24663,50340,16826,1280
+MMLU-Pro Physics,BASE,9995,Answer Generator,2,1,5,4627,22260,26887,20168,0
+MMLU-Pro Physics,BASE,9995,Evaluator Supervisor,9,0,7,50873,29894,80767,20708,7936
+MMLU-Pro Physics,BASE,9995,Physics,3,1,7,25728,27354,53082,17298,0
+MMLU-Pro Physics,BASE,9995,Mathematics,2,2,6,13026,19284,32310,14622,0
+MMLU-Pro Physics,BASE,9995,Revisor,2,1,6,9481,23723,33204,18085,896
+MMLU-Pro Physics,BASE,9995,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10004,Default Supervisor,6,0,7,27294,31623,58917,23503,0
+MMLU-Pro Physics,BASE,10004,Answer Generator,2,0,4,4271,8094,12365,6234,0
+MMLU-Pro Physics,BASE,10004,Evaluator Supervisor,20,0,18,266275,88615,354890,61495,15872
+MMLU-Pro Physics,BASE,10004,Physics,16,2,34,455033,88691,543724,62842,107392
+MMLU-Pro Physics,BASE,10004,Mathematics,1,1,3,7054,7353,14407,5842,1536
+MMLU-Pro Physics,BASE,10004,Revisor,1,0,2,3280,5946,9226,5464,0
+MMLU-Pro Physics,BASE,10004,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10016,Default Supervisor,4,0,4,10651,12655,23306,9625,0
+MMLU-Pro Physics,BASE,10016,Answer Generator,1,0,2,1530,2603,4133,2053,0
+MMLU-Pro Physics,BASE,10016,Evaluator Supervisor,4,0,3,9860,10401,20261,8004,0
+MMLU-Pro Physics,BASE,10016,Physics,1,5,6,12508,17706,30214,14046,4480
+MMLU-Pro Physics,BASE,10016,Mathematics,1,1,3,4781,6070,10851,4828,0
+MMLU-Pro Physics,BASE,10016,Revisor,1,1,3,4439,10199,14638,9396,0
+MMLU-Pro Physics,BASE,10016,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10037,Default Supervisor,4,0,4,12126,10440,22566,7240,0
+MMLU-Pro Physics,BASE,10037,Answer Generator,1,0,2,1700,3656,5356,2942,0
+MMLU-Pro Physics,BASE,10037,Evaluator Supervisor,2,0,1,1795,4763,6558,3314,0
+MMLU-Pro Physics,BASE,10037,Physics,0,0,,,,,,
+MMLU-Pro Physics,BASE,10037,Mathematics,0,0,,,,,,
+MMLU-Pro Physics,BASE,10037,Revisor,1,0,2,2457,6070,8527,5356,0
+MMLU-Pro Physics,BASE,10037,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10050,Default Supervisor,3,0,3,6047,14324,20371,12737,0
+MMLU-Pro Physics,BASE,10050,Answer Generator,1,0,2,1180,2558,3738,2084,0
+MMLU-Pro Physics,BASE,10050,Evaluator Supervisor,4,0,3,11329,7768,19097,4955,0
+MMLU-Pro Physics,BASE,10050,Physics,1,0,2,2601,6126,8727,4903,0
+MMLU-Pro Physics,BASE,10050,Mathematics,1,1,3,6450,7281,13731,4375,0
+MMLU-Pro Physics,BASE,10050,Revisor,0,0,,,,,,
+MMLU-Pro Physics,BASE,10050,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10052,Default Supervisor,9,0,9,50370,25836,76206,16894,1280
+MMLU-Pro Physics,BASE,10052,Answer Generator,1,0,2,1322,4339,5661,3628,0
+MMLU-Pro Physics,BASE,10052,Evaluator Supervisor,4,0,3,11577,11768,23345,8073,0
+MMLU-Pro Physics,BASE,10052,Physics,1,0,2,3047,7828,10875,6499,0
+MMLU-Pro Physics,BASE,10052,Mathematics,1,1,3,6327,10322,16649,8558,0
+MMLU-Pro Physics,BASE,10052,Revisor,6,1,13,41443,22424,63867,18330,13312
+MMLU-Pro Physics,BASE,10052,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10061,Default Supervisor,4,0,4,17100,17177,34277,12331,0
+MMLU-Pro Physics,BASE,10061,Answer Generator,1,0,2,2164,5665,7829,4022,0
+MMLU-Pro Physics,BASE,10061,Evaluator Supervisor,4,0,3,19523,15052,34575,8459,0
+MMLU-Pro Physics,BASE,10061,Physics,1,1,3,7909,10807,18716,8174,0
+MMLU-Pro Physics,BASE,10061,Mathematics,1,1,3,8852,8086,16938,5547,0
+MMLU-Pro Physics,BASE,10061,Revisor,1,1,3,8133,15701,23834,13872,1920
+MMLU-Pro Physics,BASE,10061,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10064,Default Supervisor,4,0,4,13697,13234,26931,8994,0
+MMLU-Pro Physics,BASE,10064,Answer Generator,1,0,2,1653,3024,4677,2262,0
+MMLU-Pro Physics,BASE,10064,Evaluator Supervisor,4,0,3,12300,12146,24446,8765,0
+MMLU-Pro Physics,BASE,10064,Physics,1,1,3,7441,6008,13449,3376,0
+MMLU-Pro Physics,BASE,10064,Mathematics,1,1,3,6915,11931,18846,10406,1536
+MMLU-Pro Physics,BASE,10064,Revisor,1,0,2,3649,5383,9032,4503,0
+MMLU-Pro Physics,BASE,10064,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10087,Default Supervisor,6,0,6,24351,18341,42692,11964,1920
+MMLU-Pro Physics,BASE,10087,Answer Generator,2,0,4,5823,16849,22672,14473,0
+MMLU-Pro Physics,BASE,10087,Evaluator Supervisor,8,0,6,34574,24089,58663,13404,0
+MMLU-Pro Physics,BASE,10087,Physics,4,7,13,54304,49387,103691,39017,19840
+MMLU-Pro Physics,BASE,10087,Mathematics,1,1,3,10325,16239,26564,13344,1920
+MMLU-Pro Physics,BASE,10087,Revisor,1,1,3,7596,5400,12996,4031,1920
+MMLU-Pro Physics,BASE,10087,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10091,Default Supervisor,4,0,4,20822,16368,37190,11637,0
+MMLU-Pro Physics,BASE,10091,Answer Generator,1,0,2,2025,13525,15550,11478,0
+MMLU-Pro Physics,BASE,10091,Evaluator Supervisor,4,0,3,21143,14871,36014,9955,0
+MMLU-Pro Physics,BASE,10091,Physics,1,1,3,11440,13763,25203,8110,1920
+MMLU-Pro Physics,BASE,10091,Mathematics,1,1,3,8366,14079,22445,11842,0
+MMLU-Pro Physics,BASE,10091,Revisor,1,0,2,3691,6837,10528,6024,0
+MMLU-Pro Physics,BASE,10091,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10102,Default Supervisor,4,0,4,19672,16792,36464,12973,0
+MMLU-Pro Physics,BASE,10102,Answer Generator,1,0,2,1983,11098,13081,9724,0
+MMLU-Pro Physics,BASE,10102,Evaluator Supervisor,4,0,3,20395,12921,33316,7926,0
+MMLU-Pro Physics,BASE,10102,Physics,1,0,2,3696,13913,17609,10242,0
+MMLU-Pro Physics,BASE,10102,Mathematics,1,1,3,8911,8732,17643,4008,1280
+MMLU-Pro Physics,BASE,10102,Revisor,1,1,3,8463,10418,18881,8830,2176
+MMLU-Pro Physics,BASE,10102,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10121,Default Supervisor,19,0,19,164729,62985,227714,41214,0
+MMLU-Pro Physics,BASE,10121,Answer Generator,2,0,4,3151,4644,7795,3114,0
+MMLU-Pro Physics,BASE,10121,Evaluator Supervisor,7,0,5,14557,18569,33126,13767,0
+MMLU-Pro Physics,BASE,10121,Physics,1,1,3,4962,6782,11744,4857,0
+MMLU-Pro Physics,BASE,10121,Mathematics,2,3,7,14211,12938,27149,8938,0
+MMLU-Pro Physics,BASE,10121,Revisor,14,1,29,261163,59308,320471,49579,37888
+MMLU-Pro Physics,BASE,10121,unknown,0,0,,,,,,
+MMLU-Pro Physics,BASE,10142,Default Supervisor,6,0,6,23734,18913,42647,12667,1536
+MMLU-Pro Physics,BASE,10142,Answer Generator,2,0,4,5395,16586,21981,13523,0
+MMLU-Pro Physics,BASE,10142,Evaluator Supervisor,6,0,4,16925,16282,33207,10865,0
+MMLU-Pro Physics,BASE,10142,Physics,2,7,11,62334,69431,131765,56756,3840
+MMLU-Pro Physics,BASE,10142,Mathematics,1,1,3,10203,8278,18481,5006,0
+MMLU-Pro Physics,BASE,10142,Revisor,1,0,2,5768,11412,17180,9396,0
+MMLU-Pro Physics,BASE,10142,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8868,Default Supervisor,4,0,4,16142,23284,39426,19315,0
+MMLU-Pro Physics,V2,8868,Answer Generator,1,0,2,3622,2305,5927,1655,0
+MMLU-Pro Physics,V2,8868,Evaluator Supervisor,4,0,3,14722,14101,28823,10716,0
+MMLU-Pro Physics,V2,8868,Physics,1,2,4,13045,10710,23755,8253,0
+MMLU-Pro Physics,V2,8868,Mathematics,1,1,3,9089,16446,25535,14037,0
+MMLU-Pro Physics,V2,8868,Revisor,1,0,2,5160,12425,17585,10942,0
+MMLU-Pro Physics,V2,8868,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8906,Default Supervisor,4,0,4,15696,27521,43217,24375,0
+MMLU-Pro Physics,V2,8906,Answer Generator,1,0,2,3478,2437,5915,1918,0
+MMLU-Pro Physics,V2,8906,Evaluator Supervisor,4,0,3,14078,11592,25670,8522,0
+MMLU-Pro Physics,V2,8906,Physics,1,2,4,15113,25071,40184,22550,0
+MMLU-Pro Physics,V2,8906,Mathematics,1,1,3,9198,17652,26850,15250,2176
+MMLU-Pro Physics,V2,8906,Revisor,1,0,2,3943,5714,9657,5160,0
+MMLU-Pro Physics,V2,8906,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8909,Default Supervisor,4,0,4,15794,18986,34780,15071,0
+MMLU-Pro Physics,V2,8909,Answer Generator,1,0,2,3348,8615,11963,7826,0
+MMLU-Pro Physics,V2,8909,Evaluator Supervisor,4,0,3,13988,7995,21983,4613,0
+MMLU-Pro Physics,V2,8909,Physics,1,0,2,4991,15690,20681,14490,0
+MMLU-Pro Physics,V2,8909,Mathematics,1,12,13,69638,56124,125762,49820,11392
+MMLU-Pro Physics,V2,8909,Revisor,1,0,2,4399,4375,8774,3697,0
+MMLU-Pro Physics,V2,8909,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8916,Default Supervisor,6,0,6,24117,19565,43682,14498,0
+MMLU-Pro Physics,V2,8916,Answer Generator,2,0,4,7797,7122,14919,5253,0
+MMLU-Pro Physics,V2,8916,Evaluator Supervisor,7,0,5,24834,21386,46220,15049,0
+MMLU-Pro Physics,V2,8916,Physics,2,7,11,57628,57191,114819,47027,16896
+MMLU-Pro Physics,V2,8916,Mathematics,2,17,20,93800,81225,175025,71823,47360
+MMLU-Pro Physics,V2,8916,Revisor,1,0,2,5203,9486,14689,9176,0
+MMLU-Pro Physics,V2,8916,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8920,Default Supervisor,4,0,4,18493,24081,42574,20091,0
+MMLU-Pro Physics,V2,8920,Answer Generator,1,0,2,3864,12070,15934,11444,0
+MMLU-Pro Physics,V2,8920,Evaluator Supervisor,4,0,3,17455,10766,28221,5471,0
+MMLU-Pro Physics,V2,8920,Physics,1,3,5,21890,17429,39319,14120,0
+MMLU-Pro Physics,V2,8920,Mathematics,1,3,5,20055,25000,45055,21647,6656
+MMLU-Pro Physics,V2,8920,Revisor,1,1,3,8933,8896,17829,6770,0
+MMLU-Pro Physics,V2,8920,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8943,Default Supervisor,13,0,13,105355,74901,180256,52399,10112
+MMLU-Pro Physics,V2,8943,Answer Generator,6,0,12,81411,72113,153524,59220,13696
+MMLU-Pro Physics,V2,8943,Evaluator Supervisor,14,0,9,57788,47153,104941,34068,0
+MMLU-Pro Physics,V2,8943,Physics,3,6,10,44043,53276,97319,40888,5120
+MMLU-Pro Physics,V2,8943,Mathematics,3,6,12,45419,46284,91703,36159,0
+MMLU-Pro Physics,V2,8943,Revisor,2,0,4,8937,19947,28884,17237,0
+MMLU-Pro Physics,V2,8943,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8948,Default Supervisor,5,0,5,57856,23523,81379,18546,15872
+MMLU-Pro Physics,V2,8948,Answer Generator,2,0,4,31849,27536,59385,19044,0
+MMLU-Pro Physics,V2,8948,Evaluator Supervisor,5,0,4,29636,17068,46704,10435,0
+MMLU-Pro Physics,V2,8948,Physics,2,7,11,79286,67739,147025,54132,4480
+MMLU-Pro Physics,V2,8948,Mathematics,1,5,7,33482,36120,69602,32479,4096
+MMLU-Pro Physics,V2,8948,Revisor,1,0,2,5934,6804,12738,5658,0
+MMLU-Pro Physics,V2,8948,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8969,Default Supervisor,20,0,20,118386,66168,184554,49191,0
+MMLU-Pro Physics,V2,8969,Answer Generator,3,0,6,11485,32055,43540,28682,0
+MMLU-Pro Physics,V2,8969,Evaluator Supervisor,10,0,7,34935,31866,66801,23377,0
+MMLU-Pro Physics,V2,8969,Physics,3,23,27,172944,122892,295836,99613,82176
+MMLU-Pro Physics,V2,8969,Mathematics,2,6,10,48292,35373,83665,25804,0
+MMLU-Pro Physics,V2,8969,Revisor,14,4,31,155069,92194,247263,85295,0
+MMLU-Pro Physics,V2,8969,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8990,Default Supervisor,6,0,6,28718,24926,53644,17915,2560
+MMLU-Pro Physics,V2,8990,Answer Generator,2,1,5,10804,25664,36468,22650,1536
+MMLU-Pro Physics,V2,8990,Evaluator Supervisor,7,0,5,28521,24703,53224,17215,0
+MMLU-Pro Physics,V2,8990,Physics,2,7,11,58982,55911,114893,45726,23552
+MMLU-Pro Physics,V2,8990,Mathematics,2,15,19,164262,94928,259190,76975,7680
+MMLU-Pro Physics,V2,8990,Revisor,1,1,3,10256,13699,23955,11820,0
+MMLU-Pro Physics,V2,8990,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,8997,Default Supervisor,4,0,4,19343,23818,43161,18193,0
+MMLU-Pro Physics,V2,8997,Answer Generator,1,0,2,3684,5704,9388,4511,0
+MMLU-Pro Physics,V2,8997,Evaluator Supervisor,4,0,3,19854,13640,33494,8428,2816
+MMLU-Pro Physics,V2,8997,Physics,1,6,8,39166,40351,79517,34506,0
+MMLU-Pro Physics,V2,8997,Mathematics,1,1,3,10692,15168,25860,12186,0
+MMLU-Pro Physics,V2,8997,Revisor,1,1,3,10926,18176,29102,16407,0
+MMLU-Pro Physics,V2,8997,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9001,Default Supervisor,4,0,4,16408,21660,38068,18159,0
+MMLU-Pro Physics,V2,9001,Answer Generator,1,0,2,3192,5360,8552,4634,0
+MMLU-Pro Physics,V2,9001,Evaluator Supervisor,4,0,3,16141,13297,29438,10352,0
+MMLU-Pro Physics,V2,9001,Physics,1,1,3,9078,16073,25151,13722,0
+MMLU-Pro Physics,V2,9001,Mathematics,1,5,7,25853,20537,46390,17231,0
+MMLU-Pro Physics,V2,9001,Revisor,1,1,3,8779,8160,16939,6884,0
+MMLU-Pro Physics,V2,9001,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9016,Default Supervisor,4,0,4,17218,16429,33647,12513,0
+MMLU-Pro Physics,V2,9016,Answer Generator,1,0,2,3903,13169,17072,12031,0
+MMLU-Pro Physics,V2,9016,Evaluator Supervisor,4,0,3,15806,9070,24876,5563,0
+MMLU-Pro Physics,V2,9016,Physics,1,9,11,80431,72619,153050,64683,33152
+MMLU-Pro Physics,V2,9016,Mathematics,1,1,3,10330,15798,26128,13059,0
+MMLU-Pro Physics,V2,9016,Revisor,1,0,2,6186,10206,16392,9125,0
+MMLU-Pro Physics,V2,9016,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9018,Default Supervisor,4,0,4,15359,14991,30350,11837,0
+MMLU-Pro Physics,V2,9018,Answer Generator,1,0,2,3012,3874,6886,3180,0
+MMLU-Pro Physics,V2,9018,Evaluator Supervisor,4,0,3,14207,8313,22520,5272,0
+MMLU-Pro Physics,V2,9018,Physics,1,11,13,64522,62074,126596,55913,36608
+MMLU-Pro Physics,V2,9018,Mathematics,1,1,3,7690,6760,14450,5765,0
+MMLU-Pro Physics,V2,9018,Revisor,1,0,2,5038,5911,10949,5321,0
+MMLU-Pro Physics,V2,9018,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9033,Default Supervisor,8,0,8,28446,34168,62614,25421,0
+MMLU-Pro Physics,V2,9033,Answer Generator,3,0,7,14815,36125,50940,31068,0
+MMLU-Pro Physics,V2,9033,Evaluator Supervisor,9,0,6,29978,24398,54376,16249,0
+MMLU-Pro Physics,V2,9033,Physics,3,16,22,210824,138527,349351,112884,142336
+MMLU-Pro Physics,V2,9033,Mathematics,2,20,23,195844,118651,314495,98531,89216
+MMLU-Pro Physics,V2,9033,Revisor,1,0,2,5018,8981,13999,7849,0
+MMLU-Pro Physics,V2,9033,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9044,Default Supervisor,5,0,5,23123,20683,43806,15100,0
+MMLU-Pro Physics,V2,9044,Answer Generator,1,0,2,3283,4135,7418,3339,0
+MMLU-Pro Physics,V2,9044,Evaluator Supervisor,6,0,4,22116,13404,35520,8424,0
+MMLU-Pro Physics,V2,9044,Physics,1,2,4,14885,21667,36552,18069,3200
+MMLU-Pro Physics,V2,9044,Mathematics,1,1,3,10119,12524,22643,9805,0
+MMLU-Pro Physics,V2,9044,Revisor,1,0,2,6043,3433,9476,2517,0
+MMLU-Pro Physics,V2,9044,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9046,Default Supervisor,4,0,4,18701,19901,38602,17073,0
+MMLU-Pro Physics,V2,9046,Answer Generator,1,1,3,5366,16113,21479,15137,0
+MMLU-Pro Physics,V2,9046,Evaluator Supervisor,4,0,3,18333,13342,31675,9915,0
+MMLU-Pro Physics,V2,9046,Physics,1,6,8,59869,51637,111506,41258,9600
+MMLU-Pro Physics,V2,9046,Mathematics,1,1,3,11897,19475,31372,16286,0
+MMLU-Pro Physics,V2,9046,Revisor,1,1,3,7248,6490,13738,5581,0
+MMLU-Pro Physics,V2,9046,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9053,Default Supervisor,4,0,4,19903,15737,35640,10517,0
+MMLU-Pro Physics,V2,9053,Answer Generator,1,0,2,4536,3284,7820,2302,0
+MMLU-Pro Physics,V2,9053,Evaluator Supervisor,3,0,2,9297,13650,22947,10947,0
+MMLU-Pro Physics,V2,9053,Physics,0,0,,,,,,
+MMLU-Pro Physics,V2,9053,Mathematics,1,5,7,31268,37753,69021,32979,4480
+MMLU-Pro Physics,V2,9053,Revisor,1,1,3,9116,10867,19983,9039,0
+MMLU-Pro Physics,V2,9053,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9061,Default Supervisor,4,0,4,17305,13807,31112,9726,0
+MMLU-Pro Physics,V2,9061,Answer Generator,1,0,2,3738,3483,7221,2638,0
+MMLU-Pro Physics,V2,9061,Evaluator Supervisor,4,0,3,17019,15076,32095,10445,0
+MMLU-Pro Physics,V2,9061,Physics,1,2,4,15425,18126,33551,14805,0
+MMLU-Pro Physics,V2,9061,Mathematics,1,5,7,37327,31547,68874,26350,9856
+MMLU-Pro Physics,V2,9061,Revisor,1,1,3,8241,7487,15728,6149,0
+MMLU-Pro Physics,V2,9061,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9064,Default Supervisor,5,0,5,20368,22889,43257,19191,0
+MMLU-Pro Physics,V2,9064,Answer Generator,1,0,2,3949,1859,5808,913,0
+MMLU-Pro Physics,V2,9064,Evaluator Supervisor,6,0,4,16883,13124,30007,9544,0
+MMLU-Pro Physics,V2,9064,Physics,1,1,3,8418,8704,17122,6170,0
+MMLU-Pro Physics,V2,9064,Mathematics,1,1,3,7991,13255,21246,11716,0
+MMLU-Pro Physics,V2,9064,Revisor,1,0,2,4437,2731,7168,2106,0
+MMLU-Pro Physics,V2,9064,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9083,Default Supervisor,4,0,4,20468,19605,40073,14597,0
+MMLU-Pro Physics,V2,9083,Answer Generator,1,0,2,4000,6259,10259,5125,0
+MMLU-Pro Physics,V2,9083,Evaluator Supervisor,4,0,3,17016,10155,27171,6144,0
+MMLU-Pro Physics,V2,9083,Physics,1,8,10,61154,36405,97559,29738,24192
+MMLU-Pro Physics,V2,9083,Mathematics,1,1,3,11180,20279,31459,17398,0
+MMLU-Pro Physics,V2,9083,Revisor,1,1,3,10704,10792,21496,8300,0
+MMLU-Pro Physics,V2,9083,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9110,Default Supervisor,4,0,4,14931,8293,23224,5190,0
+MMLU-Pro Physics,V2,9110,Answer Generator,1,0,2,3239,7979,11218,7268,0
+MMLU-Pro Physics,V2,9110,Evaluator Supervisor,4,0,3,16028,9264,25292,6237,0
+MMLU-Pro Physics,V2,9110,Physics,1,1,3,8706,15887,24593,13484,0
+MMLU-Pro Physics,V2,9110,Mathematics,1,1,3,8512,11440,19952,7874,0
+MMLU-Pro Physics,V2,9110,Revisor,1,0,2,5694,7770,13464,7392,0
+MMLU-Pro Physics,V2,9110,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9140,Default Supervisor,4,0,4,18605,10852,29457,5710,0
+MMLU-Pro Physics,V2,9140,Answer Generator,1,0,2,3697,3360,7057,2386,0
+MMLU-Pro Physics,V2,9140,Evaluator Supervisor,4,0,3,18557,20285,38842,15829,0
+MMLU-Pro Physics,V2,9140,Physics,1,1,3,9609,13611,23220,11823,0
+MMLU-Pro Physics,V2,9140,Mathematics,1,10,12,72591,51839,124430,43667,7680
+MMLU-Pro Physics,V2,9140,Revisor,1,0,2,5603,6001,11604,5376,0
+MMLU-Pro Physics,V2,9140,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9147,Default Supervisor,4,0,4,17061,16395,33456,11789,0
+MMLU-Pro Physics,V2,9147,Answer Generator,1,0,2,3745,7422,11167,6442,0
+MMLU-Pro Physics,V2,9147,Evaluator Supervisor,4,0,3,16252,13486,29738,8776,0
+MMLU-Pro Physics,V2,9147,Physics,1,2,4,15727,21938,37665,18553,0
+MMLU-Pro Physics,V2,9147,Mathematics,1,2,4,13641,11747,25388,9362,0
+MMLU-Pro Physics,V2,9147,Revisor,1,0,2,5181,9442,14623,8930,0
+MMLU-Pro Physics,V2,9147,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9173,Default Supervisor,4,0,4,12464,9986,22450,7418,0
+MMLU-Pro Physics,V2,9173,Answer Generator,1,0,2,3190,1032,4222,788,0
+MMLU-Pro Physics,V2,9173,Evaluator Supervisor,4,0,3,12284,12977,25261,10542,0
+MMLU-Pro Physics,V2,9173,Physics,1,2,4,10997,16523,27520,14636,0
+MMLU-Pro Physics,V2,9173,Mathematics,1,5,6,23815,28462,52277,24942,0
+MMLU-Pro Physics,V2,9173,Revisor,1,0,2,4122,4880,9002,4280,0
+MMLU-Pro Physics,V2,9173,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9181,Default Supervisor,6,0,6,21922,17432,39354,12433,0
+MMLU-Pro Physics,V2,9181,Answer Generator,2,0,4,7103,4664,11767,3600,0
+MMLU-Pro Physics,V2,9181,Evaluator Supervisor,7,0,5,23260,16684,39944,10633,0
+MMLU-Pro Physics,V2,9181,Physics,2,4,8,26065,33931,59996,30423,0
+MMLU-Pro Physics,V2,9181,Mathematics,2,16,18,67542,85809,153351,78905,13952
+MMLU-Pro Physics,V2,9181,Revisor,1,1,3,7848,4098,11946,3253,0
+MMLU-Pro Physics,V2,9181,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9188,Default Supervisor,10,0,10,129015,48074,177089,28165,0
+MMLU-Pro Physics,V2,9188,Answer Generator,1,0,2,4165,13282,17447,11705,0
+MMLU-Pro Physics,V2,9188,Evaluator Supervisor,4,0,3,21815,16377,38192,10042,0
+MMLU-Pro Physics,V2,9188,Physics,1,1,3,12275,18002,30277,15013,0
+MMLU-Pro Physics,V2,9188,Mathematics,1,1,3,12554,12878,25432,8564,0
+MMLU-Pro Physics,V2,9188,Revisor,7,0,14,155719,70248,225967,55931,0
+MMLU-Pro Physics,V2,9188,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9189,Default Supervisor,6,0,6,52960,18291,71251,12569,15872
+MMLU-Pro Physics,V2,9189,Answer Generator,2,0,3,21149,31691,52840,23703,0
+MMLU-Pro Physics,V2,9189,Evaluator Supervisor,7,0,5,31103,26401,57504,19406,0
+MMLU-Pro Physics,V2,9189,Physics,2,1,5,28213,36870,65083,26353,0
+MMLU-Pro Physics,V2,9189,Mathematics,2,1,3,13389,26559,39948,22695,0
+MMLU-Pro Physics,V2,9189,Revisor,1,0,2,5527,8863,14390,7798,0
+MMLU-Pro Physics,V2,9189,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9205,Default Supervisor,4,0,4,17656,20456,38112,15747,0
+MMLU-Pro Physics,V2,9205,Answer Generator,1,0,2,3608,6389,9997,5383,0
+MMLU-Pro Physics,V2,9205,Evaluator Supervisor,4,0,3,16503,9823,26326,6026,0
+MMLU-Pro Physics,V2,9205,Physics,1,13,14,133296,64094,197390,49809,12800
+MMLU-Pro Physics,V2,9205,Mathematics,1,1,3,12324,12847,25171,8850,0
+MMLU-Pro Physics,V2,9205,Revisor,1,0,2,5094,10073,15167,9496,0
+MMLU-Pro Physics,V2,9205,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9248,Default Supervisor,4,0,4,15071,17972,33043,14968,0
+MMLU-Pro Physics,V2,9248,Answer Generator,1,0,2,3065,2566,5631,1934,0
+MMLU-Pro Physics,V2,9248,Evaluator Supervisor,4,0,3,15077,12800,27877,9624,0
+MMLU-Pro Physics,V2,9248,Physics,1,4,6,23367,14813,38180,11149,0
+MMLU-Pro Physics,V2,9248,Mathematics,1,10,11,60884,39471,100355,32749,8960
+MMLU-Pro Physics,V2,9248,Revisor,1,0,2,4304,3049,7353,2649,0
+MMLU-Pro Physics,V2,9248,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9262,Default Supervisor,10,0,10,45120,43100,88220,31512,0
+MMLU-Pro Physics,V2,9262,Answer Generator,3,0,6,11874,19808,31682,17392,0
+MMLU-Pro Physics,V2,9262,Evaluator Supervisor,12,0,8,51056,42255,93311,29276,0
+MMLU-Pro Physics,V2,9262,Physics,4,19,27,203365,110956,314321,86754,63232
+MMLU-Pro Physics,V2,9262,Mathematics,2,6,10,56892,52277,109169,42285,14080
+MMLU-Pro Physics,V2,9262,Revisor,2,0,4,10742,15595,26337,13141,0
+MMLU-Pro Physics,V2,9262,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9284,Default Supervisor,4,0,4,16183,14747,30930,10633,0
+MMLU-Pro Physics,V2,9284,Answer Generator,1,0,2,3613,6617,10230,6102,0
+MMLU-Pro Physics,V2,9284,Evaluator Supervisor,4,0,3,15950,11284,27234,7315,0
+MMLU-Pro Physics,V2,9284,Physics,1,5,7,33800,25598,59398,19584,8576
+MMLU-Pro Physics,V2,9284,Mathematics,1,1,3,8834,8799,17633,7148,0
+MMLU-Pro Physics,V2,9284,Revisor,1,0,2,5076,8495,13571,7591,0
+MMLU-Pro Physics,V2,9284,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9287,Default Supervisor,6,0,6,19533,30783,50316,26456,0
+MMLU-Pro Physics,V2,9287,Answer Generator,2,0,4,6590,4445,11035,3712,0
+MMLU-Pro Physics,V2,9287,Evaluator Supervisor,6,0,4,14388,14314,28702,10450,0
+MMLU-Pro Physics,V2,9287,Physics,1,1,3,8076,8785,16861,7507,0
+MMLU-Pro Physics,V2,9287,Mathematics,2,4,9,25628,28445,54073,23181,0
+MMLU-Pro Physics,V2,9287,Revisor,1,0,2,4363,4285,8648,3742,0
+MMLU-Pro Physics,V2,9287,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9290,Default Supervisor,8,0,8,25559,23311,48870,17898,0
+MMLU-Pro Physics,V2,9290,Answer Generator,3,0,6,10638,6687,17325,5883,0
+MMLU-Pro Physics,V2,9290,Evaluator Supervisor,9,0,6,23019,23893,46912,17602,0
+MMLU-Pro Physics,V2,9290,Physics,3,24,30,181067,107145,288212,89204,28288
+MMLU-Pro Physics,V2,9290,Mathematics,2,15,19,127059,49656,176715,38236,41344
+MMLU-Pro Physics,V2,9290,Revisor,1,2,4,10320,6573,16893,5923,0
+MMLU-Pro Physics,V2,9290,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9295,Default Supervisor,4,0,4,23425,15253,38678,9884,0
+MMLU-Pro Physics,V2,9295,Answer Generator,1,0,2,3975,10999,14974,9522,0
+MMLU-Pro Physics,V2,9295,Evaluator Supervisor,4,0,3,20173,11527,31700,7542,0
+MMLU-Pro Physics,V2,9295,Physics,1,2,4,15039,22789,37828,19715,0
+MMLU-Pro Physics,V2,9295,Mathematics,1,2,4,18882,17756,36638,12870,0
+MMLU-Pro Physics,V2,9295,Revisor,1,0,2,6377,7577,13954,5714,0
+MMLU-Pro Physics,V2,9295,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9302,Default Supervisor,5,0,5,38615,29513,68128,23515,0
+MMLU-Pro Physics,V2,9302,Answer Generator,1,0,2,4391,12232,16623,10283,0
+MMLU-Pro Physics,V2,9302,Evaluator Supervisor,4,0,3,21633,16715,38348,11675,0
+MMLU-Pro Physics,V2,9302,Physics,1,1,3,11330,17678,29008,14990,0
+MMLU-Pro Physics,V2,9302,Mathematics,1,3,5,24552,24548,49100,19155,0
+MMLU-Pro Physics,V2,9302,Revisor,2,0,4,19740,17787,37527,14088,0
+MMLU-Pro Physics,V2,9302,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9304,Default Supervisor,13,0,13,104629,48876,153505,38189,18432
+MMLU-Pro Physics,V2,9304,Answer Generator,2,0,4,8099,25731,33830,23462,0
+MMLU-Pro Physics,V2,9304,Evaluator Supervisor,6,0,4,22058,15709,37767,10270,0
+MMLU-Pro Physics,V2,9304,Physics,2,5,7,34388,47491,81879,42448,4736
+MMLU-Pro Physics,V2,9304,Mathematics,1,1,3,10922,24626,35548,21455,0
+MMLU-Pro Physics,V2,9304,Revisor,8,0,16,97370,87249,184619,76532,4096
+MMLU-Pro Physics,V2,9304,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9306,Default Supervisor,15,0,15,175304,63206,238510,45577,23808
+MMLU-Pro Physics,V2,9306,Answer Generator,1,0,2,4249,4883,9132,3783,0
+MMLU-Pro Physics,V2,9306,Evaluator Supervisor,4,0,3,20085,11149,31234,6878,0
+MMLU-Pro Physics,V2,9306,Physics,1,2,4,14653,15935,30588,13053,0
+MMLU-Pro Physics,V2,9306,Mathematics,1,1,3,11136,8870,20006,6174,0
+MMLU-Pro Physics,V2,9306,Revisor,12,0,24,243376,82520,325896,66730,24576
+MMLU-Pro Physics,V2,9306,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9312,Default Supervisor,4,0,4,15073,15680,30753,12948,0
+MMLU-Pro Physics,V2,9312,Answer Generator,1,0,2,3460,2191,5651,1626,0
+MMLU-Pro Physics,V2,9312,Evaluator Supervisor,4,0,3,14857,11474,26331,7983,0
+MMLU-Pro Physics,V2,9312,Physics,1,1,3,9830,7885,17715,4725,0
+MMLU-Pro Physics,V2,9312,Mathematics,1,7,9,37580,37669,75249,33560,10496
+MMLU-Pro Physics,V2,9312,Revisor,1,0,2,4878,4213,9091,3745,0
+MMLU-Pro Physics,V2,9312,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9321,Default Supervisor,6,0,6,31717,30723,62440,25101,2816
+MMLU-Pro Physics,V2,9321,Answer Generator,2,0,4,8441,22688,31129,18752,0
+MMLU-Pro Physics,V2,9321,Evaluator Supervisor,8,0,6,39946,25357,65303,17209,0
+MMLU-Pro Physics,V2,9321,Physics,3,3,9,49995,56672,106667,40018,0
+MMLU-Pro Physics,V2,9321,Mathematics,2,2,7,30739,45221,75960,33408,0
+MMLU-Pro Physics,V2,9321,Revisor,1,0,2,6765,7166,13931,5903,0
+MMLU-Pro Physics,V2,9321,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9324,Default Supervisor,6,0,6,20533,26387,46920,21832,0
+MMLU-Pro Physics,V2,9324,Answer Generator,2,0,4,6699,4891,11590,3995,0
+MMLU-Pro Physics,V2,9324,Evaluator Supervisor,8,0,6,28635,23854,52489,18246,0
+MMLU-Pro Physics,V2,9324,Physics,4,27,33,214564,122720,337284,102818,21248
+MMLU-Pro Physics,V2,9324,Mathematics,1,5,6,24959,26362,51321,22217,4096
+MMLU-Pro Physics,V2,9324,Revisor,1,0,2,4811,6105,10916,5602,0
+MMLU-Pro Physics,V2,9324,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9331,Default Supervisor,6,0,6,27916,23572,51488,16498,0
+MMLU-Pro Physics,V2,9331,Answer Generator,2,0,4,9484,12330,21814,10117,0
+MMLU-Pro Physics,V2,9331,Evaluator Supervisor,7,0,5,25616,19817,45433,11472,0
+MMLU-Pro Physics,V2,9331,Physics,2,6,10,52008,56836,108844,47613,14592
+MMLU-Pro Physics,V2,9331,Mathematics,2,16,20,149921,84570,234491,71554,85376
+MMLU-Pro Physics,V2,9331,Revisor,1,0,2,5611,8568,14179,7661,0
+MMLU-Pro Physics,V2,9331,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9356,Default Supervisor,6,0,6,20936,19579,40515,15550,2176
+MMLU-Pro Physics,V2,9356,Answer Generator,2,0,4,6457,5016,11473,3816,0
+MMLU-Pro Physics,V2,9356,Evaluator Supervisor,7,0,5,21712,14579,36291,10171,0
+MMLU-Pro Physics,V2,9356,Physics,2,4,8,24689,30542,55231,25400,0
+MMLU-Pro Physics,V2,9356,Mathematics,2,8,12,43673,56667,100340,49269,0
+MMLU-Pro Physics,V2,9356,Revisor,1,0,2,4947,5745,10692,4734,0
+MMLU-Pro Physics,V2,9356,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9360,Default Supervisor,4,0,4,12616,8802,21418,6611,0
+MMLU-Pro Physics,V2,9360,Answer Generator,1,0,2,2869,1788,4657,1467,0
+MMLU-Pro Physics,V2,9360,Evaluator Supervisor,4,0,3,12037,6464,18501,4312,0
+MMLU-Pro Physics,V2,9360,Physics,1,6,8,32343,25591,57934,19608,8832
+MMLU-Pro Physics,V2,9360,Mathematics,1,2,4,11309,16288,27597,13937,0
+MMLU-Pro Physics,V2,9360,Revisor,1,2,4,9253,7511,16764,6945,0
+MMLU-Pro Physics,V2,9360,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9393,Default Supervisor,10,0,10,77527,41796,119323,32906,0
+MMLU-Pro Physics,V2,9393,Answer Generator,1,0,2,4180,5691,9871,4428,0
+MMLU-Pro Physics,V2,9393,Evaluator Supervisor,4,0,3,21306,11204,32510,6211,0
+MMLU-Pro Physics,V2,9393,Physics,1,9,11,81448,62129,143577,50551,39168
+MMLU-Pro Physics,V2,9393,Mathematics,1,3,5,25835,18679,44514,13047,0
+MMLU-Pro Physics,V2,9393,Revisor,7,1,15,67262,46628,113890,41159,5120
+MMLU-Pro Physics,V2,9393,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9396,Default Supervisor,4,0,4,12574,18073,30647,14931,0
+MMLU-Pro Physics,V2,9396,Answer Generator,1,0,2,3225,1303,4528,865,0
+MMLU-Pro Physics,V2,9396,Evaluator Supervisor,4,0,3,11276,11237,22513,8602,0
+MMLU-Pro Physics,V2,9396,Physics,1,2,4,9767,4948,14715,3369,0
+MMLU-Pro Physics,V2,9396,Mathematics,1,3,5,13563,23257,36820,21043,0
+MMLU-Pro Physics,V2,9396,Revisor,1,0,2,4187,6088,10275,5545,0
+MMLU-Pro Physics,V2,9396,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9397,Default Supervisor,4,0,4,12853,18755,31608,16211,0
+MMLU-Pro Physics,V2,9397,Answer Generator,1,0,2,2890,1497,4387,1072,0
+MMLU-Pro Physics,V2,9397,Evaluator Supervisor,4,0,3,12074,17398,29472,15096,0
+MMLU-Pro Physics,V2,9397,Physics,1,3,5,19803,21530,41333,16533,0
+MMLU-Pro Physics,V2,9397,Mathematics,1,6,8,26622,24269,50891,21884,0
+MMLU-Pro Physics,V2,9397,Revisor,1,0,2,4150,3887,8037,3097,0
+MMLU-Pro Physics,V2,9397,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9401,Default Supervisor,4,0,4,21521,15071,36592,9154,0
+MMLU-Pro Physics,V2,9401,Answer Generator,1,0,2,4129,4571,8700,3253,0
+MMLU-Pro Physics,V2,9401,Evaluator Supervisor,4,0,3,19921,10589,30510,5399,0
+MMLU-Pro Physics,V2,9401,Physics,1,1,3,11052,18237,29289,15349,0
+MMLU-Pro Physics,V2,9401,Mathematics,1,1,3,10316,18677,28993,15329,0
+MMLU-Pro Physics,V2,9401,Revisor,1,0,2,6287,6644,12931,4627,0
+MMLU-Pro Physics,V2,9401,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9403,Default Supervisor,4,0,4,22680,14535,37215,9547,0
+MMLU-Pro Physics,V2,9403,Answer Generator,1,0,2,4952,6270,11222,3945,0
+MMLU-Pro Physics,V2,9403,Evaluator Supervisor,3,0,2,9307,11204,20511,8048,0
+MMLU-Pro Physics,V2,9403,Physics,0,0,,,,,,
+MMLU-Pro Physics,V2,9403,Mathematics,1,2,4,18541,20391,38932,15687,3840
+MMLU-Pro Physics,V2,9403,Revisor,1,0,2,5707,7731,13438,6016,0
+MMLU-Pro Physics,V2,9403,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9407,Default Supervisor,4,0,4,31552,18908,50460,13540,0
+MMLU-Pro Physics,V2,9407,Answer Generator,1,0,2,5351,16807,22158,15205,0
+MMLU-Pro Physics,V2,9407,Evaluator Supervisor,4,0,3,33870,16577,50447,9765,0
+MMLU-Pro Physics,V2,9407,Physics,1,1,3,14907,15709,30616,9208,0
+MMLU-Pro Physics,V2,9407,Mathematics,1,1,3,17734,18692,36426,11427,0
+MMLU-Pro Physics,V2,9407,Revisor,1,1,3,14952,12241,27193,10371,0
+MMLU-Pro Physics,V2,9407,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9418,Default Supervisor,21,0,21,244398,92876,337274,64905,10112
+MMLU-Pro Physics,V2,9418,Answer Generator,3,0,6,12619,40884,53503,37034,0
+MMLU-Pro Physics,V2,9418,Evaluator Supervisor,10,0,7,38818,33169,71987,21953,0
+MMLU-Pro Physics,V2,9418,Physics,2,4,8,29605,42697,72302,35894,0
+MMLU-Pro Physics,V2,9418,Mathematics,3,8,12,63651,59549,123200,48185,6016
+MMLU-Pro Physics,V2,9418,Revisor,14,1,29,369726,106861,476587,89412,45824
+MMLU-Pro Physics,V2,9418,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9424,Default Supervisor,4,0,4,19072,11899,30971,7563,0
+MMLU-Pro Physics,V2,9424,Answer Generator,1,0,2,3642,6394,10036,5459,0
+MMLU-Pro Physics,V2,9424,Evaluator Supervisor,4,0,3,18531,15747,34278,11105,0
+MMLU-Pro Physics,V2,9424,Physics,1,1,3,8917,10342,19259,8076,0
+MMLU-Pro Physics,V2,9424,Mathematics,1,3,5,18052,20784,38836,15435,3456
+MMLU-Pro Physics,V2,9424,Revisor,1,0,2,7136,11793,18929,10295,0
+MMLU-Pro Physics,V2,9424,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9447,Default Supervisor,4,0,4,13507,8954,22461,6107,0
+MMLU-Pro Physics,V2,9447,Answer Generator,1,0,2,3169,2494,5663,1959,0
+MMLU-Pro Physics,V2,9447,Evaluator Supervisor,4,0,3,12724,8898,21622,6050,0
+MMLU-Pro Physics,V2,9447,Physics,1,0,2,4511,7532,12043,6098,0
+MMLU-Pro Physics,V2,9447,Mathematics,1,3,5,15030,16012,31042,13478,0
+MMLU-Pro Physics,V2,9447,Revisor,1,0,2,4007,1586,5593,1132,0
+MMLU-Pro Physics,V2,9447,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9455,Default Supervisor,4,0,4,18472,19368,37840,15071,0
+MMLU-Pro Physics,V2,9455,Answer Generator,1,0,2,3685,2826,6511,2018,0
+MMLU-Pro Physics,V2,9455,Evaluator Supervisor,4,0,3,17936,10229,28165,6337,0
+MMLU-Pro Physics,V2,9455,Physics,1,1,3,9267,14646,23913,12622,0
+MMLU-Pro Physics,V2,9455,Mathematics,1,2,4,16476,21297,37773,18165,0
+MMLU-Pro Physics,V2,9455,Revisor,1,0,2,6197,5886,12083,4675,0
+MMLU-Pro Physics,V2,9455,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9499,Default Supervisor,6,0,6,21353,14360,35713,10496,0
+MMLU-Pro Physics,V2,9499,Answer Generator,2,0,4,6789,10093,16882,8717,0
+MMLU-Pro Physics,V2,9499,Evaluator Supervisor,7,0,5,20358,17511,37869,12530,0
+MMLU-Pro Physics,V2,9499,Physics,2,2,6,18867,37446,56313,31215,0
+MMLU-Pro Physics,V2,9499,Mathematics,2,19,23,166722,111068,277790,91820,78336
+MMLU-Pro Physics,V2,9499,Revisor,1,0,2,5310,2567,7877,1992,0
+MMLU-Pro Physics,V2,9499,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9501,Default Supervisor,7,0,7,93659,26352,120011,13720,18176
+MMLU-Pro Physics,V2,9501,Answer Generator,2,0,3,20088,36351,56439,22893,0
+MMLU-Pro Physics,V2,9501,Evaluator Supervisor,7,0,5,49675,24305,73980,11737,0
+MMLU-Pro Physics,V2,9501,Physics,1,2,4,17463,24248,41711,20064,0
+MMLU-Pro Physics,V2,9501,Mathematics,2,1,5,36490,39328,75818,24121,0
+MMLU-Pro Physics,V2,9501,Revisor,2,16,18,134096,102593,236689,90141,47616
+MMLU-Pro Physics,V2,9501,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9519,Default Supervisor,4,0,4,19288,25301,44589,21027,0
+MMLU-Pro Physics,V2,9519,Answer Generator,1,0,2,4023,13588,17611,12632,0
+MMLU-Pro Physics,V2,9519,Evaluator Supervisor,4,0,3,17876,13753,31629,9579,0
+MMLU-Pro Physics,V2,9519,Physics,1,1,3,11086,23093,34179,20296,0
+MMLU-Pro Physics,V2,9519,Mathematics,1,1,3,10179,19247,29426,16557,0
+MMLU-Pro Physics,V2,9519,Revisor,1,1,3,11539,20449,31988,18044,0
+MMLU-Pro Physics,V2,9519,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9544,Default Supervisor,4,0,4,12631,15401,28032,12798,0
+MMLU-Pro Physics,V2,9544,Answer Generator,1,0,2,3096,1447,4543,1163,0
+MMLU-Pro Physics,V2,9544,Evaluator Supervisor,4,0,3,11920,6692,18612,4174,0
+MMLU-Pro Physics,V2,9544,Physics,1,1,3,8050,7785,15835,5977,0
+MMLU-Pro Physics,V2,9544,Mathematics,1,13,15,112517,35893,148410,25879,53632
+MMLU-Pro Physics,V2,9544,Revisor,1,0,2,3827,3436,7263,2979,0
+MMLU-Pro Physics,V2,9544,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9551,Default Supervisor,4,0,4,18865,14123,32988,9645,0
+MMLU-Pro Physics,V2,9551,Answer Generator,1,0,2,4381,12016,16397,11021,0
+MMLU-Pro Physics,V2,9551,Evaluator Supervisor,4,0,3,14488,13766,28254,9813,0
+MMLU-Pro Physics,V2,9551,Physics,1,7,9,57281,36581,93862,29580,22272
+MMLU-Pro Physics,V2,9551,Mathematics,1,12,13,105584,83077,188661,70783,65664
+MMLU-Pro Physics,V2,9551,Revisor,1,0,2,5308,11653,16961,10557,0
+MMLU-Pro Physics,V2,9551,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9559,Default Supervisor,4,0,4,24910,17522,42432,12253,0
+MMLU-Pro Physics,V2,9559,Answer Generator,1,0,2,4329,10507,14836,9063,0
+MMLU-Pro Physics,V2,9559,Evaluator Supervisor,4,0,3,19807,9973,29780,5725,0
+MMLU-Pro Physics,V2,9559,Physics,1,7,9,58511,53304,111815,44394,13440
+MMLU-Pro Physics,V2,9559,Mathematics,1,1,3,13769,21312,35081,17577,0
+MMLU-Pro Physics,V2,9559,Revisor,1,0,2,8390,8869,17259,7299,0
+MMLU-Pro Physics,V2,9559,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9582,Default Supervisor,13,0,13,109756,50353,160109,37752,0
+MMLU-Pro Physics,V2,9582,Answer Generator,2,0,4,8282,23068,31350,19991,0
+MMLU-Pro Physics,V2,9582,Evaluator Supervisor,8,0,6,43514,31178,74692,19523,0
+MMLU-Pro Physics,V2,9582,Physics,3,1,7,29193,34407,63600,24935,0
+MMLU-Pro Physics,V2,9582,Mathematics,2,3,7,36903,41351,78254,31964,5120
+MMLU-Pro Physics,V2,9582,Revisor,8,0,16,108764,57694,166458,48827,5760
+MMLU-Pro Physics,V2,9582,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9590,Default Supervisor,4,0,4,23409,19708,43117,14291,0
+MMLU-Pro Physics,V2,9590,Answer Generator,1,0,2,3861,4686,8547,3371,0
+MMLU-Pro Physics,V2,9590,Evaluator Supervisor,3,0,2,9147,13935,23082,11313,0
+MMLU-Pro Physics,V2,9590,Physics,0,0,,,,,,
+MMLU-Pro Physics,V2,9590,Mathematics,1,6,8,42690,45082,87772,40219,10496
+MMLU-Pro Physics,V2,9590,Revisor,1,0,2,5938,5788,11726,4351,0
+MMLU-Pro Physics,V2,9590,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9595,Default Supervisor,4,0,4,14247,18288,32535,15184,0
+MMLU-Pro Physics,V2,9595,Answer Generator,1,0,2,3031,2694,5725,2221,0
+MMLU-Pro Physics,V2,9595,Evaluator Supervisor,5,0,4,20506,9374,29880,5776,0
+MMLU-Pro Physics,V2,9595,Physics,2,3,7,23029,38750,61779,35501,2816
+MMLU-Pro Physics,V2,9595,Mathematics,1,6,8,52000,37646,89646,29008,26624
+MMLU-Pro Physics,V2,9595,Revisor,1,2,4,9574,7318,16892,6242,0
+MMLU-Pro Physics,V2,9595,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9596,Default Supervisor,4,0,4,20817,14648,35465,9669,0
+MMLU-Pro Physics,V2,9596,Answer Generator,1,0,2,4077,8522,12599,7428,0
+MMLU-Pro Physics,V2,9596,Evaluator Supervisor,3,0,2,10248,16225,26473,13160,0
+MMLU-Pro Physics,V2,9596,Physics,0,0,,,,,,
+MMLU-Pro Physics,V2,9596,Mathematics,1,2,4,18358,19470,37828,16118,0
+MMLU-Pro Physics,V2,9596,Revisor,1,0,2,6287,5767,12054,4676,0
+MMLU-Pro Physics,V2,9596,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9602,Default Supervisor,4,0,4,15378,16411,31789,13069,0
+MMLU-Pro Physics,V2,9602,Answer Generator,1,0,2,3273,8839,12112,8212,0
+MMLU-Pro Physics,V2,9602,Evaluator Supervisor,4,0,3,12744,12248,24992,9543,0
+MMLU-Pro Physics,V2,9602,Physics,1,6,8,38792,32042,70834,26379,0
+MMLU-Pro Physics,V2,9602,Mathematics,1,1,3,9683,12747,22430,9600,0
+MMLU-Pro Physics,V2,9602,Revisor,1,0,2,4639,8612,13251,7841,0
+MMLU-Pro Physics,V2,9602,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9613,Default Supervisor,4,0,4,15910,27879,43789,23736,0
+MMLU-Pro Physics,V2,9613,Answer Generator,1,0,2,3504,1957,5461,1211,0
+MMLU-Pro Physics,V2,9613,Evaluator Supervisor,4,0,3,14399,12724,27123,8577,0
+MMLU-Pro Physics,V2,9613,Physics,1,1,3,9291,10213,19504,8444,0
+MMLU-Pro Physics,V2,9613,Mathematics,1,2,4,12350,9258,21608,6888,0
+MMLU-Pro Physics,V2,9613,Revisor,1,0,2,4699,3130,7829,2059,0
+MMLU-Pro Physics,V2,9613,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9630,Default Supervisor,4,0,4,17038,16521,33559,12450,0
+MMLU-Pro Physics,V2,9630,Answer Generator,1,0,2,3648,2517,6165,1839,0
+MMLU-Pro Physics,V2,9630,Evaluator Supervisor,4,0,3,15491,9504,24995,5703,0
+MMLU-Pro Physics,V2,9630,Physics,1,2,4,14360,15609,29969,12853,0
+MMLU-Pro Physics,V2,9630,Mathematics,1,1,3,9460,13810,23270,11368,0
+MMLU-Pro Physics,V2,9630,Revisor,1,0,2,5180,6183,11363,5082,0
+MMLU-Pro Physics,V2,9630,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9632,Default Supervisor,4,0,4,16561,14470,31031,10281,0
+MMLU-Pro Physics,V2,9632,Answer Generator,1,0,2,3412,4757,8169,4013,0
+MMLU-Pro Physics,V2,9632,Evaluator Supervisor,4,0,3,15183,7878,23061,4535,0
+MMLU-Pro Physics,V2,9632,Physics,1,3,5,20357,22610,42967,16949,0
+MMLU-Pro Physics,V2,9632,Mathematics,1,1,3,9054,21049,30103,18449,0
+MMLU-Pro Physics,V2,9632,Revisor,1,1,3,9170,18307,27477,17264,0
+MMLU-Pro Physics,V2,9632,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9633,Default Supervisor,4,0,4,13192,22329,35521,19310,0
+MMLU-Pro Physics,V2,9633,Answer Generator,1,0,2,3140,1937,5077,1615,0
+MMLU-Pro Physics,V2,9633,Evaluator Supervisor,4,0,3,12455,7405,19860,4715,0
+MMLU-Pro Physics,V2,9633,Physics,1,9,11,57734,38239,95973,31596,20992
+MMLU-Pro Physics,V2,9633,Mathematics,1,2,4,10398,19342,29740,17327,0
+MMLU-Pro Physics,V2,9633,Revisor,1,0,2,4922,8612,13534,7307,0
+MMLU-Pro Physics,V2,9633,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9665,Default Supervisor,5,0,5,63700,29575,93275,20237,15872
+MMLU-Pro Physics,V2,9665,Answer Generator,2,0,4,30644,29889,60533,21439,0
+MMLU-Pro Physics,V2,9665,Evaluator Supervisor,4,0,3,29403,21835,51238,14872,7936
+MMLU-Pro Physics,V2,9665,Physics,1,2,4,24332,27760,52092,21913,0
+MMLU-Pro Physics,V2,9665,Mathematics,1,3,5,29242,36577,65819,30911,14592
+MMLU-Pro Physics,V2,9665,Revisor,1,0,2,7129,7969,15098,6839,0
+MMLU-Pro Physics,V2,9665,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9672,Default Supervisor,4,0,4,13961,11208,25169,7884,0
+MMLU-Pro Physics,V2,9672,Answer Generator,1,0,2,3448,1957,5405,1584,0
+MMLU-Pro Physics,V2,9672,Evaluator Supervisor,4,0,3,14214,6196,20410,2623,0
+MMLU-Pro Physics,V2,9672,Physics,1,10,11,64082,56972,121054,49162,20480
+MMLU-Pro Physics,V2,9672,Mathematics,1,3,5,16833,25301,42134,22239,3200
+MMLU-Pro Physics,V2,9672,Revisor,1,0,2,4754,6132,10886,5398,0
+MMLU-Pro Physics,V2,9672,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9676,Default Supervisor,4,0,4,13842,8253,22095,5336,0
+MMLU-Pro Physics,V2,9676,Answer Generator,1,0,2,3281,2365,5646,1871,0
+MMLU-Pro Physics,V2,9676,Evaluator Supervisor,4,0,3,12952,9283,22235,6438,0
+MMLU-Pro Physics,V2,9676,Physics,1,1,3,8229,8997,17226,7127,0
+MMLU-Pro Physics,V2,9676,Mathematics,1,3,5,14746,33839,48585,31616,0
+MMLU-Pro Physics,V2,9676,Revisor,1,0,2,4877,7501,12378,7037,0
+MMLU-Pro Physics,V2,9676,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9714,Default Supervisor,21,0,21,181908,107913,289821,80833,0
+MMLU-Pro Physics,V2,9714,Answer Generator,3,0,6,10933,13904,24837,11391,0
+MMLU-Pro Physics,V2,9714,Evaluator Supervisor,12,0,8,40249,39952,80201,29837,0
+MMLU-Pro Physics,V2,9714,Physics,3,3,9,30804,40822,71626,33439,0
+MMLU-Pro Physics,V2,9714,Mathematics,2,5,9,34059,37566,71625,31266,0
+MMLU-Pro Physics,V2,9714,Revisor,13,0,26,237958,78602,316560,66628,0
+MMLU-Pro Physics,V2,9714,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9719,Default Supervisor,4,0,4,14506,18685,33191,15593,0
+MMLU-Pro Physics,V2,9719,Answer Generator,1,0,2,3307,2299,5606,1910,0
+MMLU-Pro Physics,V2,9719,Evaluator Supervisor,4,0,3,15332,15168,30500,12291,0
+MMLU-Pro Physics,V2,9719,Physics,1,12,14,81352,76214,157566,66872,8960
+MMLU-Pro Physics,V2,9719,Mathematics,1,14,15,90689,63122,153811,55125,21632
+MMLU-Pro Physics,V2,9719,Revisor,1,1,3,8350,12107,20457,11183,0
+MMLU-Pro Physics,V2,9719,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9720,Default Supervisor,8,0,8,23343,35217,58560,30561,1920
+MMLU-Pro Physics,V2,9720,Answer Generator,3,0,6,9476,4373,13849,3223,0
+MMLU-Pro Physics,V2,9720,Evaluator Supervisor,9,0,6,23028,39965,62993,33899,0
+MMLU-Pro Physics,V2,9720,Physics,3,18,23,172396,77672,250068,58192,4096
+MMLU-Pro Physics,V2,9720,Mathematics,2,16,18,80690,44755,125445,37900,0
+MMLU-Pro Physics,V2,9720,Revisor,1,0,2,4190,3822,8012,3315,0
+MMLU-Pro Physics,V2,9720,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9732,Default Supervisor,4,0,4,19636,11698,31334,7589,0
+MMLU-Pro Physics,V2,9732,Answer Generator,1,0,2,4358,2669,7027,2074,0
+MMLU-Pro Physics,V2,9732,Evaluator Supervisor,3,0,2,10318,5531,15849,2664,0
+MMLU-Pro Physics,V2,9732,Physics,0,0,,,,,,
+MMLU-Pro Physics,V2,9732,Mathematics,1,1,3,11764,6767,18531,3985,0
+MMLU-Pro Physics,V2,9732,Revisor,1,0,2,5014,4280,9294,3526,0
+MMLU-Pro Physics,V2,9732,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9774,Default Supervisor,4,0,4,17529,11304,28833,7569,0
+MMLU-Pro Physics,V2,9774,Answer Generator,1,0,2,3344,3468,6812,2705,0
+MMLU-Pro Physics,V2,9774,Evaluator Supervisor,4,0,3,15109,12979,28088,10112,0
+MMLU-Pro Physics,V2,9774,Physics,1,1,3,9985,24337,34322,21124,2176
+MMLU-Pro Physics,V2,9774,Mathematics,1,1,3,8256,13625,21881,12251,0
+MMLU-Pro Physics,V2,9774,Revisor,1,0,2,6478,8054,14532,6785,0
+MMLU-Pro Physics,V2,9774,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9783,Default Supervisor,11,0,11,86838,43897,130735,35807,7936
+MMLU-Pro Physics,V2,9783,Answer Generator,1,0,2,3227,1817,5044,1310,0
+MMLU-Pro Physics,V2,9783,Evaluator Supervisor,4,0,3,13115,11691,24806,8714,0
+MMLU-Pro Physics,V2,9783,Physics,1,1,3,8426,14668,23094,12997,0
+MMLU-Pro Physics,V2,9783,Mathematics,1,2,4,12161,11497,23658,9038,0
+MMLU-Pro Physics,V2,9783,Revisor,8,0,16,108427,63894,172321,57651,29184
+MMLU-Pro Physics,V2,9783,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9794,Default Supervisor,4,0,4,15607,24557,40164,21469,0
+MMLU-Pro Physics,V2,9794,Answer Generator,1,0,2,3434,6516,9950,5879,0
+MMLU-Pro Physics,V2,9794,Evaluator Supervisor,4,0,3,12102,15096,27198,12535,0
+MMLU-Pro Physics,V2,9794,Physics,1,3,5,24946,15392,40338,9303,9472
+MMLU-Pro Physics,V2,9794,Mathematics,1,1,3,8560,8157,16717,6611,0
+MMLU-Pro Physics,V2,9794,Revisor,1,0,2,5472,7392,12864,6402,0
+MMLU-Pro Physics,V2,9794,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9795,Default Supervisor,4,0,4,16323,18184,34507,15245,0
+MMLU-Pro Physics,V2,9795,Answer Generator,1,0,2,3328,4539,7867,3978,0
+MMLU-Pro Physics,V2,9795,Evaluator Supervisor,4,0,3,12958,13502,26460,10081,0
+MMLU-Pro Physics,V2,9795,Physics,1,0,2,4989,7692,12681,6949,0
+MMLU-Pro Physics,V2,9795,Mathematics,1,8,10,51927,54676,106603,48895,18816
+MMLU-Pro Physics,V2,9795,Revisor,1,2,4,12343,18609,30952,17480,0
+MMLU-Pro Physics,V2,9795,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9801,Default Supervisor,4,0,4,16711,15626,32337,11301,0
+MMLU-Pro Physics,V2,9801,Answer Generator,1,0,2,3544,2064,5608,1420,0
+MMLU-Pro Physics,V2,9801,Evaluator Supervisor,4,0,3,14638,24451,39089,20573,0
+MMLU-Pro Physics,V2,9801,Physics,1,3,5,19503,22410,41913,19442,2560
+MMLU-Pro Physics,V2,9801,Mathematics,1,6,8,32133,54565,86698,51582,0
+MMLU-Pro Physics,V2,9801,Revisor,1,0,2,5053,2051,7104,1359,0
+MMLU-Pro Physics,V2,9801,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9877,Default Supervisor,4,0,4,20378,18486,38864,13475,0
+MMLU-Pro Physics,V2,9877,Answer Generator,1,0,2,3507,8727,12234,7337,0
+MMLU-Pro Physics,V2,9877,Evaluator Supervisor,4,0,3,21350,11500,32850,6788,0
+MMLU-Pro Physics,V2,9877,Physics,1,8,10,92193,46430,138623,33398,29568
+MMLU-Pro Physics,V2,9877,Mathematics,1,1,3,11608,15254,26862,11994,0
+MMLU-Pro Physics,V2,9877,Revisor,1,0,2,5066,6809,11875,5768,0
+MMLU-Pro Physics,V2,9877,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9889,Default Supervisor,4,0,4,16961,17153,34114,13489,0
+MMLU-Pro Physics,V2,9889,Answer Generator,1,0,2,3360,8049,11409,7663,0
+MMLU-Pro Physics,V2,9889,Evaluator Supervisor,4,0,3,14256,14019,28275,10289,0
+MMLU-Pro Physics,V2,9889,Physics,1,2,4,16300,25324,41624,21532,0
+MMLU-Pro Physics,V2,9889,Mathematics,1,2,4,17905,22127,40032,17590,0
+MMLU-Pro Physics,V2,9889,Revisor,1,4,6,20692,25722,46414,23279,0
+MMLU-Pro Physics,V2,9889,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9948,Default Supervisor,6,0,6,20267,19251,39518,14989,0
+MMLU-Pro Physics,V2,9948,Answer Generator,2,0,4,6660,5828,12488,4758,0
+MMLU-Pro Physics,V2,9948,Evaluator Supervisor,6,0,4,16558,13364,29922,9529,0
+MMLU-Pro Physics,V2,9948,Physics,2,7,12,45042,59616,104658,51094,0
+MMLU-Pro Physics,V2,9948,Mathematics,1,2,4,12862,19250,32112,15921,0
+MMLU-Pro Physics,V2,9948,Revisor,1,0,2,4876,3657,8533,3063,0
+MMLU-Pro Physics,V2,9948,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9953,Default Supervisor,4,0,4,16972,12266,29238,7849,0
+MMLU-Pro Physics,V2,9953,Answer Generator,1,0,2,3626,2363,5989,1609,0
+MMLU-Pro Physics,V2,9953,Evaluator Supervisor,4,0,3,16213,15430,31643,11929,0
+MMLU-Pro Physics,V2,9953,Physics,1,2,4,12779,14723,27502,12511,0
+MMLU-Pro Physics,V2,9953,Mathematics,1,3,5,20205,23687,43892,19649,0
+MMLU-Pro Physics,V2,9953,Revisor,1,0,2,4882,2914,7796,2174,0
+MMLU-Pro Physics,V2,9953,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9958,Default Supervisor,8,0,8,28533,24309,52842,16527,2176
+MMLU-Pro Physics,V2,9958,Answer Generator,3,0,6,10722,27192,37914,24800,0
+MMLU-Pro Physics,V2,9958,Evaluator Supervisor,9,0,6,27170,28359,55529,19774,0
+MMLU-Pro Physics,V2,9958,Physics,3,24,28,244470,111366,355836,81568,94080
+MMLU-Pro Physics,V2,9958,Mathematics,2,3,8,26736,41183,67919,32497,0
+MMLU-Pro Physics,V2,9958,Revisor,1,0,2,5706,5930,11636,4744,0
+MMLU-Pro Physics,V2,9958,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9971,Default Supervisor,4,0,4,16849,17831,34680,14479,0
+MMLU-Pro Physics,V2,9971,Answer Generator,1,0,2,3478,2529,6007,1816,0
+MMLU-Pro Physics,V2,9971,Evaluator Supervisor,4,0,3,16152,9431,25583,5316,0
+MMLU-Pro Physics,V2,9971,Physics,1,4,6,28149,27825,55974,22308,0
+MMLU-Pro Physics,V2,9971,Mathematics,1,1,3,9090,5317,14407,3492,0
+MMLU-Pro Physics,V2,9971,Revisor,1,0,2,5797,3359,9156,2457,0
+MMLU-Pro Physics,V2,9971,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9985,Default Supervisor,4,0,4,18083,18817,36900,15851,0
+MMLU-Pro Physics,V2,9985,Answer Generator,1,0,2,3726,7595,11321,6992,0
+MMLU-Pro Physics,V2,9985,Evaluator Supervisor,4,0,3,20769,10306,31075,5405,0
+MMLU-Pro Physics,V2,9985,Physics,1,1,3,12261,9925,22186,6860,0
+MMLU-Pro Physics,V2,9985,Mathematics,1,1,3,12640,8303,20943,5790,0
+MMLU-Pro Physics,V2,9985,Revisor,1,0,2,4211,10218,14429,9532,0
+MMLU-Pro Physics,V2,9985,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,9995,Default Supervisor,4,0,4,21558,16229,37787,11178,0
+MMLU-Pro Physics,V2,9995,Answer Generator,1,0,2,4075,6620,10695,5267,0
+MMLU-Pro Physics,V2,9995,Evaluator Supervisor,3,0,2,9924,11142,21066,7232,0
+MMLU-Pro Physics,V2,9995,Physics,0,0,,,,,,
+MMLU-Pro Physics,V2,9995,Mathematics,1,2,4,15133,10301,25434,6432,0
+MMLU-Pro Physics,V2,9995,Revisor,1,1,3,12598,22176,34774,19665,0
+MMLU-Pro Physics,V2,9995,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10004,Default Supervisor,4,0,4,22573,21038,43611,13939,0
+MMLU-Pro Physics,V2,10004,Answer Generator,1,0,2,4526,4689,9215,3322,0
+MMLU-Pro Physics,V2,10004,Evaluator Supervisor,4,0,3,19404,13389,32793,7283,0
+MMLU-Pro Physics,V2,10004,Physics,1,13,15,141294,95543,236837,81936,75008
+MMLU-Pro Physics,V2,10004,Mathematics,1,4,6,29635,23325,52960,19031,0
+MMLU-Pro Physics,V2,10004,Revisor,1,0,2,6448,10070,16518,8711,0
+MMLU-Pro Physics,V2,10004,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10016,Default Supervisor,4,0,4,14111,10130,24241,7265,0
+MMLU-Pro Physics,V2,10016,Answer Generator,1,0,2,3202,1717,4919,1127,0
+MMLU-Pro Physics,V2,10016,Evaluator Supervisor,4,0,3,11725,12001,23726,9475,0
+MMLU-Pro Physics,V2,10016,Physics,1,3,5,17774,11090,28864,8177,0
+MMLU-Pro Physics,V2,10016,Mathematics,1,1,3,7848,14493,22341,13071,0
+MMLU-Pro Physics,V2,10016,Revisor,1,0,2,4371,5997,10368,5427,0
+MMLU-Pro Physics,V2,10016,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10037,Default Supervisor,4,0,4,16846,11799,28645,7876,0
+MMLU-Pro Physics,V2,10037,Answer Generator,1,0,2,3374,4485,7859,3682,0
+MMLU-Pro Physics,V2,10037,Evaluator Supervisor,4,0,3,15387,12676,28063,9292,0
+MMLU-Pro Physics,V2,10037,Physics,1,2,4,16100,12302,28402,7980,0
+MMLU-Pro Physics,V2,10037,Mathematics,1,2,4,13159,12935,26094,9357,0
+MMLU-Pro Physics,V2,10037,Revisor,1,0,2,5090,6535,11625,5344,0
+MMLU-Pro Physics,V2,10037,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10050,Default Supervisor,4,0,4,14495,11262,25757,7888,0
+MMLU-Pro Physics,V2,10050,Answer Generator,1,0,2,3176,2739,5915,1982,0
+MMLU-Pro Physics,V2,10050,Evaluator Supervisor,4,0,3,14907,11549,26456,8933,0
+MMLU-Pro Physics,V2,10050,Physics,1,3,5,15386,22144,37530,19267,0
+MMLU-Pro Physics,V2,10050,Mathematics,1,1,3,8257,15190,23447,12493,0
+MMLU-Pro Physics,V2,10050,Revisor,1,0,2,5705,7039,12744,5776,0
+MMLU-Pro Physics,V2,10050,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10052,Default Supervisor,4,0,4,14546,17162,31708,13698,0
+MMLU-Pro Physics,V2,10052,Answer Generator,1,0,2,3351,3680,7031,3238,0
+MMLU-Pro Physics,V2,10052,Evaluator Supervisor,4,0,3,11222,10380,21602,7472,0
+MMLU-Pro Physics,V2,10052,Physics,1,0,2,4360,5148,9508,4564,0
+MMLU-Pro Physics,V2,10052,Mathematics,1,3,5,17922,10851,28773,7613,0
+MMLU-Pro Physics,V2,10052,Revisor,1,3,5,15146,17952,33098,16759,0
+MMLU-Pro Physics,V2,10052,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10061,Default Supervisor,4,0,4,21789,17974,39763,12023,0
+MMLU-Pro Physics,V2,10061,Answer Generator,1,0,2,3876,7384,11260,5490,0
+MMLU-Pro Physics,V2,10061,Evaluator Supervisor,4,0,3,17524,12783,30307,8587,0
+MMLU-Pro Physics,V2,10061,Physics,1,8,10,69106,46370,115476,37686,15232
+MMLU-Pro Physics,V2,10061,Mathematics,1,6,8,58163,42750,100913,32904,23040
+MMLU-Pro Physics,V2,10061,Revisor,1,0,2,5988,12389,18377,10709,0
+MMLU-Pro Physics,V2,10061,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10064,Default Supervisor,4,0,4,16030,20916,36946,16849,0
+MMLU-Pro Physics,V2,10064,Answer Generator,1,0,2,3557,2679,6236,1890,0
+MMLU-Pro Physics,V2,10064,Evaluator Supervisor,4,0,3,12995,6973,19968,3701,0
+MMLU-Pro Physics,V2,10064,Physics,1,1,3,8063,12632,20695,11562,0
+MMLU-Pro Physics,V2,10064,Mathematics,1,4,6,21428,34684,56112,31625,0
+MMLU-Pro Physics,V2,10064,Revisor,1,0,2,4886,3967,8853,3033,0
+MMLU-Pro Physics,V2,10064,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10087,Default Supervisor,4,0,4,24317,15780,40097,10912,0
+MMLU-Pro Physics,V2,10087,Answer Generator,1,0,2,5194,5697,10891,4324,0
+MMLU-Pro Physics,V2,10087,Evaluator Supervisor,4,0,3,20299,11044,31343,6052,0
+MMLU-Pro Physics,V2,10087,Physics,1,1,3,12463,10816,23279,8228,0
+MMLU-Pro Physics,V2,10087,Mathematics,1,3,5,22489,27878,50367,22326,4096
+MMLU-Pro Physics,V2,10087,Revisor,1,0,2,6535,7820,14355,6830,0
+MMLU-Pro Physics,V2,10087,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10091,Default Supervisor,19,0,19,197271,72430,269701,52698,0
+MMLU-Pro Physics,V2,10091,Answer Generator,2,0,4,7915,19778,27693,16979,0
+MMLU-Pro Physics,V2,10091,Evaluator Supervisor,8,0,6,46185,26127,72312,17018,7936
+MMLU-Pro Physics,V2,10091,Physics,2,2,6,28538,26257,54795,17993,0
+MMLU-Pro Physics,V2,10091,Mathematics,2,2,6,21287,27196,48483,22049,0
+MMLU-Pro Physics,V2,10091,Revisor,14,0,28,254164,136547,390711,123277,13312
+MMLU-Pro Physics,V2,10091,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10102,Default Supervisor,4,0,4,35664,16644,52308,8814,0
+MMLU-Pro Physics,V2,10102,Answer Generator,1,0,2,5991,17292,23283,12135,0
+MMLU-Pro Physics,V2,10102,Evaluator Supervisor,3,0,2,14453,8520,22973,4465,0
+MMLU-Pro Physics,V2,10102,Physics,0,0,,,,,,
+MMLU-Pro Physics,V2,10102,Mathematics,1,1,3,18055,19660,37715,16026,4480
+MMLU-Pro Physics,V2,10102,Revisor,1,1,3,8321,18153,26474,17131,0
+MMLU-Pro Physics,V2,10102,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10121,Default Supervisor,4,0,4,14496,9836,24332,6740,0
+MMLU-Pro Physics,V2,10121,Answer Generator,1,0,2,3352,2636,5988,2027,0
+MMLU-Pro Physics,V2,10121,Evaluator Supervisor,4,0,3,14104,11983,26087,9090,0
+MMLU-Pro Physics,V2,10121,Physics,1,2,4,12293,13803,26096,10922,0
+MMLU-Pro Physics,V2,10121,Mathematics,1,1,3,9426,19328,28754,15759,0
+MMLU-Pro Physics,V2,10121,Revisor,1,0,2,4228,4097,8325,3288,0
+MMLU-Pro Physics,V2,10121,unknown,0,0,,,,,,
+MMLU-Pro Physics,V2,10142,Default Supervisor,4,0,4,22178,18977,41155,12167,0
+MMLU-Pro Physics,V2,10142,Answer Generator,1,0,2,4416,5680,10096,4268,0
+MMLU-Pro Physics,V2,10142,Evaluator Supervisor,4,0,3,19822,15876,35698,11413,0
+MMLU-Pro Physics,V2,10142,Physics,1,2,4,19411,21134,40545,15553,0
+MMLU-Pro Physics,V2,10142,Mathematics,1,1,3,11099,13671,24770,10725,0
+MMLU-Pro Physics,V2,10142,Revisor,1,0,2,6580,12485,19065,10557,0
+MMLU-Pro Physics,V2,10142,unknown,0,0,,,,,,
+MMLU college_physics,BASE,0,Default Supervisor,4,0,4,11534,10315,21849,6773,0
+MMLU college_physics,BASE,0,Answer Generator,1,1,3,2742,3594,6336,2729,0
+MMLU college_physics,BASE,0,Evaluator Supervisor,4,0,3,9721,8847,18568,6038,0
+MMLU college_physics,BASE,0,Physics,1,4,6,19913,18299,38212,14268,8832
+MMLU college_physics,BASE,0,Mathematics,1,0,2,3003,8307,11310,7371,0
+MMLU college_physics,BASE,0,Revisor,1,1,3,6282,5577,11859,4654,0
+MMLU college_physics,BASE,0,unknown,0,0,,,,,,
+MMLU college_physics,BASE,2,Default Supervisor,4,0,4,10917,16423,27340,13272,0
+MMLU college_physics,BASE,2,Answer Generator,1,0,2,1511,2391,3902,1703,0
+MMLU college_physics,BASE,2,Evaluator Supervisor,4,0,3,9762,7904,17666,5449,0
+MMLU college_physics,BASE,2,Physics,1,1,3,4843,3892,8735,2722,0
+MMLU college_physics,BASE,2,Mathematics,1,1,3,5043,3388,8431,1926,896
+MMLU college_physics,BASE,2,Revisor,1,0,2,2361,1490,3851,1154,0
+MMLU college_physics,BASE,2,unknown,0,0,,,,,,
+MMLU college_physics,BASE,3,Default Supervisor,4,0,4,10431,11825,22256,9104,0
+MMLU college_physics,BASE,3,Answer Generator,1,0,2,1212,1900,3112,1360,0
+MMLU college_physics,BASE,3,Evaluator Supervisor,4,0,3,11806,11071,22877,8057,0
+MMLU college_physics,BASE,3,Physics,1,1,3,6610,6491,13101,4200,1280
+MMLU college_physics,BASE,3,Mathematics,1,1,3,6561,8037,14598,5749,1280
+MMLU college_physics,BASE,3,Revisor,1,0,2,2968,1416,4384,891,0
+MMLU college_physics,BASE,3,unknown,0,0,,,,,,
+MMLU college_physics,BASE,4,Default Supervisor,5,0,5,18132,13755,31887,9299,0
+MMLU college_physics,BASE,4,Answer Generator,1,0,2,1333,2209,3542,1587,0
+MMLU college_physics,BASE,4,Evaluator Supervisor,3,0,2,5348,6822,12170,4809,0
+MMLU college_physics,BASE,4,Physics,0,0,,,,,,
+MMLU college_physics,BASE,4,Mathematics,1,1,3,6443,4588,11031,2932,1280
+MMLU college_physics,BASE,4,Revisor,2,1,5,10157,10674,20831,9237,2176
+MMLU college_physics,BASE,4,unknown,0,0,,,,,,
+MMLU college_physics,BASE,6,Default Supervisor,8,0,8,21221,33746,54967,25217,1792
+MMLU college_physics,BASE,6,Answer Generator,3,0,6,4951,15403,20354,12751,0
+MMLU college_physics,BASE,6,Evaluator Supervisor,9,0,6,23209,21224,44433,14082,0
+MMLU college_physics,BASE,6,Physics,3,3,10,21853,46589,68442,33763,1280
+MMLU college_physics,BASE,6,Mathematics,2,0,2,4385,4404,8789,1316,0
+MMLU college_physics,BASE,6,Revisor,1,1,3,7106,11362,18468,9859,0
+MMLU college_physics,BASE,6,unknown,0,0,,,,,,
+MMLU college_physics,BASE,11,Default Supervisor,9,0,9,54509,28558,83067,19195,0
+MMLU college_physics,BASE,11,Answer Generator,1,0,2,1488,3387,4875,2602,0
+MMLU college_physics,BASE,11,Evaluator Supervisor,5,0,4,21301,15983,37284,10717,0
+MMLU college_physics,BASE,11,Physics,2,2,6,19389,16992,36381,13261,3456
+MMLU college_physics,BASE,11,Mathematics,1,0,2,4361,3686,8047,1362,0
+MMLU college_physics,BASE,11,Revisor,6,1,13,52785,39996,92781,34614,26624
+MMLU college_physics,BASE,11,unknown,0,0,,,,,,
+MMLU college_physics,BASE,13,Default Supervisor,4,0,4,8623,14631,23254,12517,0
+MMLU college_physics,BASE,13,Answer Generator,1,0,2,910,2188,3098,1927,0
+MMLU college_physics,BASE,13,Evaluator Supervisor,3,0,2,5041,5765,10806,4263,0
+MMLU college_physics,BASE,13,Physics,1,1,3,4674,4675,9349,2794,0
+MMLU college_physics,BASE,13,Mathematics,0,0,,,,,,
+MMLU college_physics,BASE,13,Revisor,1,0,2,2706,4601,7307,3804,0
+MMLU college_physics,BASE,13,unknown,0,0,,,,,,
+MMLU college_physics,BASE,14,Default Supervisor,4,0,4,12198,10678,22876,7981,0
+MMLU college_physics,BASE,14,Answer Generator,1,0,2,1554,1914,3468,1303,0
+MMLU college_physics,BASE,14,Evaluator Supervisor,3,0,2,6039,7749,13788,5535,0
+MMLU college_physics,BASE,14,Physics,1,0,2,2973,3728,6701,2613,0
+MMLU college_physics,BASE,14,Mathematics,0,0,,,,,,
+MMLU college_physics,BASE,14,Revisor,1,1,3,4765,6224,10989,5101,896
+MMLU college_physics,BASE,14,unknown,0,0,,,,,,
+MMLU college_physics,BASE,16,Default Supervisor,4,0,4,8387,12036,20423,9161,896
+MMLU college_physics,BASE,16,Answer Generator,1,0,2,1185,2588,3773,2082,0
+MMLU college_physics,BASE,16,Evaluator Supervisor,3,0,2,4232,4793,9025,3210,0
+MMLU college_physics,BASE,16,Physics,1,1,3,5558,5306,10864,3376,0
+MMLU college_physics,BASE,16,Mathematics,0,0,,,,,,
+MMLU college_physics,BASE,16,Revisor,1,0,2,2251,2447,4698,2100,0
+MMLU college_physics,BASE,16,unknown,0,0,,,,,,
+MMLU college_physics,BASE,17,Default Supervisor,4,0,4,14195,13026,27221,8776,0
+MMLU college_physics,BASE,17,Answer Generator,1,0,2,1630,5047,6677,4247,0
+MMLU college_physics,BASE,17,Evaluator Supervisor,4,0,3,12741,10451,23192,7237,0
+MMLU college_physics,BASE,17,Physics,1,1,3,6904,14309,21213,12126,1280
+MMLU college_physics,BASE,17,Mathematics,1,1,3,7159,11038,18197,7288,1280
+MMLU college_physics,BASE,17,Revisor,1,0,2,3564,6170,9734,5227,0
+MMLU college_physics,BASE,17,unknown,0,0,,,,,,
+MMLU college_physics,BASE,19,Default Supervisor,4,0,4,11959,10048,22007,6552,896
+MMLU college_physics,BASE,19,Answer Generator,1,0,2,1631,2046,3677,1413,0
+MMLU college_physics,BASE,19,Evaluator Supervisor,4,0,3,12646,10992,23638,7562,0
+MMLU college_physics,BASE,19,Physics,1,2,4,8740,14000,22740,10969,0
+MMLU college_physics,BASE,19,Mathematics,1,0,2,2998,4181,7179,3092,0
+MMLU college_physics,BASE,19,Revisor,1,0,2,2598,2504,5102,1864,0
+MMLU college_physics,BASE,19,unknown,0,0,,,,,,
+MMLU college_physics,BASE,20,Default Supervisor,4,0,4,8318,8797,17115,6324,0
+MMLU college_physics,BASE,20,Answer Generator,1,0,2,1078,1190,2268,890,0
+MMLU college_physics,BASE,20,Evaluator Supervisor,4,0,3,8625,10505,19130,8317,0
+MMLU college_physics,BASE,20,Physics,1,0,2,2634,11082,13716,10162,0
+MMLU college_physics,BASE,20,Mathematics,1,1,3,4799,15098,19897,13628,896
+MMLU college_physics,BASE,20,Revisor,1,1,3,3447,2220,5667,1725,896
+MMLU college_physics,BASE,20,unknown,0,0,,,,,,
+MMLU college_physics,BASE,22,Default Supervisor,4,0,4,12570,12094,24664,8078,0
+MMLU college_physics,BASE,22,Answer Generator,1,0,2,1378,2640,4018,1915,0
+MMLU college_physics,BASE,22,Evaluator Supervisor,4,0,3,9427,9597,19024,6353,0
+MMLU college_physics,BASE,22,Physics,1,1,3,5832,5707,11539,4020,1280
+MMLU college_physics,BASE,22,Mathematics,1,1,3,5270,8360,13630,6811,0
+MMLU college_physics,BASE,22,Revisor,1,0,2,3575,7908,11483,7323,0
+MMLU college_physics,BASE,22,unknown,0,0,,,,,,
+MMLU college_physics,BASE,24,Default Supervisor,4,0,4,9182,9483,18665,7290,0
+MMLU college_physics,BASE,24,Answer Generator,1,0,2,1448,2071,3519,1408,0
+MMLU college_physics,BASE,24,Evaluator Supervisor,4,0,3,8554,11470,20024,8806,0
+MMLU college_physics,BASE,24,Physics,1,1,3,4208,11534,15742,9912,896
+MMLU college_physics,BASE,24,Mathematics,1,1,3,4825,4184,9009,2919,0
+MMLU college_physics,BASE,24,Revisor,1,0,2,1854,4666,6520,4172,0
+MMLU college_physics,BASE,24,unknown,0,0,,,,,,
+MMLU college_physics,BASE,25,Default Supervisor,4,0,4,8340,14301,22641,10735,0
+MMLU college_physics,BASE,25,Answer Generator,1,0,2,1117,1620,2737,1129,0
+MMLU college_physics,BASE,25,Evaluator Supervisor,2,0,1,1415,3338,4753,2689,0
+MMLU college_physics,BASE,25,Physics,0,0,,,,,,
+MMLU college_physics,BASE,25,Mathematics,0,0,,,,,,
+MMLU college_physics,BASE,25,Revisor,1,1,3,3535,3522,7057,2783,0
+MMLU college_physics,BASE,25,unknown,0,0,,,,,,
+MMLU college_physics,BASE,27,Default Supervisor,3,0,3,7449,11605,19054,9356,0
+MMLU college_physics,BASE,27,Answer Generator,1,0,2,1378,4012,5390,3113,0
+MMLU college_physics,BASE,27,Evaluator Supervisor,4,0,3,12538,12211,24749,8319,0
+MMLU college_physics,BASE,27,Physics,1,1,3,8142,5082,13224,2837,0
+MMLU college_physics,BASE,27,Mathematics,1,0,2,3855,4232,8087,3219,0
+MMLU college_physics,BASE,27,Revisor,0,0,,,,,,
+MMLU college_physics,BASE,27,unknown,0,0,,,,,,
+MMLU college_physics,BASE,28,Default Supervisor,4,0,4,20291,17106,37397,10302,0
+MMLU college_physics,BASE,28,Answer Generator,1,0,2,2002,3934,5936,2138,0
+MMLU college_physics,BASE,28,Evaluator Supervisor,4,0,3,16257,14350,30607,8625,0
+MMLU college_physics,BASE,28,Physics,1,2,4,12722,12418,25140,8720,4480
+MMLU college_physics,BASE,28,Mathematics,1,1,3,8955,7496,16451,4736,0
+MMLU college_physics,BASE,28,Revisor,1,0,2,5860,4423,10283,3312,0
+MMLU college_physics,BASE,28,unknown,0,0,,,,,,
+MMLU college_physics,BASE,29,Default Supervisor,4,0,4,12639,14315,26954,10176,0
+MMLU college_physics,BASE,29,Answer Generator,1,0,2,1482,3590,5072,2603,0
+MMLU college_physics,BASE,29,Evaluator Supervisor,4,0,3,11999,16608,28607,12353,0
+MMLU college_physics,BASE,29,Physics,1,0,2,3284,6948,10232,5686,0
+MMLU college_physics,BASE,29,Mathematics,1,1,3,6366,6277,12643,3976,0
+MMLU college_physics,BASE,29,Revisor,1,1,3,5521,8301,13822,6396,0
+MMLU college_physics,BASE,29,unknown,0,0,,,,,,
+MMLU college_physics,BASE,31,Default Supervisor,4,0,4,11565,17342,28907,13189,0
+MMLU college_physics,BASE,31,Answer Generator,1,0,2,1248,2212,3460,1737,0
+MMLU college_physics,BASE,31,Evaluator Supervisor,10,0,9,74138,32414,106552,21903,0
+MMLU college_physics,BASE,31,Physics,1,4,6,13651,15724,29375,12092,4352
+MMLU college_physics,BASE,31,Mathematics,7,17,31,232030,95377,327407,71562,81024
+MMLU college_physics,BASE,31,Revisor,1,1,3,4316,10562,14878,9576,896
+MMLU college_physics,BASE,31,unknown,0,0,,,,,,
+MMLU college_physics,BASE,35,Default Supervisor,4,0,4,11258,14135,25393,10568,0
+MMLU college_physics,BASE,35,Answer Generator,1,0,2,1467,5483,6950,4701,0
+MMLU college_physics,BASE,35,Evaluator Supervisor,4,0,3,13743,13970,27713,10623,0
+MMLU college_physics,BASE,35,Physics,1,0,2,3470,4681,8151,3288,0
+MMLU college_physics,BASE,35,Mathematics,1,1,3,7473,5841,13314,2647,0
+MMLU college_physics,BASE,35,Revisor,1,0,2,2544,6605,9149,5817,0
+MMLU college_physics,BASE,35,unknown,0,0,,,,,,
+MMLU college_physics,BASE,38,Default Supervisor,4,0,4,11032,12504,23536,9477,0
+MMLU college_physics,BASE,38,Answer Generator,1,0,2,1406,3081,4487,2490,0
+MMLU college_physics,BASE,38,Evaluator Supervisor,4,0,3,8934,11140,20074,8194,0
+MMLU college_physics,BASE,38,Physics,1,1,3,6943,2797,9740,759,0
+MMLU college_physics,BASE,38,Mathematics,1,1,3,4917,4582,9499,2546,896
+MMLU college_physics,BASE,38,Revisor,1,1,3,3927,7242,11169,6538,0
+MMLU college_physics,BASE,38,unknown,0,0,,,,,,
+MMLU college_physics,BASE,43,Default Supervisor,4,0,4,15128,13556,28684,9321,0
+MMLU college_physics,BASE,43,Answer Generator,1,0,2,1494,3502,4996,2208,0
+MMLU college_physics,BASE,43,Evaluator Supervisor,4,0,3,14186,12317,26503,7859,0
+MMLU college_physics,BASE,43,Physics,1,1,3,6566,9434,16000,6850,0
+MMLU college_physics,BASE,43,Mathematics,1,1,3,7540,8514,16054,6029,0
+MMLU college_physics,BASE,43,Revisor,1,0,2,5616,10739,16355,9980,0
+MMLU college_physics,BASE,43,unknown,0,0,,,,,,
+MMLU college_physics,BASE,46,Default Supervisor,4,0,4,12353,11200,23553,6627,0
+MMLU college_physics,BASE,46,Answer Generator,1,1,3,3708,4473,8181,3056,0
+MMLU college_physics,BASE,46,Evaluator Supervisor,3,0,2,6122,8133,14255,5288,0
+MMLU college_physics,BASE,46,Physics,0,0,,,,,,
+MMLU college_physics,BASE,46,Mathematics,1,1,3,6999,7995,14994,5729,0
+MMLU college_physics,BASE,46,Revisor,1,0,2,2763,4350,7113,3796,0
+MMLU college_physics,BASE,46,unknown,0,0,,,,,,
+MMLU college_physics,BASE,51,Default Supervisor,6,0,6,12764,17976,30740,13754,896
+MMLU college_physics,BASE,51,Answer Generator,2,0,4,2309,3666,5975,2698,0
+MMLU college_physics,BASE,51,Evaluator Supervisor,6,0,4,9843,18112,27955,14235,0
+MMLU college_physics,BASE,51,Physics,1,0,2,2589,5262,7851,4076,0
+MMLU college_physics,BASE,51,Mathematics,2,2,7,18814,11477,30291,7194,3712
+MMLU college_physics,BASE,51,Revisor,1,0,2,2358,5461,7819,4847,0
+MMLU college_physics,BASE,51,unknown,0,0,,,,,,
+MMLU college_physics,BASE,53,Default Supervisor,4,0,4,9928,10118,20046,7144,0
+MMLU college_physics,BASE,53,Answer Generator,1,0,2,1407,1569,2976,1131,0
+MMLU college_physics,BASE,53,Evaluator Supervisor,4,0,3,9767,11642,21409,8927,0
+MMLU college_physics,BASE,53,Physics,1,0,2,2605,4116,6721,2792,0
+MMLU college_physics,BASE,53,Mathematics,1,1,3,5212,8939,14151,7574,0
+MMLU college_physics,BASE,53,Revisor,1,0,2,2451,2355,4806,1802,0
+MMLU college_physics,BASE,53,unknown,0,0,,,,,,
+MMLU college_physics,BASE,54,Default Supervisor,7,0,7,16859,18629,35488,13956,896
+MMLU college_physics,BASE,54,Answer Generator,2,0,4,2402,5926,8328,4698,0
+MMLU college_physics,BASE,54,Evaluator Supervisor,9,0,7,25627,23369,48996,16820,0
+MMLU college_physics,BASE,54,Physics,3,4,10,22825,22558,45383,16424,1536
+MMLU college_physics,BASE,54,Mathematics,2,1,5,7501,10754,18255,7905,0
+MMLU college_physics,BASE,54,Revisor,2,2,6,7318,23629,30947,22233,0
+MMLU college_physics,BASE,54,unknown,0,0,,,,,,
+MMLU college_physics,BASE,57,Default Supervisor,21,0,21,112532,61995,174527,43324,896
+MMLU college_physics,BASE,57,Answer Generator,3,0,6,4012,6976,10988,5217,0
+MMLU college_physics,BASE,57,Evaluator Supervisor,23,0,20,182328,71232,253560,53899,23808
+MMLU college_physics,BASE,57,Physics,16,12,43,338397,126653,465050,103066,36480
+MMLU college_physics,BASE,57,Mathematics,2,2,6,9533,13633,23166,10430,1280
+MMLU college_physics,BASE,57,Revisor,14,1,29,146803,56047,202850,47748,27008
+MMLU college_physics,BASE,57,unknown,0,0,,,,,,
+MMLU college_physics,BASE,60,Default Supervisor,4,0,4,17938,17595,35533,12518,0
+MMLU college_physics,BASE,60,Answer Generator,1,0,2,1852,5509,7361,4326,0
+MMLU college_physics,BASE,60,Evaluator Supervisor,4,0,3,12455,9704,22159,5697,0
+MMLU college_physics,BASE,60,Physics,1,1,3,7494,6577,14071,3842,0
+MMLU college_physics,BASE,60,Mathematics,1,6,8,30146,22630,52776,18081,12672
+MMLU college_physics,BASE,60,Revisor,1,0,2,4898,3919,8817,2759,0
+MMLU college_physics,BASE,60,unknown,0,0,,,,,,
+MMLU college_physics,BASE,64,Default Supervisor,4,0,4,10335,11688,22023,8863,0
+MMLU college_physics,BASE,64,Answer Generator,1,0,2,1519,2362,3881,1810,0
+MMLU college_physics,BASE,64,Evaluator Supervisor,4,0,3,7552,9499,17051,6554,0
+MMLU college_physics,BASE,64,Physics,1,2,4,8734,6469,15203,4383,2816
+MMLU college_physics,BASE,64,Mathematics,1,4,6,13444,14291,27735,11965,2816
+MMLU college_physics,BASE,64,Revisor,1,0,2,1953,3888,5841,3411,0
+MMLU college_physics,BASE,64,unknown,0,0,,,,,,
+MMLU college_physics,BASE,69,Default Supervisor,4,0,4,9449,10655,20104,7821,0
+MMLU college_physics,BASE,69,Answer Generator,1,0,2,1250,1818,3068,1300,0
+MMLU college_physics,BASE,69,Evaluator Supervisor,5,0,4,14859,12743,27602,8723,0
+MMLU college_physics,BASE,69,Physics,2,1,5,10158,12842,23000,9981,2816
+MMLU college_physics,BASE,69,Mathematics,1,0,2,3793,2971,6764,677,0
+MMLU college_physics,BASE,69,Revisor,1,0,2,2095,2051,4146,1522,0
+MMLU college_physics,BASE,69,unknown,0,0,,,,,,
+MMLU college_physics,BASE,70,Default Supervisor,4,0,4,13429,10928,24357,6929,0
+MMLU college_physics,BASE,70,Answer Generator,1,0,2,1308,5084,6392,4298,0
+MMLU college_physics,BASE,70,Evaluator Supervisor,3,0,2,6677,8926,15603,6616,0
+MMLU college_physics,BASE,70,Physics,0,0,,,,,,
+MMLU college_physics,BASE,70,Mathematics,1,1,3,6403,6863,13266,4889,0
+MMLU college_physics,BASE,70,Revisor,1,0,2,3322,4140,7462,3360,0
+MMLU college_physics,BASE,70,unknown,0,0,,,,,,
+MMLU college_physics,BASE,71,Default Supervisor,4,0,4,12161,13844,26005,9883,0
+MMLU college_physics,BASE,71,Answer Generator,1,0,2,1310,3774,5084,2958,0
+MMLU college_physics,BASE,71,Evaluator Supervisor,3,0,2,6373,8016,14389,5888,0
+MMLU college_physics,BASE,71,Physics,1,3,5,15227,17864,33091,13696,0
+MMLU college_physics,BASE,71,Mathematics,0,0,,,,,,
+MMLU college_physics,BASE,71,Revisor,1,0,2,3300,3947,7247,3163,0
+MMLU college_physics,BASE,71,unknown,0,0,,,,,,
+MMLU college_physics,BASE,73,Default Supervisor,4,0,4,16671,16012,32683,10280,0
+MMLU college_physics,BASE,73,Answer Generator,1,0,2,1972,8247,10219,7016,0
+MMLU college_physics,BASE,73,Evaluator Supervisor,4,0,3,16768,13658,30426,9040,0
+MMLU college_physics,BASE,73,Physics,1,1,3,8465,7628,16093,4907,0
+MMLU college_physics,BASE,73,Mathematics,1,1,3,8435,8840,17275,6794,0
+MMLU college_physics,BASE,73,Revisor,1,0,2,3331,3488,6819,2267,0
+MMLU college_physics,BASE,73,unknown,0,0,,,,,,
+MMLU college_physics,BASE,75,Default Supervisor,4,0,4,9911,10036,19947,7162,0
+MMLU college_physics,BASE,75,Answer Generator,1,0,2,1305,2507,3812,1992,0
+MMLU college_physics,BASE,75,Evaluator Supervisor,3,0,2,4173,7382,11555,5715,0
+MMLU college_physics,BASE,75,Physics,0,0,,,,,,
+MMLU college_physics,BASE,75,Mathematics,1,2,4,7712,7942,15654,6045,0
+MMLU college_physics,BASE,75,Revisor,1,0,2,2315,2417,4732,1788,0
+MMLU college_physics,BASE,75,unknown,0,0,,,,,,
+MMLU college_physics,BASE,77,Default Supervisor,4,0,4,11944,12146,24090,8255,0
+MMLU college_physics,BASE,77,Answer Generator,1,1,3,3015,2499,5514,1261,256
+MMLU college_physics,BASE,77,Evaluator Supervisor,3,0,2,5580,8003,13583,5715,0
+MMLU college_physics,BASE,77,Physics,1,1,3,5622,4053,9675,2174,1280
+MMLU college_physics,BASE,77,Mathematics,0,0,,,,,,
+MMLU college_physics,BASE,77,Revisor,1,1,3,4119,3545,7664,2927,896
+MMLU college_physics,BASE,77,unknown,0,0,,,,,,
+MMLU college_physics,BASE,81,Default Supervisor,4,0,4,13305,17365,30670,13517,0
+MMLU college_physics,BASE,81,Answer Generator,1,0,2,1294,2924,4218,2255,0
+MMLU college_physics,BASE,81,Evaluator Supervisor,4,0,3,10096,11884,21980,9034,0
+MMLU college_physics,BASE,81,Physics,1,1,3,5069,12264,17333,11097,1280
+MMLU college_physics,BASE,81,Mathematics,1,6,7,19698,22515,42213,19096,10752
+MMLU college_physics,BASE,81,Revisor,1,0,2,3868,5061,8929,3807,0
+MMLU college_physics,BASE,81,unknown,0,0,,,,,,
+MMLU college_physics,BASE,83,Default Supervisor,4,0,4,14460,22445,36905,17367,0
+MMLU college_physics,BASE,83,Answer Generator,1,0,2,1977,4250,6227,3113,0
+MMLU college_physics,BASE,83,Evaluator Supervisor,4,0,3,14554,9849,24403,5581,0
+MMLU college_physics,BASE,83,Physics,1,2,4,11987,13630,25617,10674,1920
+MMLU college_physics,BASE,83,Mathematics,1,2,4,10124,13730,23854,11047,1920
+MMLU college_physics,BASE,83,Revisor,1,1,3,5313,6484,11797,5071,0
+MMLU college_physics,BASE,83,unknown,0,0,,,,,,
+MMLU college_physics,BASE,84,Default Supervisor,4,0,4,13635,16944,30579,13255,0
+MMLU college_physics,BASE,84,Answer Generator,1,0,2,1374,2914,4288,1988,0
+MMLU college_physics,BASE,84,Evaluator Supervisor,5,0,4,22171,15568,37739,11274,0
+MMLU college_physics,BASE,84,Physics,2,0,4,10799,8328,19127,5482,0
+MMLU college_physics,BASE,84,Mathematics,1,1,3,6794,8347,15141,5557,0
+MMLU college_physics,BASE,84,Revisor,1,0,2,3197,5964,9161,5127,0
+MMLU college_physics,BASE,84,unknown,0,0,,,,,,
+MMLU college_physics,BASE,85,Default Supervisor,4,0,4,13694,15392,29086,12128,0
+MMLU college_physics,BASE,85,Answer Generator,1,0,2,2003,8915,10918,7789,0
+MMLU college_physics,BASE,85,Evaluator Supervisor,4,0,3,13281,9574,22855,5582,0
+MMLU college_physics,BASE,85,Physics,1,1,3,5554,7335,12889,5248,0
+MMLU college_physics,BASE,85,Mathematics,1,0,2,2999,10458,13457,7752,0
+MMLU college_physics,BASE,85,Revisor,1,1,3,6671,8037,14708,6652,0
+MMLU college_physics,BASE,85,unknown,0,0,,,,,,
+MMLU college_physics,BASE,86,Default Supervisor,4,0,4,9808,16579,26387,14084,0
+MMLU college_physics,BASE,86,Answer Generator,1,0,2,1239,1805,3044,1169,0
+MMLU college_physics,BASE,86,Evaluator Supervisor,3,0,2,5446,6698,12144,5071,0
+MMLU college_physics,BASE,86,Physics,1,1,3,6447,4678,11125,2535,0
+MMLU college_physics,BASE,86,Mathematics,0,0,,,,,,
+MMLU college_physics,BASE,86,Revisor,1,0,2,2754,2054,4808,1575,0
+MMLU college_physics,BASE,86,unknown,0,0,,,,,,
+MMLU college_physics,BASE,88,Default Supervisor,24,0,24,172277,95764,268041,68464,18560
+MMLU college_physics,BASE,88,Answer Generator,5,0,10,7523,27922,35445,23855,0
+MMLU college_physics,BASE,88,Evaluator Supervisor,19,0,14,56154,53158,109312,35343,2176
+MMLU college_physics,BASE,88,Physics,8,5,21,50485,86335,136820,68653,5248
+MMLU college_physics,BASE,88,Mathematics,4,5,9,24664,30980,55644,23819,2816
+MMLU college_physics,BASE,88,Revisor,14,1,29,255879,71351,327230,57864,25088
+MMLU college_physics,BASE,88,unknown,0,0,,,,,,
+MMLU college_physics,BASE,90,Default Supervisor,3,0,3,6663,6774,13437,4891,0
+MMLU college_physics,BASE,90,Answer Generator,1,0,2,1670,2538,4208,1808,0
+MMLU college_physics,BASE,90,Evaluator Supervisor,4,0,3,10567,9402,19969,6299,0
+MMLU college_physics,BASE,90,Physics,1,1,3,5255,5779,11034,3426,0
+MMLU college_physics,BASE,90,Mathematics,1,0,2,2301,4300,6601,2880,0
+MMLU college_physics,BASE,90,Revisor,0,0,,,,,,
+MMLU college_physics,BASE,90,unknown,0,0,,,,,,
+MMLU college_physics,BASE,91,Default Supervisor,4,0,4,13040,14686,27726,10440,0
+MMLU college_physics,BASE,91,Answer Generator,1,0,2,1530,2090,3620,1382,0
+MMLU college_physics,BASE,91,Evaluator Supervisor,4,0,3,12828,11088,23916,7631,0
+MMLU college_physics,BASE,91,Physics,1,1,3,5539,11482,17021,8521,0
+MMLU college_physics,BASE,91,Mathematics,1,1,3,6293,5234,11527,3148,0
+MMLU college_physics,BASE,91,Revisor,1,0,2,2674,4620,7294,3356,0
+MMLU college_physics,BASE,91,unknown,0,0,,,,,,
+MMLU college_physics,BASE,92,Default Supervisor,4,0,4,12575,12015,24590,8291,0
+MMLU college_physics,BASE,92,Answer Generator,1,0,2,1525,2622,4147,1874,0
+MMLU college_physics,BASE,92,Evaluator Supervisor,4,0,3,12774,11672,24446,8012,0
+MMLU college_physics,BASE,92,Physics,1,2,4,10992,8676,19668,5889,2176
+MMLU college_physics,BASE,92,Mathematics,1,1,3,6855,5889,12744,3909,0
+MMLU college_physics,BASE,92,Revisor,1,0,2,3127,4826,7953,4384,0
+MMLU college_physics,BASE,92,unknown,0,0,,,,,,
+MMLU college_physics,BASE,93,Default Supervisor,4,0,4,15293,13241,28534,7660,0
+MMLU college_physics,BASE,93,Answer Generator,1,0,2,1804,4630,6434,3167,0
+MMLU college_physics,BASE,93,Evaluator Supervisor,4,0,3,14292,13411,27703,8443,0
+MMLU college_physics,BASE,93,Physics,1,1,3,8542,9291,17833,5785,1280
+MMLU college_physics,BASE,93,Mathematics,1,1,3,9624,8405,18029,3694,0
+MMLU college_physics,BASE,93,Revisor,1,0,2,3521,5097,8618,4304,0
+MMLU college_physics,BASE,93,unknown,0,0,,,,,,
+MMLU college_physics,BASE,94,Default Supervisor,4,0,4,11111,13900,25011,11119,0
+MMLU college_physics,BASE,94,Answer Generator,1,0,2,1172,7635,8807,6952,0
+MMLU college_physics,BASE,94,Evaluator Supervisor,3,0,2,5286,6997,12283,5191,0
+MMLU college_physics,BASE,94,Physics,0,0,,,,,,
+MMLU college_physics,BASE,94,Mathematics,1,1,3,5604,17510,23114,16135,1280
+MMLU college_physics,BASE,94,Revisor,1,1,3,5237,8305,13542,7595,1280
+MMLU college_physics,BASE,94,unknown,0,0,,,,,,
+MMLU college_physics,BASE,95,Default Supervisor,4,0,4,9978,16508,26486,13705,0
+MMLU college_physics,BASE,95,Answer Generator,1,0,2,1181,2592,3773,2094,0
+MMLU college_physics,BASE,95,Evaluator Supervisor,3,0,2,5013,6565,11578,5041,0
+MMLU college_physics,BASE,95,Physics,0,0,,,,,,
+MMLU college_physics,BASE,95,Mathematics,1,2,4,8339,20062,28401,17949,1536
+MMLU college_physics,BASE,95,Revisor,1,0,2,2106,2307,4413,1960,0
+MMLU college_physics,BASE,95,unknown,0,0,,,,,,
+MMLU college_physics,BASE,97,Default Supervisor,4,0,4,16500,17080,33580,11610,0
+MMLU college_physics,BASE,97,Answer Generator,1,0,2,1867,4134,6001,2740,0
+MMLU college_physics,BASE,97,Evaluator Supervisor,4,0,3,15106,12506,27612,7245,0
+MMLU college_physics,BASE,97,Physics,1,1,3,7245,15131,22376,11975,1280
+MMLU college_physics,BASE,97,Mathematics,1,0,2,4146,3125,7271,1519,0
+MMLU college_physics,BASE,97,Revisor,1,0,2,4927,5979,10906,5240,0
+MMLU college_physics,BASE,97,unknown,0,0,,,,,,
+MMLU college_physics,BASE,99,Default Supervisor,4,0,4,12963,15394,28357,11542,0
+MMLU college_physics,BASE,99,Answer Generator,1,0,2,1489,4365,5854,3564,0
+MMLU college_physics,BASE,99,Evaluator Supervisor,4,0,3,14705,9986,24691,6416,0
+MMLU college_physics,BASE,99,Physics,1,1,3,6405,8030,14435,5505,1280
+MMLU college_physics,BASE,99,Mathematics,1,0,2,2979,10358,13337,8859,0
+MMLU college_physics,BASE,99,Revisor,1,1,3,4574,5904,10478,4696,896
+MMLU college_physics,BASE,99,unknown,0,0,,,,,,
+MMLU college_physics,BASE,101,Default Supervisor,20,0,20,195982,87787,283769,59768,15872
+MMLU college_physics,BASE,101,Answer Generator,2,0,4,2702,5399,8101,3390,0
+MMLU college_physics,BASE,101,Evaluator Supervisor,8,0,5,21027,14099,35126,8206,0
+MMLU college_physics,BASE,101,Physics,1,0,2,3456,4572,8028,2811,0
+MMLU college_physics,BASE,101,Mathematics,1,1,3,6654,14476,21130,11944,1280
+MMLU college_physics,BASE,101,Revisor,14,2,30,295500,63575,359075,47482,51840
+MMLU college_physics,BASE,101,unknown,0,0,,,,,,
+MMLU college_physics,V2,0,Default Supervisor,4,0,4,15399,14650,30049,10840,0
+MMLU college_physics,V2,0,Answer Generator,1,0,2,3296,2651,5947,1935,0
+MMLU college_physics,V2,0,Evaluator Supervisor,4,0,3,13361,10972,24333,6834,0
+MMLU college_physics,V2,0,Physics,1,3,5,16086,20007,36093,17587,0
+MMLU college_physics,V2,0,Mathematics,1,0,2,4598,16975,21573,16384,0
+MMLU college_physics,V2,0,Revisor,1,1,3,7260,5909,13169,4744,0
+MMLU college_physics,V2,0,unknown,0,0,,,,,,
+MMLU college_physics,V2,2,Default Supervisor,4,0,4,15366,12910,28276,9551,0
+MMLU college_physics,V2,2,Answer Generator,1,1,3,5738,3199,8937,1876,1280
+MMLU college_physics,V2,2,Evaluator Supervisor,4,0,3,15261,9759,25020,6947,0
+MMLU college_physics,V2,2,Physics,1,1,3,8725,14523,23248,12089,0
+MMLU college_physics,V2,2,Mathematics,1,3,5,15149,25249,40398,22983,4736
+MMLU college_physics,V2,2,Revisor,1,0,2,4840,6110,10950,5301,0
+MMLU college_physics,V2,2,unknown,0,0,,,,,,
+MMLU college_physics,V2,3,Default Supervisor,4,0,4,13507,13170,26677,10376,0
+MMLU college_physics,V2,3,Answer Generator,1,0,2,3002,1684,4686,1111,0
+MMLU college_physics,V2,3,Evaluator Supervisor,4,0,3,11741,9864,21605,7320,0
+MMLU college_physics,V2,3,Physics,1,1,3,7209,3334,10543,2167,1920
+MMLU college_physics,V2,3,Mathematics,1,6,8,23311,37482,60793,35156,7552
+MMLU college_physics,V2,3,Revisor,1,1,3,8823,13273,22096,12191,0
+MMLU college_physics,V2,3,unknown,0,0,,,,,,
+MMLU college_physics,V2,4,Default Supervisor,4,0,4,12881,10790,23671,7625,0
+MMLU college_physics,V2,4,Answer Generator,1,0,2,3089,2376,5465,1756,0
+MMLU college_physics,V2,4,Evaluator Supervisor,4,0,3,12783,8181,20964,5439,0
+MMLU college_physics,V2,4,Physics,1,7,9,47967,33878,81845,27366,7040
+MMLU college_physics,V2,4,Mathematics,1,1,3,7957,8131,16088,6187,0
+MMLU college_physics,V2,4,Revisor,1,0,2,4871,5657,10528,4602,0
+MMLU college_physics,V2,4,unknown,0,0,,,,,,
+MMLU college_physics,V2,6,Default Supervisor,4,0,4,16479,10902,27381,6189,0
+MMLU college_physics,V2,6,Answer Generator,1,0,2,3324,3622,6946,2667,0
+MMLU college_physics,V2,6,Evaluator Supervisor,4,0,3,15535,11382,26917,8437,0
+MMLU college_physics,V2,6,Physics,1,1,3,8918,16392,25310,13906,0
+MMLU college_physics,V2,6,Mathematics,1,11,13,72400,60584,132984,52468,40704
+MMLU college_physics,V2,6,Revisor,1,1,3,8642,14654,23296,12841,0
+MMLU college_physics,V2,6,unknown,0,0,,,,,,
+MMLU college_physics,V2,11,Default Supervisor,4,0,4,17432,24626,42058,20200,0
+MMLU college_physics,V2,11,Answer Generator,1,0,2,3619,6039,9658,4960,0
+MMLU college_physics,V2,11,Evaluator Supervisor,4,0,3,18298,14385,32683,10865,0
+MMLU college_physics,V2,11,Physics,1,1,3,9901,14914,24815,11531,0
+MMLU college_physics,V2,11,Mathematics,1,1,3,10108,20286,30394,17464,0
+MMLU college_physics,V2,11,Revisor,1,0,2,6780,7581,14361,6892,0
+MMLU college_physics,V2,11,unknown,0,0,,,,,,
+MMLU college_physics,V2,13,Default Supervisor,4,0,4,12045,18220,30265,15913,0
+MMLU college_physics,V2,13,Answer Generator,1,0,2,2978,1889,4867,1568,0
+MMLU college_physics,V2,13,Evaluator Supervisor,4,0,3,12040,8007,20047,5643,0
+MMLU college_physics,V2,13,Physics,1,0,2,4571,4760,9331,3091,0
+MMLU college_physics,V2,13,Mathematics,1,1,3,7919,6234,14153,4806,0
+MMLU college_physics,V2,13,Revisor,1,0,2,4159,2048,6207,1695,0
+MMLU college_physics,V2,13,unknown,0,0,,,,,,
+MMLU college_physics,V2,14,Default Supervisor,4,0,4,13370,14180,27550,10894,0
+MMLU college_physics,V2,14,Answer Generator,1,0,2,3138,2564,5702,2150,0
+MMLU college_physics,V2,14,Evaluator Supervisor,4,0,3,13284,14491,27775,11124,0
+MMLU college_physics,V2,14,Physics,1,1,3,8929,13050,21979,11285,1920
+MMLU college_physics,V2,14,Mathematics,1,1,3,8558,20816,29374,19244,0
+MMLU college_physics,V2,14,Revisor,1,1,3,8178,11864,20042,11167,0
+MMLU college_physics,V2,14,unknown,0,0,,,,,,
+MMLU college_physics,V2,16,Default Supervisor,4,0,4,13151,22944,36095,19934,0
+MMLU college_physics,V2,16,Answer Generator,1,0,2,3092,2655,5747,2089,0
+MMLU college_physics,V2,16,Evaluator Supervisor,3,0,2,7008,10642,17650,9042,0
+MMLU college_physics,V2,16,Physics,0,0,,,,,,
+MMLU college_physics,V2,16,Mathematics,1,3,5,18187,24143,42330,20369,0
+MMLU college_physics,V2,16,Revisor,1,1,3,6651,9633,16284,8754,0
+MMLU college_physics,V2,16,unknown,0,0,,,,,,
+MMLU college_physics,V2,17,Default Supervisor,4,0,4,14925,16163,31088,12668,0
+MMLU college_physics,V2,17,Answer Generator,1,0,2,3365,4266,7631,3437,0
+MMLU college_physics,V2,17,Evaluator Supervisor,2,0,1,2556,4953,7509,3761,0
+MMLU college_physics,V2,17,Physics,0,0,,,,,,
+MMLU college_physics,V2,17,Mathematics,0,0,,,,,,
+MMLU college_physics,V2,17,Revisor,1,0,2,4529,5835,10364,4984,0
+MMLU college_physics,V2,17,unknown,0,0,,,,,,
+MMLU college_physics,V2,19,Default Supervisor,4,0,4,13990,14174,28164,10633,0
+MMLU college_physics,V2,19,Answer Generator,1,0,2,3127,2591,5718,1933,0
+MMLU college_physics,V2,19,Evaluator Supervisor,4,0,3,12473,7782,20255,5019,0
+MMLU college_physics,V2,19,Physics,1,12,14,97881,50395,148276,40478,54528
+MMLU college_physics,V2,19,Mathematics,1,2,4,12106,15977,28083,13523,0
+MMLU college_physics,V2,19,Revisor,1,1,3,6621,18443,25064,17628,0
+MMLU college_physics,V2,19,unknown,0,0,,,,,,
+MMLU college_physics,V2,20,Default Supervisor,6,0,6,19197,19276,38473,15136,0
+MMLU college_physics,V2,20,Answer Generator,2,0,4,6148,3909,10057,2915,0
+MMLU college_physics,V2,20,Evaluator Supervisor,7,0,5,23950,18835,42785,13410,0
+MMLU college_physics,V2,20,Physics,2,2,6,18951,13344,32295,8185,0
+MMLU college_physics,V2,20,Mathematics,2,16,19,119547,67533,187080,54421,70144
+MMLU college_physics,V2,20,Revisor,1,0,2,5142,4990,10132,4574,0
+MMLU college_physics,V2,20,unknown,0,0,,,,,,
+MMLU college_physics,V2,22,Default Supervisor,11,0,11,33880,35542,69422,27697,0
+MMLU college_physics,V2,22,Answer Generator,4,0,8,12666,13862,26528,10962,0
+MMLU college_physics,V2,22,Evaluator Supervisor,11,0,7,25932,29240,55172,21945,0
+MMLU college_physics,V2,22,Physics,3,18,23,195237,96876,292113,73050,117120
+MMLU college_physics,V2,22,Mathematics,2,5,8,27319,29360,56679,23616,5760
+MMLU college_physics,V2,22,Revisor,2,15,18,102408,55079,157487,45704,12160
+MMLU college_physics,V2,22,unknown,0,0,,,,,,
+MMLU college_physics,V2,24,Default Supervisor,4,0,4,14836,23428,38264,19663,0
+MMLU college_physics,V2,24,Answer Generator,1,0,2,3122,1996,5118,1150,0
+MMLU college_physics,V2,24,Evaluator Supervisor,4,0,3,14220,9728,23948,6270,0
+MMLU college_physics,V2,24,Physics,1,1,3,8553,7971,16524,5858,0
+MMLU college_physics,V2,24,Mathematics,1,0,2,4850,5862,10712,4556,0
+MMLU college_physics,V2,24,Revisor,1,0,2,5569,3238,8807,2273,0
+MMLU college_physics,V2,24,unknown,0,0,,,,,,
+MMLU college_physics,V2,25,Default Supervisor,4,0,4,12670,12908,25578,10068,0
+MMLU college_physics,V2,25,Answer Generator,1,0,2,2908,2122,5030,1532,0
+MMLU college_physics,V2,25,Evaluator Supervisor,3,0,2,5853,7197,13050,5310,0
+MMLU college_physics,V2,25,Physics,0,0,,,,,,
+MMLU college_physics,V2,25,Mathematics,1,6,8,34926,25830,60756,20923,0
+MMLU college_physics,V2,25,Revisor,1,0,2,4240,2678,6918,1732,0
+MMLU college_physics,V2,25,unknown,0,0,,,,,,
+MMLU college_physics,V2,27,Default Supervisor,6,0,6,21036,30289,51325,25099,0
+MMLU college_physics,V2,27,Answer Generator,2,0,4,6252,5717,11969,4299,0
+MMLU college_physics,V2,27,Evaluator Supervisor,6,0,4,15849,16984,32833,12001,0
+MMLU college_physics,V2,27,Physics,2,6,11,41141,46151,87292,36981,0
+MMLU college_physics,V2,27,Mathematics,1,1,3,7611,5571,13182,4441,1920
+MMLU college_physics,V2,27,Revisor,1,0,2,6234,8411,14645,7617,0
+MMLU college_physics,V2,27,unknown,0,0,,,,,,
+MMLU college_physics,V2,28,Default Supervisor,7,0,7,33462,28295,61757,17705,0
+MMLU college_physics,V2,28,Answer Generator,2,0,4,7329,13348,20677,10101,0
+MMLU college_physics,V2,28,Evaluator Supervisor,8,0,6,44853,19090,63943,9433,7936
+MMLU college_physics,V2,28,Physics,2,7,11,55374,48794,104168,38343,5760
+MMLU college_physics,V2,28,Mathematics,2,10,13,80133,62050,142183,48161,14336
+MMLU college_physics,V2,28,Revisor,2,4,8,35831,42548,78379,35489,0
+MMLU college_physics,V2,28,unknown,0,0,,,,,,
+MMLU college_physics,V2,29,Default Supervisor,4,0,4,14094,17414,31508,13940,0
+MMLU college_physics,V2,29,Answer Generator,1,0,2,3087,3036,6123,2345,0
+MMLU college_physics,V2,29,Evaluator Supervisor,4,0,3,15665,10684,26349,7053,0
+MMLU college_physics,V2,29,Physics,1,1,3,9584,10019,19603,7029,0
+MMLU college_physics,V2,29,Mathematics,1,1,3,8233,6351,14584,4115,0
+MMLU college_physics,V2,29,Revisor,1,0,2,4266,4789,9055,4032,0
+MMLU college_physics,V2,29,unknown,0,0,,,,,,
+MMLU college_physics,V2,31,Default Supervisor,5,0,5,18118,18297,36415,14028,0
+MMLU college_physics,V2,31,Answer Generator,1,0,2,3038,2120,5158,1736,0
+MMLU college_physics,V2,31,Evaluator Supervisor,6,0,4,15294,12417,27711,8848,0
+MMLU college_physics,V2,31,Physics,1,5,7,27907,32253,60160,28523,6656
+MMLU college_physics,V2,31,Mathematics,1,13,14,132088,67109,199197,52702,57216
+MMLU college_physics,V2,31,Revisor,1,0,2,4744,2950,7694,2436,0
+MMLU college_physics,V2,31,unknown,0,0,,,,,,
+MMLU college_physics,V2,35,Default Supervisor,4,0,4,14250,9610,23860,6720,0
+MMLU college_physics,V2,35,Answer Generator,1,0,2,3109,3510,6619,2891,0
+MMLU college_physics,V2,35,Evaluator Supervisor,4,0,3,10815,16273,27088,13654,0
+MMLU college_physics,V2,35,Physics,1,2,4,12869,20875,33744,18292,0
+MMLU college_physics,V2,35,Mathematics,1,13,15,156142,77680,233822,64173,91648
+MMLU college_physics,V2,35,Revisor,1,0,2,5457,8016,13473,6959,0
+MMLU college_physics,V2,35,unknown,0,0,,,,,,
+MMLU college_physics,V2,38,Default Supervisor,4,0,4,13710,14394,28104,11336,0
+MMLU college_physics,V2,38,Answer Generator,1,0,2,3072,1833,4905,1367,0
+MMLU college_physics,V2,38,Evaluator Supervisor,3,0,2,6840,14403,21243,12541,0
+MMLU college_physics,V2,38,Physics,0,0,,,,,,
+MMLU college_physics,V2,38,Mathematics,1,13,14,85045,57330,142375,49618,37632
+MMLU college_physics,V2,38,Revisor,1,0,2,4617,4278,8895,3593,0
+MMLU college_physics,V2,38,unknown,0,0,,,,,,
+MMLU college_physics,V2,43,Default Supervisor,6,0,6,23782,20035,43817,12518,0
+MMLU college_physics,V2,43,Answer Generator,2,0,4,6377,5278,11655,3060,0
+MMLU college_physics,V2,43,Evaluator Supervisor,7,0,5,25159,20044,45203,13296,0
+MMLU college_physics,V2,43,Physics,2,9,13,66876,48033,114909,38205,12800
+MMLU college_physics,V2,43,Mathematics,2,15,19,123087,60558,183645,45781,57728
+MMLU college_physics,V2,43,Revisor,1,0,2,5617,4088,9705,2584,0
+MMLU college_physics,V2,43,unknown,0,0,,,,,,
+MMLU college_physics,V2,46,Default Supervisor,4,0,4,18209,16453,34662,10575,0
+MMLU college_physics,V2,46,Answer Generator,1,0,2,3559,3854,7413,2622,0
+MMLU college_physics,V2,46,Evaluator Supervisor,4,0,3,16220,12701,28921,9126,0
+MMLU college_physics,V2,46,Physics,1,5,7,29796,40739,70535,36676,13824
+MMLU college_physics,V2,46,Mathematics,1,5,7,31944,44461,76405,38731,4736
+MMLU college_physics,V2,46,Revisor,1,0,2,5918,10229,16147,8500,0
+MMLU college_physics,V2,46,unknown,0,0,,,,,,
+MMLU college_physics,V2,51,Default Supervisor,4,0,4,12542,8513,21055,5537,0
+MMLU college_physics,V2,51,Answer Generator,1,0,2,2999,1900,4899,1333,0
+MMLU college_physics,V2,51,Evaluator Supervisor,3,0,2,6643,7287,13930,5448,0
+MMLU college_physics,V2,51,Physics,1,1,3,7987,7726,15713,6011,0
+MMLU college_physics,V2,51,Mathematics,0,0,,,,,,
+MMLU college_physics,V2,51,Revisor,1,0,2,4864,4083,8947,3163,0
+MMLU college_physics,V2,51,unknown,0,0,,,,,,
+MMLU college_physics,V2,53,Default Supervisor,5,0,5,20964,33868,54832,29930,0
+MMLU college_physics,V2,53,Answer Generator,1,0,2,3199,2386,5585,1809,0
+MMLU college_physics,V2,53,Evaluator Supervisor,6,0,4,20043,12271,32314,7854,0
+MMLU college_physics,V2,53,Physics,1,1,3,8776,14827,23603,13422,0
+MMLU college_physics,V2,53,Mathematics,1,1,3,8600,9256,17856,7918,0
+MMLU college_physics,V2,53,Revisor,1,0,2,4948,4666,9614,3747,0
+MMLU college_physics,V2,53,unknown,0,0,,,,,,
+MMLU college_physics,V2,54,Default Supervisor,4,0,4,14265,10751,25016,7246,0
+MMLU college_physics,V2,54,Answer Generator,1,0,2,3022,2541,5563,1907,0
+MMLU college_physics,V2,54,Evaluator Supervisor,3,0,2,7328,11486,18814,9034,0
+MMLU college_physics,V2,54,Physics,0,0,,,,,,
+MMLU college_physics,V2,54,Mathematics,1,1,3,8673,7551,16224,5271,0
+MMLU college_physics,V2,54,Revisor,1,0,2,5029,3624,8653,2912,0
+MMLU college_physics,V2,54,unknown,0,0,,,,,,
+MMLU college_physics,V2,57,Default Supervisor,4,0,4,14517,11658,26175,8441,0
+MMLU college_physics,V2,57,Answer Generator,1,0,2,3048,2202,5250,1596,0
+MMLU college_physics,V2,57,Evaluator Supervisor,4,0,3,17689,6804,24493,4294,0
+MMLU college_physics,V2,57,Physics,1,1,3,8429,18332,26761,15267,0
+MMLU college_physics,V2,57,Mathematics,1,4,6,18403,29966,48369,26530,0
+MMLU college_physics,V2,57,Revisor,1,1,3,6978,10488,17466,9211,0
+MMLU college_physics,V2,57,unknown,0,0,,,,,,
+MMLU college_physics,V2,60,Default Supervisor,4,0,4,18692,23570,42262,19010,0
+MMLU college_physics,V2,60,Answer Generator,1,0,2,3409,5979,9388,4903,0
+MMLU college_physics,V2,60,Evaluator Supervisor,3,0,2,10117,11214,21331,8431,0
+MMLU college_physics,V2,60,Physics,0,0,,,,,,
+MMLU college_physics,V2,60,Mathematics,1,7,9,48525,42513,91038,35129,22528
+MMLU college_physics,V2,60,Revisor,1,0,2,6646,10654,17300,8828,0
+MMLU college_physics,V2,60,unknown,0,0,,,,,,
+MMLU college_physics,V2,64,Default Supervisor,6,0,6,19087,20088,39175,15982,0
+MMLU college_physics,V2,64,Answer Generator,2,0,4,6308,4972,11280,3811,0
+MMLU college_physics,V2,64,Evaluator Supervisor,7,0,5,20861,16947,37808,11844,0
+MMLU college_physics,V2,64,Physics,2,6,10,46847,33215,80062,24629,4096
+MMLU college_physics,V2,64,Mathematics,2,2,7,23171,37545,60716,26532,0
+MMLU college_physics,V2,64,Revisor,1,1,3,6579,10888,17467,9981,0
+MMLU college_physics,V2,64,unknown,0,0,,,,,,
+MMLU college_physics,V2,69,Default Supervisor,4,0,4,12209,15839,28048,13517,0
+MMLU college_physics,V2,69,Answer Generator,1,0,2,2805,1672,4477,1290,0
+MMLU college_physics,V2,69,Evaluator Supervisor,4,0,3,10826,15514,26340,12753,0
+MMLU college_physics,V2,69,Physics,1,1,3,7651,6162,13813,4884,0
+MMLU college_physics,V2,69,Mathematics,1,2,4,10365,8490,18855,5874,0
+MMLU college_physics,V2,69,Revisor,1,1,3,6065,5461,11526,4782,0
+MMLU college_physics,V2,69,unknown,0,0,,,,,,
+MMLU college_physics,V2,70,Default Supervisor,4,0,4,12571,25291,37862,22552,0
+MMLU college_physics,V2,70,Answer Generator,1,0,2,2993,3942,6935,3558,0
+MMLU college_physics,V2,70,Evaluator Supervisor,4,0,3,12137,11320,23457,8525,0
+MMLU college_physics,V2,70,Physics,1,4,6,24852,28619,53471,23775,0
+MMLU college_physics,V2,70,Mathematics,1,2,4,11791,8516,20307,6600,0
+MMLU college_physics,V2,70,Revisor,1,1,3,6180,7342,13522,6781,0
+MMLU college_physics,V2,70,unknown,0,0,,,,,,
+MMLU college_physics,V2,71,Default Supervisor,6,0,6,21042,27509,48551,21597,0
+MMLU college_physics,V2,71,Answer Generator,2,0,4,6585,9580,16165,7865,0
+MMLU college_physics,V2,71,Evaluator Supervisor,7,0,5,20525,18681,39206,13502,0
+MMLU college_physics,V2,71,Physics,2,20,21,115422,109842,225264,97034,8320
+MMLU college_physics,V2,71,Mathematics,2,8,12,49397,60508,109905,52465,10112
+MMLU college_physics,V2,71,Revisor,1,0,2,4968,5287,10255,3868,0
+MMLU college_physics,V2,71,unknown,0,0,,,,,,
+MMLU college_physics,V2,73,Default Supervisor,4,0,4,18663,16883,35546,11923,0
+MMLU college_physics,V2,73,Answer Generator,1,0,2,3453,7269,10722,5981,0
+MMLU college_physics,V2,73,Evaluator Supervisor,4,0,3,17047,10916,27963,6818,0
+MMLU college_physics,V2,73,Physics,1,0,2,6574,9834,16408,7559,0
+MMLU college_physics,V2,73,Mathematics,1,5,6,26365,28687,55052,23935,0
+MMLU college_physics,V2,73,Revisor,1,1,3,9276,9958,19234,7866,0
+MMLU college_physics,V2,73,unknown,0,0,,,,,,
+MMLU college_physics,V2,75,Default Supervisor,4,0,4,13781,13784,27565,10688,0
+MMLU college_physics,V2,75,Answer Generator,1,0,2,3383,2526,5909,1918,0
+MMLU college_physics,V2,75,Evaluator Supervisor,2,0,1,2655,3449,6104,2626,0
+MMLU college_physics,V2,75,Physics,0,0,,,,,,
+MMLU college_physics,V2,75,Mathematics,0,0,,,,,,
+MMLU college_physics,V2,75,Revisor,1,0,2,4781,7691,12472,6621,0
+MMLU college_physics,V2,75,unknown,0,0,,,,,,
+MMLU college_physics,V2,77,Default Supervisor,6,0,6,21398,19511,40909,15017,0
+MMLU college_physics,V2,77,Answer Generator,2,0,4,6492,4833,11325,3446,0
+MMLU college_physics,V2,77,Evaluator Supervisor,6,0,4,19808,17886,37694,13166,0
+MMLU college_physics,V2,77,Physics,2,15,19,124490,76744,201234,63729,60544
+MMLU college_physics,V2,77,Mathematics,1,2,4,13279,19885,33164,16945,0
+MMLU college_physics,V2,77,Revisor,1,0,2,6046,7631,13677,6943,0
+MMLU college_physics,V2,77,unknown,0,0,,,,,,
+MMLU college_physics,V2,81,Default Supervisor,4,0,4,16010,13300,29310,9133,0
+MMLU college_physics,V2,81,Answer Generator,1,0,2,3407,2205,5612,1451,0
+MMLU college_physics,V2,81,Evaluator Supervisor,3,0,2,7786,7774,15560,5611,0
+MMLU college_physics,V2,81,Physics,0,0,,,,,,
+MMLU college_physics,V2,81,Mathematics,1,1,3,8305,16235,24540,14376,0
+MMLU college_physics,V2,81,Revisor,1,2,4,14515,18837,33352,16389,3200
+MMLU college_physics,V2,81,unknown,0,0,,,,,,
+MMLU college_physics,V2,83,Default Supervisor,4,0,4,17867,12184,30051,7259,0
+MMLU college_physics,V2,83,Answer Generator,1,0,2,3421,4418,7839,3364,0
+MMLU college_physics,V2,83,Evaluator Supervisor,4,0,3,19121,10966,30087,6312,0
+MMLU college_physics,V2,83,Physics,1,1,3,10419,10917,21336,7679,0
+MMLU college_physics,V2,83,Mathematics,1,1,3,11013,19987,31000,14426,0
+MMLU college_physics,V2,83,Revisor,1,1,3,11121,16071,27192,14328,2816
+MMLU college_physics,V2,83,unknown,0,0,,,,,,
+MMLU college_physics,V2,84,Default Supervisor,4,0,4,16230,14385,30615,10250,0
+MMLU college_physics,V2,84,Answer Generator,1,0,2,3223,3233,6456,2336,0
+MMLU college_physics,V2,84,Evaluator Supervisor,3,0,2,8110,9131,17241,6482,0
+MMLU college_physics,V2,84,Physics,0,0,,,,,,
+MMLU college_physics,V2,84,Mathematics,1,1,3,8912,17425,26337,14844,0
+MMLU college_physics,V2,84,Revisor,1,1,3,8531,7321,15852,5589,0
+MMLU college_physics,V2,84,unknown,0,0,,,,,,
+MMLU college_physics,V2,85,Default Supervisor,6,0,6,22329,27906,50235,22378,0
+MMLU college_physics,V2,85,Answer Generator,2,0,4,6425,12018,18443,9801,0
+MMLU college_physics,V2,85,Evaluator Supervisor,6,0,4,20342,15481,35823,10038,0
+MMLU college_physics,V2,85,Physics,2,15,19,186784,90050,276834,67303,118912
+MMLU college_physics,V2,85,Mathematics,1,7,9,48126,35144,83270,28768,6656
+MMLU college_physics,V2,85,Revisor,1,0,2,6028,9489,15517,8356,0
+MMLU college_physics,V2,85,unknown,0,0,,,,,,
+MMLU college_physics,V2,86,Default Supervisor,4,0,4,14101,13807,27908,10183,0
+MMLU college_physics,V2,86,Answer Generator,1,0,2,2902,2041,4943,1364,0
+MMLU college_physics,V2,86,Evaluator Supervisor,4,0,3,13349,11812,25161,8503,0
+MMLU college_physics,V2,86,Physics,1,1,3,8746,5299,14045,3064,0
+MMLU college_physics,V2,86,Mathematics,1,11,13,86480,41187,127667,31908,35840
+MMLU college_physics,V2,86,Revisor,1,0,2,5340,2276,7616,1423,0
+MMLU college_physics,V2,86,unknown,0,0,,,,,,
+MMLU college_physics,V2,88,Default Supervisor,6,0,6,19482,25559,45041,20199,0
+MMLU college_physics,V2,88,Answer Generator,2,0,4,6522,8046,14568,6657,0
+MMLU college_physics,V2,88,Evaluator Supervisor,5,0,3,9102,10479,19581,7296,0
+MMLU college_physics,V2,88,Physics,1,0,,,,,,
+MMLU college_physics,V2,88,Mathematics,1,2,4,15113,26489,41602,23214,0
+MMLU college_physics,V2,88,Revisor,1,1,3,7360,9973,17333,8622,0
+MMLU college_physics,V2,88,unknown,0,0,,,,,,
+MMLU college_physics,V2,90,Default Supervisor,4,0,4,14992,16097,31089,12405,0
+MMLU college_physics,V2,90,Answer Generator,1,0,2,3015,3102,6117,2430,0
+MMLU college_physics,V2,90,Evaluator Supervisor,4,0,3,14463,10954,25417,7603,0
+MMLU college_physics,V2,90,Physics,1,1,3,9888,8699,18587,6421,0
+MMLU college_physics,V2,90,Mathematics,1,3,5,19020,20466,39486,16714,2816
+MMLU college_physics,V2,90,Revisor,1,0,2,5175,10387,15562,9665,0
+MMLU college_physics,V2,90,unknown,0,0,,,,,,
+MMLU college_physics,V2,91,Default Supervisor,4,0,4,17520,15799,33319,11763,0
+MMLU college_physics,V2,91,Answer Generator,1,0,2,3395,2561,5956,1612,0
+MMLU college_physics,V2,91,Evaluator Supervisor,4,0,3,14339,19044,33383,15573,0
+MMLU college_physics,V2,91,Physics,1,1,3,8765,5641,14406,3975,0
+MMLU college_physics,V2,91,Mathematics,1,10,12,64478,81519,145997,75679,27648
+MMLU college_physics,V2,91,Revisor,1,0,2,7095,7351,14446,6010,0
+MMLU college_physics,V2,91,unknown,0,0,,,,,,
+MMLU college_physics,V2,92,Default Supervisor,4,0,4,14848,18356,33204,15027,0
+MMLU college_physics,V2,92,Answer Generator,1,0,2,3060,2742,5802,1943,0
+MMLU college_physics,V2,92,Evaluator Supervisor,4,0,3,13637,7500,21137,3829,0
+MMLU college_physics,V2,92,Physics,1,2,4,12538,11788,24326,8531,0
+MMLU college_physics,V2,92,Mathematics,1,1,3,8961,7593,16554,5604,1920
+MMLU college_physics,V2,92,Revisor,1,1,3,8602,12533,21135,11252,0
+MMLU college_physics,V2,92,unknown,0,0,,,,,,
+MMLU college_physics,V2,93,Default Supervisor,4,0,4,21062,14793,35855,9526,0
+MMLU college_physics,V2,93,Answer Generator,1,0,2,4335,7236,11571,5092,0
+MMLU college_physics,V2,93,Evaluator Supervisor,4,0,3,15253,10986,26239,6724,0
+MMLU college_physics,V2,93,Physics,1,5,7,37053,35113,72166,29608,0
+MMLU college_physics,V2,93,Mathematics,1,2,4,12743,21268,34011,17905,0
+MMLU college_physics,V2,93,Revisor,1,2,4,14812,13737,28549,11640,0
+MMLU college_physics,V2,93,unknown,0,0,,,,,,
+MMLU college_physics,V2,94,Default Supervisor,4,0,4,15646,13671,29317,10169,0
+MMLU college_physics,V2,94,Answer Generator,1,0,2,3215,2710,5925,1706,0
+MMLU college_physics,V2,94,Evaluator Supervisor,4,0,3,16690,7416,24106,4179,0
+MMLU college_physics,V2,94,Physics,1,1,3,10461,12645,23106,9067,0
+MMLU college_physics,V2,94,Mathematics,1,1,3,9585,10685,20270,7996,0
+MMLU college_physics,V2,94,Revisor,1,0,2,4740,3037,7777,1864,0
+MMLU college_physics,V2,94,unknown,0,0,,,,,,
+MMLU college_physics,V2,95,Default Supervisor,4,0,4,15302,23537,38839,20404,0
+MMLU college_physics,V2,95,Answer Generator,1,0,2,3123,2001,5124,1306,0
+MMLU college_physics,V2,95,Evaluator Supervisor,4,0,3,18655,9363,28018,5902,0
+MMLU college_physics,V2,95,Physics,1,1,3,10761,8866,19627,4777,0
+MMLU college_physics,V2,95,Mathematics,1,1,3,9479,6142,15621,3483,0
+MMLU college_physics,V2,95,Revisor,1,0,2,5134,11211,16345,10451,0
+MMLU college_physics,V2,95,unknown,0,0,,,,,,
+MMLU college_physics,V2,97,Default Supervisor,4,0,4,17317,19514,36831,14235,0
+MMLU college_physics,V2,97,Answer Generator,1,0,2,3438,5023,8461,3821,0
+MMLU college_physics,V2,97,Evaluator Supervisor,4,0,3,15475,15323,30798,10449,0
+MMLU college_physics,V2,97,Physics,1,1,3,9720,9872,19592,7375,0
+MMLU college_physics,V2,97,Mathematics,1,2,4,13984,10917,24901,7438,0
+MMLU college_physics,V2,97,Revisor,1,0,2,4952,7597,12549,6403,0
+MMLU college_physics,V2,97,unknown,0,0,,,,,,
+MMLU college_physics,V2,99,Default Supervisor,4,0,4,13737,12169,25906,8947,0
+MMLU college_physics,V2,99,Answer Generator,1,0,2,3008,7705,10713,7173,0
+MMLU college_physics,V2,99,Evaluator Supervisor,4,0,3,14004,6973,20977,4481,0
+MMLU college_physics,V2,99,Physics,1,3,5,17219,28478,45697,24665,0
+MMLU college_physics,V2,99,Mathematics,1,2,4,13657,18330,31987,15066,0
+MMLU college_physics,V2,99,Revisor,1,0,2,4078,4614,8692,4016,0
+MMLU college_physics,V2,99,unknown,0,0,,,,,,
+MMLU college_physics,V2,101,Default Supervisor,8,0,8,27595,30441,58036,23205,0
+MMLU college_physics,V2,101,Answer Generator,3,0,6,9308,9947,19255,6848,0
+MMLU college_physics,V2,101,Evaluator Supervisor,8,0,5,20965,23012,43977,15522,0
+MMLU college_physics,V2,101,Physics,3,24,30,178545,153594,332139,129179,99968
+MMLU college_physics,V2,101,Mathematics,1,1,3,9097,9235,18332,7134,0
+MMLU college_physics,V2,101,Revisor,1,1,3,9757,9893,19650,8355,2560
+MMLU college_physics,V2,101,unknown,0,0,,,,,,

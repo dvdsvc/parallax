@@ -1,0 +1,399 @@
+#!/usr/bin/env python3
+"""Read-only task DAG audit, paired native GED, native WL graph kernel and descriptors."""
+import os
+for key in ['OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','VECLIB_MAXIMUM_THREADS']:os.environ[key]='1'
+import sys
+sys.dont_write_bytecode=True
+import argparse,json,gzip,hashlib,subprocess,shutil,inspect,time
+from pathlib import Path
+from datetime import datetime,timezone
+from collections import Counter,defaultdict
+import numpy as np
+import networkx as nx
+import scipy,sklearn
+from scipy.stats import spearmanr,rankdata
+from sklearn.feature_extraction import DictVectorizer
+from sklearn.kernel_ridge import KernelRidge
+from sklearn.preprocessing import KernelCenterer
+from sklearn.model_selection import KFold
+from audit_dag_dependencies import field_values,parse_json_field
+
+SEED=20261005
+GED_TIMEOUT=1.0
+WL_H=4
+REPEATS=5
+PERMS=199
+LAMBDAS=[.01,.1,1.,10.]
+FEATURES=['nodes','max_depth','weighted_depth','dependency_edges','dependency_density',
+ 'dependency_connected_task_share','dependency_longest_chain_edges','full_graph_longest_path_edges',
+ 'dependency_max_fan_in','dependency_max_fan_out','dependency_fan_in2_task_share',
+ 'max_local_antichain','child_weighted_local_parallel_share','child_weighted_local_chain_share']
+LABELS={'nodes':'任务节点数','max_depth':'最大分解深度','weighted_depth':'节点加权分解深度',
+ 'dependency_edges':'依赖边数','dependency_density':'同层依赖密度','dependency_connected_task_share':'参与依赖的子任务比例',
+ 'dependency_longest_chain_edges':'最长依赖链（边）','full_graph_longest_path_edges':'完整组织图最长路径（边）',
+ 'dependency_max_fan_in':'最大依赖fan-in','dependency_max_fan_out':'最大依赖fan-out',
+ 'dependency_fan_in2_task_share':'fan-in≥2子任务比例','max_local_antichain':'最大局部反链宽度',
+ 'child_weighted_local_parallel_share':'子任务加权局部并行比例','child_weighted_local_chain_share':'子任务加权局部链长比例'}
+SOURCES={}
+def sha(p):
+    h=hashlib.sha256()
+    with Path(p).open('rb') as f:
+        for b in iter(lambda:f.read(8*1024*1024),b''):h.update(b)
+    return h.hexdigest()
+def save(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+def load(p):
+    p=Path(p);SOURCES[str(p)]=sha(p);return json.loads(p.read_text())
+def verify_archive(p):
+    for line in (p/'SHA256SUMS').read_text().splitlines():
+        h,n=line.split(maxsplit=1);f=p/n;assert sha(f)==h;SOURCES[str(f)]=h
+def keyed(t):return t['question_id'],t['round'],t['arm']
+def isomorphic(a,b):
+    return nx.is_isomorphic(a,b,node_match=nx.algorithms.isomorphism.categorical_node_match('label',None),
+      edge_match=nx.algorithms.isomorphism.categorical_edge_match('kind',None))
+def make_graph(t,a):
+    G=nx.DiGraph();nodes={n['task_id']:n for n in t['logical_nodes']}
+    for uid,n in nodes.items():G.add_node(uid,label='root' if n['parent_id'] is None else 'task',depth=n['depth'])
+    for uid,n in nodes.items():
+        if n['parent_id'] is not None:G.add_edge(n['parent_id'],uid,kind='parent')
+    for u,v in a['dependency_edges']:
+        assert not G.has_edge(u,v);G.add_edge(u,v,kind='dependency')
+    assert nx.is_directed_acyclic_graph(G)
+    return G
+def reconcile_planners(t,a,raw_rows):
+    """Exact native goal/order identities link raw Planner indices to runtime UUIDs."""
+    p=Path(a['checkpoint_file']);assert sha(p)==SOURCES[str(p)]
+    tasks=json.load(gzip.open(p,'rt'))['root_dag']['tasks'];nodes={n['task_id']:n for n in t['logical_nodes']}
+    groups=defaultdict(list)
+    for uid,n in nodes.items():
+        children=[c for c in tasks if nodes[c]['parent_id']==uid]
+        if children:groups[tuple(tasks[c]['goal'] for c in children)].append((uid,children))
+    wanted=defaultdict(list)
+    for r in raw_rows:wanted[r['line']].append(r)
+    matches=defaultdict(list);unlinked=[]
+    file=Path(t['trace_directory'])/'raw_llm_events.jsonl'
+    for line_no,line in enumerate(file.open(),1):
+        if line_no not in wanted:continue
+        event=json.loads(line)
+        for row in wanted[line_no]:
+            if row['parse_status']!='parsed':continue
+            choice=next(c for c in event['response']['choices'] if c.get('index',0)==row['choice_index'])
+            sub=parse_json_field(field_values(choice['message']['content'])['subtasks'])
+            goals=tuple(s['goal'] for s in sub);candidates=groups.get(goals,[])
+            if not candidates:
+                unlinked.append({'request_id':row['request_id'],'line':line_no,'reason':'exact goal/order absent in final runtime child groups'});continue
+            for uid,children in candidates:
+                admitted=set()
+                for target,parents in (row['dependencies_graph'] or {}).items():
+                    if target not in {str(i) for i in range(len(children))}:continue
+                    for parent in parents:
+                        if parent in {str(i) for i in range(len(children))} and parent!=target:
+                            admitted.add((children[int(parent)],children[int(target)]))
+                actual={(u,v) for u,v in a['dependency_edges'] if nodes[u]['parent_id']==uid and nodes[v]['parent_id']==uid}
+                matches[uid].append({'request_id':row['request_id'],'line':line_no,
+                  'child_task_ids_in_planner_order':children,'native_admissible_index_edges_match_checkpoint':admitted==actual,
+                  'candidate_goal_order_ambiguity':len(candidates)>1,'admissible_edges':len(admitted),'runtime_edges':len(actual)})
+    planners=[u for u,n in nodes.items() if 'planner' in n['roles']]
+    return {'logical_planners':len(planners),'matched_planners':sum(any(x['native_admissible_index_edges_match_checkpoint'] for x in matches[u]) for u in planners),
+      'planner_matches':dict(matches),'unlinked_raw_plans':unlinked,
+      'unmatched_planner_task_ids':[u for u in planners if not any(x['native_admissible_index_edges_match_checkpoint'] for x in matches[u])]}
+def descriptors(t,G):
+    D=nx.DiGraph();D.add_nodes_from(G);D.add_edges_from((u,v) for u,v,e in G.edges(data=True) if e['kind']=='dependency')
+    children=defaultdict(list)
+    for n in t['logical_nodes']:
+        if n['parent_id'] is not None:children[n['parent_id']].append(n['task_id'])
+    widths=[];chains=[];local=[];eligible=0
+    for parent,kids in children.items():
+        S=D.subgraph(kids).copy();n=len(kids);eligible+=n*(n-1)/2
+        closure=nx.transitive_closure_dag(S);B=nx.Graph();left=[('L',u) for u in kids]
+        B.add_nodes_from(left,bipartite=0);B.add_nodes_from([('R',u) for u in kids],bipartite=1)
+        B.add_edges_from((('L',u),('R',v)) for u,v in closure.edges())
+        matching=nx.algorithms.bipartite.maximum_matching(B,top_nodes=left);width=n-len(matching)//2
+        chain=nx.dag_longest_path_length(S)+1
+        widths.append(width);chains.append(chain);local.append({'parent_task_id':parent,'child_tasks':n,'dependency_edges':S.number_of_edges(),'antichain_width':width,'longest_chain_tasks':chain})
+    n=len(G);e=D.number_of_edges();connected=sum(D.degree(u)>0 for u in D)
+    d={**{f:t['structure'][f] for f in ['nodes','max_depth','weighted_depth']},
+      'dependency_edges':e,'dependency_density':e/eligible if eligible else 0.,
+      'dependency_connected_task_share':connected/(n-1) if n>1 else 0.,
+      'dependency_longest_chain_edges':nx.dag_longest_path_length(D),
+      'full_graph_longest_path_edges':nx.dag_longest_path_length(G),
+      'dependency_max_fan_in':max(dict(D.in_degree()).values()),'dependency_max_fan_out':max(dict(D.out_degree()).values()),
+      'dependency_fan_in2_task_share':sum(D.in_degree(u)>=2 for u in D)/(n-1) if n>1 else 0.,
+      'max_local_antichain':max(widths,default=0),
+      'child_weighted_local_parallel_share':sum(widths)/(n-1) if n>1 else 0.,
+      'child_weighted_local_chain_share':sum(chains)/(n-1) if n>1 else 0.}
+    return d,local
+def ged(a,b):
+    start=time.perf_counter();roots=(next(u for u in a if a.nodes[u]['label']=='root'),next(u for u in b if b.nodes[u]['label']=='root'))
+    if isomorphic(a,b):return {'lower_bound':0.,'upper_bound':0.,'exact':True,'proof':'rooted typed isomorphism','search_seconds':time.perf_counter()-start,'node_edit_path':[],'edge_edit_path':[]}
+    ca=Counter(e['kind'] for u,v,e in a.edges(data=True));cb=Counter(e['kind'] for u,v,e in b.edges(data=True))
+    lower=abs(len(a)-len(b))+max(sum((ca-cb).values()),sum((cb-ca).values()))
+    # Known feasible: retain matched root, delete and insert all remaining tasks/edges.
+    upper=float(len(a)+len(b)-2+a.number_of_edges()+b.number_of_edges());path=None;costs=[]
+    begin=time.perf_counter()
+    for nodepath,edgepath,cost in nx.optimize_edit_paths(a,b,roots=roots,
+      node_match=lambda x,y:x['label']==y['label'],edge_match=lambda x,y:x['kind']==y['kind'],
+      upper_bound=upper,timeout=GED_TIMEOUT):
+        if cost<upper or path is None:upper=cost;path=(nodepath,edgepath)
+        costs.append(cost)
+        if upper==lower:break
+    search=time.perf_counter()-begin
+    assert upper>=lower
+    exact=upper==lower or search<GED_TIMEOUT
+    if path is not None:
+        cost=sum(u is None or v is None for u,v in path[0])+sum(1 if u is None or v is None else a.edges[u]['kind']!=b.edges[v]['kind'] for u,v in path[1])
+        assert cost==upper
+    return {'lower_bound':float(upper if exact else lower),'upper_bound':float(upper),'exact':bool(exact),
+      'proof':'bound equality' if upper==lower else 'native branch-and-bound exhausted before timeout' if exact else 'time-limited feasible upper bound',
+      'search_seconds':search,'native_improving_costs':costs,'node_edit_path':path[0] if path else None,'edge_edit_path':path[1] if path else None}
+def incidence(G):
+    H=nx.DiGraph()
+    for u,e in G.nodes(data=True):H.add_node(('task',u),label=e['label'])
+    for i,(u,v,e) in enumerate(G.edges(data=True)):
+        mid=('edge',i);H.add_node(mid,label='edge:'+e['kind']);H.add_edge(('task',u),mid);H.add_edge(mid,('task',v))
+    assert len(H)==len(G)+G.number_of_edges() and H.number_of_edges()==2*G.number_of_edges()
+    return H
+def histogram(G,h):
+    H=incidence(G);hashes=nx.weisfeiler_lehman_subgraph_hashes(H,node_attr='label',edge_attr=None,
+      iterations=h,digest_size=32,include_initial_labels=True)
+    return dict(Counter(f'{i}:{value}' for values in hashes.values() for i,value in enumerate(values)))
+def kernels(graphs):
+    full=[histogram(g,WL_H) for g in graphs];tree=[]
+    for g in graphs:
+        T=g.copy();T.remove_edges_from([(u,v) for u,v,e in T.edges(data=True) if e['kind']=='dependency']);tree.append(histogram(T,WL_H))
+    result={};sizes={}
+    for name,features in [('full',full),('tree',tree)]:
+        X=DictVectorizer(sparse=True).fit_transform(features);K=(X@X.T).toarray();norm=np.sqrt(np.diag(K));K=K/norm[:,None]/norm[None,:]
+        assert np.max(abs(K-K.T))<1e-12;result[name]=K;sizes[name]=X.shape[1]
+    return result,sizes
+def centered_blocks(blocks,train,test):
+    trainK=[];testK=[];notes=[]
+    for K in blocks:
+        c=KernelCenterer().fit(K[np.ix_(train,train)]);A=c.transform(K[np.ix_(train,train)]);B=c.transform(K[np.ix_(test,train)])
+        scale=float(np.trace(A)/len(train));scale=scale if scale>1e-12 else 1.
+        trainK.append(A/scale);testK.append(B/scale);notes.append(scale)
+    return sum(trainK)/len(blocks),sum(testK)/len(blocks),notes
+def smoothers(blocks,train,test):
+    A,B,scales=centered_blocks(blocks,train,test);n=len(train);I=np.eye(n)
+    maps=[]
+    for lam in LAMBDAS:
+        native=KernelRidge(kernel='precomputed',alpha=lam*n).fit(A,I)
+        maps.append(native.predict(B))
+    return np.array(maps),scales
+def predict_kernels(blocks,Y,questions):
+    """Batch permutation targets, using identical native KRR fit operators and nested CV."""
+    n,m=Y.shape;P=np.empty((REPEATS,n,m));D=np.empty_like(P);logs=[]
+    for r in range(REPEATS):
+        outer=KFold(5,shuffle=True,random_state=SEED+r)
+        for f,(train,test) in enumerate(outer.split(np.arange(n))):
+            assert not set(questions[i] for i in train)&set(questions[i] for i in test)
+            loss=np.zeros((len(LAMBDAS),m));count=0
+            for ii,jj in KFold(3,shuffle=True,random_state=SEED+100*r+f).split(train):
+                it,iv=train[ii],train[jj];H,_=smoothers(blocks,it,iv);mu=Y[it].mean(0)
+                preds=H@(Y[it]-mu[None,:])+mu[None,None,:]
+                loss+=np.sum((preds-Y[iv][None,:,:])**2,axis=1);count+=len(iv)
+            # Larger regularization wins numerical ties; grid fixed before outcome inspection.
+            chosen=len(LAMBDAS)-1-np.argmin(loss[::-1],axis=0)
+            H,scales=smoothers(blocks,train,test);mu=Y[train].mean(0)
+            allpred=H@(Y[train]-mu[None,:])+mu[None,None,:]
+            P[r,test]=np.take_along_axis(allpred,chosen[None,None,:],axis=0)[0];D[r,test]=mu[None,:]
+            logs.append({'repeat':r,'fold':f,'train_questions':[questions[i] for i in train],
+              'test_questions':[questions[i] for i in test],'chosen_lambda_real':LAMBDAS[int(chosen[0])],
+              'training_kernel_block_scales':scales,'inner_validation_targets_never_outer_test':True})
+    return P,D,logs
+def holm(tests,key='p',dest='p_Holm'):
+    last=0
+    for i,t in enumerate(sorted(tests,key=lambda z:z[key])):
+        last=max(last,min(1.,t[key]*(len(tests)-i)));t[dest]=last
+def model_metrics(y,P,D,rng):
+    loss=np.mean((P[:,:,0]-y[None,:])**2,axis=0);dloss=np.mean((D[:,:,0]-y[None,:])**2,axis=0)
+    improvement=dloss-loss;draw=rng.integers(0,len(y),(10000,len(y)));bs=improvement[draw].mean(1)
+    denominator=float(np.mean((y-y.mean())**2));mse=float(loss.mean());dmse=float(dloss.mean())
+    nullgain=np.mean((D-Y_GLOBAL[None,:,:])**2-(P-Y_GLOBAL[None,:,:])**2,axis=(0,1))
+    return {'OOF_MSE':mse,'training_mean_baseline_OOF_MSE':dmse,'OOF_R2':1-mse/denominator,
+      'MSE_reduction_vs_baseline_fraction':1-mse/dmse,'MSE_gain':float(improvement.mean()),
+      'MSE_gain_conditional_bootstrap_CI95':np.quantile(bs,[.025,.975]).tolist(),
+      'permutation_p':float((1+sum(nullgain[1:]>=nullgain[0]))/(PERMS+1)),
+      'per_question_OOF_mean_prediction':P[:,:,0].mean(0).tolist(),'per_question_OOF_mean_squared_loss':loss.tolist(),
+      'per_repeat_MSE':np.mean((P[:,:,0]-y[None,:])**2,axis=1).tolist()}
+def summaries(qpanel,rng):
+    n=len(qpanel);draw=rng.integers(0,n,(10000,n));out={};y=np.array([q['delta_success'] for q in qpanel]);permutations=np.array([rng.permutation(y) for _ in range(4999)])
+    for name in FEATURES:
+        a=np.array([q['BASE_descriptors'][name] for q in qpanel]);v=np.array([q['V2_descriptors'][name] for q in qpanel]);d=v-a
+        rec={'BASE_mean':float(a.mean()),'V2_mean':float(v.mean()),'delta_mean':float(d.mean()),
+          'delta_question_bootstrap_CI95':np.quantile(d[draw].mean(1),[.025,.975]).tolist(),
+          'increased_questions':int(sum(d>1e-10)),'same_questions':int(sum(abs(d)<=1e-10)),'decreased_questions':int(sum(d< -1e-10))}
+        if np.ptp(d)>0 and np.ptp(y)>0:
+            rx=rankdata(d);rx=(rx-rx.mean())/np.linalg.norm(rx-rx.mean());ry=rankdata(y);ry=(ry-ry.mean())/np.linalg.norm(ry-ry.mean())
+            ryp=rankdata(permutations,axis=1);ryp-=ryp.mean(1)[:,None];ryp/=np.linalg.norm(ryp,axis=1)[:,None]
+            corr=float(rx@ry);rec.update({'delta_vs_delta_success_Spearman':corr,'correlation_permutation_p':float((1+sum(abs(ryp@rx)>=abs(corr)-1e-12))/5000)})
+        else:rec.update({'delta_vs_delta_success_Spearman':None,'correlation_permutation_p':None})
+        out[name]=rec
+    valid=[r for r in out.values() if r['correlation_permutation_p'] is not None];holm(valid,'correlation_permutation_p','correlation_p_Holm_within_benchmark')
+    return out
+def semantic_checks():
+    A=nx.DiGraph();A.add_node('root',label='root');A.add_nodes_from((x,{'label':'task'}) for x in ['a','b','c'])
+    A.add_edges_from([('root',x,{'kind':'parent'}) for x in ['a','b','c']]);A.add_edges_from([('a','c',{'kind':'dependency'}),('b','c',{'kind':'dependency'})])
+    B=A.copy();B.remove_edges_from([('a','c'),('b','c')]);B.add_edges_from([('a','b',{'kind':'dependency'}),('b','c',{'kind':'dependency'})])
+    C=nx.relabel_nodes(A,{'root':'Z','a':'X','b':'Y','c':'W'})
+    assert histogram(A,WL_H)==histogram(C,WL_H) and histogram(A,WL_H)!=histogram(B,WL_H)
+    reverse=A.copy();reverse.remove_edges_from([('a','c'),('b','c')]);reverse.add_edges_from([('c','a',{'kind':'dependency'}),('c','b',{'kind':'dependency'})])
+    assert histogram(A,WL_H)!=histogram(reverse,WL_H)
+    changed=A.copy();changed.edges['a','c']['kind']='parent';assert histogram(A,WL_H)!=histogram(changed,WL_H)
+    r=ged(A,B);assert r['exact'] and r['upper_bound']==2
+    return {'UUID_invariance':True,'chain_vs_fan_in_distinguished':True,'direction_preserved':True,'edge_type_preserved':True,'same_tree_chain_vs_fan_in_GED':r}
+def main():
+    ap=argparse.ArgumentParser();ap.add_argument('source',type=Path);ap.add_argument('audit',type=Path);ap.add_argument('output',type=Path);args=ap.parse_args()
+    src=args.source.resolve();audit=args.audit.resolve();out=args.output.resolve();repo=Path(__file__).resolve().parent
+    assert not out.exists();assert not subprocess.check_output(['git','status','--porcelain'],cwd=repo,text=True).strip()
+    commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip();out.mkdir(parents=True)
+    save(out/'analysis_plan.json',{'created_utc':datetime.now(timezone.utc).isoformat(),'script_commit':commit,'calls':0,'seed':SEED,
+      'panel':'previous immutable matched panel: SEAL0 94 questions/272 pairs; FRAMES47 matched official questions; failures and missing outside panel retain original status',
+      'graphs':'original task nodes; parent->child and upstream->dependent typed directed edges; no task wording/outcome/cost node labels; root preserved; UUID/order irrelevant',
+      'Planner_reconciliation':'raw exact subtasks goals + checkpoint task insertion order identify child UUIDs; apply unchanged runtime string-index admission rule and compare actual edge set',
+      'GED':'NetworkX optimize_edit_paths; directed, root constrained; node insertion/deletion1, substitution0 for task, edge insertion/deletion/type-substitution1; 1 second per paired search; exact isomorphism and count lower bounds; unfinished search reported as bounds, never exact',
+      'TED':'reuse frozen root-preserving canonical ordered APTED distances as decomposition comparator; distinct edge/node edit conventions, not numerically interchangeable with GED',
+      'kernel':'standard WL subtree histogram kernel via native NetworkX directed hashes and sklearn DictVectorizer inner products; each typed edge encoded internally as a labeled edge-node on source->edge-node->target; no edge_attr so native predecessor/successor labels remain distinct; h4+initial, digest32; graph diagonal normalization',
+      'outcome':'question-equal average matched-round V2_correct-BASE_correct; outcome absent during graph extraction/kernel definition',
+      'predictors':'normalized WL full graph and tree control; question mean change embedding plus BASE mean embedding additive; full change-only sensitivity; no tokens/scores/id as predictors',
+      'prediction':'5 repeats x5 outer question KFold; inner3 folds pick lambda .01,.1,1,10; native sklearn KernelRidge; kernel centered/scaled only using training folds; training outcome mean intercept; all repeats/arms of a question averaged before CV',
+      'permutation':'199 question outcome permutations, recompute nested lambda choices; four primary tests: full graph vs mean and extra gain vs tree across2 benchmarks, Holm; delta-only sensitivity separate',
+      'descriptors':'local sibling dependency antichain via transitive closure+bipartite maximum matching; potential partial-order concurrency, not observed simultaneous execution; full graph path not wallclock critical path',
+      'inference':'10000 question-bootstrap conditional loss intervals; topology mean change kernel sign-flips4999 at question level; descriptor associations exploratory Holm within benchmark; post-run association not mechanism or causal mediation; FRAMES budget subset not783 population'})
+    for file in ['analyze_dag_organization.py','audit_dag_dependencies.py','plot_dag_organization.py']:shutil.copy2(repo/file,out/(file+'.snapshot'))
+    subprocess.run(['git','bundle','create',str(out/'analysis_scripts.bundle'),'HEAD'],cwd=repo,check=True)
+    verify_archive(src);verify_archive(audit)
+    originals=load(src/'source_sha256.json');originals.update(load(audit/'source_sha256.json'))
+    for p,h in originals.items():assert sha(p)==h;SOURCES[p]=h
+    native=Path('external_archive/2026-09-12/hira/official-roma')
+    for p in ['src/roma_dspy/core/engine/runtime.py','src/roma_dspy/core/engine/dag.py']:
+        f=native/p;SOURCES[str(f)]=sha(f);shutil.copy2(f,out/(f.name+'.native.snapshot'))
+    save(out/'runtime.json',{'python':sys.version,'networkx':nx.__version__,'numpy':np.__version__,'scipy':scipy.__version__,'sklearn':sklearn.__version__,
+      'native_ROMA_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=native,text=True).strip()})
+    (out/'native_algorithm_sources.snapshot.txt').write_text('\n\n'.join(inspect.getsource(f) for f in [nx.optimize_edit_paths,nx.weisfeiler_lehman_subgraph_hashes,KernelRidge,KernelCenterer]))
+    save(out/'semantic_checks.json',semantic_checks())
+    audited=load(audit/'trajectory_audit.json');raw=load(audit/'planner_outputs.json');oldpairs=load(audit/'paired_dag_audit.json')
+    byraw=defaultdict(list)
+    for r in raw:byraw[(r['dataset'],r['question_id'],r['round'],r['arm'])].append(r)
+    lookup={(r['dataset'],*keyed(r)):r for r in audited};allresults={};tests=[];toptests=[]
+    for b in ['SEAL0','FRAMES']:
+        folder=out/b;folder.mkdir();trees=load(src/(b+'_derived_trees_ANALYSIS_ONLY.json'));dist=load(src/(b+'_shape_distance_matrix.json'))
+        oldpanel=load(src/(b+'_shape_raw')/'external_signals.json')['question_panel'];oldq={r['question_id']:r for r in oldpanel}
+        graphs=[];records=[];reconciled=[];index={keyed(t):i for i,t in enumerate(trees)}
+        for i,t in enumerate(trees):
+            a=lookup[(b,*keyed(t))];assert a['status']=='verified';g=make_graph(t,a);d,local=descriptors(t,g)
+            rr=reconcile_planners(t,a,byraw[(b,*keyed(t))]);rr.update({'question_id':t['question_id'],'round':t['round'],'arm':t['arm']});reconciled.append(rr)
+            graphs.append(g);records.append({**{k:t[k] for k in ['question_id','round','arm']},'source_trace':t['trace_directory'],
+              'nodes':[{'task_id':u,**e} for u,e in g.nodes(data=True)],'edges':[{'source':u,'target':v,'type':e['kind']} for u,v,e in g.edges(data=True)],'descriptors':d,'local_dependencies':local})
+        save(folder/'task_graphs_ANALYSIS_ONLY.json',records);save(folder/'planner_runtime_reconciliation.json',reconciled)
+        print(b,'graphs and Planner reconciliation complete',flush=True)
+        pairs=[];pair_lookup={}
+        for i,t in enumerate(trees):
+            if t['arm']!='BASE':continue
+            j=index[(t['question_id'],t['round'],'V2')];prior=next(r for r in oldpairs if r['dataset']==b and r['question_id']==t['question_id'] and r['round']==t['round'])
+            gg=ged(graphs[i],graphs[j]);changed=not isomorphic(graphs[i],graphs[j]);assert changed==prior['full_typed_DAG_changed']
+            obs=dist['observation_shape_indices'];ted=dist['unique_distances'][obs[i]][obs[j]]
+            pair={'question_id':t['question_id'],'round':t['round'],'BASE_graph_index':i,'V2_graph_index':j,
+              'tree_same':prior['tree_same'],'typed_DAG_changed':changed,'same_tree_different_DAG':prior['same_tree_different_DAG'],
+              'TED':ted,'GED':gg,'GED_normalization_denominator':len(graphs[i])+len(graphs[j])+graphs[i].number_of_edges()+graphs[j].number_of_edges()-2}
+            pairs.append(pair);pair_lookup[(t['question_id'],t['round'])]=pair
+            with (folder/'GED_progress.jsonl').open('a') as f:f.write(json.dumps(pair,ensure_ascii=False)+'\n')
+            if len(pairs)%20==0:print(b,'paired GED',len(pairs),flush=True)
+        save(folder/'paired_TED_GED.json',pairs)
+        K,kfeatures=kernels(graphs);questions=sorted(oldq);n=len(questions);C=np.zeros((n,len(graphs)));A=C.copy();qpanel=[]
+        for qi,q in enumerate(questions):
+            prev=oldq[q];rounds=prev['rounds'];aa=[index[(q,r,'BASE')] for r in rounds];vv=[index[(q,r,'V2')] for r in rounds]
+            A[qi,aa]=1/len(aa);C[qi,vv]=1/len(vv);C[qi,aa]=-1/len(aa)
+            prs=[pair_lookup[(q,r)] for r in rounds]
+            qp={'question_id':q,'rounds':rounds,'BASE_accuracy':prev['BASE_accuracy'],'V2_accuracy':prev['V2_accuracy'],'delta_success':prev['delta_success_V2_minus_BASE'],
+              'BASE_graph_indices':aa,'V2_graph_indices':vv,'BASE_descriptors':{f:float(np.mean([records[i]['descriptors'][f] for i in aa])) for f in FEATURES},
+              'V2_descriptors':{f:float(np.mean([records[i]['descriptors'][f] for i in vv])) for f in FEATURES},
+              'mean_TED':float(np.mean([p['TED'] for p in prs])),
+              'mean_GED_lower':float(np.mean([p['GED']['lower_bound'] for p in prs])),
+              'mean_GED_upper':float(np.mean([p['GED']['upper_bound'] for p in prs])),'all_paired_GED_exact':all(p['GED']['exact'] for p in prs)}
+            qpanel.append(qp)
+        save(folder/'question_panel.json',qpanel);y=np.array([q['delta_success'] for q in qpanel]);rng=np.random.default_rng(SEED)
+        Y=np.column_stack([y]+[rng.permutation(y) for _ in range(PERMS)])
+        global Y_GLOBAL
+        Y_GLOBAL=Y
+        results={};prediction={};rawkernels={}
+        for name,blocks in [('tree_context',[C@K['tree']@C.T,A@K['tree']@A.T]),
+          ('full_context',[C@K['full']@C.T,A@K['full']@A.T]),('full_delta_only',[C@K['full']@C.T])]:
+            print(b,name,'strict nested question-CV',flush=True)
+            P,D,folds=predict_kernels(blocks,Y,questions);results[name]=model_metrics(y,P,D,rng);prediction[name]=P
+            save(folder/(name+'_CV_audit.json'),folds);save(folder/(name+'_OOF_predictions.json'),{'questions':questions,'target':y.tolist(),'predictions':P[:,:,0].tolist(),'mean_baseline_predictions':D[:,:,0].tolist()});rawkernels[name]=blocks
+        full=prediction['full_context'];tree=prediction['tree_context'];gain=np.mean((tree-Y[None,:,:])**2-(full-Y[None,:,:])**2,axis=(0,1))
+        qgain=np.mean((tree[:,:,0]-y[None,:])**2-(full[:,:,0]-y[None,:])**2,axis=0);draw=rng.integers(0,n,(10000,n))
+        incremental={'MSE_gain_full_over_tree':float(gain[0]),'conditional_bootstrap_CI95':np.quantile(qgain[draw].mean(1),[.025,.975]).tolist(),
+          'permutation_p':float((1+sum(gain[1:]>=gain[0]))/(PERMS+1))}
+        tests.extend([{'dataset':b,'test':'full_vs_mean','p':results['full_context']['permutation_p']},{'dataset':b,'test':'full_over_tree','p':incremental['permutation_p']}])
+        kd=C@K['full']@C.T;s=rng.choice([-1.,1.],size=(4999,n));observed=float(kd.mean());null=np.einsum('pi,ij,pj->p',s,kd,s)/n**2
+        topology={'question_equal_mean_change_RKHS_squared_norm':observed,'question_cluster_signflip_p':float((1+sum(null>=observed-1e-12))/5000)};toptests.append({'dataset':b,'p':topology['question_cluster_signflip_p']})
+        desc=summaries(qpanel,rng);stats={'questions':n,'paired_runs':len(pairs),'typed_DAG_changed_pairs':sum(p['typed_DAG_changed'] for p in pairs),
+          'same_tree_different_DAG_pairs':sum(p['same_tree_different_DAG'] for p in pairs),'GED_exact_pairs':sum(p['GED']['exact'] for p in pairs),
+          'GED_bounded_pairs':sum(not p['GED']['exact'] for p in pairs),'mean_question_equal_GED_lower':float(np.mean([q['mean_GED_lower'] for q in qpanel])),
+          'mean_question_equal_GED_upper':float(np.mean([q['mean_GED_upper'] for q in qpanel])),
+          'mean_question_equal_TED':float(np.mean([q['mean_TED'] for q in qpanel])),
+          'runtime_planners':sum(r['logical_planners'] for r in reconciled),'raw_to_runtime_matched_planners':sum(r['matched_planners'] for r in reconciled),
+          'unmatched_planners':sum(len(r['unmatched_planner_task_ids']) for r in reconciled),
+          'kernel_unique_histogram_features':kfeatures,'prediction':results,'full_graph_incremental_prediction':incremental,'topology_condition_change':topology,'descriptors':desc}
+        save(folder/'summary.json',stats);save(folder/'kernel_matrices.json',{'graph_order':[{k:t[k] for k in ['question_id','round','arm']} for t in trees],
+          'normalized_graph_kernels':{k:v.tolist() for k,v in K.items()},'question_kernels':{k:[v.tolist() for v in blocks] for k,blocks in rawkernels.items()},'question_order':questions})
+        allresults[b]=stats;print(b,'complete',flush=True)
+    holm(tests);holm(toptests)
+    for t in tests:
+        if t['test']=='full_vs_mean':allresults[t['dataset']]['prediction']['full_context']['primary_permutation_p_Holm']=t['p_Holm']
+        else:allresults[t['dataset']]['full_graph_incremental_prediction']['primary_permutation_p_Holm']=t['p_Holm']
+    for t in toptests:allresults[t['dataset']]['topology_condition_change']['signflip_p_Holm_2benchmarks']=t['p_Holm']
+    save(out/'results.json',allresults);save(out/'primary_tests.json',tests)
+    report(out,allresults,commit)
+    plotpython='external_archive/2026-09-12/hira/work/forammas_study/.venv/bin/python'
+    subprocess.run([plotpython,str(repo/'plot_dag_organization.py'),str(out)],check=True)
+    save(out/'source_sha256.json',SOURCES)
+    for p,h in SOURCES.items():assert sha(p)==h,('source changed',p)
+    subprocess.run(['git','bundle','verify',str(out/'analysis_scripts.bundle')],cwd=repo,check=True,stdout=subprocess.DEVNULL)
+    save(out/'completion_verification.json',{'completed_utc':datetime.now(timezone.utc).isoformat(),'script_commit':commit,'source_hashes_unchanged':len(SOURCES),
+      'Agent_API_judge_calls':0,'bundle_verified':True,'both_benchmarks_completed':True,'all_raw_to_runtime_planner_edges_matched':all(d['unmatched_planners']==0 for d in allresults.values())})
+    files=sorted(p for p in out.rglob('*') if p.is_file() and p.name!='SHA256SUMS')
+    (out/'SHA256SUMS').write_text(''.join(f'{sha(p)}  {p.relative_to(out)}\n' for p in files))
+    for line in (out/'SHA256SUMS').read_text().splitlines():h,n=line.split(maxsplit=1);assert sha(out/n)==h
+    print('COMPLETE',out,flush=True)
+def report(out,R,commit):
+    lines=['# ROMA分解树、完整组织DAG与outcome分析','',
+      '离线分析；节点=原始task；分解边parent→child；依赖边upstream→dependent；方向和边类型保留。原始轨迹、日志、评分、旧分析均只读，0新增模型调用。SEAL0 94题272匹配轮，FRAMES47匹配题；重复轮先压成题级均值。Δ成功率与Δ行为统一V2−BASE。','',
+      '## 来源校对与GED','',
+      '| 数据集 | 原始Planner索引边与运行时边逐组一致 | 完整DAG变化 | 同树而DAG不同 | 精确GED／限时界 | 题等权GED均值下界–上界 | 题等权TED均值 |','|---|---|---|---|---|---|---|']
+    for b,d in R.items():lines.append(f'| {b} | {d["raw_to_runtime_matched_planners"]}/{d["runtime_planners"]} | {d["typed_DAG_changed_pairs"]}/{d["paired_runs"]} | {d["same_tree_different_DAG_pairs"]} | {d["GED_exact_pairs"]}/{d["GED_bounded_pairs"]} | {d["mean_question_equal_GED_lower"]:.3f}–{d["mean_question_equal_GED_upper"]:.3f} | {d["mean_question_equal_TED"]:.3f} |')
+    lines+=['','GED直接调用[NetworkX原生优化器](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.similarity.optimize_edit_paths.html)，同题配对、根对齐，单位节点增删和边增删/类型替换成本。每对最多1秒搜索；非精确输出必须保留上下界与可行编辑路径，不能把上界冒充精确距离。分解TED沿用已冻结APTED结果，TED与GED编辑操作不同，数值不能直接相减当“依赖贡献”。此次不计算全体两两GED矩阵，也不对不精确GED做PCoA/PERMANOVA。','',
+      '## 完整拓扑能否预测收益','',
+      '使用[WL subtree graph kernel原论文](https://jmlr.org/papers/v12/shervashidze11a.html)，实现复用[NetworkX原生WL节点哈希](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.graph_hashing.weisfeiler_lehman_subgraph_hashes.html)、直方图内积与[sklearn原生KernelRidge](https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html)。图核内部将每种边编码为带类型的中间节点并保留方向；这是核输入编码，导出的组织图/GED节点仍仅task。h=4加初始标签，图核对角归一化。','',
+      '主预测器=题级平均图变化embedding＋BASE平均图位置；只用树作为对应控制，完整图变化单独用作敏感性。5次重复5折按题留出，内层3折选正则；核中心化/缩放、答案均值和正则选择只看训练题。199次题级标签置换重算内层选择；主要4项检验Holm校正。SEAL0同题所有轮次先合并，不会训练测试交叉。目标为题平均Δ正确率，MSE越低越好；R²≤0代表不优于全样本常数均值参照，另直接比较训练均值OOF基线。','',
+      '| 数据集 | 模型 | OOF MSE | OOF R² | 相对训练均值基线MSE降低 | 置换p |','|---|---|---|---|---|---|']
+    for b,d in R.items():
+        for name,r in d['prediction'].items():lines.append(f'| {b} | {name} | {r["OOF_MSE"]:.5f} | {r["OOF_R2"]:.3f} | {100*r["MSE_reduction_vs_baseline_fraction"]:.2f}% | {r["permutation_p"]:.3f} |')
+    lines+=['','| 数据集 | 完整图比树的OOF MSE增益（正=更好） | 条件95%区间 | 全图优于均值p（Holm） | 全图额外优于树p（Holm） |','|---|---|---|---|---|']
+    for b,d in R.items():
+        inc=d['full_graph_incremental_prediction'];lo,hi=inc['conditional_bootstrap_CI95'];lines.append(f'| {b} | {inc["MSE_gain_full_over_tree"]:.5f} | [{lo:.5f}, {hi:.5f}] | {d["prediction"]["full_context"]["primary_permutation_p_Holm"]:.3f} | {inc["primary_permutation_p_Holm"]:.3f} |')
+    lines+=['','图核只能检验这些结构信息在当前样本、当前核与正则范围内是否有可复现预测价值；零结果不等于所有DAG特征均无信息，正结果也不等于依赖结构造成成功率变化。区间为已拟合OOF损失的题级bootstrap，不能纠正FRAMES预算收缩选择、失败缺失或替代独立复现。','',
+      '## 条件是否系统性改变完整组织图','',
+      '归一化完整图核的题级平均Δembedding非零检验；4999次按题交换BASE/V2（所有匹配轮一起交换）。不是GED大小与成功率相关检验。','']
+    for b,d in R.items():
+        t=d['topology_condition_change'];lines.append(f'{b}：平均变化平方范数={t["question_equal_mean_change_RKHS_squared_norm"]:.6f}，题级符号置换p={t["question_cluster_signflip_p"]:.4f}，两benchmark Holm p={t["signflip_p_Holm_2benchmarks"]:.4f}。')
+    lines+=['','## 可解释DAG指标','',
+      '同层依赖密度=已接受依赖边／各Planner直接子任务可容纳的DAG边数Σk(k−1)/2。局部反链宽度是同一Planner子任务偏序中最大互不依赖集合，使用传递闭包＋二分图最大匹配；子任务加权并行比例=Σwidth／Σchild-count；链长比例=Σlongest-chain-tasks／Σchild-count。无分解任务这些局部量设0，含义是没有子任务组织，不是串行度为0。依赖链不含分解边，完整图路径另列；都不是测得的耗时关键路径或实际并发。','',
+      '| 数据集 | 指标 | BASE→V2题均值 | Δ均值95%区间 | Δ指标与Δ成功Spearman | 相关p（层内Holm） |','|---|---|---|---|---|---|']
+    for b,d in R.items():
+        for name,r in d['descriptors'].items():
+            lo,hi=r['delta_question_bootstrap_CI95'];rho=r['delta_vs_delta_success_Spearman'];p=r.get('correlation_p_Holm_within_benchmark');rs='—' if rho is None else f'{rho:.3f}';ps='—' if p is None else f'{p:.3f}'
+            lines.append(f'| {b} | {LABELS[name]} | {r["BASE_mean"]:.3f}→{r["V2_mean"]:.3f} | [{lo:.3f}, {hi:.3f}] | {rs} | {ps} |')
+    lines+=['','指标相关是事后探索，整棵图是干预后形成的过程变量；这些相关不能解释为因果中介。所有可评题保留，原生错误与超限没有填零。图不含任务内容/工具语义，只检验结构。','',
+      f'执行脚本commit `{commit}`。源哈希、Planner逐项索引到UUID校对、task图、同题编辑路径、CV题号、OOF预测和核矩阵均归档。','',
+      f'逐题结果：[per_question.md]({out}/per_question.md)；主结果：[results.json]({out}/results.json)；图：[organization_summary.png]({out}/organization_summary.png)。']
+    (out/'report.md').write_text('\n'.join(lines)+'\n')
+    per=['# 同题分解树与完整DAG逐题对齐','', 'Δ正确率=V2−BASE；SEAL0先平均匹配重复轮，FRAMES使用官方题号。GED非精确时显示下界–上界。','',
+      '| 数据集 | 题号 | 轮次 | BASE→V2正确率 | 平均TED | 平均GED下界–上界 | 所有GED精确 | 依赖边BASE→V2 | 最长依赖链BASE→V2 | 局部并行比例BASE→V2 |','|---|---:|---|---|---|---|---|---|---|---|']
+    for b in R:
+        for q in json.loads((out/b/'question_panel.json').read_text()):
+            a=q['BASE_descriptors'];v=q['V2_descriptors'];per.append(f'| {b} | {q["question_id"]} | {",".join(q["rounds"])} | {q["BASE_accuracy"]:.3f}→{q["V2_accuracy"]:.3f} | {q["mean_TED"]:.2f} | {q["mean_GED_lower"]:.2f}–{q["mean_GED_upper"]:.2f} | {q["all_paired_GED_exact"]} | {a["dependency_edges"]:.2f}→{v["dependency_edges"]:.2f} | {a["dependency_longest_chain_edges"]:.2f}→{v["dependency_longest_chain_edges"]:.2f} | {a["child_weighted_local_parallel_share"]:.3f}→{v["child_weighted_local_parallel_share"]:.3f} |')
+    (out/'per_question.md').write_text('\n'.join(per)+'\n')
+
+if __name__=='__main__':main()

@@ -1,0 +1,4971 @@
+[
+  {
+    "official_task_id": 14,
+    "loader_index_seed0": 34,
+    "stratum": "E4_L2+",
+    "question": "Which football player got 15 or more assists in La Liga during the 2010-2011 season and also played for Arsenal at one point in his career?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 790452,
+        "input_tokens": 725963,
+        "output_tokens": 64489,
+        "llm_calls": 42,
+        "tool_calls": 9,
+        "search_calls": 9,
+        "agent_nodes": 13,
+        "leaf_nodes": 9,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 6,
+        "wall_time": 684.454018,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 4,
+        "mean_node_depth": 2.076923076923077,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 6
+        },
+        "tools_by_name": {
+          "web_search": 9
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 42
+        },
+        "recorded_token_events": 42,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 42,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 382597,
+        "input_tokens": 341050,
+        "output_tokens": 41547,
+        "llm_calls": 26,
+        "tool_calls": 5,
+        "search_calls": 5,
+        "agent_nodes": 7,
+        "leaf_nodes": 5,
+        "actual_max_depth": 2,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 408.774687,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 2,
+        "mean_node_depth": 1.2857142857142858,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3
+        },
+        "tools_by_name": {
+          "web_search": 5
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 26
+        },
+        "recorded_token_events": 26,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 7936,
+        "cached_usage_recorded_events": 26,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 33,
+    "loader_index_seed0": 14,
+    "stratum": "E4_L2+",
+    "question": "How old would the founder of the publishing company of the magazine that serialized the manga series Raw Hero have been the year the magazine ended publication?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2724605,
+        "input_tokens": 2565973,
+        "output_tokens": 158632,
+        "llm_calls": 79,
+        "tool_calls": 28,
+        "search_calls": 27,
+        "agent_nodes": 24,
+        "leaf_nodes": 16,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.875,
+        "max_branching_factor": 6,
+        "max_tree_width": 13,
+        "wall_time": 1289.651914,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 8,
+        "mean_node_depth": 2.2916666666666665,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 6,
+          "3": 13
+        },
+        "tools_by_name": {
+          "web_search": 27,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 79
+        },
+        "recorded_token_events": 79,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 179712,
+        "cached_usage_recorded_events": 79,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 6614066,
+        "input_tokens": 6371775,
+        "output_tokens": 242291,
+        "llm_calls": 126,
+        "tool_calls": 48,
+        "search_calls": 45,
+        "agent_nodes": 34,
+        "leaf_nodes": 22,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.75,
+        "max_branching_factor": 6,
+        "max_tree_width": 18,
+        "wall_time": 2343.90693,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 12,
+        "mean_node_depth": 2.3529411764705883,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 11,
+          "3": 18
+        },
+        "tools_by_name": {
+          "web_search": 45,
+          "subtract": 2,
+          "run_python_code": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 126
+        },
+        "recorded_token_events": 126,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 1611136,
+        "cached_usage_recorded_events": 126,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 35,
+    "loader_index_seed0": 21,
+    "stratum": "E5+_L2+",
+    "question": "Of the four main characters on Seinfeld, which actor is the oldest?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 4267375,
+        "input_tokens": 4097017,
+        "output_tokens": 170358,
+        "llm_calls": 68,
+        "tool_calls": 38,
+        "search_calls": 36,
+        "agent_nodes": 19,
+        "leaf_nodes": 14,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.6,
+        "max_branching_factor": 5,
+        "max_tree_width": 12,
+        "wall_time": 1423.668724,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.3684210526315788,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 12
+        },
+        "tools_by_name": {
+          "web_search": 36,
+          "run_python_code": 2
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 68
+        },
+        "recorded_token_events": 68,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 1129728,
+        "cached_usage_recorded_events": 68,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 2539261,
+        "input_tokens": 2527018,
+        "output_tokens": 12243,
+        "llm_calls": 12,
+        "tool_calls": 9,
+        "search_calls": 9,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 330.698129,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 9
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 12
+        },
+        "recorded_token_events": 12,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 1007616,
+        "cached_usage_recorded_events": 12,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 38,
+    "loader_index_seed0": 35,
+    "stratum": "E5+_L1",
+    "question": "Which species from the genus mulona are both found in the same country?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "SKIPPED_PROVIDER_BLOCKED",
+        "grading_status": "ungraded_execution",
+        "score": null
+      }
+    },
+    "primary_valid_pair": false,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 5312310,
+        "input_tokens": 5007544,
+        "output_tokens": 304766,
+        "llm_calls": 104,
+        "tool_calls": 45,
+        "search_calls": 20,
+        "agent_nodes": 25,
+        "leaf_nodes": 17,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 14,
+        "wall_time": 2548.254477,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 8,
+        "mean_node_depth": 2.32,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 6,
+          "3": 14
+        },
+        "tools_by_name": {
+          "web_search": 19,
+          "list_files": 4,
+          "search_files": 1,
+          "write_file_content": 4,
+          "register_artifact": 6,
+          "read_file_content": 5,
+          "run_python_code": 2,
+          "save_file": 2,
+          "read_file": 2
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 104
+        },
+        "recorded_token_events": 104,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 1943808,
+        "cached_usage_recorded_events": 104,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 352632,
+        "input_tokens": 332509,
+        "output_tokens": 20123,
+        "llm_calls": 12,
+        "tool_calls": 1,
+        "search_calls": 1,
+        "agent_nodes": 3,
+        "leaf_nodes": 2,
+        "actual_max_depth": 1,
+        "avg_branching_factor": 2.0,
+        "max_branching_factor": 2,
+        "max_tree_width": 2,
+        "wall_time": null,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 1,
+        "mean_node_depth": 0.6666666666666666,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 2
+        },
+        "tools_by_name": {
+          "web_search": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 11,
+          "provider_blocked": 1
+        },
+        "recorded_token_events": 12,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 72576,
+        "cached_usage_recorded_events": 12,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 52,
+    "loader_index_seed0": 77,
+    "stratum": "E2_L1",
+    "question": "Was the person who served as president of the Scottish National Party from 1987 to 2005 alive when the party was founded?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1827389,
+        "input_tokens": 1753075,
+        "output_tokens": 74314,
+        "llm_calls": 69,
+        "tool_calls": 21,
+        "search_calls": 21,
+        "agent_nodes": 22,
+        "leaf_nodes": 15,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 11,
+        "wall_time": 678.849585,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.227272727272727,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 6,
+          "3": 11
+        },
+        "tools_by_name": {
+          "web_search": 21
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 69
+        },
+        "recorded_token_events": 69,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 69,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 2684332,
+        "input_tokens": 2574703,
+        "output_tokens": 109629,
+        "llm_calls": 97,
+        "tool_calls": 29,
+        "search_calls": 29,
+        "agent_nodes": 31,
+        "leaf_nodes": 22,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.333333,
+        "max_branching_factor": 5,
+        "max_tree_width": 14,
+        "wall_time": 976.408946,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 9,
+        "mean_node_depth": 2.2580645161290325,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 12,
+          "3": 14
+        },
+        "tools_by_name": {
+          "web_search": 29
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 97
+        },
+        "recorded_token_events": 97,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 97,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 61,
+    "loader_index_seed0": 25,
+    "stratum": "E3_L1",
+    "question": "The manga 'Sailor Moon' was authored by a woman. What manga did her husband win the Shogakukan Manga Award for authoring?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2977157,
+        "input_tokens": 2793838,
+        "output_tokens": 183319,
+        "llm_calls": 112,
+        "tool_calls": 24,
+        "search_calls": 24,
+        "agent_nodes": 37,
+        "leaf_nodes": 26,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.272727,
+        "max_branching_factor": 4,
+        "max_tree_width": 23,
+        "wall_time": 1600.866741,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 11,
+        "mean_node_depth": 2.4594594594594597,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 9,
+          "3": 23
+        },
+        "tools_by_name": {
+          "web_search": 24
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 112
+        },
+        "recorded_token_events": 112,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 64512,
+        "cached_usage_recorded_events": 112,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1493724,
+        "input_tokens": 1424508,
+        "output_tokens": 69216,
+        "llm_calls": 56,
+        "tool_calls": 11,
+        "search_calls": 11,
+        "agent_nodes": 17,
+        "leaf_nodes": 10,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.285714,
+        "max_branching_factor": 3,
+        "max_tree_width": 7,
+        "wall_time": 783.854744,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.0588235294117645,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 7,
+          "3": 6
+        },
+        "tools_by_name": {
+          "web_search": 11
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 56
+        },
+        "recorded_token_events": 56,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 56,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 63,
+    "loader_index_seed0": 11,
+    "stratum": "E4_L1",
+    "question": "In the style of wrestling performed by former Greek wrestler Mikhail Theodoropoulos, who won the inaugural olympic medal?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1766268,
+        "input_tokens": 1708570,
+        "output_tokens": 57698,
+        "llm_calls": 51,
+        "tool_calls": 10,
+        "search_calls": 10,
+        "agent_nodes": 15,
+        "leaf_nodes": 10,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.8,
+        "max_branching_factor": 4,
+        "max_tree_width": 5,
+        "wall_time": 649.158058,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 1.9333333333333333,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 5,
+          "3": 5
+        },
+        "tools_by_name": {
+          "web_search": 10
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 51
+        },
+        "recorded_token_events": 51,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 51,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 524988,
+        "input_tokens": 516961,
+        "output_tokens": 8027,
+        "llm_calls": 7,
+        "tool_calls": 3,
+        "search_calls": 3,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 114.365508,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 3
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 7
+        },
+        "recorded_token_events": 7,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 94464,
+        "cached_usage_recorded_events": 7,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 83,
+    "loader_index_seed0": 26,
+    "stratum": "E2_L1",
+    "question": "As of August 1, 2024, are there any cities in England that are more populated than Philadelphia, and which cities are they?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 789086,
+        "input_tokens": 743237,
+        "output_tokens": 45849,
+        "llm_calls": 25,
+        "tool_calls": 5,
+        "search_calls": 5,
+        "agent_nodes": 7,
+        "leaf_nodes": 5,
+        "actual_max_depth": 2,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 4,
+        "wall_time": 410.218027,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 2,
+        "mean_node_depth": 1.1428571428571428,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 2
+        },
+        "tools_by_name": {
+          "web_search": 5
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 25
+        },
+        "recorded_token_events": 25,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 77184,
+        "cached_usage_recorded_events": 25,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 3009896,
+        "input_tokens": 2785960,
+        "output_tokens": 223936,
+        "llm_calls": 72,
+        "tool_calls": 31,
+        "search_calls": 24,
+        "agent_nodes": 21,
+        "leaf_nodes": 16,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 4.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 12,
+        "wall_time": 1591.716951,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.2857142857142856,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 4,
+          "3": 12
+        },
+        "tools_by_name": {
+          "web_search": 24,
+          "run_python_code": 3,
+          "save_file": 1,
+          "register_artifact": 1,
+          "read_file_content": 1,
+          "read_file": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 72
+        },
+        "recorded_token_events": 72,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 223232,
+        "cached_usage_recorded_events": 72,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 88,
+    "loader_index_seed0": 7,
+    "stratum": "E4_L1",
+    "question": "If you were to combine two words, the first of which has a species called Polytrichum piliferum, and the second which has a breed type called Fleckvieh, you'd get the name of what countries capital city?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2382805,
+        "input_tokens": 1795639,
+        "output_tokens": 587166,
+        "llm_calls": 76,
+        "tool_calls": 33,
+        "search_calls": 33,
+        "agent_nodes": 22,
+        "leaf_nodes": 16,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.5,
+        "max_branching_factor": 4,
+        "max_tree_width": 10,
+        "wall_time": 3125.981361,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.1818181818181817,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 7,
+          "3": 10
+        },
+        "tools_by_name": {
+          "web_search": 33
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 76
+        },
+        "recorded_token_events": 76,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 191232,
+        "cached_usage_recorded_events": 76,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 2328521,
+        "input_tokens": 1644486,
+        "output_tokens": 684035,
+        "llm_calls": 43,
+        "tool_calls": 17,
+        "search_calls": 17,
+        "agent_nodes": 11,
+        "leaf_nodes": 8,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.333333,
+        "max_branching_factor": 4,
+        "max_tree_width": 4,
+        "wall_time": 4018.288457,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.9090909090909092,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 4
+        },
+        "tools_by_name": {
+          "web_search": 17
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 43
+        },
+        "recorded_token_events": 43,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 87552,
+        "cached_usage_recorded_events": 43,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 112,
+    "loader_index_seed0": 15,
+    "stratum": "E2_L1",
+    "question": "As of the financial year ending July 31st 2023, what was the size of the endowment at the university attended by rugby player Fred McLeod?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 12783896,
+        "input_tokens": 12728996,
+        "output_tokens": 54900,
+        "llm_calls": 84,
+        "tool_calls": 65,
+        "search_calls": 65,
+        "agent_nodes": 16,
+        "leaf_nodes": 10,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.5,
+        "max_branching_factor": 3,
+        "max_tree_width": 7,
+        "wall_time": 1602.172366,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.125,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 7
+        },
+        "tools_by_name": {
+          "web_search": 65
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 84
+        },
+        "recorded_token_events": 84,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 5162112,
+        "cached_usage_recorded_events": 84,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 12706787,
+        "input_tokens": 12576867,
+        "output_tokens": 129920,
+        "llm_calls": 72,
+        "tool_calls": 30,
+        "search_calls": 30,
+        "agent_nodes": 13,
+        "leaf_nodes": 8,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.4,
+        "max_branching_factor": 3,
+        "max_tree_width": 5,
+        "wall_time": 1922.391771,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 1.9230769230769231,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 4
+        },
+        "tools_by_name": {
+          "web_search": 30
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 72
+        },
+        "recorded_token_events": 72,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 6051200,
+        "cached_usage_recorded_events": 72,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 126,
+    "loader_index_seed0": 29,
+    "stratum": "E4_L1",
+    "question": "In the Belgian capital, there is a street named after King Leopold II's oldest daughter which is lined with chestnut trees and is the home to many embassies. What is the capital of the country whose embassy is found at number 425?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 8823460,
+        "input_tokens": 8644440,
+        "output_tokens": 179020,
+        "llm_calls": 137,
+        "tool_calls": 46,
+        "search_calls": 46,
+        "agent_nodes": 37,
+        "leaf_nodes": 25,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 24,
+        "wall_time": 2126.267233,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 12,
+        "mean_node_depth": 2.5135135135135136,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 9,
+          "3": 24
+        },
+        "tools_by_name": {
+          "web_search": 46
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 137
+        },
+        "recorded_token_events": 137,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 2321024,
+        "cached_usage_recorded_events": 137,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 6971894,
+        "input_tokens": 6512478,
+        "output_tokens": 459416,
+        "llm_calls": 89,
+        "tool_calls": 30,
+        "search_calls": 29,
+        "agent_nodes": 21,
+        "leaf_nodes": 14,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.857143,
+        "max_branching_factor": 4,
+        "max_tree_width": 8,
+        "wall_time": 3295.817427,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.0952380952380953,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 8,
+          "3": 8
+        },
+        "tools_by_name": {
+          "web_search": 29,
+          "write_file_content": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 89
+        },
+        "recorded_token_events": 89,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 1704448,
+        "cached_usage_recorded_events": 89,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 137,
+    "loader_index_seed0": 67,
+    "stratum": "E2_L2+",
+    "question": "If we consider their inception being the date of declared independence, how many years older is the US than Mexico?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 904424,
+        "input_tokens": 825328,
+        "output_tokens": 79096,
+        "llm_calls": 74,
+        "tool_calls": 26,
+        "search_calls": 17,
+        "agent_nodes": 23,
+        "leaf_nodes": 17,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.666667,
+        "max_branching_factor": 5,
+        "max_tree_width": 11,
+        "wall_time": 632.288912,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.1739130434782608,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 5,
+          "2": 6,
+          "3": 11
+        },
+        "tools_by_name": {
+          "web_search": 17,
+          "subtract": 3,
+          "run_python_code": 6
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 74
+        },
+        "recorded_token_events": 74,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 74,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 250430,
+        "input_tokens": 235858,
+        "output_tokens": 14572,
+        "llm_calls": 15,
+        "tool_calls": 5,
+        "search_calls": 4,
+        "agent_nodes": 4,
+        "leaf_nodes": 3,
+        "actual_max_depth": 1,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 115.420093,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 1,
+        "mean_node_depth": 0.75,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3
+        },
+        "tools_by_name": {
+          "web_search": 4,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 15
+        },
+        "recorded_token_events": 15,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 15,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 159,
+    "loader_index_seed0": 19,
+    "stratum": "E2_L1",
+    "question": "What is the difference between the fastest recorded swimming speed of a fish, and the fastest record for swimming the 50m freestyle in the 2020 Tokyo Olympics in meters per second?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1226950,
+        "input_tokens": 1144354,
+        "output_tokens": 82596,
+        "llm_calls": 64,
+        "tool_calls": 33,
+        "search_calls": 22,
+        "agent_nodes": 20,
+        "leaf_nodes": 15,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.8,
+        "max_branching_factor": 6,
+        "max_tree_width": 11,
+        "wall_time": 542.398459,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.3,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 11
+        },
+        "tools_by_name": {
+          "web_search": 22,
+          "divide": 6,
+          "run_python_code": 4,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 64
+        },
+        "recorded_token_events": 64,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 64,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1718506,
+        "input_tokens": 1606310,
+        "output_tokens": 112196,
+        "llm_calls": 68,
+        "tool_calls": 27,
+        "search_calls": 15,
+        "agent_nodes": 18,
+        "leaf_nodes": 13,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.4,
+        "max_branching_factor": 5,
+        "max_tree_width": 6,
+        "wall_time": 981.228938,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 1.9444444444444444,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 5,
+          "2": 6,
+          "3": 6
+        },
+        "tools_by_name": {
+          "web_search": 15,
+          "run_python_code": 4,
+          "divide": 7,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 68
+        },
+        "recorded_token_events": 68,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 244224,
+        "cached_usage_recorded_events": 68,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 189,
+    "loader_index_seed0": 44,
+    "stratum": "E2_L2+",
+    "question": "What was the first elected position of the official that was in the office before Steven C. Johnson became the 42nd Kansas State Treasurer?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 773150,
+        "input_tokens": 743821,
+        "output_tokens": 29329,
+        "llm_calls": 32,
+        "tool_calls": 6,
+        "search_calls": 6,
+        "agent_nodes": 10,
+        "leaf_nodes": 6,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.25,
+        "max_branching_factor": 3,
+        "max_tree_width": 4,
+        "wall_time": 308.081367,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 4,
+        "mean_node_depth": 2.0,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 2,
+          "2": 3,
+          "3": 4
+        },
+        "tools_by_name": {
+          "web_search": 6
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 32
+        },
+        "recorded_token_events": 32,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 32,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1341002,
+        "input_tokens": 1284444,
+        "output_tokens": 56558,
+        "llm_calls": 46,
+        "tool_calls": 9,
+        "search_calls": 9,
+        "agent_nodes": 14,
+        "leaf_nodes": 9,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.6,
+        "max_branching_factor": 3,
+        "max_tree_width": 5,
+        "wall_time": 608.926423,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.0,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 5
+        },
+        "tools_by_name": {
+          "web_search": 9
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 46
+        },
+        "recorded_token_events": 46,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 123264,
+        "cached_usage_recorded_events": 46,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 229,
+    "loader_index_seed0": 24,
+    "stratum": "E4_L2+",
+    "question": "As of the 2023 Major League Baseball season, who is the only player in the top 15 lists of career home runs, career runs batted in, and career hits, who was also named (in 2007) the all-time Gold Glove team?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 21770458,
+        "input_tokens": 21329821,
+        "output_tokens": 440637,
+        "llm_calls": 208,
+        "tool_calls": 178,
+        "search_calls": 178,
+        "agent_nodes": 48,
+        "leaf_nodes": 37,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 4.272727,
+        "max_branching_factor": 7,
+        "max_tree_width": 23,
+        "wall_time": 3930.753274,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 11,
+        "mean_node_depth": 2.3333333333333335,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 5,
+          "2": 19,
+          "3": 23
+        },
+        "tools_by_name": {
+          "web_search": 178
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 208
+        },
+        "recorded_token_events": 208,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 6713344,
+        "cached_usage_recorded_events": 208,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 9850632,
+        "input_tokens": 9625628,
+        "output_tokens": 225004,
+        "llm_calls": 148,
+        "tool_calls": 145,
+        "search_calls": 140,
+        "agent_nodes": 39,
+        "leaf_nodes": 31,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 4.75,
+        "max_branching_factor": 7,
+        "max_tree_width": 23,
+        "wall_time": 1806.207867,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 8,
+        "mean_node_depth": 2.4358974358974357,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 11,
+          "3": 23
+        },
+        "tools_by_name": {
+          "web_search": 140,
+          "list_files": 5
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 148
+        },
+        "recorded_token_events": 148,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 725888,
+        "cached_usage_recorded_events": 148,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 252,
+    "loader_index_seed0": 4,
+    "stratum": "E3_L2+",
+    "question": "What is the name of the town or city of birth of the player who won the men's singles at the US Open on the year after Venus & Serena Williams played each other for the 8th time as pros?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "SKIPPED_PROVIDER_BLOCKED",
+        "grading_status": "ungraded_execution",
+        "score": null
+      }
+    },
+    "primary_valid_pair": false,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2437460,
+        "input_tokens": 2139844,
+        "output_tokens": 297616,
+        "llm_calls": 97,
+        "tool_calls": 19,
+        "search_calls": 16,
+        "agent_nodes": 32,
+        "leaf_nodes": 23,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.444444,
+        "max_branching_factor": 5,
+        "max_tree_width": 18,
+        "wall_time": 2347.697214,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 9,
+        "mean_node_depth": 2.375,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 9,
+          "3": 18
+        },
+        "tools_by_name": {
+          "web_search": 16,
+          "add": 3
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 97
+        },
+        "recorded_token_events": 97,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 97,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 25242,
+        "input_tokens": 15446,
+        "output_tokens": 9796,
+        "llm_calls": 5,
+        "tool_calls": 0,
+        "search_calls": 0,
+        "agent_nodes": 2,
+        "leaf_nodes": 1,
+        "actual_max_depth": 1,
+        "avg_branching_factor": 1.0,
+        "max_branching_factor": 1,
+        "max_tree_width": 1,
+        "wall_time": null,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 1,
+        "mean_node_depth": 0.5,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 1
+        },
+        "tools_by_name": {},
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 4,
+          "provider_blocked": 1
+        },
+        "recorded_token_events": 5,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 5,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 274,
+    "loader_index_seed0": 32,
+    "stratum": "E3_L1",
+    "question": "How many more letters does the name of the city that the director of \"Whiplash\" (2014) was born in have compared the name of the city in which the film first premiered?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 864793,
+        "input_tokens": 723564,
+        "output_tokens": 141229,
+        "llm_calls": 52,
+        "tool_calls": 14,
+        "search_calls": 13,
+        "agent_nodes": 16,
+        "leaf_nodes": 11,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 6,
+        "wall_time": 925.603245,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.0,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 5,
+          "3": 6
+        },
+        "tools_by_name": {
+          "web_search": 13,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 52
+        },
+        "recorded_token_events": 52,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 52,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 934851,
+        "input_tokens": 886054,
+        "output_tokens": 48797,
+        "llm_calls": 25,
+        "tool_calls": 9,
+        "search_calls": 9,
+        "agent_nodes": 6,
+        "leaf_nodes": 3,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 1.666667,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 479.966803,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.3333333333333333,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 1,
+          "3": 1
+        },
+        "tools_by_name": {
+          "web_search": 9
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 25
+        },
+        "recorded_token_events": 25,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 67968,
+        "cached_usage_recorded_events": 25,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 276,
+    "loader_index_seed0": 28,
+    "stratum": "E5+_L1",
+    "question": "Of the 'Big Four' of Thrash Metal, whose debut full-length was released first?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 137671,
+        "input_tokens": 134951,
+        "output_tokens": 2720,
+        "llm_calls": 4,
+        "tool_calls": 1,
+        "search_calls": 1,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 30.810906,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 4
+        },
+        "recorded_token_events": 4,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 4,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 165363,
+        "input_tokens": 160857,
+        "output_tokens": 4506,
+        "llm_calls": 4,
+        "tool_calls": 1,
+        "search_calls": 1,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 52.315959,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 4
+        },
+        "recorded_token_events": 4,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 4,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 304,
+    "loader_index_seed0": 38,
+    "stratum": "E3_L2+",
+    "question": "What year was the person born who was Prime Minister of The United Kingdom during the year that the first African American ran for president of the United States?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2524289,
+        "input_tokens": 2393722,
+        "output_tokens": 130567,
+        "llm_calls": 92,
+        "tool_calls": 22,
+        "search_calls": 22,
+        "agent_nodes": 28,
+        "leaf_nodes": 18,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.7,
+        "max_branching_factor": 4,
+        "max_tree_width": 14,
+        "wall_time": 1321.60994,
+        "failed_tool_calls": 1,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 10,
+        "mean_node_depth": 2.2857142857142856,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 9,
+          "3": 14
+        },
+        "tools_by_name": {
+          "web_search": 22
+        },
+        "tool_failures_by_name": {
+          "web_search": 1
+        },
+        "llm_status_counts": {
+          "success": 92
+        },
+        "recorded_token_events": 92,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 248704,
+        "cached_usage_recorded_events": 92,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 3562561,
+        "input_tokens": 3401762,
+        "output_tokens": 160799,
+        "llm_calls": 102,
+        "tool_calls": 26,
+        "search_calls": 26,
+        "agent_nodes": 29,
+        "leaf_nodes": 19,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.8,
+        "max_branching_factor": 4,
+        "max_tree_width": 14,
+        "wall_time": 1733.898492,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 1,
+        "retries": 0,
+        "expanded_nodes": 10,
+        "mean_node_depth": 2.2758620689655173,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 10,
+          "3": 14
+        },
+        "tools_by_name": {
+          "web_search": 26
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "failure": 1,
+          "success": 101
+        },
+        "recorded_token_events": 102,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 435712,
+        "cached_usage_recorded_events": 102,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 314,
+    "loader_index_seed0": 13,
+    "stratum": "E3_L2+",
+    "question": "Using data from the year 2020, if you were to combine the permanent human populations of Aukland Island, Rose Island, and Budelli Island, how many total people would you have?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1653000,
+        "input_tokens": 1614175,
+        "output_tokens": 38825,
+        "llm_calls": 40,
+        "tool_calls": 26,
+        "search_calls": 26,
+        "agent_nodes": 10,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 4,
+        "wall_time": 310.682865,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.5,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 4,
+          "3": 1
+        },
+        "tools_by_name": {
+          "web_search": 26
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 40
+        },
+        "recorded_token_events": 40,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 145536,
+        "cached_usage_recorded_events": 40,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 515560,
+        "input_tokens": 492794,
+        "output_tokens": 22766,
+        "llm_calls": 20,
+        "tool_calls": 11,
+        "search_calls": 9,
+        "agent_nodes": 5,
+        "leaf_nodes": 4,
+        "actual_max_depth": 1,
+        "avg_branching_factor": 4.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 4,
+        "wall_time": 158.183961,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 1,
+        "mean_node_depth": 0.8,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4
+        },
+        "tools_by_name": {
+          "web_search": 9,
+          "add": 2
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 20
+        },
+        "recorded_token_events": 20,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 20,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 337,
+    "loader_index_seed0": 5,
+    "stratum": "E3_L1",
+    "question": "What geographical commonality do the person who first described Apriona brunneomarginata and painter Wolfgang Hutter share?",
+    "arms": {
+      "BASE": {
+        "execution_status": "SKIPPED_PROVIDER_BLOCKED",
+        "grading_status": "ungraded_execution",
+        "score": null
+      },
+      "V2": {
+        "execution_status": "SKIPPED_PROVIDER_BLOCKED",
+        "grading_status": "ungraded_execution",
+        "score": null
+      }
+    },
+    "primary_valid_pair": false,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 201347,
+        "input_tokens": 194200,
+        "output_tokens": 7147,
+        "llm_calls": 9,
+        "tool_calls": 1,
+        "search_calls": 1,
+        "agent_nodes": 3,
+        "leaf_nodes": 2,
+        "actual_max_depth": 1,
+        "avg_branching_factor": 2.0,
+        "max_branching_factor": 2,
+        "max_tree_width": 2,
+        "wall_time": null,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 1,
+        "mean_node_depth": 0.6666666666666666,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 2
+        },
+        "tools_by_name": {
+          "web_search": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 8,
+          "provider_blocked": 1
+        },
+        "recorded_token_events": 9,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 56448,
+        "cached_usage_recorded_events": 9,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 4503917,
+        "input_tokens": 4454898,
+        "output_tokens": 49019,
+        "llm_calls": 46,
+        "tool_calls": 45,
+        "search_calls": 45,
+        "agent_nodes": 10,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 4,
+        "wall_time": null,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 2.0,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 2,
+          "2": 3,
+          "3": 4
+        },
+        "tools_by_name": {
+          "web_search": 45
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 45,
+          "provider_blocked": 1
+        },
+        "recorded_token_events": 46,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 1242112,
+        "cached_usage_recorded_events": 46,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 442,
+    "loader_index_seed0": 12,
+    "stratum": "E5+_L2+",
+    "question": "What is the age difference between the youngest and oldest person, in the 20th Century, to win two Nobel Prizes?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 4154052,
+        "input_tokens": 4021656,
+        "output_tokens": 132396,
+        "llm_calls": 86,
+        "tool_calls": 27,
+        "search_calls": 22,
+        "agent_nodes": 23,
+        "leaf_nodes": 16,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.142857,
+        "max_branching_factor": 4,
+        "max_tree_width": 13,
+        "wall_time": 1455.347775,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.347826086956522,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 6,
+          "3": 13
+        },
+        "tools_by_name": {
+          "web_search": 22,
+          "run_python_code": 5
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 86
+        },
+        "recorded_token_events": 86,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 527360,
+        "cached_usage_recorded_events": 86,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 3372432,
+        "input_tokens": 3258188,
+        "output_tokens": 114244,
+        "llm_calls": 73,
+        "tool_calls": 19,
+        "search_calls": 15,
+        "agent_nodes": 19,
+        "leaf_nodes": 13,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 8,
+        "wall_time": 1273.81872,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.0,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 8,
+          "3": 6
+        },
+        "tools_by_name": {
+          "web_search": 15,
+          "run_python_code": 3,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 73
+        },
+        "recorded_token_events": 73,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 522880,
+        "cached_usage_recorded_events": 73,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 456,
+    "loader_index_seed0": 72,
+    "stratum": "E3_L2+",
+    "question": "If the person who played the joker in \"The Dark Knight\" (2008) had children, how old will they be on the films 50th anniversary? ",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 803922,
+        "input_tokens": 762864,
+        "output_tokens": 41058,
+        "llm_calls": 42,
+        "tool_calls": 13,
+        "search_calls": 7,
+        "agent_nodes": 12,
+        "leaf_nodes": 9,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.666667,
+        "max_branching_factor": 4,
+        "max_tree_width": 4,
+        "wall_time": 372.714873,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.75,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 4,
+          "3": 3
+        },
+        "tools_by_name": {
+          "add": 5,
+          "web_search": 7,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 42
+        },
+        "recorded_token_events": 42,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 42,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 2734767,
+        "input_tokens": 2615044,
+        "output_tokens": 119723,
+        "llm_calls": 91,
+        "tool_calls": 26,
+        "search_calls": 20,
+        "agent_nodes": 27,
+        "leaf_nodes": 20,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.714286,
+        "max_branching_factor": 5,
+        "max_tree_width": 11,
+        "wall_time": 1144.695606,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.185185185185185,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 11,
+          "3": 11
+        },
+        "tools_by_name": {
+          "run_python_code": 6,
+          "web_search": 20
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 91
+        },
+        "recorded_token_events": 91,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 154368,
+        "cached_usage_recorded_events": 91,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 470,
+    "loader_index_seed0": 42,
+    "stratum": "E2_L1",
+    "question": "Which country did tennis' first Golden Slam winner represent when they achieved it?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 154941,
+        "input_tokens": 151149,
+        "output_tokens": 3792,
+        "llm_calls": 6,
+        "tool_calls": 3,
+        "search_calls": 3,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 47.932676,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 3
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 6
+        },
+        "recorded_token_events": 6,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 6,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 199537,
+        "input_tokens": 194962,
+        "output_tokens": 4575,
+        "llm_calls": 6,
+        "tool_calls": 3,
+        "search_calls": 3,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 56.647477,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 3
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 6
+        },
+        "recorded_token_events": 6,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 16000,
+        "cached_usage_recorded_events": 6,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 473,
+    "loader_index_seed0": 9,
+    "stratum": "E3_L1",
+    "question": "In January of 2024, how many colleges were in the district in which the William C. Davis Science building can be found?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2494662,
+        "input_tokens": 2418193,
+        "output_tokens": 76469,
+        "llm_calls": 81,
+        "tool_calls": 19,
+        "search_calls": 19,
+        "agent_nodes": 25,
+        "leaf_nodes": 16,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.666667,
+        "max_branching_factor": 3,
+        "max_tree_width": 14,
+        "wall_time": 866.952757,
+        "failed_tool_calls": 1,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 9,
+        "mean_node_depth": 2.36,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 7,
+          "3": 14
+        },
+        "tools_by_name": {
+          "web_search": 19
+        },
+        "tool_failures_by_name": {
+          "web_search": 1
+        },
+        "llm_status_counts": {
+          "success": 81
+        },
+        "recorded_token_events": 81,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 175104,
+        "cached_usage_recorded_events": 81,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1229667,
+        "input_tokens": 1177240,
+        "output_tokens": 52427,
+        "llm_calls": 46,
+        "tool_calls": 9,
+        "search_calls": 9,
+        "agent_nodes": 14,
+        "leaf_nodes": 9,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.6,
+        "max_branching_factor": 3,
+        "max_tree_width": 5,
+        "wall_time": 568.956737,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.0,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 5
+        },
+        "tools_by_name": {
+          "web_search": 9
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 46
+        },
+        "recorded_token_events": 46,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 46,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 477,
+    "loader_index_seed0": 2,
+    "stratum": "E3_L2+",
+    "question": "Do zebra, giraffe or hippos wean the earliest?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 170246,
+        "input_tokens": 165996,
+        "output_tokens": 4250,
+        "llm_calls": 4,
+        "tool_calls": 1,
+        "search_calls": 1,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 49.504315,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 4
+        },
+        "recorded_token_events": 4,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 4,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1811646,
+        "input_tokens": 1670210,
+        "output_tokens": 141436,
+        "llm_calls": 48,
+        "tool_calls": 26,
+        "search_calls": 26,
+        "agent_nodes": 14,
+        "leaf_nodes": 11,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 4.333333,
+        "max_branching_factor": 5,
+        "max_tree_width": 5,
+        "wall_time": 832.148903,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.7857142857142858,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 5,
+          "2": 4,
+          "3": 4
+        },
+        "tools_by_name": {
+          "web_search": 26
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 48
+        },
+        "recorded_token_events": 48,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 48,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 486,
+    "loader_index_seed0": 1,
+    "stratum": "E3_L2+",
+    "question": "Give me the difference in time, measured in hours not days, between the first solo woman to thru-hike the Appalachian Trail and the fastest recorded solo woman to walk the Appalachian Trail before 2012.",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1108813,
+        "input_tokens": 1055504,
+        "output_tokens": 53309,
+        "llm_calls": 34,
+        "tool_calls": 20,
+        "search_calls": 15,
+        "agent_nodes": 8,
+        "leaf_nodes": 5,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.333333,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 357.508408,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.5,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "tools_by_name": {
+          "web_search": 15,
+          "run_python_code": 5
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 34
+        },
+        "recorded_token_events": 34,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 309888,
+        "cached_usage_recorded_events": 34,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1000558,
+        "input_tokens": 944785,
+        "output_tokens": 55773,
+        "llm_calls": 36,
+        "tool_calls": 17,
+        "search_calls": 14,
+        "agent_nodes": 10,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 394.905947,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.8,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 3
+        },
+        "tools_by_name": {
+          "web_search": 14,
+          "run_python_code": 3
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 36
+        },
+        "recorded_token_events": 36,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 36,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 494,
+    "loader_index_seed0": 70,
+    "stratum": "E2_L1",
+    "question": "How many years did it take after the FIFA ban was lifted for someone to wear a hijab in the World Cup?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 541343,
+        "input_tokens": 509571,
+        "output_tokens": 31772,
+        "llm_calls": 34,
+        "tool_calls": 13,
+        "search_calls": 12,
+        "agent_nodes": 10,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 245.840381,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.8,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 3
+        },
+        "tools_by_name": {
+          "web_search": 12,
+          "run_python_code": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 34
+        },
+        "recorded_token_events": 34,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 34,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 254127,
+        "input_tokens": 235216,
+        "output_tokens": 18911,
+        "llm_calls": 16,
+        "tool_calls": 7,
+        "search_calls": 6,
+        "agent_nodes": 4,
+        "leaf_nodes": 3,
+        "actual_max_depth": 1,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 139.189457,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 1,
+        "mean_node_depth": 0.75,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3
+        },
+        "tools_by_name": {
+          "web_search": 6,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 16
+        },
+        "recorded_token_events": 16,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 16,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 506,
+    "loader_index_seed0": 53,
+    "stratum": "E3_L1",
+    "question": "What is the full name of the district where the Memory of Mankind project is located?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 121933,
+        "input_tokens": 117887,
+        "output_tokens": 4046,
+        "llm_calls": 4,
+        "tool_calls": 1,
+        "search_calls": 1,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 43.332509,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 4
+        },
+        "recorded_token_events": 4,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 4,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 123335,
+        "input_tokens": 120245,
+        "output_tokens": 3090,
+        "llm_calls": 4,
+        "tool_calls": 1,
+        "search_calls": 1,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 36.651639,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 4
+        },
+        "recorded_token_events": 4,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 4,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 507,
+    "loader_index_seed0": 20,
+    "stratum": "E2_L1",
+    "question": "How old was the journalist who reviewed the first iPad for the Wall St Journal when the first iPad came out?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1222419,
+        "input_tokens": 1003184,
+        "output_tokens": 219235,
+        "llm_calls": 52,
+        "tool_calls": 13,
+        "search_calls": 11,
+        "agent_nodes": 16,
+        "leaf_nodes": 11,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 7,
+        "wall_time": 1558.15709,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.125,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 7
+        },
+        "tools_by_name": {
+          "web_search": 11,
+          "run_python_code": 2
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 52
+        },
+        "recorded_token_events": 52,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 52,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1573956,
+        "input_tokens": 1507338,
+        "output_tokens": 66618,
+        "llm_calls": 58,
+        "tool_calls": 20,
+        "search_calls": 19,
+        "agent_nodes": 16,
+        "leaf_nodes": 12,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.75,
+        "max_branching_factor": 5,
+        "max_tree_width": 7,
+        "wall_time": 612.805091,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 4,
+        "mean_node_depth": 1.875,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 7,
+          "3": 4
+        },
+        "tools_by_name": {
+          "web_search": 19,
+          "run_python_code": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 58
+        },
+        "recorded_token_events": 58,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 58752,
+        "cached_usage_recorded_events": 58,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 527,
+    "loader_index_seed0": 79,
+    "stratum": "E2_L2+",
+    "question": "What is the percentage increase of total deaths of Japanese during World War One versus World War Two? Use the largest number count found to calculate as these numbers are often ranges.",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2001085,
+        "input_tokens": 1896076,
+        "output_tokens": 105009,
+        "llm_calls": 79,
+        "tool_calls": 39,
+        "search_calls": 36,
+        "agent_nodes": 23,
+        "leaf_nodes": 17,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.666667,
+        "max_branching_factor": 4,
+        "max_tree_width": 11,
+        "wall_time": 755.803029,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.217391304347826,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 7,
+          "3": 11
+        },
+        "tools_by_name": {
+          "web_search": 36,
+          "run_python_code": 3
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 79
+        },
+        "recorded_token_events": 79,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 64512,
+        "cached_usage_recorded_events": 79,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 288962,
+        "input_tokens": 269530,
+        "output_tokens": 19432,
+        "llm_calls": 15,
+        "tool_calls": 5,
+        "search_calls": 4,
+        "agent_nodes": 4,
+        "leaf_nodes": 3,
+        "actual_max_depth": 1,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 136.80487,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 1,
+        "mean_node_depth": 0.75,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3
+        },
+        "tools_by_name": {
+          "web_search": 4,
+          "run_python_code": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 15
+        },
+        "recorded_token_events": 15,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 15,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 535,
+    "loader_index_seed0": 3,
+    "stratum": "E5+_L1",
+    "question": "I was one of Bad Religion's drummers between 1990 and 2023. I am from California, but not Los Angeles. Who am I?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 200853,
+        "input_tokens": 196216,
+        "output_tokens": 4637,
+        "llm_calls": 6,
+        "tool_calls": 3,
+        "search_calls": 3,
+        "agent_nodes": 1,
+        "leaf_nodes": 1,
+        "actual_max_depth": 0,
+        "avg_branching_factor": 0.0,
+        "max_branching_factor": 0,
+        "max_tree_width": 1,
+        "wall_time": 63.635602,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 0,
+        "mean_node_depth": 0.0,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1
+        },
+        "tools_by_name": {
+          "web_search": 3
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 6
+        },
+        "recorded_token_events": 6,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 6,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 5685067,
+        "input_tokens": 5480586,
+        "output_tokens": 204481,
+        "llm_calls": 77,
+        "tool_calls": 41,
+        "search_calls": 38,
+        "agent_nodes": 12,
+        "leaf_nodes": 8,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.75,
+        "max_branching_factor": 4,
+        "max_tree_width": 6,
+        "wall_time": 1993.647567,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 4,
+        "mean_node_depth": 1.5833333333333333,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 6,
+          "3": 1
+        },
+        "tools_by_name": {
+          "web_search": 38,
+          "run_python_code": 3
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 77
+        },
+        "recorded_token_events": 77,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 1453056,
+        "cached_usage_recorded_events": 77,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 541,
+    "loader_index_seed0": 73,
+    "stratum": "E4_L2+",
+    "question": "Which Kiwi author died the same year as the first British Prime Minister to be elected after the end of World War 1?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 3651659,
+        "input_tokens": 3349891,
+        "output_tokens": 301768,
+        "llm_calls": 102,
+        "tool_calls": 26,
+        "search_calls": 26,
+        "agent_nodes": 31,
+        "leaf_nodes": 20,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.727273,
+        "max_branching_factor": 3,
+        "max_tree_width": 19,
+        "wall_time": 2385.454579,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 11,
+        "mean_node_depth": 2.4516129032258065,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 8,
+          "3": 19
+        },
+        "tools_by_name": {
+          "web_search": 26
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 102
+        },
+        "recorded_token_events": 102,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 351488,
+        "cached_usage_recorded_events": 102,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 2308626,
+        "input_tokens": 1932377,
+        "output_tokens": 376249,
+        "llm_calls": 90,
+        "tool_calls": 22,
+        "search_calls": 22,
+        "agent_nodes": 28,
+        "leaf_nodes": 18,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.7,
+        "max_branching_factor": 4,
+        "max_tree_width": 16,
+        "wall_time": 2877.28245,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 10,
+        "mean_node_depth": 2.392857142857143,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 8,
+          "3": 16
+        },
+        "tools_by_name": {
+          "web_search": 22
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 90
+        },
+        "recorded_token_events": 90,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 86784,
+        "cached_usage_recorded_events": 90,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 547,
+    "loader_index_seed0": 16,
+    "stratum": "E3_L1",
+    "question": "Sworn in for his second term, who was US President during the only year in history to feature Triple Crown winners in both horse racing AND baseball (War Admiral and St. Louis Cardinals' left fielder Joe Medwick, respectively), as of August 3, 2024?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2197154,
+        "input_tokens": 2124849,
+        "output_tokens": 72305,
+        "llm_calls": 70,
+        "tool_calls": 50,
+        "search_calls": 50,
+        "agent_nodes": 18,
+        "leaf_nodes": 13,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.4,
+        "max_branching_factor": 5,
+        "max_tree_width": 7,
+        "wall_time": 600.850988,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.0,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 7,
+          "3": 6
+        },
+        "tools_by_name": {
+          "web_search": 50
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 70
+        },
+        "recorded_token_events": 70,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 70,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1927974,
+        "input_tokens": 1795873,
+        "output_tokens": 132101,
+        "llm_calls": 48,
+        "tool_calls": 23,
+        "search_calls": 16,
+        "agent_nodes": 11,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.5,
+        "max_branching_factor": 4,
+        "max_tree_width": 4,
+        "wall_time": 1055.338634,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 4,
+        "mean_node_depth": 2.0,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 4
+        },
+        "tools_by_name": {
+          "web_search": 16,
+          "list_files": 7
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 48
+        },
+        "recorded_token_events": 48,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 192640,
+        "cached_usage_recorded_events": 48,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 586,
+    "loader_index_seed0": 30,
+    "stratum": "E2_L2+",
+    "question": "How long after Archduke Franz Ferdinand received Artstetten Castle did he have his first child?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1441065,
+        "input_tokens": 1404477,
+        "output_tokens": 36588,
+        "llm_calls": 37,
+        "tool_calls": 16,
+        "search_calls": 15,
+        "agent_nodes": 10,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 342.939772,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.8,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 3
+        },
+        "tools_by_name": {
+          "web_search": 15,
+          "run_python_code": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 37
+        },
+        "recorded_token_events": 37,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 58752,
+        "cached_usage_recorded_events": 37,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1456181,
+        "input_tokens": 1412877,
+        "output_tokens": 43304,
+        "llm_calls": 38,
+        "tool_calls": 18,
+        "search_calls": 17,
+        "agent_nodes": 10,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 370.814724,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.8,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 3
+        },
+        "tools_by_name": {
+          "web_search": 17,
+          "run_python_code": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 38
+        },
+        "recorded_token_events": 38,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 38,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 597,
+    "loader_index_seed0": 0,
+    "stratum": "E2_L1",
+    "question": "As of August 3rd 2024, what's the name of the university in the city right off exit 183 on I-94 in Michigan?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1582580,
+        "input_tokens": 1528703,
+        "output_tokens": 53877,
+        "llm_calls": 48,
+        "tool_calls": 9,
+        "search_calls": 9,
+        "agent_nodes": 15,
+        "leaf_nodes": 9,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.333333,
+        "max_branching_factor": 3,
+        "max_tree_width": 6,
+        "wall_time": 610.521349,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.066666666666667,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 6
+        },
+        "tools_by_name": {
+          "web_search": 9
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 48
+        },
+        "recorded_token_events": 48,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 86400,
+        "cached_usage_recorded_events": 48,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 2528958,
+        "input_tokens": 2452731,
+        "output_tokens": 76227,
+        "llm_calls": 70,
+        "tool_calls": 15,
+        "search_calls": 15,
+        "agent_nodes": 22,
+        "leaf_nodes": 15,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 11,
+        "wall_time": 888.648353,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.272727272727273,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 7,
+          "3": 11
+        },
+        "tools_by_name": {
+          "web_search": 15
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 70
+        },
+        "recorded_token_events": 70,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 80640,
+        "cached_usage_recorded_events": 70,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 622,
+    "loader_index_seed0": 62,
+    "stratum": "E2_L1",
+    "question": "If Alice turned 36 on the day John F. Kennedy was assassinated, how old would she be on the day the Berlin Wall fell?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 415863,
+        "input_tokens": 381377,
+        "output_tokens": 34486,
+        "llm_calls": 34,
+        "tool_calls": 13,
+        "search_calls": 13,
+        "agent_nodes": 10,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 315.066217,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.8,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 3
+        },
+        "tools_by_name": {
+          "web_search": 13
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 34
+        },
+        "recorded_token_events": 34,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 896,
+        "cached_usage_recorded_events": 34,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 813662,
+        "input_tokens": 753448,
+        "output_tokens": 60214,
+        "llm_calls": 50,
+        "tool_calls": 25,
+        "search_calls": 23,
+        "agent_nodes": 14,
+        "leaf_nodes": 10,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.25,
+        "max_branching_factor": 4,
+        "max_tree_width": 6,
+        "wall_time": 485.464826,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 4,
+        "mean_node_depth": 2.0714285714285716,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 4,
+          "3": 6
+        },
+        "tools_by_name": {
+          "web_search": 23,
+          "run_python_code": 2
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 50
+        },
+        "recorded_token_events": 50,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 50,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 627,
+    "loader_index_seed0": 17,
+    "stratum": "E3_L2+",
+    "question": "One episode title from classic Doctor Who series 12 features the name of a Pentateuch book. Can you tell me which part of this episode had the lowest viewing figures in roman numerals?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1780616,
+        "input_tokens": 1457165,
+        "output_tokens": 323451,
+        "llm_calls": 59,
+        "tool_calls": 11,
+        "search_calls": 11,
+        "agent_nodes": 19,
+        "leaf_nodes": 13,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 10,
+        "wall_time": 2297.011486,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.263157894736842,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 10
+        },
+        "tools_by_name": {
+          "web_search": 11
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 59
+        },
+        "recorded_token_events": 59,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 88704,
+        "cached_usage_recorded_events": 59,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1962470,
+        "input_tokens": 1392458,
+        "output_tokens": 570012,
+        "llm_calls": 52,
+        "tool_calls": 11,
+        "search_calls": 11,
+        "agent_nodes": 16,
+        "leaf_nodes": 11,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 8,
+        "wall_time": 3729.987756,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.1875,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 4,
+          "3": 8
+        },
+        "tools_by_name": {
+          "web_search": 11
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 52
+        },
+        "recorded_token_events": 52,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 52,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 629,
+    "loader_index_seed0": 27,
+    "stratum": "E2_L1",
+    "question": "Twin brothers and former linebackers Ricardo and Devon McDonald were drafted into the NFL in 1992 and 1993, respectively. How many more games did one twin play than the other during their NFL career?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 865036,
+        "input_tokens": 839485,
+        "output_tokens": 25551,
+        "llm_calls": 34,
+        "tool_calls": 13,
+        "search_calls": 12,
+        "agent_nodes": 10,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 213.560385,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.8,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 3
+        },
+        "tools_by_name": {
+          "web_search": 12,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 34
+        },
+        "recorded_token_events": 34,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 34,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1092187,
+        "input_tokens": 896658,
+        "output_tokens": 195529,
+        "llm_calls": 36,
+        "tool_calls": 13,
+        "search_calls": 12,
+        "agent_nodes": 11,
+        "leaf_nodes": 8,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.333333,
+        "max_branching_factor": 4,
+        "max_tree_width": 4,
+        "wall_time": 1125.922856,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.9090909090909092,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 4
+        },
+        "tools_by_name": {
+          "web_search": 12,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 36
+        },
+        "recorded_token_events": 36,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 36,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 646,
+    "loader_index_seed0": 71,
+    "stratum": "E2_L2+",
+    "question": "How much money would be left of Elon Musk's net worth in January of 2021, if you subtracted the 2022 average yearly gross salary of 10,000 people, working in the Philippines, written in words?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1771511,
+        "input_tokens": 1441863,
+        "output_tokens": 329648,
+        "llm_calls": 67,
+        "tool_calls": 36,
+        "search_calls": 29,
+        "agent_nodes": 19,
+        "leaf_nodes": 14,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.6,
+        "max_branching_factor": 4,
+        "max_tree_width": 10,
+        "wall_time": 1988.584434,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.210526315789474,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 4,
+          "3": 10
+        },
+        "tools_by_name": {
+          "web_search": 29,
+          "multiply": 2,
+          "subtract": 1,
+          "run_python_code": 4
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 67
+        },
+        "recorded_token_events": 67,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 67968,
+        "cached_usage_recorded_events": 67,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1012490,
+        "input_tokens": 944884,
+        "output_tokens": 67606,
+        "llm_calls": 47,
+        "tool_calls": 18,
+        "search_calls": 16,
+        "agent_nodes": 13,
+        "leaf_nodes": 10,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 4.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 4,
+        "wall_time": 548.964548,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.8461538461538463,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 4,
+          "3": 4
+        },
+        "tools_by_name": {
+          "web_search": 16,
+          "run_python_code": 2
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 47
+        },
+        "recorded_token_events": 47,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 64512,
+        "cached_usage_recorded_events": 47,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 689,
+    "loader_index_seed0": 18,
+    "stratum": "E4_L2+",
+    "question": "Emma Stone was the highest paid actress in 2017. How much did breakthrough movie for the highest paid actress 6 years after Emma Stone make in its theatrical run?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1327466,
+        "input_tokens": 1235343,
+        "output_tokens": 92123,
+        "llm_calls": 64,
+        "tool_calls": 13,
+        "search_calls": 13,
+        "agent_nodes": 20,
+        "leaf_nodes": 13,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.714286,
+        "max_branching_factor": 4,
+        "max_tree_width": 9,
+        "wall_time": 955.424707,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.15,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 6,
+          "3": 9
+        },
+        "tools_by_name": {
+          "web_search": 13
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 64
+        },
+        "recorded_token_events": 64,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 50688,
+        "cached_usage_recorded_events": 64,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1569483,
+        "input_tokens": 1424265,
+        "output_tokens": 145218,
+        "llm_calls": 68,
+        "tool_calls": 15,
+        "search_calls": 14,
+        "agent_nodes": 20,
+        "leaf_nodes": 13,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.714286,
+        "max_branching_factor": 5,
+        "max_tree_width": 8,
+        "wall_time": 1182.498703,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.05,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 5,
+          "2": 6,
+          "3": 8
+        },
+        "tools_by_name": {
+          "add": 1,
+          "web_search": 14
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 68
+        },
+        "recorded_token_events": 68,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 80640,
+        "cached_usage_recorded_events": 68,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 705,
+    "loader_index_seed0": 8,
+    "stratum": "E2_L2+",
+    "question": "How many years had the then-Prime Minister of France been in office as PM when the first Shelby GT500 was built?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2978348,
+        "input_tokens": 2781492,
+        "output_tokens": 196856,
+        "llm_calls": 98,
+        "tool_calls": 20,
+        "search_calls": 19,
+        "agent_nodes": 31,
+        "leaf_nodes": 21,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 4,
+        "max_tree_width": 16,
+        "wall_time": 1766.821876,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 10,
+        "mean_node_depth": 2.3225806451612905,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 10,
+          "3": 16
+        },
+        "tools_by_name": {
+          "web_search": 19,
+          "subtract": 1
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 98
+        },
+        "recorded_token_events": 98,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 69120,
+        "cached_usage_recorded_events": 98,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 3784208,
+        "input_tokens": 3668055,
+        "output_tokens": 116153,
+        "llm_calls": 79,
+        "tool_calls": 25,
+        "search_calls": 22,
+        "agent_nodes": 22,
+        "leaf_nodes": 16,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.5,
+        "max_branching_factor": 5,
+        "max_tree_width": 11,
+        "wall_time": 1336.436804,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.227272727272727,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 6,
+          "3": 11
+        },
+        "tools_by_name": {
+          "web_search": 22,
+          "run_python_code": 3
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 79
+        },
+        "recorded_token_events": 79,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 635904,
+        "cached_usage_recorded_events": 79,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 711,
+    "loader_index_seed0": 6,
+    "stratum": "E2_L1",
+    "question": "What made-for-TV movie did Dolly Parton have a role in the same year that Dolly the sheep was cloned?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1397648,
+        "input_tokens": 1250129,
+        "output_tokens": 147519,
+        "llm_calls": 67,
+        "tool_calls": 11,
+        "search_calls": 11,
+        "agent_nodes": 23,
+        "leaf_nodes": 16,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.142857,
+        "max_branching_factor": 4,
+        "max_tree_width": 13,
+        "wall_time": 1082.546658,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.347826086956522,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 6,
+          "3": 13
+        },
+        "tools_by_name": {
+          "web_search": 11
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 67
+        },
+        "recorded_token_events": 67,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 67,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 810103,
+        "input_tokens": 670879,
+        "output_tokens": 139224,
+        "llm_calls": 40,
+        "tool_calls": 6,
+        "search_calls": 6,
+        "agent_nodes": 12,
+        "leaf_nodes": 8,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.75,
+        "max_branching_factor": 3,
+        "max_tree_width": 6,
+        "wall_time": 1099.232392,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 4,
+        "mean_node_depth": 1.75,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 6,
+          "3": 2
+        },
+        "tools_by_name": {
+          "web_search": 6
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 40
+        },
+        "recorded_token_events": 40,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 40,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 737,
+    "loader_index_seed0": 60,
+    "stratum": "E3_L2+",
+    "question": "During World War I, the French designed a new military decoration to recognize French and allied soldiers for their service. The sculptor who designed the medal also worked on two war monuments one year after WWI ended. What is the name of the monument that he began work on, but was completed by someone else?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 3910730,
+        "input_tokens": 3837078,
+        "output_tokens": 73652,
+        "llm_calls": 51,
+        "tool_calls": 20,
+        "search_calls": 20,
+        "agent_nodes": 12,
+        "leaf_nodes": 8,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.75,
+        "max_branching_factor": 3,
+        "max_tree_width": 6,
+        "wall_time": 854.057304,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 4,
+        "mean_node_depth": 2.1666666666666665,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 2,
+          "2": 3,
+          "3": 6
+        },
+        "tools_by_name": {
+          "web_search": 20
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 51
+        },
+        "recorded_token_events": 51,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 1290752,
+        "cached_usage_recorded_events": 51,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 16971733,
+        "input_tokens": 16565518,
+        "output_tokens": 406215,
+        "llm_calls": 128,
+        "tool_calls": 61,
+        "search_calls": 61,
+        "agent_nodes": 25,
+        "leaf_nodes": 18,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.428571,
+        "max_branching_factor": 4,
+        "max_tree_width": 13,
+        "wall_time": 4031.202521,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.28,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 7,
+          "3": 13
+        },
+        "tools_by_name": {
+          "web_search": 61
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 128
+        },
+        "recorded_token_events": 128,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 6024832,
+        "cached_usage_recorded_events": 128,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 744,
+    "loader_index_seed0": 31,
+    "stratum": "E5+_L2+",
+    "question": "What is the famous novel by the wife of the 19th-century poet who wrote about an Egyptian pharaoh who reigned sometime between 1290 and 1200 B.C.?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1832408,
+        "input_tokens": 1728276,
+        "output_tokens": 104132,
+        "llm_calls": 77,
+        "tool_calls": 12,
+        "search_calls": 12,
+        "agent_nodes": 26,
+        "leaf_nodes": 17,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.777778,
+        "max_branching_factor": 4,
+        "max_tree_width": 13,
+        "wall_time": 1054.075495,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 9,
+        "mean_node_depth": 2.269230769230769,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 8,
+          "3": 13
+        },
+        "tools_by_name": {
+          "web_search": 12
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 77
+        },
+        "recorded_token_events": 77,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 77,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1202068,
+        "input_tokens": 1101942,
+        "output_tokens": 100126,
+        "llm_calls": 54,
+        "tool_calls": 8,
+        "search_calls": 8,
+        "agent_nodes": 17,
+        "leaf_nodes": 11,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.666667,
+        "max_branching_factor": 3,
+        "max_tree_width": 8,
+        "wall_time": 1006.633476,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.0,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 8,
+          "3": 5
+        },
+        "tools_by_name": {
+          "web_search": 8
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 54
+        },
+        "recorded_token_events": 54,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 72576,
+        "cached_usage_recorded_events": 54,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 762,
+    "loader_index_seed0": 59,
+    "stratum": "E2_L2+",
+    "question": "In the season before Jamal Murray won the NBA Championship, who was the fourth overall draft pick?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 2497064,
+        "input_tokens": 2375425,
+        "output_tokens": 121639,
+        "llm_calls": 107,
+        "tool_calls": 20,
+        "search_calls": 18,
+        "agent_nodes": 36,
+        "leaf_nodes": 24,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.916667,
+        "max_branching_factor": 4,
+        "max_tree_width": 21,
+        "wall_time": 1300.901545,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 12,
+        "mean_node_depth": 2.4166666666666665,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 10,
+          "3": 21
+        },
+        "tools_by_name": {
+          "web_search": 18,
+          "subtract": 2
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 107
+        },
+        "recorded_token_events": 107,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 70272,
+        "cached_usage_recorded_events": 107,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1795255,
+        "input_tokens": 1500826,
+        "output_tokens": 294429,
+        "llm_calls": 83,
+        "tool_calls": 21,
+        "search_calls": 19,
+        "agent_nodes": 25,
+        "leaf_nodes": 18,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.428571,
+        "max_branching_factor": 4,
+        "max_tree_width": 13,
+        "wall_time": 2240.832374,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.28,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 7,
+          "3": 13
+        },
+        "tools_by_name": {
+          "web_search": 19,
+          "subtract": 2
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 83
+        },
+        "recorded_token_events": 83,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 18176,
+        "cached_usage_recorded_events": 83,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 765,
+    "loader_index_seed0": 23,
+    "stratum": "E2_L1",
+    "question": "In what year did a great fire destroy over 100 buildings in the North American city which hosted the 2010 G20 summit?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 0
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 792355,
+        "input_tokens": 641749,
+        "output_tokens": 150606,
+        "llm_calls": 63,
+        "tool_calls": 11,
+        "search_calls": 11,
+        "agent_nodes": 21,
+        "leaf_nodes": 14,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.857143,
+        "max_branching_factor": 3,
+        "max_tree_width": 11,
+        "wall_time": 1138.247898,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 7,
+        "mean_node_depth": 2.2857142857142856,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 6,
+          "3": 11
+        },
+        "tools_by_name": {
+          "web_search": 11
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 63
+        },
+        "recorded_token_events": 63,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 63,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 458915,
+        "input_tokens": 421961,
+        "output_tokens": 36954,
+        "llm_calls": 34,
+        "tool_calls": 7,
+        "search_calls": 7,
+        "agent_nodes": 10,
+        "leaf_nodes": 7,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 387.023861,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 3,
+        "mean_node_depth": 1.8,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 3
+        },
+        "tools_by_name": {
+          "web_search": 7
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 34
+        },
+        "recorded_token_events": 34,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 34,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 794,
+    "loader_index_seed0": 10,
+    "stratum": "E3_L1",
+    "question": "There is a statue, Avukana Buddha, that overlooks a reservoir in Sri Lanka. The reservoir was built by a king in 460 A.D. What is the name of the king's uncle who raised him?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1881684,
+        "input_tokens": 1842452,
+        "output_tokens": 39232,
+        "llm_calls": 43,
+        "tool_calls": 10,
+        "search_calls": 10,
+        "agent_nodes": 12,
+        "leaf_nodes": 8,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.75,
+        "max_branching_factor": 3,
+        "max_tree_width": 5,
+        "wall_time": 514.516316,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 4,
+        "mean_node_depth": 1.8333333333333333,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 3
+        },
+        "tools_by_name": {
+          "web_search": 10
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 43
+        },
+        "recorded_token_events": 43,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 43,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1662547,
+        "input_tokens": 1603077,
+        "output_tokens": 59470,
+        "llm_calls": 50,
+        "tool_calls": 9,
+        "search_calls": 9,
+        "agent_nodes": 16,
+        "leaf_nodes": 10,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.5,
+        "max_branching_factor": 3,
+        "max_tree_width": 7,
+        "wall_time": 647.373436,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.125,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 5,
+          "3": 7
+        },
+        "tools_by_name": {
+          "web_search": 9
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 50
+        },
+        "recorded_token_events": 50,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 65664,
+        "cached_usage_recorded_events": 50,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 815,
+    "loader_index_seed0": 33,
+    "stratum": "E3_L2+",
+    "question": "A 2002 science fiction novel by an American author references La Llorona and themes of personal identity. What is the name of the trilogy that this author wrote under the same publisher?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 1989015,
+        "input_tokens": 1759373,
+        "output_tokens": 229642,
+        "llm_calls": 60,
+        "tool_calls": 16,
+        "search_calls": 16,
+        "agent_nodes": 17,
+        "leaf_nodes": 11,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.666667,
+        "max_branching_factor": 4,
+        "max_tree_width": 7,
+        "wall_time": 1660.654909,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 6,
+        "mean_node_depth": 2.0588235294117645,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 4,
+          "2": 5,
+          "3": 7
+        },
+        "tools_by_name": {
+          "web_search": 16
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 60
+        },
+        "recorded_token_events": 60,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 122112,
+        "cached_usage_recorded_events": 60,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 1375651,
+        "input_tokens": 1209172,
+        "output_tokens": 166479,
+        "llm_calls": 48,
+        "tool_calls": 11,
+        "search_calls": 11,
+        "agent_nodes": 14,
+        "leaf_nodes": 9,
+        "actual_max_depth": 3,
+        "avg_branching_factor": 2.6,
+        "max_branching_factor": 3,
+        "max_tree_width": 6,
+        "wall_time": 1292.697257,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 5,
+        "mean_node_depth": 2.0714285714285716,
+        "reaches_depth3": 1,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 2,
+          "2": 6,
+          "3": 5
+        },
+        "tools_by_name": {
+          "web_search": 11
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 48
+        },
+        "recorded_token_events": 48,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 94464,
+        "cached_usage_recorded_events": 48,
+        "archived_summary_differences": {}
+      }
+    }
+  },
+  {
+    "official_task_id": 816,
+    "loader_index_seed0": 22,
+    "stratum": "E3_L1",
+    "question": "Mary Gaulden Jagger worked in the Biology Division of the Oak Ridge National Laboratory; what type of supercomputer, ranked by the TOP500 as the world's most powerful in June 2022, is present on the campus, and in what year did this supercomputer become operational?",
+    "arms": {
+      "BASE": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      },
+      "V2": {
+        "execution_status": "COMPLETED",
+        "grading_status": "success",
+        "score": 1
+      }
+    },
+    "primary_valid_pair": true,
+    "behavior": {
+      "BASE": {
+        "total_tokens": 467478,
+        "input_tokens": 439906,
+        "output_tokens": 27572,
+        "llm_calls": 22,
+        "tool_calls": 4,
+        "search_calls": 4,
+        "agent_nodes": 6,
+        "leaf_nodes": 4,
+        "actual_max_depth": 2,
+        "avg_branching_factor": 2.5,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 281.800244,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 2,
+        "mean_node_depth": 1.1666666666666667,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3,
+          "2": 2
+        },
+        "tools_by_name": {
+          "web_search": 4
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 22
+        },
+        "recorded_token_events": 22,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 22,
+        "archived_summary_differences": {}
+      },
+      "V2": {
+        "total_tokens": 335921,
+        "input_tokens": 314209,
+        "output_tokens": 21712,
+        "llm_calls": 14,
+        "tool_calls": 2,
+        "search_calls": 2,
+        "agent_nodes": 4,
+        "leaf_nodes": 3,
+        "actual_max_depth": 1,
+        "avg_branching_factor": 3.0,
+        "max_branching_factor": 3,
+        "max_tree_width": 3,
+        "wall_time": 222.254298,
+        "failed_tool_calls": 0,
+        "failed_llm_calls": 0,
+        "retries": 0,
+        "expanded_nodes": 1,
+        "mean_node_depth": 0.75,
+        "reaches_depth3": 0,
+        "nodes_by_depth": {
+          "0": 1,
+          "1": 3
+        },
+        "tools_by_name": {
+          "web_search": 2
+        },
+        "tool_failures_by_name": {},
+        "llm_status_counts": {
+          "success": 14
+        },
+        "recorded_token_events": 14,
+        "upstream_attempts_with_unrecorded_tokens": 0,
+        "cached_input_tokens": 0,
+        "cached_usage_recorded_events": 14,
+        "archived_summary_differences": {}
+      }
+    }
+  }
+]

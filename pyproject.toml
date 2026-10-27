@@ -1,0 +1,9 @@
+[project]
+name = "organizational-visibility-evidence"
+version = "0.1.0"
+description = "Offline verification of archived multi-agent organizational visibility experiments"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false

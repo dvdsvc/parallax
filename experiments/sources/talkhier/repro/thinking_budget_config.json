@@ -1,0 +1,21 @@
+{
+  "model": "qwen3.7-flash",
+  "temperature": 0,
+  "enable_thinking": true,
+  "thinking_budget": 8192,
+  "max_completion_tokens": 16384,
+  "max_tokens": null,
+  "max_tokens_sent": false,
+  "output_limit_scope": "thinking_plus_final_response",
+  "thinking_options_transport": "ChatOpenAI.extra_body",
+  "scope": "all_roles",
+  "same_parameters_for_conditions": [
+    "BASE",
+    "V2"
+  ],
+  "applies_to": "Future runs only; stopped archives retain their original configuration",
+  "benchmark_started_by_this_change": false,
+  "monitor_reenabled_by_this_change": false,
+  "provider_parameter_documentation": "https://help.aliyun.com/zh/model-studio/deep-thinking",
+  "user_authorization": "改吧。"
+}

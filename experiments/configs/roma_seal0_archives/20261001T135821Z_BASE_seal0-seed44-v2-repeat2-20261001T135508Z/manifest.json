@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "archive_type": "roma_seal0_paper_run",
+  "run_id": "seal0-seed44-v2-repeat2-20261001T135508Z",
+  "condition": "BASE",
+  "status": "completed",
+  "started_at": "2026-10-01T13:58:21.633906+00:00",
+  "finished_at": "2026-10-01T14:25:31.207515+00:00",
+  "agent": {
+    "checkout": "sources/roma/native",
+    "git": {
+      "path": "sources/roma/native",
+      "git": true,
+      "root": "sources/roma/native",
+      "commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+      "dirty": true,
+      "status": [
+        "M .gitignore",
+        "?? benchmark_subsets/frames_subset_100_seed42.json",
+        "?? benchmark_subsets/seal0_clean_paired_15_seed42.json",
+        "?? scripts/evaluate_frames_subset.py",
+        "?? scripts/frames_subset_utils.py",
+        "?? scripts/sample_frames_subset.py"
+      ]
+    },
+    "runner": "sources/roma/external/run_isolated_seal0.py",
+    "runner_sha256": "7070181f2700493378c235429b01ea759b602903bd04c943d6f776927585810f",
+    "proxy_hook": "sources/roma/proxy/custom_hook.py",
+    "proxy_hook_sha256": "6733a17c23c71de77b14a71c8be46fbf8daa1b6d5afad6225b9396f632ac22b7",
+    "control_layer": {
+      "path": "sources/roma/controls",
+      "git": true,
+      "root": "sources/roma/controls",
+      "commit": "99696f1e2cd338e3f7ee0cdd690b4f4e76d5268b",
+      "dirty": true,
+      "status": [
+        "M README.md",
+        " M prompts/global_organizational_architecture_v2.txt",
+        " M test_org_awareness_v2.py",
+        "?? benchmark_subsets/seal0_paired94_remaining69_sample10_seed44.json",
+        "?? benchmark_subsets/seal0_remaining95_sample15_seed43.json"
+      ]
+    },
+    "adapter_repository": {
+      "path": "sources/roma/external",
+      "git": true,
+      "root": "sources/roma/external",
+      "commit": "05e07285695a1905647672b76d2a1c6c9c84b11e",
+      "dirty": true,
+      "status": [
+        "M paper_run_archive.py",
+        " M run_isolated_seal0.py",
+        " M test_paper_run_config.py"
+      ]
+    },
+    "proxy_repository": {
+      "path": "sources/roma/proxy",
+      "git": true,
+      "root": "sources/roma/proxy",
+      "commit": "5b6957290b6a282471a4dd6eebe331312c907de4",
+      "dirty": false,
+      "status": []
+    },
+    "proxy_stack": "sources/roma/proxy/start_proxy_stack.py",
+    "proxy_stack_sha256": "cb70b72501b5734e60b7b6e9d77d60b9707de690e8066313ba11a618d37b59a9",
+    "cache_adapter": "sources/roma/proxy/qwen_cache_adapter.py",
+    "cache_adapter_sha256": "832ee4bdaffa32f9675c8e3fc48dff11cfe4e337ee65b6c0293e949e781e40c2",
+    "snapshot": {
+      "json": "config/agent_snapshot.json",
+      "profile": "config/agent_snapshot/general.yaml",
+      "profile_sha256": "e04dc4af4058b215d45947e0e31332be6624f4b017289e49dd45b1a17a6e52f7"
+    }
+  },
+  "benchmark": {
+    "name": "SEAL-0",
+    "loader": "prompt_optimization.dataset_loaders.load_seal0_dataset",
+    "seed": 0,
+    "split": "test",
+    "no_split": true,
+    "file": "external_archive/2026-09-12/hira/work/paper_studies/seal0_seed44_paired10_repeats2_parallel4x4_20261001T135508Z/source_snapshot/seal-0.parquet",
+    "file_sha256": "01f60b2b278411b2dd9aa98916c3422f1c7dfc08c214cf4ad3a3596993433fde",
+    "dataset_count": 111,
+    "selected_indices": [
+      2,
+      14,
+      26,
+      33,
+      41,
+      51,
+      79,
+      84,
+      108,
+      109
+    ],
+    "tasks": [
+      {
+        "index": 2,
+        "task_id": "2",
+        "goal_sha256": "cbc32eddafe8387366525c97f8c5479e744361cdfaae043e8cb20627eece814d"
+      },
+      {
+        "index": 14,
+        "task_id": "14",
+        "goal_sha256": "abeb3c3da3132c2ae499ae8f1f7cc0edc02829d1f5e8e6dab8d26da2f764b5d2"
+      },
+      {
+        "index": 26,
+        "task_id": "26",
+        "goal_sha256": "c71d4bbb72a21e6477d21200ead08d04de115da235d57d9292459c044b4149b4"
+      },
+      {
+        "index": 33,
+        "task_id": "33",
+        "goal_sha256": "3fdf524a2ea9027fc007bd7ab88fad2408f62476d16f77c9d1783fbb5159071a"
+      },
+      {
+        "index": 41,
+        "task_id": "41",
+        "goal_sha256": "41eb61aaf82df23506769bfc759036d8ec96abf7cd8a515314503c7b5c0c482c"
+      },
+      {
+        "index": 51,
+        "task_id": "51",
+        "goal_sha256": "1d9b3627ad742f34209a5773758e637034ce54f3db38494c89ea6ccf796b7418"
+      },
+      {
+        "index": 79,
+        "task_id": "79",
+        "goal_sha256": "7a73644c826ba6e864f92cb7991dde237c4d533ac0475c31c41e4f2cc45e5795"
+      },
+      {
+        "index": 84,
+        "task_id": "84",
+        "goal_sha256": "4a3db339e0a03d83604fd05e7ef79ad7d7828185416e4251b986070a74740916"
+      },
+      {
+        "index": 108,
+        "task_id": "108",
+        "goal_sha256": "11346e322bf550ce931a72451de31dcd8626fdc12f9e4b59f21c6fcc2e8c9feb"
+      },
+      {
+        "index": 109,
+        "task_id": "109",
+        "goal_sha256": "3c3bc246c0d67d4b32a735e556502d410e6105e86528a058b06d3bc91b241411"
+      }
+    ]
+  },
+  "execution": {
+    "workers": 4,
+    "max_depth": 3,
+    "condition": "BASE",
+    "paper_run": true,
+    "worker_root": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/20261001T135821Z_BASE_seal0-seed44-v2-repeat2-20261001T135508Z.workers",
+    "results_csv": "runner_results.csv"
+  },
+  "context_interventions": {
+    "organization_awareness_v2": true,
+    "organization_awareness_v2_prompt_sha256": "e17ebbbef2e0286a6496a86a42a4f22b23e5d43ba0b171690737fedeea46d7a7",
+    "condition_bit_order": [
+      "intent",
+      "plan"
+    ],
+    "organization_awareness_mode": "static_global_architecture_v2",
+    "injection_boundary": "worker_before_litellm",
+    "role_dependent": false
+  },
+  "paper_run_config": {
+    "source": "external_archive/2026-09-12/hira/work/paper_studies/seal0_seed44_paired10_repeats2_parallel4x4_20261001T135508Z/config/v2_repeat2.json",
+    "sha256": "dab2bb38a698f74e8cafc20e1997c447dfa8839a271fba9a0f8c66fa6a5d6d56",
+    "archive": "config/paper_run_config.json"
+  },
+  "model": {
+    "model": "openai/qwen3.7-flash",
+    "provider": "dashscope-compatible-via-litellm-proxy",
+    "base_url": null,
+    "temperature": "0.0",
+    "max_tokens": null,
+    "seed": null,
+    "note": "Per-request effective decoding fields are also stored in traces/raw_requests.jsonl.",
+    "effective_model": "qwen3.7-flash",
+    "effective_temperature": 0.0,
+    "effective_max_tokens": 8000,
+    "effective_seed": null,
+    "raw_request_count": 75
+  },
+  "python": {
+    "version": "3.12.11",
+    "implementation": "CPython",
+    "executable": "sources/roma/native/.venv/bin/python",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "litellm": "1.78.2",
+      "dspy": "3.0.4b1",
+      "openai": "2.4.0",
+      "pyarrow": "21.0.0",
+      "pandas": "2.3.3",
+      "agentops": null
+    }
+  },
+  "artifacts": {
+    "outputs": "outputs.jsonl",
+    "metrics": "metrics.csv",
+    "raw_traces": "traces",
+    "worker_count": 10,
+    "source_result_csv": "external_archive/2026-09-12/hira/work/paper_runs/20261001T135821Z_BASE_seal0-seed44-v2-repeat2-20261001T135508Z/runner_results.csv"
+  },
+  "mlflow": {
+    "run_id": "cfcb2b4e00944cc7b3ee89d0a915550a",
+    "tracking_uri": "sqlite:///sources/roma/controls/mlflow.db",
+    "experiment": "ROMA-Formal-Runs",
+    "status_at_start": "RUNNING"
+  },
+  "controller_state": {
+    "condition": "BASE",
+    "max_depth": 3,
+    "workers": 4,
+    "started_at": "2026-10-01T13:58:23.205573+00:00",
+    "total": 10,
+    "completed": 10,
+    "skipped_provider_blocked": 0,
+    "errors": 0,
+    "active_indices": [],
+    "finished_at": "2026-10-01T14:25:31.011051+00:00"
+  }
+}

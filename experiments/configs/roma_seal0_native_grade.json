@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T025511Z_BASE_seal0-base-native-e2b-1-110-20260929",
+  "condition": "BASE",
+  "arm_label": "BASE",
+  "benchmark": "SEAL-0",
+  "metric": "prompt_optimization.metrics.SearchMetric / SearchJudgeSignature",
+  "metric_source": "external_archive/2026-09-12/hira/forammas/prompt_optimization/metrics/search_metric.py",
+  "metric_source_sha256": "fee62ae6f927a99ede4dba5e8d93275da1d269d190546010711baa370040a104",
+  "model": "openai/qwen3.7-flash",
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "timeout_seconds": 90,
+  "workers": 20,
+  "retries": 3,
+  "rows": 99,
+  "correct": 35,
+  "scorer_errors": 0,
+  "prompt_sha256": "4b5d93c3993d1b46c7056c932e7627f3e0f4ed809454f8038a2475ffdde39e90",
+  "dspy_version": "3.0.4b1",
+  "files": [
+    "prompt.txt",
+    "inputs.jsonl",
+    "raw_results.jsonl",
+    "scores.csv"
+  ]
+}

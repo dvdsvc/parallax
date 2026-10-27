@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "external_archive/2026-10-02/x/work/talkhier/.venv/bin/python",
+    "external_archive/2026-10-02/x/work/talkhier/repro/run_subset.py",
+    "--subset",
+    "external_archive/2026-10-02/x/work/talkhier/repro/subsets/mmlu_pro_physics_test_n100_seed42",
+    "--workers-per-condition",
+    "16",
+    "--model",
+    "qwen3.7-flash",
+    "--gateway-url",
+    "http://127.0.0.1:4005/v1",
+    "--gateway-wait-seconds",
+    "900",
+    "--thinking-budget",
+    "8192",
+    "--max-completion-tokens",
+    "16384",
+    "--timeout-seconds",
+    "3600",
+    "--request-timeout",
+    "900",
+    "--max-retries",
+    "0",
+    "--output-dir",
+    "archives/talkhier_physics100"
+  ],
+  "cwd": "external_archive/2026-10-02/x/work/talkhier",
+  "captured_at_utc": "2026-10-06T09:08:54.377716+00:00"
+}

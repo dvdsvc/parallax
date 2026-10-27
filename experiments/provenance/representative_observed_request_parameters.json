@@ -1,0 +1,886 @@
+[
+  {
+    "archive": "20260929T025511Z_BASE_seal0-base-native-e2b-1-110-20260929",
+    "representative_question_trace": "q-0048",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "d9f1f9657002baf4364f4e9a541ffb89d4b2ff06359dcef0de373d1994d484ee",
+    "requests_checked": 105,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 9
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 12
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 84
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 0,
+          "status": "absent",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 105
+      }
+    ]
+  },
+  {
+    "archive": "20260929T041539Z_BASE_seal0-v2-e2b-rerun-q1-11-29-32-39-40-48-50-87-109-20260929T0415Z",
+    "representative_question_trace": "q-0040",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "799807633ef5c58ce6f37f99652c391a2d2a08b4c45cc3a8191a647d016b6339",
+    "requests_checked": 116,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 9
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 11
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 96
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 116
+      }
+    ]
+  },
+  {
+    "archive": "20261002T080800Z_BASE_seal0-remaining59-base-repeat1-20261002T080159Z",
+    "representative_question_trace": "q-0095",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "905e766003282279711ecf9f3404b394fd2e6899675edcec569ab3e027404731",
+    "requests_checked": 86,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 10
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 12
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 64
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 0,
+          "status": "absent",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 86
+      }
+    ]
+  },
+  {
+    "archive": "20261002T080800Z_BASE_seal0-remaining59-v2-repeat1-20261002T080159Z",
+    "representative_question_trace": "q-0095",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "95aae6a2bee46fa9830944f0c5cfabd037aefa35851fe85752fb5332c56c570e",
+    "requests_checked": 106,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 11
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 14
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 81
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 106
+      }
+    ]
+  },
+  {
+    "archive": "20261002T080800Z_BASE_seal0-remaining59-base-repeat2-20261002T080159Z",
+    "representative_question_trace": "q-0095",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "3e0ad647e14f485e547ab76d7dab337e185a7a1e89b060b5045f01c7b7b2fb4e",
+    "requests_checked": 103,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 11
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 16
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 76
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 0,
+          "status": "absent",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 103
+      }
+    ]
+  },
+  {
+    "archive": "20261002T080800Z_BASE_seal0-remaining59-v2-repeat2-20261002T080159Z",
+    "representative_question_trace": "q-0011",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "22661b357730f117995861bfd43e80cbdcb48bcccc8d13dbb7022ad31c241a09",
+    "requests_checked": 86,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 11
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 10
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 65
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 86
+      }
+    ]
+  },
+  {
+    "archive": "20260928T150512Z_BASE_seal0-base-0381d83a2b6a",
+    "representative_question_trace": "q-0023",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "7c776f96808f72c11ef711534220fcb6edf0606be6e07899060ae1f4e40aca60",
+    "requests_checked": 167,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 18
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 20
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 129
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 167
+      }
+    ]
+  },
+  {
+    "archive": "20261001T135821Z_BASE_seal0-seed44-base-repeat1-20261001T135508Z",
+    "representative_question_trace": "q-0026",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "bebe0a9e1adcb2718fabae9ae7fb65389cae599021bfbca29744c8365a8a172e",
+    "requests_checked": 8,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 1
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 7
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 0,
+          "status": "absent",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 8
+      }
+    ]
+  },
+  {
+    "archive": "20261001T142320Z_BASE_seal0-seed44-v2-repeat1-q2-retry1-20261001T142211Z",
+    "representative_question_trace": "q-0002",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "2f30aa96f0cc3752d88375042de56e439974c2ae43f20c3c1ec72349d0d37de3",
+    "requests_checked": 72,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 10
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 14
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 48
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 72
+      }
+    ]
+  },
+  {
+    "archive": "20261001T135821Z_BASE_seal0-seed44-base-repeat2-20261001T135508Z",
+    "representative_question_trace": "q-0026",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "d0ea1c80b6842a8f9d6fb575c14e5bc510c145e7a17433bbc452e1a57e045821",
+    "requests_checked": 17,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 1
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 16
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 0,
+          "status": "absent",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 17
+      }
+    ]
+  },
+  {
+    "archive": "20261001T135821Z_BASE_seal0-seed44-v2-repeat2-20261001T135508Z",
+    "representative_question_trace": "q-0033",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "96a7434dc13766f2b185842e6d6e723c94e859981f1849f06942411362c06b82",
+    "requests_checked": 30,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 9
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 6
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 15
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 30
+      }
+    ]
+  },
+  {
+    "archive": "20261001T115919Z_BASE_seal0-seed43-base-repeat1-20261001T115351Z",
+    "representative_question_trace": "q-0091",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "1f0a666eb73767608a05f16bf9e1c85b5cad16a13bb2356b40b71a3541cfb991",
+    "requests_checked": 183,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 17
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 26
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 140
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 0,
+          "status": "absent",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 183
+      }
+    ]
+  },
+  {
+    "archive": "20261001T115919Z_BASE_seal0-seed43-v2-repeat1-20261001T115351Z",
+    "representative_question_trace": "q-0077",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "5063380f668207298c729ce2fdcc05458acc6157f30fa6deb2cf4ca47de74b11",
+    "requests_checked": 25,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 4
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 2
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 19
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 25
+      }
+    ]
+  },
+  {
+    "archive": "20261001T115919Z_BASE_seal0-seed43-base-repeat2-20261001T115351Z",
+    "representative_question_trace": "q-0077",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "3fa0424d272e58c13357992e375aa06b91206f748f63449b1b8a42dc7ae99fad",
+    "requests_checked": 16,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 1
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 15
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 0,
+          "status": "absent",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 16
+      }
+    ]
+  },
+  {
+    "archive": "20261001T115919Z_BASE_seal0-seed43-v2-repeat2-20261001T115351Z",
+    "representative_question_trace": "q-0077",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "f3c9d0a4c6c569512f75f1f49a0c5e53e16f9718540df9f87b4bfa83905c0089",
+    "requests_checked": 19,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 1
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 18
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 19
+      }
+    ]
+  },
+  {
+    "archive": "20260930T141921Z_BASE_seal0-paired15-base-repeat1-20260930T141651Z",
+    "representative_question_trace": "q-0087",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "629856b0a12ec8c37bec347fdbb05065fcabb8eee6aad9dc6566551300181c63",
+    "requests_checked": 70,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 7
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 8
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 55
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 0,
+          "status": "absent",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 70
+      }
+    ]
+  },
+  {
+    "archive": "20260930T141922Z_BASE_seal0-paired15-v2-repeat1-20260930T141651Z",
+    "representative_question_trace": "q-0087",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "180c40a5cf5dd7db43c8ac83e3f1e0df1501376291022a404da307263926ac1b",
+    "requests_checked": 69,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 10
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 10
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 49
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 69
+      }
+    ]
+  },
+  {
+    "archive": "20260930T141921Z_BASE_seal0-paired15-base-repeat2-20260930T141651Z",
+    "representative_question_trace": "q-0019",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "7ee200e7f13b18fa691050644e8cbbf0e75ab7f417b807f465849766ee3308cf",
+    "requests_checked": 76,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 9
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 12
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 55
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 0,
+          "status": "absent",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 76
+      }
+    ]
+  },
+  {
+    "archive": "20260930T141921Z_BASE_seal0-paired15-v2-repeat2-20260930T141651Z",
+    "representative_question_trace": "q-0087",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "c3712a8cedecbbf87c7d1a19d0831d1e60d92ee6ffd796052b29893714a1c70e",
+    "requests_checked": 143,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 12
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 18
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 113
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 143
+      }
+    ]
+  },
+  {
+    "archive": "20261001T135821Z_BASE_seal0-seed44-v2-repeat1-20261001T135508Z",
+    "representative_question_trace": "q-0109",
+    "selection_rule": "Largest existing raw_requests file within source archive; all its request records inspected. Representative provenance audit, not all-question equivalence test.",
+    "raw_requests_sha256": "9bb4f0611ec1514bd34e6177ab4e5f9bab69fbdfab2d53a491d0ae5c2e46549b",
+    "requests_checked": 39,
+    "observed_parameters": [
+      {
+        "parameters": {
+          "max_tokens": 8000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 7
+      },
+      {
+        "parameters": {
+          "max_tokens": 32000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 6
+      },
+      {
+        "parameters": {
+          "max_tokens": 64000,
+          "model": "qwen3.7-flash",
+          "seed": null,
+          "temperature": 0.0
+        },
+        "count": 26
+      }
+    ],
+    "organization_awareness_metadata": [
+      {
+        "metadata": {
+          "matches": 1,
+          "status": "present_pre_litellm",
+          "template_sha256": "45b41a0e84fc7ec8cceaddb61de3a3580b05146f600354f5994dd76203f7edee"
+        },
+        "count": 39
+      }
+    ]
+  }
+]

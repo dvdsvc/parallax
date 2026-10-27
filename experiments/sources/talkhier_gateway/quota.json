@@ -1,0 +1,21 @@
+{
+  "model": "qwen3.7-flash",
+  "region": "China Beijing",
+  "upstream_base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "rpm": 30000,
+  "tpm": 5000000,
+  "limit_scope": "shared provider account and model; BASE and V2 use one bucket",
+  "source": "https://help.aliyun.com/zh/model-studio/qwen3-7-flash",
+  "account_scope_source": "https://help.aliyun.com/zh/model-studio/rate-limit",
+  "checked_on": "2026-10-06",
+  "basis": "official Beijing defaults, explicitly requested by user; not a console-specific quota measurement",
+  "task_concurrency_total": 32,
+  "workers_per_condition": 16,
+  "enable_thinking": true,
+  "thinking_budget": 8192,
+  "max_completion_tokens": 16384,
+  "max_tokens": null,
+  "litellm_version": "1.104.0",
+  "proxy_workers": 1,
+  "note": "Task slots are not API RPM or API concurrency. The first real launch uses 16+16 on a 16 GiB host. Other calls on the same account and short bursts can still cause upstream 429."
+}

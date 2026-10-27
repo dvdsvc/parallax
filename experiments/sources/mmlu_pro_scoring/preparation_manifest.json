@@ -1,0 +1,14 @@
+{
+  "files_sha256": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "README.md": "92717b29e89222fa3469ca42aefe8c56d5f8e39b63dcf270cf02057ed1dc7c58",
+    "command.json": "42835f0641ca83da56634351b02c374bf2a87f54ad3fb9167680597fb40a22fa",
+    "evaluate_from_api.py": "6e00c0d57ed307b9e707b712ea796fbd2286c6d21889cd63bb58090fa72c5a99",
+    "official_source.json": "48096ab2db8329e8f82f19a9146b3270565905651376dec4dfb23682ffb1b3d7",
+    "score.py": "bf19ec920c0654437a28a5f85e8549de8fdcc827b88194744729a7e4d9c73265",
+    "validation.json": "8508071dd53e4296091f4bc431b65a64e29a044b7ee464a2d60d70cd07a51891"
+  },
+  "status": "prepared_and_validated",
+  "output": "archives/talkhier_scoring",
+  "execution_gate": "all 200 tasks terminal and archives verified, parent sealed and MLflow index finished"
+}

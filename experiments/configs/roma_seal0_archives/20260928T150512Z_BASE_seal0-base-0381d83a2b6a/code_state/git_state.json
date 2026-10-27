@@ -1,0 +1,126 @@
+{
+  "official_agent_repository": {
+    "path": "sources/roma/native",
+    "git": true,
+    "root": "sources/roma/native",
+    "commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "dirty": false,
+    "status": []
+  },
+  "experiment_control_layer": {
+    "path": "sources/roma/controls",
+    "git": true,
+    "root": "sources/roma/controls",
+    "commit": "95819ecc78cd8c71e3629c7623cee19371c32171",
+    "dirty": true,
+    "status": [
+      "M README.md",
+      " M prompts/global_organizational_architecture_v2.txt",
+      " M test_org_awareness_v2.py"
+    ]
+  },
+  "runner_adapter_repository": {
+    "path": "sources/roma/external",
+    "git": true,
+    "root": "sources/roma/external",
+    "commit": "05e07285695a1905647672b76d2a1c6c9c84b11e",
+    "dirty": true,
+    "status": [
+      "M paper_run_archive.py",
+      " M run_isolated_seal0.py",
+      " M test_paper_run_config.py"
+    ]
+  },
+  "litellm_proxy_repository": {
+    "path": "sources/roma/proxy",
+    "git": true,
+    "root": "sources/roma/proxy",
+    "commit": "5b6957290b6a282471a4dd6eebe331312c907de4",
+    "dirty": false,
+    "status": []
+  },
+  "external_files": [
+    {
+      "source": "sources/roma/external/paper_run_archive.py",
+      "archive": "code_state/external/paper_run_archive.py",
+      "sha256": "cae784986e68018d9ca6505465bc671b2ccb3c4175ece93ba543d2d41a419aed"
+    },
+    {
+      "source": "sources/roma/external/run_isolated_seal0.py",
+      "archive": "code_state/external/run_isolated_seal0.py",
+      "sha256": "7070181f2700493378c235429b01ea759b602903bd04c943d6f776927585810f"
+    },
+    {
+      "source": "sources/roma/external/run_official_seal0.py",
+      "archive": "code_state/external/run_official_seal0.py",
+      "sha256": "a80b181cb9886196f07b0fbbf517e51f0440a5d9387c835d7c1a05753a75e451"
+    },
+    {
+      "source": "sources/roma/external/paper_grade_run.py",
+      "archive": "code_state/external/paper_grade_run.py",
+      "sha256": "54f1b281d44886399168fdf93d4eb89579a4d869e83095ff8b6a42fffce20643"
+    },
+    {
+      "source": "sources/roma/external/agentops_observer.py",
+      "archive": "code_state/external/agentops_observer.py",
+      "sha256": "d3b63b4e2bd474ce651704f3605fbb746461156297093b21ca6002d46b7261f6"
+    },
+    {
+      "source": "sources/roma/external/current_node_context.py",
+      "archive": "code_state/external/current_node_context.py",
+      "sha256": "0f22b13158b8564a758a1f7b0acad2eef09493bbab958ace8e6c9040babeb0a3"
+    },
+    {
+      "source": "sources/roma/proxy/custom_hook.py",
+      "archive": "code_state/external/custom_hook.py",
+      "sha256": "6733a17c23c71de77b14a71c8be46fbf8daa1b6d5afad6225b9396f632ac22b7"
+    },
+    {
+      "source": "sources/roma/controls/prompts/global_organizational_architecture_v2.txt",
+      "archive": "code_state/external/global_organizational_architecture_v2.txt",
+      "sha256": "e17ebbbef2e0286a6496a86a42a4f22b23e5d43ba0b171690737fedeea46d7a7"
+    },
+    {
+      "source": "sources/roma/controls/condition_registry.json",
+      "archive": "code_state/external/condition_registry.json",
+      "sha256": "e58715454f19aa19c49e4ca76c81215fdabffe91232ed243125e72d57b50a038"
+    },
+    {
+      "source": "sources/roma/controls/conditions.py",
+      "archive": "code_state/external/conditions.py",
+      "sha256": "f69d5c5f2c3d8abb74ae244150e71aaaac5ef75075bfaedbd93983e78d14dd9e"
+    },
+    {
+      "source": "sources/roma/controls/trace_guard.py",
+      "archive": "code_state/external/trace_guard.py",
+      "sha256": "5df16b33612ed640b8bc679a66ab9d56c250ad99b2c8fc815130d2b35d7699b4"
+    },
+    {
+      "source": "sources/roma/proxy/summarize_metrics.py",
+      "archive": "code_state/external/summarize_metrics.py",
+      "sha256": "0e88ecb7405b98786381b0fc6870f4036735baed8592ef4138d0de6be7ce2afa"
+    },
+    {
+      "source": "sources/roma/proxy/start_proxy.sh",
+      "archive": "code_state/external/start_proxy.sh",
+      "sha256": "48c89464217289e96b4fa5faa08163ee4bfb2a3ebb6db073e87fd84ffa61ffa2"
+    },
+    {
+      "source": "sources/roma/proxy/start_proxy_stack.py",
+      "archive": "code_state/external/start_proxy_stack.py",
+      "sha256": "cb70b72501b5734e60b7b6e9d77d60b9707de690e8066313ba11a618d37b59a9"
+    },
+    {
+      "source": "sources/roma/proxy/qwen_cache_adapter.py",
+      "archive": "code_state/external/qwen_cache_adapter.py",
+      "sha256": "832ee4bdaffa32f9675c8e3fc48dff11cfe4e337ee65b6c0293e949e781e40c2"
+    }
+  ],
+  "python_command": [
+    "sources/roma/native/.venv/bin/python",
+    "-m",
+    "pip",
+    "freeze"
+  ],
+  "pip_freeze": ""
+}

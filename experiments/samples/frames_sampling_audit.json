@@ -1,0 +1,231 @@
+{
+  "status": "sampling_design_verified_candidate_only",
+  "client_date_beijing": "2026-10-04",
+  "sample_size": 80,
+  "population_all": 824,
+  "target_frame": 783,
+  "historical_excluded": 41,
+  "seed": 20261003,
+  "seed_search": false,
+  "strata": [
+    {
+      "stratum": "E2_L1",
+      "population_count": 181,
+      "sample_count": 18,
+      "population_fraction": 0.23116219667943805,
+      "sample_fraction": 0.225,
+      "difference_pp": -0.6162196679438042,
+      "inclusion_probability": 0.09944751381215469,
+      "inverse_probability_weight": 10.055555555555555,
+      "population_mean_weight_per_question": 0.012842344259968781
+    },
+    {
+      "stratum": "E2_L2+",
+      "population_count": 115,
+      "sample_count": 12,
+      "population_fraction": 0.14687100893997446,
+      "sample_fraction": 0.15,
+      "difference_pp": 0.3128991060025538,
+      "inclusion_probability": 0.10434782608695652,
+      "inverse_probability_weight": 9.583333333333334,
+      "population_mean_weight_per_question": 0.01223925074499787
+    },
+    {
+      "stratum": "E3_L1",
+      "population_count": 133,
+      "sample_count": 14,
+      "population_fraction": 0.1698595146871009,
+      "sample_fraction": 0.175,
+      "difference_pp": 0.5140485312899096,
+      "inclusion_probability": 0.10526315789473684,
+      "inverse_probability_weight": 9.5,
+      "population_mean_weight_per_question": 0.012132822477650063
+    },
+    {
+      "stratum": "E3_L2+",
+      "population_count": 136,
+      "sample_count": 14,
+      "population_fraction": 0.17369093231162197,
+      "sample_fraction": 0.175,
+      "difference_pp": 0.13090676883780183,
+      "inclusion_probability": 0.10294117647058823,
+      "inverse_probability_weight": 9.714285714285714,
+      "population_mean_weight_per_question": 0.012406495165115855
+    },
+    {
+      "stratum": "E4_L1",
+      "population_count": 51,
+      "sample_count": 5,
+      "population_fraction": 0.06513409961685823,
+      "sample_fraction": 0.0625,
+      "difference_pp": -0.2634099616858232,
+      "inclusion_probability": 0.09803921568627451,
+      "inverse_probability_weight": 10.2,
+      "population_mean_weight_per_question": 0.013026819923371647
+    },
+    {
+      "stratum": "E4_L2+",
+      "population_count": 79,
+      "sample_count": 8,
+      "population_fraction": 0.10089399744572158,
+      "sample_fraction": 0.1,
+      "difference_pp": -0.08939974457215782,
+      "inclusion_probability": 0.10126582278481013,
+      "inverse_probability_weight": 9.875,
+      "population_mean_weight_per_question": 0.012611749680715198
+    },
+    {
+      "stratum": "E5+_L1",
+      "population_count": 36,
+      "sample_count": 4,
+      "population_fraction": 0.04597701149425287,
+      "sample_fraction": 0.05,
+      "difference_pp": 0.402298850574713,
+      "inclusion_probability": 0.1111111111111111,
+      "inverse_probability_weight": 9.0,
+      "population_mean_weight_per_question": 0.011494252873563218
+    },
+    {
+      "stratum": "E5+_L2+",
+      "population_count": 52,
+      "sample_count": 5,
+      "population_fraction": 0.06641123882503193,
+      "sample_fraction": 0.0625,
+      "difference_pp": -0.3911238825031929,
+      "inclusion_probability": 0.09615384615384616,
+      "inverse_probability_weight": 10.4,
+      "population_mean_weight_per_question": 0.013282247765006385
+    }
+  ],
+  "label_descriptive_balance": [
+    {
+      "label": "Numerical reasoning",
+      "population_count": 281,
+      "sample_count": 35,
+      "population_rate": 0.35887611749680715,
+      "sample_unweighted_rate": 0.4375,
+      "sample_weighted_rate": 0.4386780595592856,
+      "weighted_difference_pp": 7.980194206247848,
+      "design_sd_pp_for_this_known_covariate": 4.487356356982741,
+      "standardized_deviation_diagnostic_only": 1.778373182649051
+    },
+    {
+      "label": "Tabular reasoning",
+      "population_count": 221,
+      "sample_count": 20,
+      "population_rate": 0.2822477650063857,
+      "sample_unweighted_rate": 0.25,
+      "sample_weighted_rate": 0.2512482515356078,
+      "weighted_difference_pp": -3.0999513470777895,
+      "design_sd_pp_for_this_known_covariate": 4.325213881931224,
+      "standardized_deviation_diagnostic_only": -0.7167163131580558
+    },
+    {
+      "label": "Multiple constraints",
+      "population_count": 523,
+      "sample_count": 50,
+      "population_rate": 0.6679438058748404,
+      "sample_unweighted_rate": 0.625,
+      "sample_weighted_rate": 0.6227771696162501,
+      "weighted_difference_pp": -4.51666362585903,
+      "design_sd_pp_for_this_known_covariate": 4.744040725455832,
+      "standardized_deviation_diagnostic_only": -0.9520710059724551
+    },
+    {
+      "label": "Temporal reasoning",
+      "population_count": 263,
+      "sample_count": 25,
+      "population_rate": 0.33588761174968074,
+      "sample_unweighted_rate": 0.3125,
+      "sample_weighted_rate": 0.31381489590301853,
+      "weighted_difference_pp": -2.2072715846662208,
+      "design_sd_pp_for_this_known_covariate": 4.413703846472424,
+      "standardized_deviation_diagnostic_only": -0.5000950814655007
+    },
+    {
+      "label": "Post processing",
+      "population_count": 103,
+      "sample_count": 12,
+      "population_rate": 0.13154533844189017,
+      "sample_unweighted_rate": 0.15,
+      "sample_weighted_rate": 0.1491794887388757,
+      "weighted_difference_pp": 1.7634150296985536,
+      "design_sd_pp_for_this_known_covariate": 3.377816672671007,
+      "standardized_deviation_diagnostic_only": 0.5220576486479752
+    }
+  ],
+  "fine_coverage": {
+    "population_combinations": 30,
+    "sample_combinations": 23,
+    "population_fine_joint_cells": 97,
+    "sample_fine_joint_cells": 38,
+    "unsampled_combinations": [
+      {
+        "combination": "Multiple constraints | Post processing",
+        "population_count": 13
+      },
+      {
+        "combination": "Multiple constraints | Temporal reasoning | Post processing",
+        "population_count": 4
+      },
+      {
+        "combination": "Numerical reasoning | Tabular reasoning | Multiple constraints | Post processing",
+        "population_count": 2
+      },
+      {
+        "combination": "Numerical reasoning | Tabular reasoning | Temporal reasoning",
+        "population_count": 9
+      },
+      {
+        "combination": "Numerical reasoning | Tabular reasoning | Temporal reasoning | Post processing",
+        "population_count": 3
+      },
+      {
+        "combination": "Tabular reasoning | Multiple constraints | Temporal reasoning | Post processing",
+        "population_count": 2
+      },
+      {
+        "combination": "Tabular reasoning | Post processing",
+        "population_count": 3
+      }
+    ]
+  },
+  "coarse_total_variation": 0.013601532567049782,
+  "max_absolute_coarse_difference_pp": 0.6162196679438042,
+  "checks": {
+    "824_source_rows_aligned": true,
+    "official_ids_unique": true,
+    "normalized_prompts_unique": true,
+    "parsed_evidence_lists_without_duplicates": true,
+    "783_frame_and_41_exclusions_reproduced": true,
+    "8_nonoverlapping_exhaustive_strata": true,
+    "all_eligible_tasks_have_positive_inclusion_probability": true,
+    "80_unique_drawn_without_replacement": true,
+    "80_quotas_match_prior_proposal": true,
+    "zero_overlap_with_41_archived_planned_ids": true,
+    "native80_tsv_and_index_and_jsonl_agree": true,
+    "full824_and_native80_loader_mappings_separate": true,
+    "no_outcome_or_cost_based_selection": true,
+    "seed_replay_exactly_matches": true,
+    "independent_process_replay_identical_core_files": true,
+    "actual_native_loader_function_maps_full824_and_subset80": true,
+    "workbook_formula_totals_match_independent_audit": true,
+    "xlsx_filter_tables_and_frozen_identifiers_verified": true,
+    "all_three_worksheet_previews_visually_reviewed": true
+  },
+  "selection_scope": "Archive-unplanned 783-task pool, not official full824 performance.",
+  "history_scope_note": "Exclusion is based on planned IDs in 13 specified archives. Extra metadata file paths were surveyed; controller totals without task-source mappings do not certify complete absence of other development exposure.",
+  "statistical_scope": "SSRS with positive inclusion probabilities and N_h/N stratum weighting permits design-unbiased finite-frame estimates when complete outcomes are available. Metadata balance does not prove effect precision, intervention control, or absence of execution noise.",
+  "no_paid_agent_or_grader_calls": true,
+  "agent_core_modified": false,
+  "main_analysis": "For each question average available valid matched V2-BASE repeats; estimate sum_h (N_h/783)*mean_h(d_i). Report question-equal sensitivity, question-level uncertainty, and missing coverage separately.",
+  "sources": [
+    "https://www150.statcan.gc.ca/n1/pub/12-001-x/2019002/article/00006/02-eng.htm",
+    "https://arxiv.org/html/2411.00640v1"
+  ],
+  "loader_verification": {
+    "path": "sources/roma/native/prompt_optimization/dataset_loaders.py",
+    "sha256": "8665d76e618c072b58417404a28680498ba4c58d8790120bc7f74f69e711d0b0",
+    "method": "Execute only source AST of the dataset loader with bundled pandas and a data-only DSPy Example stub, no agent imports or model execution. Verify every goal in the full824 and candidate80 seed0 mappings."
+  }
+}

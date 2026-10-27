@@ -1,0 +1,89 @@
+#!/usr/bin/env Rscript
+# External orchestration only; ape/vegan/permute functions are unmodified.
+args <- commandArgs(trailingOnly=TRUE)
+stopifnot(length(args)==2)
+.libPaths(c(args[2], .libPaths()))
+suppressPackageStartupMessages(library(ape))
+suppressPackageStartupMessages(library(vegan))
+suppressPackageStartupMessages(library(permute))
+suppressPackageStartupMessages(library(jsonlite))
+root <- args[1]
+spec <- fromJSON(file.path(root, "structure_distance_inputs.json"), simplifyVector=FALSE)
+as_matrix <- function(x) do.call(rbind, lapply(x, unlist))
+write <- function(x, path) write_json(x, path, pretty=TRUE, auto_unbox=TRUE,
+                                     dataframe="rows", matrix="rowmajor", digits=16, na="null")
+versions <- sapply(c("ape","vegan","permute","jsonlite"), function(x) as.character(packageVersion(x)))
+write(list(R=R.version.string, packages=as.list(versions)), file.path(root,"R_runtime.json"))
+capture.output(sessionInfo(), file=file.path(root,"R_session_info.txt"))
+capture.output(ape::pcoa, vegan::adonis2, vegan::betadisper, getS3method("permutest","betadisper"),
+               file=file.path(root,"native_R_functions.snapshot.txt"))
+for (dataset in names(spec)) {
+  data <- spec[[dataset]]
+  meta <- data$observations
+  nqids <- sort(unique(sapply(meta, function(x) x$question_id)))
+  qmeta <- data.frame(question=factor(rep(nqids, each=2)),
+                      arm=factor(rep(c("BASE","V2"), length(nqids)), levels=c("BASE","V2")))
+  set.seed(20261005)
+  P <- shuffleSet(nrow(qmeta), nset=9999, control=how(blocks=qmeta$question))
+  saveRDS(P, file.path(root,paste0(dataset,"_paired_permutations.rds")))
+  for (mode in names(data$distances)) {
+    message("R START ", dataset, " ", mode)
+    folder <- file.path(root,paste0(dataset,"_",mode)); dir.create(folder)
+    input <- data$distances[[mode]]
+    D <- as_matrix(input$unique_distances)
+    stopifnot(max(abs(D-t(D)))<1e-10, max(abs(diag(D)))<1e-10)
+    ord <- ape::pcoa(as.dist(D), correction="lingoes")
+    Z <- if(!is.null(ord$vectors.cor)) ord$vectors.cor else ord$vectors
+    if(is.null(dim(Z))) Z <- matrix(Z,ncol=1)
+    stopifnot(all(is.finite(Z)), nrow(Z)==nrow(D))
+    indices <- unlist(input$observation_shape_indices)+1L
+    trajectories <- Z[indices,,drop=FALSE]
+    # Average all full-dimensional coordinates within question/arm, not just plotted axes.
+    B <- matrix(0,nrow=nrow(qmeta),ncol=ncol(Z))
+    for (i in seq_len(nrow(qmeta))) {
+      selected <- which(sapply(meta,function(x) x$question_id==as.integer(as.character(qmeta$question[i])) &&
+                                             x$arm==as.character(qmeta$arm[i])))
+      stopifnot(length(selected)>0)
+      B[i,] <- colMeans(trajectories[selected,,drop=FALSE])
+    }
+    dc <- dist(B)
+    # Pair fixed effect before treatment; within-question permutations, one mean/arm/question.
+    ad <- vegan::adonis2(dc ~ question + arm, data=qmeta, by="terms", permutations=P)
+    arm_ss <- ad["arm","SumOfSqs"]; residual_ss <- ad["Residual","SumOfSqs"]
+    tab <- as.data.frame(ad); tab$term <- rownames(tab)
+    bd <- vegan::betadisper(dc,qmeta$arm,type="median",bias.adjust=TRUE)
+    bt <- vegan::permutest(bd,permutations=P)
+    btab <- as.data.frame(bt$tab); btab$term <- rownames(btab)
+    # Re-ordinate mean objects for question-equal figures and external association axes.
+    mean_ord <- ape::pcoa(dc,correction="none")
+    C <- mean_ord$vectors
+    if(is.null(dim(C))) C <- matrix(C,ncol=1)
+    # Outcome-blind sign convention: largest absolute coordinate is positive.
+    for(j in seq_len(ncol(C))) if(C[which.max(abs(C[,j])),j]<0) C[,j]<- -C[,j]
+    ev <- ord$values$Eigenvalues
+    neg <- sum(abs(ev[ev< -1e-9])) / max(sum(abs(ev)),1e-30)
+    result <- list(dataset=dataset,mode=mode,questions=length(nqids),trajectories=length(meta),
+                   unique_shapes=nrow(D),geometry_note=ord$note,
+                   raw_negative_eigenvalue_abs_share=neg,
+                   lingoes_squared_distance_add=if(!is.null(ord$vectors.cor)) 2*abs(min(ev)) else 0,
+                   unique_pcoa_eigenvalues=as.list(ord$values),
+                   question_pcoa_eigenvalues=as.list(mean_ord$values),
+                   question_pcoa_coordinates=C,
+                   question_arm_metadata=qmeta,
+                   full_shape_coordinates=Z,
+                   full_question_mean_coordinates=B,
+                   permanova_table=tab,
+                   treatment_global_R2=ad["arm","R2"],
+                   treatment_within_pair_partial_R2=arm_ss/(arm_ss+residual_ss),
+                   treatment_pseudo_F=ad["arm","F"],treatment_p=ad["arm","Pr(>F)"],
+                   permutations=nrow(P),
+                   dispersion_table=btab,
+                   mean_distance_to_group_median=as.list(tapply(bd$distances,qmeta$arm,mean)),
+                   per_observation_distance_to_group_median=bd$distances)
+    write(result,file.path(folder,"native_structure_results.json"))
+    saveRDS(list(unique_pcoa=ord,question_pcoa=mean_ord,adonis2=ad,
+                 betadisper=bd,permutest=bt),file.path(folder,"native_R_results.rds"))
+    capture.output(ad,bt,file=file.path(folder,"native_R_results.txt"))
+    message("R DONE ", dataset," ",mode," R2=",ad["arm","R2"]," p=",ad["arm","Pr(>F)"])
+  }
+}

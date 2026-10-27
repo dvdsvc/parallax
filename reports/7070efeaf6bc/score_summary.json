@@ -1,0 +1,74 @@
+{
+  "scored_at_utc": "2026-10-06T11:42:49.978277+00:00",
+  "scope": "fixed 100 Physics questions; not full MMLU-Pro or official few-shot inference protocol",
+  "parameters": {
+    "benchmark": "MMLU-Pro Physics fixed test n100 seed42",
+    "scoring": "official valid-prediction exact match",
+    "parent_batch": "archive://2026-10-02/x/work/talkhier/.local/batches/20261006T090617775637Z_mmlu_pro_physics_n100_seed42_tb8192_mc16384_gw16x16",
+    "parent_archive_sha256": "015bd4459398577484ba57f3c3a83b6120c1624aa5485343476b41929ee1a4b2",
+    "subset_manifest_sha256": "3a74f4669898b1e7521dae29e6cbc154857ed2ea447acf4d800da522ce0984c6",
+    "official_scoring_commit": "f418b116db00b065c2aea046518d8fcf74d39872",
+    "scoring_script_sha256": "bf19ec920c0654437a28a5f85e8549de8fdcc827b88194744729a7e4d9c73265",
+    "model_calls": 0,
+    "grader_calls": 0,
+    "missing_prediction_policy": "unscored; no random fallback; fixed-sample correct-answer yield reported separately"
+  },
+  "conditions": {
+    "BASE": {
+      "planned": 100,
+      "status_counts": {
+        "completed": 97,
+        "timed_out": 1,
+        "error": 2
+      },
+      "scored": 97,
+      "correct": 91,
+      "wrong": 6,
+      "missing_or_noncompleted": 3,
+      "accuracy_on_scored": 0.9381443298969072,
+      "correct_answer_yield_on_fixed_100": 0.91,
+      "yield_definition": "correct / all 100 planned questions; missing states retained, not relabeled as wrong answers"
+    },
+    "V2": {
+      "planned": 100,
+      "status_counts": {
+        "completed": 97,
+        "timed_out": 2,
+        "error": 1
+      },
+      "scored": 97,
+      "correct": 93,
+      "wrong": 4,
+      "missing_or_noncompleted": 3,
+      "accuracy_on_scored": 0.9587628865979382,
+      "correct_answer_yield_on_fixed_100": 0.93,
+      "yield_definition": "correct / all 100 planned questions; missing states retained, not relabeled as wrong answers"
+    }
+  },
+  "official_summaries": {
+    "BASE": {
+      "corr": 91.0,
+      "wrong": 6.0,
+      "acc": 0.9381443298969072
+    },
+    "V2": {
+      "corr": 93.0,
+      "wrong": 4.0,
+      "acc": 0.9587628865979382
+    }
+  },
+  "paired": {
+    "both_scored": 94,
+    "transitions_BASE_to_V2": {
+      "1->1": 88,
+      "0->0": 4,
+      "0->1": 2
+    },
+    "BASE_correct": 88,
+    "V2_correct": 90,
+    "V2_minus_BASE_percentage_points": 2.127659574468085
+  },
+  "runtime_concurrency_note": "BASE16/V216 initially; user authorized V2 capacity32 at 2026-10-06T10:53:25Z; realized peak29",
+  "no_new_inference": true,
+  "missing_predictions_randomly_filled": false
+}

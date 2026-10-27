@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+"""Add a transparent post-primary geometry audit and readable summary, no reruns."""
+import argparse
+import json
+import hashlib
+import shutil
+import subprocess
+from pathlib import Path
+from datetime import datetime,timezone
+import numpy as np
+
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def save(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+
+def main():
+    ap=argparse.ArgumentParser();ap.add_argument('archive',type=Path);args=ap.parse_args();p=args.archive.resolve()
+    assert (p/'completion_verification.json').exists()
+    assert not (p/'raw_distance_audit').exists(), 'Do not overwrite a prior audit'
+    initial={}
+    for line in (p/'SHA256SUMS').read_text().splitlines():
+        h,n=line.split(maxsplit=1);assert sha(p/n)==h,n;initial[n]=h
+    repo=Path(__file__).resolve().parent
+    assert not subprocess.check_output(['git','status','--porcelain'],cwd=repo,text=True).strip()
+    commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip()
+    shutil.copy2(p/'SHA256SUMS',p/'primary_analysis.SHA256SUMS.snapshot')
+    for name in ['summarize_tree_morphology.py','audit_tree_raw_distances.R']:
+        shutil.copy2(repo/name,p/(name+'.snapshot'))
+    subprocess.run(['git','bundle','create',str(p/'audit_scripts.bundle'),'HEAD'],cwd=repo,check=True)
+    save(p/'post_primary_audit_plan.json',{'created_utc':datetime.now(timezone.utc).isoformat(),
+      'reason':'Negative eigenvalues and loss of primary FRAMES significance after size normalization; check dependence on corrected geometry',
+      'diagnostic_after_primary_not_preregistered':True,'calls':0,
+      'analysis':'unaltered vegan adonis2 on raw all-trajectory TED; pair effect; synchronized question-cluster swaps999',
+      'run_weighted_sensitivity_not_primary_question_equal':True,'script_commit':commit})
+    with (p/'raw_distance_audit.console.log').open('w')as log:
+        proc=subprocess.run(['Rscript',str(repo/'audit_tree_raw_distances.R'),str(p),
+          'external_archive/2026-10-02/wo-2/work/tree-analysis-r-library'],stdout=log,stderr=subprocess.STDOUT)
+    assert proc.returncode==0,'Raw audit failed; preserve diagnostic output'
+    results=json.loads((p/'results.json').read_text())
+    validations={};bins={}
+    for name,r in results.items():
+        B=np.array(r['full_question_mean_coordinates']);d=B[1::2]-B[::2];n=len(d)
+        ss=.5*n*np.sum(d.mean(0)**2);paired_total=.5*np.sum(d*d)
+        F=ss/((paired_total-ss)/(n-1));total=np.sum((B-B.mean(0))**2)
+        assert abs(F-r['treatment_pseudo_F'])<1e-7
+        assert abs(ss/total-r['treatment_global_R2'])<1e-8
+        validations[name]={'native_adonis2_F_matches_direct_paired_geometry':True,'F':float(F)}
+    for b in ['SEAL0','FRAMES']:
+        e=json.loads((p/(b+'_shape_raw')/'external_signals.json').read_text());panel=e['question_panel']
+        bins[b]={}
+        for label,rows in [('identical_shapes_all_matched_rounds',[r for r in panel if r['mean_paired_TED']==0]),
+                           ('some_shape_change',[r for r in panel if r['mean_paired_TED']>0])]:
+            bins[b][label]={'questions':len(rows),'BASE_accuracy':float(np.mean([r['BASE_accuracy']for r in rows])),
+              'V2_accuracy':float(np.mean([r['V2_accuracy']for r in rows])),
+              'questions_positive_delta':sum(r['delta_success_V2_minus_BASE']>0 for r in rows),
+              'questions_negative_delta':sum(r['delta_success_V2_minus_BASE']<0 for r in rows)}
+    save(p/'geometry_verification.json',validations);save(p/'same_shape_outcome_descriptive.json',bins)
+    lines=['# 执行树分析：结果概览','',
+      '**原始轨迹、日志和评分均未修改；只新增离线分析产物。** 先前1904个来源文件的前后SHA256一致，借用分析库未改，新增模型/judge调用为0。','',
+      '本次把结构与外部效用分开：纯结构PCA只用节点/深度/宽度/分支/叶节点等；APTED树距离和ape PCoA不使用token或正确率；最后才关联原生结果。SEAL0为94题272组配对，FRAMES为47题47组配对。主分析先题内合并重复、再题目等权。','',
+      '## 1. 主分析：是否存在整体树形差异','',
+      '| 数据集 | 全局结构R² | 控制题目后的partial R² | 配对PERMANOVA p | 两项主检验Holm p |','|---|---:|---:|---:|---:|']
+    for b in ['SEAL0','FRAMES']:
+        r=results[b+'_shape_raw'];lines.append(f'| {b} | {100*r["treatment_global_R2"]:.2f}% | {100*r["treatment_within_pair_partial_R2"]:.2f}% | {r["treatment_p"]:.4f} | {r["p_Holm_two_primary"]:.4f} |')
+    lines += ['', 'SEAL0没有整体形态分开的证据，不等于局部深度/展开指标完全没变。FRAMES存在较弱的整体树形差异信号，但效应小且依赖距离定义：按节点总数缩放后p=0.0964；阶段标签敏感性p=0.0085。六个距离/benchmark组合整体Holm后，FRAMES原始距离p=0.1065、阶段标签p=0.0510。因此只能作为探索性发现，不能写成全面稳健的结构改变。分散度诊断没有检出显著两侧差异，也不能据此证明分散度完全相同。','',
+      '## 2. 更清楚的关联是资源变化，而非成功率变化','',
+      '| 树形量与外部量 | SEAL0 r | FRAMES r |','|---|---:|---:|']
+    for feature,target,title in [('delta_PCoA1','delta_log1p_tokens','主树形轴变化 ↔ log-token变化'),
+                               ('mean_paired_TED','delta_success_V2_minus_BASE','树编辑距离 ↔ 正确率提升'),
+                               ('mean_paired_TED','absolute_delta_log1p_tokens','树编辑距离 ↔ log-token变化幅度')]:
+        vals=[]
+        for b in ['SEAL0','FRAMES']:
+            e=json.loads((p/(b+'_shape_raw')/'external_signals.json').read_text())
+            t=next(t for t in e['external_tests']if t['feature']==feature and t['external_target']==target)
+            vals.append(f'{t["pearson_r"]:+.3f}')
+        lines.append(f'| {title} | {vals[0]} | {vals[1]} |')
+    lines += ['', '主树形轴与log-token变化在两数据集都通过24项关联的Holm校正（p=0.0024）；树编辑距离与正确率提升则未通过检验。FRAMES树编辑距离与资源变化幅度的关联也通过该校正（p=0.0396）。这些是关联，不能证明树形变化导致成本或成功率变化；轴正负号按结构坐标固定，不按结果挑方向。','',
+      '## 3. 原始距离直接检验：事后几何审计','',
+      '主PCoA的原始距离含约15–18%的负谱，采用了Lingoes校正后再平均重复坐标。为检查依赖，追加直接对原始全部轨迹TED的原生adonis2检验，不做PCoA校正，控制每组配对，并同步交换同题全部轮次。此项999次置换、按运行等权，明确是事后敏感性而非原来的题目等权主检验。','',
+      '| 数据集 | 配对运行 | 原始距离全局R² | 原生pseudo-F | p（999次） |','|---|---:|---:|---:|---:|']
+    for b in ['SEAL0','FRAMES']:
+        r=json.loads((p/'raw_distance_audit'/(b+'_results.json')).read_text())
+        lines.append(f'| {b} | {r["paired_runs"]} | {100*r["treatment_global_R2"]:.2f}% | {r["treatment_F"]:.3f} | {r["treatment_p"]:.4f} |')
+    lines += ['', '## 4. 相同树形也能有不同结果','',
+      '| 数据集 | 所有匹配轮都同形的题数 | 其中V2提高/降低题数 | 其余有树形变化的题数 |','|---|---:|---:|---:|']
+    for b in ['SEAL0','FRAMES']:
+        a=bins[b]['identical_shapes_all_matched_rounds'];c=bins[b]['some_shape_change']
+        lines.append(f'| {b} | {a["questions"]} | {a["questions_positive_delta"]}/{a["questions_negative_delta"]} | {c["questions"]} |')
+    lines += ['', '分组由两侧已实现的过程定义，不能当作干预前任务组，也不能据此证明效应调节。它说明“同一树形”仍可包含不同推理/检索和答案，形态不是完整策略表示。','',
+      '纯结构PCA第一轴分别占SEAL0 74.9%、FRAMES 70.0%，主要对应展开规模/深度；第二轴更多对应结构组成与宽度。此前包含资源量的“单节点执行强度”解释不能直接搬来。','',
+      f'完整方法、所有敏感性与关联：[report.md]({p}/report.md)；按官方题号查看：[per_question.md]({p}/per_question.md)。规范子树排序后的有序TED不等于最优无序TED。FRAMES仍是预算收缩后可配对集合，不能推广为总体或把形态差异当作性能提升的因果机制。主执行commit保留b879f04，追加审计commit `{commit}`；此前主分析文件不覆盖，旧哈希清单保存于primary_analysis.SHA256SUMS.snapshot。']
+    (p/'summary.md').write_text('\n'.join(lines)+'\n')
+    for name,h in initial.items():assert sha(p/name)==h,('Existing primary artifact changed',name)
+    sources=json.loads((p/'source_sha256.json').read_text())
+    for path,h in sources.items():assert sha(path)==h,('Original source changed',path)
+    save(p/'audit_completion_verification.json',{'completed_utc':datetime.now(timezone.utc).isoformat(),
+      'primary_artifact_hashes_unchanged':len(initial),'all_original_source_hashes_unchanged':len(sources),
+      'native_geometry_checks':len(validations),'post_primary_audit_commit':commit,'agent_api_judge_calls':0})
+    files=sorted(q for q in p.rglob('*')if q.is_file()and q.name!='SHA256SUMS')
+    (p/'SHA256SUMS').write_text(''.join(f'{sha(q)}  {q.relative_to(p)}\n'for q in files))
+    print('AUDIT COMPLETE',p,flush=True)
+
+if __name__=='__main__':main()

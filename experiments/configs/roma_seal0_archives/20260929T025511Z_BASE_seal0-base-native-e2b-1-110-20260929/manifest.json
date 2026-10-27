@@ -1,0 +1,816 @@
+{
+  "schema_version": 1,
+  "archive_type": "roma_seal0_paper_run",
+  "run_id": "seal0-base-native-e2b-1-110-20260929",
+  "condition": "BASE",
+  "status": "partial_or_error",
+  "started_at": "2026-09-29T02:55:11.483056+00:00",
+  "finished_at": "2026-09-29T04:58:48.910832+00:00",
+  "agent": {
+    "checkout": "sources/roma/native",
+    "git": {
+      "path": "sources/roma/native",
+      "git": true,
+      "root": "sources/roma/native",
+      "commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+      "dirty": false,
+      "status": []
+    },
+    "runner": "sources/roma/external/run_isolated_seal0.py",
+    "runner_sha256": "7070181f2700493378c235429b01ea759b602903bd04c943d6f776927585810f",
+    "proxy_hook": "sources/roma/proxy/custom_hook.py",
+    "proxy_hook_sha256": "6733a17c23c71de77b14a71c8be46fbf8daa1b6d5afad6225b9396f632ac22b7",
+    "control_layer": {
+      "path": "sources/roma/controls",
+      "git": true,
+      "root": "sources/roma/controls",
+      "commit": "95819ecc78cd8c71e3629c7623cee19371c32171",
+      "dirty": true,
+      "status": [
+        "M README.md",
+        " M prompts/global_organizational_architecture_v2.txt",
+        " M test_org_awareness_v2.py"
+      ]
+    },
+    "adapter_repository": {
+      "path": "sources/roma/external",
+      "git": true,
+      "root": "sources/roma/external",
+      "commit": "05e07285695a1905647672b76d2a1c6c9c84b11e",
+      "dirty": true,
+      "status": [
+        "M paper_run_archive.py",
+        " M run_isolated_seal0.py",
+        " M test_paper_run_config.py"
+      ]
+    },
+    "proxy_repository": {
+      "path": "sources/roma/proxy",
+      "git": true,
+      "root": "sources/roma/proxy",
+      "commit": "5b6957290b6a282471a4dd6eebe331312c907de4",
+      "dirty": false,
+      "status": []
+    },
+    "proxy_stack": "sources/roma/proxy/start_proxy_stack.py",
+    "proxy_stack_sha256": "cb70b72501b5734e60b7b6e9d77d60b9707de690e8066313ba11a618d37b59a9",
+    "cache_adapter": "sources/roma/proxy/qwen_cache_adapter.py",
+    "cache_adapter_sha256": "832ee4bdaffa32f9675c8e3fc48dff11cfe4e337ee65b6c0293e949e781e40c2",
+    "snapshot": {
+      "json": "config/agent_snapshot.json",
+      "profile": "config/agent_snapshot/general.yaml",
+      "profile_sha256": "e04dc4af4058b215d45947e0e31332be6624f4b017289e49dd45b1a17a6e52f7"
+    }
+  },
+  "benchmark": {
+    "name": "SEAL-0",
+    "loader": "prompt_optimization.dataset_loaders.load_seal0_dataset",
+    "seed": 0,
+    "split": "test",
+    "no_split": true,
+    "file": "external_archive/2026-09-12/hira/official-roma_modified_20260914/data/sealqa/seal-0.parquet",
+    "file_sha256": "01f60b2b278411b2dd9aa98916c3422f1c7dfc08c214cf4ad3a3596993433fde",
+    "dataset_count": 111,
+    "selected_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110
+    ],
+    "tasks": [
+      {
+        "index": 1,
+        "task_id": "1",
+        "goal_sha256": "9d5b346b1ad221275018449b9d8bfc4535fe84266b230b1c406eaceb510cf72a"
+      },
+      {
+        "index": 2,
+        "task_id": "2",
+        "goal_sha256": "cbc32eddafe8387366525c97f8c5479e744361cdfaae043e8cb20627eece814d"
+      },
+      {
+        "index": 3,
+        "task_id": "3",
+        "goal_sha256": "8f435eba10404ed3deda0417acc03c4182859fba9b54ef57b5f2176322626f9c"
+      },
+      {
+        "index": 4,
+        "task_id": "4",
+        "goal_sha256": "1768d0c9278314236cada25ea6b31d8d9d8f6abec02bd44660d2dfc07c95053d"
+      },
+      {
+        "index": 5,
+        "task_id": "5",
+        "goal_sha256": "2a883523197609091751de5fcebba5f13019c6fb96119b6b77d19cfca5279079"
+      },
+      {
+        "index": 6,
+        "task_id": "6",
+        "goal_sha256": "fb9cb8c1d039bb52747063a98b48446c5a9c3168226ca8cf176e2a78e2f495bb"
+      },
+      {
+        "index": 7,
+        "task_id": "7",
+        "goal_sha256": "2251eb6a222656aeade7f853ec9168207cd9c2736590ce318af97faf9887fdad"
+      },
+      {
+        "index": 8,
+        "task_id": "8",
+        "goal_sha256": "4bf12782a45854c9e42cf3dbd2e29ce5ad2ac701938f1299981fafe7273d642f"
+      },
+      {
+        "index": 9,
+        "task_id": "9",
+        "goal_sha256": "e11f6cd13099f945c8dd369ca42cb01f364c5fe9ee6be387801368a8bbd76154"
+      },
+      {
+        "index": 10,
+        "task_id": "10",
+        "goal_sha256": "468bd5efbfe8a5f0235d52310c605a337bfb846a80e3c7209c5f4165eadac01f"
+      },
+      {
+        "index": 11,
+        "task_id": "11",
+        "goal_sha256": "f10df60e2683959e2ff154e7790539bdccd1e89afe8d5f8027ac5aec8c4fea97"
+      },
+      {
+        "index": 12,
+        "task_id": "12",
+        "goal_sha256": "7e06b26c28c5480fab8796bc7b41a77c11d900c43ce6dbd2930486b72ed69e11"
+      },
+      {
+        "index": 13,
+        "task_id": "13",
+        "goal_sha256": "61f85b369b4ce7597366cc487f9338722bd477d3b3753276bf951f6761cbd42b"
+      },
+      {
+        "index": 14,
+        "task_id": "14",
+        "goal_sha256": "abeb3c3da3132c2ae499ae8f1f7cc0edc02829d1f5e8e6dab8d26da2f764b5d2"
+      },
+      {
+        "index": 15,
+        "task_id": "15",
+        "goal_sha256": "d5683ae8179d4b77e80d04e37341e5aefb3e001547ea66847d609053cd85a2b3"
+      },
+      {
+        "index": 16,
+        "task_id": "16",
+        "goal_sha256": "c154aca67e2a3028cbb42aacbc4ae7d31253b65dca59fffafd7f514e26b964f5"
+      },
+      {
+        "index": 17,
+        "task_id": "17",
+        "goal_sha256": "eaa4ac25b7c8891559a8ef64c25ed4c115262516ca6bf8b2ce58421deaa3f79e"
+      },
+      {
+        "index": 18,
+        "task_id": "18",
+        "goal_sha256": "8999039cdd564501d7d41a1e0c89f11db7eac98f9b2e0ac4a4146d82b0eeebbe"
+      },
+      {
+        "index": 19,
+        "task_id": "19",
+        "goal_sha256": "574411a937524dbbeca9ecc3600e420a0823b7ce97d47a7f0905540baa42b24b"
+      },
+      {
+        "index": 20,
+        "task_id": "20",
+        "goal_sha256": "771c4b4ae7fdb7ce8e9c32a9c41e2bc2de269b2be88604bc42bf4a31aa63dc57"
+      },
+      {
+        "index": 21,
+        "task_id": "21",
+        "goal_sha256": "8ae4fffc65789d95b1869322f2e19a634265ba4830370ef07b6d1b03f7f1855a"
+      },
+      {
+        "index": 22,
+        "task_id": "22",
+        "goal_sha256": "63b7f9d74c1ce2ecae89a859f7ea4790dba634695dd9e3f2dfaeaf3523934a91"
+      },
+      {
+        "index": 23,
+        "task_id": "23",
+        "goal_sha256": "470fed8377ce96432536b59d604c56c79525cc2785ea0437620bf6fb2361a440"
+      },
+      {
+        "index": 24,
+        "task_id": "24",
+        "goal_sha256": "862314ca835357aae20c31e7a2baa17b1c74c4e9e77c897e4f77d8063e1dd737"
+      },
+      {
+        "index": 25,
+        "task_id": "25",
+        "goal_sha256": "be1af4fe82b72401c006e30d009a9a7e7f552f1cf1168b191c207c636cdacea0"
+      },
+      {
+        "index": 26,
+        "task_id": "26",
+        "goal_sha256": "c71d4bbb72a21e6477d21200ead08d04de115da235d57d9292459c044b4149b4"
+      },
+      {
+        "index": 27,
+        "task_id": "27",
+        "goal_sha256": "f597811afd4d6e89aee31ab8a6426b6065bcce0d436e13b248644036da190f24"
+      },
+      {
+        "index": 28,
+        "task_id": "28",
+        "goal_sha256": "5685bd22ca4dcd37ea9495a7fc42d95475d85d09abbe82d7562da381c23ffd6c"
+      },
+      {
+        "index": 29,
+        "task_id": "29",
+        "goal_sha256": "ca26a866f5e80c2a0bdcda7d64ff10b5f841690808858bf775ba2a7ac81408b4"
+      },
+      {
+        "index": 30,
+        "task_id": "30",
+        "goal_sha256": "f4f823cc00d684029bee5b7532bf885e65cfdcd78e6f792a9df3d807a0d38b68"
+      },
+      {
+        "index": 31,
+        "task_id": "31",
+        "goal_sha256": "79977a575736d079ec800e336ec82ed3348e406145766260b10a647ce2c48a56"
+      },
+      {
+        "index": 32,
+        "task_id": "32",
+        "goal_sha256": "6188c60f22bb7acc5d76775d75b258304b749eb8c8c50002079bddf2f83cd0b0"
+      },
+      {
+        "index": 33,
+        "task_id": "33",
+        "goal_sha256": "3fdf524a2ea9027fc007bd7ab88fad2408f62476d16f77c9d1783fbb5159071a"
+      },
+      {
+        "index": 34,
+        "task_id": "34",
+        "goal_sha256": "5f62806a3468d5623694abc32c166da02f7f34f7adb1d5a113b53114d5c31a16"
+      },
+      {
+        "index": 35,
+        "task_id": "35",
+        "goal_sha256": "a6445266948f0db37a543d2302faf56201b46129555001fc6af62a634e3ad747"
+      },
+      {
+        "index": 36,
+        "task_id": "36",
+        "goal_sha256": "b89d17f7744014dfe91c0a6df0ab793b5c35e3b94764c6c4f8c9b0cccfe0243d"
+      },
+      {
+        "index": 37,
+        "task_id": "37",
+        "goal_sha256": "a1f0398b5950db226fd1f974924ef685d3b60841d02fda80a8499866278e56c0"
+      },
+      {
+        "index": 38,
+        "task_id": "38",
+        "goal_sha256": "2ccdb7c85090d4b7d93282b91b1b854bac9c03d9fa0743a25e9b160b50a9832a"
+      },
+      {
+        "index": 39,
+        "task_id": "39",
+        "goal_sha256": "6bbe2a0b6bf71985f94fe25efd3ea5b7eb280e3955dcf02d9dd2b4439bb237f7"
+      },
+      {
+        "index": 40,
+        "task_id": "40",
+        "goal_sha256": "86d1cba7e2346fd41510c16a5ad752add5a646ffaf73e9218fc641cf90781d18"
+      },
+      {
+        "index": 41,
+        "task_id": "41",
+        "goal_sha256": "41eb61aaf82df23506769bfc759036d8ec96abf7cd8a515314503c7b5c0c482c"
+      },
+      {
+        "index": 42,
+        "task_id": "42",
+        "goal_sha256": "77156a372cf9e954620c09f23f74c07e0d10cf010618934fc2731b8a3b819821"
+      },
+      {
+        "index": 43,
+        "task_id": "43",
+        "goal_sha256": "509fa8d560e86923d7bfe9207e0718345a0c2bfbb9939bcdfd8857b9d4f4741f"
+      },
+      {
+        "index": 44,
+        "task_id": "44",
+        "goal_sha256": "5e17b3c38fb1e10730d641806a59b88e1108759d4191e828450c326c8c3e2b61"
+      },
+      {
+        "index": 45,
+        "task_id": "45",
+        "goal_sha256": "919f19f699eb49ff1824cccebb951d0977acafa3a6f40068c599c6ef03914306"
+      },
+      {
+        "index": 46,
+        "task_id": "46",
+        "goal_sha256": "73900c9aa214a606d0b02451d44cde975e68d1517b8e50357eab07cbb598db8e"
+      },
+      {
+        "index": 47,
+        "task_id": "47",
+        "goal_sha256": "6ba0284b07ae7eed16ce129fea263efcb1a14d38549f9ed6171a7b3d60e0c385"
+      },
+      {
+        "index": 48,
+        "task_id": "48",
+        "goal_sha256": "b9d6a330384523bb56f035fba72290c6a004714fe69e6a8eae35ce001cad8fab"
+      },
+      {
+        "index": 49,
+        "task_id": "49",
+        "goal_sha256": "1682a06da27acb314771c68a87f928d173d7afec23416a05ce4e44b4b3c58a1f"
+      },
+      {
+        "index": 50,
+        "task_id": "50",
+        "goal_sha256": "88907b1ee49b89489bd73819a093adf717f3a1772912dbb2affad2863dc2ade5"
+      },
+      {
+        "index": 51,
+        "task_id": "51",
+        "goal_sha256": "1d9b3627ad742f34209a5773758e637034ce54f3db38494c89ea6ccf796b7418"
+      },
+      {
+        "index": 52,
+        "task_id": "52",
+        "goal_sha256": "21420e375cbbf2aa7498ea239b4fd69e6c710c30da29df183531868dcf0d516e"
+      },
+      {
+        "index": 53,
+        "task_id": "53",
+        "goal_sha256": "b95d990d560f936a6b21b8a4ecddaa7d1964e8186d236b6b9280aa64ac5349c5"
+      },
+      {
+        "index": 54,
+        "task_id": "54",
+        "goal_sha256": "644ca5e960ff8a9b08e67eeab358dff1ce9d5de1d93d542cd994d97ba27d224f"
+      },
+      {
+        "index": 55,
+        "task_id": "55",
+        "goal_sha256": "0f6b005bde834eb034dbd0ca233d162c08d04ea74246587cbb34614830950480"
+      },
+      {
+        "index": 56,
+        "task_id": "56",
+        "goal_sha256": "a9fb0e24757bf568226c27dab1c7f472e98999f3b57d2dcde3cf887170a19d1c"
+      },
+      {
+        "index": 57,
+        "task_id": "57",
+        "goal_sha256": "665fb0ba0f72aa5ec5d884d855bf557ec074c28344fa8be37c8052e4490eaf54"
+      },
+      {
+        "index": 58,
+        "task_id": "58",
+        "goal_sha256": "26f0dfb5b0e5a024aad2b0123b1f0670d68b19aa9e835b0af9feb852c49ce323"
+      },
+      {
+        "index": 59,
+        "task_id": "59",
+        "goal_sha256": "370de35828d1f3a1623429d4e412e7193088e2daed09af488f5159b6a67abf35"
+      },
+      {
+        "index": 60,
+        "task_id": "60",
+        "goal_sha256": "da9cbc6aca903bdba8336a52d7ffbbf1754f6fea5afbd4e5b0bd28ececd25d70"
+      },
+      {
+        "index": 61,
+        "task_id": "61",
+        "goal_sha256": "efefd0c39dc3d30479da6033846712764395ebc7733dea351913eeab42841f2d"
+      },
+      {
+        "index": 62,
+        "task_id": "62",
+        "goal_sha256": "9ecc8564231060532947b0c24fbfc6570380c98dcf9d14d21432026f0e315d44"
+      },
+      {
+        "index": 63,
+        "task_id": "63",
+        "goal_sha256": "7218b3f0adcd9f51b3e7798ffd36f74c47f2af3e22802e93483e712fe8b138fd"
+      },
+      {
+        "index": 64,
+        "task_id": "64",
+        "goal_sha256": "6796d8753e5457d89689420ab45ae07e8af185e7595c1c68dc5d6aac098d6520"
+      },
+      {
+        "index": 65,
+        "task_id": "65",
+        "goal_sha256": "2eecac65f5f5927472180e88a48dca1853b8afebc0f9dcfed5dbc4590291fae9"
+      },
+      {
+        "index": 66,
+        "task_id": "66",
+        "goal_sha256": "91a94a221f0cdf7994c757ed022e66e2c68091f6e68882c9e1bd479ee88469e7"
+      },
+      {
+        "index": 67,
+        "task_id": "67",
+        "goal_sha256": "3002147915d24fdfb6eaf0cce28c617242e48df1c468ea6bab2febf221e7c4e2"
+      },
+      {
+        "index": 68,
+        "task_id": "68",
+        "goal_sha256": "d674b610909ca35634fee0b4a35cfa3b4502274f944b3b5b2d45eb02c0f8a4a6"
+      },
+      {
+        "index": 69,
+        "task_id": "69",
+        "goal_sha256": "ffaf28de903d86fdffcab36d1c9b2c58ed0651341131262a9d332a4dacb1a267"
+      },
+      {
+        "index": 70,
+        "task_id": "70",
+        "goal_sha256": "e0bad036abbaa5ea92a9da5e1196a29bb20546412535760005a9be05f60e5465"
+      },
+      {
+        "index": 71,
+        "task_id": "71",
+        "goal_sha256": "80be8d1ef7d153757bbfd7591f18a5facc0a3a9a09a873934e066fd126e80310"
+      },
+      {
+        "index": 72,
+        "task_id": "72",
+        "goal_sha256": "e5ddddb8907ef9ed7a878f8bdb3319cd44b7cbd1519300b03070cbc8672fbcb5"
+      },
+      {
+        "index": 73,
+        "task_id": "73",
+        "goal_sha256": "4766404964a268df768642e1cb1a36826fcc6970f76365591f81393e9fb22723"
+      },
+      {
+        "index": 74,
+        "task_id": "74",
+        "goal_sha256": "84102ea3f5b84044f4198967062119706294976ec5ca1b49aaeceb6bade6243b"
+      },
+      {
+        "index": 75,
+        "task_id": "75",
+        "goal_sha256": "0a765e1ba48896f10a8aa9ecfe40ba691d18df1f6712db833b145ddd7e2dbdfe"
+      },
+      {
+        "index": 76,
+        "task_id": "76",
+        "goal_sha256": "83027d490eb7cac3ae4f334df73b7d2c7fa3116d9a9acc7331ce96849e34b6af"
+      },
+      {
+        "index": 77,
+        "task_id": "77",
+        "goal_sha256": "3bd73cbb8c0d6a6db218c27462453b255c992e1fbf1faa10e2b4e4f98fc80807"
+      },
+      {
+        "index": 78,
+        "task_id": "78",
+        "goal_sha256": "92742491b67e97b969ca1daff7f4b684b5460ff6749810e8a7dbf08036826430"
+      },
+      {
+        "index": 79,
+        "task_id": "79",
+        "goal_sha256": "7a73644c826ba6e864f92cb7991dde237c4d533ac0475c31c41e4f2cc45e5795"
+      },
+      {
+        "index": 80,
+        "task_id": "80",
+        "goal_sha256": "60fac65dbacd95299349684a2ccc8f5eb83e62388c222f9327e6efb49cfc8541"
+      },
+      {
+        "index": 81,
+        "task_id": "81",
+        "goal_sha256": "0d2e8e1d9174595a52d248bd732f0961338f1c7d8392855f21434b7c95c06944"
+      },
+      {
+        "index": 82,
+        "task_id": "82",
+        "goal_sha256": "814e4975507b37d2929d91b2196c4f408dbfc469df06f4c249f3d212172a3b7b"
+      },
+      {
+        "index": 83,
+        "task_id": "83",
+        "goal_sha256": "31dbbad40a92eefc6b4cff8add743541d9f522974e4b8b2f382e54e8032aac46"
+      },
+      {
+        "index": 84,
+        "task_id": "84",
+        "goal_sha256": "4a3db339e0a03d83604fd05e7ef79ad7d7828185416e4251b986070a74740916"
+      },
+      {
+        "index": 85,
+        "task_id": "85",
+        "goal_sha256": "253f0e22b3e2de8b9b4f05df9f57d6bfe9583198bad1d2b193ff925fafaf6f6e"
+      },
+      {
+        "index": 86,
+        "task_id": "86",
+        "goal_sha256": "e6842a7ea77863967eca05325db4c4644311a106bb4a5c7fe0fb3562632b9ce3"
+      },
+      {
+        "index": 87,
+        "task_id": "87",
+        "goal_sha256": "a2f0964bfdee3e22f519264223e0932bc0480fe9085917a40e3a0211b245cd34"
+      },
+      {
+        "index": 88,
+        "task_id": "88",
+        "goal_sha256": "293ce6a0206c9bd73e313660ed5ba20a862a4ea82d07f308eb65c815ecd10e95"
+      },
+      {
+        "index": 89,
+        "task_id": "89",
+        "goal_sha256": "3cd1c9bd1a7877b9893eb871e31e05f82699b7811ad97f3359ed6f8a27bd401b"
+      },
+      {
+        "index": 90,
+        "task_id": "90",
+        "goal_sha256": "77baebc3908c4844fcf98c1b9d5649b180179ae808a8e607174a021df1145fd9"
+      },
+      {
+        "index": 91,
+        "task_id": "91",
+        "goal_sha256": "f3d0240d194b2a8d3a08ab61156f9a7d585b661443a75a81350be2b4b54e90f6"
+      },
+      {
+        "index": 92,
+        "task_id": "92",
+        "goal_sha256": "d3cfe61ba14015c1a35a312b79bd95d143ca691674c49d287a5ad8b2f206b855"
+      },
+      {
+        "index": 93,
+        "task_id": "93",
+        "goal_sha256": "58d57ca1573b563609739e069c5a7b9787c086576dd5ce9f2d6328fa2c4bc37e"
+      },
+      {
+        "index": 94,
+        "task_id": "94",
+        "goal_sha256": "5c2ab1904238985b76e57c7bca0f5036ec7c85a88770f59050436915161d4600"
+      },
+      {
+        "index": 95,
+        "task_id": "95",
+        "goal_sha256": "eece1bc06d6fc45de167c46910e8408e0efaf8bf788f6f4ac81d64ee97408957"
+      },
+      {
+        "index": 96,
+        "task_id": "96",
+        "goal_sha256": "9c2333ca67b443a5fe2c4bd9a4877474058bd974b6622f7cd098239e75e1ed00"
+      },
+      {
+        "index": 97,
+        "task_id": "97",
+        "goal_sha256": "01ef792f29d40673b960e77393349d110b806b560af2b06d753dce467641e58d"
+      },
+      {
+        "index": 98,
+        "task_id": "98",
+        "goal_sha256": "8fcbdd4e47b4701ac951ed705e8202217df18cbe7ad63e1a0c8a9b226a8a2c09"
+      },
+      {
+        "index": 99,
+        "task_id": "99",
+        "goal_sha256": "1ea2f6189f40f9d8a12e8068e8e928649f78a71dc7c43066e8be10bc362d2641"
+      },
+      {
+        "index": 100,
+        "task_id": "100",
+        "goal_sha256": "ff122a53d1f5e8dd5f2d858b26f6b4e4837a690a848da864128cc07062217ef1"
+      },
+      {
+        "index": 101,
+        "task_id": "101",
+        "goal_sha256": "7ae4d477234ccc4dbe33149f46b4fe04b1c8152306716c8cfe2ba277add63e80"
+      },
+      {
+        "index": 102,
+        "task_id": "102",
+        "goal_sha256": "362f9fb4486769bf8e09c57f2ae3c44cc8fe2722fde9722b9a9d9ba13943f048"
+      },
+      {
+        "index": 103,
+        "task_id": "103",
+        "goal_sha256": "fb76b1d418d200aae654efeb4df524fb8d11e9a4e40f0a8981442c20db11eadf"
+      },
+      {
+        "index": 104,
+        "task_id": "104",
+        "goal_sha256": "93641f5fc9243c5243cfe86a3947444f774b61d4f55e6346cadf770164ca05fe"
+      },
+      {
+        "index": 105,
+        "task_id": "105",
+        "goal_sha256": "3e1f064c13054084cc8b11b5807c093fd4823834a59ed7a9f48ae168ca78d28e"
+      },
+      {
+        "index": 106,
+        "task_id": "106",
+        "goal_sha256": "da3317f9956a0bc90dbbabad6c5d2573998963943e4a6bc1126928b2ae61255c"
+      },
+      {
+        "index": 107,
+        "task_id": "107",
+        "goal_sha256": "9a592f7fdc7f8714131804e82f097c65c4a9eefb43d459c7fb43f13b7f76768b"
+      },
+      {
+        "index": 108,
+        "task_id": "108",
+        "goal_sha256": "11346e322bf550ce931a72451de31dcd8626fdc12f9e4b59f21c6fcc2e8c9feb"
+      },
+      {
+        "index": 109,
+        "task_id": "109",
+        "goal_sha256": "3c3bc246c0d67d4b32a735e556502d410e6105e86528a058b06d3bc91b241411"
+      },
+      {
+        "index": 110,
+        "task_id": "110",
+        "goal_sha256": "9f03fc9724f8b206409c79d7a9fc551bff12259f1194e2051fe474fedf6f3f9b"
+      }
+    ]
+  },
+  "execution": {
+    "workers": 15,
+    "max_depth": 3,
+    "condition": "BASE",
+    "paper_run": true,
+    "worker_root": "external_archive/2026-09-12/hira/work/isolated_seal0_runs/20260929T025511Z_BASE_seal0-base-native-e2b-1-110-20260929.workers",
+    "results_csv": "runner_results.csv"
+  },
+  "context_interventions": {
+    "organization_awareness_v2": false,
+    "organization_awareness_v2_prompt_sha256": "e17ebbbef2e0286a6496a86a42a4f22b23e5d43ba0b171690737fedeea46d7a7",
+    "condition_bit_order": [
+      "intent",
+      "plan"
+    ],
+    "organization_awareness_mode": "off",
+    "injection_boundary": "worker_before_litellm",
+    "role_dependent": false
+  },
+  "paper_run_config": {
+    "source": "external_archive/2026-09-12/hira/work/paper_run_configs/seal0-base-native-e2b-1-110-20260929.json",
+    "sha256": "9ac6d6bc5f65b298ecbbbb95d9c771d4703f6dfb5ce9c40093c3b34837b1e494",
+    "archive": "config/paper_run_config.json"
+  },
+  "model": {
+    "model": "openai/qwen3.7-flash",
+    "provider": "dashscope-compatible-via-litellm-proxy",
+    "base_url": null,
+    "temperature": "0.0",
+    "max_tokens": null,
+    "seed": null,
+    "note": "Per-request effective decoding fields are also stored in traces/raw_requests.jsonl.",
+    "effective_model": "qwen3.7-flash",
+    "effective_temperature": 0.0,
+    "effective_max_tokens": 8000,
+    "effective_seed": null,
+    "raw_request_count": 2353
+  },
+  "python": {
+    "version": "3.12.11",
+    "implementation": "CPython",
+    "executable": "sources/roma/native/.venv/bin/python",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "litellm": "1.78.2",
+      "dspy": "3.0.4b1",
+      "openai": "2.4.0",
+      "pyarrow": "21.0.0",
+      "pandas": "2.3.3",
+      "agentops": null
+    }
+  },
+  "artifacts": {
+    "outputs": "outputs.jsonl",
+    "metrics": "metrics.csv",
+    "raw_traces": "traces",
+    "worker_count": 110,
+    "source_result_csv": "external_archive/2026-09-12/hira/work/paper_runs/20260929T025511Z_BASE_seal0-base-native-e2b-1-110-20260929/runner_results.csv"
+  },
+  "mlflow": {
+    "run_id": "d5ff361cb43d407d8af50b3c2ff95385",
+    "tracking_uri": "sqlite:///sources/roma/controls/mlflow.db",
+    "experiment": "ROMA-Formal-Runs",
+    "status_at_start": "RUNNING"
+  },
+  "controller_state": {
+    "condition": "BASE",
+    "max_depth": 3,
+    "workers": 15,
+    "started_at": "2026-09-29T02:55:12.782264+00:00",
+    "total": 110,
+    "completed": 100,
+    "skipped_provider_blocked": 6,
+    "errors": 4,
+    "active_indices": [],
+    "finished_at": "2026-09-29T04:58:43.312590+00:00"
+  }
+}

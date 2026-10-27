@@ -1,0 +1,282 @@
+#!/usr/bin/env python3
+"""Cheap offline audit of persisted dependencies and raw Planner returns.
+
+Read-only original sources. No model/judge requests and no graph-distance fitting.
+"""
+import argparse,json,gzip,hashlib,shutil,subprocess,sys,re
+from pathlib import Path
+from datetime import datetime,timezone
+from collections import Counter,defaultdict
+import networkx as nx
+
+def sha(p):
+    h=hashlib.sha256()
+    with Path(p).open('rb') as f:
+        for chunk in iter(lambda:f.read(8*1024*1024),b''):h.update(chunk)
+    return h.hexdigest()
+def save(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+def load(p):return json.loads(Path(p).read_text())
+def read_registered(p,sources):
+    p=Path(p);sources[str(p)]=sha(p);return p
+def field_values(content):
+    marks=list(re.finditer(r'\[\[\s*##\s*(\w+)\s*##\s*\]\]',content))
+    if marks:return {m.group(1):content[m.end():marks[i+1].start() if i+1<len(marks) else len(content)].strip() for i,m in enumerate(marks)}
+    text=content.strip()
+    if text.startswith('```'):text=re.sub(r'^```(?:json)?\s*|\s*```$','',text)
+    try:
+        obj=json.loads(text)
+        if isinstance(obj,dict) and 'subtasks' in obj:return {k:json.dumps(v,ensure_ascii=False) for k,v in obj.items()}
+    except (ValueError,TypeError):pass
+    return {}
+def parse_json_field(text):
+    if text.startswith('```'):text=re.sub(r'^```(?:json)?\s*|\s*```$','',text)
+    value,end=json.JSONDecoder().raw_decode(text.strip())
+    if text.strip()[end:].strip():raise ValueError('trailing unparsed field text')
+    return value
+def raw_planners(path,sources):
+    if not path.exists():return [],{'missing_raw_file':True}
+    read_registered(path,sources);rows=[];seen={};duplicates=0;unparsable=0
+    with path.open() as stream:
+        for line_no,line in enumerate(stream,1):
+            # Cheap text gate before parsing multi-MB requests; response checked next.
+            if 'subtasks' not in line and 'dependencies_graph' not in line:continue
+            e=json.loads(line)
+            if e.get('status')!='success':continue
+            planner_request=any(m.get('role')=='system' and 'Your output fields are:' in str(m.get('content') or '')
+              and '`subtasks`' in str(m.get('content') or '') and '`dependencies_graph`' in str(m.get('content') or '')
+              for m in (e.get('request') or {}).get('messages',[]) if isinstance(m,dict))
+            response=e.get('response') or {}
+            if not isinstance(response,dict):continue
+            for choice in response.get('choices',[]):
+                message=choice.get('message') or {};content=message.get('content') or ''
+                if not isinstance(content,str):continue
+                fields=field_values(content)
+                if not planner_request and 'subtasks' not in fields:continue
+                rid=e.get('request_id');choice_index=choice.get('index',0)
+                key=(rid,choice_index) if rid else ('line',line_no,choice_index)
+                digest=hashlib.sha256(content.encode()).hexdigest()
+                if key in seen:
+                    assert seen[key]==digest,'same response identity conflicting content'
+                    duplicates+=1;continue
+                seen[key]=digest
+                row={'source_file':str(path),'line':line_no,'request_id':rid,'choice_index':choice_index,
+                  'response_content_sha256':digest,'timestamp':e.get('timestamp'),'parse_status':'parsed',
+                  'identified_by_native_planner_request':planner_request}
+                try:
+                    if 'subtasks' not in fields:raise ValueError('missing subtasks field')
+                    subtasks=parse_json_field(fields['subtasks']);assert isinstance(subtasks,list)
+                    if 'dependencies_graph' not in fields:raise ValueError('missing dependencies_graph field')
+                    graph=parse_json_field(fields['dependencies_graph'])
+                    assert graph is None or isinstance(graph,dict)
+                    declared=set();valid=set();admissible=set()
+                    for target,parents in (graph or {}).items():
+                        assert isinstance(parents,list)
+                        for parent in parents:
+                            declared.add((str(parent),str(target)))
+                            try:
+                                a=int(parent);b=int(target)
+                                if 0<=a<len(subtasks) and 0<=b<len(subtasks) and a!=b:
+                                    valid.add((a,b))
+                                    # Mirror native runtime exact string-key membership.
+                                    if isinstance(parent,str) and str(a)==parent and str(b)==target:admissible.add((a,b))
+                            except (ValueError,TypeError):pass
+                    subdeps={(str(parent),str(i)) for i,s in enumerate(subtasks) if isinstance(s,dict) for parent in (s.get('dependencies') or [])}
+                    row.update({'subtasks':len(subtasks),'dependencies_graph':graph,'declared_edges':sorted(map(list,declared)),
+                      'declared_edge_count':len(declared),'valid_index_edge_count':len(valid),
+                      'native_index_admissible_edge_count':len(admissible),'subtask_dependency_edge_count':len(subdeps),
+                      'subtask_only_dependencies':bool(subdeps) and not bool(declared)})
+                except (ValueError,TypeError,AssertionError) as ex:
+                    row.update({'parse_status':'unparsed','error':str(ex) or type(ex).__name__,'declared_edge_count':None});unparsable+=1
+                rows.append(row)
+    return rows,{'raw_successful_planner_response_choices':len(rows),'duplicate_response_records':duplicates,
+      'unparsed_planner_responses':unparsable,'missing_raw_file':False}
+
+def snapshot(t,sources):
+    path=Path(t['trace_directory']);files=sorted((path/'checkpoints').glob('*.json.gz'))
+    if not files:return {'status':'missing_checkpoint'},None
+    file=read_registered(files[-1],sources);snap=json.loads(gzip.open(file,'rt').read());root=snap['root_dag']
+    expected={n['task_id']:n for n in t['logical_nodes']};tasks=root['tasks']
+    if set(tasks)!=set(expected):return {'status':'checkpoint_node_coverage_mismatch','source_file':str(file),
+      'expected_nodes':len(expected),'persisted_nodes':len(tasks),'missing_task_ids':sorted(set(expected)-set(tasks))},None
+    edges=set()
+    def collect(dag):
+        for uid,task in dag['tasks'].items():
+            assert uid in expected
+            assert set(task.get('dependencies') or [])==set(dag['dependencies'].get(uid,[]))
+            for dep in task.get('dependencies') or []:
+                assert dep in expected and dep!=uid
+                edges.add((dep,uid))
+        for sub in (dag.get('subgraphs') or {}).values():collect(sub)
+    collect(root)
+    dg=nx.DiGraph();dg.add_nodes_from(expected);dg.add_edges_from(edges)
+    assert nx.is_directed_acyclic_graph(dg)
+    planners=[n for n in expected.values() if 'planner' in n['roles']]
+    parents=defaultdict(set);cross=[]
+    for a,b in edges:
+        pa=expected[a]['parent_id'];pb=expected[b]['parent_id']
+        if pa==pb:parents[pa].add((a,b))
+        else:cross.append([a,b])
+    assert not cross,'unexpected cross-parent persisted dependencies; retain evidence before comparison'
+    record={'status':'verified','checkpoint_file':str(file),'checkpoint_created_at':snap['created_at'],
+      'checkpoint_nodes_match_tree':True,'nodes':len(expected),'dependency_edges':sorted(map(list,edges)),
+      'dependency_edge_count':len(edges),'logical_planners':len(planners),
+      'logical_planners_with_runtime_edges':len(parents),'dependency_counts_by_planner':{k:len(v) for k,v in parents.items()},
+      'all_persisted_tasks_completed':all(x['status']=='COMPLETED' for x in tasks.values()),
+      'active_dependency_nodes':len({u for edge in edges for u in edge})}
+    graph=nx.DiGraph()
+    for uid,node in expected.items():graph.add_node(uid,color=(node['depth'],node['parent_id'] is None))
+    for uid,node in expected.items():
+        if node['parent_id'] is not None:graph.add_edge(node['parent_id'],uid,kind='parent')
+    for a,b in edges:
+        assert not graph.has_edge(a,b),'parent/dependency edge collision'
+        graph.add_edge(a,b,kind='dependency')
+    assert nx.is_directed_acyclic_graph(graph)
+    active=dg.subgraph({u for edge in edges for u in edge}).copy()
+    for uid in active:active.nodes[uid]['depth']=expected[uid]['depth']
+    return record,{'full':graph,'active_dependency':active}
+
+def iso(a,b,full=False):
+    if len(a)!=len(b) or a.number_of_edges()!=b.number_of_edges():return False
+    nodekey='color' if full else 'depth'
+    if Counter((a.nodes[u].get(nodekey),a.in_degree(u),a.out_degree(u)) for u in a)!=Counter((b.nodes[u].get(nodekey),b.in_degree(u),b.out_degree(u)) for u in b):return False
+    return nx.is_isomorphic(a,b,node_match=nx.algorithms.isomorphism.categorical_node_match(nodekey,None),
+      edge_match=nx.algorithms.isomorphism.categorical_edge_match('kind',None) if full else None)
+def mean(values):return sum(values)/len(values) if values else None
+def fraction(count,total):return None if not total else count/total
+def main():
+    ap=argparse.ArgumentParser();ap.add_argument('source',type=Path);ap.add_argument('output',type=Path)
+    args=ap.parse_args();src=args.source.resolve();out=args.output.resolve();repo=Path(__file__).resolve().parent
+    assert not out.exists(),'new archive required'
+    assert not subprocess.check_output(['git','status','--porcelain'],cwd=repo,text=True).strip()
+    commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip();out.mkdir(parents=True)
+    save(out/'audit_plan.json',{'created_utc':datetime.now(timezone.utc).isoformat(),'script_commit':commit,'calls':0,
+      'scope':'same immutable morphology panel: SEAL0 94 questions/272 paired H,R1,R2; FRAMES47 paired official questions',
+      'Planner_outputs':'raw success response choices with parsed subtasks/dependencies_graph; separate missing/invalid; response identity dedup only derived counts, never source edits',
+      'runtime':'latest native checkpoint, all task ids exactly match native-derived parent tree; task.dependencies agrees snapshot mapping; repeated nested copies counted once',
+      'dependency_comparison':'directed dependency-active subgraph excluding isolated nodes, preserving recursion depth; exact native NetworkX isomorphism',
+      'same_tree_different_DAG':'canonical unlabeled parent-tree equality plus non-isomorphic full typed parent/dependency graph; UUID/order irrelevant; goals/semantics not part of equality',
+      'weighting':'raw runs and question-equal average matched runs both recorded; no score association or model fit'})
+    shutil.copy2(repo/'audit_dag_dependencies.py',out/'audit_dag_dependencies.py.snapshot')
+    subprocess.run(['git','bundle','create',str(out/'audit_scripts.bundle'),'HEAD'],cwd=repo,check=True)
+    sources={}
+    for f in ['SEAL0_derived_trees_ANALYSIS_ONLY.json','FRAMES_derived_trees_ANALYSIS_ONLY.json','SHA256SUMS']:
+        read_registered(src/f,sources)
+    old=load(src/'source_sha256.json')
+    for path,h in old.items():assert sha(path)==h
+    prior_files={}
+    for line in (src/'SHA256SUMS').read_text().splitlines():
+        h,n=line.split(maxsplit=1);assert sha(src/n)==h;prior_files[str(src/n)]=h
+    records=[];alloutputs=[];pairrows=[];datasets={}
+    for b in ['SEAL0','FRAMES']:
+        trees=load(src/(b+'_derived_trees_ANALYSIS_ONLY.json'));graphs={};lookup={};byarm=defaultdict(list)
+        for i,t in enumerate(trees):
+            key=(t['question_id'],t['round'],t['arm']);meta={k:t[k] for k in ['question_id','round','arm']};meta['dataset']=b
+            checkpoint,graph=snapshot(t,sources)
+            outputs,rawaudit=raw_planners(Path(t['trace_directory'])/'raw_llm_events.jsonl',sources)
+            for output in outputs:output.update(meta)
+            alloutputs+=outputs
+            row={**meta,'tree_shape_signature':t['shape_signature'],'source_trace':t['trace_directory'],
+              **checkpoint,'raw_output_audit':rawaudit,'raw_parsed_planner_outputs':sum(o['parse_status']=='parsed' for o in outputs),
+              'raw_planner_outputs_with_declared_edges':sum((o.get('declared_edge_count') or 0)>0 for o in outputs)}
+            records.append(row);lookup[key]=row;graphs[key]=graph;byarm[t['arm']].append(row)
+            if (i+1)%50==0:print(b,'trace',i+1,'/',len(trees),flush=True)
+        pairs=[]
+        for key,a in lookup.items():
+            q,rr,arm=key
+            if arm!='BASE':continue
+            other=(q,rr,'V2');v=lookup[other]
+            row={'dataset':b,'question_id':q,'round':rr,'tree_same':a['tree_shape_signature']==v['tree_shape_signature'],
+              'BASE_runtime_status':a['status'],'V2_runtime_status':v['status'],
+              'BASE_source_checkpoint':a.get('checkpoint_file'),'V2_source_checkpoint':v.get('checkpoint_file')}
+            if a['status']=='verified' and v['status']=='verified':
+                ga,gv=graphs[key],graphs[other];ea=a['dependency_edge_count'];ev=v['dependency_edge_count']
+                row.update({'BASE_dependency_edges':ea,'V2_dependency_edges':ev,'dependency_presence_changed':bool(ea)!=bool(ev),
+                  'dependency_edge_count_changed':ea!=ev,'dependency_active_graph_changed':not iso(ga['active_dependency'],gv['active_dependency']),
+                  'full_typed_DAG_changed':not row['tree_same'] or not iso(ga['full'],gv['full'],True)})
+                row['same_tree_different_DAG']=row['tree_same'] and row['full_typed_DAG_changed']
+            else:
+                for k in ['BASE_dependency_edges','V2_dependency_edges','dependency_presence_changed','dependency_edge_count_changed','dependency_active_graph_changed','full_typed_DAG_changed','same_tree_different_DAG']:row[k]=None
+            pairs.append(row)
+        pairrows+=pairs
+        outputs=[o for o in alloutputs if o['dataset']==b];parsed=[o for o in outputs if o['parse_status']=='parsed']
+        ds={'trajectories':len(trees),'questions':len({t['question_id'] for t in trees}),
+          'raw_planner_success_response_choices':len(outputs),'raw_planner_parsed':len(parsed),'raw_planner_unparsed':len(outputs)-len(parsed),
+          'raw_planner_outputs_with_dependency_edges':sum(o['declared_edge_count']>0 for o in parsed),
+          'raw_outputs_with_subtask_only_dependencies':sum(o['subtask_only_dependencies'] for o in parsed),
+          'raw_outputs_with_nonadmissible_graph_edges':sum(o['declared_edge_count']!=o['native_index_admissible_edge_count'] for o in parsed),
+          'runtime_checkpoint_unverified':sum(r['status']!='verified' for r in lookup.values()),'arms':{}}
+        for arm,rows in byarm.items():
+            good=[r for r in rows if r['status']=='verified'];question_groups=defaultdict(list)
+            for r in good:question_groups[r['question_id']].append(r)
+            ds['arms'][arm]={'trajectories':len(rows),'runtime_verified':len(good),
+              'trajectories_with_dependencies':sum(r['dependency_edge_count']>0 for r in good),
+              'runtime_dependency_edges_total':sum(r['dependency_edge_count'] for r in good),
+              'logical_planners':sum(r['logical_planners'] for r in good),
+              'logical_planners_with_runtime_dependencies':sum(r['logical_planners_with_runtime_edges'] for r in good),
+              'mean_runtime_dependency_edges_per_run':mean([r['dependency_edge_count'] for r in good]),
+              'question_equal_dependency_presence':mean([mean([r['dependency_edge_count']>0 for r in rr]) for rr in question_groups.values()]),
+              'question_equal_mean_dependency_edges':mean([mean([r['dependency_edge_count'] for r in rr]) for rr in question_groups.values()])}
+        good=[r for r in pairs if r['full_typed_DAG_changed'] is not None];same=[r for r in good if r['tree_same']]
+        ds['pairs']={'planned_pairs':len(pairs),'verified_pairs':len(good),'tree_same_pairs':len(same),
+          'same_tree_different_DAG':sum(r['same_tree_different_DAG'] for r in good),
+          'same_tree_different_DAG_question_ids':sorted({r['question_id'] for r in good if r['same_tree_different_DAG']})}
+        for k in ['dependency_presence_changed','dependency_edge_count_changed','dependency_active_graph_changed','full_typed_DAG_changed']:
+            groups=defaultdict(list)
+            for r in good:groups[r['question_id']].append(r[k])
+            ds['pairs'][k]={'pairs':sum(r[k] for r in good),'run_fraction':mean([r[k] for r in good]),
+              'question_equal_fraction':mean([mean(rr) for rr in groups.values()])}
+        datasets[b]=ds;print(b,'complete',flush=True)
+    save(out/'summary.json',datasets);save(out/'trajectory_audit.json',records);save(out/'planner_outputs.json',alloutputs);save(out/'paired_dag_audit.json',pairrows)
+    lines=['# ROMA DAG依赖审计：四项计数','',
+      '只读原始Planner回复与原生DAG检查点，0新增Agent/API/judge调用；不修改轨迹、日志、评分或此前分析。范围与树分析一致：SEAL0 94题H/R1/R2的272组有效配对，FRAMES47组有效配对；不是全部失败/未完成的尝试。','',
+      '## 1. Planner输出中有没有依赖边','',
+      '成功返回的原始Planner响应选项，以原生请求的输出字段签名或subtasks回复字段识别，再解析dependencies_graph；字段缺失保留为不可解析。下表分母是可解析响应，可能含解析重试/重新规划。运行时分母另用逻辑Planner节点，不将累计检查点中的同一任务重复计数。','',
+      '| 数据集 | 成功Planner响应 | 可解析／不可解析 | 有非空dependency edge的可解析输出 |','|---|---:|---|---|']
+    for b,d in datasets.items():
+        n=d['raw_planner_parsed'];c=d['raw_planner_outputs_with_dependency_edges'];lines.append(f'| {b} | {d["raw_planner_success_response_choices"]} | {n}/{d["raw_planner_unparsed"]} | {c}/{n} = {100*c/n:.2f}% |' if n else f'| {b} | 0 | 0/0 | — |')
+    lines+=['','## 2. SEAL0／FRAMES运行中依赖多不多','',
+      '原生检查点的task.dependencies与dependencies映射一致，任务ID集合必须与原始父子树完全一致；保留source→dependent方向，跨层累计副本用边集合计数。runtime保存的是原生已接受的任务依赖，不能等同所有模型文字声明。','',
+      '| 数据集 | 条件 | 有依赖的完整轨迹／已核验轨迹 | 有依赖的逻辑Planner／所有逻辑Planner | 每次运行平均边数 | 题目等权有依赖比例 |','|---|---|---|---|---|---|']
+    for b,d in datasets.items():
+        for arm,r in d['arms'].items():
+            n=r['runtime_verified'];c=r['trajectories_with_dependencies']
+            lines.append(f'| {b} | {arm} | {c}/{n} = {100*c/n:.2f}% | {r["logical_planners_with_runtime_dependencies"]}/{r["logical_planners"]} | {r["mean_runtime_dependency_edges_per_run"]:.2f} | {100*r["question_equal_dependency_presence"]:.2f}% |')
+    lines+=['','## 3. 同题BASE／V2依赖结构多久变化','',
+      '依赖子图变化：去除完全没有依赖边的节点，保留依赖方向和节点递归深度，做精确图同构比较；两边都无依赖时算不变。完整DAG变化：父子边和dependency边作为不同边类型，保留root/depth。不同UUID或兄弟排列不算变化，任务文字/结果内容不参与图同构。','',
+      '| 数据集 | 已核验配对 | 有无依赖切换 | 依赖边数变化 | 依赖子图形状变化 | 完整父子＋依赖DAG变化 |','|---|---:|---|---|---|---|']
+    for b,d in datasets.items():
+        p=d['pairs'];n=p['verified_pairs'];values=[]
+        for k in ['dependency_presence_changed','dependency_edge_count_changed','dependency_active_graph_changed','full_typed_DAG_changed']:
+            v=p[k];values.append(f'{v["pairs"]}/{n} = {100*v["run_fraction"]:.2f}%（题等权{100*v["question_equal_fraction"]:.2f}%）')
+        lines.append(f'| {b} | {n} | '+' | '.join(values)+' |')
+    lines+=['','## 4. tree相同但DAG不同','',
+      '| 数据集 | 父子树相同的配对 | 其中DAG不同 | 占全部有效配对 | 涉及不同题数 |','|---|---:|---|---|---:|']
+    for b,d in datasets.items():
+        p=d['pairs'];c=p['same_tree_different_DAG'];n=p['tree_same_pairs'];alln=p['verified_pairs']
+        lines.append(f'| {b} | {n} | {c}/{n} = {100*c/n:.2f}% | {c}/{alln} = {100*c/alln:.2f}% | {len(p["same_tree_different_DAG_question_ids"])} |')
+    lines+=['','## 核验边界','',
+      '完整父子树变化必然使带边类型的完整DAG变化；所以第3项同时报告依赖边自身的变化，避免把树变化冒充依赖变化。精确同构忽略任务语义：同形同依赖仍可能有不同目标、工具和答案。same-tree-different-DAG是保守的结构差异证据，不是性能或协作提升证据。','']
+    for b,d in datasets.items():
+        lines.append(f'{b}：未核验运行时检查点{d["runtime_checkpoint_unverified"]}条；仅subtask.dependencies有边、dependencies_graph为空的输出{d["raw_outputs_with_subtask_only_dependencies"]}个；含原生索引转换不能接纳的声明边输出{d["raw_outputs_with_nonadmissible_graph_edges"]}个。不可解析／未核验保持未知，不填零。')
+    lines+=['',f'脚本commit `{commit}`；NetworkX {nx.__version__}。结构相等使用未改的[NetworkX精确图同构](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.isomorphism.is_isomorphic.html)。',
+      '',f'逐题配对：[per_question.md]({out}/per_question.md)；Planner原始响应行号及解析：[planner_outputs.json]({out}/planner_outputs.json)；运行时依赖边和检查点来源：[trajectory_audit.json]({out}/trajectory_audit.json)。']
+    (out/'report.md').write_text('\n'.join(lines)+'\n')
+    per=['# 逐题BASE／V2依赖结构核对','', '题号沿用SEAL0题号／FRAMES官方题号；H/R1/R2为匹配轮。依赖子图变化保留递归深度；完整DAG比较区分父子与依赖边。','',
+      '| 数据集 | 题号 | 轮次 | BASE→V2依赖边数 | tree相同 | 依赖子图变化 | 完整DAG变化 | tree同而DAG不同 |','|---|---:|---|---|---|---|---|---|']
+    for r in sorted(pairrows,key=lambda x:(x['dataset'],x['question_id'],x['round'])):
+        val=lambda x:'未知' if x is None else ('是' if x else '否')
+        per.append(f'| {r["dataset"]} | {r["question_id"]} | {r["round"]} | {r["BASE_dependency_edges"]}→{r["V2_dependency_edges"]} | {val(r["tree_same"])} | {val(r["dependency_active_graph_changed"])} | {val(r["full_typed_DAG_changed"])} | {val(r["same_tree_different_DAG"])} |')
+    (out/'per_question.md').write_text('\n'.join(per)+'\n')
+    save(out/'source_sha256.json',sources)
+    for path,h in {**old,**prior_files,**sources}.items():assert sha(path)==h,('source changed',path)
+    subprocess.run(['git','bundle','verify',str(out/'audit_scripts.bundle')],cwd=repo,check=True,stdout=subprocess.DEVNULL)
+    save(out/'completion_verification.json',{'completed_utc':datetime.now(timezone.utc).isoformat(),'script_commit':commit,
+      'previous_original_sources_unchanged':len(old),'previous_analysis_files_unchanged':len(prior_files),
+      'newly_read_source_hashes_unchanged':len(sources),'Agent_API_judge_calls':0,'networkx':nx.__version__,'python':sys.version,
+      'bundle_verified':True,'unverified_runtime_records':sum(r['status']!='verified' for r in records)})
+    files=sorted(x for x in out.rglob('*') if x.is_file() and x.name!='SHA256SUMS')
+    (out/'SHA256SUMS').write_text(''.join(f'{sha(f)}  {f.relative_to(out)}\n' for f in files))
+    for line in (out/'SHA256SUMS').read_text().splitlines():h,n=line.split(maxsplit=1);assert sha(out/n)==h
+    print('COMPLETE',out,flush=True)
+
+if __name__=='__main__':main()

@@ -1,0 +1,101 @@
+[
+  {
+    "original": "archive-ref-14f6cfdc49b587c2",
+    "copy": "sources/roma/native/src/roma_dspy/core/signatures/signatures.py",
+    "sha256": "1a2315270949baa0f94322531ab8041844da3144434707f2ae8ff1e2e7656ced",
+    "bytes": 3229,
+    "reference_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "byte_identical_to_commit": true,
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/signatures/signatures.py",
+    "original_verified_unchanged": true
+  },
+  {
+    "original": "archive-ref-d4e5a7904f18471c",
+    "copy": "sources/roma/native/src/roma_dspy/core/context/models.py",
+    "sha256": "73a04248b8af24240645baf5d52d96381cad7af4ef5341c698f7fe16a1331404",
+    "bytes": 23761,
+    "reference_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "byte_identical_to_commit": true,
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/context/models.py",
+    "original_verified_unchanged": true
+  },
+  {
+    "original": "archive-ref-b12e119e9dfe24ea",
+    "copy": "sources/roma/native/src/roma_dspy/core/context/manager.py",
+    "sha256": "415c582d8e0deb77c54106c78dc38a6bc99cf5c34a4dfe044eb15725f04dd3de",
+    "bytes": 17759,
+    "reference_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "byte_identical_to_commit": true,
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/context/manager.py",
+    "original_verified_unchanged": true
+  },
+  {
+    "original": "archive-ref-6b1b4bc39fef8eb4",
+    "copy": "sources/roma/native/src/roma_dspy/core/engine/runtime.py",
+    "sha256": "77b3b35234f6ade1cf34e3d5a131d8f0f4c30159bc0a5e8942c68a878c562119",
+    "bytes": 39636,
+    "reference_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "byte_identical_to_commit": true,
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/engine/runtime.py",
+    "original_verified_unchanged": true
+  },
+  {
+    "original": "archive-ref-d9b9192bf45333d0",
+    "copy": "sources/roma/native/src/roma_dspy/core/engine/solve.py",
+    "sha256": "82213d680d088192580ba91e0d5e3ef6f2d3cdd6dbdd986585198dd4f1a6ae71",
+    "bytes": 54646,
+    "reference_commit": "a6e3bb4f9e0694375fa627fa4b8bf8cae50592a6",
+    "byte_identical_to_commit": true,
+    "snapshot": "architecture_audit/sources/roma/native/src/roma_dspy/core/engine/solve.py",
+    "original_verified_unchanged": true
+  },
+  {
+    "original": "archive-ref-31e9e7a459939003",
+    "copy": "sources/roma/runtime/current_node_context.py",
+    "sha256": "0f22b13158b8564a758a1f7b0acad2eef09493bbab958ace8e6c9040babeb0a3",
+    "bytes": 6911,
+    "recorded_sha_verified": true,
+    "snapshot": "architecture_audit/sources/roma/runtime/current_node_context.py",
+    "original_verified_unchanged": true
+  },
+  {
+    "original": "archive-ref-44fa9285d64d8f52",
+    "copy": "sources/talkhier/frozen/src/prompts/mmlu.py",
+    "sha256": "a914cc1c73353c0712a709bb78f053337f689f606de5522182f450d31785144b",
+    "bytes": 17762,
+    "snapshot": "architecture_audit/sources/talkhier/frozen/src/prompts/mmlu.py",
+    "original_verified_unchanged": true
+  },
+  {
+    "original": "archive-ref-798486870657a3bb",
+    "copy": "sources/talkhier/frozen/src/multiagent/agent_team.py",
+    "sha256": "b6d58de0156bddfab8e1d6d2e1405046c0ad89945ba7b81351dd866ad4dda0c6",
+    "bytes": 18593,
+    "snapshot": "architecture_audit/sources/talkhier/frozen/src/multiagent/agent_team.py",
+    "original_verified_unchanged": true
+  },
+  {
+    "original": "archive-ref-543d073d4dc12ef5",
+    "snapshot": "architecture_audit/observed_inputs/roma_observed_request_examples.json",
+    "sha256": "9343eee8fef15458aad5f02562ca4514f3237a10252f97ef5e76bb8d8109b823",
+    "kind": "existing representative model-input archive; not new inference"
+  },
+  {
+    "original": "archive-ref-15d32bdf22f54819",
+    "snapshot": "architecture_audit/observed_inputs/roma_historical_seal0_examples.json",
+    "sha256": "b00255b1c5e1fe2fd425f74db131e6df8b27fa138415deae6d925c992b4f628f",
+    "kind": "existing representative model-input archive; not new inference"
+  },
+  {
+    "original": "archive-ref-68b008c068328378",
+    "snapshot": "architecture_audit/observed_inputs/talkhier_actual_physics_request_examples.json",
+    "sha256": "15eebab49bf21b3d81a6609b0239bde6e002c6693eec8743f71526c5c35c34f6",
+    "kind": "existing representative model-input archive; not new inference"
+  },
+  {
+    "original": "archive-ref-367b9cdd15c1ac18",
+    "snapshot": "architecture_audit/sources/talkhier/adapter.py",
+    "sha256": "91e103394ed0bd83789ed94e1b247e985a981837927753d879aa6cdce3920197",
+    "kind": "read-only model boundary verification"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "native_upstream_commit": "842a62160bcd326c5f8bb11c6cd1f3da7ced00f6",
+  "reference_roma_v2_sha256": "e17ebbbef2e0286a6496a86a42a4f22b23e5d43ba0b171690737fedeea46d7a7",
+  "reference_roma_v2": "repro/org_v2/roma_v2_reference.txt",
+  "reference_form": "ASCII text diagram plus fixed headings and natural-language role/flow descriptions",
+  "source_files_sha256": {
+    "LICENSE": "3711f963c05d0be80d53e5923308a6dee31b203da23435c9cfb7c7b6e4dd5e19",
+    "README.md": "ab377a45c35d55cdd5a55b9ef9669c4a88dc7e650d8a82f3fb1d5a9753341b02",
+    "architecture.png": "836a8e3c61b193c2fa39e8eeef99bab0f4ec107d39c7ecda1f8357cbb99638af",
+    "docker/docker-compose.yml": "d7666bd81d5f7994b255225e806107bac2f214c1f76acac92c5c005c998201e9",
+    "docker/dockerfile": "1e9482538c975d63a23ca1be8990f52e79bbc41e54473c68274b448071267fad",
+    "requirements.txt": "c53c4e741db8f849093074143342c906478b4fc6ac9d9da27ddd4ac48f5fcc58",
+    "src/experiments.py": "6fbd7eef7fa7e5d95b1e90e2ee0e93f75ff5a5d9850c36317a3dfc742b99e973",
+    "src/multiagent/agent_team.py": "b6d58de0156bddfab8e1d6d2e1405046c0ad89945ba7b81351dd866ad4dda0c6",
+    "src/multiagent/colors.py": "9a623b9a11ce8e4ea53bbfb6c21c5b9a5b81cd1f1ab93ec4e3f7b84e3604d80d",
+    "src/multiagent/llm.py": "8ff46c6f4a1c0460c54f0c9a4ab9d32c72c8868a5db567b8fcb2b5769c905d1d",
+    "src/multiagent/react_agent.py": "c07fd540b2ac9bf735d0f9b99ab4b96cc9dbf9c0edd58bbfc577007a15e6919e",
+    "src/multiagent/tools.py": "54f1fe0ab6783014ce40376e9825890dd543a68df01903a019cf67840cff6bd3",
+    "src/okg/load_and_embed.py": "aef267fb5241c150416b0f3b721f34ff5f3014fc81bdf2484d27d414ca0120c4",
+    "src/prompts/ad.py": "d3915912d5530057de581281adce18fafee895d0e0bb9206a349ad9b6d81744f",
+    "src/prompts/mmlu.py": "a914cc1c73353c0712a709bb78f053337f689f606de5522182f450d31785144b",
+    "src/result_manager.py": "4f00055486060228ddcdaf9bba716fdf402d1e21f13dcb7dea7987f4666780e3",
+    "template/config.ini": "9bbe5b1ddd06f9cd8d2bb48cfcf0e2baab9189330fddb0e00a0bf7888fa127bb",
+    "template/config_llm.ini": "a69f5de54050eb73c121cebfce6a3d3c72edb6af1852a6408e2783fccc7d7ec7",
+    "src/multiagent/structured_output.py": "e26bf18b82411551ffcddaf38a87593d0313ca3831f8bf499742c77526ed5fdf"
+  },
+  "source_role_descriptions": "src/prompts/mmlu.py:14-113; high-level summaries only",
+  "artifact_files_sha256": {
+    "global_organizational_architecture_v2_moral_scenarios.txt": "0fde1265642bb5a9d890c7c70bfd0be3ffd7e963d4a5b5bc0a0916964c3a0268",
+    "global_organizational_architecture_v2_college_physics.txt": "beaf76a7c61a5a98c7c8d50b5cb2e447222d94d64526955388d4becbba97600b",
+    "global_organizational_architecture_v2_machine_learning.txt": "f7d652dbcaea72588c708301f89bfdef5987e6ea0cc19747d44e81fc9b72d70a",
+    "global_organizational_architecture_v2_formal_logic.txt": "6412ea115c8ce9d9da748c39e23e366b3629763cbf5bd3a81ef748cb24b8fa7c",
+    "global_organizational_architecture_v2_us_foreign_policy.txt": "048ed9075b2bdf1afa9d3391be1d9ef42393543364d7af48f23277a69fd8e693",
+    "build_prompts.py": "027630501d1aa1551f41b70e09eee0f89e1a0f696a69c900ceac2972c64d3ff0",
+    "roma_v2_reference.txt": "e17ebbbef2e0286a6496a86a42a4f22b23e5d43ba0b171690737fedeea46d7a7"
+  },
+  "paid_model_calls": 0,
+  "native_source_modified": true,
+  "status": "Frozen descriptions for an external BASE/V2 adapter; no real model benchmark",
+  "provider_compatibility_changes": {
+    "src/multiagent/llm.py": {
+      "upstream_sha256": "cb927ebf67d5017e925042288d05ec7a6b5729021f776839d4c58143edff46cf",
+      "current_sha256": "8ff46c6f4a1c0460c54f0c9a4ab9d32c72c8868a5db567b8fcb2b5769c905d1d",
+      "change": "User-authorized native AzureChatOpenAI to ChatOpenAI provider configuration. Current defaults: enable_thinking=true and thinking_budget=8192 through extra_body, max_completion_tokens=16384, max_tokens omitted. Compatible LangChain interface versions are locked externally. No role, graph, prompt, schema, parser, retry-loop or routing changes."
+    },
+    "src/multiagent/agent_team.py": {
+      "upstream_sha256": "170ff92a855e253bfa9d9e7817b534842ba8c3b1b60a2ee2840276be60fed222",
+      "current_sha256": "b6d58de0156bddfab8e1d6d2e1405046c0ad89945ba7b81351dd866ad4dda0c6",
+      "change": "User-authorized provider-native JSON Schema dictionary via LangChain, strict=True, followed only by dict-to-SimpleNamespace mapping. Native schema fields/descriptions/enums, prompt, tools, graph, retry loops, inner intermediate-output handling and routing retained; no Pydantic response validation or custom text repair."
+    },
+    "src/multiagent/react_agent.py": {
+      "upstream_sha256": "9af955a17df1528b93839083f7c1e0be817e546eb7303b24e466f4437589ca8b",
+      "current_sha256": "c07fd540b2ac9bf735d0f9b99ab4b96cc9dbf9c0edd58bbfc577007a15e6919e",
+      "change": "User-authorized provider-native JSON Schema dictionary via LangChain, strict=True, followed only by dict-to-SimpleNamespace mapping. Native schema fields/descriptions/enums, prompt, tools, graph, retry loops, inner intermediate-output handling and routing retained; no Pydantic response validation or custom text repair."
+    },
+    "src/multiagent/structured_output.py": {
+      "upstream_sha256": null,
+      "current_sha256": "e26bf18b82411551ffcddaf38a87593d0313ca3831f8bf499742c77526ed5fdf",
+      "change": "User-authorized provider-native JSON Schema dictionary via LangChain, strict=True, followed only by dict-to-SimpleNamespace mapping. Native schema fields/descriptions/enums, prompt, tools, graph, retry loops, inner intermediate-output handling and routing retained; no Pydantic response validation or custom text repair."
+    }
+  },
+  "agent_architecture_modified": false,
+  "paid_model_calls_scope": "Organization-description build and frozen offline fixtures only; real API calls are recorded separately in .local."
+}
