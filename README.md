@@ -1,8 +1,6 @@
-<img src="assets/mark.svg" width="68" alt="Organizational visibility mark">
+# Parallax
 
-# Organizational Visibility in Hierarchical Multi-Agent Systems
-
-**A controlled study of how a static global organizational description changes agent behavior, task outcomes and computational work in ROMA and TalkHier.**
+**Studying How Organizational Visibility Affects Hierarchical Multi-Agent Systems.**
 
 **Paper status: AAMAS 2027 — Under Review.** Local author-identified manuscript; no acceptance or external publication is asserted.
 
