@@ -8,52 +8,81 @@
 
 [Manuscript PDF](paper/organizational_visibility_preprint.pdf) · [Methods](docs/methods.md) · [Results](docs/results.md) · [Offline reproduction](docs/reproduction.md) · [Report index](index/reports.md) · [Run archives](index/runs.md)
 
-## Research question
+## Research Question: Implementation Is Not Visibility
 
-An agent system can implement a hierarchy while each model call sees only a partial account of that organization. Does adding a global static description help agents use an existing organization more effectively? This study compares native input (**BASE**) with an architecture-specific description of roles, relationships and information flow (**ORG-DESC**, stored as `V2`), retaining native execution interfaces within each comparison.
+A multi-agent system can enforce an organization without making that organization fully visible to its agents. Native role instructions and local interfaces may already support coordinated execution, but **functional sufficiency does not establish informational adequacy**. The organization implemented by a system and the organizational view supplied to a member are distinct.
 
-ROMA recursively reuses Atomizer, Planner, Executor and Aggregator functions across task depths. TalkHier Physics uses a configured six-role hierarchy. These are two different organizational mechanisms; their native input boundaries are audited separately. The intervention describes the existing organization and can clarify or repeat local information as well as disclose remote relationships.
+**When members gain access to a broader organizational view, how does their participation in that organization change?**
 
-## Main Results from the Paper
+The paper compares **BASE**, using each system's native context, and **ORG-DESC** (archived as V2), adding a static global account of existing roles, relationships, and information flows. Native role contracts, tools, routing interfaces, and execution rules are preserved. ROMA uses a recursive task-processing template; TalkHier Physics uses a fixed six-role hierarchy. The description explains existing mechanisms without granting permissions or revealing a complete live task tree.
 
-The following findings are adapted from the manuscript's main text, highlighting how organizational visibility affects execution, task outcomes and computational work. BASE and ORG-DESC are compared within each native framework, with model configuration matched within each paired experiment.
+The manuscript separates **RQ1: How does a broader organizational view change execution within an existing organization?** from **RQ2: What practical value and computational consequences accompany those responses?** RQ1 is the main behavioral question; task outcomes and external ratings assess the significance of changed behavior, not a goal of maximizing accuracy.
 
-### Execution: less recursive expansion or more work within roles
+The paired studies cover ROMA on SEAL-0 (94 questions, 272 matched question-round pairs) and FRAMES (47 valid pairs), and TalkHier on MMLU-Pro Physics (94 valid pairs). These are studied samples, not full-benchmark estimates. The [paper](paper/organizational_visibility_preprint.pdf) and [methods](docs/methods.md) document native input boundaries and the intervention.
 
-ROMA reduces recursive expansion in both tasks: mean expanded tasks fall by **15.80%** on SEAL-0 and **18.75%** on FRAMES. In FRAMES, mean search calls also decline from 21.06 to 18.32, while all 47 paired questions still use search in both conditions. The organizational description changes how agents exercise the existing recursive mechanism.
+## RQ1: Execution Responses to Organizational Visibility
 
-TalkHier retains its fixed role hierarchy, with changes concentrated in expert participation and work within role invocations. Mathematics participates in **94/94 questions, up from 74/94**. Physics visits decline from 135 to 120 across the panel, while its normal returned model calls increase from 390 to 653: calls per visit rise from 2.89 to 5.44. Role visits and the work performed within a visit capture different aspects of execution.
+### ROMA: reduced recursive expansion
 
-| System and task | Measure, mean per question | BASE | ORG-DESC | Relative change |
+In ROMA, Atomizer, Planner, Executor and Aggregator are functional modules reused across recursive depths, not four management levels. Under ORG-DESC, SEAL-0 mean logical tasks decrease from **5.09 to 4.76** and expanded tasks from **1.49 to 1.26 (−15.8%)**. Executions reaching depth three fall from **23.94% to 18.44%**.
+
+FRAMES logical tasks decrease from **17.55 to 14.57**, expanded tasks from **5.45 to 4.43 (−18.8%)**, and mean maximum depth from **2.64 to 2.45**. Existing paired intervals for absolute expansion differences are **[−0.47, −0.02]** and **[−1.79, −0.28]**. Mean FRAMES search calls fall from **21.06 to 18.32**, but all 47 paired questions still use search in both conditions. The system changes how it exercises its available recursive template.
+
+**Whole-tree evidence complements node counts.** The analysis reconstructs **544 SEAL-0 trees and 94 FRAMES trees**, comparing structures through tree edit distance and question-blocked PERMANOVA. SEAL-0 shows weak separation: condition accounts for **0.20%** of tree variation (unadjusted permutation **p = 0.5308**). FRAMES shows a modest separation: **1.48%** overall and **3.68%** within questions, with adjusted permutation **p = 0.0426**. Reduced expansion is therefore the clearest shared ROMA response. Complete-tree comparisons also detect modest redistribution in FRAMES, not a large global shift in both settings.
+
+### TalkHier: more work and wider expert participation inside a fixed hierarchy
+
+TalkHier retains its configured role tree and dispatch interfaces. Behavior changes through **expert participation and work within each visit**.
+
+Across 94 valid pairs, Physics visits fall from **135 to 120**, while normal returned model calls increase from **390 to 653**. Calls per visit rise from **2.89 to 5.44**. A role can do more work inside an invocation even when its supervisor invokes it less often.
+
+Mathematics participates in **94/94 questions, up from 74/94**, while normal calls increase from **310 to 627**. Executed internal analysis tools increase from **293 to 881**, including Physics actions rising from **124 to 421** and Mathematics actions from **128 to 411**. These tools write local analysis; they are not retrieval, browsing, or code execution. The increase reflects more internal analytical activity, not expanded access to the environment.
+
+The two experts account for **72.8%** of the net normal-token increase. Output and reasoning tokens also grow, so the change is not simply the longer initial input. These traces locate additional work without establishing that each action improves reasoning or that models explicitly understand topology.
+
+### Behavioral and model-work responses — manuscript Table 1
+
+| Setting | Measure, mean per question | BASE | ORG-DESC | Relative change |
 |---|---|---:|---:|---:|
-| ROMA / SEAL-0 | Expanded tasks | 1.49 | 1.26 | −15.80% |
-| ROMA / FRAMES | Expanded tasks | 5.45 | 4.43 | −18.75% |
-| ROMA / SEAL-0 | Recorded total tokens | 894,741 | 882,762 | −1.34% |
-| ROMA / FRAMES | Recorded total tokens | 2,441,302 | 2,530,584 | +3.66% |
-| TalkHier / Physics | Normal returned model calls | 22.10 | 29.73 | +34.57% |
-| TalkHier / Physics | Normal-return tokens | 171,689 | 283,212 | +64.96% |
+| ROMA / SEAL-0 | Logical tasks | 5.09 | 4.76 | −6.4% |
+| ROMA / SEAL-0 | Expanded tasks | 1.49 | 1.26 | −15.8% |
+| ROMA / SEAL-0 | Recorded total tokens | 894,741 | 882,762 | −1.3% |
+| ROMA / FRAMES | Logical tasks | 17.55 | 14.57 | −17.0% |
+| ROMA / FRAMES | Expanded tasks | 5.45 | 4.43 | −18.8% |
+| ROMA / FRAMES | Recorded total tokens | 2,441,302 | 2,530,584 | +3.7% |
+| TalkHier / Physics | Normal returned model calls | 22.10 | 29.73 | +34.6% |
+| TalkHier / Physics | Normal-return tokens | 171,689 | 283,212 | +65.0% |
+| TalkHier / Physics | Executed internal analysis tools | 3.12 | 9.37 | +200.7% |
 
-Relative changes use unrounded means. ROMA uses archived recorded totals and TalkHier uses normal-return usage; resource comparisons are made within each system.
+**The two systems adapt along different dimensions: ROMA uses less recursive delegation, while TalkHier broadens expert participation and increases work within visits.** Neither a smaller delegation tree nor more expert activity is intrinsically beneficial. ROMA recorded totals and TalkHier normal-return totals have different definitions and should not be used for cross-system token comparisons.
 
-### Task outcomes: behavioral changes and task value move differently
+## RQ2: Computational Consequences and Collaboration Ratings
 
-| Primary paired panel | BASE | ORG-DESC | Difference, pp | Paired 95% interval, pp |
+### Execution size and computational work can move independently
+
+On SEAL-0, ROMA's tokens decline by only **1.3%** despite reduced expansion. On FRAMES, logical and expanded tasks decrease while tokens **increase by 3.7%**. Task count alone is an incomplete resource measure.
+
+TalkHier's normal-return tokens increase by a mean of **111,523 per question (+65.0%)**, with a paired 95% interval of **[61,256, 161,955]**. Of 94 questions, **75** use more tokens and **19** use fewer. Extra expert work has a resource cost but does not establish greater collaboration quality or practical value. Tokens quantify computation here, not financial cost.
+
+### External planning and communication ratings — manuscript Table 3
+
+Existing MARBLE / MultiAgentBench planning and communication rubrics provide a complementary view of ROMA SEAL-0's full recursive execution. The common panel has **86 questions and 227 matched rounds**; rounds are averaged within each question before weighting questions equally.
+
+| External 1–5 rating | BASE | ORG-DESC | Paired difference | Paired 95% interval |
 |---|---:|---:|---:|---:|
-| ROMA / SEAL-0: 94 questions, 272 matched rounds | 35.64% | 35.46% | −0.18 | [−6.38, +5.67] |
-| ROMA / FRAMES: 47 valid pairs from 50 planned questions | 34/47 (72.34%) | 38/47 (80.85%) | +8.51 | [−6.38, +23.40] |
-| TalkHier / MMLU-Pro Physics: 94 valid pairs from 100 planned questions | 88/94 (93.62%) | 90/94 (95.74%) | +2.13 | [0.00, +5.32] |
+| Planning | 4.847 | 4.878 | +0.031 | [−0.031, +0.097] |
+| Communication | 4.899 | 4.890 | −0.010 | [−0.076, +0.050] |
+| Composite (equal-weight derived mean) | 4.873 | 4.884 | +0.011 | [−0.042, +0.065] |
 
-SEAL-0's mean utility remains nearly unchanged. FRAMES has eight improvements and four regressions, yielding an estimated +8.51 percentage points with an interval crossing zero. TalkHier answers two additional questions correctly while using about 65% more normal-return tokens. Fewer expanded tasks also need not mean fewer tokens: FRAMES uses slightly more tokens despite less recursive expansion.
+Planning and communication ratings change little despite changed recursive execution. These secondary model-based ratings are close to the scale ceiling and evaluate converted runs; they are not blinded measurements of pure inter-agent communication. They provide complementary evidence that **execution responses and evaluated collaboration quality need not move together**.
 
-SEAL-0 averages matched rounds within each question before weighting questions equally; intervals use question-level paired bootstrap resampling. Failed, blocked and missing records retain their statuses, and the main tables use common valid paired records.
+## Discussion: Organizational Implementation and Presentation Are Distinct
 
-### Repeat success and research conclusion
+Organizational implementation determines permitted participation; organizational presentation determines the account of that participation supplied to models. The latter changes realized behavior even while the former remains fixed. The paper hypothesizes that the effect of broader visibility depends both on what members already see and on which actions the system permits: recursive organizations can change delegation, while fixed role hierarchies can change member selection and internal work. This is consistent with the observations but is not a separately established causal mechanism.
 
-On the 86 SEAL-0 questions with three complete matched rounds, at-least-one-success counts are **48 → 46**, while all-three-success counts remain **18** in both conditions. Mean external planning and communication ratings also change little.
+ORG-DESC combines topology, responsibilities, workflow, clarification and some repeated information. Its estimated effect belongs to the **entire static description**, not one isolated component. **Organizational information completeness and practical utility are distinct properties.** Organizational visibility should be evaluated through the collaboration it elicits, the outcomes it produces, and the resources it consumes.
 
-The main finding is that **a broader organizational view changes how agents participate in collaboration, with task benefits and computational consequences depending on the system and task.** ROMA uses less recursive delegation; TalkHier broadens expert participation and increases work within roles. Organizational implementation and the organizational information visible to agents are two design dimensions to consider together.
-
-These results correspond to the manuscript's execution and task-utility tables and accompanying analysis. [Manuscript PDF](paper/organizational_visibility_preprint.pdf) · [Full results and statistical definitions](docs/results.md) · [Paper evidence](paper_evidence/data)
+The narrative and numbers above are selected and condensed from the submitted manuscript's Introduction, Sections 3 and 5–7, and Tables 1 and 3; no new experimental findings are introduced. [Manuscript PDF](paper/organizational_visibility_preprint.pdf) · [Full results](docs/results.md) · [Paper evidence](paper_evidence/data)
 
 ## Research contributions and code ownership
 
