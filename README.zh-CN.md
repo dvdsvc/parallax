@@ -74,4 +74,4 @@ uv run --offline --no-project --python python3.12 scripts/check_repository.py
 
 上游许可保留。研究新增部分与论文尚未指定统一开源许可；历史 ROMA 许可缺口和基准数据再分发核对项见[第三方说明](THIRD_PARTY_NOTICES.md)。此目录供本地审阅，公开发布另由作者确认。
 
-凭据配置与发布前检查：[安全说明](docs/security.md)。
+运行配置：[环境变量](docs/security.md)。

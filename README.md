@@ -74,4 +74,4 @@ Fresh inference requires separate ROMA and TalkHier environments, frozen dataset
 
 Upstream notices are retained. The owner has not yet selected a blanket license for the research additions or manuscript. Benchmark redistribution and the historical ROMA license gap are recorded in [third-party notices](THIRD_PARTY_NOTICES.md). This is a local review candidate; publication requires the owner's separate confirmation.
 
-Credential configuration and release checks: [Security guide](docs/security.md).
+Configuration: [Environment variables](docs/security.md).
