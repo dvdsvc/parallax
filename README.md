@@ -2,11 +2,9 @@
 
 **Studying How Organizational Visibility Affects Hierarchical Multi-Agent Systems.**
 
-**Paper status: AAMAS 2027 — Under Review.** Local author-identified manuscript; no acceptance or external publication is asserted.
+**Paper status: AAMAS 2027 — Under Review.**
 
 **English** · [简体中文](README.zh-CN.md)
-
-Paper: *How Much of the Organization Should Agents Know? The Marginal Value of Global Topology Awareness in Hierarchical Multi-Agent Systems* — Haoyan Xu, China University of Geosciences (Beijing).
 
 [Manuscript PDF](paper/organizational_visibility_preprint.pdf) · [Methods](docs/methods.md) · [Results](docs/results.md) · [Offline reproduction](docs/reproduction.md) · [Report index](index/reports.md) · [Run archives](index/runs.md)
 
@@ -15,6 +13,47 @@ Paper: *How Much of the Organization Should Agents Know? The Marginal Value of G
 An agent system can implement a hierarchy while each model call sees only a partial account of that organization. Does adding a global static description help agents use an existing organization more effectively? This study compares native input (**BASE**) with an architecture-specific description of roles, relationships and information flow (**ORG-DESC**, stored as `V2`), retaining native execution interfaces within each comparison.
 
 ROMA recursively reuses Atomizer, Planner, Executor and Aggregator functions across task depths. TalkHier Physics uses a configured six-role hierarchy. These are two different organizational mechanisms; their native input boundaries are audited separately. The intervention describes the existing organization and can clarify or repeat local information as well as disclose remote relationships.
+
+## Main Results from the Paper
+
+The following findings are adapted from the manuscript's main text, highlighting how organizational visibility affects execution, task outcomes and computational work. BASE and ORG-DESC are compared within each native framework, with model configuration matched within each paired experiment.
+
+### Execution: less recursive expansion or more work within roles
+
+ROMA reduces recursive expansion in both tasks: mean expanded tasks fall by **15.80%** on SEAL-0 and **18.75%** on FRAMES. In FRAMES, mean search calls also decline from 21.06 to 18.32, while all 47 paired questions still use search in both conditions. The organizational description changes how agents exercise the existing recursive mechanism.
+
+TalkHier retains its fixed role hierarchy, with changes concentrated in expert participation and work within role invocations. Mathematics participates in **94/94 questions, up from 74/94**. Physics visits decline from 135 to 120 across the panel, while its normal returned model calls increase from 390 to 653: calls per visit rise from 2.89 to 5.44. Role visits and the work performed within a visit capture different aspects of execution.
+
+| System and task | Measure, mean per question | BASE | ORG-DESC | Relative change |
+|---|---|---:|---:|---:|
+| ROMA / SEAL-0 | Expanded tasks | 1.49 | 1.26 | −15.80% |
+| ROMA / FRAMES | Expanded tasks | 5.45 | 4.43 | −18.75% |
+| ROMA / SEAL-0 | Recorded total tokens | 894,741 | 882,762 | −1.34% |
+| ROMA / FRAMES | Recorded total tokens | 2,441,302 | 2,530,584 | +3.66% |
+| TalkHier / Physics | Normal returned model calls | 22.10 | 29.73 | +34.57% |
+| TalkHier / Physics | Normal-return tokens | 171,689 | 283,212 | +64.96% |
+
+Relative changes use unrounded means. ROMA uses archived recorded totals and TalkHier uses normal-return usage; resource comparisons are made within each system.
+
+### Task outcomes: behavioral changes and task value move differently
+
+| Primary paired panel | BASE | ORG-DESC | Difference, pp | Paired 95% interval, pp |
+|---|---:|---:|---:|---:|
+| ROMA / SEAL-0: 94 questions, 272 matched rounds | 35.64% | 35.46% | −0.18 | [−6.38, +5.67] |
+| ROMA / FRAMES: 47 valid pairs from 50 planned questions | 34/47 (72.34%) | 38/47 (80.85%) | +8.51 | [−6.38, +23.40] |
+| TalkHier / MMLU-Pro Physics: 94 valid pairs from 100 planned questions | 88/94 (93.62%) | 90/94 (95.74%) | +2.13 | [0.00, +5.32] |
+
+SEAL-0's mean utility remains nearly unchanged. FRAMES has eight improvements and four regressions, yielding an estimated +8.51 percentage points with an interval crossing zero. TalkHier answers two additional questions correctly while using about 65% more normal-return tokens. Fewer expanded tasks also need not mean fewer tokens: FRAMES uses slightly more tokens despite less recursive expansion.
+
+SEAL-0 averages matched rounds within each question before weighting questions equally; intervals use question-level paired bootstrap resampling. Failed, blocked and missing records retain their statuses, and the main tables use common valid paired records.
+
+### Repeat success and research conclusion
+
+On the 86 SEAL-0 questions with three complete matched rounds, at-least-one-success counts are **48 → 46**, while all-three-success counts remain **18** in both conditions. Mean external planning and communication ratings also change little.
+
+The main finding is that **a broader organizational view changes how agents participate in collaboration, with task benefits and computational consequences depending on the system and task.** ROMA uses less recursive delegation; TalkHier broadens expert participation and increases work within roles. Organizational implementation and the organizational information visible to agents are two design dimensions to consider together.
+
+These results correspond to the manuscript's execution and task-utility tables and accompanying analysis. [Manuscript PDF](paper/organizational_visibility_preprint.pdf) · [Full results and statistical definitions](docs/results.md) · [Paper evidence](paper_evidence/data)
 
 ## Research contributions and code ownership
 
@@ -30,16 +69,6 @@ The research work comprises the visibility audit, external intervention and veri
 | Whole-tree and structural-outcome supporting analysis | [Method snapshots](paper_evidence/method_sources), [evidence ledger](paper_evidence/evidence_ledger.md) |
 
 See [the contribution and provenance guide](docs/provenance.md) for upstream boundaries, historical commits and known licensing checks before publication.
-
-## Main observations
-
-| Primary paired panel | BASE → ORG-DESC utility | Accompanying behavior |
-|---|---|---|
-| ROMA / SEAL-0: 94 questions, 272 matched rounds | 35.64% → 35.46% | Expanded tasks −15.80%; recorded total tokens −1.34% |
-| ROMA / FRAMES: 47 valid pairs from 50 planned questions | 34/47 → 38/47 (72.34% → 80.85%) | Expanded tasks −18.75%; recorded total tokens +3.66% |
-| TalkHier / MMLU-Pro Physics: 94 valid pairs from 100 planned questions | 88/94 → 90/94 (93.62% → 95.74%) | Normal-return model calls +34.57%; normal-return tokens +64.96% |
-
-The organizational description changes execution, but the observed behavioral changes do not establish a reliable general accuracy benefit. The FRAMES paired difference is +8.51 percentage points with the frozen interval crossing zero. SEAL-0 uses **within-question averaging over matched repeats, followed by equal weighting of questions**. Blocked, failed and missing records retain their statuses. ROMA recorded totals and TalkHier normal-return totals have different accounting boundaries and are not a cross-system cost ranking. [Results and uncertainty](docs/results.md).
 
 ## Reproduce the archived aggregates
 
