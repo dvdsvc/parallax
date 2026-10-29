@@ -2,9 +2,11 @@
 
 **研究组织信息可见性如何影响层级多智能体系统。**
 
-**论文状态：AAMAS 2027 — Under Review（审稿中）。**
-
 [English](README.md) · **简体中文**
+
+**研究问题：** 组织信息可见性如何改变智能体的执行与协作行为？**方法：** 在 ROMA 与 TalkHier 中开展 BASE／ORG-DESC 配对实验，结合输入审计、任务树重建与题目层面分析。**核心发现：** ROMA 的递归展开减少约 16%–19%；TalkHier 扩大专家参与，正常返回 token 增加约 65%；外部规划与通信评分变化较小。
+
+**论文状态：AAMAS 2027 — Under Review（审稿中）。**
 
 [论文 PDF](paper/organizational_visibility_preprint.pdf) · [研究方法](docs/methods.md) · [结果与口径](docs/results.md) · [离线复核](docs/reproduction.md) · [报告索引](index/reports.md) · [运行归档](index/runs.md)
 

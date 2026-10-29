@@ -2,9 +2,11 @@
 
 **Studying How Organizational Visibility Affects Hierarchical Multi-Agent Systems.**
 
-**Paper status: AAMAS 2027 — Under Review.**
-
 **English** · [简体中文](README.zh-CN.md)
+
+**Research question:** How does organizational visibility shape agents' execution and collaboration? **Method:** Paired BASE/ORG-DESC experiments in ROMA and TalkHier, with input audits, task-tree reconstruction and question-level analysis. **Key findings:** ROMA reduces recursive expansion by 16–19%; TalkHier broadens expert participation and uses about 65% more normal-return tokens. External planning and communication ratings change little.
+
+**Paper status: AAMAS 2027 — Under Review.**
 
 [Manuscript PDF](paper/organizational_visibility_preprint.pdf) · [Methods](docs/methods.md) · [Results](docs/results.md) · [Offline reproduction](docs/reproduction.md) · [Report index](index/reports.md) · [Run archives](index/runs.md)
 
